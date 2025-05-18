@@ -1,0 +1,136 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## # 2024: Week 46 - DataFam Europe Special 
+   
+   November 12, 2024
+   
+   Challenge By: Carl Allchin, Jenny Martin & Lorna Brown
+   
+   This challenge comes to you live from the first ever DataFam Europe! We've teamed up with the Workout Wednesday team to bring you a special challenge.
+   
+   Since we're in London and very close to one of the most popular attractions (St Paul's Cathedral), we thought we could centre the challenge around popular London Attractions and their nearest Tube Stations.
+   
+   You'll need to clean up the inputs to create outputs ready for Tableau Desktop.
+   
+   ## Inputs
+   
+   The inputs for this challenge can be downloaded from either Google Drive (as normal) or Data.World.
+   
+   ## We have 3 inputs, which can be found in one single Excel File:
+   
+   ### London Tube Stations 
+   
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG6b8m4gxAyOj7veA39A3rGE_kC_Rp5npx7mb-IJRcPDFHnhuAUsrymQ_H_q1CqyIY0CaCrlCo165_lB9gHhnC8FbJlCFpO7HwK2CpwCjg5kkO9nB6u_VmcgT-ZxmeRl9r1gboAEzdoxwnst8enuSZ8UdFN9kgnQRzg20G3y7_S72swhkXsguZf_GTd18N/s1217/Screenshot%202024-09-18%20132405.png)
+   
+   ### Attraction Footfall 
+   
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinhAv3YwPohcxxXCv70oOWX1aUhuDcPCcOHFcbMOAE8FprZlUdatV5NAdN3-gtAo8B0aVliEgcH-Ge_zgrc5DBpg6-I2ncjtfxvNOTyXvunOSsXtqi3bpZbl2RIUio2VJbXI8k50YBtvKR6vnEBm0xRiEJhFgV5tBbw5uGHePZInbEs0TARi-X3NlBeoFv/s1282/Screenshot%202024-09-18%20132455.png)
+   
+   ### Location Lat Longs 
+   
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgV5bkxBKWYI8eY3s3vITYKn-MycnUxjmDGpW-C94uTZXLJBXyMYsAJasslr5Hfy2myPfQTRCB51FW9ZK3h-KCTKLnWxb0IviOpUiHX13yV_Ii2E607tHX16LI5ZLMpACztqbfIF89TSCwSC8xODNZgSXzgPjwsYc4JabRg1ROv3g9FieLH7q4d09h1JCXG/s1011/Screenshot%202024-09-18%20132548.png)
+   
+   ## Requirements
+   
+   ### Input the data
+   
+   For the London Tube Stations table:
+   
+   - There are a lot of unnecessary fields, only keep information about the station name and location
+   - Clean up the field names
+   - There are a lot of duplicate rows. Make sure each row is unique (help)
+   
+   For the Attraction Footfall table:
+   
+   - Filter out attractions with missing data
+   - Reshape the data so there is a row for each year, for each attraction
+   - The footfall values need to be multiplied by 1000 to give their true values
+   - Calculate the average footfall for each attraction, whilst keeping all the detail of individual years. Call the new field 5 Year Avg Footfall (help)
+   - Rank the attractions based on this 5 Year Avg Footfall (help)
+   
+   For the Location Lat Longs table
+   
+   - The information about the latitude and longitude is contained in a single field, split these values into 2 separate fields 
+   - Output the data as an Excel File, having each table as a separate sheet
+   
+   ## Outputs
+   
+   The outputs for this challenge can be downloaded from either Google Drive (as normal) or Data.World.
+   
+   ### Tube Locations
+   
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYtiyzSx21unb2lBFwOcvAOytmrWgMIArvTusex5GnPw6L7OOdf-kUR4vZ8TRznQY-UEqvwvr6aLt1rxAsbli7O4Qx3un4Czm5Z8Dk2Tc27EYJxSqO5TWacTZx0mCMJWtIljsTnVxe9N8LEAxBtjoiE8cAG83AH_Ec2KxRStZsjhDCi781AEObPfMOOsFp/s466/Screenshot%202024-09-18%20132715.png)
+   
+   ### 3 fields
+   
+   - Station
+   - - Station Longitude
+   - Station Latitude
+   - 267 rows (268 including headers)
+   
+   ### Attraction Footfall
+   
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqy1LcJ3hAAnNUKPXTXuvdsrjAS3th_JDWQba4bRBwDiR0K50HHEj0WWHTLI6RP_Y4cHHSdKQdGFAjpn7hAR88cSo1R-VuYpEA9NhY6VR2jWShAP0HXlhg44c0mscKQPLFhiyyadOaCqvAVe5OtB5eg6JRyAITUP0LbjZhG7aY6flkaZPqdLbyqy66vKUM/s834/Screenshot%202024-09-18%20132904.png)
+   
+   ### 5 fields
+   
+   - Attraction Rank
+   - Attraction
+   - 5 Year Avg Footfall
+   - Year
+   - Attraction Footfall
+   - 90 rows (91 including headers)
+   
+   ### Attraction Locations
+   
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTH2yUFPHY4AqGPwGjR3xq66VBqbQcppJvJpExTYsK95Sy8-BzuTXAHmzOE4eAHSJjh3uil2370fGyKJd-TCfZcCePOo6i2Ug183oV_2Wex-_xrv2oSbSMeAiwBw3M4av8SYlyRlE3hLEQyfJmXv1Rbygmm_kZWdbA4g21r0u0fyGQbQ4w_nuJDAhlCMLE/s640/Screenshot%202024-09-18%20133350.png)
+   
+   ### 3 fields
+   
+   - Attraction Name
+   - Attraction Latitude
+   - Attraction Longitude
+   - 20 rows (21 including headers)
+   
+   After you finish the challenge make sure to fill in the participation tracker, then share your solution on Twitter using #PreppinData and tagging @Datajedininja, @JennyMartinDS14 & @TomProwse1
+   
+   You can also post your solution on the Tableau Forum where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help!
+   
+   Then head on over to Workout Wednesday to build a dashboard with the data.
+main =
+    quot1 = enso_project.data/ 'London Visitor Attractions.xlsx'
+    file1 = Data.read quot1
+    node1 = file1.read 'London Tube Stations'
+    node2 = file1.read 'Attraction Footfall' ..Has_Headers
+    node3 = file1.read 'Location Lat  Longs' ..Has_Headers
+    any1 = node1.select_columns ['Station', 'Right_Longitude', 'Right_Latitude']
+    any2 = any1.rename_columns [(Pair.Value 'Right_Longitude' 'Station Longitude'), (Pair.Value 'Right_Latitude' 'Station Latitude')]
+    any3 = any2.distinct ['Station']
+    any6 = node2.cast ['2019', '2020', '2021', '2022', '2023'] ..Integer on_problems=..Ignore
+    table1 = any6.filter_blank_rows ..Any_Cell
+    any4 = table1.transpose ['Characteristic']
+    any7 = any4.rename_columns [(Pair.Value 'Characteristic' 'Attraction'), (Pair.Value 'Name' 'Year'), (Pair.Value 'Value' 'Attraction Footfall')]
+    any5 = any7.set (..Simple_Expr (..Name 'Attraction Footfall') (..Math (..Multiply 1000))) '' set_mode=..Update
+    any8 = any5.aggregate ['Attraction'] [..Average 'Attraction Footfall' '5 Year Avg Footfall']
+    table3 = any8.add_row_number 'Attraction Rank' 1 order_by=[(..Name '5 Year Avg Footfall' ..Descending)]
+    table2 = any5.join table3 ..Inner [(..Equals 'Attraction')]
+    any9 = table2.reorder_columns ['Attraction Rank', 'Attraction', '5 Year Avg Footfall', 'Year', 'Attraction Footfall']
+    table4 = node3.split_to_columns 'Lat, Longs'
+    any10 = table4.rename_columns [(Pair.Value 'Lat, Longs 1' 'Attraction Latitude'), (Pair.Value 'Lat, Longs 2' 'Attraction Longitude')]
+    any11 = any3.write '/Users/ensouser/Downloads/PD Week 46 Data Fam Europe Special Output.xlsx' (..Sheet 'Tube Locations')
+    any12 = any9.write any11 (..Sheet 'Attraction Footfall')
+    table5 = any10.parse ['Attraction Latitude', 'Attraction Longitude'] ..Float
+    any13 = table5.write any12 (..Sheet 'Attraction Locations')
+
+
+
+#### METADATA ####
+[[{"index":{"value":5108},"size":{"value":18}},"d12fd185-3f3e-4ae2-8814-243c9bbb2bf6"],[{"index":{"value":5108},"size":{"value":52}},"352f2454-fee1-4ded-ad7a-d51797f32d1e"],[{"index":{"value":5173},"size":{"value":15}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":5201},"size":{"value":33}},"862f3948-cef0-4043-94d2-e943bace9f7e"],[{"index":{"value":5247},"size":{"value":46}},"080a27be-6987-4d9e-991d-f9567e7ac923"],[{"index":{"value":5306},"size":{"value":32}},"12a1cb87-65b2-402d-9d7c-2db9e9c6f6a2"],[{"index":{"value":5306},"size":{"value":46}},"e0f1c13a-6a2e-47fc-9ff7-3761a46fcd51"],[{"index":{"value":5364},"size":{"value":69}},"2c84bdb3-5d21-4079-a686-340635d13205"],[{"index":{"value":5445},"size":{"value":122}},"2d9d8371-d75d-4910-8780-3751a0efe549"],[{"index":{"value":5579},"size":{"value":25}},"da194a18-0026-4f9b-bd9c-87f3d965ddd8"],[{"index":{"value":5616},"size":{"value":82}},"29d0b5e1-f4e3-4f47-9374-5732cc52ef52"],[{"index":{"value":5712},"size":{"value":33}},"a3f942f8-ac87-48e8-a25a-3de569d4c497"],[{"index":{"value":5757},"size":{"value":35}},"24231c6f-cdaa-4881-a101-06f8e3b02f85"],[{"index":{"value":5804},"size":{"value":136}},"93a82646-80d8-4882-b8a5-4778b6896711"],[{"index":{"value":5952},"size":{"value":103}},"65123c65-4518-43a8-abdc-e122fc19387b"],[{"index":{"value":6067},"size":{"value":85}},"7942c27f-cb3d-498b-a6bc-c59ceada1bce"],[{"index":{"value":6166},"size":{"value":19}},"8d6a3bde-2afe-44d3-b339-a830d896e874"],[{"index":{"value":6166},"size":{"value":37}},"f079b742-15f0-4a85-841b-85cd8b240203"],[{"index":{"value":6166},"size":{"value":39}},"414e0b57-657e-4a1c-90ae-4c8ab0fa7e19"],[{"index":{"value":6166},"size":{"value":94}},"597712d9-a604-4bf4-80f3-b2474c6a0cdf"],[{"index":{"value":6274},"size":{"value":9}},"342d97f1-c991-4411-8eb2-22bda6cc2b20"],[{"index":{"value":6274},"size":{"value":16}},"7eb4027f-fc53-440e-bf9a-398aa7ce052c"],[{"index":{"value":6274},"size":{"value":24}},"ca2b711a-7cc6-46ba-a1c1-6c04ffc17889"],[{"index":{"value":6274},"size":{"value":50}},"4c676dc8-7b67-434b-b53c-bb300b896e7d"],[{"index":{"value":6336},"size":{"value":22}},"901db213-9e1a-4353-9056-b5f5ee5208ba"],[{"index":{"value":6336},"size":{"value":110}},"89e80e29-2af0-4225-abea-df1aecef41b8"],[{"index":{"value":6460},"size":{"value":22}},"8d4d8efa-11bf-404b-ab78-0afeab5b491b"],[{"index":{"value":6460},"size":{"value":35}},"cf3dab93-06bf-4d4f-adec-cf46fcaad331"],[{"index":{"value":6508},"size":{"value":21}},"204d0005-6e18-49c1-919d-1e13af503bf1"],[{"index":{"value":6508},"size":{"value":125}},"440fdd1d-4c27-4e38-8337-8c0102291b84"],[{"index":{"value":6646},"size":{"value":10}},"95358352-d9d0-4b45-9f18-9a5ace6d8e10"],[{"index":{"value":6646},"size":{"value":85}},"5354b512-16e9-48eb-83ab-143276f880ab"],[{"index":{"value":6646},"size":{"value":112}},"474f17b0-980a-4326-bd85-9c9870c41603"],[{"index":{"value":6771},"size":{"value":48}},"e240c0dc-a341-4a9d-b786-75e4e31b0ce5"],[{"index":{"value":6833},"size":{"value":11}},"7809d397-3b89-4126-b0b5-933a424bb1d2"],[{"index":{"value":6833},"size":{"value":59}},"60fe5237-2309-49e5-a03e-c3c1370bf53d"],[{"index":{"value":6833},"size":{"value":67}},"d6aed834-de92-4e20-a870-5ea8b4e8cbc6"],[{"index":{"value":6913},"size":{"value":51}},"51eb92a6-f437-4f43-bc8d-cfe300fd85a6"]]
+{"ide":{"node":{"352f2454-fee1-4ded-ad7a-d51797f32d1e":{"position":{"vector":[-279,195]}},"d12fd185-3f3e-4ae2-8814-243c9bbb2bf6":{"position":{"vector":[214,-615]}},"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-378,96]}},"862f3948-cef0-4043-94d2-e943bace9f7e":{"position":{"vector":[-1260,-20]}},"080a27be-6987-4d9e-991d-f9567e7ac923":{"position":{"vector":[-241,-20]}},"e0f1c13a-6a2e-47fc-9ff7-3761a46fcd51":{"position":{"vector":[901,-20]}},"12a1cb87-65b2-402d-9d7c-2db9e9c6f6a2":{"position":{"vector":[901,3]},"visualization":{"show":true}},"2c84bdb3-5d21-4079-a686-340635d13205":{"position":{"vector":[-1260,-111]}},"2d9d8371-d75d-4910-8780-3751a0efe549":{"position":{"vector":[-1268,-183]}},"da194a18-0026-4f9b-bd9c-87f3d965ddd8":{"position":{"vector":[-1267,-255]},"visualization":{"show":true,"width":855.9670696599636}},"29d0b5e1-f4e3-4f47-9374-5732cc52ef52":{"position":{"vector":[-241,-92]}},"a3f942f8-ac87-48e8-a25a-3de569d4c497":{"position":{"vector":[-241,-164]}},"24231c6f-cdaa-4881-a101-06f8e3b02f85":{"position":{"vector":[-241,-236]}},"93a82646-80d8-4882-b8a5-4778b6896711":{"position":{"vector":[-241,-308]}},"65123c65-4518-43a8-abdc-e122fc19387b":{"position":{"vector":[-241,-380]}},"7942c27f-cb3d-498b-a6bc-c59ceada1bce":{"position":{"vector":[-175,-471]}},"597712d9-a604-4bf4-80f3-b2474c6a0cdf":{"position":{"vector":[-175,-543]}},"414e0b57-657e-4a1c-90ae-4c8ab0fa7e19":{"position":{"vector":[143,-1008]}},"f079b742-15f0-4a85-841b-85cd8b240203":{"position":{"vector":[143,-1007]}},"8d6a3bde-2afe-44d3-b339-a830d896e874":{"position":{"vector":[143,-1007]}},"4c676dc8-7b67-434b-b53c-bb300b896e7d":{"position":{"vector":[-241,-640]}},"ca2b711a-7cc6-46ba-a1c1-6c04ffc17889":{"position":{"vector":[-10,-1068]}},"7eb4027f-fc53-440e-bf9a-398aa7ce052c":{"position":{"vector":[-10,-1068]}},"342d97f1-c991-4411-8eb2-22bda6cc2b20":{"position":{"vector":[-9,-1068]}},"89e80e29-2af0-4225-abea-df1aecef41b8":{"position":{"vector":[-237,-712]},"visualization":{"show":true,"width":1047.0719592102257}},"901db213-9e1a-4353-9056-b5f5ee5208ba":{"position":{"vector":[-16,-1388]}},"cf3dab93-06bf-4d4f-adec-cf46fcaad331":{"position":{"vector":[901,-92]}},"8d4d8efa-11bf-404b-ab78-0afeab5b491b":{"position":{"vector":[901,-255]}},"440fdd1d-4c27-4e38-8337-8c0102291b84":{"position":{"vector":[901,-164]}},"204d0005-6e18-49c1-919d-1e13af503bf1":{"position":{"vector":[901,-327]}},"474f17b0-980a-4326-bd85-9c9870c41603":{"position":{"vector":[-1263,-961]}},"5354b512-16e9-48eb-83ab-143276f880ab":{"position":{"vector":[-1477,-1775]}},"95358352-d9d0-4b45-9f18-9a5ace6d8e10":{"position":{"vector":[-1477,-1775]}},"e240c0dc-a341-4a9d-b786-75e4e31b0ce5":{"position":{"vector":[-241,-1014]}},"d6aed834-de92-4e20-a870-5ea8b4e8cbc6":{"position":{"vector":[901,-255]},"visualization":{"show":true,"width":932.5988563032412}},"60fe5237-2309-49e5-a03e-c3c1370bf53d":{"position":{"vector":[967,-428]}},"7809d397-3b89-4126-b0b5-933a424bb1d2":{"position":{"vector":[967,-428]}},"51eb92a6-f437-4f43-bc8d-cfe300fd85a6":{"position":{"vector":[901,-1068]}}},"import":{}}}

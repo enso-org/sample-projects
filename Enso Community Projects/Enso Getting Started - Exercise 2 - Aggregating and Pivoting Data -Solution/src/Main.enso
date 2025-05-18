@@ -1,0 +1,132 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## ![Image](eags.png)
+
+   # Aggregating and Pivoting Data
+
+   In this scenario, we want to look at calculating the number of accounts by type and by currency.
+
+   ### 
+
+   ## 🗝️ **Objective 1:**  Lets read a single sheet in from Excel (Review from previous example):
+
+   1️⃣        Drag the **sample_bank_data.xlsx** workbook on to the canvas. This adds a ***Data.read*** component to the workflow.
+
+   2️⃣        Add a new component after the ***Data.read*** component by either dragging from the output port (the bottom edge) of the `Data.read` component, or clicking the ➕ button on the Data.readcomponent.
+
+   - Choose the ***read*** component
+   - Click on **query** then choose Sheet1
+
+   ### 
+
+   ## 🗝️ **Objective 2:**  Aggregating by Account Type (Product Name):
+
+   The first task is to add an aggregate component grouped by [product_name] and create a new column of data that summarizes the count of records for each Account Type.
+
+   1️⃣        Add a new component after the ***read*** component by either dragging from the output port (the bottom edge) of the ***read*** component, or clicking the ➕ button on the component.
+
+   2️⃣        Choose the ***aggregate*** component (Begin typing the term aggregate or sum) and hit enter or left-click on the ***aggregate*** component.
+
+   - Click the group_by argument then choose [product_name]
+   - Click on the [➕] symbol (to the right of the columns  argument)
+   - This will add the default of “Count”.  *Note:  If you click on “Count”, you will see other options for aggregation.*
+   - You can open the visualization (<>) and see the count of 1,026 Savings Accounts, as we saw in the prior example, along with counts for the 3 other products:
+
+   ![Image](/images/image_2.png)
+
+
+
+   ## 🗝️ **Objective 3:**  Sort/Order the aggregated counts in descending order of [Count]
+
+   1️⃣        Add a ***sort*** component after the ***aggregate*** component.
+
+   - Click on the [➕] symbol on the columns argument.
+   - Click on the [product_name] and change it to Count (dropdown or typing).
+   - Click on direction argument and choose Descending from the dropdown list. (Savings Account will now be at the bottom of the list as #3).
+   ![Image](/images/image_3.png)
+
+
+   ## 🗝️ **Objective 4:**  Create table of currencies by product names
+
+   For each product name create a distinct count of accounts within each of the currency codes (from previous exercise we examined 3-digit currency codes with one (1) exception accouant).
+
+   1️⃣        Add a new ***cross_tab*** component after the ***read*** component.
+
+   A cross tab allows us to create a column for each domain value for a given field (in this case [currency_code]).
+
+   - Click on the group_by argument and choose [product_name].
+   - Click on the names argument and choose [currency_code].
+   - Click on the values argument and select “Count_Distinct”.
+   - Click on the [➕] symbol and add the [account_id] field.
+   When we complete this objective, you’ll have 4 rows with 5 columns of data.
+
+
+   ![Image](/images/image_5.png)
+
+
+   ## 🗝️ **Objective 5:**  Create table of account statuses by currency_code
+
+   For each currency code create a distinct count of accounts within each of the account statuses.  In this data, you’ll find that there is at least one account status that has a ‘dirty’ value.  For extra credit, you can cleanse that status (See next Objective).
+
+   1️⃣        Add a new ***cross_tab*** component after the ***read*** component.
+
+   Create the configuration properly and you will see the four (4) currency values and the three (3) account statuses.  Let’s guide you through the extra credit assignment. ![image](4by3.png)
+
+   🗝️ **Objective 5 Extra Credit:**  Create table of account statuses by a cleansed currency code field.  You’ll want to convert any “C” statuses to “Closed” prior to the ***cross_tab*** component.  You can accomplish this by:
+
+   1️⃣       Add a new ***set*** component (set can be used to update values in an existing field or to add new fields to the incoming data) after the ***read*** component.
+
+   2️⃣        Configure the ***set*** component to update “C” values to “Closed”
+
+
+   ![Image](/images/2a.gif)
+
+
+   - Click on the value argument and choose <Simple Expression>.
+   - Click on the input argument and choose the [account_status] column.
+   - Click on the operation argument and choose the “if” operation.
+   - Click on the condition argument and choose the "Equals" option.
+   - On the to argument click and choose the  <Text Value> option and type the letter C between the quote marks.
+   - Click on the true_value argument and choose the <Text Value> option.
+   - Type the word “Closed” between the quote marks.
+   - Click on the false_value argument and select the [account_status] column.
+   - Click on the double-quotes (following the word as) and type the column name “account_status”
+   3️⃣       Change the input connection on the ***cross_tab*** from the first step of this objective with the output from the ***set*** component.
+
+
+   ![Image](/images/2b%20-reconnect.gif)
+
+
+   Your result should look like the following: 
+
+
+   ![Image](/images/image.png)
+
+
+   # **Bonus**
+
+   **Fix the currency_code that is G, which needs to be updated to GBP by adding a new** *set* **component as below:**
+
+   ![Image](/images/image_1.png)
+main =
+    text1 = "Aggregating and Pivoting Data"
+    quot1 = enso_project.data/ 'sample_bank_data.xlsx'
+    node1 = Data.read quot1
+    node2 = node1.read 'Sheet1'
+    table1 = node2.aggregate ['product_name'] [..Count]
+    node3 = table1.sort [(..Name 'Count' ..Descending )]
+    table2 = node2.cross_tab ['product_name'] 'currency_code' (..Count_Distinct ['account_id'])
+    table4 = node2.set (..Simple_Expr (..Name 'account_status') (..If (..Equal "C") "Closed" (..Name 'account_status'))) "account_status"
+    table5 = table4.set (..Simple_Expr (..Name 'currency_code') (..If (..Equal "G") "GBP" (..Name 'currency_code'))) "currency_code"
+    table3 = table5.cross_tab ['currency_code'] 'account_status' (..Count_Distinct ['account_id'])
+
+
+
+#### METADATA ####
+[[{"index":{"value":5535},"size":{"value":31}},"97d15141-d528-48a5-99c8-2b959863d6ac"],[{"index":{"value":5579},"size":{"value":18}},"55c8131f-5917-4cee-9b28-0e76e5b706cb"],[{"index":{"value":5579},"size":{"value":42}},"17271d5c-caf5-44b6-95f7-4bb52fbd9e4b"],[{"index":{"value":5634},"size":{"value":15}},"0721f74f-ee50-4643-bb25-7ba62872d7ad"],[{"index":{"value":5662},"size":{"value":19}},"ef0ec9ae-f426-468b-aa25-2c5a3dfb0369"],[{"index":{"value":5695},"size":{"value":15}},"5eaf0a3c-d11f-47fc-a70a-df8b21b776cd"],[{"index":{"value":5695},"size":{"value":32}},"ee44b65c-867b-4d6b-b7bd-c56b310c68d5"],[{"index":{"value":5695},"size":{"value":42}},"4eb027a9-e421-4371-820c-99a176006edd"],[{"index":{"value":5750},"size":{"value":44}},"3b278166-b542-43ae-a93b-6c111b24d5a7"],[{"index":{"value":5808},"size":{"value":15}},"c6632880-9965-4446-940f-f4c65ca320ee"],[{"index":{"value":5808},"size":{"value":32}},"50359f05-de66-438d-bb34-a7ff83b4b7a8"],[{"index":{"value":5808},"size":{"value":48}},"11dc6477-84d2-4011-9544-f4b38234e11b"],[{"index":{"value":5808},"size":{"value":82}},"da708c17-dcf4-4073-ad27-26842d50a094"],[{"index":{"value":5904},"size":{"value":9}},"dcb5dc7e-a42c-4ab0-bb3d-517263cb67d2"],[{"index":{"value":5904},"size":{"value":107}},"2334ee74-b218-4567-b226-906bba58e7a7"],[{"index":{"value":5904},"size":{"value":124}},"0d84a9d3-e6ce-4c6b-bd1a-cb633371c8df"],[{"index":{"value":6042},"size":{"value":119}},"4229239f-777e-420a-8ed9-6e9897ee868e"],[{"index":{"value":6175},"size":{"value":16}},"00b66903-1a6a-4b76-861e-0f661c62aa2e"],[{"index":{"value":6175},"size":{"value":34}},"1c76683e-6396-4419-9667-10c106f2d755"],[{"index":{"value":6175},"size":{"value":51}},"deb6c265-3570-4761-b268-190af278263a"],[{"index":{"value":6175},"size":{"value":85}},"00dcb4db-144b-43fe-acfd-05407c79e4a3"]]
+{"ide":{"node":{"97d15141-d528-48a5-99c8-2b959863d6ac":{"position":{"vector":[-41,460]}},"17271d5c-caf5-44b6-95f7-4bb52fbd9e4b":{"position":{"vector":[-170,353]}},"55c8131f-5917-4cee-9b28-0e76e5b706cb":{"position":{"vector":[102,-1320]}},"0721f74f-ee50-4643-bb25-7ba62872d7ad":{"position":{"vector":[-170,281]},"visualization":{"show":true}},"ef0ec9ae-f426-468b-aa25-2c5a3dfb0369":{"position":{"vector":[-170,59]}},"4eb027a9-e421-4371-820c-99a176006edd":{"position":{"vector":[39,-45]},"visualization":{"show":true,"width":418.97430419921875,"height":213.387451171875}},"ee44b65c-867b-4d6b-b7bd-c56b310c68d5":{"position":{"vector":[-62,-17]}},"5eaf0a3c-d11f-47fc-a70a-df8b21b776cd":{"position":{"vector":[-62,-17]}},"3b278166-b542-43ae-a93b-6c111b24d5a7":{"position":{"vector":[39,-330]},"visualization":{"show":true,"width":431.63848876953125,"height":205.07183837890625}},"da708c17-dcf4-4073-ad27-26842d50a094":{"position":{"vector":[-41,-607]},"visualization":{"show":true,"width":746.5906982421875,"height":210.71419270833334}},"11dc6477-84d2-4011-9544-f4b38234e11b":{"position":{"vector":[-193,-579]}},"50359f05-de66-438d-bb34-a7ff83b4b7a8":{"position":{"vector":[-193,-579]}},"c6632880-9965-4446-940f-f4c65ca320ee":{"position":{"vector":[-193,-579]}},"0d84a9d3-e6ce-4c6b-bd1a-cb633371c8df":{"position":{"vector":[-170,-916]}},"2334ee74-b218-4567-b226-906bba58e7a7":{"position":{"vector":[-88,-930]}},"dcb5dc7e-a42c-4ab0-bb3d-517263cb67d2":{"position":{"vector":[-88,-930]}},"4229239f-777e-420a-8ed9-6e9897ee868e":{"position":{"vector":[-170,-988]}},"00dcb4db-144b-43fe-acfd-05407c79e4a3":{"position":{"vector":[-170,-1060]},"visualization":{"show":true,"width":822.2104971250399,"height":187.9575440233951}},"deb6c265-3570-4761-b268-190af278263a":{"position":{"vector":[-151,-907]}},"1c76683e-6396-4419-9667-10c106f2d755":{"position":{"vector":[-151,-907]}},"00b66903-1a6a-4b76-861e-0f661c62aa2e":{"position":{"vector":[-151,-907]}}},"widget":{},"snapshot":"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","import":{}}}

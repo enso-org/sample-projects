@@ -1,0 +1,87 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+##
+
+
+![Image](/images/image.png)
+
+
+# 2024: Week 52 - Naughty or Nice?
+
+[December 25, 2024](https://preppindata.blogspot.com/2024/12/2024-week-52-naughty-or-nice.html "permanent link")
+### Created by: Carl Allchin
+
+Well another year of Preppin' Data comes to an end with a perfect challenge of whether you are on the naughty or nice list? Santa has received a number of files that even he has been able to union together but needs some help to work out whether each person is on the naughty or nice list. 
+
+Santa has spotted there is a number of names that have been duplicated as records of niceness and naughty deeds have been submitted throughout the year so can you help him solve who should be in each list based on:
+
+- If a name is only on the nice or naughty list, then that's what list they are part of. 
+- If a name is on both the naughty and nice list, the number of times they feature on each list will determine whether they are naughty or nice. (Whichever list has the most mentions determines the end result)
+- If there is an even split between naughty and nice mentions, the latest mention will determine which list the person will end up on. 
+…and there was you thinking Santa just had to work out logistical travel plans and work with the world's leading manufacturers to source the right toys for all the nice children! 
+Thanks for taking part in Preppin' and the Preppers wish you all a Happy New Year. 
+
+## Input
+
+[One csv file](https://drive.google.com/file/d/1-yo9gv9_7vTlrH_4jQA7noT1attbbb56/view?usp=drive_link)
+
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit0GjYZQG_zRILbCODPa03SMVSXghSHfK4dY83heNehe3ifjGZ5A028CpwoWuvFahAr4GddY4ux_cUU2lDr3Cw4y2-N4LhkYzJrLOjTmSO2GuVnXeGb8HHEyKnlo5mX2sLIeYKZGLYUC1xF59CEjX6B6wKt_d05nd3nf8l1URP6zKSYZGf4DwyHiF9ZtWo/w640-h384/Screenshot%202024-12-18%20at%2014.57.55.png)
+
+## Requirements
+
+- [Input the data](https://drive.google.com/file/d/1-yo9gv9_7vTlrH_4jQA7noT1attbbb56/view?usp=drive_link)
+- Split the File Paths to determine which list each record is on
+- Create an Index field combing the File Path number and id (id 7 from Naughty 1 file should create an id of 1007) 
+- Create a count of how many naughty listings and nice listings each name has
+- Determine what list each person should be on
+  - If the listings are tied, find the latest listing for those people as that will determine which listing they are on
+- Remove any unnecessary fields and create one row per person:
+  - Leaves Name and 'Naughty or Nice' field
+- Output the data
+
+## Output
+
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizt5hafuiZkuHwOWyjdVis7ML0WiTSmm96W2I4FlLRjLx3lD5ZcCLnCVkfqOLqFu4Ug2tJic75s7XCC4OBZdhXpMc620FXP33VsL1UxVCG_Y41WnJTexOX_7UWAo50Ljompdnjf0zRWjVs4VdEVLOqVHep-f4qSOOnvr-syVEtqRaBCd4YRq19Ba8hDRwQ/w640-h432/Screenshot%202024-12-18%20at%2015.07.07.png)
+
+2 fields
+
+- Naughty or Nice
+- Name
+4269 rows (4270 including headers)
+You can view the output [here](https://drive.google.com/file/d/103xv9rvJc1U-nxi8ZEGZof_AbXIyWUww/view?usp=share_link).
+After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+
+
+
+You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help! 
+main =
+    quot1 = enso_project.data/ 'PD 2024 Wk 52 Input.csv'
+    file1 = Data.read quot1
+    table1 = file1.split_to_columns 'File Paths' ' '
+    any5 = table1.rename_columns [(Pair.Value 'File Paths 1' 'List'), (Pair.Value 'File Paths 2' 'List Number')]
+    table2 = any5.parse ['List Number']
+    any6 = table2.set (expr '[List Number]*1000 + [id]') "index"
+    any1 = any6.cross_tab ['first_name'] 'List' ..Count
+    any2 = any1.set (expr 'if [Nice] > [Naughty] then "Nice" else if [Naughty] > [Nice] then "Naughty" else "Tie"') "List"
+    any3 = any2.filter 'List' (..Equal "Tie")
+    any9 = any6.aggregate ['first_name'] [..Last 'List' "List" order_by=[(..Name 'index' ..Ascending)]]
+    any8 = any3.merge any9 ['first_name']
+    any17 = any2.filter 'List' (..Not_Equal "Tie")
+    table4 = any17.union any8
+    any13 = table4.select_columns ['List', 'first_name'] True
+    any7 = any13.write '/Users/ensouser/Documents/PD2024W52Output.csv' on_existing_file=..Backup
+
+
+
+#### METADATA ####
+[[{"index":{"value":4073},"size":{"value":18}},"0c22ca1a-91a7-4018-b713-0c889fe5602f"],[{"index":{"value":4073},"size":{"value":44}},"719874c1-73ce-454a-8b32-bddffec06fc1"],[{"index":{"value":4130},"size":{"value":9}},"0e3b209b-fc14-4dae-ad37-eca889d99a88"],[{"index":{"value":4130},"size":{"value":15}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":4159},"size":{"value":22}},"9aa32e76-fa89-4232-acbb-e90c925c145d"],[{"index":{"value":4159},"size":{"value":35}},"a124556e-1b55-400e-999f-f47eaf98ab77"],[{"index":{"value":4159},"size":{"value":39}},"b9315f8f-3287-405d-9875-e37d3c24490a"],[{"index":{"value":4210},"size":{"value":21}},"07dbd094-b7bf-48e6-acd0-26789cc35eaa"],[{"index":{"value":4210},"size":{"value":101}},"91ccf1b2-0d2d-4287-aaeb-bfa87fefcc46"],[{"index":{"value":4325},"size":{"value":10}},"6c6c7c26-fadf-40c3-adce-1a1bcd61356c"],[{"index":{"value":4325},"size":{"value":26}},"c171be2e-d882-47fb-a4b9-22fcd719627a"],[{"index":{"value":4363},"size":{"value":10}},"d9e3d52f-1766-4b72-8957-e0945d7c24f5"],[{"index":{"value":4363},"size":{"value":45}},"9dd7d8b2-a694-4e12-b59e-d118a9ccb0f8"],[{"index":{"value":4363},"size":{"value":53}},"99b2bcaf-c6b7-4f42-8b33-116b2fbfdde8"],[{"index":{"value":4428},"size":{"value":14}},"214eed4a-1b46-4469-a73e-1398fea1dd01"],[{"index":{"value":4428},"size":{"value":29}},"26cf977d-d7f5-40cd-bc9d-4b4e274ecb73"],[{"index":{"value":4428},"size":{"value":36}},"056b313b-470f-4413-9d3d-956a76e89282"],[{"index":{"value":4428},"size":{"value":44}},"bdbdb4f5-09b1-4cf6-b19c-2b4303f8817a"],[{"index":{"value":4484},"size":{"value":8}},"6a8ae34e-73e3-4bdf-9845-e3922f09292c"],[{"index":{"value":4484},"size":{"value":104}},"016a468e-6439-44f7-92a5-6ff6af4f6f24"],[{"index":{"value":4484},"size":{"value":111}},"1f634d27-c093-4cc8-8929-c9bfd035a9c1"],[{"index":{"value":4607},"size":{"value":11}},"bd618f7f-bef8-43f0-9683-a65cbe5516ae"],[{"index":{"value":4607},"size":{"value":18}},"b672d8a9-79a3-46d6-8b8d-42e35e30c751"],[{"index":{"value":4607},"size":{"value":34}},"66e670ef-acf8-4138-be0d-7f531611c107"],[{"index":{"value":4653},"size":{"value":14}},"79b02af6-7a3a-49dc-bc96-9812f7241696"],[{"index":{"value":4653},"size":{"value":29}},"153fc913-4a43-41c5-a7dc-65bb55adec75"],[{"index":{"value":4653},"size":{"value":92}},"46fb025b-30d5-4852-8510-c4caf719bc81"],[{"index":{"value":4757},"size":{"value":10}},"d7a6d249-37a4-4414-9276-8e86eb6fc156"],[{"index":{"value":4757},"size":{"value":15}},"de696cca-ecdd-4bc9-a558-3d8c5c5bc20f"],[{"index":{"value":4757},"size":{"value":30}},"79510363-aff1-4fde-a358-faa0d1399451"],[{"index":{"value":4800},"size":{"value":11}},"4a530dcc-576f-4b2e-a15f-f1f0999ea935"],[{"index":{"value":4800},"size":{"value":18}},"e1818fa5-b931-43d0-b122-87e91faec52f"],[{"index":{"value":4800},"size":{"value":38}},"26da4aed-754c-4251-92df-f79a758c351e"],[{"index":{"value":4852},"size":{"value":11}},"fa93677f-2ef3-4d09-9ffb-c961e92824ca"],[{"index":{"value":4852},"size":{"value":16}},"440245db-7657-4e0f-a41e-0a829f79419d"],[{"index":{"value":4881},"size":{"value":49}},"b9117f36-e113-430b-b96a-7ee447e72d1f"],[{"index":{"value":4942},"size":{"value":11}},"9dc42e57-4e49-47d7-ac6c-7d0599b066c9"],[{"index":{"value":4942},"size":{"value":59}},"a6c4497f-a0bb-4db8-bfe0-d797843b2315"],[{"index":{"value":4942},"size":{"value":85}},"087c498a-9b40-46e5-9a5f-9788e975c4ac"]]
+{"ide":{"node":{"719874c1-73ce-454a-8b32-bddffec06fc1":{"position":{"vector":[-322,636]}},"0c22ca1a-91a7-4018-b713-0c889fe5602f":{"position":{"vector":[-31,87]}},"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-385,564]},"visualization":{"show":false,"width":1129.671875,"height":143.91873672633494}},"0e3b209b-fc14-4dae-ad37-eca889d99a88":{"position":{"vector":[-377,388]},"visualization":{"show":false,"width":1129.671875,"height":252}},"b9315f8f-3287-405d-9875-e37d3c24490a":{"position":{"vector":[-387,492]},"visualization":{"show":false,"width":767.375,"height":152.38954888501215}},"a124556e-1b55-400e-999f-f47eaf98ab77":{"position":{"vector":[93,184]}},"9aa32e76-fa89-4232-acbb-e90c925c145d":{"position":{"vector":[252,184]}},"91ccf1b2-0d2d-4287-aaeb-bfa87fefcc46":{"position":{"vector":[-389,420]}},"07dbd094-b7bf-48e6-acd0-26789cc35eaa":{"position":{"vector":[-377,124]}},"c171be2e-d882-47fb-a4b9-22fcd719627a":{"position":{"vector":[-389,348]}},"6c6c7c26-fadf-40c3-adce-1a1bcd61356c":{"position":{"vector":[260,75]}},"99b2bcaf-c6b7-4f42-8b33-116b2fbfdde8":{"position":{"vector":[-389,258]},"visualization":{"show":false,"width":1045.9993031325848}},"9dd7d8b2-a694-4e12-b59e-d118a9ccb0f8":{"position":{"vector":[-377,-93]}},"d9e3d52f-1766-4b72-8957-e0945d7c24f5":{"position":{"vector":[-377,52]}},"bdbdb4f5-09b1-4cf6-b19c-2b4303f8817a":{"position":{"vector":[-389,129]},"visualization":{"show":false,"width":696.84765625,"height":303.98828125}},"056b313b-470f-4413-9d3d-956a76e89282":{"position":{"vector":[-343,90]}},"26cf977d-d7f5-40cd-bc9d-4b4e274ecb73":{"position":{"vector":[-343,90]}},"214eed4a-1b46-4469-a73e-1398fea1dd01":{"position":{"vector":[-343,90]}},"1f634d27-c093-4cc8-8929-c9bfd035a9c1":{"position":{"vector":[-389,25]},"visualization":{"show":true,"width":830.3933413607402,"height":198.06829300667476}},"016a468e-6439-44f7-92a5-6ff6af4f6f24":{"position":{"vector":[-343,-286]}},"6a8ae34e-73e3-4bdf-9845-e3922f09292c":{"position":{"vector":[-343,-286]}},"66e670ef-acf8-4138-be0d-7f531611c107":{"position":{"vector":[11,-245]},"visualization":{"show":false,"width":659.57421875,"height":451.21875}},"b672d8a9-79a3-46d6-8b8d-42e35e30c751":{"position":{"vector":[249,-699]}},"bd618f7f-bef8-43f0-9683-a65cbe5516ae":{"position":{"vector":[249,-699]}},"46fb025b-30d5-4852-8510-c4caf719bc81":{"position":{"vector":[474,149]},"visualization":{"show":true,"height":215.9325034132282}},"153fc913-4a43-41c5-a7dc-65bb55adec75":{"position":{"vector":[479,-288]}},"79b02af6-7a3a-49dc-bc96-9812f7241696":{"position":{"vector":[479,-288]}},"79510363-aff1-4fde-a358-faa0d1399451":{"position":{"vector":[372,-343]},"visualization":{"show":true,"width":702.9193530036408}},"de696cca-ecdd-4bc9-a558-3d8c5c5bc20f":{"position":{"vector":[1137,-1107]}},"d7a6d249-37a4-4414-9276-8e86eb6fc156":{"position":{"vector":[1137,-1107]}},"26da4aed-754c-4251-92df-f79a758c351e":{"position":{"vector":[-385,-432]}},"e1818fa5-b931-43d0-b122-87e91faec52f":{"position":{"vector":[711,-882]}},"4a530dcc-576f-4b2e-a15f-f1f0999ea935":{"position":{"vector":[711,-882]}},"440245db-7657-4e0f-a41e-0a829f79419d":{"position":{"vector":[-387,-612]}},"fa93677f-2ef3-4d09-9ffb-c961e92824ca":{"position":{"vector":[650,-1361]}},"b9117f36-e113-430b-b96a-7ee447e72d1f":{"position":{"vector":[-387,-684]},"visualization":{"show":true,"width":768.6399423543689,"height":333.8984375}},"087c498a-9b40-46e5-9a5f-9788e975c4ac":{"position":{"vector":[-389,-1117]}},"a6c4497f-a0bb-4db8-bfe0-d797843b2315":{"position":{"vector":[-338,-996]}},"9dc42e57-4e49-47d7-ac6c-7d0599b066c9":{"position":{"vector":[-338,-996]}}},"widget":{},"import":{},"snapshot":"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"}}

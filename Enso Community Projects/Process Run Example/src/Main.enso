@@ -1,0 +1,41 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## ICON group
+f2_c any2 =
+    process_result1 = Process.run '/bin/zsh' ["/Users/ensouser/scripts/convert_temp.sh", any2]
+    text1 = process_result1.stdout
+    text1
+
+## ICON group
+f_2_c any5 =
+    process_result1 = Process.run '/bin/zsh' ["/Users/ensouser/scripts/convert_temp.sh", any5]
+    text4 = process_result1.stdout
+    text4
+
+main =
+    table1 = Table.input [['Temp in F', ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120']]]
+    ## Shell Script needs a temperature in Fahrenheit passed as a string, so we convert here.
+    any1 = table1.format ['Temp in F']
+    ## Get the column, so we can use a map function which executes for each item in the column
+    column1 = any1.get 'Temp in F'
+    ## Use Process.run to execute the shell script, passing degrees F and returning degrees C
+    text1 = Main.f2_c
+    any3 = column1.map text1
+    any4 = any1.set any3 "Temp in C"
+    table2 = any4.parse ['Temp in F', 'Temp in C'] ..Float
+    text3 = "212"
+    ## Test for the f2c function that executes the shell script, passing degrees F and returning degrees C
+    text2 = Main.f2_c text3
+
+
+
+#### METADATA ####
+[[{"index":{"value":270},"size":{"value":4}},"329a4e11-2b2b-4fa4-982d-3c5cd43180c7"],[{"index":{"value":299},"size":{"value":11}},"4c4ebed5-1900-4f14-aad3-cc986989c725"],[{"index":{"value":299},"size":{"value":22}},"be2bd7d8-93ec-40c1-80cd-21311a0b3a86"],[{"index":{"value":299},"size":{"value":72}},"c7c61c73-40bd-47d5-b19f-f2e29f08b4b3"],[{"index":{"value":384},"size":{"value":22}},"b5859c6f-c037-4808-9b29-852b73ba38b4"],[{"index":{"value":411},"size":{"value":5}},"fd1a9afb-3a60-48ed-8117-3f1b7e21991a"],[{"index":{"value":438},"size":{"value":4}},"5b714736-10b7-47ac-a75b-444063b659d2"],[{"index":{"value":467},"size":{"value":72}},"73c3cc38-b74d-4564-b05e-2152308257fc"],[{"index":{"value":552},"size":{"value":22}},"cce6607d-b40b-47c1-8c94-bdcf2fcb3c20"],[{"index":{"value":579},"size":{"value":5}},"197aad16-294f-4426-8f15-abd2cd8bb9d0"],[{"index":{"value":606},"size":{"value":11}},"2d689a94-ac17-4cf4-8aac-b3d51994f44e"],[{"index":{"value":606},"size":{"value":104}},"c7d171bd-b5ad-4738-b5c9-dff1383c2bfd"],[{"index":{"value":816},"size":{"value":13}},"c2a7bc13-1319-4be4-bf41-86a356fc132b"],[{"index":{"value":816},"size":{"value":27}},"cdea4138-e679-464e-a83a-2fd22b61a83f"],[{"index":{"value":953},"size":{"value":8}},"75dc0b30-f0ef-46ca-80fd-414aa361445b"],[{"index":{"value":953},"size":{"value":20}},"1bee1a39-e228-4028-97aa-95ceb50c820a"],[{"index":{"value":1080},"size":{"value":9}},"99dbfeaf-9fca-4a98-9551-de9010c04f53"],[{"index":{"value":1101},"size":{"value":11}},"eb46cd1e-6f38-4708-9e30-45c590c9ad51"],[{"index":{"value":1101},"size":{"value":17}},"33d23c6b-cb90-4ce0-a062-289622ef0258"],[{"index":{"value":1130},"size":{"value":8}},"f8e3cded-f616-4d56-938e-0ee00b40e170"],[{"index":{"value":1130},"size":{"value":13}},"1f4383ac-0fb3-45b6-80bb-e55e36db0f64"],[{"index":{"value":1130},"size":{"value":25}},"f7c8f3c7-a163-4cb0-b20c-bc61cb368ca8"],[{"index":{"value":1169},"size":{"value":10}},"98bbecde-bcf5-4ede-9c1a-f7e176d5b555"],[{"index":{"value":1169},"size":{"value":37}},"71997031-6f81-4ac9-b93c-fbe8681f5196"],[{"index":{"value":1169},"size":{"value":45}},"1cf6cab2-41bf-4e8e-8d04-41ba8de354a6"],[{"index":{"value":1227},"size":{"value":5}},"03c6594e-83ce-4da5-8895-ac4972183609"],[{"index":{"value":1352},"size":{"value":9}},"d9ecb086-661b-445b-9864-558a4053dc37"],[{"index":{"value":1352},"size":{"value":15}},"8e6bd5f5-7344-45b6-ab1c-ad5fb7dcebf4"]]
+{"ide":{"node":{"329a4e11-2b2b-4fa4-982d-3c5cd43180c7":{"position":{"vector":[261,89]}},"c7c61c73-40bd-47d5-b19f-f2e29f08b4b3":{"position":{"vector":[261,17]}},"be2bd7d8-93ec-40c1-80cd-21311a0b3a86":{"position":{"vector":[261,17]}},"4c4ebed5-1900-4f14-aad3-cc986989c725":{"position":{"vector":[261,17]}},"b5859c6f-c037-4808-9b29-852b73ba38b4":{"position":{"vector":[261,-55]},"visualization":{"show":true,"width":555.1171875}},"fd1a9afb-3a60-48ed-8117-3f1b7e21991a":{"position":{"vector":[-16,16]}},"5b714736-10b7-47ac-a75b-444063b659d2":{"position":{"vector":[1855,796]}},"73c3cc38-b74d-4564-b05e-2152308257fc":{"position":{"vector":[1855,724]},"visualization":{"show":true}},"cce6607d-b40b-47c1-8c94-bdcf2fcb3c20":{"position":{"vector":[1855,494]},"visualization":{"show":true,"width":555.1171875}},"197aad16-294f-4426-8f15-abd2cd8bb9d0":{"position":{"vector":[1855,272]}},"c7d171bd-b5ad-4738-b5c9-dff1383c2bfd":{"position":{"vector":[1014,154]}},"2d689a94-ac17-4cf4-8aac-b3d51994f44e":{"position":{"vector":[803,-277]}},"cdea4138-e679-464e-a83a-2fd22b61a83f":{"position":{"vector":[1014,17]},"visualization":{"show":true}},"c2a7bc13-1319-4be4-bf41-86a356fc132b":{"position":{"vector":[983,-444]}},"1bee1a39-e228-4028-97aa-95ceb50c820a":{"position":{"vector":[1170,-205]}},"75dc0b30-f0ef-46ca-80fd-414aa361445b":{"position":{"vector":[983,-666]}},"99dbfeaf-9fca-4a98-9551-de9010c04f53":{"position":{"vector":[1423,-349]}},"33d23c6b-cb90-4ce0-a062-289622ef0258":{"position":{"vector":[1126,-421]},"visualization":{"show":true,"width":305.8026302856149,"height":169.24609375}},"eb46cd1e-6f38-4708-9e30-45c590c9ad51":{"position":{"vector":[1127,-522]}},"f7c8f3c7-a163-4cb0-b20c-bc61cb368ca8":{"position":{"vector":[1043,-662]},"visualization":{"show":false,"width":532.3828125,"height":202.83984375}},"1f4383ac-0fb3-45b6-80bb-e55e36db0f64":{"position":{"vector":[1021,-950]}},"f8e3cded-f616-4d56-938e-0ee00b40e170":{"position":{"vector":[1027,-950]}},"1cf6cab2-41bf-4e8e-8d04-41ba8de354a6":{"position":{"vector":[1043,-734]},"visualization":{"show":true,"height":364.7884170384083}},"71997031-6f81-4ac9-b93c-fbe8681f5196":{"position":{"vector":[1021,-1225]}},"98bbecde-bcf5-4ede-9c1a-f7e176d5b555":{"position":{"vector":[1021,-1225]}},"03c6594e-83ce-4da5-8895-ac4972183609":{"position":{"vector":[1855,-421]}},"8e6bd5f5-7344-45b6-ab1c-ad5fb7dcebf4":{"position":{"vector":[1635,-499]},"visualization":{"show":true,"width":289.7723095717939}},"d9ecb086-661b-445b-9864-558a4053dc37":{"position":{"vector":[1635,-499]}}},"widget":{"c7d171bd-b5ad-4738-b5c9-dff1383c2bfd":{"WidgetTableEditor":{"size":{"x":349.42578125,"y":88.609375}}}},"snapshot":"eJy1U8tu2zAQvOsrFvZBF4OOFaePQw6p2wQ99AE4aQ+GYWyklUVUIgXusnl8fUDKsuwGSS/tZSRxV7Ozo1HpbANLQVOgK9QHZALdtNYJYF0n5VH1Gm/rV8ofUfD2VYKLn8uXi1fWbmvaXLT65Z6lsXdljb+OZuxu902f7rFpa+JnhR+aPdb6EUVbkyTjMXxefPsKW2d9m5TZJgc0DxmcJwAArbM5MW8csa9lBufwvTtRzhtIp7faTB+5SmE1mt4wOZ6SYeuZ3JRzp1vhaW7Nb3KyEWpaxdVoEvnXkV7oPpL+MUaxFNbL0PJM5man8+w/6zwbdM7/rnOeJA1qs9MkIShBSkyM0qb1AqtVek1NC9rAZTqBVTo7SSeQZhFPI84jnkV8E/FtxHcR30ecnXSX7u1ZdpKu153U8RiWFdU1LONeYIgKBoSwFjkU7ygOx8qRqUgLtMhMBWDoYnHabCfAFu4IdpZARY5UZEfzEDbqVlOldQ0KHK60F3FFAlIFjto3Zs+IBjwTIDTYQulNHlIId5XOK6B7yr0QQ2kdEOYVaKEm8A5Ekb67DUKCHrUlgQMJvYIbpqMUiO0nRD6OLnVffxJN0GYLBW0dEcMloCnAkXhnDs8XR7n9gtqo8M/05pzCea9OhQ279O6K814wk3TNo171YjREJuva5qpFxwTHgdk/LNI1KHVZWxzyF6aPslk26i24JpboZli4zPLBcalQBsP/hR/ZoR+dnOQJesS3QQ=="}}

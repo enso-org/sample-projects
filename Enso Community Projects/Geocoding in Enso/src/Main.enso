@@ -1,0 +1,82 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## ICON group
+   ## Function purposeGeocodes a single address using the Google Geocode API
+
+   **Input:** A Google formatted address (input fields separated by a  + character) on a single line. 
+
+
+   **For example:**
+   ```
+   1600+Amphitheatre+Parkway,+Mountain+View,+CA
+   ```
+
+
+   **Returns:** formatted address, latitude, longitude, location type, type 0 through N.
+
+   ## NOTE:
+   > Requires google api key. Mine is stored as an Enso Secret available with any paid version of Enso. You may use a plain text Google API key, but note that this makes your Google API account vulnerable. Please ensure you have placed limitations on record volume or IP address to reduce risk if you choose to use a plain text password.
+google_geocode in_address =
+    any17 = URI.parse 'https://maps.googleapis.com/maps/api/geocode/json?'
+    uri1 = any17.add_query_argument 'address' in_address
+    uri2 = uri1.add_query_argument 'key' (Enso_Secret.get 'GoogleAPIKey')
+    any4 = Data.fetch uri2
+    node8 = any4.get 'results'
+    any6 = node8.to_table
+    any12 = any6.remove_columns ['address_components', 'navigation_points', 'place_id'] on_problems=..Ignore
+    any7 = any12.expand_column 'geometry' [] ..None
+    any8 = any7.expand_column 'location' prefix=..None
+    any13 = any8.remove_columns ['viewport', 'bounds'] on_problems=..Ignore
+    any10 = any13.expand_column 'types' [] ..Column_Name
+    any2 = any10.remove_columns ['plus_code', 'partial_match'] on_problems=..Ignore
+    any1 = any2.rename_columns [(Pair.Value 'lng' 'longitude'), (Pair.Value 'lat' 'latitude')]
+    any1
+
+## # Third Party Data Enrichment
+
+   ## Using the Google Maps API to Geocode!
+
+
+   ![Image](/images/image_1.png)
+
+
+   Learn more and sign up for an API key here:
+
+   <https://developers.google.com/maps/documentation/geocoding/overview>
+main =
+    any5 = Table.input [['Address', ['838 Mesa Ct', '1102 Royal Ct', '2495 Ginny Way', Nothing, '1600 Pennsylvania Ave', ' 919 Lorne Way']], ['City', ['Palo Alto', 'Wheaton', 'Lafayette', 'Corona Del Mar', 'Washington', 'Sunnyvale ']], ['State', ['CA', 'IL', 'CO', 'CA', 'DC', 'CA']], ['ZIP', ['94306', '60187', '80026', '92625', Nothing, '94087']]]
+    ## Ensure Post Code is treated as a string
+    any2 = any5.cast ['ZIP'] ..Char
+    ## this is the collapsed function that geocodes a single address
+    any10 = Main.google_geocode
+    ## Handle Missing Data in a Column
+    any9 = any2.fill_nothing ['Address', 'City', 'State', 'ZIP'] ""
+    ## Create Single Address Column
+    any11 = any9.set (expr '[Address] + "+"+ [City] +"+"+[State]+"+"+[ZIP]') "Full Address"
+    ## Get this column, which allows us to map over it (for each loop)
+    any16 = any11.at 'Full Address'
+    ## Loop over each address
+    any3 = any16.map any10
+    ## The map returns a table of tables. This creates a single table from all returned rows
+    any4 = Table.from_union any3 ..In_Any
+    ## Add back the original data
+    any6 = any2.zip any4
+    ## Test function for a Single Address
+    any7 = any16.at 4
+    any8 = Main.google_geocode any7
+
+
+
+#### METADATA ####
+[[{"index":{"value":1084},"size":{"value":10}},"bb484c73-35dd-4428-896f-091c45b5295f"],[{"index":{"value":1109},"size":{"value":62}},"771c6394-c5fb-4e2e-9db8-a9926ff23dd0"],[{"index":{"value":1183},"size":{"value":24}},"f7c7cb26-e206-4264-a9ae-078148eaf49d"],[{"index":{"value":1183},"size":{"value":34}},"780e0185-0895-41ea-ab4a-bdcc112df05c"],[{"index":{"value":1183},"size":{"value":45}},"780e0185-0895-41ea-ab4a-bdcc112df05c"],[{"index":{"value":1240},"size":{"value":62}},"d16619da-74a1-4231-8c28-6fd9d89b8a57"],[{"index":{"value":1314},"size":{"value":15}},"cc2b64df-f267-412b-8d85-a3a14ea598f1"],[{"index":{"value":1342},"size":{"value":18}},"938f89d9-9b6d-44d6-a960-2d1810119483"],[{"index":{"value":1372},"size":{"value":14}},"ad508c59-f979-42b6-865c-9dbd0191d4ea"],[{"index":{"value":1399},"size":{"value":19}},"aaabf146-412b-4204-aefc-8659cb94d705"],[{"index":{"value":1399},"size":{"value":75}},"de8b280d-2459-4baf-9d7f-ab3a705c1780"],[{"index":{"value":1399},"size":{"value":96}},"0e5be71c-cb1e-45d4-93cd-f76a5759139a"],[{"index":{"value":1507},"size":{"value":19}},"74f6c1ac-1910-48ec-8476-182156de6c37"],[{"index":{"value":1507},"size":{"value":30}},"e6ed1e49-0d10-4d3a-8df6-b830072670b7"],[{"index":{"value":1507},"size":{"value":33}},"93b1c611-ea71-4e26-bde4-5f16215d832d"],[{"index":{"value":1507},"size":{"value":40}},"a6fa3a28-53a4-476a-bd1f-837b013f325d"],[{"index":{"value":1559},"size":{"value":18}},"0b87e3be-f4d6-4ef2-a92d-59ae4317d45f"],[{"index":{"value":1559},"size":{"value":29}},"54101f7f-8ce2-4f3b-85c8-433b7ea346c5"],[{"index":{"value":1559},"size":{"value":43}},"2c3247ea-9a61-4313-8e3f-810f962f59e9"],[{"index":{"value":1615},"size":{"value":19}},"ecb3c495-230e-4e4f-bd63-5710ab450d87"],[{"index":{"value":1615},"size":{"value":42}},"3ec3af8c-dfe7-43ff-8eed-58c3883bdc44"],[{"index":{"value":1615},"size":{"value":63}},"5f0e6fc0-b617-4897-92b4-24ccd13c2f43"],[{"index":{"value":1691},"size":{"value":19}},"8955e029-f482-448c-85da-164c4de4c91c"],[{"index":{"value":1691},"size":{"value":27}},"38fa343c-6d4e-49f0-b8ca-b1b096f85ea5"],[{"index":{"value":1691},"size":{"value":30}},"edbfbcb3-68b1-432e-bf2e-1fc212eb1560"],[{"index":{"value":1691},"size":{"value":44}},"6e195cec-16d9-46a8-b677-5b86d74fba7a"],[{"index":{"value":1747},"size":{"value":20}},"8feb9196-d722-4b83-bfb5-4888018dcc7f"],[{"index":{"value":1747},"size":{"value":51}},"5c214529-2ae9-4365-9b46-9e39f71b388f"],[{"index":{"value":1747},"size":{"value":72}},"edf21557-5abf-4994-a1b7-1276056bf274"],[{"index":{"value":1831},"size":{"value":19}},"f3093fdc-1478-4889-a432-72de038058df"],[{"index":{"value":1831},"size":{"value":83}},"3f67e9e7-0609-4bb2-8e73-7acef7dde848"],[{"index":{"value":1919},"size":{"value":4}},"d0aa2fbb-f391-4fa6-a9c9-56209706d783"],[{"index":{"value":2179},"size":{"value":11}},"c0779c43-49e7-4224-b04e-8cebbd60a2ff"],[{"index":{"value":2179},"size":{"value":338}},"9cfd0905-856c-41e0-909d-0d838809a69e"],[{"index":{"value":2576},"size":{"value":9}},"2d9add5f-e5ad-47d2-a367-dda7612c6591"],[{"index":{"value":2576},"size":{"value":17}},"d06bde49-d63b-4fcd-99f9-4bacaae84d17"],[{"index":{"value":2576},"size":{"value":24}},"d2aad0da-d65f-4a84-b259-c0a512785008"],[{"index":{"value":2682},"size":{"value":19}},"36e92e28-cc77-490d-806a-611f3e8a96ca"],[{"index":{"value":2752},"size":{"value":17}},"ba269741-9899-4f67-9e41-2e0f8ccac72f"],[{"index":{"value":2752},"size":{"value":53}},"f01df88e-7dca-4f10-bfb8-4cfc2102b7ef"],[{"index":{"value":2752},"size":{"value":56}},"309a8933-64b6-4b97-8720-0cfdf6e384fa"],[{"index":{"value":2857},"size":{"value":8}},"845227e4-8682-46fa-850a-0c38a4d8a59a"],[{"index":{"value":2857},"size":{"value":64}},"6587527f-194d-401c-9992-fa3679a28b9b"],[{"index":{"value":2857},"size":{"value":79}},"68706ae0-2005-4952-afcb-1b05a3c59b50"],[{"index":{"value":3020},"size":{"value":8}},"beeb3cc8-b09d-484d-be06-7346f255daa2"],[{"index":{"value":3020},"size":{"value":23}},"507aceaa-1e04-49cb-a90b-037fb037e6c7"],[{"index":{"value":3085},"size":{"value":9}},"f669a51d-c6ed-400e-8c23-e3150c38c0ea"],[{"index":{"value":3085},"size":{"value":15}},"2ee72bff-c899-4412-b8f0-88eb9cdfa155"],[{"index":{"value":3205},"size":{"value":16}},"a89dc16b-2cc1-40d7-8673-f4b3f802ec6c"],[{"index":{"value":3205},"size":{"value":21}},"9460b9d5-4abd-4a0a-bb26-93b7eb6e6ba2"],[{"index":{"value":3205},"size":{"value":30}},"88ec123a-85ed-4bec-a3cf-8d0d4ba94aaa"],[{"index":{"value":3281},"size":{"value":8}},"5f45de60-3633-48ff-a62f-43be150d6f5e"],[{"index":{"value":3281},"size":{"value":13}},"8e101253-6561-49e7-8c3e-95896f98723b"],[{"index":{"value":3348},"size":{"value":8}},"2fb6aa3b-ac6d-4d38-afc6-3509a0bdbbb8"],[{"index":{"value":3348},"size":{"value":10}},"2ba41554-49dd-4b9a-af29-7f7aacfeef4a"],[{"index":{"value":3370},"size":{"value":19}},"9424eeea-92c9-4128-b456-08e187ce8ab5"],[{"index":{"value":3370},"size":{"value":24}},"641ae0da-0e65-4bbe-b0b2-0180361e98de"]]
+{"ide":{"node":{"bb484c73-35dd-4428-896f-091c45b5295f":{"position":{"vector":[31,-915]}},"771c6394-c5fb-4e2e-9db8-a9926ff23dd0":{"position":{"vector":[-345,-809]}},"780e0185-0895-41ea-ab4a-bdcc112df05c":{"position":{"vector":[-345,-987]}},"f7c7cb26-e206-4264-a9ae-078148eaf49d":{"position":{"vector":[-264,-1198]}},"d16619da-74a1-4231-8c28-6fd9d89b8a57":{"position":{"vector":[-345,-1059]},"visualization":{"show":false,"width":1005.1484375,"height":107.0121322874039}},"cc2b64df-f267-412b-8d85-a3a14ea598f1":{"position":{"vector":[-352,-1198]},"visualization":{"show":false,"width":858.84765625}},"938f89d9-9b6d-44d6-a960-2d1810119483":{"position":{"vector":[-352,-1270]},"visualization":{"show":false,"width":952.1046514443583}},"ad508c59-f979-42b6-865c-9dbd0191d4ea":{"position":{"vector":[-352,-1342]},"visualization":{"show":false,"width":615.6796875}},"0e5be71c-cb1e-45d4-93cd-f76a5759139a":{"position":{"vector":[-352,-1414]},"visualization":{"show":false,"width":1678.9808659144812}},"de8b280d-2459-4baf-9d7f-ab3a705c1780":{"position":{"vector":[-352,-1591]},"visualization":{"show":false,"width":1678.9808659144812}},"aaabf146-412b-4204-aefc-8659cb94d705":{"position":{"vector":[309,-2786]}},"a6fa3a28-53a4-476a-bd1f-837b013f325d":{"position":{"vector":[-352,-1486]},"visualization":{"show":false,"width":621.3203125}},"93b1c611-ea71-4e26-bde4-5f16215d832d":{"position":{"vector":[188,-2818]},"visualization":{"show":true,"width":621.3203125}},"e6ed1e49-0d10-4d3a-8df6-b830072670b7":{"position":{"vector":[188,-2818]},"visualization":{"show":true}},"74f6c1ac-1910-48ec-8476-182156de6c37":{"position":{"vector":[188,-2818]}},"2c3247ea-9a61-4313-8e3f-810f962f59e9":{"position":{"vector":[-352,-1558]},"visualization":{"show":false,"width":1031.561970893568}},"54101f7f-8ce2-4f3b-85c8-433b7ea346c5":{"position":{"vector":[188,-3040]},"visualization":{"show":true}},"0b87e3be-f4d6-4ef2-a92d-59ae4317d45f":{"position":{"vector":[188,-3040]}},"5f0e6fc0-b617-4897-92b4-24ccd13c2f43":{"position":{"vector":[-352,-1630]}},"3ec3af8c-dfe7-43ff-8eed-58c3883bdc44":{"position":{"vector":[-352,-1932]}},"ecb3c495-230e-4e4f-bd63-5710ab450d87":{"position":{"vector":[368,-3186]}},"6e195cec-16d9-46a8-b677-5b86d74fba7a":{"position":{"vector":[-352,-1702]},"visualization":{"show":false,"width":1011.546875}},"edbfbcb3-68b1-432e-bf2e-1fc212eb1560":{"position":{"vector":[188,-3356]},"visualization":{"show":true}},"38fa343c-6d4e-49f0-b8ca-b1b096f85ea5":{"position":{"vector":[188,-3334]},"visualization":{"show":true}},"8955e029-f482-448c-85da-164c4de4c91c":{"position":{"vector":[188,-3334]}},"edf21557-5abf-4994-a1b7-1276056bf274":{"position":{"vector":[-352,-1774]}},"5c214529-2ae9-4365-9b46-9e39f71b388f":{"position":{"vector":[-352,-2040]}},"8feb9196-d722-4b83-bfb5-4888018dcc7f":{"position":{"vector":[-263,-2044]}},"3f67e9e7-0609-4bb2-8e73-7acef7dde848":{"position":{"vector":[-352,-1846]},"visualization":{"show":true,"width":1101.5041239369075}},"f3093fdc-1478-4889-a432-72de038058df":{"position":{"vector":[-252,-2017]}},"d0aa2fbb-f391-4fa6-a9c9-56209706d783":{"position":{"vector":[-352,-2081]}},"9cfd0905-856c-41e0-909d-0d838809a69e":{"position":{"vector":[515,-987]}},"c0779c43-49e7-4224-b04e-8cebbd60a2ff":{"position":{"vector":[532,-1140]}},"d2aad0da-d65f-4a84-b259-c0a512785008":{"position":{"vector":[515,-1210]},"visualization":{"show":false,"width":925.8097273550262}},"d06bde49-d63b-4fcd-99f9-4bacaae84d17":{"position":{"vector":[604,-1191]}},"2d9add5f-e5ad-47d2-a367-dda7612c6591":{"position":{"vector":[604,-1191]}},"36e92e28-cc77-490d-806a-611f3e8a96ca":{"position":{"vector":[794,-2317]}},"309a8933-64b6-4b97-8720-0cfdf6e384fa":{"position":{"vector":[597,-1304]}},"f01df88e-7dca-4f10-bfb8-4cfc2102b7ef":{"position":{"vector":[656,-1232]}},"ba269741-9899-4f67-9e41-2e0f8ccac72f":{"position":{"vector":[656,-1232]}},"68706ae0-2005-4952-afcb-1b05a3c59b50":{"position":{"vector":[587,-1426]},"visualization":{"show":true,"width":976.1001247022517}},"6587527f-194d-401c-9992-fa3679a28b9b":{"position":{"vector":[558,-1347]}},"845227e4-8682-46fa-850a-0c38a4d8a59a":{"position":{"vector":[558,-1347]}},"507aceaa-1e04-49cb-a90b-037fb037e6c7":{"position":{"vector":[597,-1685]},"visualization":{"show":false,"width":1269.5160675048828}},"beeb3cc8-b09d-484d-be06-7346f255daa2":{"position":{"vector":[621,-1735]}},"2ee72bff-c899-4412-b8f0-88eb9cdfa155":{"position":{"vector":[597,-2389]}},"f669a51d-c6ed-400e-8c23-e3150c38c0ea":{"position":{"vector":[494,-1659]}},"88ec123a-85ed-4bec-a3cf-8d0d4ba94aaa":{"position":{"vector":[587,-2491]},"visualization":{"show":false,"width":1511.9127604166667,"height":296.2421875}},"9460b9d5-4abd-4a0a-bb26-93b7eb6e6ba2":{"position":{"vector":[587,-1792]},"visualization":{"show":false,"width":604.40234375,"height":296.2421875}},"a89dc16b-2cc1-40d7-8673-f4b3f802ec6c":{"position":{"vector":[472,-1767]}},"8e101253-6561-49e7-8c3e-95896f98723b":{"position":{"vector":[515,-2620]},"visualization":{"show":true,"width":2204.169502119786,"height":224.70071830001535,"project":{"project":"Builtin"},"name":"Table"}},"5f45de60-3633-48ff-a62f-43be150d6f5e":{"position":{"vector":[515,-2267]}},"2ba41554-49dd-4b9a-af29-7f7aacfeef4a":{"position":{"vector":[761,-1783]},"visualization":{"show":true,"width":688.8385416666666}},"2fb6aa3b-ac6d-4d38-afc6-3509a0bdbbb8":{"position":{"vector":[-18,-1617]},"visualization":{"show":true}},"641ae0da-0e65-4bbe-b0b2-0180361e98de":{"position":{"vector":[880,-2005]},"visualization":{"show":true,"width":915.8355446942232,"height":140.09470750286525,"project":{"project":"Builtin"},"name":"Table"}},"9424eeea-92c9-4128-b456-08e187ce8ab5":{"position":{"vector":[102,-2141]}}},"widget":{"9cfd0905-856c-41e0-909d-0d838809a69e":{"WidgetTableEditor":{"size":{"x":625.602914222874,"y":150}}}},"snapshot":"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","import":{}}}

@@ -1,0 +1,91 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## ![image](ea.png)
+   
+   # Preppin'Data Challenge
+   
+   # 2024: Week 40 - Vrroom 
+   
+   [October 02, 2024](https://preppindata.blogspot.com/2024/10/2024-week-40-vrroom.html "permanent link")
+   
+   ### Challenge by: [Abhishek Minz ](https://www.linkedin.com/in/abhishek-min/)
+   
+   Vrroom is an online platform for used cars where individuals and dealerships can advertise their vehicles. At present, five different dealerships are using the website. Vrroom's management team need to find out which dealership is taking the longest time (in days) to sell their vehicles through the platform.
+   
+   ## Input 
+   
+   There are [two csv data sets](https://drive.google.com/drive/folders/10kHaJX9CWSslMePonCyobFFKJtlXydCR?usp=share_link) this week:
+   
+   ### 1. The Adverts (ads) data set:
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEib8847G0GLMlBEHxs6gCCVS9AzemmJ4hu2FjqLyYCH6JNY0mV-3QjSINY5GjklQcZS8oWEEhc7ekjw3-ZeHs38P2SiykvXW5xEwpQ8h2zt381wTK4TveB8lunOPpDXguQKt4xKR3LXQk7Pd_BgYCUHsqdFvg5dYpwljxTJ63k0trwaYKsgkbI9-QHTVuUm/w640-h130/Screenshot%202024-09-25%20at%2012.40.04.png)
+   
+   ### 2. The Users data set:
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXDC5fEgAGhgMV9MWqgb_eykC8o0p_9qqe7CTje2P5O-TtX9tKxuij9HdpsJhEPhwnZntJK706-fecgwjpajofCO4EXn5HmE2QLsNx66ol46RB39nCy71JoCvdJa06Pm39j8mmbU8HYSpb_2mgo4RRxMI5vOikOiXgii3KcroMWEeCz8eYE-GC6G35-xaE/w640-h44/Screenshot%202024-09-25%20at%2012.50.17.png)
+   
+   There are 365 users of the website - each vehicle listed is classed as a different registration number.
+   
+   ## Requirements
+   
+   - [Input the data sets](https://drive.google.com/drive/folders/10kHaJX9CWSslMePonCyobFFKJtlXydCR?usp=share_link)
+   - Break the Users data set into individual records (you should have 365 rows)
+   - The User data is formed from:
+       - 1st 7 characters is the User ID
+       - The last letter signifies whether the user is a private individual ('P') or Dealership (D)
+       - The 3 characters after the User ID for Dealerships is the Dealership ID
+   - With the Ads data, remove any unsold vehicles
+   - Join the data sets together
+   - Find when an advert is first posted
+   - Only keep the records where advert was first posted
+   - Find the time between when a vehicle is first advertised on the site to when the vehicle was sold
+   - Find the average days for each sale a dealership has listed (group up to the nearest whole day)
+   - [Output the data](https://drive.google.com/file/d/16XGY8zJConch3FYZUtuI3AIqIHhC0KR9/view?usp=drive_link)
+   
+   ## Output
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhs0AwJrczZ0fs-Z9fss4NEILQLacfxZOeHO7BJcJFYW_Hov_uwNlPxkLB4lfj4uhVgVOSio_9zC7SmksqosFz7f2PCqwxzI7oaLD_04pKkjurX4L5v4VLuypbkh94bYtJIOBkv5WmJ7Fr8P4vhEXYDPSTydgY5lRRCjB-yziJM7ILiyoKfm7MiBr2ZYvyW/w400-h205/Screenshot%202024-09-27%20at%2016.05.47.png)
+   
+   ### 2 data fields:
+   
+   - Dealership ID
+   - Dealership Avg Days to Sell
+   
+   5 rows (6 rows incl. headers)
+   
+   You can view the output [here](https://drive.google.com/file/d/16XGY8zJConch3FYZUtuI3AIqIHhC0KR9/view?usp=drive_link).
+   
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+   
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help!
+main =
+    quot1 = enso_project.data/ 'users_data.csv'
+    node1 = Data.read quot1 (..Delimited headers=..Has_Headers)
+    table2 = node1.split_to_rows 'users'
+    table1 = table2.parse_to_columns 'users' '^(?<user_id>.{7})(?<dealership_id>.*?)(?<type>[PD])$'
+    node2 = Data.read enso_project.data/'ads_data.csv'
+    any4 = node2.filter 'sale_date' ..Not_Nothing
+    table3 = any4.parse ['publish_ts', 'update_ts', 'delete_ts'] ..Date_Time 'dd/MM/yyyy HH:mm:ss'
+    table4 = table3.parse ['sale_date'] ..Date 'd MMMM yyyy'
+    table6 = table4.join table1 join_kind=..Inner on=[(..Equals 'user_id')]
+    ## Remove non-dealer transactions
+    any3 = table6.filter 'type' (..Not_Equal "P")
+    any1 = any3.sort [(..Name 'publish_ts')]
+    any2 = any1.distinct ['registration_number']
+    any8 = any2.cast ['sale_date', 'publish_ts'] ..Date
+    any7 = any8.set (..Simple_Expr (..Name 'publish_ts') (..Date (..Diff (..Name 'sale_date') ..Day))) as='Days to Sell'
+    any9 = any7.aggregate ['dealership_id'] [..Average 'Days to Sell']
+    any10 = any9.set (..Simple_Expr (..Name 'Average Days to Sell') (..Math ..Ceil)) set_mode=..Update
+
+
+
+#### METADATA ####
+[[{"index":{"value":4108},"size":{"value":18}},"3aade327-c053-41f9-8c41-822cb2b7a612"],[{"index":{"value":4108},"size":{"value":35}},"b590fa95-8f98-410c-82cf-c53d8b1d8294"],[{"index":{"value":4156},"size":{"value":15}},"d646120a-f038-4c68-9e31-51e5a3619cc7"],[{"index":{"value":4156},"size":{"value":51}},"ff672570-4186-4e61-beb6-f84a9a8b870f"],[{"index":{"value":4221},"size":{"value":19}},"e5bb6237-10b7-4ac6-a921-11464e852541"],[{"index":{"value":4221},"size":{"value":27}},"b21ef715-a60a-418c-b0b5-000fe0dd5c1d"],[{"index":{"value":4262},"size":{"value":23}},"36c76ab5-fbf7-47f4-a314-a41e33d469a8"],[{"index":{"value":4262},"size":{"value":31}},"ae7fb35b-218d-4189-9fa0-7fa161aff724"],[{"index":{"value":4262},"size":{"value":86}},"3eafa7b9-f351-4e11-8379-a5071e09e0b2"],[{"index":{"value":4361},"size":{"value":42}},"99a17977-47e1-46ac-81bd-55c1cf01df82"],[{"index":{"value":4415},"size":{"value":12}},"99d216e3-5d13-4cf8-8ac3-ffedb8061abe"],[{"index":{"value":4415},"size":{"value":24}},"c7bbb31a-96a5-441f-beb9-06dadccbebc8"],[{"index":{"value":4415},"size":{"value":38}},"68c0561e-be91-4c06-81f6-8d61dc8cc561"],[{"index":{"value":4467},"size":{"value":10}},"3b7dfbaa-797d-4ac1-9b7e-c67c920b41ff"],[{"index":{"value":4467},"size":{"value":51}},"322ba2c0-8c6a-4487-b73f-240aa538921b"],[{"index":{"value":4467},"size":{"value":63}},"2a2c2cfa-93b8-4383-bdb2-6f4c853cca93"],[{"index":{"value":4467},"size":{"value":85}},"10292dfe-0c22-4f4e-92cf-505626969816"],[{"index":{"value":4566},"size":{"value":12}},"21f5e54f-47cf-4b5a-a592-cad56f00f5be"],[{"index":{"value":4566},"size":{"value":26}},"52535c6a-172c-4d59-ba70-f57986bc739a"],[{"index":{"value":4566},"size":{"value":33}},"e78d0203-d493-4194-8546-3feb610c36b9"],[{"index":{"value":4566},"size":{"value":47}},"84c30fcd-6f5a-4574-a0c3-58ebf88e3ef3"],[{"index":{"value":4627},"size":{"value":11}},"5f649c80-97ca-4134-9c8c-855e20b372ad"],[{"index":{"value":4627},"size":{"value":18}},"428183fe-1ec6-4ae6-9a30-f54ffe176d2d"],[{"index":{"value":4627},"size":{"value":36}},"e9fb9679-2837-4cb6-bfaf-4a3ce10395a1"],[{"index":{"value":4627},"size":{"value":62}},"df5d897f-49da-434b-803c-c5602069f211"],[{"index":{"value":4739},"size":{"value":13}},"86356ab4-73c9-48f1-b1cb-a38fa49fb224"],[{"index":{"value":4739},"size":{"value":20}},"47293a07-5d09-410e-98a5-38fa7f966ca2"],[{"index":{"value":4739},"size":{"value":38}},"ef0320af-4d52-4ddc-9232-2eceb84e7d44"],[{"index":{"value":4789},"size":{"value":9}},"4f165e48-4491-4df8-9152-3e14206c4592"],[{"index":{"value":4789},"size":{"value":33}},"800dde12-b649-41e9-a625-187ae73b3a4e"],[{"index":{"value":4834},"size":{"value":13}},"10a28510-4fc0-4dcb-8ed4-231778d5c2a5"],[{"index":{"value":4834},"size":{"value":37}},"fe0b1c0e-3321-4eb9-b47f-3b85a40e5060"],[{"index":{"value":4883},"size":{"value":9}},"23f4b08c-a623-4692-99f6-3431fad198a2"],[{"index":{"value":4883},"size":{"value":37}},"391acc8a-c08c-4902-aacd-6f96395adebc"],[{"index":{"value":4883},"size":{"value":44}},"57b01559-9c34-4782-8959-ced866fef330"],[{"index":{"value":4939},"size":{"value":8}},"4dbfabae-1312-4dd6-a727-7e59d439d41b"],[{"index":{"value":4939},"size":{"value":91}},"3c63d305-f806-416d-963f-99a4dc309a7a"],[{"index":{"value":4939},"size":{"value":109}},"fb35932b-a9e4-405a-8582-be7ea1203e94"],[{"index":{"value":5060},"size":{"value":14}},"6171f7e8-7e93-4076-910c-aa1483a6d1ad"],[{"index":{"value":5060},"size":{"value":32}},"4896fa98-5a49-4164-9b60-4bdb8dfad1e3"],[{"index":{"value":5060},"size":{"value":59}},"2a8babc7-21ef-4e86-a2ab-0f8ab517deea"],[{"index":{"value":5132},"size":{"value":8}},"5e27bdcc-00ce-48d8-85a5-04eff9a515aa"],[{"index":{"value":5132},"size":{"value":72}},"f02f54c2-2bab-4acf-8cab-b07c06038ef2"],[{"index":{"value":5132},"size":{"value":90}},"8f3073af-59ed-42a7-9a17-9ee480fb0459"]]
+{"ide":{"node":{"b590fa95-8f98-410c-82cf-c53d8b1d8294":{"position":{"vector":[965,95]}},"3aade327-c053-41f9-8c41-822cb2b7a612":{"position":{"vector":[651,-284]}},"ff672570-4186-4e61-beb6-f84a9a8b870f":{"position":{"vector":[723,4]}},"d646120a-f038-4c68-9e31-51e5a3619cc7":{"position":{"vector":[809,473]}},"b21ef715-a60a-418c-b0b5-000fe0dd5c1d":{"position":{"vector":[723,-68]}},"e5bb6237-10b7-4ac6-a921-11464e852541":{"position":{"vector":[-483,281]}},"3eafa7b9-f351-4e11-8379-a5071e09e0b2":{"position":{"vector":[723,-140]}},"ae7fb35b-218d-4189-9fa0-7fa161aff724":{"position":{"vector":[943,-182]}},"36c76ab5-fbf7-47f4-a314-a41e33d469a8":{"position":{"vector":[943,-182]}},"99a17977-47e1-46ac-81bd-55c1cf01df82":{"position":{"vector":[44,239]},"visualization":{"show":false,"width":792.40625}},"68c0561e-be91-4c06-81f6-8d61dc8cc561":{"position":{"vector":[44,167]}},"c7bbb31a-96a5-441f-beb9-06dadccbebc8":{"position":{"vector":[26,215]}},"99d216e3-5d13-4cf8-8ac3-ffedb8061abe":{"position":{"vector":[26,215]}},"10292dfe-0c22-4f4e-92cf-505626969816":{"position":{"vector":[44,95]}},"2a2c2cfa-93b8-4383-bdb2-6f4c853cca93":{"position":{"vector":[26,95]}},"322ba2c0-8c6a-4487-b73f-240aa538921b":{"position":{"vector":[26,95]}},"3b7dfbaa-797d-4ac1-9b7e-c67c920b41ff":{"position":{"vector":[26,95]}},"84c30fcd-6f5a-4574-a0c3-58ebf88e3ef3":{"position":{"vector":[44,23]}},"e78d0203-d493-4194-8546-3feb610c36b9":{"position":{"vector":[26,23]}},"52535c6a-172c-4d59-ba70-f57986bc739a":{"position":{"vector":[26,23]}},"21f5e54f-47cf-4b5a-a592-cad56f00f5be":{"position":{"vector":[26,23]}},"df5d897f-49da-434b-803c-c5602069f211":{"position":{"vector":[44,-212]}},"e9fb9679-2837-4cb6-bfaf-4a3ce10395a1":{"position":{"vector":[32,-121]}},"428183fe-1ec6-4ae6-9a30-f54ffe176d2d":{"position":{"vector":[-34,-117]}},"5f649c80-97ca-4134-9c8c-855e20b372ad":{"position":{"vector":[-34,-117]}},"ef0320af-4d52-4ddc-9232-2eceb84e7d44":{"position":{"vector":[44,-305]}},"47293a07-5d09-410e-98a5-38fa7f966ca2":{"position":{"vector":[132,-270]}},"86356ab4-73c9-48f1-b1cb-a38fa49fb224":{"position":{"vector":[132,-270]}},"800dde12-b649-41e9-a625-187ae73b3a4e":{"position":{"vector":[44,-399]}},"4f165e48-4491-4df8-9152-3e14206c4592":{"position":{"vector":[122,-258]}},"fe0b1c0e-3321-4eb9-b47f-3b85a40e5060":{"position":{"vector":[44,-471]}},"10a28510-4fc0-4dcb-8ed4-231778d5c2a5":{"position":{"vector":[122,-330]}},"57b01559-9c34-4782-8959-ced866fef330":{"position":{"vector":[44,-543]}},"391acc8a-c08c-4902-aacd-6f96395adebc":{"position":{"vector":[92,-789]}},"23f4b08c-a623-4692-99f6-3431fad198a2":{"position":{"vector":[92,-789]}},"fb35932b-a9e4-405a-8582-be7ea1203e94":{"position":{"vector":[44,-615]},"visualization":{"show":false,"width":1165.609375}},"3c63d305-f806-416d-963f-99a4dc309a7a":{"position":{"vector":[44,-781]}},"4dbfabae-1312-4dd6-a727-7e59d439d41b":{"position":{"vector":[44,-781]}},"2a8babc7-21ef-4e86-a2ab-0f8ab517deea":{"position":{"vector":[44,-687]},"visualization":{"show":false,"height":248}},"4896fa98-5a49-4164-9b60-4bdb8dfad1e3":{"position":{"vector":[44,-949]}},"6171f7e8-7e93-4076-910c-aa1483a6d1ad":{"position":{"vector":[44,-949]}},"8f3073af-59ed-42a7-9a17-9ee480fb0459":{"position":{"vector":[44,-759]},"visualization":{"show":true,"height":227}},"f02f54c2-2bab-4acf-8cab-b07c06038ef2":{"position":{"vector":[44,-1072]},"visualization":{"show":true}},"5e27bdcc-00ce-48d8-85a5-04eff9a515aa":{"position":{"vector":[44,-1072]}}},"import":{}}}

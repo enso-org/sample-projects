@@ -1,0 +1,89 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## ### 2024: Week 16 - Budget vs Actuals
+
+   [April 17, 2024](https://preppindata.blogspot.com/2024/04/2024-week-16-budget-vs-actuals.html "permanent link")
+
+   Challenge by: Michał Mioduchowski
+
+   We're continuing with DS43's challenges so over to [Michał](https://www.thedataschool.co.uk/blog/michal-mioduchowski/) to explain the next challenge. 
+
+   _____________________________________
+
+   For this week, Superbytes has requested us to look at their budget sheet for 2022. The company believes that their rough budget estimates were very close to the final budget allocations for that year. Examining historical budget data allows the company to identify trends in spending patterns over time. This can provide valuable insights into how expenses have evolved and help predict future expenditure trends. CEO Phil Down would like us to find the exact areas of mismatch between predicted and actual spending.
+
+   ### Inputs
+
+   There are 2 inputs for this challenge:
+
+   - Forecasted Spending
+    ![](https://lh7-eu.googleusercontent.com/gSyi9H-IN0rOd6SmwF7K1YF59bm7otma1_AMiyiWv5O9KNoHJjMjeBToDsxFFPDC7LicESfMdTa5FYt5jlTDw_QIE673dRJWrxjYsjaxIhJeKKmXp-JGbtI4EFAVf6bnytyY5a7RqWMFvoFSCu6rGKA)
+
+   - Actual Spending
+   ![](https://lh7-eu.googleusercontent.com/SMIstRe1J2jKiC-YBLtwBB4Dy-rJ4hC7vrmnxIBqk-_bfNqFWHyeAu0d4I6wj1sy9XC124floldfLLOGJdPudl2EMeX5wmg6pZdZg-TV8D4ZB4R0LG3nbujWY0roRjIlvmHpPtbLIpOx3Dx9xN7pbv8)
+
+   ### Requirements
+
+   - [Input the Excel file](https://docs.google.com/spreadsheets/d/1GmmqjupiYjqE9vb45KyGudAJyF0G6_1n/edit?usp=drive_link&ouid=113142875990517226017&rtpof=true&sd=true)
+   - Match Sheet 1 and Sheet 2 in formatting. Both should include:
+       - Category field [String]
+       - Budget/Actual field [Number (Decimal)]
+   - Join both sheets based on Category field to create a single table with 3 columns:
+       - Category [String]
+       - Budget [Number]
+       - Actual [Number]
+   - Rename the fields to:
+       - Category
+       - Forecasted Spending
+       - Actual Spending
+   - Create a new calculated column with the differences between forecasted and actual values.
+       - Values in the new column should be rounded to whole numbers [ROUND(...)]
+   - Output the data
+
+   ### Output
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEwdPJVXL33gzeUoI7ww2oH5IKcrw2sgMrJtMtPWQoXQ3N_1fmUrwsC5_4nETnsGDQI7MX_1f3HxtjIkZChhcw-tz4ZYU9pjvQNyFVtZneW6AHK5SFuTwWQIDLX_Lk3qq_i8VHj7xLAyrJKWuNuLzrx17HVouTYV0dgaB6D565ncWlGqX-wJsOevKn3j9H/s320/Screenshot%202024-03-13%20132341.png)
+
+   - 4 fields
+       - Category
+       - Forecasted Spending 
+       - Actual Spending
+       - Difference
+   - 9 rows
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+
+
+
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help! 
+main =
+    ## Data for this project contained within the project itself to simplify delivery of the sample. Users will generally not use this method but rather pass in the path and filename to the excel file in the next component.
+    node4 = enso_project.data/'Budget Data 2022 (Beginner).xlsx'
+    node1 = Data.read node4
+    table1 = node1.read 'Budget' ..Has_Headers
+    table2 = node1.read 'Actual' ..Has_Headers
+    any1 = table1.remove_columns ['Notes']
+    any3 = any1.rename_columns [(Pair.Value '2022' 'Category')]
+    any2 = any3.filter 'Category' Filter_Condition.Not_Nothing
+    any4 = any2.cast ['Budget'] Value_Type.Char
+    column1 = any4.text_replace ['Budget'] 'K' '000'
+    table3 = column1.parse
+    node2 = table2.rename_columns [(Pair.Value '2022' 'Category')]
+    node3 = node2.filter 'Actual' Filter_Condition.Not_Nothing
+    column2 = table3.text_replace ['Category'] ' ' ''
+    table4 = column2.join node3 Join_Kind.Inner [(Join_Condition.Equals 'Category')] 'Right'
+    any5 = table4.rename_columns [(Pair.Value 'Budget' 'Forecasted Spending'), (Pair.Value 'Actual' 'Actual Spending')]
+    any6 = any5.set (Simple_Expression.From (Column_Ref.Name 'Actual Spending') (Simple_Calculation.Subtract (Column_Ref.Name 'Forecasted Spending'))) 'Difference'
+    any7 = any6.set (Simple_Expression.From (Column_Ref.Name 'Difference') (Simple_Calculation.Round 0)) 'Difference'
+    ## You will need to change this to a path on your local system
+    any8 = any7.write '/Users/ensouser/Documents/Preppin Data Challenges/Week 16/Output.xlsx' (Excel_Format.Workbook default_sheet='Output')
+
+
+
+#### METADATA ####
+[[{"index":{"value":3793},"size":{"value":17}},"e638f8b3-4911-48d4-9e98-7941a6a6f5b3"],[{"index":{"value":3793},"size":{"value":52}},"af65a99d-1f56-4373-a5c5-a9ea287f3b39"],[{"index":{"value":3858},"size":{"value":15}},"52a24aad-b026-4ae7-ba0a-5a50688c25e3"],[{"index":{"value":3887},"size":{"value":10}},"3dba6669-4395-4c49-856e-034be0f57fa6"],[{"index":{"value":3887},"size":{"value":19}},"9e33607a-b0a0-4000-9ff5-3fd1da1f3a2e"],[{"index":{"value":3887},"size":{"value":33}},"51e8fb17-eb04-4544-89d9-11836535770a"],[{"index":{"value":3934},"size":{"value":10}},"45ae4e6a-9553-4813-8dac-3dd7c407f8e9"],[{"index":{"value":3934},"size":{"value":19}},"f8c200c0-4f58-4ae0-b5a9-2469c6779bbe"],[{"index":{"value":3934},"size":{"value":33}},"75ec5b7e-693b-491e-a4e8-a3efeaac040c"],[{"index":{"value":3979},"size":{"value":21}},"1333f000-df60-48c8-af8b-085f15ba60fc"],[{"index":{"value":3979},"size":{"value":31}},"e69e5c3b-37d9-4bb7-aeb4-2c17dce9680e"],[{"index":{"value":4022},"size":{"value":19}},"1adb83a9-71c5-4437-adec-3c189ed317d2"],[{"index":{"value":4022},"size":{"value":52}},"2c2da2f2-8ff3-4f79-b40c-9a403bb9ce78"],[{"index":{"value":4086},"size":{"value":11}},"f73d2073-6379-4243-8302-aa2c009219be"],[{"index":{"value":4086},"size":{"value":22}},"29e52fab-4bf4-4984-93e0-267d998dc7d4"],[{"index":{"value":4086},"size":{"value":51}},"735fe755-795c-434a-bca7-986f056867b9"],[{"index":{"value":4149},"size":{"value":9}},"1ea83781-1471-4e11-9c5c-81a0e0649cec"],[{"index":{"value":4149},"size":{"value":20}},"658833e5-d202-4043-b37c-ab7c9298bff6"],[{"index":{"value":4149},"size":{"value":36}},"6f04db6e-489c-4a84-a1bf-e8f4bbf628d5"],[{"index":{"value":4200},"size":{"value":17}},"e988c7c7-b0f9-4539-8dbf-c1bf5a813f61"],[{"index":{"value":4200},"size":{"value":28}},"88d45290-6fcf-4ab3-ba51-bebf86ec356a"],[{"index":{"value":4200},"size":{"value":32}},"96edf41c-552f-4e73-8ec9-15b1edd80e8f"],[{"index":{"value":4200},"size":{"value":38}},"6787b376-1fd1-4255-aee9-87c92bc34bfd"],[{"index":{"value":4252},"size":{"value":13}},"78e7789b-009e-4f45-91fa-c70c354d6985"],[{"index":{"value":4278},"size":{"value":54}},"9bdafb90-8491-4e85-bf6e-b98ba3436665"],[{"index":{"value":4345},"size":{"value":50}},"2dc46616-5e25-4f98-a2d9-27293bdae19c"],[{"index":{"value":4410},"size":{"value":19}},"0ac72b1d-aed6-4d20-8ad6-dfebc2e68059"],[{"index":{"value":4410},"size":{"value":32}},"7a604a01-d3aa-4ed2-9756-f2ecda530f18"],[{"index":{"value":4410},"size":{"value":36}},"72188f0a-5308-4f79-9077-54c354b44b66"],[{"index":{"value":4410},"size":{"value":39}},"ef867dd6-82d2-4d81-a687-1117e1652c0c"],[{"index":{"value":4463},"size":{"value":12}},"0ed5f5b8-193c-4d90-b813-915b2bbd62a3"],[{"index":{"value":4463},"size":{"value":18}},"ee47afd0-649a-49a3-913a-53941a931279"],[{"index":{"value":4463},"size":{"value":34}},"4c12c44c-7edb-45e9-a264-37e9b253a95f"],[{"index":{"value":4463},"size":{"value":71}},"44c1be81-54fa-442d-8bfe-435dd67836a6"],[{"index":{"value":4463},"size":{"value":79}},"79546d17-b513-417c-a164-5b7e13ceca97"],[{"index":{"value":4554},"size":{"value":21}},"d05b9b67-9795-469e-91ac-910024d48e39"],[{"index":{"value":4554},"size":{"value":108}},"c53c32d0-30e3-4b2e-8ab7-6856d337de5c"],[{"index":{"value":4674},"size":{"value":8}},"c84c6a51-f194-4bbb-b4f8-d85a92f74a8f"],[{"index":{"value":4674},"size":{"value":139}},"d6f9f2ec-2820-47b4-9969-9a57a55cfd1e"],[{"index":{"value":4674},"size":{"value":152}},"92cd5455-422c-409e-8f73-70af3f6f53fe"],[{"index":{"value":4838},"size":{"value":8}},"efbd44db-67d8-4b90-9549-34d7be2828ab"],[{"index":{"value":4838},"size":{"value":93}},"e5553d51-0991-4896-a62e-a3beaee484e0"],[{"index":{"value":4838},"size":{"value":106}},"9505fff9-bb9e-4c86-ba5a-58981544849c"],[{"index":{"value":5023},"size":{"value":10}},"ab1f31be-49f3-44b1-a0ab-245cd14bb005"],[{"index":{"value":5023},"size":{"value":82}},"706e7bff-fdce-4493-bd70-1a7247c82f93"],[{"index":{"value":5023},"size":{"value":129}},"89e86285-b2c9-46b4-98bf-7985ebd8ec2c"]]
+{"ide":{"node":{"af65a99d-1f56-4373-a5c5-a9ea287f3b39":{"position":{"vector":[-257,322]}},"e638f8b3-4911-48d4-9e98-7941a6a6f5b3":{"position":{"vector":[217,329]}},"52a24aad-b026-4ae7-ba0a-5a50688c25e3":{"position":{"vector":[-227,202]}},"51e8fb17-eb04-4544-89d9-11836535770a":{"position":{"vector":[-292,138]},"visualization":{"show":true,"width":490.81640625}},"9e33607a-b0a0-4000-9ff5-3fd1da1f3a2e":{"position":{"vector":[-292,138]},"visualization":{"show":true,"width":490.81640625}},"3dba6669-4395-4c49-856e-034be0f57fa6":{"position":{"vector":[-148,114]}},"75ec5b7e-693b-491e-a4e8-a3efeaac040c":{"position":{"vector":[238,138]},"visualization":{"show":true,"width":471.78515625}},"f8c200c0-4f58-4ae0-b5a9-2469c6779bbe":{"position":{"vector":[238,138]},"visualization":{"show":true,"width":471.78515625}},"45ae4e6a-9553-4813-8dac-3dd7c407f8e9":{"position":{"vector":[241,114]}},"e69e5c3b-37d9-4bb7-aeb4-2c17dce9680e":{"position":{"vector":[-292,-105]},"visualization":{"show":false,"width":504.78515625}},"1333f000-df60-48c8-af8b-085f15ba60fc":{"position":{"vector":[-158,-137]}},"2c2da2f2-8ff3-4f79-b40c-9a403bb9ce78":{"position":{"vector":[-292,-169]}},"1adb83a9-71c5-4437-adec-3c189ed317d2":{"position":{"vector":[-233,-371]}},"735fe755-795c-434a-bca7-986f056867b9":{"position":{"vector":[-292,-233]}},"29e52fab-4bf4-4984-93e0-267d998dc7d4":{"position":{"vector":[-267,-392]}},"f73d2073-6379-4243-8302-aa2c009219be":{"position":{"vector":[-267,-392]}},"6f04db6e-489c-4a84-a1bf-e8f4bbf628d5":{"position":{"vector":[-292,-297]}},"658833e5-d202-4043-b37c-ab7c9298bff6":{"position":{"vector":[-241,-299]}},"1ea83781-1471-4e11-9c5c-81a0e0649cec":{"position":{"vector":[-241,-299]}},"6787b376-1fd1-4255-aee9-87c92bc34bfd":{"position":{"vector":[-292,-361]}},"96edf41c-552f-4e73-8ec9-15b1edd80e8f":{"position":{"vector":[-292,-361]}},"88d45290-6fcf-4ab3-ba51-bebf86ec356a":{"position":{"vector":[-292,-297]}},"e988c7c7-b0f9-4539-8dbf-c1bf5a813f61":{"position":{"vector":[-292,-297]}},"78e7789b-009e-4f45-91fa-c70c354d6985":{"position":{"vector":[-292,-425]}},"9bdafb90-8491-4e85-bf6e-b98ba3436665":{"position":{"vector":[262,-169]}},"2dc46616-5e25-4f98-a2d9-27293bdae19c":{"position":{"vector":[294,-515]}},"ef867dd6-82d2-4d81-a687-1117e1652c0c":{"position":{"vector":[-292,-489]}},"72188f0a-5308-4f79-9077-54c354b44b66":{"position":{"vector":[-292,-489]}},"7a604a01-d3aa-4ed2-9756-f2ecda530f18":{"position":{"vector":[-292,-489]}},"0ac72b1d-aed6-4d20-8ad6-dfebc2e68059":{"position":{"vector":[-292,-489]}},"79546d17-b513-417c-a164-5b7e13ceca97":{"position":{"vector":[-292,-600]}},"44c1be81-54fa-442d-8bfe-435dd67836a6":{"position":{"vector":[-292,-600]}},"4c12c44c-7edb-45e9-a264-37e9b253a95f":{"position":{"vector":[-292,-489]}},"ee47afd0-649a-49a3-913a-53941a931279":{"position":{"vector":[-292,-489]}},"0ed5f5b8-193c-4d90-b813-915b2bbd62a3":{"position":{"vector":[-292,-489]}},"c53c32d0-30e3-4b2e-8ab7-6856d337de5c":{"position":{"vector":[-292,-664]}},"d05b9b67-9795-469e-91ac-910024d48e39":{"position":{"vector":[-196,-743]}},"92cd5455-422c-409e-8f73-70af3f6f53fe":{"position":{"vector":[-292,-711]}},"d6f9f2ec-2820-47b4-9969-9a57a55cfd1e":{"position":{"vector":[-164,-804]}},"c84c6a51-f194-4bbb-b4f8-d85a92f74a8f":{"position":{"vector":[-164,-804]}},"9505fff9-bb9e-4c86-ba5a-58981544849c":{"position":{"vector":[-292,-775]},"visualization":{"show":true,"width":867.8310058625447,"height":216.62231521010418}},"e5553d51-0991-4896-a62e-a3beaee484e0":{"position":{"vector":[-167,-1109]},"visualization":{"show":true}},"efbd44db-67d8-4b90-9549-34d7be2828ab":{"position":{"vector":[-167,-1109]}},"89e86285-b2c9-46b4-98bf-7985ebd8ec2c":{"position":{"vector":[-292,-1104]}},"706e7bff-fdce-4493-bd70-1a7247c82f93":{"position":{"vector":[-292,-1041]}},"ab1f31be-49f3-44b1-a0ab-245cd14bb005":{"position":{"vector":[-174,-1051]}}},"widget":{},"import":{},"snapshot":"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"}}

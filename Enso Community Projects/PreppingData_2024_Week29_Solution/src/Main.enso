@@ -1,0 +1,134 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## ICON group
+select_session node2 integer1 = 
+    any1 = node2.aggregate columns=[..Minimum 'date_start' 'Start']
+    sum1 = integer1 + 2
+    any2 = any1.set (..Simple_Expr (..Name 'Start') (..Date (..Add sum1 Time_Period.Minute))) 'End'
+    table1 = node2.join any2 ..Inner [..Between 'date_start' 'Start' 'End']
+    any3 = table1.filter 'lap_duration' ..Not_Nothing
+    any4 = any3.sort [(..Name 'driver_number'), (..Name 'lap_duration')]
+    any5 = any4.distinct ['driver_number']
+    any6 = any5.sort [(..Name 'lap_duration')]
+    any6
+
+## # 2024: Week 29 - Formula 1 Qualifying Special
+   
+   ![image](austria2024.png)
+   
+   ### **Thank you to The Data School for another incredible Preppin' Data Challenge!**
+   
+   This one can be found at [https://preppindata.blogspot.com/2024/07/2024-week-29-formula-1-qualifying.html](https://preppindata.blogspot.com/2024/07/2024-week-29-formula-1-qualifying.html)
+   
+   [July 17, 2024](https://preppindata.blogspot.com/2024/07/2024-week-29-formula-1-qualifying.html "permanent link")
+   
+   Challenge by: [Dan Wade](https://www.thedataschool.co.uk/blog/dan-wade/)
+   
+   Dan is part of Data School cohort DS42 and has recently set himself a challenge to create [24 Formula 1 vizzes](https://public.tableau.com/app/profile/vizgrowth/vizzes), one for each race week of the season. Naturally, this means he's had to do a lot of data preparation so he's been very generous to also prepare a challenge for our Sports themed July. Over to Dan to explain the challenge.
+   
+   In Formula 1, each driver participates in a qualifying session which sets the starting grid for the race. A good qualifying result can give a driver a better starting position, which can be crucial for a strong race performance and being in front reduces the risk of being involved in accidents.
+   
+   Qualifying is made up of three rounds, Q1, Q2 and Q3. It begins with Q1, where all 20 drivers compete for 18 minutes; the five slowest are eliminated and placed in positions 16-20. Q2 follows, lasting 15 minutes, with the remaining 15 drivers vying for the fastest times; the five slowest are then eliminated and placed in positions 11-15. Finally, in Q3, the top 10 drivers from Q2 compete for 12 minutes to set the fastest lap times, with the quickest driver earning pole position and the others filling positions 2-10.
+   
+   The data set contains every single lap-time recorded in the session including all warm-ups and cool down laps. Your task is to arrange this data to produce an output of
+   the final qualifying result.
+   
+   Tip: You can identify when a session ends and another starts by observing a larger gap in start times
+   
+   ## Inputs
+   
+   The data this week comes from the [OpenF1 API](https://openf1.org/).
+   
+   1. Qualifying Lap Times 
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTwGQ6fSKy7KFH-PDlMoA6K8gD3QVSO7anVqbFroypcmU8s_aUqdu20fO2y3hVRNVbpN3ALqOKtPhSe6x89jlBZ_kn9PViFzyoOl1JQxbWpfmWm7BaeL7p-DW2t0opq604DhaqiDk6NryAG1IkR5CB2_QtlWMTS4Vd3867bPSWUDDEBT2L7041w82Mcpl5/s1756/Screenshot%202024-07-16%20111301.png)
+   2. Drivers and Constructor Details 
+   ![image](table3.png)
+   
+   ## Requirements
+   
+   - [Input the data](https://drive.google.com/drive/folders/1xKX7wwbNfttU3TeoYUn7VXSyqU-kSPZB?usp=drive_link)
+   - Clean the date_start field to make it useable as a date
+   - **Identify Q1 times**
+   - Identify the earliest date_start of the session (This is shortly after Q1 began)
+   - Calculate when Q1 ended using the guidelines above
+   - Allow an extra 2 minutes to catch all drivers
+   - Filter to keep only Q1 times
+   - Identify the quickest lap time per driver
+   - Rank the drivers AND filter to keep only the 5 slowest (P16-P20)
+   - **Identify Q2 times**
+   - Filter out Q1 times
+   - Identify the earliest date_start of the session
+   - Calculate when Q2 ended using the guidelines above 
+   - Allow an extra 2 minutes to catch all drivers
+   - Use a calculated field to identify Q2 times and Q3 times
+   - Filter to keep only Q2 times
+   - Identify the quickest lap time per driver
+   - Rank the drivers AND filter the 5 slowest (P11-P15)
+   - **Identify Q3 times**
+   - From the calculated field where you identified Q3 times, filter out the Q2 times
+   - Identify the quickest lap time per driver
+   - Rank the drivers (P1-P10)
+   - Union Q1, Q2 and Q3 together
+   - Join to your driver data
+   - Sort to get the correct order for the output
+   - [Output the data](https://drive.google.com/file/d/1A0_9aC72zJrmQVTyUz8OgAMN7zB-Vhgs/view?usp=drive_link)
+   
+   ## Output
+   
+   ![image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiptaRHghQI62dnEQuLPv-RHW13_4Qce9X1x9Je7Hk7bkGXlOzfvKZ52IHzCDibFv2vEjlhb52x56lT54k_7tgs4mK6K-6VKqPx5LqKFhhyJ9_xn2oRpyVKPynFHnKlUobLzzNMtZz3hY2xuLcO70F3IdjruiBDpGAFd3zLZRMOYOQkkRPbFbUKiVctsDW/s831/Screenshot%202024-07-16%20111438.png)
+   
+   - 6 fields
+   - Position
+   - driver_number
+   - driver_code
+   - driver_name
+   - constructor_sponsor_name
+   - lap_duration
+   - 20 rows (21 including headers)
+   
+   You can view the outputs [here](https://drive.google.com/file/d/1A0_9aC72zJrmQVTyUz8OgAMN7zB-Vhgs/view?usp=drive_link).
+   
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+   
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help!
+main =
+    integer1 = 18
+    integer2 = 15
+    integer3 = 12
+    ## We have packaged the data files into this project to simplify opening this project. 
+       Typically, users would reference the  file from their local drive in the Data.read below.
+       
+    quot1 = enso_project.data/ 'Drivers.csv'
+    node1 = Data.read quot1
+    ## We have packaged the data files into this project to simplify opening this project. 
+       Typically, users would reference the  file from their local drive in the Data.read below.
+    quot2 = enso_project.data/"13 - Qualifying Preppin' Data.csv"
+    node2 = Data.read quot2
+    any6 = Main.select_session node2 integer1
+    table2 = any6.take (..Last 5)
+    any1 = any6.get_value 'End' 0
+    any2 = node2.filter 'date_start' (..Greater any1)
+    any3 = Main.select_session any2 integer2
+    table1 = any3.take (..Last 5)
+    any5 = any3.get_value 'End' 0
+    any4 = any2.filter 'date_start' (..Greater any5)
+    any7 = Main.select_session any4 integer3
+    any8 = table2.set "Q1" 'session_name'
+    any9 = table1.set "Q2" 'session_name'
+    any10 = any7.set "Q3" 'session_name'
+    node3 = any10.union [any9, any8]
+    table3 = node3.add_row_number 'Position' order_by=[(..Name 'session_name' ..Descending), (..Name 'lap_duration')]
+    any11 = table3.merge node1 ['driver_number'] True
+    any12 = any11.sort [(..Name 'Position')]
+    any13 = any12.select_columns ['Position', 'driver_code', 'driver_name', 'constructor_sponsor_name', 'lap_duration'] reorder=True
+
+
+
+#### METADATA ####
+[[{"index":{"value":249},"size":{"value":15}},"9a8f5785-815f-49b1-82c8-5712223cb3b0"],[{"index":{"value":249},"size":{"value":56}},"76e2b3d6-7e74-4e76-9d74-7b663cb393ad"],[{"index":{"value":317},"size":{"value":12}},"4a737b2a-b1f0-4f8b-8195-942337119bf3"],[{"index":{"value":341},"size":{"value":8}},"df55b4d2-3c36-4f2f-bec4-8e46c0d4e6b7"],[{"index":{"value":341},"size":{"value":82}},"fd579d3f-3e32-401c-8a8d-5e3825a6bf48"],[{"index":{"value":341},"size":{"value":88}},"a490e1a3-082a-49e4-bfff-2f31e1b19193"],[{"index":{"value":443},"size":{"value":10}},"eab43d0c-f379-434e-a4b2-9351174e9432"],[{"index":{"value":443},"size":{"value":15}},"ee3865ed-6d8e-4849-935c-709fc26bd9f4"],[{"index":{"value":443},"size":{"value":23}},"9320825a-26e1-4fbe-8f46-73cd7ec1e069"],[{"index":{"value":443},"size":{"value":62}},"6cf4d19e-faf2-4dc4-b779-02035eecff35"],[{"index":{"value":517},"size":{"value":13}},"6f3d5906-85a5-456a-94e8-cbe049af0f48"],[{"index":{"value":517},"size":{"value":28}},"0cf3b281-6a5c-435f-8973-c8e36653bda5"],[{"index":{"value":517},"size":{"value":42}},"cfc4d5dd-31c3-435a-b969-0dc8cc152b9c"],[{"index":{"value":571},"size":{"value":9}},"a10f0c02-3cbe-4e2a-bfc4-48165048a3cb"],[{"index":{"value":571},"size":{"value":61}},"019f1ed4-3ca1-4b3e-812b-be244ec29804"],[{"index":{"value":644},"size":{"value":13}},"332556e4-4c3b-4de3-9411-714d6b8a758c"],[{"index":{"value":644},"size":{"value":31}},"46cae311-9970-4b76-802e-cad5d0b11bf8"],[{"index":{"value":687},"size":{"value":9}},"0eb79719-0f2c-45f2-9f75-df8e1c0373d5"],[{"index":{"value":687},"size":{"value":35}},"c8c20942-669e-4058-99a3-f95beb78167c"],[{"index":{"value":727},"size":{"value":4}},"115a2653-b279-41fb-9b25-cbb4da03d3f9"],[{"index":{"value":6102},"size":{"value":2}},"d08dfef6-16da-496c-9ff8-9cc1b692cd71"],[{"index":{"value":6120},"size":{"value":2}},"29e0249e-8b94-4755-87a8-1f485b40e484"],[{"index":{"value":6138},"size":{"value":2}},"5102eb5e-2297-477f-b6af-82907a7962ad"],[{"index":{"value":6350},"size":{"value":18}},"9ae9e740-422e-45ad-8418-210bff08d131"],[{"index":{"value":6350},"size":{"value":32}},"beb6dd32-392a-486c-bea1-04c35cf80d3a"],[{"index":{"value":6395},"size":{"value":15}},"7048c3ee-6080-4d7b-9f8f-a6ff7bed14ce"],[{"index":{"value":6612},"size":{"value":53}},"b0ed8548-af9a-4e0b-bed4-b5f85fdd598a"],[{"index":{"value":6678},"size":{"value":15}},"d6ba8159-6bc9-4764-89c3-a20efa1d098f"],[{"index":{"value":6705},"size":{"value":34}},"1719fcf9-4a72-4983-9aa8-d831ab20242d"],[{"index":{"value":6753},"size":{"value":9}},"c2c40a73-612f-40cb-907d-0604ca77e878"],[{"index":{"value":6753},"size":{"value":20}},"92473fed-a573-4d49-8bcc-8a44bbfb530a"],[{"index":{"value":6785},"size":{"value":14}},"cce49f3a-0717-4f8b-9945-056ce87116f8"],[{"index":{"value":6785},"size":{"value":20}},"15170352-8316-4cbc-868a-30d28a06cfd9"],[{"index":{"value":6785},"size":{"value":22}},"a82b86ca-10f9-4135-af70-a3b2a6ece961"],[{"index":{"value":6819},"size":{"value":12}},"f0530f69-9405-4c70-a142-1b0496e0e867"],[{"index":{"value":6819},"size":{"value":25}},"780dfce4-87bf-484c-9ff2-4a0f45afb19c"],[{"index":{"value":6819},"size":{"value":42}},"9d4d60ae-fa1f-47e4-a8be-2fad54a3f66b"],[{"index":{"value":6873},"size":{"value":33}},"a0b2dacd-7a26-4adf-a93e-03b03dd5d539"],[{"index":{"value":6920},"size":{"value":20}},"bafa023f-1468-45c8-90dd-e46e5097f7fb"],[{"index":{"value":6952},"size":{"value":22}},"0cf6ef5a-7913-4460-8371-6f82b124bda7"],[{"index":{"value":6986},"size":{"value":41}},"3157a48c-2730-4928-94df-af8d544071f2"],[{"index":{"value":7039},"size":{"value":33}},"66ce59a6-3853-40f9-9ebf-776da2274f0b"],[{"index":{"value":7084},"size":{"value":10}},"5874e2ca-659e-4dd5-aa0e-7b457699f749"],[{"index":{"value":7084},"size":{"value":15}},"9a6e97ea-7548-47d5-84ad-47191df7b7e4"],[{"index":{"value":7084},"size":{"value":30}},"2a9d1ad0-c919-46c8-b395-a3cafce3c569"],[{"index":{"value":7126},"size":{"value":30}},"d1c123d7-3ca1-466c-8060-a2626cba62f2"],[{"index":{"value":7169},"size":{"value":28}},"7061cf54-ea44-46e1-a1e4-4a9297e4011b"],[{"index":{"value":7210},"size":{"value":24}},"0617dd3d-728d-448a-8b10-44e0d59f90f1"],[{"index":{"value":7248},"size":{"value":20}},"455320b9-f5e5-415f-9c79-7f496db31148"],[{"index":{"value":7248},"size":{"value":31}},"cbd3472f-fda4-45e4-984d-54ed364fcd8e"],[{"index":{"value":7248},"size":{"value":104}},"f83802ef-6b42-4c6c-ba91-93243056d993"],[{"index":{"value":7365},"size":{"value":12}},"9798273b-effb-4511-be53-83896f718161"],[{"index":{"value":7365},"size":{"value":18}},"396c30c2-31f9-41e6-b396-1dc0cf5bf760"],[{"index":{"value":7365},"size":{"value":36}},"427b354f-36df-4fea-abf2-635419ddc3ca"],[{"index":{"value":7365},"size":{"value":41}},"d8b0571c-a5fa-4f04-a50d-83e5f1ed0ce3"],[{"index":{"value":7419},"size":{"value":10}},"10c86a56-a27b-4823-9008-838d409f703e"],[{"index":{"value":7419},"size":{"value":32}},"001a85f3-036e-4918-b3a6-be54ba55daa9"],[{"index":{"value":7464},"size":{"value":20}},"ce3beed1-8fdf-4e69-b4c9-5832d08b6afb"],[{"index":{"value":7464},"size":{"value":107}},"91ba87b2-11b7-4a3e-886f-302befd7f355"],[{"index":{"value":7464},"size":{"value":120}},"2eead914-a1d2-4e60-ba4e-02722b356223"]]
+{"ide":{"node":{"76e2b3d6-7e74-4e76-9d74-7b663cb393ad":{"position":{"vector":[-72,-130]}},"9a8f5785-815f-49b1-82c8-5712223cb3b0":{"position":{"vector":[86,-197]}},"4a737b2a-b1f0-4f8b-8195-942337119bf3":{"position":{"vector":[640,-170]}},"a490e1a3-082a-49e4-bfff-2f31e1b19193":{"position":{"vector":[-72,-202]}},"fd579d3f-3e32-401c-8a8d-5e3825a6bf48":{"position":{"vector":[86,-269]}},"df55b4d2-3c36-4f2f-bec4-8e46c0d4e6b7":{"position":{"vector":[86,-269]}},"6cf4d19e-faf2-4dc4-b779-02035eecff35":{"position":{"vector":[-135,-274]}},"9320825a-26e1-4fbe-8f46-73cd7ec1e069":{"position":{"vector":[-198,-364]}},"ee3865ed-6d8e-4849-935c-709fc26bd9f4":{"position":{"vector":[-198,-364]}},"eab43d0c-f379-434e-a4b2-9351174e9432":{"position":{"vector":[-198,-364]}},"cfc4d5dd-31c3-435a-b969-0dc8cc152b9c":{"position":{"vector":[-26,-365]}},"0cf3b281-6a5c-435f-8973-c8e36653bda5":{"position":{"vector":[-26,-365]}},"6f3d5906-85a5-456a-94e8-cbe049af0f48":{"position":{"vector":[-26,-365]}},"019f1ed4-3ca1-4b3e-812b-be244ec29804":{"position":{"vector":[-135,-476]}},"a10f0c02-3cbe-4e2a-bfc4-48165048a3cb":{"position":{"vector":[-198,-508]}},"46cae311-9970-4b76-802e-cad5d0b11bf8":{"position":{"vector":[-135,-546]}},"332556e4-4c3b-4de3-9411-714d6b8a758c":{"position":{"vector":[-135,-490]},"visualization":{"show":true,"fullscreen":false}},"c8c20942-669e-4058-99a3-f95beb78167c":{"position":{"vector":[-135,-618]}},"0eb79719-0f2c-45f2-9f75-df8e1c0373d5":{"position":{"vector":[-135,-562]}},"115a2653-b279-41fb-9b25-cbb4da03d3f9":{"position":{"vector":[-135,-690]}},"d08dfef6-16da-496c-9ff8-9cc1b692cd71":{"position":{"vector":[29,-130]}},"29e0249e-8b94-4755-87a8-1f485b40e484":{"position":{"vector":[11,-419]}},"5102eb5e-2297-477f-b6af-82907a7962ad":{"position":{"vector":[-132,-734]}},"beb6dd32-392a-486c-bea1-04c35cf80d3a":{"position":{"vector":[-188,-1384]}},"9ae9e740-422e-45ad-8418-210bff08d131":{"position":{"vector":[436,-1284]}},"7048c3ee-6080-4d7b-9f8f-a6ff7bed14ce":{"position":{"vector":[-258,-1475]}},"b0ed8548-af9a-4e0b-bed4-b5f85fdd598a":{"position":{"vector":[-337,236]}},"d6ba8159-6bc9-4764-89c3-a20efa1d098f":{"position":{"vector":[-372,132]},"visualization":{"show":true,"fullscreen":false,"width":853.6875}},"1719fcf9-4a72-4983-9aa8-d831ab20242d":{"position":{"vector":[-234,-188]}},"92473fed-a573-4d49-8bcc-8a44bbfb530a":{"position":{"vector":[206,-301]},"visualization":{"show":true,"fullscreen":false,"width":558.453125,"project":{"project":"Builtin"},"name":"Table"}},"c2c40a73-612f-40cb-907d-0604ca77e878":{"position":{"vector":[-135,-634]}},"a82b86ca-10f9-4135-af70-a3b2a6ece961":{"position":{"vector":[-267,-260]}},"15170352-8316-4cbc-868a-30d28a06cfd9":{"position":{"vector":[-369,-300]}},"cce49f3a-0717-4f8b-9945-056ce87116f8":{"position":{"vector":[-369,-300]}},"9d4d60ae-fa1f-47e4-a8be-2fad54a3f66b":{"position":{"vector":[-363,-332]}},"780dfce4-87bf-484c-9ff2-4a0f45afb19c":{"position":{"vector":[-435,-401]}},"f0530f69-9405-4c70-a142-1b0496e0e867":{"position":{"vector":[-435,-401]}},"a0b2dacd-7a26-4adf-a93e-03b03dd5d539":{"position":{"vector":[-234,-491]}},"bafa023f-1468-45c8-90dd-e46e5097f7fb":{"position":{"vector":[106,-680]},"visualization":{"show":true,"fullscreen":false,"width":558.453125}},"0cf6ef5a-7913-4460-8371-6f82b124bda7":{"position":{"vector":[-284,-562]}},"3157a48c-2730-4928-94df-af8d544071f2":{"position":{"vector":[-363,-634]}},"66ce59a6-3853-40f9-9ebf-776da2274f0b":{"position":{"vector":[-363,-806]},"visualization":{"show":true,"fullscreen":false}},"2a9d1ad0-c919-46c8-b395-a3cafce3c569":{"position":{"vector":[245,-574]}},"9a6e97ea-7548-47d5-84ad-47191df7b7e4":{"position":{"vector":[316,-532]}},"5874e2ca-659e-4dd5-aa0e-7b457699f749":{"position":{"vector":[316,-532]}},"d1c123d7-3ca1-466c-8060-a2626cba62f2":{"position":{"vector":[106,-942]}},"7061cf54-ea44-46e1-a1e4-4a9297e4011b":{"position":{"vector":[-363,-1068]}},"0617dd3d-728d-448a-8b10-44e0d59f90f1":{"position":{"vector":[-132,-1140]}},"f83802ef-6b42-4c6c-ba91-93243056d993":{"position":{"vector":[-363,-1212]}},"cbd3472f-fda4-45e4-984d-54ed364fcd8e":{"position":{"vector":[-363,-1264]}},"455320b9-f5e5-415f-9c79-7f496db31148":{"position":{"vector":[-363,-1264]}},"d8b0571c-a5fa-4f04-a50d-83e5f1ed0ce3":{"position":{"vector":[-363,-1547]}},"427b354f-36df-4fea-abf2-635419ddc3ca":{"position":{"vector":[-329,-1635]}},"396c30c2-31f9-41e6-b396-1dc0cf5bf760":{"position":{"vector":[-329,-1635]}},"9798273b-effb-4511-be53-83896f718161":{"position":{"vector":[-329,-1635]}},"001a85f3-036e-4918-b3a6-be54ba55daa9":{"position":{"vector":[-363,-1619]}},"10c86a56-a27b-4823-9008-838d409f703e":{"position":{"vector":[-329,-1707]}},"2eead914-a1d2-4e60-ba4e-02722b356223":{"position":{"vector":[-363,-1691]},"visualization":{"show":true,"fullscreen":false,"width":931.640625,"height":510}},"91ba87b2-11b7-4a3e-886f-302befd7f355":{"position":{"vector":[-329,-1779]}},"ce3beed1-8fdf-4e69-b4c9-5832d08b6afb":{"position":{"vector":[-329,-1779]}}},"import":{}}}

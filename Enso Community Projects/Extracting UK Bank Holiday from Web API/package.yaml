@@ -1,0 +1,8 @@
+name: Extracting UK Bank Holiday from Web API
+namespace: local
+version: 0.0.1
+license: ''
+authors: []
+maintainers: []
+edition: 2024.1.1-nightly.2024.3.26
+prefer-local-libraries: true

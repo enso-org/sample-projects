@@ -1,0 +1,43 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+##
+   ![Image](/images/image_1.png)
+   # Scraping Web Data - Dunkin' Donuts Locations!
+
+   **NOTE: THIS EXAMPLE ONLY WORKS IN THE US AS THEIR WEBSITE REJECTS REQUESTS FROM OUTSIDE OF THE US.**
+
+   ## 
+   **Overview of the process:**
+
+   1. Use the store locator to find stores near you.
+   2. Use the developer tools built into Chrome to find the request that the website made to get the locations.
+   3. Modify the request in Postman to expand the radius and maximum locations it will find.
+   4. Get the 3 items that Enso will need to build the request:
+       1. The URL for the POST request.
+       2. The body for the POST request.
+       3. The headers for the post request (sometimes they are not truly required).
+   5. Create the POST request in Enso.
+   6. Convert the results to a table.
+   7. Expand the nodes in the JSON that is returned to get the data!
+main =
+    any1 = Data.post 'https://www.dunkindonuts.com/bin/servlet/dsl' body=(..Text 'service=DSL&origin=39.11553139999999%2C-94.62678729999999&radius=10000&maxMatches=100000&pageSize=1&units=m&ambiguities=ignore') method=..Post [Header.accept '*/*', Header.content_type 'application/x-www-form-urlencoded' Encoding.utf_8, Header.new "header" "value"] response_format=Auto_Detect
+    any3 = any1.to_table
+    any5 = any3.expand_column 'data' prefix=..None
+    any6 = any5.expand_to_rows 'storeAttributes'
+    any4 = any6.remove_columns ['totalPages', 'searchOptions', 'deliveryPartners', 'totalResults']
+    any7 = any4.expand_column 'storeAttributes' prefix=..None
+    any8 = any7.remove_columns ['hashKey', 'geoJson', 'geohash']
+    table1 = any8.column_info
+
+
+
+#### METADATA ####
+[[{"index":{"value":1136},"size":{"value":9}},"dc24eb43-db82-4a16-97fd-3f0db620c7bc"],[{"index":{"value":1136},"size":{"value":56}},"c6ac7b58-c241-46b8-bdd3-ac78cb2ebead"],[{"index":{"value":1136},"size":{"value":199}},"ad4f82cb-3f37-4103-bee1-248a5041083b"],[{"index":{"value":1136},"size":{"value":213}},"766fe2dc-846f-43d0-a597-48c49fb6025f"],[{"index":{"value":1136},"size":{"value":336}},"564f3965-123f-491e-8424-ef364e932fc7"],[{"index":{"value":1136},"size":{"value":364}},"5329c550-27b7-4a8d-ae42-00dbdc1714ca"],[{"index":{"value":1512},"size":{"value":13}},"fc0488ec-7acf-4ab8-a10a-b6a8b77ead76"],[{"index":{"value":1537},"size":{"value":18}},"0f6d1b80-051b-4bee-93db-c7a7c79c4837"],[{"index":{"value":1537},"size":{"value":25}},"11e595bb-0a52-4db5-82b4-65b4f3bd2b74"],[{"index":{"value":1537},"size":{"value":39}},"8b57033e-1f3f-4111-aa81-7a77feb86c59"],[{"index":{"value":1588},"size":{"value":19}},"16331c29-816d-434c-8b4d-baaa439be8f3"],[{"index":{"value":1588},"size":{"value":37}},"ee5df118-cd17-4a02-82ba-ab433d6095d4"],[{"index":{"value":1637},"size":{"value":19}},"5a7448c2-6801-4d8a-96e6-91e9dabd8cd5"],[{"index":{"value":1637},"size":{"value":87}},"272dc308-e8a1-47e8-8ea4-0e071e909acf"],[{"index":{"value":1736},"size":{"value":18}},"42e7d25d-057e-4873-9e17-ae9a152f6f96"],[{"index":{"value":1736},"size":{"value":36}},"ba81fe1c-eaad-4cab-84ee-43d9b8ae1b77"],[{"index":{"value":1736},"size":{"value":50}},"daf1facc-fd46-4717-bbc1-8dce6ee419c5"],[{"index":{"value":1798},"size":{"value":19}},"35a92a19-1072-4677-b099-ad7fdf11a94f"],[{"index":{"value":1798},"size":{"value":53}},"00c967d5-5d65-49b9-93dc-2b87c5a363f7"],[{"index":{"value":1865},"size":{"value":16}},"c3ad6e7e-0d1c-4e5c-b605-bd519a15cac6"]]
+{"ide":{"node":{"5329c550-27b7-4a8d-ae42-00dbdc1714ca":{"position":{"vector":[-591,667]},"visualization":{"show":false,"height":465.5110270182292}},"564f3965-123f-491e-8424-ef364e932fc7":{"position":{"vector":[-301,-130]}},"766fe2dc-846f-43d0-a597-48c49fb6025f":{"position":{"vector":[-301,-130]}},"ad4f82cb-3f37-4103-bee1-248a5041083b":{"position":{"vector":[-301,-130]}},"c6ac7b58-c241-46b8-bdd3-ac78cb2ebead":{"position":{"vector":[-301,-130]}},"dc24eb43-db82-4a16-97fd-3f0db620c7bc":{"position":{"vector":[-301,-130]}},"fc0488ec-7acf-4ab8-a10a-b6a8b77ead76":{"position":{"vector":[-591,595]},"visualization":{"show":true,"width":922.6875}},"8b57033e-1f3f-4111-aa81-7a77feb86c59":{"position":{"vector":[-591,345]},"visualization":{"show":true,"width":1256.9036458333333,"height":148.92838541666666}},"11e595bb-0a52-4db5-82b4-65b4f3bd2b74":{"position":{"vector":[-595,-243]}},"0f6d1b80-051b-4bee-93db-c7a7c79c4837":{"position":{"vector":[-595,-243]}},"ee5df118-cd17-4a02-82ba-ab433d6095d4":{"position":{"vector":[-599,124]},"visualization":{"show":true,"width":1521.3255208333333,"height":237.86856853428174}},"16331c29-816d-434c-8b4d-baaa439be8f3":{"position":{"vector":[-595,-636]}},"272dc308-e8a1-47e8-8ea4-0e071e909acf":{"position":{"vector":[-600,-186]}},"5a7448c2-6801-4d8a-96e6-91e9dabd8cd5":{"position":{"vector":[-880,-991]}},"daf1facc-fd46-4717-bbc1-8dce6ee419c5":{"position":{"vector":[-604,-279]},"visualization":{"show":true,"width":1121.1901041666667,"height":258.78515625}},"ba81fe1c-eaad-4cab-84ee-43d9b8ae1b77":{"position":{"vector":[-595,-1036]}},"42e7d25d-057e-4873-9e17-ae9a152f6f96":{"position":{"vector":[-595,-1036]}},"00c967d5-5d65-49b9-93dc-2b87c5a363f7":{"position":{"vector":[-600,-610]},"visualization":{"show":true,"width":1522.0104166666667,"height":245.11377135319495,"project":{"project":"Builtin"},"name":"Table"}},"35a92a19-1072-4677-b099-ad7fdf11a94f":{"position":{"vector":[-569,-1620]}},"c3ad6e7e-0d1c-4e5c-b605-bd519a15cac6":{"position":{"vector":[1056,-564]},"visualization":{"show":true,"width":317.2916666666667,"height":291.44958921214237}}},"widget":{},"snapshot":"eJx9VG1P4zgQ/t5fMQu6BqrFpZR3KR+6NLuUBco15bgTQpWbTBtrHTtnT5p2f/3JTlvEcku+xJl5nnnmxZOZ0TnExFXKTcq+cIsg8kIbAi5lY/bGO+ZT+YG7z4lPPwzQe4p/7/ym9VzipFeI32NipauZ5D/eaKyPW1C05Hkh0b5z/CVsyaX4yUlo1Wjs7jYA4NPzIOdzfNlrC/e29WvSYYWa7zvALsSJ4YVQc3jCKbgq4QD6pfohVAB9rUqycKsTH9V+ajhOq3U/HEeXML4exBD93bt7uI1geH/7DzwNR99jGNzD+DqCxxh6sTsNRvAUfYkH4whG0U10NY5hFP35GMXjGL6OhncwfBzHg34Ew69rImu1vNLuLtSCwwWahcAK9AwoQyiMTtDayzWuw+DRovdY0gZBuoy1AdIwEyqtrRYUcgMrXTJHOnolpbhAqQt0BC0tTEshCYQiDVeZ0TluAzm0wX9LtASUcfKGCqdWEELOU4+cY22Xm755vS6DO52K2epNEKHgQVvKuXJMXBZ8o8JTUVpwnzlfirzMX+OBIKiElD4nH/yYwbe1ahcEYW7r9CJldQ1ViKmTcLW9qePS8aHu4jhDeBzdwsz1LkN4GMbjDY5tcEc1bqrT1cfAbg3MkKdo7BZbaEvb+veszpFEji5hXAE3CEoTkCnlyqOEwXTfxzxhcGWQE76TdG10pXrYKYMrrRZoaF2mLSVZVzsHclvuUWcMotduK52idVHcx008vK/bJywYpNKounebwaac+KdGzoWC0BfL1aoDoV8f5ssLMqLCXrbbVVWx1K9T6peJJTpvT4VqWzQLidROrQx8L8M9xsa4JAicSyQY9uPbpjZiLlTYvWCdzslJt9O9qJ8/jq4OLo7Z6dHp2fnZ0drYrC9N2Dk8PDxs5nx5xynJcG04bBZ8jrH4iWGnWSpBNsybPJ+KeSlIoA3FXGmDwT7kSJlOQ8bc1YTnaz9AxpMEC4Kg1W4Fn2FtTLQiVDShVYEQ8KKQor6k7eVBVVUHM23yg9JIVIlOMQ0gcgeh5qyk2eR8G0dhBTv1TdmBnQWXJe68uNkVWlmcuDCcwl5JetJHwoQ2fe9C6NvPSE/8dDeOk9rRZfVSTRIty1xB4IYXQGFwJpYhY/dabSmnNeVkQyE9MbqyEPj/R4/IiGlJaIMN4bgmnDKDuV7gWsPCc0CauHxw/9zgs5soN0k2LPz2OkOKUizQrB64IYXG2zxlVN/W4GUjcVZLHP9axq8p/X9F5zX77H2CGbfZd1w54TnqG6vV+ugca3nfz04d4pzV3IlQM934D+IbbGE=","import":{}}}

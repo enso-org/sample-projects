@@ -1,0 +1,112 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+# String similarity implementation using JavaScript foreign function
+# Foreign JavaScript implementation of Levenshtein distance
+foreign js levenshtein_distance a b = """
+ // Ensure we're working with strings
+ a = a !== null && a !== undefined ? String(a) : "";
+ b = b !== null && b !== undefined ? String(b) : "";
+    
+    
+ // Create matrix
+ const matrix = Array(b.length + 1).fill().map(() => Array(a.length + 1).fill(0));
+    
+ for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
+ for (let j = 0; j <= b.length; j++) matrix[j][0] = j;
+    
+ for (let j = 1; j <= b.length; j++) {
+ for (let i = 1; i <= a.length; i++) {
+ const indicator = a[i - 1] === b[j - 1] ? 0 : 1;
+ matrix[j][i] = Math.min(
+ matrix[j][i - 1] + 1, // deletion
+ matrix[j - 1][i] + 1, // insertion
+ matrix[j - 1][i - 1] + indicator // substitution
+ );
+ }
+ }
+    
+ 
+ const result = matrix[b.length][a.length];
+ 
+    
+ return result;
+
+
+# Calculate similarity score based on Levenshtein distance
+string_similarity str1 str2 =
+    # Handle edge cases
+    if str1.length == 0 && str2.length == 0 then 1.0
+    if str1.length == 0 then 0.0
+    if str2.length == 0 then 0.0
+    
+    # Calculate Levenshtein distance using JS function
+    distance = levenshtein_distance str1 str2
+    
+    # Convert to similarity score
+    max_len = if str1.length > str2.length then str1.length else str2.length
+    1.0 - (distance / max_len)
+
+# Usage example
+## ICON group
+get_string_scores any1 =
+    any2 = any1.at 'Column 1'
+    any3 = any1.at 'Column 2'
+    similarity1 = string_similarity any2 any3
+    similarity1
+
+## # 
+   # Enso Analytics - ADVANCED EXAMPLE
+
+   ## Enso Analytics Javascript Example
+
+
+   Today, Enso does not have a fuzzy match component built in. Fortunately, Enso can utilize other programming languages (with limitation).
+
+
+   In this case, I slightly modified a Javascript example that calculates edit distance between two strings.
+
+
+   ![Image](/images/image_2.png)
+
+   There is a second method that creates a score that is the percent similarity between the strings.
+
+
+   ![Image](/images/image_3.png)
+
+
+
+   Since Enso switched to using a Native Image implementation in 2025.1.1, we have to edit the package.yaml file that exists in the project root folder and add `jvm: true` as below. This will slow startup time of the project, since it switches Enso from Native Image to JVM mode, but the project should execute just as fast.
+
+
+
+   ![Image](/images/image.png)
+
+
+   In order to process all rows in a table, you will want to get the rows, and map over them to get all scores. The result can be plugged in as an input to a set function to add this as a new column.
+main =
+    string1 = "Steve"
+    string2 = "Steven"
+    similarity = string_similarity string1 string2
+    node1 = Table.input [['Column 1', ['John Smith', 'Michael Johnson', 'Robert Williams', 'William Brown', 'Richard Davis', 'Jennifer Wilson', 'Mary Taylor', 'Linda Anderson', 'Patricia Thomas', 'Elizabeth Jackson', 'Charles White', 'Joseph Harris', 'Thomas Martin', 'Christopher Thompson', 'Daniel Martinez', 'Matthew Robinson', 'David Clark', 'James Rodriguez', 'Sarah Lewis', 'Jessica Lee', 'Karen Walker', 'Nancy Hall', 'Lisa Allen', 'Betty Young', 'Barbara King']], ['Column 2', ['Jon Smith', 'Michael Johnston', 'Robert Wiliams', 'William Browne', 'Richard Davies', 'Jenifer Wilson', 'Mary Tailor', 'Linda Andersen', 'Patricia Thompson', 'Elisabeth Jackson', 'Charlie White', 'Joe Harris', 'Tom Martin', 'Chris Thompson', 'Daniel Martines', 'Mathew Robinson', 'Dave Clark', 'James Rodrigues', 'Sara Lewis', 'Jessica Li', 'Karen Waller', 'Nancy Hal', 'Liza Allen', 'Betty Jung', 'Barbara Kyng']]]
+    vector1 = node1.rows
+    similarity2 = Main.get_string_scores
+    vector2 = vector1.map similarity2
+    table1 = node1.set vector2 "String Similarity"
+
+    
+
+
+
+#### METADATA ####
+[[{"index":{"value":1789},"size":{"value":4}},"ebb23e41-cdee-4473-81b5-1ba237a84342"],[{"index":{"value":1807},"size":{"value":7}},"56dc99e9-a5c4-4335-a290-64a269ecfe49"],[{"index":{"value":1807},"size":{"value":18}},"603fb42d-5170-4782-ad73-0878e58c24de"],[{"index":{"value":1837},"size":{"value":7}},"8ce26b65-c4c2-47ca-b570-e8aa8238fdda"],[{"index":{"value":1837},"size":{"value":18}},"03d00ff7-ccb9-49bc-bd10-88cf58f299e9"],[{"index":{"value":1874},"size":{"value":27}},"bede4e9d-d731-4eb3-8eaf-29c863a7145d"],[{"index":{"value":1906},"size":{"value":11}},"7bcf4039-690c-4580-8c78-e379227581b7"],[{"index":{"value":3015},"size":{"value":7}},"b5211f12-03fe-498d-9ec4-01844a9ce666"],[{"index":{"value":3037},"size":{"value":8}},"9b20775f-5080-4bb4-a7e6-c499d1cb1460"],[{"index":{"value":3063},"size":{"value":33}},"e9796fa1-636e-43d7-a541-e65dd380c45b"],[{"index":{"value":3109},"size":{"value":890}},"ff4a16a8-4ed6-4603-be56-80b669513eb0"],[{"index":{"value":4014},"size":{"value":10}},"3e68100d-209a-4d0a-b4b6-c66df35d76cb"],[{"index":{"value":4043},"size":{"value":22}},"b5f69294-3b12-4ea4-94bc-e48afe0eb3f6"],[{"index":{"value":4080},"size":{"value":11}},"9536f4c9-a3c1-4610-b6a8-952411bfd8d8"],[{"index":{"value":4080},"size":{"value":23}},"f40b4a47-ae42-4df5-b154-5449e145d05a"],[{"index":{"value":4117},"size":{"value":9}},"df929700-6518-4042-a54b-e21c74264d7c"],[{"index":{"value":4117},"size":{"value":17}},"79b08c76-51d9-4ffd-b190-fab448794d42"],[{"index":{"value":4117},"size":{"value":37}},"4664fc6c-712d-4f46-9adb-601a0d08bbac"]]
+{"ide":{"node":{"ebb23e41-cdee-4473-81b5-1ba237a84342":{"position":{"vector":[-1,-652]}},"603fb42d-5170-4782-ad73-0878e58c24de":{"position":{"vector":[-1,-724]}},"56dc99e9-a5c4-4335-a290-64a269ecfe49":{"position":{"vector":[-1,-724]}},"03d00ff7-ccb9-49bc-bd10-88cf58f299e9":{"position":{"vector":[400,-730]}},"8ce26b65-c4c2-47ca-b570-e8aa8238fdda":{"position":{"vector":[400,-730]}},"bede4e9d-d731-4eb3-8eaf-29c863a7145d":{"position":{"vector":[139,-835]},"visualization":{"show":true}},"7bcf4039-690c-4580-8c78-e379227581b7":{"position":{"vector":[139,-1057]}},"b5211f12-03fe-498d-9ec4-01844a9ce666":{"position":{"vector":[544,-335]}},"9b20775f-5080-4bb4-a7e6-c499d1cb1460":{"position":{"vector":[790,-335]}},"e9796fa1-636e-43d7-a541-e65dd380c45b":{"position":{"vector":[544,-479]},"visualization":{"show":true}},"ff4a16a8-4ed6-4603-be56-80b669513eb0":{"position":{"vector":[-159,-335]}},"3e68100d-209a-4d0a-b4b6-c66df35d76cb":{"position":{"vector":[-69,-558]}},"b5f69294-3b12-4ea4-94bc-e48afe0eb3f6":{"position":{"vector":[139,-592]}},"f40b4a47-ae42-4df5-b154-5449e145d05a":{"position":{"vector":[-69,-664]}},"9536f4c9-a3c1-4610-b6a8-952411bfd8d8":{"position":{"vector":[-125,-997]}},"4664fc6c-712d-4f46-9adb-601a0d08bbac":{"position":{"vector":[-144,-820]},"visualization":{"show":true,"width":663.26953125,"height":356.68359375}},"79b08c76-51d9-4ffd-b190-fab448794d42":{"position":{"vector":[-144,-820]}},"df929700-6518-4042-a54b-e21c74264d7c":{"position":{"vector":[-144,-820]}}},"widget":{"ff4a16a8-4ed6-4603-be56-80b669513eb0":{"WidgetTableEditor":{"size":{"x":483.01171875,"y":150}}}},"import":{},"snapshot":"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"}}

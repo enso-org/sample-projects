@@ -1,0 +1,40 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## # Goal
+
+   ### Use a function that works on a column data type, but is not (yet) in the Enso Expression Language in the `Set` function.
+
+   1. Use `get` to get the column to operate on
+   1. Get the first value in the column using `get`
+   1. Type to_text and hit enter and choose 'Upper"
+   1. go to code_edit mode on the component to view the code.  in this case it is `to_case ..Upper` (we will need to know how the parameters are written for the next step.
+   1. from the first `get` component, add a `map` component.
+   1. Go to code edit mode on the map component, and enter `x-> x.to_case (..Upper)`
+   1. Add a `set` component to the `read` component and pass the output from the `map` into the `value` parameter of the `set` component. Add the field name in the `as` argument.
+
+
+
+   Of note:
+   1. Where you see the code on the `to_case` component  vs. `x-> x.to_case (..Upper)` notation in the `map`. When adding parameters to a lambda function (noted by the use of x-> x.to_case), they must be enclosed by parentheses, in this instance there is a single parameter of `..Upper`.
+main =
+    quot1 = enso_project.data/ 'Invoice_CRM_Data_July 2024.xlsx'
+    file1 = Data.read quot1
+    node1 = file1.read 'Invoice'
+    column1 = node1.get 'company_name'
+    any1 = column1.get
+    text1 = any1.to_case ..Upper
+    any2 = column1.map x-> x.to_case (..Upper)
+    any3 = node1.set any2 'company_name'
+
+
+
+#### METADATA ####
+[[{"index":{"value":1362},"size":{"value":18}},"53c990f2-6ba9-4f77-aeda-c07e9ff4758f"],[{"index":{"value":1362},"size":{"value":52}},"f591611c-15c2-4f85-bab1-1c38077c262e"],[{"index":{"value":1427},"size":{"value":15}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":1455},"size":{"value":20}},"0a01070b-24f8-441d-8300-57d72e0a0152"],[{"index":{"value":1490},"size":{"value":9}},"e509aac0-5a12-4aea-ab09-ce1249bee645"],[{"index":{"value":1490},"size":{"value":24}},"084767aa-bd31-45c8-951e-80980601dbda"],[{"index":{"value":1526},"size":{"value":11}},"50c2af47-9309-493a-922b-a340bd5b2cfe"],[{"index":{"value":1550},"size":{"value":12}},"abb44607-3861-46df-a092-4fa836d8f300"],[{"index":{"value":1550},"size":{"value":20}},"dd2f8906-635a-4369-8021-ac356256b272"],[{"index":{"value":1582},"size":{"value":11}},"4df7c9d4-052b-40a7-a1c4-6331b454ca32"],[{"index":{"value":1582},"size":{"value":35}},"b3012983-11fc-4867-82e1-bb6fc92e93c8"],[{"index":{"value":1629},"size":{"value":9}},"4480b1d1-c05b-4e13-89ed-31629575b32d"],[{"index":{"value":1629},"size":{"value":14}},"f81ba678-1ebc-49d8-971b-074f39d46149"],[{"index":{"value":1629},"size":{"value":29}},"f3e0214a-9771-41fe-8d70-a2d5ebfc8008"]]
+{"ide":{"node":{"f591611c-15c2-4f85-bab1-1c38077c262e":{"position":{"vector":[-313,408]}},"53c990f2-6ba9-4f77-aeda-c07e9ff4758f":{"position":{"vector":[93,-323]}},"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-388,282]},"visualization":{"show":true,"width":1027.671875,"height":199.97542848448822}},"0a01070b-24f8-441d-8300-57d72e0a0152":{"position":{"vector":[-388,17]},"visualization":{"show":true,"width":1094.640625,"height":268.29296875}},"084767aa-bd31-45c8-951e-80980601dbda":{"position":{"vector":[-193,-400]},"visualization":{"show":true,"width":745.578125,"height":264.4375}},"e509aac0-5a12-4aea-ab09-ce1249bee645":{"position":{"vector":[-193,-400]}},"50c2af47-9309-493a-922b-a340bd5b2cfe":{"position":{"vector":[67,-737]},"visualization":{"show":true,"width":462.9322916666667,"height":192.06770833333334}},"dd2f8906-635a-4369-8021-ac356256b272":{"position":{"vector":[67,-1001]},"visualization":{"show":true}},"abb44607-3861-46df-a092-4fa836d8f300":{"position":{"vector":[-193,-1001]},"visualization":{"show":true}},"b3012983-11fc-4867-82e1-bb6fc92e93c8":{"position":{"vector":[-193,-1223]},"visualization":{"show":true,"width":677.6666666666666,"height":191.4375}},"4df7c9d4-052b-40a7-a1c4-6331b454ca32":{"position":{"vector":[-174,-1260]}},"f3e0214a-9771-41fe-8d70-a2d5ebfc8008":{"position":{"vector":[-388,-1523]},"visualization":{"show":true,"width":1051.8541666666667,"height":271.03125}},"f81ba678-1ebc-49d8-971b-074f39d46149":{"position":{"vector":[-619,-1743]},"visualization":{"show":true,"width":1051.8541666666667,"height":271.03125}},"4480b1d1-c05b-4e13-89ed-31629575b32d":{"position":{"vector":[-346,-1649]}}},"widget":{},"snapshot":"eJx9VE1v1DAQve+vGLGHtlIJUDghgVSgqkAgJNrSYzIbT3ZNHY+xJ90Nvx6N89HdonJL/N68N192E7mFK0FvMJriAyYC2waOAujcojlAr3Hl/gN/QsHVfwXOb6+eBi+Z147K82Cf5lx53jYO7w48xs+ZdLHDNjhK/wA/berQ2T8olv1isVzCEi4Z3WIBAMvlEm4SAULT+VoZIBsU2HK8S8AeEGp2XevBoCBIH+gUVp2ATeBZ4LgnOQGrUQQXPjFc7EKklFTpK/p1h2ua8OqKpJqNipzAqyL7V2uFhGFNkrmjqzBwoIhCwH7kX46UxsYkcI+umx3GqC5Zvx40x5jrPhAIl0I7AfQGNlaAvFDMf/WGOREc3YRA8dkYs2a1r9lQScYKtGw0i9GoDezJi1LuLW3HU0MFDMnYBHVei9yrSrjMv0WRPSo43hJsrXPgiYyq3HnewoYHpYARWxKKCTASbKMVIQ8Nxwx7LSMJhWLMNS/MQ1OGds5JngIaAwhVi2HveAq+nAuFfwptMRzoeDO2rdo9fw+7YqrreCzsZOr4+eCYDhJRn7wJkdDsn6tuwJQyyp2ETh5qGtK2fgrOI68eegTcDMCh2ZDD0BRyBjy2D6uIqQKM667NfVjkXfze6E7T27GC2w1Fgp47SETzfKfGTBPdrwLuU/F0Y1Q8X8I5Ca0r+3gdkO7s3tyFAcFhuzJ7l/NYEzSw6rNAl0hrPzA8OVWoh7ZLAisC8rXjNMQEjORlQ4nS6byl1idBX+cKI+myIuj9cXTY4Wpa3WLRovXwTtsEvzuWV/AOyCcuQ+RfVEuhb8ULOPrs79nWVH788a3UZ7L80rkezl6evSl2Lu2OskBjHamAEgpdi0EyY55NxjJnACfRIXi470rJ1EJfjyOdB/q+1HkPNPS9cka2svKxPgZ6rnDx6IJOcWd7cXoXnhjuRH89p5JIhvhH+fwFcHwvHQ=="}}

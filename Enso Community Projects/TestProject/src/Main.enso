@@ -1,0 +1,29 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+file1 = 'C:\\Users\\tmamm\\learning\\stock_data\\A.csv'
+
+main = 
+   raw_data = Data.read 'C:\\Users\\tmamm\\learning\\stock_data\\A.csv'
+   column_info = raw_data.column_info
+   sorted_with_date_index      = raw_data.add_row_number 'DateIndex' 0 order_by=[(..Name 'Date')]
+   sorted_with_next_date_index = raw_data.add_row_number 'DateIndex' 1 order_by=[(..Name 'Date')]
+   last_close = sorted_with_next_date_index.select_columns ['DateIndex', 'Close']
+   last_close_renamed = last_close.rename_columns [Pair.Value 'Close' 'Last Close']
+   joined = sorted_with_date_index.merge last_close_renamed ['DateIndex'] add_new_columns=True allow_unmatched_rows=True
+   any1 = joined.set (expr '[Close] - [Last Close]')
+   column_info_2 = last_close_renamed.column_info
+   
+
+
+
+
+#### METADATA ####
+[[{"index":{"value":330},"size":{"value":9}},"3a3321dc-84d6-41b3-b047-c7d8de7dbdf3"],[{"index":{"value":330},"size":{"value":57}},"02ed8f5c-902e-4ba9-a017-43ab62a924a4"],[{"index":{"value":405},"size":{"value":20}},"8d759186-7f02-422d-b987-4570f860a62f"],[{"index":{"value":459},"size":{"value":35}},"b4d6d1cf-d83f-41e3-9a28-a959985e9f23"],[{"index":{"value":459},"size":{"value":64}},"987b9f66-1f2e-432a-8f6d-9d650088cf3a"],[{"index":{"value":527},"size":{"value":27}},"0f051856-faee-493d-958f-a4b072238725"],[{"index":{"value":557},"size":{"value":23}},"17576eb7-81c6-4a4c-aa68-25c81648acb8"],[{"index":{"value":557},"size":{"value":64}},"023a6402-22f3-43e9-9b0e-a7f95175f4d2"],[{"index":{"value":625},"size":{"value":10}},"88c19c5e-1c2d-493e-a2ac-1e336c1e8021"],[{"index":{"value":638},"size":{"value":27}},"3127d3d0-efdd-4de8-9085-24dfb7f9ea3c"],[{"index":{"value":638},"size":{"value":42}},"3127d3d0-efdd-4de8-9085-24dfb7f9ea3c"],[{"index":{"value":638},"size":{"value":65}},"3127d3d0-efdd-4de8-9085-24dfb7f9ea3c"],[{"index":{"value":728},"size":{"value":10}},"d8c5e528-e528-45e8-87b5-e4a28d089209"],[{"index":{"value":728},"size":{"value":25}},"d8c5e528-e528-45e8-87b5-e4a28d089209"],[{"index":{"value":728},"size":{"value":59}},"d8c5e528-e528-45e8-87b5-e4a28d089209"],[{"index":{"value":791},"size":{"value":6}},"71585add-663f-45aa-98cc-ff1beb59c7e8"],[{"index":{"value":800},"size":{"value":22}},"c186377e-39fe-409a-aefe-449cd2d7bb13"],[{"index":{"value":800},"size":{"value":28}},"c186377e-39fe-409a-aefe-449cd2d7bb13"],[{"index":{"value":800},"size":{"value":61}},"c186377e-39fe-409a-aefe-449cd2d7bb13"],[{"index":{"value":800},"size":{"value":82}},"c186377e-39fe-409a-aefe-449cd2d7bb13"],[{"index":{"value":800},"size":{"value":108}},"c186377e-39fe-409a-aefe-449cd2d7bb13"],[{"index":{"value":919},"size":{"value":10}},"0a38da22-24cc-4754-a3b8-1ff0bf88227c"],[{"index":{"value":919},"size":{"value":42}},"2f579239-076f-4290-80c8-fdc35867ce8f"],[{"index":{"value":981},"size":{"value":30}},"314e5a98-4ad2-4ba7-85b6-bf91f9ad9e72"]]
+{"ide":{"node":{"02ed8f5c-902e-4ba9-a017-43ab62a924a4":{"position":{"vector":[138,388]}},"3a3321dc-84d6-41b3-b047-c7d8de7dbdf3":{"position":{"vector":[166,127]}},"8d759186-7f02-422d-b987-4570f860a62f":{"position":{"vector":[-658,316]},"visualization":{"show":true,"width":645.105178011507,"height":236.49428378735615}},"987b9f66-1f2e-432a-8f6d-9d650088cf3a":{"position":{"vector":[51,227]}},"b4d6d1cf-d83f-41e3-9a28-a959985e9f23":{"position":{"vector":[92,55]}},"0f051856-faee-493d-958f-a4b072238725":{"position":{"vector":[-16,-72]}},"023a6402-22f3-43e9-9b0e-a7f95175f4d2":{"position":{"vector":[162,88]}},"17576eb7-81c6-4a4c-aa68-25c81648acb8":{"position":{"vector":[-16,-72]}},"88c19c5e-1c2d-493e-a2ac-1e336c1e8021":{"position":{"vector":[-16,-72]}},"3127d3d0-efdd-4de8-9085-24dfb7f9ea3c":{"position":{"vector":[-16,-72]}},"d8c5e528-e528-45e8-87b5-e4a28d089209":{"position":{"vector":[-16,-144]}},"71585add-663f-45aa-98cc-ff1beb59c7e8":{"position":{"vector":[-16,-216]}},"c186377e-39fe-409a-aefe-449cd2d7bb13":{"position":{"vector":[-16,-236]},"visualization":{"show":false,"width":1210.2243679711455,"height":238.6081758651719,"project":{"project":"Builtin"},"name":"Table"}},"2f579239-076f-4290-80c8-fdc35867ce8f":{"position":{"vector":[699,-459]}},"0a38da22-24cc-4754-a3b8-1ff0bf88227c":{"position":{"vector":[78,-361]}},"314e5a98-4ad2-4ba7-85b6-bf91f9ad9e72":{"position":{"vector":[-770,-190]},"visualization":{"show":true,"width":691.488893872408,"height":285.94371516098676}}},"import":{}}}

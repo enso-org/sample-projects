@@ -1,0 +1,35 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## ![image](ea.png)
+   
+   # Binning Data in Enso
+   
+   ### ***Binning*** is a way to group a number of more or less continuous values into a smaller number of bins.
+   
+   ### Enso makes this simple using the BETWEEN operator of an inner join. 
+   
+   > In the LEFT dataset, we compare its [Number of Employees] column and check to see if it is between the [Employee Minimum] and [Employee Maximum] columns. For the first row, where our fictitious company Gomez, Foster and Martin has 104 employees. This matches row 5 in the RIGHT dataset.
+   
+   ### Using the binned data,  we aggregated the data by the Category (bin) and returned the count of companies in each category, their average revenue and total revenue.
+main =
+    quot1 = enso_project.data/ 'company_data_3102.csv'
+    file1 = Data.read quot1
+    quot2 = enso_project.data/ 'Grouping of Employer Sizes.xlsx'
+    any1 = Data.read quot2 ..Sheet
+    ## This is an inner join, but it uses the Between operator to solve this challenge
+    table2 = file1.join any1 ..Inner [..Between 'Number of Employees' 'Employee Minimum' 'Employee Maximum']
+    any2 = table2.remove_columns ['Employee Minimum', 'Employee Maximum']
+    any3 = any2.aggregate ['Category'] [..Count 'Number of Companies', ..Average '2024 Revenue' 'Average Revenue', ..Sum '2024 Revenue' 'Total Revenue']
+
+
+
+#### METADATA ####
+[[{"index":{"value":988},"size":{"value":18}},"ca93f239-7e6d-4945-9b04-1f7f0d363ca1"],[{"index":{"value":988},"size":{"value":42}},"d955702b-7fdc-4223-ad23-018398c2510a"],[{"index":{"value":1043},"size":{"value":15}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":1071},"size":{"value":18}},"4f0aa527-a9ad-44a4-9cef-746bc9bd3c9d"],[{"index":{"value":1071},"size":{"value":52}},"955ca0ca-ed1e-42b2-9d5f-8337cfcfcefc"],[{"index":{"value":1135},"size":{"value":9}},"abd33723-6346-4737-83fd-132d6dc55486"],[{"index":{"value":1135},"size":{"value":15}},"fd56f4aa-ade1-4827-a708-2266c5610310"],[{"index":{"value":1135},"size":{"value":23}},"e6581459-c5c9-426b-930d-7f835a8bfbde"],[{"index":{"value":1259},"size":{"value":10}},"5eff4d1d-a762-4206-bda7-5dfd0602a049"],[{"index":{"value":1259},"size":{"value":15}},"99fca1b6-1127-47e3-8379-48630e949ba7"],[{"index":{"value":1259},"size":{"value":23}},"a1d043c6-10de-42f7-b69d-6c5bc8442880"],[{"index":{"value":1259},"size":{"value":95}},"915a4625-19b7-4fa3-b723-aba084eef811"],[{"index":{"value":1366},"size":{"value":21}},"2bd92bb3-aa4a-4c15-bb53-1ccbf0b90c42"],[{"index":{"value":1366},"size":{"value":62}},"3be50696-94c4-4f89-be88-0c7662861b9c"],[{"index":{"value":1440},"size":{"value":14}},"712bd00c-02a0-4cee-95ac-3e2572d9c0b8"],[{"index":{"value":1440},"size":{"value":27}},"2afa9008-8c59-45cb-af68-2cc26656c4ae"],[{"index":{"value":1440},"size":{"value":141}},"64110a6f-0cee-4a29-8340-a5c040b8dbbb"]]
+{"ide":{"node":{"d955702b-7fdc-4223-ad23-018398c2510a":{"position":{"vector":[-386,569]}},"ca93f239-7e6d-4945-9b04-1f7f0d363ca1":{"position":{"vector":[206,-1048]}},"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-433,497]},"visualization":{"show":true,"width":1027.671875,"height":193}},"955ca0ca-ed1e-42b2-9d5f-8337cfcfcefc":{"position":{"vector":[-115,196]}},"4f0aa527-a9ad-44a4-9cef-746bc9bd3c9d":{"position":{"vector":[-55,87]}},"e6581459-c5c9-426b-930d-7f835a8bfbde":{"position":{"vector":[-217,124]},"visualization":{"show":true,"width":811.48046875,"height":192.96875}},"fd56f4aa-ade1-4827-a708-2266c5610310":{"position":{"vector":[-227,132]}},"abd33723-6346-4737-83fd-132d6dc55486":{"position":{"vector":[-227,132]}},"915a4625-19b7-4fa3-b723-aba084eef811":{"position":{"vector":[-254,-193]},"visualization":{"show":true}},"a1d043c6-10de-42f7-b69d-6c5bc8442880":{"position":{"vector":[-250,-144]}},"99fca1b6-1127-47e3-8379-48630e949ba7":{"position":{"vector":[-250,-144]}},"5eff4d1d-a762-4206-bda7-5dfd0602a049":{"position":{"vector":[-250,-144]}},"3be50696-94c4-4f89-be88-0c7662861b9c":{"position":{"vector":[-254,-451]},"visualization":{"show":true,"width":986.83203125}},"2bd92bb3-aa4a-4c15-bb53-1ccbf0b90c42":{"position":{"vector":[-164,-415]}},"64110a6f-0cee-4a29-8340-a5c040b8dbbb":{"position":{"vector":[-254,-709]},"visualization":{"show":true,"height":215.10787641591037}},"2afa9008-8c59-45cb-af68-2cc26656c4ae":{"position":{"vector":[-250,-660]}},"712bd00c-02a0-4cee-95ac-3e2572d9c0b8":{"position":{"vector":[-250,-660]}}},"import":{}}}

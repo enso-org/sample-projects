@@ -1,0 +1,138 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+import Standard.Visualization
+
+## ![Image](eaep.png)
+
+   # Geospatial Analysis
+
+   ## Project Overview
+
+   This workflow analyzes restaurants in Los Angeles.
+
+   There are three data files in this project.
+
+   1 - Restaurants in Los Angeles, in a csv format.
+
+   2 - Council District centroids (geographic center) for Los Angeles, in a csv format.
+
+   3 - A mapping table of year ranges to color to be displayed on the map, in a JSON format.
+
+   ![Image](table1.png)
+
+   ## Project Goals
+
+   **Goal 1** - Create a map that displays the total number of restaurants by City Council District. Larger dots indicating more restaurants in that district.
+
+   **Goal 2** - Create a map showing all restaurants in Los Angeles. Categorize the restaurants by longevity:
+
+   - **Restaurants opened prior to January 1, 2000 in Red**
+   - **Restaurants opened from January 1, 2000 to December 31, 2009 in Green**
+   - **Restaurants opened January 1, 2010 and later in Blue.**
+
+   .
+
+   ## Here are the steps we took to solve this problem
+
+   ### **Goal 1** - Create a map that displays the total number of restaurants by City Council District.
+
+   1️⃣ Open the restaurants.csv file containing the restaurants in Los Angeles. Here, the file is embedded into this project. Typically, you would drag the file onto the canvas (the background) from your computer to add the file to the project, or click where you see the word 'path' shown in the ***Data.read*** component to bring up a file browser.
+
+   2️⃣ Create a count of restaurants by [COUNCIL DISTRICT] using the ***aggregate*** component. The Count of the number of restaurants is placed in a new column called [radius].
+
+   3️⃣ In order to make the dots on the map easier to see, we multiply the [radius] column by 5, simply to make the radius larger.
+
+   4️⃣ Open the la_districts.csv file containing the centroid (geographic middle) of each council district in Los Angeles. Here, the file is embedded into this project. Typically, you would drag the file onto the canvas (the background) from your computer to add the file to the project, or click where you see the word 'path' shown in the ***Data.read*** component to bring up a file browser.
+
+   5️⃣ Create a new column called [label] using the ***set*** component. This will allow a user to hover their mouse over any point to better understand what they are seeing.
+
+   6️⃣ Join the aggregated count of restaurants in each council district with the table of council district centroids. The visualization automatically changes the visualization if there are columns called [latitude] and [longitude]. If those columns appear, there are three optional columns. [radius] which changes the default size of the dot on the map, [color] which changes the color of the dot, and [label] which adds a hover-over label for each dot on the map. In this case, we have a [label] and [radius], and no [color] column, so the color is the default blue.
+
+   ![image](map1.png)
+
+   .
+
+   ### **Goal 2** - Display a map showing all restaurants in Los Angeles. Categorize the restaurants by longevity.
+
+   1️⃣ Open the restaurants.csv file containing the restaurants in Los Angeles. Here, the file is embedded into this project. Typically, you would drag the file onto the canvas (the background) from your computer to add the file to the project, or click where you see the word 'path' shown in the ***Data.read*** component to bring up a file browser.
+
+   2️⃣ Notice that the  [LOCATION] column in the ***Data.read*** component has latitude and longitude coordinates embedded into a single field. We need to extract each component and put the latitude in its own column, and the longitude in its own column. We show two methods to accomplish this.
+
+   2a uses the ***parse_to_column*** component. We chose the [LOCATION] column, and provided a Regular Expression to parse latitude and longitude to their own columns.  The regular expression looks for what are called Named Groups. If you are comfortable writing Regular Expressions, these are a powerful tool to find and extract all kinds of data.
+
+   2b is an alternate solution, that starts with the ***split_to_columns*** component, using the ',' as the delimiter.
+
+   We then need to rename the [latitude] and [longitude] columns using the ***rename_columns*** component.
+
+   When we view the data, we can see that the latitude and longitude columns are of the type TEXT and they need to be numeric, specifically FLOAT, in order to display on a map. They also have the parentheses (brackets) that need to be removed.
+
+   Using the ***text_replace*** component, we replace the parentheses with empty strings.
+
+   And finally we convert the text based [latitude] and [longitude] columns to the data type FLOAT.
+
+   3️⃣ We use a filter to find restaurants that are between latitude 32 and 35 to get rid of the rows with poor data quality. Either missing the latitude completely, or a latitude that is not near Los Angleles.
+
+   4️⃣ We use another filter to remove rows with poor data quality in the [longitude] column. All longitudes in the western hemisphere are defined as negative numbers. This filter also removes rows that have a zero as the longitude.
+
+   5️⃣ Convert the [LOCATION START DATE] and [LOCATION END DATE columns from a CHAR format to a DATE format. This will allow us to extract the year in the next step using a Date_Part function.
+
+   6️⃣ Create a new column called [year] that contains the 4 digit year.
+
+   7️⃣ Create a new field called [label] that contains the name of the restaurant. This will allow us to hover-over a point on the map and see what restaurant is displayed.
+
+   8️⃣ Open the mapcolors.json file containing the colors that will be used for the map. Each row has [StartYear], [EndYear] and [color]. The [color] field uses RGB notation. Here, the file is embedded into this project. Typically, you would drag the file onto the canvas (the background) from your computer to add the file to the project, or click where you see the word 'path' shown in the ***Data.read*** component to bring up a file browser.
+
+   9️⃣ Join the data from the restaurants data with the color data. We are doing a special kind of join here, which joins not on an exact match, but rather between two values. For example, if the restaurant was opened in 2005, the join between will match to the second record in the table, which has a [StartYear] of 2000 and and [EndYear] of 2009. Therefore, the [color] will be Green (RGB 0,255,0,100)
+   ![Image](map2.png)
+  
+main =
+    quotient1 = enso_project.data/'restaurants.csv'
+    ## 1 - Restaurants in Los Angeles CA
+    any1 = Data.read quotient1
+    ## 2a- Using Regex extract the latitude and longitude from the LOCATION.
+    operator1 = any1.parse_to_columns 'LOCATION' "\((?<latitude>-?\d+(?:.\d*)?), (?<longitude>-?\d+(?:.\d*)?)\)"
+    ## 3 - Select only the rows where the latitude in in the correct range for LA.
+    operator5 = operator1.filter 'latitude' (..Between 32 35 ..Keep)
+    ## 4 - Remove any invalid Longitude points.
+    operator6 = operator5.filter 'longitude' (..Less 0)
+    ## 2 - Group the table by City Council District number.
+    operator19 = any1.aggregate ['COUNCIL DISTRICT'] [..Count 'radius']
+    ## 3 - Make the radius of the dot on the map  5x larger for each of the  districts
+    product1 = operator19.set (..Simple_Expr (..Name 'radius') (..Multiply 5)) 'radius'
+    ## 5 - Convert text-based dates to a date type making it easy to extract the year in the next step
+    operator3 = operator6.parse ['LOCATION START DATE', 'LOCATION END DATE'] ..Date "MM/dd/yyyy"
+    ## 6 - Extract the year for coloring points.
+    operator7 = operator3.set (..Simple_Expr (..Name 'LOCATION START DATE') (..Date_Part Date_Period.Year)) "year"
+    ## 2b - An alternative to RegEx Step 1
+    table1 = any1.split_to_columns 'LOCATION'
+    ## 2b - An alternative to RegEx Step 2
+    any2 = table1.rename_columns [(Pair.Value 'LOCATION 1' 'latitude'), (Pair.Value 'LOCATION 2' 'longitude')]
+    ## 2b - An alternative to RegEx Step 3
+    column1 = any2.text_replace ['latitude'] '(' ''
+    ## 2b - An alternative to RegEx Step 4
+    column2 = column1.text_replace ['longitude'] ')' ''
+    ## 2b - An alternative to RegEx Step 5
+    table2 = column2.parse ['latitude', 'longitude'] ..Float
+    quotient3 = enso_project.data/'la_districts.csv'
+    ## 4 - CSV has the Latitude and Longitude for each of the council districts in Los Angeles
+    any3 = Data.read quotient3
+    quotient2 = enso_project.data/'mapcolors.json'
+    ## 8 - Json file describing the colors we want for each year range in RGB.
+    any4 = Data.read quotient2
+    ## 7 - Add a label to the dots on the map. You can see this name when you hover over a point.
+    any5 = operator7.set (..Simple_Expr (..Name 'DBA NAME') (..If ..Not_Empty (..Name 'DBA NAME') (..Name 'BUSINESS NAME'))) 'label'
+    ## 5 - Create a label for each of the dots on the map. See this when you hover over them.
+    any6 = any3.set (..Simple_Expr (..Name 'district') (..Format 'District 0')) 'label'
+    ## 6 - Enrich the data with points corresponding to each district, displaying a map with larger points indicating more restaurants in that Council Distict.
+    operator21 = product1.join any6 ..Inner [..Equals "COUNCIL DISTRICT" "district"]
+    ## 9 -Add color to restaurants based on opening year.
+    table3 = any5.join any4 ..Inner [..Between 'year' 'StartYear' 'EndYear']
+    text1 = "Enso Example Project - Geospatial Analysis"
+
+
+
+#### METADATA ####
+[[{"index":{"value":6654},"size":{"value":35}},"a559d592-cb21-4fee-9ff3-3146f50d70f7"],[{"index":{"value":6742},"size":{"value":9}},"5f44d673-10b2-4513-8f85-a88006978389"],[{"index":{"value":6742},"size":{"value":19}},"3205c87c-0d53-46b0-bcb9-d5bfb444a737"],[{"index":{"value":6855},"size":{"value":96}},"9e8474ec-aa98-42c4-a523-2c69e8eb66ce"],[{"index":{"value":7051},"size":{"value":52}},"90fb2469-3b44-4897-8955-f44a4b306bb5"],[{"index":{"value":7168},"size":{"value":39}},"1ff6acf9-a1bf-4a9a-9a84-0bc4c0ac5003"],[{"index":{"value":7285},"size":{"value":54}},"b6c1b9a1-f98b-4550-bc53-3ca31f4b90dd"],[{"index":{"value":7442},"size":{"value":72}},"10da91bb-66fd-46e4-b7bf-91156f64f64c"],[{"index":{"value":7634},"size":{"value":80}},"68da2641-6b5c-43d0-a8a7-a996c57d1993"],[{"index":{"value":7780},"size":{"value":98}},"cc7178ef-471f-4b1e-872a-548661b25bd8"],[{"index":{"value":7935},"size":{"value":21}},"d136e808-c2d3-4c39-847b-891a8c38d929"],[{"index":{"value":7935},"size":{"value":32}},"3933e107-5ee4-47c5-9994-1ba9c66943d7"],[{"index":{"value":8022},"size":{"value":21}},"4e787eda-037f-4ce1-b54c-bc0e9381c576"],[{"index":{"value":8022},"size":{"value":99}},"76aded59-d6f2-485f-ad2b-48a847327577"],[{"index":{"value":8179},"size":{"value":17}},"8935f929-8fb4-4504-a9d3-d052d280b5b3"],[{"index":{"value":8179},"size":{"value":30}},"b19b6f56-4146-410f-9093-294b445634c3"],[{"index":{"value":8179},"size":{"value":34}},"73c8eb7c-2582-472f-8172-89606606286b"],[{"index":{"value":8179},"size":{"value":37}},"e295373d-b24d-4b86-baac-ccae89e1f52a"],[{"index":{"value":8274},"size":{"value":20}},"1248699c-1889-477a-88a8-443354600db6"],[{"index":{"value":8274},"size":{"value":34}},"9ed3926c-37bd-42c1-8320-d73946822691"],[{"index":{"value":8274},"size":{"value":38}},"639e417e-5ddd-42f5-a6b1-2e931cddb71c"],[{"index":{"value":8274},"size":{"value":41}},"370c69e4-ec2b-45e7-ac43-6df886dca115"],[{"index":{"value":8372},"size":{"value":13}},"c5f71358-8e0f-4d5d-9c7b-8994022f78b4"],[{"index":{"value":8372},"size":{"value":39}},"853df947-8305-48ae-96bd-3af9cf86ef6d"],[{"index":{"value":8372},"size":{"value":47}},"adc7de0c-d907-4ace-aef3-bdb347b0d837"],[{"index":{"value":8436},"size":{"value":36}},"14157dab-a498-4d19-bd11-a6927f476d4f"],[{"index":{"value":8579},"size":{"value":9}},"ba36a1ec-683f-4af1-8e32-c19aa507324c"],[{"index":{"value":8579},"size":{"value":19}},"0d4f320a-8caf-4366-bd17-65e37883a4d2"],[{"index":{"value":8615},"size":{"value":34}},"2357b7f8-8876-4214-89fe-bef1d4da812f"],[{"index":{"value":8740},"size":{"value":19}},"70f7aaf7-a7f1-432b-adfe-a0435eed603e"],[{"index":{"value":8869},"size":{"value":13}},"26522658-5e59-4d2b-82ea-85e4c3f0e07d"],[{"index":{"value":8869},"size":{"value":113}},"7eb832a3-77d7-4a00-9a85-33f7dc07b78c"],[{"index":{"value":8869},"size":{"value":121}},"3f4bc9ca-1295-4126-9b0d-82cd96ed458b"],[{"index":{"value":9096},"size":{"value":8}},"3975d0ee-e5a5-4bd0-b3e0-e53fad5083ff"],[{"index":{"value":9096},"size":{"value":68}},"b7edd5f0-4518-49fe-9216-2f6a26a9a65b"],[{"index":{"value":9096},"size":{"value":76}},"d91e360e-26bf-48e2-a4c5-f6da1a8dd60c"],[{"index":{"value":9350},"size":{"value":67}},"6c227521-983b-49e8-9338-76ceff8686b6"],[{"index":{"value":9489},"size":{"value":9}},"2e596ba3-d1da-4186-9149-bbd3278d7373"],[{"index":{"value":9489},"size":{"value":14}},"700096a7-d141-4312-b936-b4b4f4defd12"],[{"index":{"value":9489},"size":{"value":22}},"4dd266ea-3647-44bb-9870-60dbef9de6fa"],[{"index":{"value":9489},"size":{"value":63}},"4067e54f-26ab-4de5-9e37-db2380006c91"],[{"index":{"value":9565},"size":{"value":44}},"7eac21d1-7c4c-48bf-a344-ec2f0c11eca6"]]
+{"ide":{"node":{"a559d592-cb21-4fee-9ff3-3146f50d70f7":{"position":{"vector":[-2492,867]}},"3205c87c-0d53-46b0-bcb9-d5bfb444a737":{"position":{"vector":[-2471,761]},"visualization":{"show":true,"width":3230.2480753080627}},"5f44d673-10b2-4513-8f85-a88006978389":{"position":{"vector":[-748,420]}},"9e8474ec-aa98-42c4-a523-2c69e8eb66ce":{"position":{"vector":[-1214,476]},"visualization":{"show":true,"project":{"project":"Builtin"},"name":"Table"}},"90fb2469-3b44-4897-8955-f44a4b306bb5":{"position":{"vector":[-1214,197]},"visualization":{"show":false,"project":{"project":"Builtin"},"name":"Table"}},"1ff6acf9-a1bf-4a9a-9a84-0bc4c0ac5003":{"position":{"vector":[-1214,119]},"visualization":{"show":false,"width":545,"height":161.17431640625,"project":{"project":"Builtin"},"name":"Table"}},"b6c1b9a1-f98b-4550-bc53-3ca31f4b90dd":{"position":{"vector":[-2471,476]}},"10da91bb-66fd-46e4-b7bf-91156f64f64c":{"position":{"vector":[-2471,379]}},"68da2641-6b5c-43d0-a8a7-a996c57d1993":{"position":{"vector":[-1212,47]}},"cc7178ef-471f-4b1e-872a-548661b25bd8":{"position":{"vector":[-1214,-48]},"visualization":{"show":false,"project":{"project":"Builtin"},"name":"Table"}},"3933e107-5ee4-47c5-9994-1ba9c66943d7":{"position":{"vector":[311,482]},"visualization":{"show":true}},"d136e808-c2d3-4c39-847b-891a8c38d929":{"position":{"vector":[-537,503]}},"76aded59-d6f2-485f-ad2b-48a847327577":{"position":{"vector":[311,203]},"visualization":{"show":false,"project":{"project":"Builtin"},"name":"Table"}},"4e787eda-037f-4ce1-b54c-bc0e9381c576":{"position":{"vector":[174,399]}},"e295373d-b24d-4b86-baac-ccae89e1f52a":{"position":{"vector":[311,125]}},"73c8eb7c-2582-472f-8172-89606606286b":{"position":{"vector":[172,264]}},"b19b6f56-4146-410f-9093-294b445634c3":{"position":{"vector":[172,264]}},"8935f929-8fb4-4504-a9d3-d052d280b5b3":{"position":{"vector":[172,264]}},"370c69e4-ec2b-45e7-ac43-6df886dca115":{"position":{"vector":[311,53]},"visualization":{"show":false,"project":{"project":"Builtin"},"name":"Table"}},"639e417e-5ddd-42f5-a6b1-2e931cddb71c":{"position":{"vector":[172,192]}},"9ed3926c-37bd-42c1-8320-d73946822691":{"position":{"vector":[172,192]}},"1248699c-1889-477a-88a8-443354600db6":{"position":{"vector":[172,192]}},"adc7de0c-d907-4ace-aef3-bdb347b0d837":{"position":{"vector":[370,-19]},"visualization":{"show":true,"width":734.328125,"project":{"project":"Builtin"},"name":"Table"}},"853df947-8305-48ae-96bd-3af9cf86ef6d":{"position":{"vector":[202,12]}},"c5f71358-8e0f-4d5d-9c7b-8994022f78b4":{"position":{"vector":[202,12]}},"14157dab-a498-4d19-bd11-a6927f476d4f":{"position":{"vector":[-1819,379]},"visualization":{"show":false,"project":{"project":"Builtin"},"name":"Table"}},"0d4f320a-8caf-4366-bd17-65e37883a4d2":{"position":{"vector":[-1848,269]},"visualization":{"show":false,"width":544.6015625,"project":{"project":"Builtin"},"name":"Table"}},"ba36a1ec-683f-4af1-8e32-c19aa507324c":{"position":{"vector":[209,-1109]}},"2357b7f8-8876-4214-89fe-bef1d4da812f":{"position":{"vector":[-192,139]},"visualization":{"show":false,"project":{"project":"Builtin"},"name":"Table"}},"70f7aaf7-a7f1-432b-adfe-a0435eed603e":{"position":{"vector":[-299,9]},"visualization":{"show":true,"width":544.6015625,"project":{"project":"Builtin"},"name":"Table"}},"3f4bc9ca-1295-4126-9b0d-82cd96ed458b":{"position":{"vector":[-1214,-137]}},"7eb832a3-77d7-4a00-9a85-33f7dc07b78c":{"position":{"vector":[-731,-1250]}},"26522658-5e59-4d2b-82ea-85e4c3f0e07d":{"position":{"vector":[-730,-1250]}},"d91e360e-26bf-48e2-a4c5-f6da1a8dd60c":{"position":{"vector":[-1848,159]},"visualization":{"show":true,"width":512.2348414179104,"project":{"project":"Builtin"},"name":"Table"}},"b7edd5f0-4518-49fe-9216-2f6a26a9a65b":{"position":{"vector":[215,-1402]},"visualization":{"show":true,"project":{"project":"Builtin"},"name":"Table"}},"3975d0ee-e5a5-4bd0-b3e0-e53fad5083ff":{"position":{"vector":[216,-1402]}},"6c227521-983b-49e8-9338-76ceff8686b6":{"position":{"vector":[-2471,-193]},"visualization":{"show":true,"width":1154.5765112866618,"height":838.3221106752704}},"4067e54f-26ab-4de5-9e37-db2380006c91":{"position":{"vector":[-1212,-287]},"visualization":{"show":true,"width":1311.9848228116844,"height":744.4933200198699}},"4dd266ea-3647-44bb-9870-60dbef9de6fa":{"position":{"vector":[-763,-1390]}},"700096a7-d141-4312-b936-b4b4f4defd12":{"position":{"vector":[-759,-1371]}},"2e596ba3-d1da-4186-9149-bbd3278d7373":{"position":{"vector":[-759,-1371]}},"7eac21d1-7c4c-48bf-a344-ec2f0c11eca6":{"position":{"vector":[-1848,1004]}}},"widget":{},"import":{},"snapshot":"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"}}

@@ -1,0 +1,78 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+from Standard.Base.Data.Time.Date_Range import Date_Range
+from Standard.Base.Data.Time.Date_Period import Date_Period
+from Standard.Base.Data.Boolean import True
+from project.Util import all
+
+## ICON group
+make_range node2 = 
+    any3 = node2.at 'Start Date'
+    any4 = node2.at 'End Date'
+    date_range1 = Date_Range.new any3 any4 Date_Period.Month
+    date_range1
+
+## ICON group
+make_range node2 = 
+    any3 = node2.at 'Start Date'
+    any4 = node2.at 'End Date'
+    date_range1 = any3.up_to any4 step=..Month
+    date_range1
+
+## # 2019: Week 3
+
+   [February 27, 2019](https://preppindata.blogspot.com/2019/02/2019-week-3.html "permanent link")
+
+   This week we are going to step up the challenge a little. If you are going to blame anyone then it's only yourselves for doing such a great job so far on solving our challenges!
+
+   This week's inspiration comes from [Bethany Lyons, a Tableau Product Manager](https://www.linkedin.com/in/bethany-lyons-0395aa74/). Bethany's sessions at the conference are phenomenal each year and always tackle some pretty chunky issues. Her session at the Tableau Conference in 2017 was on how to handle data on subscriptions. If you've never come across this challenge (lucky you) then you are about to experience why this is an issue.
+
+   Scenario: You work for a mobile / cell phone company. You boss asks you to pull together the revenue report of your current batch of contracts (sadly there are only four contracts!). They need to know how much revenue is generated each month from these contracts whilst they are 'live' (ie from their start date until 'x' months in the future when the contract runs out).
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIdRgRlVVh8xkoq7x7DohqCoOSOhyeMxRWdwyPSv6pK3DK4QtnCcz6CsrN6ee8_Lf97gJo4c_5vAetvbyZbOiekx8R3jR6gUQdTy-qpigyaBYbli_q-72m9D4RDqovvz6TpG1ti5ndTGHF/s320/Week+Three+Desktop+image.JPG)
+
+   The aim of the week is to be able to create a chart like this but with all the data prep work done in Tableau Prep Builder. If you think that is simple - here's the input data:
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYANi9tyeJPIbKhYDpZc55u1CLLJH4s6uNlrSUKHGZGkEcifXPoSSHgNXSA4_pIAaESGLXZz99cLHWkrjkyMy5LgYnt3nBvNN5kN5aLMKMH2X1fG-S6sVnNCqxKKOJxKYwMu7h7no4tj9B/s320/Week+Three+Input.JPG)
+
+   Requirements for this week:
+
+   - [Import the file](https://drive.google.com/file/d/1PC6CXAmzCXpp1Xn8b06400XPTWkroRR6/view?usp=sharing)
+   - Make sure you use both sheets
+   - Use one sheet to help you create a row of data for each month the person's contract is 'live' for
+   - Remove unnecessary fields of data
+   - Output for use within Tableau Desktop
+   - [Recreate the viz](https://public.tableau.com/views/PreppinData-Week3/MobilePhonePayments?:embed=y&:display_count=yes&publish=yes)
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhs9TECZ_MDyaRul-bSQFVRYhEX4jV6HwHJFpEqvN3DHHaCC4MPw3afKOzmHlpkIeNRciRYQJGp1wVLJ24-lLgk-djsjSz4J98UYFEATha8-p2_U6QgBUStM49Wl95ZSRALYUcFnB1_OdEx/s320/Week+Three+data+output.JPG)
+   Your output file should:
+   
+   - Have five columns
+   - Have fifty-five rows of data (including the headers)
+   - Be at the person, per month level of detail
+   - Have no cells without a value
+   - Save as a .tde or .hyper file (csv if you are not going to build the view in Tableau Desktop)
+   For comparison, here's [our output file](https://drive.google.com/file/d/1PDmsyrZSVFrxxObhL5Hj8ODEqqTyV3Yu/view?usp=sharing). Don't to forget to fill in our [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform)!
+main =
+    file1 = Data.read (enso_project.data / 'Preppin’ Data - Week Three.xlsx')
+    node1 = file1.read 'Contract Details' ..Has_Headers
+    any1 = node1.remove_blank_columns
+    table1 = any1.filter_blank_rows
+    node2 = file1.read 'Scaffold' ..Has_Headers
+    any2 = node2.remove_blank_columns
+    table2 = any2.filter_blank_rows
+    any3 = table1.set 0 "Zero"
+    table3 = table2.join any3 ..Inner [..Between 'Length' 'Zero' 'Contract Length (months)']
+    any4 = table3.set (expr 'date_add([Start Date], [Length] - 1, ..Month)') "Payment Date"
+    any5 = any4.select_columns ['Payment Date', 'Name', 'Monthly Cost', 'Contract Length (months)', 'Start Date'] reorder=True
+
+
+
+#### METADATA ####
+[[{"index":{"value":467},"size":{"value":5}},"66a892f4-874f-4dc8-95a2-806485b878e1"],[{"index":{"value":487},"size":{"value":8}},"95ca962d-3ac0-41b5-bf1f-7df6f82824e8"],[{"index":{"value":487},"size":{"value":21}},"3acf5308-a5ee-46ae-87ef-78b00de68813"],[{"index":{"value":520},"size":{"value":8}},"b536019b-5b0a-4c9a-a641-8d82dc58d75b"],[{"index":{"value":520},"size":{"value":19}},"8c71add3-9f5d-4afb-8fb4-3ede87deb056"],[{"index":{"value":558},"size":{"value":14}},"4bbad8ea-8ab6-4384-9cb4-263cfe17be9a"],[{"index":{"value":558},"size":{"value":19}},"eb109b5a-2ecb-450d-8095-6885a38b3452"],[{"index":{"value":558},"size":{"value":24}},"bbe57662-2e5b-4a1e-9cd1-200c2633e532"],[{"index":{"value":558},"size":{"value":42}},"6e3f7cf7-271b-4126-a1f5-c748c225257c"],[{"index":{"value":605},"size":{"value":11}},"49735648-9c4e-4a8d-b584-7ccba18d5ba1"],[{"index":{"value":663},"size":{"value":8}},"b23ce4b8-d3bf-4e9d-b4d9-902cb08b004b"],[{"index":{"value":663},"size":{"value":21}},"3dcd069b-35e4-4a9d-8d52-190524229d29"],[{"index":{"value":696},"size":{"value":8}},"9964273e-2066-499a-bcd9-d04c87f097f7"],[{"index":{"value":696},"size":{"value":19}},"1d701d3c-7095-4bde-9ddf-d4d35db3f6ae"],[{"index":{"value":734},"size":{"value":10}},"81b04f96-a2b7-40a7-adc2-e976322de858"],[{"index":{"value":734},"size":{"value":15}},"673261f9-f126-47cf-bbe7-21dbc9e87324"],[{"index":{"value":734},"size":{"value":28}},"e483db8e-2fa5-4bf3-94c9-ac73c08cc8c9"],[{"index":{"value":3901},"size":{"value":65}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":3979},"size":{"value":29}},"7000ecad-4530-4db2-8966-2f96b93e5109"],[{"index":{"value":3979},"size":{"value":43}},"fe61fc35-1848-4af1-8b43-fad06f84dc8f"],[{"index":{"value":4034},"size":{"value":26}},"8dc07aea-1fc5-4bae-812d-e90c2303f98c"],[{"index":{"value":4074},"size":{"value":22}},"698d90a1-a8a7-4da3-94fd-10edf82f382c"],[{"index":{"value":4109},"size":{"value":35}},"8b798e6c-93df-47c0-a6bf-5a37de872f04"],[{"index":{"value":4156},"size":{"value":26}},"b318e214-8bff-40db-ab2c-0998bdb7c7d8"],[{"index":{"value":4196},"size":{"value":22}},"7d703782-8f97-467a-a341-1bee633411f7"],[{"index":{"value":4230},"size":{"value":10}},"1cd8e463-b6a0-41b3-934b-f505d3c2608b"],[{"index":{"value":4230},"size":{"value":12}},"4e60b875-bd3b-489d-886a-f214f5748ffa"],[{"index":{"value":4230},"size":{"value":19}},"660f3984-e443-4832-8487-4271ff6cfe1d"],[{"index":{"value":4263},"size":{"value":11}},"42fd432d-ef0c-4f8b-b9ef-fe68c836aed9"],[{"index":{"value":4263},"size":{"value":16}},"c3ea07cb-6b09-4ba7-8fcc-6e0751d7940f"],[{"index":{"value":4263},"size":{"value":24}},"de509915-96d4-4b6c-a0d6-0d70af8b50ab"],[{"index":{"value":4263},"size":{"value":79}},"00cf6b38-6c20-42af-a83d-1959c649cbd9"],[{"index":{"value":4354},"size":{"value":10}},"fe01af51-9cae-42d6-bb26-b84351da02d8"],[{"index":{"value":4354},"size":{"value":65}},"42b2cd7f-077a-4913-a8e3-2cf5524aa1c1"],[{"index":{"value":4354},"size":{"value":80}},"e6238bfb-c37b-4a18-b445-a518b57c24a9"],[{"index":{"value":4446},"size":{"value":19}},"8b92a9e5-2cb7-451e-b4e5-f172a2824d5b"],[{"index":{"value":4446},"size":{"value":102}},"a2ec11c0-4fc5-4f07-b21f-d4fcaf523de7"],[{"index":{"value":4446},"size":{"value":115}},"ae96111b-e8cd-4510-881a-1c307a55d077"]]
+{"ide":{"node":{"66a892f4-874f-4dc8-95a2-806485b878e1":{"position":{"vector":[15,-137]}},"3acf5308-a5ee-46ae-87ef-78b00de68813":{"position":{"vector":[16,-209]}},"95ca962d-3ac0-41b5-bf1f-7df6f82824e8":{"position":{"vector":[16,-209]}},"8c71add3-9f5d-4afb-8fb4-3ede87deb056":{"position":{"vector":[255,-209]}},"b536019b-5b0a-4c9a-a641-8d82dc58d75b":{"position":{"vector":[334,-231]}},"6e3f7cf7-271b-4126-a1f5-c748c225257c":{"position":{"vector":[15,-299]},"visualization":{"show":true,"height":85.65625}},"bbe57662-2e5b-4a1e-9cd1-200c2633e532":{"position":{"vector":[16,-330]}},"eb109b5a-2ecb-450d-8095-6885a38b3452":{"position":{"vector":[16,-330]}},"4bbad8ea-8ab6-4384-9cb4-263cfe17be9a":{"position":{"vector":[16,-330]}},"49735648-9c4e-4a8d-b584-7ccba18d5ba1":{"position":{"vector":[16,-493]}},"3dcd069b-35e4-4a9d-8d52-190524229d29":{"position":{"vector":[23,-280]}},"b23ce4b8-d3bf-4e9d-b4d9-902cb08b004b":{"position":{"vector":[23,-280]}},"1d701d3c-7095-4bde-9ddf-d4d35db3f6ae":{"position":{"vector":[261,-280]}},"9964273e-2066-499a-bcd9-d04c87f097f7":{"position":{"vector":[261,-280]}},"e483db8e-2fa5-4bf3-94c9-ac73c08cc8c9":{"position":{"vector":[23,-375]}},"673261f9-f126-47cf-bbe7-21dbc9e87324":{"position":{"vector":[23,-416]}},"81b04f96-a2b7-40a7-adc2-e976322de858":{"position":{"vector":[23,-416]}},"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-360,804]},"visualization":{"show":false,"width":1027.671875,"height":193}},"fe61fc35-1848-4af1-8b43-fad06f84dc8f":{"position":{"vector":[78,706]}},"7000ecad-4530-4db2-8966-2f96b93e5109":{"position":{"vector":[-360,732]},"visualization":{"show":true}},"8dc07aea-1fc5-4bae-812d-e90c2303f98c":{"position":{"vector":[78,634]}},"698d90a1-a8a7-4da3-94fd-10edf82f382c":{"position":{"vector":[78,562]},"visualization":{"show":false,"width":826.7771402994791,"height":197.88773600260416}},"8b798e6c-93df-47c0-a6bf-5a37de872f04":{"position":{"vector":[-360,706]}},"b318e214-8bff-40db-ab2c-0998bdb7c7d8":{"position":{"vector":[-360,634]}},"7d703782-8f97-467a-a341-1bee633411f7":{"position":{"vector":[-360,562]},"visualization":{"show":false,"width":826.7771402994791,"height":324.8046875}},"660f3984-e443-4832-8487-4271ff6cfe1d":{"position":{"vector":[78,490]}},"4e60b875-bd3b-489d-886a-f214f5748ffa":{"position":{"vector":[78,490]}},"1cd8e463-b6a0-41b3-934b-f505d3c2608b":{"position":{"vector":[78,490]}},"00cf6b38-6c20-42af-a83d-1959c649cbd9":{"position":{"vector":[-360,418]},"visualization":{"show":false,"height":310.9013264973958}},"de509915-96d4-4b6c-a0d6-0d70af8b50ab":{"position":{"vector":[-357,396]}},"c3ea07cb-6b09-4ba7-8fcc-6e0751d7940f":{"position":{"vector":[-357,396]}},"42fd432d-ef0c-4f8b-b9ef-fe68c836aed9":{"position":{"vector":[-357,396]}},"e6238bfb-c37b-4a18-b445-a518b57c24a9":{"position":{"vector":[-360,346]}},"42b2cd7f-077a-4913-a8e3-2cf5524aa1c1":{"position":{"vector":[-360,57]}},"fe01af51-9cae-42d6-bb26-b84351da02d8":{"position":{"vector":[-360,346]}},"ae96111b-e8cd-4510-881a-1c307a55d077":{"position":{"vector":[-360,274]},"visualization":{"show":false,"height":480.3964029947917}},"a2ec11c0-4fc5-4f07-b21f-d4fcaf523de7":{"position":{"vector":[-360,274]}},"8b92a9e5-2cb7-451e-b4e5-f172a2824d5b":{"position":{"vector":[-360,274]}}},"widget":{},"import":{},"snapshot":"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"}}

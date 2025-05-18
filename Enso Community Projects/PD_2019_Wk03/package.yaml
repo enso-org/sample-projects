@@ -1,0 +1,5 @@
+name: PD_2019_Wk03
+namespace: local
+version: 0.0.1
+edition: 2024.4.1-rc8
+prefer-local-libraries: 'true'

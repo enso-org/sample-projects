@@ -1,0 +1,107 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## ICON text_input
+title_case_and_pad any15 = 
+    text1 = any15.to_case ..Title
+    sum1 = text1 + " "
+    sum1
+
+## # 2024: Week 28 - Wimbledon Special
+   
+   [July 10, 2024](https://preppindata.blogspot.com/2024/07/2024-week-28-wimbledon-special.html "permanent link")
+   
+   Challenge by: Jenny Martin
+   
+   Carl's Tour de France challenge last week has inspired a sports themed Preppin' Data month! This week the focus turns to Wimbledon. I thought it would be interesting to understand the crossover of Singles and Doubles Champions. Carl thought there wouldn't be many players who had become champions as both Singles players and Doubles players, but I thought the data could prove otherwise. Who's right? You'll have to complete the challenge to find out!
+   
+   ## Inputs
+   
+   The data for the Wimbledon Champions is found in 3 separate tables:
+   
+   1. Singles Champions ![Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaP-6nLtLHwYxt4ADWhNNWdNx3nBumY_5vmEUZzn1G2bTCK6-75WACc1MWaUQ6KjLegILy4xSdSq5Xye9jYrOxhXovJZjYk6136I5UVxEnnvbMXXq6GokO6_aROoD4tCUJdooKXWgvqxkUVzG6hyphenhyphenZuhAUfYRoWBYB8CDM94P5JmA5CdjPiv6XrjS2g_HUe/s612/Screenshot%202024-07-08%20143623.png)Taken from [Britannica](https://www.britannica.com/sports/Wimbledon-Championships)
+   2. Doubles Champions ![Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaQ8u4yzz_W3Hv-c8iEhkoUZiE2_dGLw17Wbmt1FQ4UkanKNFVs33eouv22rNkUMAkjCY2R75GHACZnBUxnkbyDRtifVO0Q9u1HvQFoAg4kJhex1d1uryq4sIsvxqRQagOhlULbN4JYPEQAkWbHvtG0SrSp7TWQi9kwV32jZ3IIgNJezZyQUVeManE44Ni/s920/Screenshot%202024-07-08%20143802.png)Taken from [Britannica](https://www.britannica.com/sports/Wimbledon-Championships)
+   3. Mixed Doubles Champions ![Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOCPHGry-u5KXWoB619fOz61h827Hh9JrKrXZl6tTOziAsPfLP1pNs-JKwms99DoA5hi018EFHgy-2Oe5Lg6q7kON0n8BMQA8mlFibQ0Vsbggj0CVCCJGioeTfdmzzcv3k6eMPps8Nro6SbYGLs1KOPGeioxI37QrknwBDAUuC5OnlJ4-6loXm9A5wbzog/s1120/Screenshot%202024-07-08%20143919.png)Taken from [Wikipedia](https://en.wikipedia.org/wiki/List_of_Wimbledon_mixed_doubles_champions)
+   
+   ## Requirements
+   
+   - [Input the data](https://docs.google.com/spreadsheets/d/1aGtywTeLUJw8P8faglGIrQntvvCPFVpr/edit?usp=drive_link&ouid=113142875990517226017&rtpof=true&sd=true)
+   - Filter out the years where the championship did not take place
+   - Ensure the Year field is numeric
+   - Reshape the data so there is a row for each Champion, for each Year, even where there are 2 winners in the Doubles
+   - Make sure it's clear which tournament they were the Champion of:
+       - Either Men's Singles, Women's Singles, Men's Doubles, Women's Doubles or Mixed Doubles
+   - For each Champion, calculate the most recent win across tournaments
+   - Bring the data together so it's clear for each Champion how many of each tournament they've won
+   - Filter the data to only include Champions who have won both Singles and Doubles tournaments
+   - Create a calculation for the Total Championships each Champion has won
+   - Rank the Champions in descending order of their Total Championships 
+   - Create a field to indicate the Gender of each Champion
+   - [Output the data](https://drive.google.com/file/d/1qpXKsAKYBevYGd2m6u0ESEZoLCycJbQ1/view?usp=drive_link)
+   
+   ## Output
+   
+   ![Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMmX5obL4sB5F28Mq5NZee_-PzWNPdfoGADCVy-KFmBrgiPLf2GMG5Ym3RqPjI7g4nfCVT94c7S5eRn1rErgnIPI9jwrgaklRvRVAYzRG5q1-wu141necV3OUbpiNEJ-9c0Bzv5juUITYzWcQ_r81m2rwefXYqxljJ3hmNb6svVYw_pKk1oAVBuQiHOS1j/s1310/Screenshot%202024-07-08%20143149.png)
+   
+   - 10 fields
+       - Rank
+       - Champion
+       - Gender
+       - Total Championships
+       - Women's Singles
+       - Men's Singles
+       - Women's Doubles
+       - Mixed Doubles
+       - Men's Doubles
+       - Most Recent Win
+   - 58 rows (59 including headers)
+   
+   You can view the outputs [here](https://drive.google.com/file/d/1qpXKsAKYBevYGd2m6u0ESEZoLCycJbQ1/view?usp=drive_link).
+main =
+    ## Changes to Title Case and adds a space character
+    sum1 = Main.title_case_and_pad
+    quot1 = enso_project.data/'Wimbledon Champions.xlsx'
+    node1 = Data.read quot1
+    table2 = node1.read_many ['Singles Champions', 'Doubles Champions']
+    table3 = node1.read_many ['Mixed Doubles Champions']
+    any3 = table3.filter 'Score[2]' ..Not_Nothing
+    any4 = any3.rename_columns [(Pair.Value 'Year' 'year'), (Pair.Value 'Champions' 'mixed')]
+    column1 = any4.text_replace ['mixed'] '\n' ', '
+    any5 = column1.select_columns ['Sheet Name', 'year', 'mixed']
+    table4 = table2.union any5 ..In_Any
+    any1 = table4.cast ['year'] ..Char
+    any14 = any1.replace [(Pair.Value '19683' '1968')] columns=['year']
+    any2 = any14.filter (expr 'text_length([year])==4')
+    table1 = any2.parse ['year'] ..Integer
+    any6 = table1.transpose ['Sheet Name', 'year'] 'Group' 'Champion'
+    any7 = any6.filter 'Champion' ..Not_Nothing
+    table5 = any7.split_to_rows 'Champion' delimiter=','
+    ## The Regular Expression matches:
+        - The start of a line.
+        - The end of a line.
+        - Any string that is enclosed in parentheses.
+       And replaces it with an empty string
+    column2 = table5.text_replace ['Champion'] (regex '^ | $|\\(.*\\)')
+    ## The title_case_and_pad
+       function works on a column, 
+       so we get the Group column here.
+    any8 = column2.at 'Group'
+    node2 = any8.map sum1
+    any9 = column2.set node2 'Group'
+    any10 = any9.set (..Simple_Expr (..Name 'Group') (..Add (..Name 'Sheet Name'))) 'Competion'
+    any11 = any10.cross_tab ['year'] 'Competion' (..Concatenate 'Champion' '' separator=',')
+    table6 = any11.split_to_columns 'Women Doubles Champions'
+    table7 = table6.split_to_columns 'Mixed Mixed Doubles Champions'
+    table8 = table7.split_to_columns 'Men Doubles Champions'
+    any12 = table8.select_columns ['year', 'Men Singles Champions', 'Men Doubles Champions 1', 'Men Doubles Champions 2', 'Women Singles Champions', 'Women Doubles Champions 1', 'Women Doubles Champions 2', 'Mixed Mixed Doubles Champions 1', 'Mixed Mixed Doubles Champions 2'] True
+    any13 = any12.sort [(..Name 'year')]
+
+
+
+#### METADATA ####
+[[{"index":{"value":250},"size":{"value":13}},"c10bf107-c78b-4de4-9c9c-3160eba13bbd"],[{"index":{"value":250},"size":{"value":21}},"8b246526-7541-4d80-9475-3d25ff7b4709"],[{"index":{"value":283},"size":{"value":11}},"a3eb5486-bcb9-47b1-9d6b-6dd13e1c1eae"],[{"index":{"value":299},"size":{"value":4}},"a22a994f-f617-43c5-b980-127f58813d21"],[{"index":{"value":4281},"size":{"value":23}},"370a8699-225c-41a6-938e-9f33213a9d01"],[{"index":{"value":4317},"size":{"value":44}},"8149c090-184f-4655-88ee-29949e8c1ca0"],[{"index":{"value":4374},"size":{"value":15}},"b8c96002-a518-48ba-abd7-868df9695c96"],[{"index":{"value":4403},"size":{"value":15}},"7e32a2e3-f331-474d-89f7-8545140b5505"],[{"index":{"value":4403},"size":{"value":58}},"d0b90351-7601-4125-932f-b5185cdc9a19"],[{"index":{"value":4475},"size":{"value":15}},"0e9d70b1-a0db-4191-8fe4-669c2fbfc63e"],[{"index":{"value":4475},"size":{"value":43}},"1fa2fd99-69ac-45b2-b5dc-8f0cf86ae475"],[{"index":{"value":4530},"size":{"value":13}},"d738cc6f-ab6c-4f68-942f-b8866a6fb0ca"],[{"index":{"value":4530},"size":{"value":24}},"90348173-4899-4401-98a1-c5775e30b1e4"],[{"index":{"value":4530},"size":{"value":38}},"06e0938d-9580-4bf2-81d6-736910c7547b"],[{"index":{"value":4580},"size":{"value":19}},"557b2445-e3c1-4223-a275-6652d7530073"],[{"index":{"value":4580},"size":{"value":82}},"9cec73a6-6cf4-4b2c-bd8a-853f07995410"],[{"index":{"value":4677},"size":{"value":17}},"40de88f2-3e18-47cc-a8e2-3fe9a6cd4a47"],[{"index":{"value":4677},"size":{"value":27}},"c735fb71-d9c2-4e79-a54d-173b47ec25bb"],[{"index":{"value":4677},"size":{"value":32}},"5557ff4c-a1d3-4dc9-94a8-22d43fd33db6"],[{"index":{"value":4677},"size":{"value":37}},"81a8898a-2b54-498d-91b3-0062f02a185f"],[{"index":{"value":4726},"size":{"value":22}},"5910ba09-5f9c-45cb-aa12-41ecec480926"],[{"index":{"value":4726},"size":{"value":54}},"5227c1d8-5fad-4576-b6fe-9cec2f0bacfe"],[{"index":{"value":4794},"size":{"value":12}},"07d0f3b6-151c-4702-8122-59298f8dd57f"],[{"index":{"value":4794},"size":{"value":17}},"adb39d6d-b8fa-4d0f-8566-bf9e612fd457"],[{"index":{"value":4794},"size":{"value":26}},"870db5f9-a165-4682-8f32-e3905378d0f4"],[{"index":{"value":4832},"size":{"value":11}},"aab95804-1654-4597-a93b-237874a04932"],[{"index":{"value":4832},"size":{"value":20}},"20ddc2ca-8072-4598-9289-2d80f038c481"],[{"index":{"value":4832},"size":{"value":27}},"36753567-12de-497b-b4f5-9a0a1adbdc52"],[{"index":{"value":4872},"size":{"value":12}},"341d4971-2a1f-473e-9102-b4fa7ceb2e80"],[{"index":{"value":4872},"size":{"value":42}},"ad9971d8-a8c7-4782-be93-cb0b3e438c10"],[{"index":{"value":4872},"size":{"value":59}},"43f30873-32a7-41b7-9c28-d7b7e1b6c0e8"],[{"index":{"value":4943},"size":{"value":12}},"81b9c743-461d-4eae-97e2-028fd0d9c8c7"],[{"index":{"value":4943},"size":{"value":44}},"824da5ad-3ecc-470e-8547-00721ffce300"],[{"index":{"value":5001},"size":{"value":10}},"91b35744-0322-426c-abfe-678cbbd688ad"],[{"index":{"value":5001},"size":{"value":19}},"1bdbe668-1303-4b3e-90bb-1133bfed3673"],[{"index":{"value":5001},"size":{"value":29}},"dbe9dda4-1474-427e-b041-a7ac4052363e"],[{"index":{"value":5042},"size":{"value":16}},"1acecd88-c349-4915-8326-d3c263b6f233"],[{"index":{"value":5042},"size":{"value":39}},"8d7ef052-b9f0-4019-bcea-da62d3c342be"],[{"index":{"value":5042},"size":{"value":47}},"ad2370ce-00a3-4b1d-a46d-3a96e1eccede"],[{"index":{"value":5042},"size":{"value":58}},"353a06fa-e121-4c35-87a5-f1883ebfd13b"],[{"index":{"value":5112},"size":{"value":11}},"e1f64077-93fd-4d4c-9eec-a532e73a91f5"],[{"index":{"value":5112},"size":{"value":22}},"73dd90d7-0cc3-4270-8155-f02e994c1660"],[{"index":{"value":5112},"size":{"value":36}},"b3d3e958-2b45-46b4-ac68-6b75e959af5b"],[{"index":{"value":5162},"size":{"value":18}},"918d1fd0-3e1f-4cfa-a466-06e62c9a091e"],[{"index":{"value":5162},"size":{"value":29}},"d293edf6-1149-4d3f-bc46-765298479afd"],[{"index":{"value":5162},"size":{"value":43}},"dacbc2c9-2b32-4c1f-b67b-f93261f0d19b"],[{"index":{"value":5417},"size":{"value":19}},"1168659d-d612-4ba7-aaff-21f10fc5132a"],[{"index":{"value":5417},"size":{"value":32}},"b67bf40e-bde5-41b5-b0b5-46ba1a8d87f6"],[{"index":{"value":5417},"size":{"value":57}},"d42985f8-8ddb-4b89-9ee9-7e88efad8fe1"],[{"index":{"value":5592},"size":{"value":10}},"baa4682a-f372-4c37-af54-ef4372f4b38b"],[{"index":{"value":5592},"size":{"value":18}},"b6bad6ba-c86c-42b6-a8a5-50c9a612765e"],[{"index":{"value":5623},"size":{"value":13}},"6403976f-53f5-48b9-8a8c-a6ef56c69b2f"],[{"index":{"value":5648},"size":{"value":11}},"26a40360-fb29-45f0-8c1a-13e3f3c781af"],[{"index":{"value":5648},"size":{"value":17}},"bd8514c3-a72e-40ea-9931-93d61626dff1"],[{"index":{"value":5648},"size":{"value":25}},"cbee0cdd-bc10-42fe-a755-0e281735f63d"],[{"index":{"value":5686},"size":{"value":8}},"d8040079-5aa0-4ec5-ac60-b51a49ab4243"],[{"index":{"value":5686},"size":{"value":71}},"6c710221-0ef9-4138-b0c8-ada89e56fb1a"],[{"index":{"value":5686},"size":{"value":83}},"b559557b-e0f8-43ee-b463-c368b244f7a9"],[{"index":{"value":5782},"size":{"value":15}},"9bc592d6-e93d-46a6-90d5-aed9fac0a17c"],[{"index":{"value":5782},"size":{"value":24}},"be674400-351a-4c68-be3f-4d1b6d80d52a"],[{"index":{"value":5782},"size":{"value":36}},"b244c280-f652-407a-b8a6-891e8772930d"],[{"index":{"value":5782},"size":{"value":80}},"98def70a-465d-45de-b1eb-0db29231d014"],[{"index":{"value":5876},"size":{"value":22}},"58847ee1-b280-4c60-95d4-276d002089c7"],[{"index":{"value":5876},"size":{"value":48}},"92c2beb0-9377-4caf-9df9-6b577e47f23b"],[{"index":{"value":5938},"size":{"value":23}},"16cd36cf-58ba-4e63-b1d6-6846d8a4e3a6"],[{"index":{"value":5938},"size":{"value":55}},"738a2898-a2e7-4f2c-91a1-9eb0d6d2acc2"],[{"index":{"value":6007},"size":{"value":23}},"9bd8c423-5043-4810-a587-dc2918abf6bb"],[{"index":{"value":6007},"size":{"value":47}},"ff9558f3-cdba-4580-afbb-d305eb538a4d"],[{"index":{"value":6067},"size":{"value":21}},"02f6f877-89fc-40a7-b841-c8b07e2a5432"],[{"index":{"value":6067},"size":{"value":264}},"d8b18d76-d548-4a02-8a89-b259a8356a11"],[{"index":{"value":6067},"size":{"value":269}},"a16db65e-615c-47c9-993a-6e7bc0ee0c11"],[{"index":{"value":6349},"size":{"value":10}},"7c4ab210-0803-48ff-8830-d161ca2ca818"],[{"index":{"value":6349},"size":{"value":28}},"762a3461-ce45-4a73-a6ed-3a981e31f519"]]
+{"ide":{"node":{"8b246526-7541-4d80-9475-3d25ff7b4709":{"position":{"vector":[97,-833]}},"c10bf107-c78b-4de4-9c9c-3160eba13bbd":{"position":{"vector":[97,-833]}},"a3eb5486-bcb9-47b1-9d6b-6dd13e1c1eae":{"position":{"vector":[123,-917]}},"a22a994f-f617-43c5-b980-127f58813d21":{"position":{"vector":[123,-1095]}},"370a8699-225c-41a6-938e-9f33213a9d01":{"position":{"vector":[-173,-931]}},"8149c090-184f-4655-88ee-29949e8c1ca0":{"position":{"vector":[-586,517]}},"b8c96002-a518-48ba-abd7-868df9695c96":{"position":{"vector":[-597,445]},"visualization":{"show":true,"fullscreen":false}},"d0b90351-7601-4125-932f-b5185cdc9a19":{"position":{"vector":[-597,206]},"visualization":{"show":true,"fullscreen":false}},"7e32a2e3-f331-474d-89f7-8545140b5505":{"position":{"vector":[-597,206]},"visualization":{"show":true,"fullscreen":false}},"1fa2fd99-69ac-45b2-b5dc-8f0cf86ae475":{"position":{"vector":[51,169]}},"0e9d70b1-a0db-4191-8fe4-669c2fbfc63e":{"position":{"vector":[51,169]}},"06e0938d-9580-4bf2-81d6-736910c7547b":{"position":{"vector":[51,97]}},"90348173-4899-4401-98a1-c5775e30b1e4":{"position":{"vector":[51,97]}},"d738cc6f-ab6c-4f68-942f-b8866a6fb0ca":{"position":{"vector":[51,97]}},"9cec73a6-6cf4-4b2c-bd8a-853f07995410":{"position":{"vector":[51,25]}},"557b2445-e3c1-4223-a275-6652d7530073":{"position":{"vector":[51,25]}},"81a8898a-2b54-498d-91b3-0062f02a185f":{"position":{"vector":[51,-47]}},"5557ff4c-a1d3-4dc9-94a8-22d43fd33db6":{"position":{"vector":[100,-47]}},"c735fb71-d9c2-4e79-a54d-173b47ec25bb":{"position":{"vector":[100,-47]}},"40de88f2-3e18-47cc-a8e2-3fe9a6cd4a47":{"position":{"vector":[100,-47]}},"5227c1d8-5fad-4576-b6fe-9cec2f0bacfe":{"position":{"vector":[51,-107]}},"5910ba09-5f9c-45cb-aa12-41ecec480926":{"position":{"vector":[86,-35]}},"870db5f9-a165-4682-8f32-e3905378d0f4":{"position":{"vector":[-597,-140]}},"adb39d6d-b8fa-4d0f-8566-bf9e612fd457":{"position":{"vector":[-541,-107]}},"07d0f3b6-151c-4702-8122-59298f8dd57f":{"position":{"vector":[-105,-97]}},"36753567-12de-497b-b4f5-9a0a1adbdc52":{"position":{"vector":[-597,-212]}},"20ddc2ca-8072-4598-9289-2d80f038c481":{"position":{"vector":[-597,-56]}},"aab95804-1654-4597-a93b-237874a04932":{"position":{"vector":[-597,-56]}},"43f30873-32a7-41b7-9c28-d7b7e1b6c0e8":{"position":{"vector":[-550,-284]}},"ad9971d8-a8c7-4782-be93-cb0b3e438c10":{"position":{"vector":[-550,-281]}},"341d4971-2a1f-473e-9102-b4fa7ceb2e80":{"position":{"vector":[-550,-281]}},"824da5ad-3ecc-470e-8547-00721ffce300":{"position":{"vector":[-594,-356]}},"81b9c743-461d-4eae-97e2-028fd0d9c8c7":{"position":{"vector":[-597,-128]}},"dbe9dda4-1474-427e-b041-a7ac4052363e":{"position":{"vector":[-594,-428]}},"1bdbe668-1303-4b3e-90bb-1133bfed3673":{"position":{"vector":[-597,-200]}},"91b35744-0322-426c-abfe-678cbbd688ad":{"position":{"vector":[-597,-200]}},"353a06fa-e121-4c35-87a5-f1883ebfd13b":{"position":{"vector":[-594,-500]}},"ad2370ce-00a3-4b1d-a46d-3a96e1eccede":{"position":{"vector":[-597,-467]}},"8d7ef052-b9f0-4019-bcea-da62d3c342be":{"position":{"vector":[-597,-467]}},"1acecd88-c349-4915-8326-d3c263b6f233":{"position":{"vector":[-597,-467]}},"b3d3e958-2b45-46b4-ac68-6b75e959af5b":{"position":{"vector":[-594,-572]}},"73dd90d7-0cc3-4270-8155-f02e994c1660":{"position":{"vector":[-597,-539]}},"e1f64077-93fd-4d4c-9eec-a532e73a91f5":{"position":{"vector":[-597,-539]}},"dacbc2c9-2b32-4c1f-b67b-f93261f0d19b":{"position":{"vector":[-594,-644]}},"d293edf6-1149-4d3f-bc46-765298479afd":{"position":{"vector":[-597,-611]}},"918d1fd0-3e1f-4cfa-a466-06e62c9a091e":{"position":{"vector":[-597,-611]}},"d42985f8-8ddb-4b89-9ee9-7e88efad8fe1":{"position":{"vector":[-605,-824]}},"b67bf40e-bde5-41b5-b0b5-46ba1a8d87f6":{"position":{"vector":[-597,-873]}},"1168659d-d612-4ba7-aaff-21f10fc5132a":{"position":{"vector":[-597,-873]}},"b6bad6ba-c86c-42b6-a8a5-50c9a612765e":{"position":{"vector":[-547,-973]}},"baa4682a-f372-4c37-af54-ef4372f4b38b":{"position":{"vector":[-520,-760]}},"6403976f-53f5-48b9-8a8c-a6ef56c69b2f":{"position":{"vector":[-402,-1045]}},"cbee0cdd-bc10-42fe-a755-0e281735f63d":{"position":{"vector":[-594,-1099]}},"bd8514c3-a72e-40ea-9931-93d61626dff1":{"position":{"vector":[-586,-923]}},"26a40360-fb29-45f0-8c1a-13e3f3c781af":{"position":{"vector":[-586,-923]}},"b559557b-e0f8-43ee-b463-c368b244f7a9":{"position":{"vector":[-597,-1171]}},"6c710221-0ef9-4138-b0c8-ada89e56fb1a":{"position":{"vector":[-586,-995]}},"d8040079-5aa0-4ec5-ac60-b51a49ab4243":{"position":{"vector":[-586,-995]}},"98def70a-465d-45de-b1eb-0db29231d014":{"position":{"vector":[-594,-1243]},"visualization":{"show":false,"fullscreen":false,"height":567}},"b244c280-f652-407a-b8a6-891e8772930d":{"position":{"vector":[-586,-1067]}},"be674400-351a-4c68-be3f-4d1b6d80d52a":{"position":{"vector":[-586,-1067]}},"9bc592d6-e93d-46a6-90d5-aed9fac0a17c":{"position":{"vector":[-586,-1067]}},"92c2beb0-9377-4caf-9df9-6b577e47f23b":{"position":{"vector":[-594,-1315]}},"58847ee1-b280-4c60-95d4-276d002089c7":{"position":{"vector":[-586,-1139]}},"738a2898-a2e7-4f2c-91a1-9eb0d6d2acc2":{"position":{"vector":[-594,-1387]}},"16cd36cf-58ba-4e63-b1d6-6846d8a4e3a6":{"position":{"vector":[-586,-1211]}},"ff9558f3-cdba-4580-afbb-d305eb538a4d":{"position":{"vector":[-594,-1459]}},"9bd8c423-5043-4810-a587-dc2918abf6bb":{"position":{"vector":[-586,-1283]}},"a16db65e-615c-47c9-993a-6e7bc0ee0c11":{"position":{"vector":[-594,-1531]}},"d8b18d76-d548-4a02-8a89-b259a8356a11":{"position":{"vector":[-586,-1355]}},"02f6f877-89fc-40a7-b841-c8b07e2a5432":{"position":{"vector":[-586,-1355]}},"762a3461-ce45-4a73-a6ed-3a981e31f519":{"position":{"vector":[-594,-1603]},"visualization":{"show":true,"fullscreen":false,"width":2010.5576835558252}},"7c4ab210-0803-48ff-8830-d161ca2ca818":{"position":{"vector":[-586,-1427]}}},"import":{}}}

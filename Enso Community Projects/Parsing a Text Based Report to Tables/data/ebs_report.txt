@@ -1,0 +1,26 @@
+Original Data
+XXXX USMC                                                                Sample Report                                                       Report Date: 01-JUL-2024 00:30:00
+Functional Currency: USD                                                                                                                                       Page: 1     /  4   
+
+         Reporting Level : US_ENTERPRISE    
+        Reporing Context : NA_RPT
+   Set of Books Currency : USD
+     Company Segment Low : 1022
+    Company Segment High : 2099
+Application GL Date From : 01-JUN-2024
+  Application GL Date To : 30-JUN-2024
+   
+
+                      Receipt               
+Company               Currency  Apply Date  
+--------------------  --------  ------------
+Enso Analytics        USD       09-JUNE-2024
+                                                                                                         Applied Amount                                                               
+Customer                                     Billing/Invoice  Related                      Transaction   in Transaction        Allocated      Earned    Unearned       Total Amount In
+Number     Customer              Batch       Number           Customer    Receipt Number   Currency            Currency   Receipt Amount    Discount    Discount   Functional Currency
+---------  --------------------  ----------  ---------------  ----------  ---------------  -----------  ---------------  ---------------  ----------  ----------  --------------------
+"A8765432   GOOGL                             IN98231841       A1217970    RNO AC(92451)    USD               22,115.10        18,797.84            0           0            21,451.65 "
+"A7654321   MSFT                              IN98231842       A1217970    RNO AC(92451)    USD                  555.40           472.09            0           0               538.74 "
+"A1234567   ORCL                              IN9823198        A1217970    RNO AC(92451)    USD               13,000.00        11,050.00            0           0            12,610.00 "
+"A1234567   META                              IN98232034       A1217970    RNO AC(92451)    USD               22,115.10        18,797.84            0           0            21,451.65 "
+                                                                                                                                                                  --------------------

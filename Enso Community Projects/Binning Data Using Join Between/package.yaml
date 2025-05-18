@@ -1,0 +1,5 @@
+name: Binning Data Using Join Between
+namespace: local
+version: 0.0.1
+edition: 2024.4.2-rc2
+prefer-local-libraries: 'true'

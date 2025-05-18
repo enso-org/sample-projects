@@ -1,0 +1,81 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## # Purpose
+
+   ### Create a report, by Fiscal Quarter, of Invoiced Amount, Refunds, and Credit Memos, normalized by USD.
+
+   ## Calculating Fiscal Quarter
+
+   In this case, our fiscal year starts on October 1.  We add three months to each date, and extract out the year and quarter, formatting the results so that it appears as yyyy-Q# (e.g. 2024-Q4).
+
+
+   **The expression is as below:**
+
+   ```
+   format(date_add([Date],3,..Month),"yyyy") + "-" + format(date_part(date_add([Date],3,..Month),..Quarter),"Q#")
+   
+   ```
+
+   Note that we are adding 3 months to the date, before calculating the year and the quarter. If our fiscal year started on July 1, we would add 6 months. If the fiscal year started on April 1, we would add 9 months, etc. 
+
+
+   ## Currency conversion
+
+
+   We could have built a lookup table, or imported a file with rates. This is preferable for some companies.
+
+
+   In this case, we are using live exchange rates.  
+
+
+   The API key is mine, but is good for 5000 requests a month. 
+
+
+   If you are trying this and you are not seeing results, go to their site and get a new key and try it out.
+
+   ![Image](/images/currency.png)
+
+
+   Getting the rates and putting them into a table is quick and painless. 
+
+
+   Now we join this with our Netsuite transaction data.
+
+
+   We create a USD column that takes the Currency_Rate * the Amount
+
+
+   Then a quick cross_tab and some formatting!
+main =
+    ## Get FX Rates
+    any9 = Data.fetch 'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_YjyTABdAuOwhUX9nb3zEdKOmji6AS2WSlHaxhZOg'
+    any10 = any9.to_table
+    any11 = any10.expand_to_rows 'data'
+    any16 = any11.rename_columns [(Pair.Value 'data Key' 'Currency'), (Pair.Value 'data' 'Currency_Rate')]
+    quot1 = enso_project.data/ 'NetSuite_Transactions.csv'
+    file1 = Data.read quot1
+    ## Calculate Fiscal Quarter based on Date field
+    any15 = file1.set (expr 'format(date_add([Date],3,..Month),"yyyy") + "-" + format(date_part(date_add([Date],3,..Month),..Quarter),"Q#")') "Fiscal Quarter"
+    any12 = any15.join any16 ..Inner [(..Equals 'Currency' 'Currency')]
+    any4 = any12.set (..Simple_Expr (..Name 'Amount') (..Math (..Multiply (..Name 'Currency_Rate')))) "USD"
+    any3 = any4.cross_tab ['Fiscal Quarter'] 'Transaction Type' (..Sum 'USD')
+    node1 = any3.sort [(..Name 'Fiscal Quarter' ..Ascending )]
+    any8 = node1.fill_nothing [(..By_Type ..Float)] 0
+    any17 = any8.set (expr '[Invoice] - [Refund] - [Credit Memo]') "Total"
+    any14 = any17.format [(..By_Type ..Float)] '$#,##0.00'
+
+
+
+#### METADATA ####
+[[{"index":{"value":1794},"size":{"value":111}},"fcd20ddc-dc83-4df8-82d2-4d59b8140ff8"],[{"index":{"value":1918},"size":{"value":13}},"2da07a96-0955-45be-8c10-90775494c7d4"],[{"index":{"value":1944},"size":{"value":27}},"631a813a-2838-4276-8db4-5962f7b61760"],[{"index":{"value":1984},"size":{"value":94}},"82d47044-753f-481c-bada-80e9a8f8a30c"],[{"index":{"value":2091},"size":{"value":46}},"a7fcc61b-4c01-4de9-821d-91df949af66e"],[{"index":{"value":2150},"size":{"value":15}},"68c2fe1d-e867-43ae-a2be-1d0954ea49c5"],[{"index":{"value":2230},"size":{"value":146}},"e7fb80af-09f8-4e18-9a53-d94cbe5d86dd"],[{"index":{"value":2389},"size":{"value":59}},"893d8375-8ad0-4bdd-8715-76be278e1f4a"],[{"index":{"value":2460},"size":{"value":96}},"1e132bae-f279-4178-8119-11006bad49ee"],[{"index":{"value":2568},"size":{"value":66}},"2b3bf7b0-6e76-4458-b595-05bf2949c10b"],[{"index":{"value":2647},"size":{"value":50}},"78de3115-2678-4e92-90e6-6b20fe878266"],[{"index":{"value":2709},"size":{"value":42}},"887876e1-f45d-442e-8cde-ee073847cc96"],[{"index":{"value":2764},"size":{"value":62}},"7413982c-3236-41e1-aec1-d16afa531781"],[{"index":{"value":2839},"size":{"value":46}},"6f981511-2937-4c09-8cd3-0f78e59e93c3"]]
+{"ide":{"node":{"fcd20ddc-dc83-4df8-82d2-4d59b8140ff8":{"position":{"vector":[781,16]}},"2da07a96-0955-45be-8c10-90775494c7d4":{"position":{"vector":[781,-56]}},"631a813a-2838-4276-8db4-5962f7b61760":{"position":{"vector":[781,-128]}},"82d47044-753f-481c-bada-80e9a8f8a30c":{"position":{"vector":[781,-200]}},"a7fcc61b-4c01-4de9-821d-91df949af66e":{"position":{"vector":[2,266]}},"68c2fe1d-e867-43ae-a2be-1d0954ea49c5":{"position":{"vector":[2,194]}},"e7fb80af-09f8-4e18-9a53-d94cbe5d86dd":{"position":{"vector":[2,122]}},"893d8375-8ad0-4bdd-8715-76be278e1f4a":{"position":{"vector":[2,-333]}},"1e132bae-f279-4178-8119-11006bad49ee":{"position":{"vector":[2,-405]}},"2b3bf7b0-6e76-4458-b595-05bf2949c10b":{"position":{"vector":[2,-477]}},"78de3115-2678-4e92-90e6-6b20fe878266":{"position":{"vector":[2,-549]}},"887876e1-f45d-442e-8cde-ee073847cc96":{"position":{"vector":[2,-621]}},"7413982c-3236-41e1-aec1-d16afa531781":{"position":{"vector":[2,-693]}},"6f981511-2937-4c09-8cd3-0f78e59e93c3":{"position":{"vector":[2,-765]},"visualization":{"show":true,"width":1005.5943947208738,"height":362.1446450242719}}},"widget":{},"snapshot":"eJy9VttS20gQffdXdOytkk3EYAO5VlFbTiBZNgWEGEJ2XS6nLbWsAWlGzIwwytdv9Ui+QJbs2z7p0vdzunsmMTqHkUMVo4nFO7QEMi+0cYBZ1koeSC9wlv1CfIgOZ790MLwaPS38SPoXQq3nGU2HhXxa50RGRluduKdVRkovkgxv/qtILDcVmteVytE95kVG9ifBV2lLzOQPdFKrVqvTgQ58Lk2hLbVaANDpdOC9IXQECIbYOIRZBR+kjTCD8xKNIxOCTuBY3WkZUQzDXJfKhfCFklLFNgRUMTuJpYMTyrUNQWmTc1iK2dnl6FA00eA9ZlGZoZNq/iiI1zhW4FJpIUJLIejSQFIrVYQGrEPjLGgFZ5HTMzIwEABXBBjH4FJDBLlWLrXgNBBGKcToqE6Q7p3ByIEuHbiUaocsuF3WmHDSzmfGCoZsmTkLVoNL0YF0gEVBaCyghaqqqu3zDnRJzAXs9nf3t8/3e6Llq9jaukgJ6L4wZK3UCqS3mVGmF2+3trzO9+/f+VEH7XKeU4zj7vgQHU3CvVCIEy6lF7Y5VLsHz6G93YbnDywKNL+0FaIBtxe2zzvtHkdcBufnqXZUV7cgQOOB5Pr3NnBkLGoYZ5RoQxBtUPgASf5o0BRwnPw7fRQzf3+WWQWDkMMudJnFnsGXTVRvzM6eMB4WRmY/Wb9prEMgFwlorTquNIZUVEGk1R0Z6weBZVcEkbdO8Y5gVsrMAUKm9U1ZgOOhC0GbZuwoBoREZgQL6VIw6MgKuOBelRYKQwkZv4wSbcDqnH3nBSpJtmmKh63d4F1aRjGTd9wuUYpqTkvfTQXcScPPx3BDFUfKpWImSscfc61jH/BFv98HQ7clWWcBaySWGBwnUOnSh3OmqlnjhlTx6r/SDiwRy5q2D2GuG/alASt5QagY5sQYKVr4fDzppuLR0KWrZ/zZ+DjHOU26O5Kfdidq8BeFmvfqjD7Sxphxtd5TUa7+5iCV04A1DVzqbSmjm1oNpcrI2mV5p3rBaF5r2QDsCeLeOyVnS87cGVQWI96B3Moo1g2w3H2Xo0OIdFbmqp4HhzdkfYLL/pl+Yc0t/69egSuCFGCTIO97O3U486n6PlivlWetHKWCA7bizvxIDj58A/Zr/T9U1Rs4AD62REIuSiFInSvs250dLKRIDNESTf6OdL5zN9jJ2N79joW8oeogiXDK/TT967q6GL6Lh+XZIr389kbN9n4cxZ/O8mv5cjjavRplf+B9+vfZPFiGHvThwKcgnJ564FeSQS0Z9AXdF6jiqdNToxcWAoZz7eFlozcQhhTmNK0htTDufkZpxFfMSqqN4BNVAQRLdINeCD/pbMg9+kFv4kPdltpxSqSsnhZGX1PkBBvsQHBKbsSkTy/WpFsR2bs6Sx7hwRJjQxjXzpaULI8nenQ4AV8j/PLhHQuJpCxeVf0CDmq/wpKDLu99CP7fxR70oP0w4/Yqvd2GlBfCz0jNkxDHSpGBcVeIo9sSM7vBxSYtk6Wf/cbNbl2lECPJd47pEZfbFeIUc4Kgnoygx39O0KX+WWZOFlm11nrEaq/Xg/bl6HCV814da1+s52kcPKwvmECwQTFcVAUFPq0yh+BydBj40w6Ujqlp3z1h+XI0XqXxyCMIMbQRKX8Ergt/DQe1F5HILJsq7VJWYDfvqinHBSE+ZBpdbwL9Feyv6qCvN5ti3FyiJrAN4/r+5F83bk8TpvJCO8zWDC6hfyXqHnkidvBbJ+x0+qLfD1r/AKhmrAY=","import":{}}}

@@ -1,0 +1,48 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## ![Image](/images/image_3.png)
+
+   # Goal - Import and Union all CSV files in folder
+
+   ### Listing of 2024-AR folder
+
+
+   ![Image](/images/image.png)
+
+   # Challenge - The format slightly changed between October and November
+
+   - Different column order - Customer Name and Invoice Number flipped
+   - New column added - Days Past Due added in November
+
+
+   ### Pre-November Format
+
+
+   ![Image](/images/image_1.png)
+   ### November and December Format
+
+
+   ![Image](/images/image_2.png)
+main =
+    quot1 = enso_project.data/ '2024-AR'
+    vector1 = Data.list quot1 '{*.csv}'
+    any1 = Data.read_many vector1 return=(..As_Merged_Table ..In_Any)
+    quot2 = enso_project.data/ '2024-AR/Jan.csv'
+    any2 = Data.read quot2
+    quot3 = enso_project.data/ '2024-AR/Nov.csv'
+    any3 = Data.read quot3
+
+
+
+#### METADATA ####
+[[{"index":{"value":830},"size":{"value":18}},"7dbc79b0-e667-41d2-b4e3-fb3abd7446fa"],[{"index":{"value":830},"size":{"value":28}},"5d26374c-dce7-43f5-9306-e1b2e7056040"],[{"index":{"value":873},"size":{"value":9}},"014603d8-3ac9-4227-92b4-b0f099f36f7d"],[{"index":{"value":873},"size":{"value":15}},"6ca0862b-89e7-4d5d-963f-876e3e4f9fd1"],[{"index":{"value":873},"size":{"value":25}},"0e4da6b2-7080-4ff2-a2dd-75077d2f3b35"],[{"index":{"value":910},"size":{"value":14}},"4bc0bcd8-9fce-42e5-bd51-88baafb80d20"],[{"index":{"value":910},"size":{"value":22}},"a5fefda9-7c58-4283-adc2-349a01fd09d1"],[{"index":{"value":910},"size":{"value":58}},"38496fc4-1c98-4501-8eae-4fc503780562"],[{"index":{"value":981},"size":{"value":36}},"4a7d4b6e-15be-4790-b73d-f96818610efb"],[{"index":{"value":1029},"size":{"value":9}},"684ec0dc-207e-40b0-8afd-0069c8b98ff4"],[{"index":{"value":1029},"size":{"value":15}},"d19575fb-af0e-48bc-b584-8ee012ee7cfb"],[{"index":{"value":1057},"size":{"value":36}},"31306d92-124c-410c-bb23-cda3e40081ed"],[{"index":{"value":1105},"size":{"value":15}},"166edb44-766b-4c8c-b940-e09e59851941"]]
+{"ide":{"node":{"5d26374c-dce7-43f5-9306-e1b2e7056040":{"position":{"vector":[-488,255]}},"7dbc79b0-e667-41d2-b4e3-fb3abd7446fa":{"position":{"vector":[319,215]}},"0e4da6b2-7080-4ff2-a2dd-75077d2f3b35":{"position":{"vector":[-531,183]},"visualization":{"show":false,"width":1080.8645833333333,"height":228.03819444444443}},"6ca0862b-89e7-4d5d-963f-876e3e4f9fd1":{"position":{"vector":[-415,172]}},"014603d8-3ac9-4227-92b4-b0f099f36f7d":{"position":{"vector":[147,50]}},"38496fc4-1c98-4501-8eae-4fc503780562":{"position":{"vector":[-531,111]},"visualization":{"show":true,"width":1892.5156249999998}},"a5fefda9-7c58-4283-adc2-349a01fd09d1":{"position":{"vector":[-415,100]},"visualization":{"show":true,"width":1892.5156249999998}},"4bc0bcd8-9fce-42e5-bd51-88baafb80d20":{"position":{"vector":[-415,39]}},"4a7d4b6e-15be-4790-b73d-f96818610efb":{"position":{"vector":[-448,998]}},"d19575fb-af0e-48bc-b584-8ee012ee7cfb":{"position":{"vector":[-531,926]},"visualization":{"show":true,"width":1423.84765625}},"684ec0dc-207e-40b0-8afd-0069c8b98ff4":{"position":{"vector":[147,-548]}},"31306d92-124c-410c-bb23-cda3e40081ed":{"position":{"vector":[-450,687]}},"166edb44-766b-4c8c-b940-e09e59851941":{"position":{"vector":[-531,615]},"visualization":{"show":true,"width":1423.84765625}}},"widget":{},"snapshot":"eJyNk0GP0zAQhe/5FYN66C5SUrbl2kNpYVXElhVdlgNC0TSepAZ7JthOuwXx31GaNOpqaZeTLc/33huP5dyJhWVAVuhU8gY9gbaluABoTJQ/qt7hypwpzzDg6qzB5MvydPFapDCUTkp9mrnRmRMveTiNLFm2ucEfz90Dq2Og3XbI2we0pSH/pHCvfYVG/8KghaOo14MXX+cWC/p2MdD16pslHSUlF5dRBAA9uBY0EMO8DWQFn1kL19EwXd5Drg150Ay5GEWuUfV68EH7oLkAyWH4avg6nnzqiBr5d/Rx8HSNxhAXBDHcrQlycRYDeKOLdTA7yNbIBSlYUdgSMXzMgqzI7VtcyIbsqu0mhpnOc3LEATIxlWUQp8hBDNPKB7HkYIGW9so5b0RnBIuq1kNudFmSamwWtD0YoFKkamfcebhFH2BWUXuq+Sj/MI5bR/HhFN7tr3JuEOlVM4pW3SnrFmeU/bfNsLGxqBnGNQc/KwlXMAZiL2np5DtlIVEYcAD99qH6e3BDWRBXo/XvSIz2oRX3f79MMr/503DIuw5yhCq1yLtO7ShUjscXSTLx6Q25glTafMYkmXM64d1l19bwfFuD98h1bhc7PI5tHDqv0TNeC9k88ho98RpFfwE4MW2k","import":{}}}

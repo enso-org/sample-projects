@@ -1,0 +1,92 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## ICON group
+
+   # Convert Decimal Degrees to Radian
+to_radian any1 =
+    float2 = Math.pi
+    number2 = float2./ 180
+    number1 = any1.* number2
+    number1
+
+## ICON group
+
+   # Calculate the distance in Miles between 2 Latitude Longitude pairs
+distance_miles lat1 lon1 lat2 lon2 =
+    ## Lat1
+    number2 = Main.to_radian lat1
+    ## Lon 1
+    number1 = Main.to_radian lon1
+    ## Lat2
+    number3 = Main.to_radian lat2
+    ## Lon2
+    number4 = Main.to_radian lon2
+    ## dLat
+    diff1 = number2-number3
+    ## dLon
+    diff2 = number1-number4
+    any3 = diff1./ 2
+    any4 = diff2./ 2
+    float4 = any3.sin
+    float5 = any4.sin
+    float6 = number3.cos
+    float7 = number2.cos
+    any5 = float7.* float6
+    any6 = float4.^ 2
+    number5 = float5.^ 2
+    ## a
+    sum1 = any6+any5*number5
+    float1 = sum1.sqrt
+    float9 = float1.asin
+    node2 = float9.* 2 * 6371000
+    ## Distance in Miles
+    node1 = node2./ 1609.344
+    node1
+
+## ICON group
+   # Takes a row value and extracts the 4 values and passes to the distance_miles function
+dist_from_row any5 =
+    any14 = any5.at 'lat'
+    any15 = any5.at 'lng'
+    any16 = any5.at 'Right lat'
+    any17 = any5.at 'Right lng'
+    sum2 = Main.distance_miles any14 any15 any16 any17
+    sum2
+
+main =
+    ## Denver Lat
+    lat2 = 39.7392
+    ## Denver Long
+    lon2 = -104.9903
+    quot1 = enso_project.data/ 'DD2025-01-21.csv'
+    any1 = Data.read quot1
+    any2 = any1.filter 'state' (..Equal "CO")
+    sum2 = Main.dist_from_row
+    any5 = any2.select_columns ['address', 'city', 'state', 'postal', 'lat', 'lng']
+    ## We are calculating the distance of each location to every other location in the state of Colorado
+    table2 = any5.cross_join any5
+    vector1 = table2.rows
+    vector3 = vector1.map sum2
+    any3 = table2.set vector3 "Distance"
+    any4 = vector1.first
+    any6 = any3.sort [(..Name 'address'), (..Name 'Distance')]
+    any7 = any6.reorder_columns ['Distance'] ..Before_Other_Columns
+    float1 = 40.0101
+    node1 = -105.123456
+    sum1 = Main.distance_miles float1 node1 lat2 lon2
+    sum4 = Main.dist_from_row any4
+
+
+
+#### METADATA ####
+[[{"index":{"value":383},"size":{"value":4}},"88d72ff5-befb-4a3f-a6e8-ba44e38974aa"],[{"index":{"value":403},"size":{"value":7}},"4223c61c-941d-414f-b45a-a010ac6638b8"],[{"index":{"value":425},"size":{"value":8}},"8569a11e-366d-4d57-ae80-329535c46386"],[{"index":{"value":425},"size":{"value":12}},"b4da6089-1059-49d9-a716-034b939de3d6"],[{"index":{"value":452},"size":{"value":6}},"bc4409c2-b743-40cf-8f77-0c9ba22a04c3"],[{"index":{"value":452},"size":{"value":14}},"8cf2c774-fc0a-4b83-b878-df6c74fc6057"],[{"index":{"value":471},"size":{"value":7}},"6d48008e-9888-41c5-9bf7-ae586f768aa9"],[{"index":{"value":582},"size":{"value":4}},"2e3ec64b-94c1-4888-b9cb-e3f2be59aafc"],[{"index":{"value":587},"size":{"value":4}},"6685ae18-ef23-4050-8e6a-021346515380"],[{"index":{"value":592},"size":{"value":4}},"d5a60fb2-be5f-4734-9dd2-fd90cbaa7130"],[{"index":{"value":597},"size":{"value":4}},"63db752f-44be-4a86-a568-4f085b0e0e5d"],[{"index":{"value":630},"size":{"value":19}},"abed73fd-ed4e-4179-9686-7582cb52b0c8"],[{"index":{"value":677},"size":{"value":19}},"385f8357-e4d0-4c42-8d57-341b9e5f995f"],[{"index":{"value":723},"size":{"value":19}},"8b49ece3-c6e8-4ca2-9024-4f5afe9d1c99"],[{"index":{"value":769},"size":{"value":19}},"edc0e525-42fe-4063-b601-78f652cd9999"],[{"index":{"value":813},"size":{"value":15}},"6776f15a-b010-445b-aeaa-229d590a0b91"],[{"index":{"value":853},"size":{"value":15}},"cf6a8d20-c9bd-4197-a24c-24221974e3e7"],[{"index":{"value":880},"size":{"value":7}},"fa1fe1c9-9ab2-48ad-b631-9bf84f33dd36"],[{"index":{"value":880},"size":{"value":9}},"caf7c9b3-c464-4150-bc37-f3384f7000dd"],[{"index":{"value":901},"size":{"value":9}},"7cd22e50-2844-46f2-b9e6-e43848c4a326"],[{"index":{"value":924},"size":{"value":8}},"a168e01b-ea5a-437d-8ae8-41560702b75f"],[{"index":{"value":946},"size":{"value":8}},"c753a9ac-e911-4007-bd23-d422439f2603"],[{"index":{"value":968},"size":{"value":11}},"29c8128f-e5d3-44d8-b71d-9c23647558d8"],[{"index":{"value":993},"size":{"value":11}},"0b4c60c9-0f65-4b46-8497-a4ea598facb7"],[{"index":{"value":1016},"size":{"value":8}},"208a3de6-b40a-4bd4-b43b-1ce1a3f0f1d4"],[{"index":{"value":1016},"size":{"value":15}},"ab329beb-035d-4d45-90a0-22c47606c543"],[{"index":{"value":1043},"size":{"value":8}},"5782a37b-7f3c-46c7-801f-b7b1b8da2fe8"],[{"index":{"value":1043},"size":{"value":10}},"90b5c56b-b554-420a-b619-482b93a3a7cc"],[{"index":{"value":1068},"size":{"value":8}},"c97320e9-fe2f-4471-9a9e-e60e3accbfe8"],[{"index":{"value":1068},"size":{"value":10}},"ac2b7bd9-3978-4aa9-9946-9c1fa9a80da6"],[{"index":{"value":1099},"size":{"value":17}},"fad2238c-ec73-42e5-86dc-4a00363e5059"],[{"index":{"value":1130},"size":{"value":9}},"3a092450-0d54-4755-a847-1934ba31a5bf"],[{"index":{"value":1153},"size":{"value":11}},"6b6b8e1b-c0d9-45aa-98eb-0de7deb7e632"],[{"index":{"value":1177},"size":{"value":20}},"527a6016-33af-45ba-88ca-7373c4c63fd3"],[{"index":{"value":1235},"size":{"value":16}},"4fbadc5a-62c6-41c2-ad47-b88b6603ad86"],[{"index":{"value":1256},"size":{"value":5}},"cbd14036-7bca-4774-bfa7-a4588c9fdca7"],[{"index":{"value":1382},"size":{"value":4}},"017eaa3c-1468-49ee-980f-2ded3e273c84"],[{"index":{"value":1401},"size":{"value":7}},"abd100e0-b69f-4753-8aed-7a435c18882f"],[{"index":{"value":1401},"size":{"value":13}},"c15807d8-f925-4279-b7fc-70c27773451b"],[{"index":{"value":1427},"size":{"value":7}},"c467ebb5-ea54-4ff1-9ace-2d11a7aad989"],[{"index":{"value":1427},"size":{"value":13}},"595162b0-274c-4f4f-8c19-0b988bf9e892"],[{"index":{"value":1453},"size":{"value":7}},"88508cb4-3d3f-46e9-813f-78ae47285191"],[{"index":{"value":1453},"size":{"value":19}},"6248fad4-3fcd-428a-997f-88d73b61f284"],[{"index":{"value":1485},"size":{"value":7}},"bd2d4b1c-d230-4bea-82ba-f0e1be6240dc"],[{"index":{"value":1485},"size":{"value":19}},"43510ada-fa61-44e7-8b03-b3ad5f520494"],[{"index":{"value":1516},"size":{"value":19}},"2969ce66-ea04-45b8-a992-75e6f82389cc"],[{"index":{"value":1516},"size":{"value":25}},"a2145aff-48cb-4c8d-91dc-150144fdf867"],[{"index":{"value":1516},"size":{"value":31}},"10c58c6a-8f58-4d57-905f-d5ba78758d48"],[{"index":{"value":1516},"size":{"value":37}},"67c3a603-efd9-4d58-8038-33906611a172"],[{"index":{"value":1516},"size":{"value":43}},"4c3208fa-cd55-4164-92c2-c62773f491d2"],[{"index":{"value":1564},"size":{"value":4}},"0c231272-ff29-4af9-97b1-466eb6ec906c"],[{"index":{"value":1606},"size":{"value":7}},"5214aa92-87c0-4a03-9828-78f1c1761710"],[{"index":{"value":1644},"size":{"value":9}},"c4e0f1a2-b8ca-4b6e-9664-8205252bddd2"],[{"index":{"value":1645},"size":{"value":8}},"c77a85ed-c939-44fe-aba5-f784c4b929fc"],[{"index":{"value":1666},"size":{"value":18}},"2fef0fe4-0717-49b9-9fca-0d836d319f2f"],[{"index":{"value":1666},"size":{"value":37}},"5a806947-cb06-4baf-9063-ea08c266a4bc"],[{"index":{"value":1715},"size":{"value":9}},"443c148d-3039-43c0-a12e-45e0eab95d5d"],[{"index":{"value":1715},"size":{"value":15}},"cf474971-c154-41f0-90c8-5b74ae655eae"],[{"index":{"value":1742},"size":{"value":11}},"d7db56b1-c42a-47fd-b7eb-fafc8ba05268"],[{"index":{"value":1742},"size":{"value":19}},"aa87ff98-269f-4483-95c9-e17c8dff1fd5"],[{"index":{"value":1742},"size":{"value":34}},"6740cf4f-915c-43ea-86f2-0b17912daca5"],[{"index":{"value":1788},"size":{"value":18}},"43df83fe-8ea5-4534-8505-51ee9d7484cc"],[{"index":{"value":1818},"size":{"value":19}},"99da97fa-0181-4b67-87db-fad9311f5e93"],[{"index":{"value":1818},"size":{"value":72}},"d3d4722e-6dae-46f8-be8c-4fb1a89c1047"],[{"index":{"value":2009},"size":{"value":15}},"d3e00a39-36c1-4c22-b8ca-024005a2d4df"],[{"index":{"value":2009},"size":{"value":20}},"f239d59e-bdba-418a-a823-adb664dd5014"],[{"index":{"value":2044},"size":{"value":11}},"cae9bc64-045e-455b-abf4-167107fb84d1"],[{"index":{"value":2070},"size":{"value":11}},"d9a18d7a-8376-4e1b-b0bf-626eb5cb0365"],[{"index":{"value":2070},"size":{"value":16}},"36b9bcac-54fc-4ed2-b0cc-2a7f7ffdf36c"],[{"index":{"value":2098},"size":{"value":10}},"7017f6ef-f666-46f5-aa1d-8163b0c4e63c"],[{"index":{"value":2098},"size":{"value":18}},"8cc907d5-005e-4679-a055-ffb0a826d2b1"],[{"index":{"value":2098},"size":{"value":29}},"ee41f330-b34a-4003-b364-1b8dbef19a7b"],[{"index":{"value":2139},"size":{"value":13}},"65bd135f-a308-4f99-9785-00266808111b"],[{"index":{"value":2164},"size":{"value":9}},"169b91df-8117-4e71-ab2d-a55b5144c722"],[{"index":{"value":2164},"size":{"value":51}},"99726766-72b8-4503-9827-7b75ed1b7f54"],[{"index":{"value":2227},"size":{"value":20}},"83d6a225-f3dd-4b93-aeeb-42a6844cb9a6"],[{"index":{"value":2227},"size":{"value":33}},"f888b7d4-9647-4af6-a1e5-922b301509d1"],[{"index":{"value":2227},"size":{"value":56}},"ed28f9a8-458b-440b-843e-c87129445210"],[{"index":{"value":2297},"size":{"value":7}},"cd6d0d5d-2037-4340-a9d3-8850ed3c5e66"],[{"index":{"value":2317},"size":{"value":11}},"664d5f18-329e-4f00-9ab2-ba6c907ad4be"],[{"index":{"value":2340},"size":{"value":42}},"498f81c1-161a-45af-90b8-75555e2aa726"],[{"index":{"value":2394},"size":{"value":18}},"16672ae5-5ddd-4f20-97ee-2a041c59fad0"],[{"index":{"value":2394},"size":{"value":23}},"aec2025a-15d3-48e8-98c5-a8ca0877d797"]]
+{"ide":{"node":{"88d72ff5-befb-4a3f-a6e8-ba44e38974aa":{"position":{"vector":[-46,-561]}},"4223c61c-941d-414f-b45a-a010ac6638b8":{"position":{"vector":[19,-633]},"visualization":{"show":false,"width":320.1640625}},"b4da6089-1059-49d9-a716-034b939de3d6":{"position":{"vector":[19,-705]}},"8569a11e-366d-4d57-ae80-329535c46386":{"position":{"vector":[232,-723]}},"8cf2c774-fc0a-4b83-b878-df6c74fc6057":{"position":{"vector":[-46,-795]}},"bc4409c2-b743-40cf-8f77-0c9ba22a04c3":{"position":{"vector":[197,-656]}},"6d48008e-9888-41c5-9bf7-ae586f768aa9":{"position":{"vector":[-46,-867]}},"2e3ec64b-94c1-4888-b9cb-e3f2be59aafc":{"position":{"vector":[43,-435]}},"6685ae18-ef23-4050-8e6a-021346515380":{"position":{"vector":[581,-435]}},"d5a60fb2-be5f-4734-9dd2-fd90cbaa7130":{"position":{"vector":[318,-435]}},"63db752f-44be-4a86-a568-4f085b0e0e5d":{"position":{"vector":[809,-435]}},"abed73fd-ed4e-4179-9686-7582cb52b0c8":{"position":{"vector":[-64,-533]}},"385f8357-e4d0-4c42-8d57-341b9e5f995f":{"position":{"vector":[460,-533]}},"8b49ece3-c6e8-4ca2-9024-4f5afe9d1c99":{"position":{"vector":[207,-533]}},"edc0e525-42fe-4063-b601-78f652cd9999":{"position":{"vector":[703,-533]}},"6776f15a-b010-445b-aeaa-229d590a0b91":{"position":{"vector":[-64,-669]},"visualization":{"show":false,"width":206.65234375,"height":150.984375}},"cf6a8d20-c9bd-4197-a24c-24221974e3e7":{"position":{"vector":[527,-650]}},"caf7c9b3-c464-4150-bc37-f3384f7000dd":{"position":{"vector":[-62,-741]}},"fa1fe1c9-9ab2-48ad-b631-9bf84f33dd36":{"position":{"vector":[305,-978]}},"7cd22e50-2844-46f2-b9e6-e43848c4a326":{"position":{"vector":[532,-741]}},"a168e01b-ea5a-437d-8ae8-41560702b75f":{"position":{"vector":[-62,-789]}},"c753a9ac-e911-4007-bd23-d422439f2603":{"position":{"vector":[529,-789]}},"29c8128f-e5d3-44d8-b71d-9c23647558d8":{"position":{"vector":[291,-861]}},"0b4c60c9-0f65-4b46-8497-a4ea598facb7":{"position":{"vector":[167,-861]}},"ab329beb-035d-4d45-90a0-22c47606c543":{"position":{"vector":[209,-933]}},"208a3de6-b40a-4bd4-b43b-1ce1a3f0f1d4":{"position":{"vector":[233,-1259]}},"90b5c56b-b554-420a-b619-482b93a3a7cc":{"position":{"vector":[-62,-861]}},"5782a37b-7f3c-46c7-801f-b7b1b8da2fe8":{"position":{"vector":[307,-1113]}},"ac2b7bd9-3978-4aa9-9946-9c1fa9a80da6":{"position":{"vector":[529,-843]}},"c97320e9-fe2f-4471-9a9e-e60e3accbfe8":{"position":{"vector":[797,-1093]}},"fad2238c-ec73-42e5-86dc-4a00363e5059":{"position":{"vector":[160,-1005]}},"3a092450-0d54-4755-a847-1934ba31a5bf":{"position":{"vector":[155,-1059]}},"6b6b8e1b-c0d9-45aa-98eb-0de7deb7e632":{"position":{"vector":[155,-1131]}},"527a6016-33af-45ba-88ca-7373c4c63fd3":{"position":{"vector":[155,-1203]}},"4fbadc5a-62c6-41c2-ad47-b88b6603ad86":{"position":{"vector":[155,-1303]}},"cbd14036-7bca-4774-bfa7-a4588c9fdca7":{"position":{"vector":[155,-1375]}},"017eaa3c-1468-49ee-980f-2ded3e273c84":{"position":{"vector":[-1095,-1072]}},"c15807d8-f925-4279-b7fc-70c27773451b":{"position":{"vector":[-1095,-1288]}},"abd100e0-b69f-4753-8aed-7a435c18882f":{"position":{"vector":[-1040,-1359]}},"595162b0-274c-4f4f-8c19-0b988bf9e892":{"position":{"vector":[-921,-1216]}},"c467ebb5-ea54-4ff1-9ace-2d11a7aad989":{"position":{"vector":[-1040,-1209]}},"6248fad4-3fcd-428a-997f-88d73b61f284":{"position":{"vector":[-770,-1144]}},"88508cb4-3d3f-46e9-813f-78ae47285191":{"position":{"vector":[-1040,-1209]}},"43510ada-fa61-44e7-8b03-b3ad5f520494":{"position":{"vector":[-396,-1126]}},"bd2d4b1c-d230-4bea-82ba-f0e1be6240dc":{"position":{"vector":[-815,-1209]}},"4c3208fa-cd55-4164-92c2-c62773f491d2":{"position":{"vector":[-1021,-1414]},"visualization":{"show":false,"width":573.2003264925373,"height":190.92817164179104}},"67c3a603-efd9-4d58-8038-33906611a172":{"position":{"vector":[-766,-1619]},"visualization":{"show":false,"width":573.2003264925373,"height":190.92817164179104}},"10c58c6a-8f58-4d57-905f-d5ba78758d48":{"position":{"vector":[-766,-1619]},"visualization":{"show":false,"width":573.2003264925373,"height":190.92817164179104}},"a2145aff-48cb-4c8d-91dc-150144fdf867":{"position":{"vector":[-766,-1619]},"visualization":{"show":false,"width":573.2003264925373,"height":190.92817164179104}},"2969ce66-ea04-45b8-a992-75e6f82389cc":{"position":{"vector":[-766,-1619]},"visualization":{"show":false,"width":573.2003264925373,"height":190.92817164179104}},"0c231272-ff29-4af9-97b1-466eb6ec906c":{"position":{"vector":[-1021,-1486]}},"5214aa92-87c0-4a03-9828-78f1c1761710":{"position":{"vector":[150,428]}},"c4e0f1a2-b8ca-4b6e-9664-8205252bddd2":{"position":{"vector":[276,397]}},"c77a85ed-c939-44fe-aba5-f784c4b929fc":{"position":{"vector":[636,-606]}},"5a806947-cb06-4baf-9063-ea08c266a4bc":{"position":{"vector":[-1176,543]}},"2fef0fe4-0717-49b9-9fca-0d836d319f2f":{"position":{"vector":[-396,388]}},"cf474971-c154-41f0-90c8-5b74ae655eae":{"position":{"vector":[-1176,469]},"visualization":{"show":false,"width":1157.7108155579388,"height":264.8087686567164}},"443c148d-3039-43c0-a12e-45e0eab95d5d":{"position":{"vector":[35,-335]}},"6740cf4f-915c-43ea-86f2-0b17912daca5":{"position":{"vector":[-1181,397]},"visualization":{"show":true}},"aa87ff98-269f-4483-95c9-e17c8dff1fd5":{"position":{"vector":[-461,-120]}},"d7db56b1-c42a-47fd-b7eb-fafc8ba05268":{"position":{"vector":[-461,-120]}},"43df83fe-8ea5-4534-8505-51ee9d7484cc":{"position":{"vector":[-981,-749]}},"d3d4722e-6dae-46f8-be8c-4fb1a89c1047":{"position":{"vector":[-1181,175]}},"99da97fa-0181-4b67-87db-fad9311f5e93":{"position":{"vector":[-1103,-59]}},"f239d59e-bdba-418a-a823-adb664dd5014":{"position":{"vector":[-1181,30]},"visualization":{"show":true,"width":1945.8536110019138}},"d3e00a39-36c1-4c22-b8ca-024005a2d4df":{"position":{"vector":[-461,-457]}},"cae9bc64-045e-455b-abf4-167107fb84d1":{"position":{"vector":[-1123,-212]},"visualization":{"show":true,"width":730.0013992537313,"height":113.60611668344065}},"36b9bcac-54fc-4ed2-b0cc-2a7f7ffdf36c":{"position":{"vector":[-1123,-821]}},"d9a18d7a-8376-4e1b-b0bf-626eb5cb0365":{"position":{"vector":[-1010,-1457]}},"ee41f330-b34a-4003-b364-1b8dbef19a7b":{"position":{"vector":[-1181,-926]},"visualization":{"show":false,"width":792.1358434699104}},"8cc907d5-005e-4679-a055-ffb0a826d2b1":{"position":{"vector":[-1170,-936]}},"7017f6ef-f666-46f5-aa1d-8163b0c4e63c":{"position":{"vector":[-1170,-936]}},"65bd135f-a308-4f99-9785-00266808111b":{"position":{"vector":[-838,-455]},"visualization":{"show":false,"width":544.320919122394,"height":120.4590367292002}},"99726766-72b8-4503-9827-7b75ed1b7f54":{"position":{"vector":[-1183,-998]},"visualization":{"show":false,"width":436.65350912291933,"height":700.4968389884763}},"169b91df-8117-4e71-ab2d-a55b5144c722":{"position":{"vector":[-1167,-854]}},"ed28f9a8-458b-440b-843e-c87129445210":{"position":{"vector":[-1183,-1070]},"visualization":{"show":true,"width":1310.271446862996}},"f888b7d4-9647-4af6-a1e5-922b301509d1":{"position":{"vector":[-1169,-776]}},"83d6a225-f3dd-4b93-aeeb-42a6844cb9a6":{"position":{"vector":[-1169,-776]}},"cd6d0d5d-2037-4340-a9d3-8850ed3c5e66":{"position":{"vector":[-59,535]}},"664d5f18-329e-4f00-9ab2-ba6c907ad4be":{"position":{"vector":[81,535]}},"498f81c1-161a-45af-90b8-75555e2aa726":{"position":{"vector":[-96,325]},"visualization":{"show":true}},"aec2025a-15d3-48e8-98c5-a8ca0877d797":{"position":{"vector":[-838,-527]},"visualization":{"show":true}},"16672ae5-5ddd-4f20-97ee-2a041c59fad0":{"position":{"vector":[-792,-821]}}},"widget":{},"import":{},"snapshot":"eJyFVcFu2zgQvfsrBvHBTTZhJFl21occWrtYLJA0QFNsD0XWmEgjmy1FOiSVNPv1C5KiJHud7knEvDeP4nDmsdKqhnuLskRdsg9oCHi9U9oCCjGq9tAv+Ch+Aa/Q4uMvBd5/vX8b/EOpjaD1+x1/m3PLC62MquzblHupXiqBP/7vHNgMCe2yo3z8ifVOkPkP8Bc3DQr+D1qu5Gg0HsOfy7tPsNGq2Y1GADCGpZLPpC2sqOA1CljRRhMZsAo+Y8lRjqxaa78ClK8pXLs8qIRCm8E13KLdsh33QdnUj6RdNMDsEtLfkwGUwrUXYWeROwTf+EEURSPQEtgtQcmNRVkQcAm3XJCBR7IvRBIyuEHLbVMS3Ci5Casdcm1GMWld+wyBNgWhZOpWmVtl7anGYyeSHhzmFrlkfRVEZDi2kpAeHPCQrmQ6EB+eeHpUPBuID9n5Ue2OXd6g9euSV5X7j/YAF+1ePU/Jjpd1vLTl5R5D+ep+zkuxS8hiMG+DWRf0N52He50yw2UfnYVovh+dd1tOWaFMD1z1/9wBKF9nsZ2u2FmrEKF5hHL2NwxL1eXMOmA8BvQL09RtG85/c/JnbUr/Iw52LGaetO3DiyiaMownkqqkrt8X7AwyOIP59CpNkiRuuzps2S7T35JTcIMyTxZsmuc9eDgOfhq+4A8ygKDVCzyjaAhQlkA/rcbCGj8ieQCMR3ZoTJjm4fS0g1A1svDO4OJrZztrpxuKHouctpc7Y2hhItBOOmS2h8hNj8yHyGe+2VrYy7w6gsd809Td1B38cPidsHXYxot1aaNRjVz2w7wiZ24QJ0MEy5ou2NV0kR2SlNwElvcDuEiTnC0WSRicp0b5viBp1Hqn1XcqLCvR4iVMVqssyWYXSXqRpawwz/0x4RrcO8M0YRkkIpRFJ6y4sKRhYixamsA7xj4+NSjgZHl3cnq0Ht1FDSfESTJDggq7LpRoamng2wTLUpMxk3OYFNy+um/Y5xwmO2UsCrdyN3MeLvAhFuUrAWqCojVfLjf79qsqICy2IFThHxfXYfRM+hWU3ZLu41z6RL+ty1oqoTSWym9k3duWxV5wr6VZf1fcvzRhIJ+psMrbauAyrV7MAHEu1XJYjbvQBQMHa7MM2S7hJA7kydDVokjFtbFDgwm+5p7Vb+8Y+4Q1QVfX03PoYlF1cvoQ09sunzNNSpekBzfTsR+AsQ9UKU3rO1e59TJw9u0oT1iSJumec1ykyYyl2TSfzYfGdmxuWp2Q2T16MSs/2l2+MKN/AcWQ4AU="}}

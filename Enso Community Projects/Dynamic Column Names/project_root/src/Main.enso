@@ -1,0 +1,88 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+
+
+## # Static to Dynamic Workflows in Enso Analytics
+
+   ## Purpose of the workflow
+   Process a table to make it ready for a downstream process that uses values in columns called Label 1, Label 2, etc. 
+
+
+   The first 3 columns always contain the following columns:
+    - ZIP Code
+   -  Store
+   -  Revenue
+
+   There will be one or more columns that have column names that represent a store number. 
+
+   ## Steps to process the data
+   Because the data is coming from an unknown source, we need to ensure the formats are consistent.
+   - Cast forces columns to be of a specific data type.
+     - Here we cast ZIP Code and Store to integers (we will convert them back to strings using format later)
+     - Cast Revenue, and the columns 234 and 298 to Float
+     - Format them back as strings. For ZIP Code, we want to ensure they are 5 digits, and they can have leading zeros. Stores are 3 digits and can have leading zeros. Revenue, 234 andn 298 get formatting to get them in US Dollar format, with commas.
+     - We then create a column called Label 1, which will contain a label that has the store number, which comes from the column header, a hyphen, and then the dollar amount.
+     - We then create a column called Label 2, which contains the same information, but for Store 298.
+     - Finally, we remove the columns called 234 and 298.
+   We now have our desired output format, and we could easily add a write component below this one to write to a file.
+
+   ![Image](/images/image.png)
+
+
+   ## Making this Dynamic
+   If this workflow was a one-off, where I didn't expect to use it again for different data, I would be done. If not, it would be a very manual process to change the column names in a number of spots and add or delete set components if there were more or less than 2 columns.
+
+
+   Take a look at the complete walkthrough of this process at:
+
+   [Enso Community Post on Dynamic Column Names](<https://community.ensoanalytics.com/c/tips-and-tricks/dealing-with-changing-field-names-and-other-schema-changes-in-enso-analytics>)
+main =
+    node1 = Table.input [['ZIP Code', ['92625', '92602', '92780', '92651', '92801']], ['Store', ['231', '214', '319', '981', '225']], ['Revenue', ['1285000', '1272150', '1105100', '1721900', '1374950']], ['234', ['26550', '36373.5', '39028.5', '31594.5', '36108']], ['298', ['15870', '21741.9', '23328.9', '18885.3', '21583.2']]]
+    table2 = node1.cast ['ZIP Code', 'Store'] ..Integer
+    table3 = table2.cast ['Revenue', '234', '298'] ..Float
+    table1 = table3.format ['ZIP Code'] '00000'
+    table4 = table1.format ['Store'] '000'
+    table5 = table4.format ['Revenue', '234', '298'] '$#,##0.00'
+    table6 = table5.set (..Simple_Expr "234 - " (..Add (..Name '234'))) "Label 1"
+    table8 = table6.set (..Simple_Expr "298 - " (..Add (..Name '298'))) "Label 2"
+    table7 = table8.remove_columns ['234', '298']
+    node2 = Table.input [['ZIP Code', ['92625', '92602', '92780', '92651', '92801']], ['Store', ['231', '214', '319', '981', '225']], ['Revenue', ['1285000', '1272150', '1105100', '1721900', '1374950']], ['142', ['26550', '36373.5', '39028.5', '31594.5', '36108']], ['298', ['15870', '21741.9', '23328.9', '18885.3', '21583.2']], ['944', ['123', '444', '5555', '6666', '7777']]]
+    table9 = node2.cast ['ZIP Code', 'Store'] ..Integer
+    vector1 = node2.column_names
+    ## List of columns that exist after the 3 fixed columns
+    vector2 = vector1.drop (..First 3)
+    vector3 = vector1.filter (..Equal "Revenue")
+    ## Add back the Revenue column
+    vector4 = (vector3 +) vector2
+    table10 = table9.cast vector4 ..Float
+    table11 = table10.format ['ZIP Code'] '00000'
+    table12 = table11.format ['Store']
+    table13 = table12.format vector4 '$#,##0.00'
+    ## Block below creates an expression
+    table19 = vector2.to_table
+    table23 = table19.set (expr '"\'" + [Value]  + " - \'"  + " + ["+ [Value] + "]" ') "Expr"
+    ## add a plus and a pipe character as the delimiter
+    node4 = " + " + '"|" +'
+    table24 = table23.aggregate columns=[..Concatenate 'Expr' as="concat expr" node4 quote_char='']
+    any2 = table24.get_value 'concat expr'
+    text1 = "Simple but inflexible method"
+    text2 = "Dynamic method"
+    table22 = table13.set (expr any2) "Label"
+    table25 = table22.split_to_columns 'Label' '|'
+    table14 = table25.remove_columns vector2
+
+
+
+#### METADATA ####
+[[{"index":{"value":2415},"size":{"value":317}},"ec2fc545-4520-4b58-aa8a-243e0d5d29b1"],[{"index":{"value":2746},"size":{"value":10}},"1f8a1598-eb89-4046-bc98-dd0c00c2e59d"],[{"index":{"value":2746},"size":{"value":32}},"c1fb0e96-311c-49cc-a606-6d8c723ea752"],[{"index":{"value":2746},"size":{"value":42}},"b421c2e3-3ff6-4571-ad4b-cee8f33d739d"],[{"index":{"value":2802},"size":{"value":11}},"3afb2835-6b3c-4352-a706-682f6e8eb685"],[{"index":{"value":2802},"size":{"value":37}},"5e0e2538-6716-4245-bd28-efcdf1279629"],[{"index":{"value":2802},"size":{"value":45}},"47088381-c8e9-4333-b4fa-8301447f1def"],[{"index":{"value":2861},"size":{"value":13}},"8a6b7933-590b-4b63-b4c1-a6165d540951"],[{"index":{"value":2861},"size":{"value":26}},"7662449d-dd56-46ea-bdb2-34f6e3e1794a"],[{"index":{"value":2861},"size":{"value":34}},"13f10f04-405a-4446-b093-fbcaad663b5b"],[{"index":{"value":2909},"size":{"value":13}},"cfc3c76c-06cb-4c04-9198-91d372f25c5a"],[{"index":{"value":2909},"size":{"value":23}},"e492922f-56a6-4a24-ab8f-1e1472bcf071"],[{"index":{"value":2909},"size":{"value":29}},"7af046ce-4a50-4f76-8b19-5f8a6414509e"],[{"index":{"value":2952},"size":{"value":13}},"4cd6f884-9880-4abb-a35d-9baba3d5e018"],[{"index":{"value":2952},"size":{"value":39}},"f387071d-1e88-4e34-b5cc-6f08de1e4a09"],[{"index":{"value":2952},"size":{"value":51}},"f98d9e78-00d4-4822-bf26-3f7db50d5ebe"],[{"index":{"value":3017},"size":{"value":10}},"6e803f2f-da38-413e-813f-d48ac56bcfee"],[{"index":{"value":3017},"size":{"value":58}},"c4e0f52b-3d19-4d3f-bfd4-ac2fb817fb6e"],[{"index":{"value":3017},"size":{"value":68}},"833b701b-ee87-4e4c-ba2c-93cb21400046"],[{"index":{"value":3099},"size":{"value":10}},"55767310-05ab-4cd4-914f-6084d2feacf5"],[{"index":{"value":3099},"size":{"value":58}},"a893947f-02bd-4197-8a3c-4c4674b3a01e"],[{"index":{"value":3099},"size":{"value":68}},"7b69f2ba-c6b7-4dad-9f4a-524f4b4626af"],[{"index":{"value":3181},"size":{"value":21}},"1f2733ac-7954-4827-bcbe-1b8876e111cc"],[{"index":{"value":3181},"size":{"value":36}},"ed843fca-c80c-4fc4-8523-deb14a932650"],[{"index":{"value":3230},"size":{"value":366}},"5c79c941-ce8d-4ecc-80a5-57427fc91658"],[{"index":{"value":3610},"size":{"value":42}},"dce84ad6-670c-4ebd-ac04-1948a39f5b53"],[{"index":{"value":3667},"size":{"value":18}},"d3747a76-ce27-4b30-a151-2c9927bc44d0"],[{"index":{"value":3760},"size":{"value":12}},"d2895db2-52f3-4f08-b577-7a3d54c5926b"],[{"index":{"value":3760},"size":{"value":24}},"10a33fbb-c52e-4f87-be2d-697dcd4c0b20"],[{"index":{"value":3799},"size":{"value":14}},"7d6acb3e-9611-48ae-8678-47ca821167a1"],[{"index":{"value":3799},"size":{"value":34}},"a889cf2f-f428-460d-b446-a25159c30f15"],[{"index":{"value":3883},"size":{"value":19}},"0b1ec9f3-d623-4d0c-af17-5baa1eea4158"],[{"index":{"value":3884},"size":{"value":9}},"1ba8efa0-f6c4-4fbc-91cf-67d375f97028"],[{"index":{"value":3917},"size":{"value":27}},"66fbfe69-0d88-42ab-b5fc-3bbcb6236018"],[{"index":{"value":3959},"size":{"value":35}},"100d587b-5d89-4c72-871f-bb66ebb4f4cf"],[{"index":{"value":4009},"size":{"value":24}},"5561f576-8ce3-4a05-a91b-7ca2d2b31cc3"],[{"index":{"value":4048},"size":{"value":34}},"079b682a-672c-45e7-92df-392ac91597ab"],[{"index":{"value":4138},"size":{"value":16}},"55e81f2a-3142-4395-b85e-59141670776e"],[{"index":{"value":4169},"size":{"value":11}},"a64dba22-599b-4add-8e8f-98d8be04e32b"],[{"index":{"value":4169},"size":{"value":72}},"00c4179c-ef7a-41ba-b6ed-49df5ed010cb"],[{"index":{"value":4169},"size":{"value":79}},"9fdcb098-9239-4535-b417-de08ececc761"],[{"index":{"value":4317},"size":{"value":15}},"415a4857-218f-4654-b341-b76fedb3c2ee"],[{"index":{"value":4347},"size":{"value":17}},"77b6713a-bb31-4194-84a4-735af76815ce"],[{"index":{"value":4347},"size":{"value":85}},"1ece26f7-29c1-4651-a149-24851ccc6cac"],[{"index":{"value":4444},"size":{"value":17}},"e5ddf01a-3026-4132-9def-3d2d12b548de"],[{"index":{"value":4444},"size":{"value":31}},"fd959ae6-2b86-484d-9d8e-2b0ce21c9a10"],[{"index":{"value":4488},"size":{"value":30}},"632c63d1-9824-496d-b6e3-f04b982ea7aa"],[{"index":{"value":4531},"size":{"value":16}},"c8beea63-71ee-4259-8c46-758ac8573d5b"],[{"index":{"value":4562},"size":{"value":11}},"1ed408eb-9747-41b7-b01e-5ee6da9149d6"],[{"index":{"value":4562},"size":{"value":23}},"36f039aa-3889-4515-a8e4-e6349a5b84a0"],[{"index":{"value":4562},"size":{"value":31}},"d62fa47f-88a5-4312-ae79-c6005fb1e58f"],[{"index":{"value":4608},"size":{"value":24}},"3e9a75e0-4a42-4646-aa45-12abda5acee1"],[{"index":{"value":4608},"size":{"value":32}},"a796e9fb-59e4-4a16-a1d6-11c92014c3dc"],[{"index":{"value":4608},"size":{"value":36}},"4d444049-6774-4253-974d-6eabce8105de"],[{"index":{"value":4659},"size":{"value":22}},"be3a1755-c72e-421d-bdfa-767bd519a792"],[{"index":{"value":4659},"size":{"value":30}},"5818e58a-e1e3-44fc-a549-a02ca557aa27"]]
+{"ide":{"node":{"ec2fc545-4520-4b58-aa8a-243e0d5d29b1":{"position":{"vector":[-570,371]}},"b421c2e3-3ff6-4571-ad4b-cee8f33d739d":{"position":{"vector":[-570,153]}},"c1fb0e96-311c-49cc-a606-6d8c723ea752":{"position":{"vector":[-484,163]}},"1f8a1598-eb89-4046-bc98-dd0c00c2e59d":{"position":{"vector":[-484,163]}},"47088381-c8e9-4333-b4fa-8301447f1def":{"position":{"vector":[-570,81]}},"5e0e2538-6716-4245-bd28-efcdf1279629":{"position":{"vector":[-484,91]}},"3afb2835-6b3c-4352-a706-682f6e8eb685":{"position":{"vector":[-484,91]}},"13f10f04-405a-4446-b093-fbcaad663b5b":{"position":{"vector":[-570,9]}},"7662449d-dd56-46ea-bdb2-34f6e3e1794a":{"position":{"vector":[-484,-15]}},"8a6b7933-590b-4b63-b4c1-a6165d540951":{"position":{"vector":[-484,-15]}},"7af046ce-4a50-4f76-8b19-5f8a6414509e":{"position":{"vector":[-570,-63]}},"e492922f-56a6-4a24-ab8f-1e1472bcf071":{"position":{"vector":[-570,-63]}},"cfc3c76c-06cb-4c04-9198-91d372f25c5a":{"position":{"vector":[-484,-87]}},"f98d9e78-00d4-4822-bf26-3f7db50d5ebe":{"position":{"vector":[-570,-135]},"visualization":{"show":true,"width":1057.91015625}},"f387071d-1e88-4e34-b5cc-6f08de1e4a09":{"position":{"vector":[-570,-169]}},"4cd6f884-9880-4abb-a35d-9baba3d5e018":{"position":{"vector":[-570,-169]}},"833b701b-ee87-4e4c-ba2c-93cb21400046":{"position":{"vector":[-570,-357]},"visualization":{"show":true,"width":1066.00390625}},"c4e0f52b-3d19-4d3f-bfd4-ac2fb817fb6e":{"position":{"vector":[-570,-391]}},"6e803f2f-da38-413e-813f-d48ac56bcfee":{"position":{"vector":[-570,-391]}},"7b69f2ba-c6b7-4dad-9f4a-524f4b4626af":{"position":{"vector":[-570,-601]}},"a893947f-02bd-4197-8a3c-4c4674b3a01e":{"position":{"vector":[-484,-644]}},"55767310-05ab-4cd4-914f-6084d2feacf5":{"position":{"vector":[-484,-644]}},"ed843fca-c80c-4fc4-8523-deb14a932650":{"position":{"vector":[-570,-673]},"visualization":{"show":true,"width":1081.25,"height":228.9453125}},"1f2733ac-7954-4827-bcbe-1b8876e111cc":{"position":{"vector":[-570,-613]}},"5c79c941-ce8d-4ecc-80a5-57427fc91658":{"position":{"vector":[912,365]}},"dce84ad6-670c-4ebd-ac04-1948a39f5b53":{"position":{"vector":[912,167]}},"d3747a76-ce27-4b30-a151-2c9927bc44d0":{"position":{"vector":[2217,167]}},"10a33fbb-c52e-4f87-be2d-697dcd4c0b20":{"position":{"vector":[2217,88]},"visualization":{"show":true,"height":139.11328125}},"d2895db2-52f3-4f08-b577-7a3d54c5926b":{"position":{"vector":[2164,74]}},"a889cf2f-f428-460d-b446-a25159c30f15":{"position":{"vector":[1857,18]}},"7d6acb3e-9611-48ae-8678-47ca821167a1":{"position":{"vector":[2641,103]}},"0b1ec9f3-d623-4d0c-af17-5baa1eea4158":{"position":{"vector":[1857,-123]}},"1ba8efa0-f6c4-4fbc-91cf-67d375f97028":{"position":{"vector":[2710,27]}},"66fbfe69-0d88-42ab-b5fc-3bbcb6236018":{"position":{"vector":[912,62]}},"100d587b-5d89-4c72-871f-bb66ebb4f4cf":{"position":{"vector":[912,-10]}},"5561f576-8ce3-4a05-a91b-7ca2d2b31cc3":{"position":{"vector":[912,-82]}},"079b682a-672c-45e7-92df-392ac91597ab":{"position":{"vector":[903,-195]},"visualization":{"show":false,"width":833.81640625}},"55e81f2a-3142-4395-b85e-59141670776e":{"position":{"vector":[2217,-224]},"visualization":{"show":false,"height":161.19140625}},"9fdcb098-9239-4535-b417-de08ececc761":{"position":{"vector":[2217,-296]},"visualization":{"show":false,"width":851.359375}},"00c4179c-ef7a-41ba-b6ed-49df5ed010cb":{"position":{"vector":[3761,-294]},"visualization":{"show":true}},"a64dba22-599b-4add-8e8f-98d8be04e32b":{"position":{"vector":[3945,-521]}},"415a4857-218f-4654-b341-b76fedb3c2ee":{"position":{"vector":[2953,-296]}},"1ece26f7-29c1-4651-a149-24851ccc6cac":{"position":{"vector":[2217,-406]}},"77b6713a-bb31-4194-84a4-735af76815ce":{"position":{"vector":[3888,-516]}},"fd959ae6-2b86-484d-9d8e-2b0ce21c9a10":{"position":{"vector":[2217,-478]},"visualization":{"show":true,"width":741.3780317164179}},"e5ddf01a-3026-4132-9def-3d2d12b548de":{"position":{"vector":[2580,-654]}},"632c63d1-9824-496d-b6e3-f04b982ea7aa":{"position":{"vector":[-316,475]}},"c8beea63-71ee-4259-8c46-758ac8573d5b":{"position":{"vector":[903,464]}},"d62fa47f-88a5-4312-ae79-c6005fb1e58f":{"position":{"vector":[903,-296]},"visualization":{"show":false,"width":953.57421875}},"36f039aa-3889-4515-a8e4-e6349a5b84a0":{"position":{"vector":[2028,-441]},"visualization":{"show":true,"width":656.5546875}},"1ed408eb-9747-41b7-b01e-5ee6da9149d6":{"position":{"vector":[2028,-441]}},"4d444049-6774-4253-974d-6eabce8105de":{"position":{"vector":[903,-368]},"visualization":{"show":false,"width":926.9078824626864}},"a796e9fb-59e4-4a16-a1d6-11c92014c3dc":{"position":{"vector":[1172,-880]}},"3e9a75e0-4a42-4646-aa45-12abda5acee1":{"position":{"vector":[1172,-880]}},"5818e58a-e1e3-44fc-a549-a02ca557aa27":{"position":{"vector":[903,-440]},"visualization":{"show":true,"width":970.328125,"height":309.08348880597015}},"be3a1755-c72e-421d-bdfa-767bd519a792":{"position":{"vector":[1134,-1045]}}},"widget":{"ec2fc545-4520-4b58-aa8a-243e0d5d29b1":{"WidgetTableEditor":{"size":{"x":983.6341145833333,"y":150}}},"5c79c941-ce8d-4ecc-80a5-57427fc91658":{"WidgetTableEditor":{"size":{"x":683.25,"y":150}}}},"import":{},"snapshot":"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"}}

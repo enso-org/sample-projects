@@ -1,0 +1,30 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+##
+
+   # Using up_to to create a range of integers
+
+   - Start with an integer
+   - Add an `up_to` component
+   - Convert to a table, optionally naming the column
+   - Use the values directly, or create a new column based on the range
+main =
+    integer1 = 0
+    range1 = integer1.up_to 24
+    table1 = range1.to_table "Month"
+    any1 = table1.set (..Simple_Expr (Date.new 2025 1 31) (..Date (..Add (..Name 'Month') ..Month))) "Last Day of Month"
+
+
+
+#### METADATA ####
+[[{"index":{"value":576},"size":{"value":1}},"f636a5bf-b9a5-4b50-9c24-b3a4e2408e72"],[{"index":{"value":591},"size":{"value":14}},"49992768-a924-42aa-ba2c-5137a4e857bb"],[{"index":{"value":591},"size":{"value":17}},"ff00f15a-b574-4b85-90f5-79095772fe47"],[{"index":{"value":622},"size":{"value":15}},"b73cb22f-9978-498b-bcf7-cad0c7e993d4"],[{"index":{"value":622},"size":{"value":23}},"ec85c4da-3dca-4af3-9071-27c3f2ee2b51"],[{"index":{"value":657},"size":{"value":10}},"854d5aa6-b8dc-4221-98f1-d8ea04da0748"],[{"index":{"value":657},"size":{"value":89}},"664a5c76-3938-4abc-8a5b-82ac96028a7e"],[{"index":{"value":657},"size":{"value":109}},"b264ddf6-cbb9-46a3-ac60-ed7609868e96"]]
+{"ide":{"node":{"f636a5bf-b9a5-4b50-9c24-b3a4e2408e72":{"position":{"vector":[-212,-2191]}},"ff00f15a-b574-4b85-90f5-79095772fe47":{"position":{"vector":[-212,-2263]},"visualization":{"show":true}},"49992768-a924-42aa-ba2c-5137a4e857bb":{"position":{"vector":[-212,-2263]}},"ec85c4da-3dca-4af3-9071-27c3f2ee2b51":{"position":{"vector":[-212,-2485]},"visualization":{"show":true,"width":391.1953125,"height":190.0078125}},"b73cb22f-9978-498b-bcf7-cad0c7e993d4":{"position":{"vector":[-212,-2485]}},"b264ddf6-cbb9-46a3-ac60-ed7609868e96":{"position":{"vector":[-212,-2747]},"visualization":{"show":true,"height":638.76953125}},"664a5c76-3938-4abc-8a5b-82ac96028a7e":{"position":{"vector":[-212,-2747]}},"854d5aa6-b8dc-4221-98f1-d8ea04da0748":{"position":{"vector":[-212,-2747]}}},"widget":{},"import":{},"snapshot":"eJyFkU9T2zAQxe/+FG+SA/EM1ZC0HDmEhuECvQTaY1jsdaJB1nqkNSH99IzkhD/TCT1Z3vfbp7faJkiLpZKvKdTmkiLDtp0EBTlXNJ/UO3p0X8gLUnr80mD+Z3lcvBZZO17NO3ucubVVkCiNHkeWXraNo6f/zUH9R2B/fEOuXqjtHMd/hN829uTsX1IrvijG46IAMMZ9tH6NvlupQAVVYFIGIZBfM6SB9cprDjHz35JhUGytbkD+IA7SvK5T7SGbPaCSthPPXgf1p/hnDpouIWia5BTSpTTk3A6e2hREN4xKXN/6oes+cq49k+s5oraBK3W7U0h4z+p5u29C2mMN8bkpz1C0ZD0ukt0h7hQXOMuFTKTfg2KGl5j9yHKOmeSBMyqrXMLoVrxuRhkiv0vIwJrIiokxS5vWsLp66QImC1I2KeTsbHaOKb5Py8Skcvqmd5sY84taxkk2PilhTD6VZYnRDUXFgnZpHfuLXwHbcP+E"}}

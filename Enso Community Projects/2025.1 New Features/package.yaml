@@ -1,0 +1,4 @@
+name: "2025.1 New Features"
+namespace: local
+version: 0.0.1
+prefer-local-libraries: 'true'

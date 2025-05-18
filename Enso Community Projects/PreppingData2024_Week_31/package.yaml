@@ -1,0 +1,5 @@
+name: PreppingData2024_Week_31
+namespace: local
+version: 0.0.1
+edition: 2024.4.1-nightly.2024.8.1
+prefer-local-libraries: 'true'

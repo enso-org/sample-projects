@@ -1,0 +1,5 @@
+name: Project_root
+namespace: local
+version: 0.0.1
+edition: 2024.3.1-rc1
+prefer-local-libraries: 'true'

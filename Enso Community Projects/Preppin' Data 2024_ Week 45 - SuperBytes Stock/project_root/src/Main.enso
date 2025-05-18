@@ -1,0 +1,96 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## ### 2024: Week 45 - SuperBytes Stock
+   
+   [November 06, 2024](https://preppindata.blogspot.com/2024/11/2024-week-45-superbytes-stock.html "permanent link")
+   
+   Challenge by: [Holly Jones](https://www.thedataschool.co.uk/blog/holly-jones/)
+   
+   This is the final challenge that DS43 prepared for us earlier this year - over to Holly:
+   
+   SuperBytes are looking to change how stock is reordered at stores. The current policy is to record the quantity of stock they have remaining on a Sunday, after the store closes. If they have 10 or fewer items remaining, they will place an order with the supplier for that product, to get them back to 30 items in stock.
+   
+   Rather than applying such a blanket approach across products, SuperBytes would like to understand how many items are sold on average each week and how frequently stores are currently ordering more stock from suppliers, to see if there could be benefits in making changes to how they order stock.
+   
+   ### Inputs
+   
+   There are 3 inputs for this challenge:
+   
+   1. Available Stock 
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzW5HpDbw0z0TwYx_qna71mRxhqpfuG_f5wpup0_eaUH-0nEKT7h60IckuEs-aYWS9kfe_GF48OXOJxhOHCJMsnMJI6G-jE13yg79tkj5upijl0Cj9EwqTstKOP_35iAItfWw9R5B6Esxy3Gxs3JA0KFOOL2Yapcx_nDSR_nIVOpPsYWXt3jfXfbq8J4EV/w640-h110/Screenshot%202024-10-30%20130530.png)
+   2. Product 
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo9LovOIoX-RR5PTmbgLxWEzV65DHSIoczowaB2GXF1iHF1KOa0I20mME-UT5kBCCcNhxYWW4t3ibwrWbO7v_OGKUvnls1mOflAZ4HsqzASJvg4feUbQvCAOs2ZIxzTOpVoP-b_dX5rAJGZh20aM3gtDyEhklF-3YGuvwKhruKRGcvpoZC_3FMUcb7HHhI/s320/Screenshot%202024-10-30%20130603.png)
+   3. Supplier Data 
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghqzF2oBOLHlEwqsfgcjJo8hyUgHM9Gsy2xZi_pmkAFkD8MRW0f9v3rmRpvyOOURINIvWRMdLRotww_pYnMsOvcW1e_TXtcQjiVCQaWT2y051RZNcGIcu5xavO1crR7ZMHe7vHH0zizhGdRDM5eYPL0yRmGjd6QpZyyKv3zBLdS-CzVAMG8Huza6zdgkz1/s320/Screenshot%202024-10-30%20130639.png)
+   
+   ### Requirements
+   
+   - [Input the data](https://docs.google.com/spreadsheets/d/1KvGB7RYM5y3dfOWmpL6A6BamZRemQF0c/edit?usp=drive_link&ouid=113142875990517226017&rtpof=true&sd=true)
+   - Join the tables together and remove unnecessary fields
+   - Identify weeks where orders were placed for new stock
+   - This occurs whenever the Quantity Available is 10 or less
+   - Calculate how much Stock was ordered in these weeks
+   - SuperBytes policy indicates they should order as many items as they need so their stock level is back to 30
+       - e.g. if the Quantity Available is 5 then they would order 25 items
+   - Calculate the Quantity Sold each week, taking into consideration the new stock that has been ordered
+   - Across the dataset calculate the Total Quantity that has been sold for each Product in each Store, as well as the Avg Quantity Sold per Week and Avg Order Frequency
+   - i.e. if the Order Frequency is 2 then this would mean the Store is ordering once every 2 weeks on average
+   - Round these values to 1 decimal place
+   - [Output the data](https://drive.google.com/file/d/1c465lC9p9STuBPxPpPA-X11810hf0kWt/view?usp=drive_link)
+   
+   ### Output
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZ59QZf7uiKv-GdD7VMoPm9T9iOw54nBoUxc9lQFXA2WHxZFivC7e2Y7OW0MzWkO-taG132kl36ENUym1j60ESdllpcuvm34T6Rzuh7jwUmGPj2XKeMo8l_EalPUMem18hKmmpPfwmjSOqQ2HegpsYur8oGkji7F6dvVzadjSSRRTNAb61RDle3IZ4ilZs/w640-h130/Screenshot%202024-10-30%20130723.png)
+   
+   - 6 fields
+   - Store
+   - Category
+   - Product
+   - Total Quantity Sold
+   - Avg Quantity Sold per Week
+   - Avg Order Frequency
+   - 100 rows (101 including headers)
+   
+   You can view the output [here](https://drive.google.com/file/d/1c465lC9p9STuBPxPpPA-X11810hf0kWt/view?usp=drive_link).
+   
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+   
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help!
+main =
+    quot1 = enso_project.data/ 'Stock Availability.xlsx'
+    node1 = Data.read quot1
+    node2 = node1.read 'Available Stock' ..Has_Headers
+    node3 = node1.read 'Product' ..Has_Headers
+    node4 = node1.read 'Supplier Data' ..Has_Headers
+    table1 = node2.join node3 ..Inner [(..Equals 'Product ID' 'Product ID')]
+    table2 = table1.join node4 ..Inner [(..Equals 'Supplier' 'Supplier ID')]
+    any1 = table2.remove_columns ['G', 'Right Category', 'Supplier', 'Supplier ID', 'Product ID']
+    any4 = any1.set (expr 'if [Quantity Available] <= 10 then 30 - [Quantity Available] else 0') 'Order Amount'
+    column1 = any4.get 'Inventory Date'
+    ## The compute function operates on a single column of data, so we use the get component above to pass in the inventory date. We want to get the last date so that we exclude this from the Total Quantity Sold
+    any17 = column1.compute ..Maximum
+    ## If there is an order in the last week, this does not count toward sold products
+    any16 = any4.set (..Simple_Expr (..Name 'Inventory Date') (..If (..Less any17) (..Name 'Order Amount') 0)) 'Order Amount'
+    ## We set this to nothing to allow us to accurately count the number of orders in the aggregate step below
+    any6 = any16.set (expr 'if [Order Amount] = 0 then Nothing else [Order Amount]') 'Order Amount'
+    any5 = any6.aggregate ['Store', 'Category', 'Product'] [..First 'Quantity Available' 'Starting Inventory' order_by=[(..Name 'Inventory Date' ..Ascending)], ..Last 'Quantity Available' 'Ending Inventory' order_by=[(..Name 'Inventory Date' ..Ascending)], ..Sum 'Order Amount' 'Total Ordered', ..Count_Not_Nothing 'Order Amount' 'Number of Orders', ..First 'Inventory Date' 'First Inventory Date' order_by=[(..Name 'Inventory Date' ..Ascending)], ..Last 'Inventory Date' 'Last Inventory Date' order_by=[(..Name 'Inventory Date' ..Ascending)]]
+    any7 = any5.set (expr '[Starting Inventory] - [Ending Inventory] + [Total Ordered]') 'Total Quantity Sold'
+    ## This will be off by 1 week so we adjust in the next step
+    any8 = any7.set (..Simple_Expr (..Name 'First Inventory Date') (..Date (..Diff (..Name 'Last Inventory Date') period=(..Week ..Sunday)))) 'Total Weeks'
+    any10 = any8.set (..Simple_Expr (..Name 'Total Weeks') (..Add 1)) 'Total Weeks'
+    any3 = any10.set (expr 'round([Total Quantity Sold] / [Total Weeks],1)') 'Avg Quantity Sold Per Week'
+    any2 = any3.set (expr 'round([Total Weeks] / [Number of Orders],1)') 'Avg Order Frequency'
+    any9 = any2.select_columns ['Store', 'Category', 'Product', 'Total Quantity Sold', 'Avg Quantity Sold Per Week', 'Avg Order Frequency']
+
+
+
+#### METADATA ####
+[[{"index":{"value":4776},"size":{"value":18}},"204b1f1a-b9d1-4c16-acc8-7452edce4487"],[{"index":{"value":4776},"size":{"value":44}},"b1cd5d10-112f-4fef-be8c-892d0a4257db"],[{"index":{"value":4833},"size":{"value":15}},"8ccf36c7-74d0-435f-8ccc-959e8768c4d0"],[{"index":{"value":4861},"size":{"value":28}},"8e9afd9a-ec58-4342-a125-0a76aadc6fd5"],[{"index":{"value":4861},"size":{"value":42}},"48c4e371-bbcb-483f-91d0-750c46bb5290"],[{"index":{"value":4916},"size":{"value":34}},"f9f5f7e4-adb4-4630-ab5d-866bdec836ab"],[{"index":{"value":4963},"size":{"value":40}},"cef0fc8d-2ba9-425e-bfca-2cc47a1d43f9"],[{"index":{"value":5017},"size":{"value":63}},"f5c4f264-76c2-4e5a-8761-9aab21602265"],[{"index":{"value":5094},"size":{"value":63}},"9d9054aa-9328-43a7-9222-0356aba2f116"],[{"index":{"value":5169},"size":{"value":86}},"c43ba75f-30f1-40a6-a362-043baff73e1a"],[{"index":{"value":5267},"size":{"value":8}},"f4a30f4d-9224-464d-9eca-03ee5ee66ad5"],[{"index":{"value":5267},"size":{"value":85}},"15f6aa69-3e75-4e47-8bcb-963772ec5219"],[{"index":{"value":5267},"size":{"value":100}},"0427395d-313d-4d2d-92f5-f4793ff4afc6"],[{"index":{"value":5382},"size":{"value":8}},"a35cbb50-f53f-4ba9-9002-f3e0169a003a"],[{"index":{"value":5382},"size":{"value":25}},"98fb89ae-eff0-4cbb-a250-d99a4ca9bee5"],[{"index":{"value":5632},"size":{"value":15}},"8f8f663e-11b6-43c6-9ccf-be792a482fa9"],[{"index":{"value":5632},"size":{"value":25}},"35110126-d945-41aa-b6ba-f76e759a49c2"],[{"index":{"value":5757},"size":{"value":8}},"a9dfe7c8-65db-4b38-875e-a976aa9680da"],[{"index":{"value":5757},"size":{"value":98}},"c89dec54-7d1b-40e0-967b-b92447f74b32"],[{"index":{"value":5757},"size":{"value":113}},"4a871ae6-8fc7-47e4-8440-b01d3b977929"],[{"index":{"value":5993},"size":{"value":9}},"07089dcd-82a7-47de-944d-2dad3442356f"],[{"index":{"value":5993},"size":{"value":73}},"838ea06c-f157-4e65-a1a7-c14dec3c71b5"],[{"index":{"value":5993},"size":{"value":88}},"066fb385-ecf5-4ad5-a971-9681cec8b2ed"],[{"index":{"value":6093},"size":{"value":14}},"b436bc2b-a9ce-4e2a-8a05-2c9001936bee"],[{"index":{"value":6093},"size":{"value":47}},"bd6c33a9-1d81-4bd0-88c0-325e9b8fa258"],[{"index":{"value":6093},"size":{"value":532}},"de311589-f69f-4043-8d9c-5e51ff4e8df6"],[{"index":{"value":6637},"size":{"value":8}},"28b1817e-c604-4710-834b-3644886047c2"],[{"index":{"value":6637},"size":{"value":77}},"c109101c-a787-4530-b6a4-39c3fc47bd8b"],[{"index":{"value":6637},"size":{"value":99}},"06a85b9c-c034-48a4-8010-35928049a5ce"],[{"index":{"value":6812},"size":{"value":8}},"15e71286-b854-4cad-b4bb-88d7e7de823a"],[{"index":{"value":6812},"size":{"value":130}},"a006aed0-5e7f-464e-a021-4a4f64f93381"],[{"index":{"value":6812},"size":{"value":144}},"c5e0ba88-3260-4555-8edf-e8ad2ec6b2da"],[{"index":{"value":6969},"size":{"value":8}},"d5138cd9-9aae-479d-9f41-9f6a96071958"],[{"index":{"value":6969},"size":{"value":57}},"8be4ccbe-e1b4-47d0-aa89-9cf4ba8414a2"],[{"index":{"value":6969},"size":{"value":71}},"3ac2b800-1876-4794-997f-199213e9439b"],[{"index":{"value":7052},"size":{"value":94}},"a11b5ba0-00bc-47a8-9dcf-e0e179d3dc16"],[{"index":{"value":7158},"size":{"value":8}},"83c4e0f9-9535-4f21-8ce9-d335abfb4797"],[{"index":{"value":7158},"size":{"value":61}},"51db0746-f624-458c-b8e9-8f343940c999"],[{"index":{"value":7158},"size":{"value":83}},"7d259b11-fc7b-49ec-9f0a-dadb99bcf15e"],[{"index":{"value":7253},"size":{"value":19}},"4bd745e0-f292-466e-acb8-95224362fb90"],[{"index":{"value":7253},"size":{"value":128}},"e9991beb-4304-4c81-b856-cd8c89b80edf"]]
+{"ide":{"node":{"b1cd5d10-112f-4fef-be8c-892d0a4257db":{"position":{"vector":[153,117]}},"204b1f1a-b9d1-4c16-acc8-7452edce4487":{"position":{"vector":[1414,-839]}},"8ccf36c7-74d0-435f-8ccc-959e8768c4d0":{"position":{"vector":[-80,45]}},"48c4e371-bbcb-483f-91d0-750c46bb5290":{"position":{"vector":[-350,-103]}},"8e9afd9a-ec58-4342-a125-0a76aadc6fd5":{"position":{"vector":[-350,-103]}},"f9f5f7e4-adb4-4630-ab5d-866bdec836ab":{"position":{"vector":[-224,-209]}},"cef0fc8d-2ba9-425e-bfca-2cc47a1d43f9":{"position":{"vector":[380,-398]}},"f5c4f264-76c2-4e5a-8761-9aab21602265":{"position":{"vector":[-350,-326]}},"9d9054aa-9328-43a7-9222-0356aba2f116":{"position":{"vector":[-342,-470]}},"c43ba75f-30f1-40a6-a362-043baff73e1a":{"position":{"vector":[-336,-552]}},"0427395d-313d-4d2d-92f5-f4793ff4afc6":{"position":{"vector":[-336,-624]},"visualization":{"show":false,"width":1298.3671875,"height":400.3046875}},"15f6aa69-3e75-4e47-8bcb-963772ec5219":{"position":{"vector":[-125,-664]}},"f4a30f4d-9224-464d-9eca-03ee5ee66ad5":{"position":{"vector":[-125,-664]}},"98fb89ae-eff0-4cbb-a250-d99a4ca9bee5":{"position":{"vector":[104,-696]}},"a35cbb50-f53f-4ba9-9002-f3e0169a003a":{"position":{"vector":[697,-605]}},"35110126-d945-41aa-b6ba-f76e759a49c2":{"position":{"vector":[104,-790]}},"8f8f663e-11b6-43c6-9ccf-be792a482fa9":{"position":{"vector":[977,-672]}},"4a871ae6-8fc7-47e4-8440-b01d3b977929":{"position":{"vector":[-340,-884]}},"c89dec54-7d1b-40e0-967b-b92447f74b32":{"position":{"vector":[586,-727]}},"a9dfe7c8-65db-4b38-875e-a976aa9680da":{"position":{"vector":[592,-706]}},"066fb385-ecf5-4ad5-a971-9681cec8b2ed":{"position":{"vector":[-342,-956]}},"838ea06c-f157-4e65-a1a7-c14dec3c71b5":{"position":{"vector":[999,-1211]}},"07089dcd-82a7-47de-944d-2dad3442356f":{"position":{"vector":[1002,-1222]}},"de311589-f69f-4043-8d9c-5e51ff4e8df6":{"position":{"vector":[-342,-1050]}},"bd6c33a9-1d81-4bd0-88c0-325e9b8fa258":{"position":{"vector":[322,-1351]}},"b436bc2b-a9ce-4e2a-8a05-2c9001936bee":{"position":{"vector":[478,-1343]}},"06a85b9c-c034-48a4-8010-35928049a5ce":{"position":{"vector":[-342,-1140]},"visualization":{"show":false,"width":1537.3828125}},"c109101c-a787-4530-b6a4-39c3fc47bd8b":{"position":{"vector":[-297,-2179]}},"28b1817e-c604-4710-834b-3644886047c2":{"position":{"vector":[-297,-2179]}},"c5e0ba88-3260-4555-8edf-e8ad2ec6b2da":{"position":{"vector":[-347,-1233]}},"a006aed0-5e7f-464e-a021-4a4f64f93381":{"position":{"vector":[-233,-2484]}},"15e71286-b854-4cad-b4bb-88d7e7de823a":{"position":{"vector":[-233,-2483]}},"3ac2b800-1876-4794-997f-199213e9439b":{"position":{"vector":[-340,-1322]}},"8be4ccbe-e1b4-47d0-aa89-9cf4ba8414a2":{"position":{"vector":[153,-2721]}},"d5138cd9-9aae-479d-9f41-9f6a96071958":{"position":{"vector":[153,-2721]}},"a11b5ba0-00bc-47a8-9dcf-e0e179d3dc16":{"position":{"vector":[-340,-1394]}},"7d259b11-fc7b-49ec-9f0a-dadb99bcf15e":{"position":{"vector":[-342,-1466]}},"51db0746-f624-458c-b8e9-8f343940c999":{"position":{"vector":[-336,-1953]}},"83c4e0f9-9535-4f21-8ce9-d335abfb4797":{"position":{"vector":[-336,-1953]}},"e9991beb-4304-4c81-b856-cd8c89b80edf":{"position":{"vector":[-346,-1560]},"visualization":{"show":true,"width":1410.2788401741293}},"4bd745e0-f292-466e-acb8-95224362fb90":{"position":{"vector":[-342,-2002]}}},"widget":{},"import":{},"snapshot":"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"}}

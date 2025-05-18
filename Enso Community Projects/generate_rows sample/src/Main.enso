@@ -1,0 +1,26 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+main =
+    file1 = Data.read (enso_project.data / 'initials_names.csv')
+    ## Generate constant number of duplicates
+    any1 = file1.generate_rows (..Integer_Range 1 7 True 1) "Weekday"
+    ## Generate number of rows from column value
+    any2 = file1.generate_rows (..Integer_Range 0 (..Name 'Days Worked'))
+    ## Generate based on date range
+    any3 = file1.generate_rows (..Date_Range (..Name 'Start Date') (expr 'date_add([Start Date], [Days Worked])'))
+
+
+
+#### METADATA ####
+[[{"index":{"value":367},"size":{"value":52}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":477},"size":{"value":19}},"f79e4582-6ec1-4f40-a9c5-a09909ec6131"],[{"index":{"value":477},"size":{"value":48}},"3a463f4c-a062-4249-8f82-b6929e552a70"],[{"index":{"value":477},"size":{"value":58}},"051bbb1b-b28b-40fa-b28f-a07681b2a7bf"],[{"index":{"value":596},"size":{"value":19}},"6e015ffe-af15-4a0a-9f2c-4c4c6b38c624"],[{"index":{"value":596},"size":{"value":62}},"396e2050-b6e6-40f8-8e13-7bbe0b710c81"],[{"index":{"value":706},"size":{"value":19}},"0ee4f31e-ad2d-485d-9411-06bc95793b7f"],[{"index":{"value":706},"size":{"value":103}},"71ef4572-f195-4870-a4d1-d6fd6d96881d"]]
+{"ide":{"node":{"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-520,657]},"visualization":{"show":true,"width":1129.671875,"height":220.62109375}},"051bbb1b-b28b-40fa-b28f-a07681b2a7bf":{"position":{"vector":[-398,347]},"visualization":{"show":true,"width":753.24609375,"height":313.2109375}},"3a463f4c-a062-4249-8f82-b6929e552a70":{"position":{"vector":[-451,329]},"visualization":{"show":true,"width":1020.72265625,"height":370.1171875}},"f79e4582-6ec1-4f40-a9c5-a09909ec6131":{"position":{"vector":[-451,329]}},"396e2050-b6e6-40f8-8e13-7bbe0b710c81":{"position":{"vector":[-451,-56]},"visualization":{"show":true,"width":1097.59375,"height":227.29296875}},"6e015ffe-af15-4a0a-9f2c-4c4c6b38c624":{"position":{"vector":[-434,329]}},"71ef4572-f195-4870-a4d1-d6fd6d96881d":{"position":{"vector":[-520,-355]},"visualization":{"show":true,"width":824.34765625,"height":309.94921875}},"0ee4f31e-ad2d-485d-9411-06bc95793b7f":{"position":{"vector":[-419,346]}}},"widget":{},"import":{},"snapshot":"eJyNkk1PwzAMhu/9FdZ2aCuhwuDAaYehoYkDHOjEDtNUeY1bhaVxlaT74NejlH2hqYNbnPe1H9tJYbiC1KEWaETyhJZAVjUbB6hUUPxSp7hUV+QxOlxeLTCapd3ihPiKyFwqyka17Pa8ytyw5cJ1W1LNm0Lh6q8hsTk37I9Hy/MWq1qRvRA+pG1QyS90knUQVCg1DAMAgEIqGsAQ/I4SQyggIm05qw1/Uu4SgQ7hFkKppZOobKaxIpvkdh3GbYF+HyakyaAjyFlbh9qBbqolGeACRFMrmaMj27pR7zytpSblPi8zvLEQJcmLdlSSyd5RlwQDeISpaQgGMfRmRCuBu94F84Rqq7Q7y1k1lYY1qoYO2Pv/Yu/81RtWBOEYdxZmbFYkwvhyXP+nBLAG4SPjsw+0h27a2Ac/qCModWicfwMKY4hoWxsIfdEMhYjmJ3VxA/Ozphaxb+sbgH4TPQ=="}}

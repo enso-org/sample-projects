@@ -1,0 +1,84 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## # 2021: Week 33 Excelling at adding one more row
+
+   [August 18, 2021](https://preppindata.blogspot.com/2021/08/2021-week-33-excelling-at-adding-one.html "permanent link")
+
+   Challenge by: Carl Allchin
+
+   If you've spent as long as I have in the data world, you will inevitably have had moments when your sophisticated tools are actually a lot harder to solve a challenge with than Excel. The people you work with are likely to describe challenges to you in Excel terms and expect your solutions to be able to follow the same process as their logic. It's not always that easy though. 
+
+   Last week when working with some client data (I've converted this to an Allchains example), my team was challenged to look at Orders captured in a weekly snapshot that was then exported into Excel. 
+
+   Each week the file would show any order that was still opened that hadn't been fulfilled (ie delivered to the customer). The challenge is to classify when an order is new (the first report it has appeared in), unfulfilled (when it appears in any subsequent reports) or completed (the week after the order last appears in a report). But what if we needed to know whether the order was fulfilled and when? 
+
+   In Excel, we'd stack of those rows of data on top of each other and just INSERT an extra row for each order after the last time it appears in a weekly snapshot. We don't have that ability to right-click and add the additional row in Prep so we need to think of some alternate logic. 
+
+   ### Input
+
+   5 worksheets in [one Excel file](https://docs.google.com/spreadsheets/d/1Zf6kd5qiVuivptSO0CuGkK_Jzisw6_7e/edit?usp=sharing&ouid=112036106295107015452&rtpof=true&sd=true) with the same format
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyVR0fkU2IUzgAA3yqC7V5PAxJ5A1mbHp1AshYUm2yEiea-2Dsk2X2QAw3p83mUnUnkfdN5zM91eM2SUF62n4HuOnHS4PMQ5cENR_2ounB5w3eKmbJiqyrUc7dGXbP8qoDLPjiw_Kdz6Fn/s320/Screenshot+2021-08-10+at+19.18.54.png)
+
+   ### Requirements
+
+   - [Input the data](https://docs.google.com/spreadsheets/d/1Zf6kd5qiVuivptSO0CuGkK_Jzisw6_7e/edit?usp=sharing&ouid=112036106295107015452&rtpof=true&sd=true)
+   - Create one complete data set
+   - Use the Table Names field to create the Reporting Date
+   - Find the Minimum and Maximum date where an order appeared in the reports
+   - Add one week on to the maximum date to show when an order was fulfilled by
+   - Apply this logic:
+      - The first time an order appears it should be classified as a 'New Order'
+      - The week after the last time an order appears in a report (the maximum date) is when the order is classed as 'Fulfilled' 
+      - Any week between 'New Order' and 'Fulfilled' status is classed as an 'Unfulfilled Order' 
+   - Pull of the data sets together 
+   - Remove any unnecessary fields
+   - [Output the data](https://drive.google.com/file/d/1T4EdvByj5Z-6auX1x9qgQvlhZBGrQ1NC/view?usp=sharing)
+
+   ### Output
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXueR3j2bccoVpJwmZaVCe9l0lPLXcmFvqW-ySSr2FYH6usAxR7R7CJTXR7vNbXZD3PftCPQhVEqgII12wRKAWwwEmNg7p5Je9Zb51gCAFj29tS1KUa6Rs1LIG_1NjMNJlK2fvdNgqO5wb/w640-h472/Screenshot+2021-08-10+at+20.27.21.png)
+
+
+
+
+   4 data fields:
+
+   - Order status
+   - Orders
+   - Sales Date
+   - Reporting Date
+   35 Rows (36 rows including headers) 
+   The full output can be [found here](https://drive.google.com/file/d/1T4EdvByj5Z-6auX1x9qgQvlhZBGrQ1NC/view?usp=sharing). 
+main =
+    node1 = enso_project.data/'Allchains Weekly Orders.xlsx' . read
+    table1 = node1.read_many
+    table2 = table1.parse ['Sheet Name'] type=..Date 'yyyyMMdd'
+    any6 = table2.rename_columns [(Pair.Value 'Sheet Name' 'Reporting Date')]
+    any1 = any6.aggregate ['Orders'] [..Minimum 'Reporting Date' as="", ..Maximum 'Reporting Date' "Maximum Reporting Date", ..Maximum 'Sale Date', ..Minimum 'Sale Date']
+    any3 = any6.merge any1 ['Orders'] True
+    any2 = any1.set (..Simple_Expr (..Name 'Maximum Reporting Date') (..Date (..Add 1 ..Week))) "Reporting Date"
+    any4 = any3.set (..Simple_Expr (..Name 'Reporting Date') (..If (..Equal (..Name 'Minimum Reporting Date')) "New Order" "Unfulfilled Order")) "Order Status"
+    any5 = any4.select_columns ['Order Status', 'Orders', 'Sale Date', 'Reporting Date'] True
+    any7 = any2.set "Fullfilled Order" "Order Status"
+    any8 = any7.select_columns ['Order Status', 'Orders', 'Minimum Sale Date', 'Reporting Date'] True
+    ## Find the Maximum Reporting Date
+    any11 = any2.sort [(..Name 'Maximum Reporting Date' ..Descending)]
+    any10 = any11.get_value 'Maximum Reporting Date'
+    any9 = any8.filter 'Reporting Date' (..Equal_Or_Less any10)
+    table3 = any5.union any9 match_columns=..By_Position
+
+
+
+#### METADATA ####
+[[{"index":{"value":3763},"size":{"value":55}},"0b239db8-bd8a-440e-a280-5c98718abadd"],[{"index":{"value":3832},"size":{"value":15}},"87a4baad-edcd-4fcd-9644-bec95fb6c7dd"],[{"index":{"value":3861},"size":{"value":12}},"ed00a451-f94e-4843-8e46-b5d243d2bdc9"],[{"index":{"value":3861},"size":{"value":27}},"be08f264-159c-4163-9d4a-c3fbcdb267a2"],[{"index":{"value":3861},"size":{"value":39}},"ecdd127f-8f8d-4dd8-8be5-d83254af6c8a"],[{"index":{"value":3861},"size":{"value":50}},"3a2b5ef9-6dc6-442a-bc1a-7bcd57dc2d55"],[{"index":{"value":3923},"size":{"value":66}},"cb975dda-3719-4e68-9e18-06d9e3ecf219"],[{"index":{"value":4001},"size":{"value":14}},"b957e95e-c690-4d76-b8e3-e4833ff060e7"],[{"index":{"value":4001},"size":{"value":25}},"9a4bac4a-21bc-405f-8df7-e5ead31bc667"],[{"index":{"value":4001},"size":{"value":159}},"99233295-e489-433a-a390-7a1f0a3edfbf"],[{"index":{"value":4172},"size":{"value":10}},"76b89331-8139-46ff-9b7c-8d440fba1f3f"],[{"index":{"value":4172},"size":{"value":15}},"95067704-e52a-4ff9-b18e-94fcd45c948b"],[{"index":{"value":4172},"size":{"value":26}},"ae1bb5e6-6fd8-4ed3-a45b-e4013b25ce32"],[{"index":{"value":4172},"size":{"value":31}},"8f01b5e3-1a70-4918-b886-9d2ca198b009"],[{"index":{"value":4215},"size":{"value":8}},"a82234d5-1fc7-499a-a173-a10b2ce39d6b"],[{"index":{"value":4215},"size":{"value":84}},"43febc93-c88e-40f2-b991-f631b834253b"],[{"index":{"value":4215},"size":{"value":101}},"c261c0a5-2228-4655-b4be-6708993f147e"],[{"index":{"value":4328},"size":{"value":8}},"893dd148-daf3-4c65-990a-f72a16f0ffc4"],[{"index":{"value":4328},"size":{"value":133}},"824c2358-fdcf-44e4-a270-4424b4406a47"],[{"index":{"value":4328},"size":{"value":148}},"2a337aa7-428e-4351-9335-9279b01c5281"],[{"index":{"value":4488},"size":{"value":19}},"dc3c41fe-a65c-4aaa-a6f0-4eaff970504c"],[{"index":{"value":4488},"size":{"value":77}},"c9fa78b4-f014-4760-8145-f45f38850fab"],[{"index":{"value":4488},"size":{"value":82}},"de55bb83-8dc7-4090-988d-ac4858558fc7"],[{"index":{"value":4582},"size":{"value":8}},"ed64c466-8071-46af-b31b-adf68a3e81e7"],[{"index":{"value":4582},"size":{"value":27}},"747c7504-9a73-4b8f-92b9-75bdde75a58e"],[{"index":{"value":4582},"size":{"value":42}},"f06fe2f2-2b88-444b-90bf-f5889aaa09a5"],[{"index":{"value":4636},"size":{"value":90}},"af31f747-80c2-4c46-a53d-ea90db661e10"],[{"index":{"value":4778},"size":{"value":9}},"f0e5934f-084c-419e-b315-c77b6b1822cf"],[{"index":{"value":4778},"size":{"value":58}},"49ec23ad-ed9e-4859-bdb1-5e22fc78d036"],[{"index":{"value":4849},"size":{"value":15}},"034c6507-4104-44f4-aa65-64f175fb7eac"],[{"index":{"value":4849},"size":{"value":40}},"6daf4273-cc59-42a5-b576-eac6bdc48050"],[{"index":{"value":4901},"size":{"value":11}},"70f97313-fe6b-4817-af16-f2a239f12087"],[{"index":{"value":4901},"size":{"value":28}},"d2f3a5d1-b118-4468-9a0c-0275dd314fe7"],[{"index":{"value":4901},"size":{"value":52}},"0daf122b-35d7-42ec-b705-340c18593b0c"],[{"index":{"value":4967},"size":{"value":10}},"7ec99d11-22e9-4707-805c-c893019fa806"],[{"index":{"value":4967},"size":{"value":15}},"0cdba898-c63c-4099-b9e5-c95c35bad83d"],[{"index":{"value":4967},"size":{"value":43}},"df550894-a7ce-4a85-9272-2698dc007a8c"]]
+{"ide":{"node":{"0b239db8-bd8a-440e-a280-5c98718abadd":{"position":{"vector":[-670,883]}},"87a4baad-edcd-4fcd-9644-bec95fb6c7dd":{"position":{"vector":[-670,811]},"visualization":{"show":false,"width":596.890625}},"3a2b5ef9-6dc6-442a-bc1a-7bcd57dc2d55":{"position":{"vector":[-670,739]}},"ecdd127f-8f8d-4dd8-8be5-d83254af6c8a":{"position":{"vector":[-545,221]}},"be08f264-159c-4163-9d4a-c3fbcdb267a2":{"position":{"vector":[-545,221]}},"ed00a451-f94e-4843-8e46-b5d243d2bdc9":{"position":{"vector":[-545,221]}},"cb975dda-3719-4e68-9e18-06d9e3ecf219":{"position":{"vector":[-670,667]},"visualization":{"show":false,"width":619.375}},"99233295-e489-433a-a390-7a1f0a3edfbf":{"position":{"vector":[-586,595]},"visualization":{"show":false,"height":222}},"9a4bac4a-21bc-405f-8df7-e5ead31bc667":{"position":{"vector":[-670,31]}},"b957e95e-c690-4d76-b8e3-e4833ff060e7":{"position":{"vector":[-670,31]}},"8f01b5e3-1a70-4918-b886-9d2ca198b009":{"position":{"vector":[-670,523]},"visualization":{"show":false,"width":1263.062248748483}},"ae1bb5e6-6fd8-4ed3-a45b-e4013b25ce32":{"position":{"vector":[-666,-125]}},"95067704-e52a-4ff9-b18e-94fcd45c948b":{"position":{"vector":[-666,-125]}},"76b89331-8139-46ff-9b7c-8d440fba1f3f":{"position":{"vector":[-666,-125]}},"c261c0a5-2228-4655-b4be-6708993f147e":{"position":{"vector":[375,451]},"visualization":{"show":false,"width":1031.1254076911407}},"43febc93-c88e-40f2-b991-f631b834253b":{"position":{"vector":[-670,-191]}},"a82234d5-1fc7-499a-a173-a10b2ce39d6b":{"position":{"vector":[-670,-191]}},"2a337aa7-428e-4351-9335-9279b01c5281":{"position":{"vector":[-670,451]}},"824c2358-fdcf-44e4-a270-4424b4406a47":{"position":{"vector":[-670,-413]}},"893dd148-daf3-4c65-990a-f72a16f0ffc4":{"position":{"vector":[-670,-413]}},"de55bb83-8dc7-4090-988d-ac4858558fc7":{"position":{"vector":[-670,379]},"visualization":{"show":false,"width":812.7784056432039}},"c9fa78b4-f014-4760-8145-f45f38850fab":{"position":{"vector":[-670,-335]}},"dc3c41fe-a65c-4aaa-a6f0-4eaff970504c":{"position":{"vector":[-670,-335]}},"f06fe2f2-2b88-444b-90bf-f5889aaa09a5":{"position":{"vector":[375,379]}},"747c7504-9a73-4b8f-92b9-75bdde75a58e":{"position":{"vector":[313,-195]}},"ed64c466-8071-46af-b31b-adf68a3e81e7":{"position":{"vector":[313,-195]}},"af31f747-80c2-4c46-a53d-ea90db661e10":{"position":{"vector":[375,307]}},"49ec23ad-ed9e-4859-bdb1-5e22fc78d036":{"position":{"vector":[1163,379]}},"f0e5934f-084c-419e-b315-c77b6b1822cf":{"position":{"vector":[1231,47]}},"6daf4273-cc59-42a5-b576-eac6bdc48050":{"position":{"vector":[1163,307]},"visualization":{"show":true}},"034c6507-4104-44f4-aa65-64f175fb7eac":{"position":{"vector":[1134,-23]}},"0daf122b-35d7-42ec-b705-340c18593b0c":{"position":{"vector":[375,85]},"visualization":{"show":true}},"d2f3a5d1-b118-4468-9a0c-0275dd314fe7":{"position":{"vector":[443,-131]}},"70f97313-fe6b-4817-af16-f2a239f12087":{"position":{"vector":[443,-131]}},"df550894-a7ce-4a85-9272-2698dc007a8c":{"position":{"vector":[-670,-174]},"visualization":{"show":true,"width":860,"height":309}},"0cdba898-c63c-4099-b9e5-c95c35bad83d":{"position":{"vector":[-421,-276]}},"7ec99d11-22e9-4707-805c-c893019fa806":{"position":{"vector":[-421,-276]}}},"widget":{},"import":{},"snapshot":"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"}}

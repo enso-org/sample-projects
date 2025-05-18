@@ -1,0 +1,137 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Visualization
+
+## # 2024: Week 31 - Olympics Special
+   
+   [July 31, 2024](https://preppindata.blogspot.com/2024/07/2024-week-31-olympics-special.html "permanent link")
+   
+   Challenge by: Zak Saucede
+   
+   For the final challenge in Preppin' Data's sports themed month we're turning our attention towards the Olympics. More specifically, we're looking at the Women's Heptathlon, using data from the [World Athletics Championship](https://www.watchathletics.com/page/4539/women-s-heptathlon-results-world-athletics-championships-2023) in August 2023.
+   
+   Zak, a Data School Consultant from DS39, recently created the viz below, after realising that despite ranking in the Top 3 for 5 out of the 7 events, it wasn't enough for Anna Hall to win gold. Therefore, he wanted to do further analysis to see if it's better to be a specialist in a few events, or a generalist across all the events.
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp5gmYHbSyApfADZRXD7Y4rOinIvBcPiCaEBSR95NFZUbn8ME1pcceHM2dZ3nGLgX1cQdr2Y1oovK4GknXeS14nU2bWZW62uxlyKs4gkVF2shnti6oSucuxbBueSrorqKfKDNpVRHNSq81f3W4YfPUBSJ0GTGE1XcgNdT1iRErpif54fWRHFgXZOwpEozt/w640-h480/Screenshot%202024-07-25%20151016.png)[Click here](https://public.tableau.com/app/profile/zak.saucede/viz/IstheHeptathlonaspecialist-generalistevent/WorldChamps_Heptathlon) to interact with the viz
+   
+   ### Inputs
+   
+   1. Results Table - at a first glance, our data looks very clean, and analysis ready - but 3 data points in a single row is going to require some attention, as well as the position being in brackets for each event
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig9P1J38u9j7ZaL_dU1FdGpBtjROuJORljC7iH3mhS9i1wk0Su4RQVIzYB-5ZZvdM9bC1lBRxk_MDIi9r9kl-S2OKqNF0eU5Buc7ousG9Y0GLbb03Fa_9BtIgElUs7-EecGvLDZ3ho4KL7bDbVIpIetO_PUr1tdxxHD7duqlqoCnCWN_VDAtOb3w0tXUER/w640-h316/Screenshot%202024-07-25%20105925.png)
+   
+   2. Event Lookup Table - Let's add in some additional detail about the events, such as making them more human readable 
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOBJAuDZdG7LldqWMQjzLMfCOCG3eWbtC6YY3dpkSu5ZBbquUjQ_B3iuuO20fLU6jv_QKlf1h5wcDIdGcZ6H9cXl0eYIzRZrE9_LT85TtwljH2CEItj31PI9RJ1HL-H6gdYwYd5HRZNfZCyqLrsmsAuuzgurE7DoyUV7zQ7IsuVucfI_jrSD-t2jzFtS7B/s320/Screenshot%202024-07-25%20141623.png)
+   
+   ### Requirements
+   
+   - [Input the data](https://docs.google.com/spreadsheets/d/1XbW6Uf4dzT094ajmqRChoNKQrBmsrzhb/edit?usp=drive_link&ouid=113142875990517226017&rtpof=true&sd=true)
+   - Rename the fields in the results table
+       - POS - Position
+       - ATHLETE - Athlete
+       - NAT - Nationality
+       - POINTS - Total Points
+   - There's a duplicate field for the 800m Run event, remove this
+   - Fill down the values in the first 4 fields so no nulls remain (*[help](https://www.preppindata.com/howto/how-to-fill-down-cells#:~:text=By%20hovering%20over%20the%20Project,Fill%20Down%20for%20that%20field.&text=Like%20all%20of%20the%20options,an%20order%20to%20the%20function.)*)
+   - Remove the letters from the Total Points field
+   - Pivot the data so there is a row for each event
+   - Reshape the data so there is a field for:
+       - Event Score
+       - Event Time/Distance
+       - Rolling Total
+   - Join on the Event Lookup Table
+   - Split off the Position information that is contained within brackets in both the Event Time/Distance and Rolling Total fields
+       - Rename these to Event Position and Position After Event
+   - Sort the rows in Position and Event No. order
+   - [Output the data](https://drive.google.com/file/d/1Lslixo9C6qOTl7gn5Sw9sIVyITqmRhti/view?usp=drive_link)
+   
+   ### Output
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDDYfCv4pn76wbQAxWYI3txYfDXRhEppD3CmH_yUNtTEWWsD8Vg0Ak81Ko5pe87pDYGkeXxz_0-haF07U42gAjv9jMYPN_COI5d0HX6opmKUuMLxcKKbAhK4rtDCaOf2aMWe5WaeKNoS6lNPJgbfRjbf1X-r1N9WQ-P4ptg1hWALi6THY2ksLXK8nc23Ej/w640-h102/Screenshot%202024-07-25%20152804.png)
+   
+   - 13 fields
+       - Position
+       - Athlete
+       - Nationality
+       - Total Points
+       - Event Name
+       - Event Type
+       - Event No.
+       - Event Time/Distance
+       - Event Points
+       - Event Position
+       - Rolling Total Points
+       - Position After Event
+   - 126 rows (127 including headers)
+   
+   You can view the outputs [here](https://drive.google.com/file/d/1Lslixo9C6qOTl7gn5Sw9sIVyITqmRhti/view?usp=drive_link).
+   
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+   
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help!
+   
+   ### Popular posts from this blog
+   
+   ### [2023: Week 1 The Data Source Bank](https://preppindata.blogspot.com/2023/01/2023-week-1-data-source-bank.html)
+   
+   *[January 04, 2023](https://preppindata.blogspot.com/2023/01/2023-week-1-data-source-bank.html "permanent link")*
+   
+   ![Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsUOKkk8GcZYYwhHsBtfsNqZc6v2zc0zSnbhAbgfrUF98cdN7ai6ShPZmtJZuRZzio8v2Sovo6QtrzA45eM0Jne3o33sXcE6gmD9qI_j37ABO6eOD7T3cIXQtszMD31hWSNq7AH43Jm5VQdpTOTnfBangz2d_69itGY6ya1qXEPx7d7IWgdleiM_WZSw/w640-h228/Screenshot%202023-01-02%20at%2019.58.57.png)
+   
+   Created by: Carl Allchin Welcome to a New Year of Preppin' Data. These are weekly exercises to help you learn and develop data preparation skills. We publish the challenges on a Wednesday and share a solution the following Tuesday. You can take the challenges whenever you want and we love to see your solutions. With data preparation, there is never just one way to complete the tasks so sharing your solutions will help others learn too. Share on Twitter, LinkedIn, the Tableau Forums or wherever you want to too. Tag Jenny Martin, Tom Prowse or myself or just use the #PreppinData to share your solutions.  The challenges are designed for learning Tableau Prep but we have a broad community who complete the challenges in R, Python, SQL, DBT, EasyMorph and many other tools. We love seeing people learn new tools so feel free to use whatever tools you want to complete the challenges.  A New Year means we start afresh so January's challenges will be focused on beginners. We will use dif
+   
+   [Read more](https://preppindata.blogspot.com/2023/01/2023-week-1-data-source-bank.html "2023: Week 1 The Data Source Bank")
+   
+   ### [2024: Week 1 - Prep Air's Flow Card](https://preppindata.blogspot.com/2024/01/2024-week-1-prep-airs-flow-card.html)
+   
+   *[January 03, 2024](https://preppindata.blogspot.com/2024/01/2024-week-1-prep-airs-flow-card.html "permanent link")*
+   
+   ![Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyWUGjqNfzjbejKFop5EhJ5AvmFduIULRfKCy8CVzOyaqJQHQhyphenhyphen6Vgna7P_Ozfl0WvIZgd-JhihJVQJWRbkSeu9BbI8bjJ2_bFJg-OaOA8VE9yV8UWaFYL1xiAxGKGwIyGW9ebPqsy31xiw7SCQ610Y__4KiqoZdbhpqZssBrmbFLXpQUY_7nfbE1gHN9v/w640-h160/Screenshot%202023-12-12%20at%2020.37.44.png)
+   
+   Created by: Carl Allchin Welcome to a New Year of Preppin' Data challenges. For anyone new to the challenges then let us give you an overview how the weekly challenge works.  Each Wednesday the Preppin' crew (Jenny, myself or a guest contributor) drop a data set(s) that requires some reshaping and/or cleaning to get it ready for analysis.  You can use any tool or language you want to do the reshaping (we build the challenges in Tableau Prep but love seeing different tools being learnt / tried). Share your solution on LinkedIn, Twitter/X, GitHub or the Tableau Forums Fill out our tracker so you can monitor your progress and involvement The following Tuesday we will post a written solution in Tableau Prep (thanks Tom) and a video walkthrough too (thanks Jenny) As with each January for the last few years, we'll set a number of challenges aimed at beginners. This is a great way to learn a number of fundamental data preparation skills or a chance to learn a new tool — New Year&
+   
+   [Read more](https://preppindata.blogspot.com/2024/01/2024-week-1-prep-airs-flow-card.html "2024: Week 1 - Prep Air's Flow Card")
+   
+   ### [2023: Week 2 - International Bank Account Numbers](https://preppindata.blogspot.com/2023/01/2023-week-2-international-bank-account.html)
+   
+   *[January 11, 2023](https://preppindata.blogspot.com/2023/01/2023-week-2-international-bank-account.html "permanent link")*
+   
+   ![Image](https://blogger.googleusercontent.com/img/a/AVvXsEg6cHU6JOCWWyUbCGBixif-Cj3CvRJNRr3RFzcpG7kI8zzL3eAWKBZPdu2UVqivMHILO-zaT2bJ9F2iaNfVWgZIAro_IOwwKi-GjJFVQyJ_O9iE-0X7Iin4vZxbqHiuEsPQp2nDtIjAARQ_aCrSbnmJU6LiU7L64P3gzS68jU9b7_ScOnYI3LOciKGwUw)
+   
+   Challenge By: Jenny Martin For week 2 of our beginner month, Data Source Bank has a requirement to construct International Bank Account Numbers (IBANs), even for Transactions taking place in the UK. We have all the information in separate fields, we just need to put it altogether in the following order: Inputs A list
+main =
+    quot1 = enso_project.data/ 'WorldChampionships_2023_Heptathlon.xlsx'
+    node1 = Data.read quot1
+    node2 = node1.read 'Results' ..No_Headers
+    node3 = node1.read 'Event Lookup'
+    any1 = node3.cast ['Event'] ..Char
+    table2 = node2.filter_blank_rows ..All_Cells
+    table1 = table2.fill_nothing ['A', 'B', 'C', 'D'] Previous_Value
+    any2 = table1.remove_columns ['M']
+    table3 = any2.use_first_row_as_names
+    any4 = table3.rename_columns [(Pair.Value 'POS' 'Positon'), (Pair.Value 'ATHLETE' 'Athlete'), (Pair.Value 'NAT' 'Nationality'), (Pair.Value 'POINTS' 'Total Points')]
+    any5 = any4.cast ['Total Points'] ..Char
+    table4 = any5.text_cleanse ['Total Points'] [..Letters]
+    any3 = table4.transpose ['Positon', 'Athlete', 'Nationality', 'Total Points', 'Breakdown']
+    any7 = any3.cast ['Value'] ..Char
+    table6 = any7.join any1 ..Inner [(..Equals 'Name' 'Event')]
+    any13 = table6.cross_tab ['Positon', 'Athlete', 'Nationality', 'Total Points', 'Name', 'Event Name', 'Event No.', 'Event Type'] 'Breakdown' (..First 'Value')
+    table5 = any13.split_to_columns 'Rolling Total' '(' ..All_Columns
+    column1 = table5.text_replace ['Rolling Total 2'] ")"
+    any14 = column1.rename_columns [(Pair.Value 'Rolling Total 1' 'Rolling Total'), (Pair.Value 'Rolling Total 2' 'Position After Event')]
+    table7 = any14.split_to_columns 'Event Time/Distance' '(' ..All_Columns
+    column2 = table7.text_replace ['Event Time/Distance 2'] ")"
+    any15 = column2.rename_columns [(Pair.Value 'Event Time/Distance 1' 'Event Time/Distance'), (Pair.Value 'Event Time/Distance 2' 'Event Position')]
+    any10 = any15.select_columns ['Positon', 'Athlete', 'Nationality', 'Total Points', 'Event Name', 'Event Type', 'Event No.', 'Event Time/Distance', 'Event Score', 'Event Position', 'Rolling Total', 'Position After Event'] True
+    any12 = any10.sort [(..Name 'Positon'), (..Name 'Event No.')]
+
+
+
+#### METADATA ####
+[[{"index":{"value":9691},"size":{"value":18}},"f58f5fac-9ba3-440a-80e8-2c20eab7c8ce"],[{"index":{"value":9691},"size":{"value":60}},"0ab7a0b7-da06-4f0a-9324-1ec61c9b0295"],[{"index":{"value":9764},"size":{"value":15}},"e623c640-0be1-43bc-a4bc-c8d29165ea3c"],[{"index":{"value":9792},"size":{"value":20}},"8efa524c-6c0c-4529-8a6f-2682c56f8d41"],[{"index":{"value":9792},"size":{"value":33}},"e1f6e413-f6b0-4492-896e-c0f404bcf906"],[{"index":{"value":9838},"size":{"value":25}},"3a076a69-a7a3-4832-9567-291e3a68d154"],[{"index":{"value":9875},"size":{"value":10}},"d776a6e0-8da1-464a-a225-33873a887a2b"],[{"index":{"value":9875},"size":{"value":20}},"067fddfc-dd9e-4523-a1df-c401305d899d"],[{"index":{"value":9875},"size":{"value":27}},"5483fc49-c112-4d06-bad7-07f2d8e5c6ea"],[{"index":{"value":9916},"size":{"value":23}},"89d9023e-26e1-4eac-b757-6899958f7d5b"],[{"index":{"value":9916},"size":{"value":35}},"d71f9cca-3c36-4c36-aa17-e482d3bee99c"],[{"index":{"value":9965},"size":{"value":19}},"52f339c3-f34c-410b-937f-e7b4a2c2b3dc"],[{"index":{"value":9965},"size":{"value":40}},"0a824b82-065c-4ef5-9ad4-2a31e954f3ee"],[{"index":{"value":9965},"size":{"value":55}},"533df0ba-1d58-48ab-b71f-d44b2b761079"],[{"index":{"value":10032},"size":{"value":21}},"4966c0e7-ddc5-46c0-8e29-462793fd6598"],[{"index":{"value":10032},"size":{"value":27}},"9cd8c211-f386-467b-bced-f2a750c20122"],[{"index":{"value":10073},"size":{"value":27}},"ee736cd9-50ee-4089-9f97-6728f331a520"],[{"index":{"value":10112},"size":{"value":21}},"0a3e69a2-50d1-4f96-97b1-37d01332dce4"],[{"index":{"value":10112},"size":{"value":158}},"adcccf50-14ea-4dc2-801b-5460cbe67c83"],[{"index":{"value":10282},"size":{"value":9}},"b3a7e87e-f5e2-4f5a-b578-4d4dcd4a049d"],[{"index":{"value":10282},"size":{"value":26}},"7cad1c3f-1936-4837-a2e0-94972f287aec"],[{"index":{"value":10282},"size":{"value":33}},"720de214-923c-4b61-b222-24a298167caf"],[{"index":{"value":10329},"size":{"value":17}},"d2eac661-b9a4-4dbe-9f0c-af32be8dada0"],[{"index":{"value":10329},"size":{"value":34}},"156c4974-eb85-4b0e-b2ea-558e200539ea"],[{"index":{"value":10329},"size":{"value":46}},"25266a64-7f19-405d-a19d-d2abeb25b13c"],[{"index":{"value":10387},"size":{"value":16}},"f5b14ec1-9490-47cc-984a-c980dfee18df"],[{"index":{"value":10387},"size":{"value":83}},"06995bbc-53a5-4529-aed8-fffd65b83245"],[{"index":{"value":10482},"size":{"value":9}},"bd95d18c-a864-405c-825e-80b0547981d2"],[{"index":{"value":10482},"size":{"value":19}},"2cbcaba9-400d-41a5-b22b-6a0eec02c2ad"],[{"index":{"value":10482},"size":{"value":26}},"65c62be0-3b3a-4379-95d8-b47f0d12b466"],[{"index":{"value":10522},"size":{"value":9}},"2766b3e4-af56-4679-b906-a561483909cb"],[{"index":{"value":10522},"size":{"value":14}},"49a944e3-fa9b-4e0c-accd-02bfc5b942b7"],[{"index":{"value":10522},"size":{"value":22}},"6779cf4d-96a3-4eb9-99f8-3d8f3b269bd4"],[{"index":{"value":10522},"size":{"value":50}},"9c645449-e75a-4f44-87be-32f5a35050a9"],[{"index":{"value":10585},"size":{"value":16}},"6af7d189-beb5-48b8-981e-0b86404b0e7c"],[{"index":{"value":10585},"size":{"value":119}},"a9712b6a-f1b7-494b-89f2-5c66ff405e3b"],[{"index":{"value":10585},"size":{"value":131}},"ea66a947-91b3-4ea2-a484-f22f07b54573"],[{"index":{"value":10585},"size":{"value":149}},"041833d5-0ad2-42ac-8ec9-f4c40fac0b03"],[{"index":{"value":10748},"size":{"value":22}},"0a1d4f92-dbd6-4491-bf6c-31f53b809b7b"],[{"index":{"value":10748},"size":{"value":38}},"41042647-627e-4718-ace5-eeac5a880f06"],[{"index":{"value":10748},"size":{"value":42}},"c6582a7c-ba15-4648-969a-1833fec71b0a"],[{"index":{"value":10748},"size":{"value":56}},"305a413c-36a2-49c9-a585-a3e330ef4d0f"],[{"index":{"value":10819},"size":{"value":19}},"1b63360a-15af-469b-9213-577552151343"],[{"index":{"value":10819},"size":{"value":39}},"67dfbd15-a0d2-4691-831e-de1125545847"],[{"index":{"value":10819},"size":{"value":43}},"c0036457-dfcd-440f-9778-157b3e439dc9"],[{"index":{"value":10875},"size":{"value":22}},"fe0dbee3-403b-4e53-87ec-72010346d908"],[{"index":{"value":10875},"size":{"value":126}},"ba9c14b4-99fd-4711-82f3-14310c9a306a"],[{"index":{"value":11015},"size":{"value":62}},"03e17f44-3489-4112-999b-c931f06efbeb"],[{"index":{"value":11092},"size":{"value":49}},"93c12ca1-e50f-48a9-ae7e-7a760bd43314"],[{"index":{"value":11154},"size":{"value":138}},"b169a646-7919-41dc-a133-8943a820d277"],[{"index":{"value":11305},"size":{"value":20}},"a442cd79-2ebc-4071-990e-586e3990062c"],[{"index":{"value":11305},"size":{"value":212}},"4ce9b95a-33ba-4c58-b6bb-f82fd8291305"],[{"index":{"value":11305},"size":{"value":217}},"64f14bcf-43c6-44f4-b750-ead071a264cd"],[{"index":{"value":11535},"size":{"value":10}},"d2fddc04-d122-4ea3-ba64-3c8d4de5ddb3"],[{"index":{"value":11535},"size":{"value":53}},"a91d78a2-7ad7-4257-9ad3-703699923ed7"]]
+{"ide":{"node":{"0ab7a0b7-da06-4f0a-9324-1ec61c9b0295":{"position":{"vector":[-631,-2005]}},"f58f5fac-9ba3-440a-80e8-2c20eab7c8ce":{"position":{"vector":[90,-2833]}},"e623c640-0be1-43bc-a4bc-c8d29165ea3c":{"position":{"vector":[-631,-2101]},"visualization":{"show":true,"fullscreen":false}},"e1f6e413-f6b0-4492-896e-c0f404bcf906":{"position":{"vector":[-612,-2401]},"visualization":{"show":false,"fullscreen":false,"width":1441.078125,"height":476.98828125}},"8efa524c-6c0c-4529-8a6f-2682c56f8d41":{"position":{"vector":[-167,-64]},"visualization":{"show":true,"fullscreen":false,"width":590.84765625}},"3a076a69-a7a3-4832-9567-291e3a68d154":{"position":{"vector":[-5,-3114]},"visualization":{"show":false,"fullscreen":false,"width":483.76953125}},"5483fc49-c112-4d06-bad7-07f2d8e5c6ea":{"position":{"vector":[-542,-3186]}},"067fddfc-dd9e-4523-a1df-c401305d899d":{"position":{"vector":[489,-378]}},"d776a6e0-8da1-464a-a225-33873a887a2b":{"position":{"vector":[489,-378]}},"d71f9cca-3c36-4c36-aa17-e482d3bee99c":{"position":{"vector":[-612,-2473]},"visualization":{"show":false,"fullscreen":false,"width":896.6796875}},"89d9023e-26e1-4eac-b757-6899958f7d5b":{"position":{"vector":[-523,-600]},"visualization":{"show":true,"fullscreen":false,"width":896.6796875}},"533df0ba-1d58-48ab-b71f-d44b2b761079":{"position":{"vector":[-612,-2545]},"visualization":{"show":false,"fullscreen":false,"width":917.8359375,"project":{"project":"Builtin"},"name":"Table"}},"0a824b82-065c-4ef5-9ad4-2a31e954f3ee":{"position":{"vector":[-523,-672]},"visualization":{"show":true,"fullscreen":false,"project":{"project":"Builtin"},"name":"Table"}},"52f339c3-f34c-410b-937f-e7b4a2c2b3dc":{"position":{"vector":[-127,-361]}},"9cd8c211-f386-467b-bced-f2a750c20122":{"position":{"vector":[-616,-2617]}},"4966c0e7-ddc5-46c0-8e29-462793fd6598":{"position":{"vector":[-348,-935]}},"ee736cd9-50ee-4089-9f97-6728f331a520":{"position":{"vector":[-612,-2689]},"visualization":{"show":false,"fullscreen":false,"width":875.86328125}},"adcccf50-14ea-4dc2-801b-5460cbe67c83":{"position":{"vector":[-616,-2761]}},"0a3e69a2-50d1-4f96-97b1-37d01332dce4":{"position":{"vector":[-375,-1256]}},"720de214-923c-4b61-b222-24a298167caf":{"position":{"vector":[-615,-2859]}},"7cad1c3f-1936-4837-a2e0-94972f287aec":{"position":{"vector":[-238,-1257]}},"b3a7e87e-f5e2-4f5a-b578-4d4dcd4a049d":{"position":{"vector":[-238,-1257]}},"25266a64-7f19-405d-a19d-d2abeb25b13c":{"position":{"vector":[-615,-2931]}},"156c4974-eb85-4b0e-b2ea-558e200539ea":{"position":{"vector":[-294,-1269]}},"d2eac661-b9a4-4dbe-9f0c-af32be8dada0":{"position":{"vector":[-294,-1269]}},"06995bbc-53a5-4529-aed8-fffd65b83245":{"position":{"vector":[-612,-3003]},"visualization":{"show":false,"fullscreen":false,"width":1188.76953125}},"f5b14ec1-9490-47cc-984a-c980dfee18df":{"position":{"vector":[-379,-1520]}},"65c62be0-3b3a-4379-95d8-b47f0d12b466":{"position":{"vector":[-613,-3075]},"visualization":{"show":false,"fullscreen":false,"width":652.5}},"2cbcaba9-400d-41a5-b22b-6a0eec02c2ad":{"position":{"vector":[206,-1790]}},"bd95d18c-a864-405c-825e-80b0547981d2":{"position":{"vector":[206,-1790]}},"9c645449-e75a-4f44-87be-32f5a35050a9":{"position":{"vector":[-612,-3258]},"visualization":{"show":false,"fullscreen":false,"width":1129.3064365671642}},"6779cf4d-96a3-4eb9-99f8-3d8f3b269bd4":{"position":{"vector":[-343,-3465]}},"49a944e3-fa9b-4e0c-accd-02bfc5b942b7":{"position":{"vector":[-343,-3465]}},"2766b3e4-af56-4679-b906-a561483909cb":{"position":{"vector":[-343,-3465]}},"041833d5-0ad2-42ac-8ec9-f4c40fac0b03":{"position":{"vector":[-613,-3330]},"visualization":{"show":false,"fullscreen":false,"width":1402.1322294776119}},"ea66a947-91b3-4ea2-a484-f22f07b54573":{"position":{"vector":[-403,-2809]},"visualization":{"show":true,"fullscreen":false}},"a9712b6a-f1b7-494b-89f2-5c66ff405e3b":{"position":{"vector":[-266,-2887]}},"6af7d189-beb5-48b8-981e-0b86404b0e7c":{"position":{"vector":[-266,-2887]}},"305a413c-36a2-49c9-a585-a3e330ef4d0f":{"position":{"vector":[-613,-3402]},"visualization":{"show":false,"fullscreen":false,"width":1167.7630597014925}},"c6582a7c-ba15-4648-969a-1833fec71b0a":{"position":{"vector":[101,-1929]},"visualization":{"show":true,"fullscreen":false,"width":916.46875}},"41042647-627e-4718-ace5-eeac5a880f06":{"position":{"vector":[101,-1929]}},"0a1d4f92-dbd6-4491-bf6c-31f53b809b7b":{"position":{"vector":[122,-1812]}},"c0036457-dfcd-440f-9778-157b3e439dc9":{"position":{"vector":[-612,-3474]},"visualization":{"show":false,"fullscreen":false,"width":762.8085354477612}},"67dfbd15-a0d2-4691-831e-de1125545847":{"position":{"vector":[-259,-2362]}},"1b63360a-15af-469b-9213-577552151343":{"position":{"vector":[-259,-2362]}},"ba9c14b4-99fd-4711-82f3-14310c9a306a":{"position":{"vector":[-612,-3546]}},"fe0dbee3-403b-4e53-87ec-72010346d908":{"position":{"vector":[-424,-3643]}},"03e17f44-3489-4112-999b-c931f06efbeb":{"position":{"vector":[-612,-3618]},"visualization":{"show":false,"fullscreen":false,"width":1167.7630597014925}},"93c12ca1-e50f-48a9-ae7e-7a760bd43314":{"position":{"vector":[-612,-3690]},"visualization":{"show":false,"fullscreen":false,"width":762.8085354477612}},"b169a646-7919-41dc-a133-8943a820d277":{"position":{"vector":[-612,-3780]}},"64f14bcf-43c6-44f4-b750-ead071a264cd":{"position":{"vector":[-612,-3871]}},"4ce9b95a-33ba-4c58-b6bb-f82fd8291305":{"position":{"vector":[-266,-4084]},"visualization":{"show":true,"fullscreen":false}},"a442cd79-2ebc-4071-990e-586e3990062c":{"position":{"vector":[-266,-4084]}},"a91d78a2-7ad7-4257-9ad3-703699923ed7":{"position":{"vector":[-612,-3967]},"visualization":{"show":true,"fullscreen":false,"width":1143.1275652985073}},"d2fddc04-d122-4ea3-ba64-3c8d4de5ddb3":{"position":{"vector":[-127,-4369]}}},"import":{}}}

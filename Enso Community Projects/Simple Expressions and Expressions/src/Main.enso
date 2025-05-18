@@ -1,0 +1,20 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+main =
+    node1 = Table.input [['StoreNumber', ['24', '25', '26']], ['OpenDate', ['2012-09-15', '1922-11-10', '2024-02-11']], ['Name', ['Anaheim', 'Corona (Auto Center Dr.)', 'San Bernardino (5th Street)']]]
+    any2 = node1.set (..Simple_Expr (..Name 'OpenDate') (..Date (..Add 100 ..Year))) "temp"
+    any1 = any2.set (..Simple_Expr (..Name 'OpenDate') (..If (..Less (Date.new 1930 1 1)) (..Name 'temp') false_value=(..Name 'OpenDate'))) "OpenDate"
+    any3 = node1.set (expr 'if [OpenDate] < #1930-01-01# then date_add([OpenDate],100,..Year) else [OpenDate]') "OpenDate"
+
+
+
+#### METADATA ####
+[[{"index":{"value":270},"size":{"value":189}},"f9b837f3-9355-449f-829b-929b7bca85ee"],[{"index":{"value":471},"size":{"value":9}},"2a7cb5b0-0be8-4342-a8c8-5c60dff48732"],[{"index":{"value":471},"size":{"value":73}},"e1ab4b87-8261-43c4-ab25-e739a73ec286"],[{"index":{"value":471},"size":{"value":80}},"c9ff4a02-afdf-4cfb-aa6a-1ff37f801ded"],[{"index":{"value":563},"size":{"value":8}},"7f6738a8-cabe-419d-b78a-c6b9807a8b8e"],[{"index":{"value":563},"size":{"value":128}},"8071fcc7-9237-4c30-a39e-d07ea608f3de"],[{"index":{"value":563},"size":{"value":139}},"6f3b9567-9d82-4539-870b-7d9f35208e69"],[{"index":{"value":714},"size":{"value":9}},"58b4bb15-630d-4156-b8bc-76e56254319d"],[{"index":{"value":714},"size":{"value":100}},"93d24118-1367-41cd-bcf9-c1587bb955ba"],[{"index":{"value":714},"size":{"value":111}},"106f0163-8081-4c54-8a5b-57becf94eb14"]]
+{"ide":{"node":{"f9b837f3-9355-449f-829b-929b7bca85ee":{"position":{"vector":[-85,337]}},"c9ff4a02-afdf-4cfb-aa6a-1ff37f801ded":{"position":{"vector":[56,109]},"visualization":{"show":false,"width":1163.02734375}},"e1ab4b87-8261-43c4-ab25-e739a73ec286":{"position":{"vector":[865,144]}},"2a7cb5b0-0be8-4342-a8c8-5c60dff48732":{"position":{"vector":[866,145]}},"6f3b9567-9d82-4539-870b-7d9f35208e69":{"position":{"vector":[56,37]},"visualization":{"show":true,"height":158.17578125}},"8071fcc7-9237-4c30-a39e-d07ea608f3de":{"position":{"vector":[-80,-83]},"visualization":{"show":true}},"7f6738a8-cabe-419d-b78a-c6b9807a8b8e":{"position":{"vector":[-77,113]}},"106f0163-8081-4c54-8a5b-57becf94eb14":{"position":{"vector":[-85,-195]},"visualization":{"show":true,"width":807.3203125,"height":166.44140625}},"93d24118-1367-41cd-bcf9-c1587bb955ba":{"position":{"vector":[210,-34]}},"58b4bb15-630d-4156-b8bc-76e56254319d":{"position":{"vector":[210,-39]}}},"widget":{"f9b837f3-9355-449f-829b-929b7bca85ee":{"WidgetTableEditor":{"size":{"x":789,"y":150}}}},"snapshot":"eJyVUFFr2zAQfs+vONoHWRAbyW0HgeXBbcoYjO7BY2MEEy7ovIjJkpHltduvH+ckzcLWwl4k3X3ffd99amPooE7oDUZT3OJAYLs+xATo3Kw9Qz/h1r0CrzDh9lWB6kv9MvguhG+ONlVvX+bUPjy2Dr+feRyez6T7J+x6R8NfwGc7jOjsL0w2+NmsQ+thOQMA8MGQhiVMCQvr+zHBei3qFCI9jN2WopjDWpTXYg6ivJnON6JpuPmxJ7/CRHuG0mWuFrmeOHpRlrnWuVbThCqvc8WNw+QDdvupyuOObMekuxCDR8iqMQW4I58owioWkrEaPdxS9BiN9QGym7SDOkWiJEXTNFMS9D9LWO4DFQMlyIqitvwfm/unPnLJtnBaW3KPX3xXxoBWCoriK2GUUsJFoq6/OGrzJ7HFf0i/b/n8QMMAGXcLT4+gF1cKNGgpT2NsJCS06Aba/EA30vIfkrzSsXpe6+o8MvE6wrawPjIbeAuXbJornSt9CWlHHgwm2qAx2Yk310rND+mB3EB/aIgz6985nv+Y"}}

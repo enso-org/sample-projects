@@ -1,0 +1,1001 @@
+"Product ID","Product Name","Category","Brand","Unit Size","Price","Stock Quantity","Reorder Level","Location","Organic","Discount Available","Supplier","Expiration Date","Shelf Life (days)","Popularity Score","Seasonal Item","Online Availability","Weight (grams)","Dimensions (cm)","Barcode","Origin Country","Allergens","Rating","Reviews Count","Promotional Price"
+125139,"Cookies","Dairy","BrandB","1L",32.07,389,38,"Aisle 3","No","Yes","Supplier5","2024-04-20",226,3.03,"Yes","Yes",4416,"35x39x16",475107707079,"Canada","Soy",2.5,589,27.83
+915186,"Frozen Pizza","Pantry","BrandC","250ml",49.34,199,83,"Aisle 1","No","Yes","Supplier11","2024-09-20",263,4.24,"Yes","No",1484,"47x39x19",307954600571,"USA","Soy",3.2,992,37.57
+170595,"Laundry Detergent","Produce","BrandA","12-pack",12.82,220,76,"Produce Section","No","Yes","Supplier5","2024-05-24",115,3.25,"Yes","No",3194,"12x42x20",796091633139,"India","None",4.7,223,12.02
+153153,"Tea","Beverages","BrandC","1kg",16.65,13,97,"Freezer","Yes","Yes","Supplier6","2024-09-02",282,3.23,"No","Yes",4907,"28x24x7",582991963695,"China","Dairy",1.9,775,12.6
+337695,"Croissant","Bakery","BrandD","6-pack",36.56,265,62,"Refrigerated","Yes","Yes","Supplier20","2024-02-17",9,3.61,"No","Yes",1733,"37x30x18",891446014699,"Canada","Nuts",3.9,226,30.77
+726903,"Croissant","Beverages","BrandD","2L",28.29,106,35,"Refrigerated","No","Yes","Supplier18","2024-05-03",39,4.01,"Yes","No",4120,"27x30x6",328574265685,"Mexico","None",4.2,114,23.95
+645598,"Shrimp","Meat","BrandA","6-pack",19.97,366,57,"Aisle 3","Yes","Yes","Supplier11","2024-08-23",262,2.74,"Yes","No",121,"22x50x8",830249604052,"China","None",2.3,978,14.0
+411269,"Bread","Household","BrandD","500g",12.13,61,56,"Aisle 3","No","No","Supplier6","2024-10-22",259,2.82,"No","Yes",3969,"40x27x12",998396166818,"USA","Soy",5.0,887,8.61
+665482,"Tea","Produce","BrandC","1L",24.62,273,29,"Aisle 2","No","No","Supplier4","2024-09-13",197,3.65,"Yes","Yes",4282,"32x26x17",986607199079,"Mexico","Soy",3.0,947,18.42
+709961,"Laundry Detergent","Bakery","BrandA","6-pack",12.05,36,40,"Produce Section","No","No","Supplier14","2024-09-06",120,1.38,"No","Yes",1624,"32x21x8",746642376231,"USA","Nuts",4.9,555,8.71
+161189,"Paper Towels","Snacks","BrandC","500g",36.99,425,72,"Aisle 3","Yes","Yes","Supplier13","2024-12-05",218,2.23,"Yes","No",1499,"30x45x8",364295272650,"India","Nuts",4.5,131,32.65
+773612,"Apples","Bakery","BrandE","1kg",9.88,179,80,"Produce Section","Yes","No","Supplier15","2024-02-27",293,3.17,"No","Yes",4104,"40x18x14",743059762668,"Canada","None",1.2,311,7.58
+724820,"Cola","Frozen","BrandB","500g",3.92,339,21,"Aisle 1","Yes","Yes","Supplier2","2024-05-26",229,3.72,"No","No",1850,"32x18x18",303356264874,"China","None",1.6,215,3.62
+542257,"Chips","Pantry","BrandD","2L",41.17,108,46,"Refrigerated","No","Yes","Supplier5","2024-01-23",291,1.42,"No","Yes",3076,"48x28x5",848336351349,"China","Gluten",1.6,741,37.37
+620105,"Chips","Pantry","BrandB","250ml",41.38,80,65,"Produce Section","Yes","Yes","Supplier14","2024-04-23",188,3.74,"Yes","No",740,"25x14x12",494855869882,"USA","None",1.1,895,36.21
+178039,"Ground Beef","Meat","BrandC","1L",24.5,477,51,"Produce Section","No","Yes","Supplier10","2024-09-07",172,1.98,"Yes","No",1757,"17x45x6",270892147529,"Canada","Soy",1.6,468,19.6
+778658,"Canned Beans","Pantry","BrandD","750g",45.05,132,27,"Refrigerated","Yes","Yes","Supplier13","2024-07-19",120,3.75,"No","Yes",1647,"31x49x19",606052289794,"China","Soy",1.3,25,33.05
+526300,"Canned Beans","Frozen","BrandE","1L",15.97,168,76,"Produce Section","Yes","Yes","Supplier2","2024-01-29",28,1.81,"No","No",3188,"15x48x15",357138844744,"India","None",3.5,560,13.26
+309549,"Milk","Frozen","BrandA","500g",5.47,260,99,"Aisle 1","No","No","Supplier18","2024-06-29",9,4.44,"Yes","Yes",4102,"12x12x11",211616046193,"Mexico","Dairy",2.8,528,5.17
+304721,"Apples","Beverages","BrandB","6-pack",27.87,236,99,"Refrigerated","No","Yes","Supplier20","2024-10-24",263,4.14,"No","No",4043,"48x32x6",967805433529,"China","None",2.2,126,21.15
+271440,"Cookies","Beverages","BrandC","750g",47.28,152,77,"Aisle 1","Yes","Yes","Supplier14","2024-06-27",351,3.12,"No","No",4128,"29x30x8",684930046615,"Brazil","None",1.9,393,33.11
+895138,"Apples","Pantry","BrandE","1kg",37.68,236,100,"Produce Section","Yes","No","Supplier3","2024-04-07",254,2.81,"No","Yes",4052,"16x30x18",625896816859,"Brazil","Dairy",3.6,291,34.99
+575996,"Chips","Household","BrandB","1kg",40.39,296,15,"Aisle 2","Yes","No","Supplier20","2024-02-22",33,2.3,"Yes","Yes",3028,"12x42x14",157554717932,"USA","Gluten",1.1,423,33.25
+672676,"Canned Beans","Bakery","BrandE","750g",37.48,443,90,"Freezer","Yes","Yes","Supplier13","2024-10-14",221,4.34,"No","No",3936,"46x23x19",247990260063,"Mexico","Soy",2.6,406,28.6
+976114,"Pasta","Dairy","BrandD","6-pack",30.57,401,58,"Refrigerated","Yes","Yes","Supplier5","2024-04-21",257,1.43,"No","Yes",4622,"25x46x20",271520369226,"India","Dairy",3.8,275,22.37
+649074,"Paper Towels","Snacks","BrandB","1L",22.8,318,69,"Produce Section","Yes","Yes","Supplier20","2024-04-18",256,3.34,"Yes","No",363,"46x40x20",953583087572,"Brazil","None",2.4,513,17.54
+129440,"Tea","Meat","BrandA","1kg",35.9,331,20,"Freezer","No","Yes","Supplier20","2024-08-01",209,1.01,"Yes","Yes",1599,"35x11x9",923381832940,"Mexico","None",1.8,800,28.86
+296311,"Carrots","Frozen","BrandD","1kg",24.29,332,25,"Aisle 2","No","No","Supplier4","2024-04-05",142,2.48,"No","Yes",2910,"47x37x13",920661400031,"Mexico","Soy",3.1,242,18.88
+728518,"Salmon Fillet","Meat","BrandE","12-pack",22.94,22,14,"Refrigerated","Yes","No","Supplier4","2024-07-15",316,1.57,"No","No",3483,"26x36x10",630287855246,"India","Dairy",1.7,129,16.82
+882600,"Croissant","Seafood","BrandE","12-pack",6.4,354,75,"Aisle 2","No","No","Supplier16","2024-05-15",309,1.75,"Yes","Yes",3808,"38x22x19",630202106163,"Canada","Nuts",3.5,505,5.09
+716279,"Ice Cream","Produce","BrandD","1kg",21.56,348,19,"Refrigerated","Yes","Yes","Supplier4","2024-12-29",270,4.3,"No","Yes",2802,"26x19x13",305841353386,"Mexico","None",1.4,361,17.41
+574514,"Ice Cream","Bakery","BrandA","1kg",33.32,447,69,"Refrigerated","No","No","Supplier2","2024-09-28",169,4.74,"No","Yes",2315,"49x50x14",119313179528,"Mexico","Gluten",2.1,455,30.64
+914162,"Tea","Bakery","BrandD","12-pack",29.86,105,90,"Produce Section","No","No","Supplier9","2024-08-22",293,1.64,"No","No",1324,"42x34x11",925017191649,"Canada","Gluten",4.7,919,24.34
+538224,"Frozen Pizza","Pantry","BrandA","500g",21.5,307,91,"Freezer","No","Yes","Supplier8","2024-10-21",149,2.57,"No","No",1857,"23x46x13",813831727409,"Canada","None",3.1,68,19.89
+137389,"Chips","Snacks","BrandE","500g",33.62,309,66,"Refrigerated","No","No","Supplier11","2024-09-03",42,4.0,"Yes","No",3263,"11x24x10",281504091167,"USA","Nuts",4.3,932,31.18
+351156,"Tea","Produce","BrandD","750g",21.94,146,10,"Aisle 1","No","Yes","Supplier19","2024-03-18",322,1.27,"No","Yes",2453,"26x37x14",138868746617,"China","Gluten",2.3,937,18.26
+336398,"Paper Towels","Dairy","BrandB","6-pack",44.56,94,41,"Aisle 3","Yes","No","Supplier20","2024-11-13",233,3.71,"No","No",2142,"28x35x15",112281438236,"Canada","Soy",4.2,493,39.24
+867547,"Tea","Dairy","BrandB","2L",20.05,493,36,"Aisle 2","Yes","No","Supplier2","2024-11-26",240,4.56,"No","No",847,"46x32x19",430507591977,"Mexico","None",4.0,936,15.45
+319899,"Carrots","Snacks","BrandB","1kg",48.37,317,26,"Aisle 1","No","No","Supplier3","2024-02-18",334,4.18,"Yes","No",1709,"40x20x6",118080531166,"China","None",2.1,414,39.65
+258270,"Shrimp","Snacks","BrandB","2L",8.9,56,91,"Refrigerated","Yes","No","Supplier2","2024-11-14",320,2.11,"Yes","Yes",2160,"30x18x18",928671299413,"Brazil","Soy",2.0,444,6.58
+722491,"Ice Cream","Seafood","BrandC","1L",40.58,462,93,"Aisle 1","No","Yes","Supplier1","2024-08-18",153,3.19,"No","No",3460,"33x47x7",197977404221,"Brazil","Gluten",2.5,513,31.34
+723989,"Cookies","Household","BrandE","500g",49.38,246,81,"Aisle 3","No","No","Supplier11","2024-12-16",192,3.8,"No","No",4450,"48x18x5",695878673079,"USA","None",1.4,818,45.6
+775542,"Carrots","Frozen","BrandD","250ml",38.66,140,36,"Aisle 1","No","Yes","Supplier19","2024-03-27",340,4.42,"No","No",2195,"31x27x18",800468634822,"China","Gluten",4.6,62,31.07
+195621,"Bread","Seafood","BrandA","1kg",39.84,394,38,"Aisle 2","Yes","No","Supplier2","2024-11-12",229,1.12,"No","No",4900,"39x33x12",592237731933,"India","Soy",2.6,540,29.5
+768846,"Paper Towels","Beverages","BrandA","2L",24.25,448,29,"Refrigerated","No","Yes","Supplier15","2024-05-16",96,4.02,"No","Yes",786,"26x30x6",263723634250,"China","None",3.3,593,18.69
+826408,"Cheese","Dairy","BrandA","500g",44.98,320,77,"Refrigerated","Yes","No","Supplier20","2024-06-08",90,4.88,"No","Yes",3222,"35x23x14",776227652019,"China","Nuts",2.3,61,37.87
+684116,"Tea","Dairy","BrandB","250ml",18.38,475,41,"Produce Section","No","No","Supplier9","2024-10-06",294,1.11,"Yes","Yes",4790,"43x35x12",401538442630,"Canada","Nuts",4.1,738,14.7
+284566,"Ice Cream","Dairy","BrandA","12-pack",29.74,70,36,"Freezer","Yes","No","Supplier1","2024-05-01",236,1.57,"No","Yes",667,"50x34x7",957781918748,"Mexico","Nuts",4.2,901,24.7
+460065,"Milk","Seafood","BrandD","1kg",7.88,284,93,"Refrigerated","Yes","Yes","Supplier14","2024-10-14",348,3.12,"Yes","No",950,"14x47x10",507452191614,"USA","None",1.9,474,7.48
+356268,"Cola","Beverages","BrandD","250ml",5.56,96,46,"Produce Section","Yes","Yes","Supplier12","2024-03-07",168,2.68,"No","Yes",4720,"24x17x12",278615292385,"USA","Gluten",2.7,517,4.84
+549319,"Pasta","Meat","BrandC","250ml",16.16,484,64,"Aisle 1","Yes","No","Supplier15","2024-04-03",231,2.66,"Yes","No",4995,"15x45x19",264496351986,"Brazil","Nuts",4.1,230,12.63
+359069,"Laundry Detergent","Frozen","BrandE","250ml",15.31,54,40,"Produce Section","No","Yes","Supplier17","2024-07-28",185,4.55,"No","Yes",4254,"30x13x10",336934277662,"Canada","None",1.2,686,13.3
+946390,"Paper Towels","Pantry","BrandB","12-pack",19.98,181,66,"Refrigerated","Yes","No","Supplier17","2024-12-15",66,2.29,"Yes","Yes",4653,"32x18x20",649797233190,"India","None",4.0,527,15.33
+997622,"Tea","Bakery","BrandB","12-pack",33.66,198,68,"Produce Section","Yes","Yes","Supplier5","2024-04-05",330,4.79,"Yes","Yes",669,"26x25x18",881059534228,"China","Soy",3.3,556,23.85
+120760,"Bread","Seafood","BrandC","750g",35.89,291,57,"Freezer","Yes","No","Supplier13","2024-03-23",343,4.3,"Yes","Yes",1618,"24x34x6",439496145880,"Brazil","Nuts",2.0,391,30.03
+936716,"Cheese","Frozen","BrandD","2L",3.16,325,72,"Aisle 1","Yes","Yes","Supplier20","2024-07-08",17,3.01,"Yes","Yes",3208,"35x48x15",670144265188,"Brazil","Gluten",2.3,407,2.58
+889523,"Laundry Detergent","Produce","BrandA","1L",3.11,11,42,"Freezer","No","Yes","Supplier1","2024-02-21",242,3.97,"Yes","Yes",2346,"10x11x13",747044719264,"Mexico","Dairy",2.7,892,2.4
+238129,"Cheese","Seafood","BrandE","750g",29.89,247,49,"Produce Section","Yes","No","Supplier12","2024-02-20",38,1.69,"Yes","Yes",3510,"39x37x11",560259261745,"USA","Soy",3.5,699,25.28
+982525,"Ice Cream","Beverages","BrandD","6-pack",10.51,163,72,"Refrigerated","No","Yes","Supplier12","2024-10-18",184,4.91,"Yes","Yes",473,"30x12x9",949876233095,"Brazil","None",3.5,564,9.65
+725811,"Frozen Pizza","Bakery","BrandE","12-pack",42.26,268,13,"Aisle 1","Yes","Yes","Supplier17","2024-10-13",316,4.65,"Yes","No",674,"20x31x15",986894970231,"Brazil","Dairy",2.0,238,37.1
+379569,"Laundry Detergent","Snacks","BrandA","500g",35.6,164,31,"Produce Section","Yes","No","Supplier13","2024-12-09",184,4.61,"No","No",4183,"44x18x17",442972031830,"Brazil","Nuts",3.0,712,26.9
+788576,"Chips","Dairy","BrandB","2L",21.47,454,62,"Produce Section","Yes","No","Supplier13","2024-12-09",330,1.76,"Yes","Yes",2472,"37x43x19",981840812429,"USA","Gluten",3.0,195,17.55
+684851,"Apples","Snacks","BrandA","1L",35.72,458,81,"Aisle 3","Yes","Yes","Supplier15","2024-02-20",84,4.38,"No","No",3426,"10x42x9",639943765146,"Mexico","None",5.0,431,29.3
+897622,"Croissant","Household","BrandC","2L",40.09,5,86,"Aisle 2","No","Yes","Supplier13","2024-01-02",322,3.92,"Yes","Yes",942,"46x10x5",907027385530,"Canada","Nuts",3.4,178,32.45
+457851,"Paper Towels","Pantry","BrandD","1kg",39.7,492,58,"Aisle 2","Yes","No","Supplier18","2024-07-07",245,2.01,"Yes","No",3393,"37x27x16",252119363876,"Canada","Nuts",4.1,755,33.11
+461415,"Canned Beans","Seafood","BrandC","12-pack",37.02,157,23,"Aisle 1","Yes","Yes","Supplier9","2024-04-07",53,4.16,"No","Yes",3982,"29x22x17",998953471659,"India","Soy",2.2,571,25.93
+896598,"Cookies","Meat","BrandD","1L",36.67,259,82,"Freezer","Yes","Yes","Supplier11","2024-10-12",51,2.11,"No","No",4964,"43x47x17",967165985105,"Brazil","Nuts",2.7,902,26.27
+449677,"Salmon Fillet","Frozen","BrandC","2L",33.69,69,91,"Aisle 1","Yes","No","Supplier14","2024-05-10",6,3.79,"Yes","Yes",3033,"46x42x8",657975817552,"USA","Nuts",4.5,56,26.48
+611321,"Cola","Frozen","BrandD","2L",20.52,116,59,"Aisle 2","No","Yes","Supplier18","2024-09-05",201,1.59,"Yes","Yes",751,"27x34x12",368293026804,"Brazil","Gluten",4.7,891,16.29
+628519,"Cookies","Pantry","BrandA","500g",29.4,248,73,"Produce Section","No","No","Supplier6","2024-01-06",127,3.53,"No","No",2061,"33x23x18",827001151736,"Canada","Dairy",4.5,582,26.66
+299991,"Canned Beans","Household","BrandA","1L",46.08,242,66,"Freezer","Yes","No","Supplier19","2024-12-05",44,2.39,"Yes","Yes",4816,"22x16x16",804618985576,"Brazil","Soy",3.8,797,41.32
+444585,"Chips","Frozen","BrandA","6-pack",32.48,8,43,"Aisle 1","Yes","Yes","Supplier13","2024-02-09",258,1.91,"Yes","No",1979,"41x26x14",702434496346,"USA","Dairy",4.3,427,28.39
+747971,"Salmon Fillet","Household","BrandD","250ml",6.01,442,86,"Aisle 2","Yes","Yes","Supplier18","2024-06-26",116,1.43,"Yes","Yes",2691,"21x47x10",702972968030,"China","Dairy",1.5,397,5.58
+865090,"Cookies","Meat","BrandC","2L",44.33,137,25,"Aisle 2","No","Yes","Supplier3","2024-11-07",80,1.81,"Yes","No",3675,"48x14x7",549020679169,"India","Soy",2.7,363,31.16
+788135,"Frozen Pizza","Beverages","BrandA","6-pack",39.64,179,44,"Freezer","Yes","Yes","Supplier13","2024-04-03",261,1.62,"Yes","No",242,"42x41x9",685543957306,"Mexico","Dairy",1.6,577,29.95
+284957,"Cookies","Seafood","BrandA","1kg",37.83,288,56,"Freezer","No","No","Supplier3","2024-05-16",75,3.6,"Yes","No",1177,"21x12x9",664270160719,"Brazil","Nuts",3.6,556,33.48
+790872,"Cheese","Snacks","BrandD","1L",18.88,337,44,"Refrigerated","Yes","Yes","Supplier19","2024-08-09",188,2.7,"No","Yes",4998,"21x26x19",789337715051,"China","Gluten",1.7,500,15.34
+302325,"Bread","Bakery","BrandB","6-pack",2.33,172,72,"Aisle 2","Yes","No","Supplier20","2024-02-17",77,1.68,"No","No",3772,"45x21x10",916183369443,"Mexico","Soy",3.4,179,2.14
+559847,"Carrots","Produce","BrandB","750g",23.52,197,47,"Produce Section","Yes","No","Supplier20","2024-01-12",85,3.98,"Yes","No",3302,"30x45x10",823000619006,"China","Gluten",3.4,908,20.07
+715453,"Milk","Dairy","BrandD","2L",10.03,198,19,"Produce Section","No","No","Supplier7","2024-03-17",151,4.44,"Yes","Yes",4446,"35x20x12",787689364759,"Mexico","None",3.0,871,7.69
+998994,"Salmon Fillet","Seafood","BrandE","2L",26.06,8,26,"Aisle 2","Yes","No","Supplier10","2024-07-02",84,4.35,"Yes","Yes",4629,"29x15x18",741196244113,"India","Soy",2.5,262,20.39
+794910,"Carrots","Snacks","BrandB","250ml",48.07,261,90,"Refrigerated","Yes","No","Supplier17","2024-05-21",11,3.93,"Yes","No",2325,"49x26x18",984472414664,"Brazil","Dairy",4.6,377,44.56
+226583,"Milk","Seafood","BrandB","6-pack",21.93,67,95,"Refrigerated","Yes","No","Supplier13","2024-12-21",313,2.36,"No","No",635,"26x18x14",536638103257,"China","Dairy",2.0,861,20.82
+869176,"Cookies","Frozen","BrandB","1L",38.42,400,64,"Produce Section","Yes","No","Supplier5","2024-08-09",286,3.76,"No","No",3681,"15x39x10",173023800374,"Brazil","Gluten",4.5,644,35.12
+876028,"Ice Cream","Seafood","BrandE","12-pack",21.5,155,27,"Aisle 3","Yes","Yes","Supplier8","2024-06-15",179,4.93,"No","Yes",2833,"21x37x9",655553658273,"Canada","None",1.5,227,18.31
+558886,"Ground Beef","Beverages","BrandA","12-pack",46.56,291,90,"Freezer","Yes","No","Supplier6","2024-07-26",332,1.4,"Yes","Yes",667,"47x18x19",410773961803,"Canada","Nuts",3.4,545,33.8
+123763,"Carrots","Beverages","BrandB","12-pack",42.94,421,87,"Aisle 3","No","No","Supplier13","2024-04-26",173,3.28,"No","No",3590,"49x38x18",625616433535,"India","Dairy",1.4,328,31.26
+105340,"Salmon Fillet","Snacks","BrandA","1L",38.41,346,96,"Aisle 2","Yes","No","Supplier2","2024-05-03",135,1.42,"Yes","No",942,"15x37x18",528970585043,"China","Soy",2.4,691,34.21
+729135,"Tea","Snacks","BrandE","6-pack",24.34,392,37,"Refrigerated","Yes","No","Supplier1","2024-08-14",77,3.59,"No","No",1545,"42x43x13",518180193166,"USA","None",4.3,441,22.44
+157567,"Salmon Fillet","Pantry","BrandD","12-pack",15.42,41,61,"Produce Section","Yes","Yes","Supplier5","2024-02-02",144,2.4,"No","No",602,"28x46x8",836130107107,"China","Nuts",3.7,720,14.61
+948348,"Apples","Beverages","BrandD","12-pack",15.43,421,39,"Aisle 1","Yes","Yes","Supplier3","2024-11-25",343,1.99,"No","No",391,"20x21x13",418480930624,"Canada","Dairy",3.9,122,12.31
+820982,"Pasta","Beverages","BrandB","1L",4.79,315,25,"Aisle 3","No","No","Supplier10","2024-02-28",87,4.43,"Yes","No",247,"18x11x19",926667246603,"USA","Gluten",4.8,730,4.52
+866968,"Croissant","Seafood","BrandA","12-pack",12.71,326,13,"Refrigerated","No","Yes","Supplier2","2024-10-13",250,4.24,"Yes","Yes",2459,"46x15x9",483468485411,"India","Soy",2.8,530,11.96
+435674,"Laundry Detergent","Meat","BrandA","12-pack",46.12,140,75,"Aisle 1","Yes","No","Supplier5","2024-04-02",177,4.32,"No","Yes",3744,"35x20x11",855079700826,"Brazil","Dairy",4.3,50,38.42
+746991,"Laundry Detergent","Dairy","BrandE","6-pack",14.98,472,45,"Freezer","No","No","Supplier17","2024-08-14",229,4.78,"Yes","Yes",2296,"28x47x12",561334027450,"India","Dairy",2.9,130,10.54
+429265,"Carrots","Frozen","BrandA","2L",32.1,284,21,"Aisle 2","No","No","Supplier12","2024-08-06",331,4.12,"Yes","Yes",3633,"29x28x15",840183373882,"Mexico","Gluten",2.2,907,24.08
+577494,"Cookies","Pantry","BrandE","12-pack",31.1,382,17,"Aisle 2","Yes","Yes","Supplier1","2024-11-17",240,3.41,"Yes","No",1096,"10x25x19",750169746941,"India","Dairy",4.2,18,29.14
+568666,"Frozen Pizza","Beverages","BrandB","1L",33.38,34,86,"Aisle 3","Yes","No","Supplier3","2024-04-24",171,3.39,"No","Yes",4343,"41x49x8",224913774458,"Canada","Soy",2.3,890,29.55
+481162,"Tea","Produce","BrandC","6-pack",38.16,178,45,"Produce Section","Yes","No","Supplier6","2024-03-06",6,2.12,"No","No",4446,"16x40x12",789286777765,"China","Gluten",1.1,168,35.49
+979724,"Frozen Pizza","Seafood","BrandB","1L",4.23,346,77,"Produce Section","No","No","Supplier8","2024-12-01",87,3.46,"No","Yes",525,"32x31x10",211451517510,"Brazil","Dairy",4.7,51,3.41
+760639,"Ground Beef","Produce","BrandA","2L",20.21,485,51,"Refrigerated","No","Yes","Supplier10","2024-05-20",314,1.45,"No","No",2282,"27x37x11",155611452392,"China","Dairy",3.0,737,14.75
+316470,"Shrimp","Meat","BrandE","1L",49.77,163,62,"Refrigerated","No","No","Supplier2","2024-03-24",209,4.73,"Yes","No",3349,"49x40x10",812113192704,"Canada","Soy",3.5,599,35.77
+260029,"Carrots","Seafood","BrandB","250ml",32.14,161,98,"Refrigerated","Yes","No","Supplier19","2024-04-23",200,1.46,"No","Yes",3069,"35x50x17",274867163824,"Canada","Soy",1.8,39,22.68
+819499,"Chicken Breast","Snacks","BrandA","1kg",40.64,456,74,"Aisle 1","No","Yes","Supplier11","2024-08-20",336,1.56,"Yes","No",550,"23x45x16",635555465301,"Mexico","Dairy",2.7,357,34.25
+342491,"Bread","Snacks","BrandA","750g",40.34,344,39,"Produce Section","No","No","Supplier2","2024-09-08",153,3.16,"No","No",529,"22x21x8",745768718500,"Mexico","Dairy",3.0,531,28.52
+749877,"Pasta","Seafood","BrandB","2L",26.24,101,14,"Aisle 2","Yes","No","Supplier5","2024-07-15",211,2.22,"No","Yes",2766,"27x12x14",581903945694,"Mexico","None",3.5,684,22.77
+697015,"Chicken Breast","Beverages","BrandC","12-pack",46.22,241,96,"Freezer","No","No","Supplier20","2024-05-12",213,1.51,"Yes","Yes",368,"46x34x10",890764131677,"USA","Dairy",2.0,522,43.0
+825217,"Shrimp","Frozen","BrandB","12-pack",26.93,267,51,"Refrigerated","Yes","Yes","Supplier2","2024-03-15",95,4.52,"No","Yes",969,"23x27x15",140861428015,"Brazil","None",1.5,179,19.12
+508030,"Cola","Household","BrandB","12-pack",13.11,372,28,"Aisle 1","No","Yes","Supplier1","2024-12-07",253,3.07,"No","No",1024,"10x28x20",871957271648,"Mexico","Gluten",4.0,307,11.6
+458355,"Tea","Produce","BrandE","250ml",23.82,351,35,"Freezer","Yes","Yes","Supplier2","2024-10-01",218,3.36,"Yes","Yes",1871,"38x47x18",434436812423,"Canada","Dairy",4.9,248,21.32
+330596,"Ground Beef","Snacks","BrandE","250ml",10.37,449,37,"Freezer","No","No","Supplier2","2024-02-21",59,3.03,"Yes","No",1085,"50x16x19",908089400932,"USA","None",4.9,693,9.66
+978580,"Canned Beans","Frozen","BrandC","2L",37.45,93,10,"Produce Section","No","Yes","Supplier2","2024-02-08",280,2.95,"No","Yes",2957,"18x34x6",450606277455,"Brazil","Dairy",2.8,929,34.28
+282109,"Chips","Frozen","BrandC","6-pack",36.15,61,57,"Aisle 2","No","No","Supplier10","2024-12-28",49,3.06,"No","Yes",2293,"10x44x7",942243952514,"Brazil","None",4.4,576,28.04
+535761,"Tea","Frozen","BrandA","6-pack",28.25,381,36,"Refrigerated","No","No","Supplier10","2024-07-17",310,2.08,"No","Yes",3060,"39x20x12",473014223645,"Brazil","Gluten",3.2,789,19.98
+453009,"Croissant","Bakery","BrandB","6-pack",38.4,365,96,"Aisle 3","Yes","Yes","Supplier11","2024-12-12",33,3.55,"No","Yes",221,"46x43x14",108532868452,"Brazil","Dairy",3.6,907,35.19
+366782,"Frozen Pizza","Seafood","BrandC","2L",25.28,392,100,"Aisle 3","No","Yes","Supplier10","2024-11-05",310,3.63,"Yes","Yes",3430,"49x13x7",434865425550,"Brazil","Gluten",3.2,69,18.18
+632823,"Canned Beans","Produce","BrandB","750g",21.35,430,46,"Aisle 3","Yes","Yes","Supplier15","2024-11-18",163,4.8,"Yes","No",2242,"16x13x17",203489711987,"Canada","Gluten",2.9,998,18.88
+841115,"Apples","Seafood","BrandB","1L",24.64,228,38,"Aisle 1","No","No","Supplier12","2024-06-08",174,4.44,"Yes","No",4775,"21x20x7",247297144781,"USA","Gluten",4.2,729,19.61
+485039,"Paper Towels","Snacks","BrandA","750g",21.57,469,21,"Refrigerated","Yes","No","Supplier13","2024-12-26",344,3.76,"Yes","No",3683,"30x48x13",733474750211,"Canada","Soy",1.3,68,18.86
+711411,"Paper Towels","Produce","BrandB","12-pack",37.53,325,96,"Aisle 2","Yes","Yes","Supplier8","2024-06-20",136,1.54,"Yes","No",1266,"44x40x6",150852414270,"Mexico","Soy",4.9,319,26.85
+784312,"Ground Beef","Produce","BrandA","1L",1.57,197,97,"Freezer","No","No","Supplier3","2024-04-04",53,3.57,"No","Yes",1848,"37x32x9",295787053023,"Mexico","Gluten",4.5,311,1.26
+917217,"Tea","Meat","BrandE","500g",33.09,231,59,"Freezer","Yes","Yes","Supplier5","2024-05-11",233,2.61,"No","Yes",4327,"30x31x5",291470318174,"Brazil","Soy",3.1,5,25.97
+482969,"Ice Cream","Seafood","BrandE","500g",11.39,356,21,"Aisle 1","Yes","Yes","Supplier4","2024-05-07",5,4.71,"Yes","No",3632,"21x12x6",380440418374,"India","Dairy",3.1,72,8.82
+185365,"Salmon Fillet","Beverages","BrandC","750g",21.01,242,96,"Freezer","Yes","Yes","Supplier16","2024-09-11",267,2.16,"No","Yes",876,"15x18x7",977142443137,"Brazil","Gluten",3.1,981,19.57
+697533,"Milk","Produce","BrandD","1kg",45.47,429,13,"Aisle 1","No","No","Supplier4","2024-08-16",309,1.04,"Yes","No",3423,"37x13x8",227400193980,"USA","Gluten",2.7,924,37.14
+896392,"Bread","Snacks","BrandD","1kg",47.92,348,38,"Freezer","Yes","Yes","Supplier1","2024-11-09",166,1.52,"No","No",2822,"41x18x16",704357076330,"Mexico","Dairy",2.1,699,44.51
+743934,"Paper Towels","Dairy","BrandC","6-pack",20.88,274,84,"Refrigerated","Yes","No","Supplier16","2024-10-21",94,1.59,"Yes","Yes",479,"49x26x8",132521401546,"USA","Soy",4.2,474,19.16
+973221,"Cheese","Snacks","BrandD","2L",8.07,341,79,"Freezer","Yes","Yes","Supplier4","2024-12-07",292,1.59,"Yes","Yes",4740,"31x10x14",534031165683,"Canada","Gluten",2.1,901,7.33
+414074,"Croissant","Pantry","BrandD","12-pack",39.04,341,62,"Aisle 2","No","Yes","Supplier12","2024-07-11",271,3.66,"No","Yes",1839,"18x28x17",547254059259,"China","Soy",3.6,295,31.67
+829582,"Croissant","Seafood","BrandA","6-pack",48.25,98,85,"Freezer","Yes","No","Supplier5","2024-09-20",140,2.75,"Yes","No",3963,"26x38x17",436162457997,"China","Soy",3.4,373,44.17
+364739,"Canned Beans","Bakery","BrandC","6-pack",9.25,284,19,"Refrigerated","Yes","Yes","Supplier2","2024-02-04",131,4.38,"No","No",1261,"42x40x19",364631014994,"India","Dairy",4.7,924,8.38
+620445,"Tea","Meat","BrandB","750g",42.75,412,53,"Aisle 3","No","Yes","Supplier16","2024-01-30",45,3.36,"No","Yes",244,"36x13x11",656860105129,"USA","Dairy",2.5,833,33.14
+248265,"Chicken Breast","Bakery","BrandE","250ml",2.99,247,67,"Aisle 1","No","No","Supplier2","2024-06-14",217,3.33,"Yes","Yes",1324,"19x43x5",199880885138,"Canada","None",1.9,221,2.22
+584430,"Canned Beans","Snacks","BrandA","6-pack",47.21,402,40,"Freezer","No","No","Supplier11","2024-06-04",142,1.96,"Yes","No",1456,"38x20x10",220177141230,"Mexico","Nuts",1.0,467,42.53
+230837,"Carrots","Produce","BrandD","6-pack",24.95,285,20,"Aisle 1","No","Yes","Supplier16","2024-10-17",323,2.19,"No","No",537,"32x48x20",682801669950,"China","Gluten",3.0,882,18.34
+381621,"Frozen Pizza","Dairy","BrandE","2L",7.46,19,88,"Refrigerated","Yes","No","Supplier4","2024-05-31",223,2.88,"No","No",3363,"40x40x6",186153339578,"Canada","Nuts",1.2,426,6.34
+549041,"Tea","Meat","BrandC","750g",15.86,39,76,"Produce Section","No","Yes","Supplier19","2024-06-06",56,1.06,"No","Yes",503,"13x49x6",870138338712,"India","Soy",3.8,168,11.97
+991525,"Chicken Breast","Beverages","BrandA","750g",9.19,224,13,"Aisle 3","No","Yes","Supplier7","2024-07-20",243,3.61,"No","No",4355,"33x16x17",281219276887,"USA","None",1.1,358,8.62
+997821,"Bread","Meat","BrandA","2L",47.48,45,39,"Aisle 2","No","Yes","Supplier19","2024-10-26",309,2.66,"Yes","No",3278,"26x30x16",894791486538,"USA","Nuts",3.2,862,36.94
+286216,"Paper Towels","Seafood","BrandD","1kg",24.38,311,27,"Aisle 3","Yes","No","Supplier12","2024-03-28",117,3.33,"Yes","Yes",3036,"24x42x5",834505472077,"Mexico","Gluten",1.6,790,19.75
+460932,"Laundry Detergent","Beverages","BrandC","750g",28.22,18,100,"Produce Section","Yes","Yes","Supplier13","2024-08-28",364,1.07,"Yes","Yes",4297,"29x32x20",139618866530,"USA","Soy",1.3,626,23.11
+414985,"Cola","Meat","BrandD","1L",32.49,55,74,"Aisle 2","Yes","No","Supplier20","2024-01-31",349,2.52,"Yes","Yes",3180,"42x30x8",558969255564,"China","None",4.5,817,29.33
+778731,"Ground Beef","Frozen","BrandE","2L",44.08,149,82,"Aisle 2","Yes","No","Supplier5","2024-12-17",225,1.57,"Yes","Yes",1562,"13x26x8",102875037986,"India","Nuts",4.0,362,35.71
+161444,"Ice Cream","Household","BrandE","6-pack",16.21,271,23,"Freezer","No","No","Supplier19","2024-10-31",222,1.04,"Yes","Yes",672,"50x48x5",763430693184,"India","Nuts",2.0,781,15.02
+427077,"Shrimp","Snacks","BrandD","2L",29.74,21,53,"Aisle 3","Yes","Yes","Supplier4","2024-08-29",191,2.27,"No","No",3180,"36x18x7",245873811005,"USA","Dairy",2.5,288,24.78
+811922,"Carrots","Frozen","BrandC","1L",24.86,389,95,"Produce Section","No","Yes","Supplier14","2024-11-16",29,2.39,"Yes","No",4122,"10x15x5",115336822835,"China","Soy",1.9,747,17.79
+473602,"Apples","Snacks","BrandD","6-pack",47.57,387,79,"Aisle 1","No","No","Supplier13","2024-04-10",213,1.13,"Yes","Yes",2176,"14x36x16",799488061144,"Brazil","Gluten",4.4,968,42.05
+301860,"Ground Beef","Bakery","BrandE","12-pack",44.82,143,21,"Aisle 3","No","Yes","Supplier20","2024-03-11",99,2.24,"No","Yes",2904,"31x46x17",203241408780,"Mexico","Gluten",3.4,649,31.98
+935679,"Cola","Dairy","BrandC","1kg",47.86,104,100,"Produce Section","No","Yes","Supplier8","2024-10-30",147,4.07,"No","Yes",1860,"50x18x6",563930747486,"China","Soy",4.1,827,37.12
+268850,"Bread","Pantry","BrandA","1kg",20.97,205,47,"Aisle 1","Yes","Yes","Supplier17","2024-11-07",302,2.95,"Yes","Yes",1995,"45x48x16",738411397814,"USA","Dairy",4.4,459,16.37
+106652,"Salmon Fillet","Bakery","BrandE","2L",4.17,263,70,"Aisle 1","No","No","Supplier11","2024-03-20",266,3.96,"Yes","No",1688,"42x47x6",597881079669,"India","Dairy",4.3,595,3.93
+135244,"Shrimp","Household","BrandA","1kg",49.76,376,26,"Aisle 3","Yes","Yes","Supplier14","2024-05-14",245,3.22,"Yes","Yes",3469,"31x47x20",837515736174,"Canada","Dairy",2.0,219,44.96
+563509,"Bread","Seafood","BrandD","6-pack",33.41,337,13,"Aisle 2","No","Yes","Supplier11","2024-11-12",304,2.96,"Yes","No",1193,"30x16x6",873600459135,"Mexico","Soy",1.2,166,30.25
+430416,"Chips","Household","BrandE","250ml",15.12,29,79,"Aisle 1","Yes","No","Supplier16","2024-10-21",278,1.1,"No","No",1482,"12x50x19",805719335581,"Mexico","None",4.5,172,14.19
+140510,"Canned Beans","Dairy","BrandB","500g",22.33,252,30,"Aisle 3","Yes","No","Supplier12","2024-02-11",70,1.08,"Yes","Yes",2814,"43x18x8",501412422006,"USA","Nuts",1.3,721,20.99
+293157,"Tea","Produce","BrandE","6-pack",7.65,62,64,"Freezer","No","No","Supplier11","2024-10-06",57,1.04,"No","Yes",802,"48x14x18",451159202291,"Mexico","None",2.8,137,6.14
+160417,"Bread","Household","BrandB","750g",45.27,270,33,"Aisle 1","No","Yes","Supplier7","2024-04-23",359,3.76,"No","No",1588,"31x39x19",881528936578,"Brazil","Nuts",2.2,613,41.15
+705627,"Cola","Household","BrandB","6-pack",48.61,180,54,"Refrigerated","Yes","Yes","Supplier7","2024-06-28",110,1.68,"Yes","No",1965,"24x46x15",344658610755,"Brazil","Gluten",1.3,256,41.57
+617232,"Apples","Frozen","BrandB","12-pack",46.85,307,14,"Refrigerated","Yes","Yes","Supplier14","2024-08-15",5,4.91,"No","Yes",2983,"20x25x8",527898001077,"Canada","Soy",1.9,746,43.67
+907123,"Cookies","Dairy","BrandD","2L",19.45,56,100,"Aisle 1","No","No","Supplier1","2024-04-27",281,3.46,"Yes","Yes",3209,"36x37x18",255515363158,"Mexico","None",3.4,569,18.33
+452813,"Chips","Beverages","BrandC","6-pack",33.54,156,22,"Aisle 2","No","Yes","Supplier5","2024-03-05",301,3.16,"No","Yes",3667,"37x50x5",593118069643,"USA","None",1.8,631,25.24
+729292,"Cheese","Beverages","BrandE","2L",20.14,402,95,"Aisle 1","No","No","Supplier7","2024-11-09",294,2.9,"No","Yes",1992,"49x14x20",183251086819,"Brazil","Dairy",4.3,877,16.75
+874070,"Canned Beans","Beverages","BrandA","750g",24.92,199,82,"Freezer","Yes","Yes","Supplier17","2024-05-12",150,3.54,"Yes","Yes",4664,"14x27x19",376987577432,"Canada","Gluten",2.8,568,20.61
+135384,"Apples","Beverages","BrandD","750g",46.25,69,29,"Produce Section","No","No","Supplier3","2024-11-12",144,1.74,"Yes","No",739,"48x27x20",989194811922,"Canada","Gluten",3.9,348,34.27
+589671,"Ground Beef","Dairy","BrandB","12-pack",3.07,460,39,"Aisle 2","Yes","Yes","Supplier10","2024-09-24",87,1.55,"No","Yes",244,"12x18x11",853011168120,"India","Nuts",3.7,215,2.27
+589058,"Apples","Frozen","BrandE","250ml",47.73,95,47,"Aisle 3","No","Yes","Supplier6","2024-07-06",294,3.01,"Yes","No",2055,"38x10x17",660407106293,"India","Nuts",1.2,408,38.84
+484925,"Salmon Fillet","Meat","BrandC","750g",48.16,274,16,"Aisle 2","No","No","Supplier19","2024-07-01",130,1.43,"No","No",676,"25x28x16",639290719333,"India","Gluten",1.2,952,34.79
+138386,"Salmon Fillet","Frozen","BrandD","12-pack",44.87,454,33,"Produce Section","No","Yes","Supplier6","2024-04-16",199,3.41,"Yes","No",3909,"24x11x19",685673507331,"USA","Dairy",4.6,341,38.96
+299364,"Salmon Fillet","Household","BrandB","250ml",42.99,416,31,"Freezer","Yes","Yes","Supplier19","2024-05-18",330,3.36,"Yes","No",1959,"19x21x15",963625442723,"India","Soy",1.4,707,37.19
+563683,"Carrots","Seafood","BrandC","1kg",49.47,74,98,"Freezer","No","Yes","Supplier15","2024-11-02",291,4.8,"Yes","Yes",529,"37x16x14",971712725297,"USA","Gluten",2.6,572,40.55
+157492,"Canned Beans","Frozen","BrandA","12-pack",44.83,409,45,"Aisle 3","Yes","Yes","Supplier3","2024-01-03",256,3.82,"No","No",2515,"24x21x7",251977461443,"Mexico","Soy",2.4,518,41.28
+222055,"Cola","Dairy","BrandB","250ml",37.41,264,64,"Freezer","No","No","Supplier5","2024-09-18",331,3.65,"No","Yes",1381,"34x19x6",656073059966,"Canada","Dairy",4.7,66,34.03
+749143,"Frozen Pizza","Frozen","BrandD","1L",9.98,195,98,"Freezer","No","No","Supplier10","2024-01-02",228,1.43,"Yes","No",2228,"20x30x10",629795370432,"Brazil","Nuts",3.9,325,7.2
+936445,"Ground Beef","Pantry","BrandE","1kg",35.14,329,40,"Aisle 1","Yes","Yes","Supplier19","2024-02-02",64,4.46,"Yes","No",3297,"28x12x14",825261882967,"Brazil","Soy",4.4,964,27.05
+461035,"Salmon Fillet","Frozen","BrandA","750g",2.77,125,93,"Refrigerated","Yes","Yes","Supplier11","2024-11-03",109,3.22,"No","Yes",1727,"25x26x18",288523644009,"Canada","Soy",3.9,286,2.51
+399825,"Cola","Snacks","BrandE","6-pack",21.67,324,36,"Aisle 3","No","No","Supplier1","2024-03-08",361,1.35,"Yes","Yes",4975,"35x17x5",407574447443,"Mexico","Dairy",4.5,237,19.15
+850662,"Laundry Detergent","Bakery","BrandA","1L",25.43,494,91,"Aisle 3","Yes","Yes","Supplier12","2024-09-27",285,4.93,"No","No",4562,"49x24x10",506956501206,"Canada","None",4.5,388,21.96
+476701,"Cola","Dairy","BrandB","1kg",26.21,162,46,"Aisle 1","No","Yes","Supplier3","2024-08-21",76,1.35,"Yes","Yes",860,"50x45x9",733568321349,"USA","Soy",4.6,993,22.22
+829750,"Pasta","Frozen","BrandB","12-pack",27.97,38,80,"Refrigerated","Yes","No","Supplier20","2024-03-06",125,3.88,"Yes","No",4723,"34x49x11",401697559979,"Canada","None",2.6,572,19.92
+629356,"Chicken Breast","Bakery","BrandD","1kg",19.88,256,61,"Aisle 3","No","Yes","Supplier3","2024-05-22",267,4.79,"No","No",3535,"27x38x18",223852423080,"Canada","Nuts",4.8,952,14.71
+135788,"Tea","Bakery","BrandD","1L",8.27,433,88,"Freezer","Yes","No","Supplier5","2024-12-13",235,2.17,"No","No",969,"24x43x16",820593983878,"Canada","Nuts",3.9,589,6.53
+733677,"Apples","Household","BrandE","2L",5.05,156,17,"Freezer","No","No","Supplier16","2024-02-04",194,1.94,"No","Yes",3044,"15x25x7",456919621177,"China","Nuts",2.9,558,4.47
+385424,"Carrots","Household","BrandD","6-pack",43.22,228,91,"Refrigerated","No","No","Supplier6","2024-02-29",265,1.34,"No","Yes",1882,"34x31x7",112799901670,"USA","Nuts",1.8,656,37.08
+506264,"Cola","Snacks","BrandA","250ml",3.29,10,56,"Aisle 2","No","Yes","Supplier19","2024-10-12",126,4.61,"Yes","No",1052,"41x20x11",894428609702,"Canada","Dairy",2.9,153,2.35
+413774,"Bread","Pantry","BrandA","500g",17.67,2,44,"Aisle 3","No","No","Supplier5","2024-10-01",277,3.69,"No","Yes",3385,"33x33x19",433423671466,"China","None",4.6,142,14.24
+125357,"Tea","Bakery","BrandA","1kg",46.87,165,30,"Aisle 1","No","Yes","Supplier16","2024-01-02",118,4.14,"No","Yes",3943,"50x15x19",589695663229,"China","Soy",4.6,443,44.2
+992924,"Paper Towels","Snacks","BrandD","1L",36.47,277,94,"Aisle 3","Yes","Yes","Supplier3","2024-12-16",21,1.98,"Yes","Yes",4358,"41x15x15",689992928312,"Mexico","None",1.9,678,32.75
+919934,"Frozen Pizza","Beverages","BrandC","500g",5.06,252,25,"Refrigerated","No","Yes","Supplier4","2024-12-13",262,3.04,"No","Yes",512,"41x17x8",731266142178,"Brazil","None",2.0,943,4.18
+551227,"Tea","Bakery","BrandE","1L",30.87,66,92,"Refrigerated","Yes","No","Supplier18","2024-05-24",274,4.97,"No","No",963,"40x45x6",941479920446,"USA","Nuts",2.3,173,21.9
+644719,"Carrots","Produce","BrandD","750g",36.78,214,71,"Produce Section","No","No","Supplier16","2024-07-14",213,2.24,"Yes","Yes",1695,"18x25x17",233561965603,"China","Dairy",2.2,193,30.68
+170585,"Bread","Snacks","BrandC","250ml",36.99,417,41,"Produce Section","Yes","No","Supplier11","2024-02-16",60,1.2,"No","Yes",3218,"17x27x19",213032475237,"Mexico","Dairy",4.7,864,26.29
+340876,"Canned Beans","Household","BrandB","750g",45.85,126,42,"Produce Section","Yes","No","Supplier4","2024-02-16",184,2.38,"No","No",2366,"10x39x15",332634843127,"India","Soy",4.9,762,39.29
+194882,"Paper Towels","Household","BrandC","1kg",14.79,448,12,"Freezer","Yes","Yes","Supplier17","2024-04-10",266,2.03,"No","Yes",2087,"20x34x12",546224010494,"Canada","Gluten",1.6,32,10.57
+292303,"Apples","Bakery","BrandB","250ml",40.72,339,86,"Refrigerated","No","No","Supplier2","2024-07-01",285,1.84,"No","No",3221,"26x33x10",859469156017,"India","Gluten",2.5,986,38.43
+825576,"Canned Beans","Dairy","BrandC","1L",6.47,159,25,"Freezer","No","No","Supplier12","2024-05-25",85,4.89,"Yes","No",3361,"34x39x19",464943073440,"USA","None",2.0,817,5.81
+604599,"Milk","Meat","BrandD","250ml",28.79,57,34,"Refrigerated","Yes","No","Supplier10","2024-07-24",203,2.34,"Yes","No",513,"10x19x9",372439656102,"Canada","Dairy",2.8,382,25.55
+444985,"Ice Cream","Beverages","BrandA","6-pack",22.2,191,38,"Aisle 1","Yes","Yes","Supplier15","2024-06-12",233,1.62,"No","No",3284,"45x46x13",147076786018,"USA","None",3.1,738,20.4
+801322,"Chicken Breast","Meat","BrandC","6-pack",12.9,77,17,"Aisle 2","Yes","No","Supplier5","2024-05-23",284,3.07,"Yes","No",1077,"36x42x13",963015801414,"China","None",1.4,655,10.13
+454083,"Pasta","Dairy","BrandA","500g",25.34,350,41,"Aisle 3","No","No","Supplier10","2024-06-12",77,1.19,"No","Yes",2027,"22x41x17",157611664957,"India","Gluten",4.1,674,23.56
+327811,"Canned Beans","Meat","BrandA","500g",37.02,122,62,"Aisle 3","Yes","Yes","Supplier4","2024-12-15",279,4.22,"No","No",3321,"39x11x20",875131200905,"USA","None",1.3,750,26.15
+424923,"Cola","Pantry","BrandC","1kg",38.07,43,13,"Produce Section","No","Yes","Supplier13","2024-03-16",350,1.16,"No","Yes",3139,"32x20x11",652811014587,"Mexico","Gluten",2.6,212,36.13
+212620,"Salmon Fillet","Beverages","BrandE","6-pack",18.61,304,86,"Aisle 3","No","Yes","Supplier9","2024-11-11",336,4.99,"No","Yes",788,"36x49x19",852771879228,"Brazil","Gluten",3.7,666,16.95
+755790,"Cheese","Frozen","BrandE","500g",7.83,483,31,"Refrigerated","No","No","Supplier18","2024-04-17",296,4.07,"No","No",3292,"26x17x18",440380525784,"Brazil","Soy",3.6,312,6.73
+726642,"Croissant","Snacks","BrandC","750g",27.62,215,92,"Aisle 2","No","Yes","Supplier11","2024-03-15",226,4.38,"No","No",320,"12x11x20",754312683790,"USA","Soy",1.2,279,21.38
+839146,"Chicken Breast","Snacks","BrandB","250ml",34.03,411,62,"Produce Section","No","No","Supplier8","2024-05-05",69,4.38,"Yes","Yes",1705,"26x21x12",195158687972,"USA","Dairy",4.3,542,27.78
+914718,"Laundry Detergent","Meat","BrandE","750g",5.59,152,22,"Aisle 2","No","No","Supplier20","2024-10-15",252,4.0,"Yes","No",2047,"18x31x5",656381887434,"China","Gluten",3.9,504,4.61
+439759,"Chips","Beverages","BrandE","2L",39.73,181,69,"Refrigerated","Yes","No","Supplier12","2024-04-10",60,2.31,"No","Yes",3023,"22x23x8",211508103039,"Mexico","Gluten",4.5,588,31.26
+623468,"Cookies","Household","BrandA","1L",34.24,204,39,"Aisle 3","No","No","Supplier20","2024-08-21",151,1.08,"No","Yes",562,"11x31x5",189176083200,"Brazil","Soy",1.2,681,24.07
+110002,"Ground Beef","Bakery","BrandE","500g",25.02,118,100,"Aisle 2","No","Yes","Supplier19","2024-07-17",67,2.31,"Yes","No",4900,"22x48x9",918023278079,"Canada","None",3.2,361,18.44
+601599,"Milk","Pantry","BrandE","6-pack",22.48,250,85,"Refrigerated","No","No","Supplier14","2024-04-10",65,3.64,"Yes","Yes",2082,"33x44x10",150269821345,"India","None",4.6,601,19.18
+791876,"Paper Towels","Seafood","BrandD","250ml",46.23,62,37,"Aisle 2","No","No","Supplier4","2024-02-18",267,2.78,"Yes","Yes",2114,"31x32x18",314295832055,"Brazil","Soy",3.4,894,32.91
+285830,"Salmon Fillet","Dairy","BrandC","1kg",2.19,205,81,"Aisle 1","Yes","No","Supplier4","2024-12-10",63,2.72,"No","Yes",1250,"13x21x16",526412600199,"Brazil","Dairy",3.0,743,1.97
+635816,"Canned Beans","Bakery","BrandE","250ml",23.19,303,98,"Aisle 3","Yes","Yes","Supplier11","2024-12-14",132,3.42,"No","No",2069,"37x17x17",766537222021,"China","Gluten",3.3,744,20.32
+147647,"Shrimp","Household","BrandC","250ml",30.45,375,80,"Aisle 3","No","Yes","Supplier13","2024-06-15",230,1.76,"No","Yes",2749,"20x37x7",746996489872,"China","Nuts",4.6,744,23.28
+914137,"Laundry Detergent","Meat","BrandA","1kg",7.76,370,72,"Produce Section","Yes","Yes","Supplier17","2024-11-24",70,1.15,"No","No",2856,"18x15x11",372936291190,"Canada","Nuts",3.9,948,7.32
+248066,"Cola","Bakery","BrandC","1L",30.84,266,94,"Produce Section","No","No","Supplier9","2024-01-29",209,1.89,"Yes","Yes",1223,"21x35x20",541109970780,"Brazil","None",1.5,640,23.23
+822436,"Ice Cream","Bakery","BrandD","1L",23.32,57,60,"Aisle 1","No","No","Supplier15","2024-03-24",198,3.89,"No","Yes",1609,"35x37x20",626423097038,"China","Gluten",3.4,617,16.5
+806566,"Shrimp","Meat","BrandA","6-pack",24.01,346,89,"Refrigerated","Yes","Yes","Supplier3","2024-06-16",301,2.33,"Yes","Yes",1202,"25x38x8",361964890284,"Brazil","Dairy",2.3,239,22.19
+791853,"Ice Cream","Snacks","BrandB","750g",48.41,278,24,"Aisle 2","Yes","No","Supplier18","2024-05-12",29,2.65,"No","Yes",4955,"16x13x20",728424289220,"India","None",2.6,540,35.61
+143976,"Milk","Dairy","BrandA","1L",5.24,226,78,"Aisle 2","No","No","Supplier9","2024-09-04",77,3.87,"Yes","No",1124,"40x29x9",712715719507,"India","Dairy",4.5,282,4.17
+914955,"Croissant","Seafood","BrandE","12-pack",29.01,155,25,"Aisle 3","No","No","Supplier3","2024-12-13",175,1.13,"No","No",3749,"14x28x19",870252846627,"USA","Nuts",2.2,591,23.15
+234552,"Canned Beans","Beverages","BrandB","1kg",9.49,299,46,"Refrigerated","No","Yes","Supplier11","2024-02-04",267,2.37,"Yes","Yes",1121,"15x40x20",154041279967,"Mexico","Nuts",3.9,419,6.8
+702492,"Bread","Snacks","BrandC","250ml",44.43,398,11,"Aisle 2","Yes","No","Supplier11","2024-05-10",230,4.04,"No","Yes",1278,"47x32x13",456187021142,"Brazil","Gluten",2.5,388,38.62
+347320,"Frozen Pizza","Dairy","BrandB","750g",24.14,245,32,"Produce Section","Yes","No","Supplier12","2024-01-25",76,2.69,"Yes","Yes",1094,"43x16x14",543524165410,"China","Gluten",3.0,706,22.9
+160401,"Salmon Fillet","Beverages","BrandA","6-pack",4.91,412,59,"Aisle 3","No","Yes","Supplier15","2024-09-08",141,3.53,"Yes","No",4554,"18x15x8",536927079743,"Brazil","Nuts",2.5,992,3.87
+139819,"Salmon Fillet","Household","BrandA","12-pack",32.19,144,61,"Aisle 1","Yes","Yes","Supplier5","2024-02-06",18,3.7,"Yes","Yes",2281,"29x36x13",245367896687,"Brazil","Nuts",1.8,369,23.1
+741638,"Chips","Beverages","BrandD","2L",14.45,313,27,"Freezer","No","Yes","Supplier8","2024-10-19",340,2.02,"Yes","Yes",1034,"10x41x13",530674635250,"Canada","Gluten",4.5,667,10.42
+226779,"Tea","Meat","BrandB","750g",14.88,498,68,"Produce Section","No","No","Supplier5","2024-01-31",181,4.15,"Yes","Yes",837,"22x12x6",290361048511,"China","Soy",2.8,792,13.62
+443813,"Salmon Fillet","Beverages","BrandA","250ml",22.3,383,59,"Aisle 2","Yes","No","Supplier4","2024-11-09",313,4.89,"No","No",971,"30x41x13",102942174910,"USA","None",4.4,869,17.25
+128664,"Chicken Breast","Frozen","BrandD","1kg",20.52,287,43,"Produce Section","No","Yes","Supplier7","2024-02-26",230,4.72,"No","No",4220,"35x15x12",290432183293,"Brazil","Nuts",4.5,792,17.27
+319032,"Apples","Seafood","BrandC","12-pack",26.9,431,17,"Aisle 2","Yes","Yes","Supplier3","2024-07-25",265,2.67,"Yes","Yes",2092,"25x43x19",812413857477,"Mexico","Nuts",1.1,116,24.57
+958764,"Frozen Pizza","Produce","BrandB","1kg",12.33,253,84,"Aisle 3","No","Yes","Supplier6","2024-04-16",27,4.4,"Yes","No",290,"42x40x8",717043257128,"Mexico","Dairy",2.7,209,8.83
+623095,"Tea","Produce","BrandE","6-pack",45.31,89,21,"Freezer","No","Yes","Supplier14","2024-04-15",176,4.64,"No","No",1565,"28x23x19",654512492763,"Canada","Dairy",2.6,974,41.28
+240581,"Salmon Fillet","Seafood","BrandE","2L",30.78,162,69,"Aisle 1","Yes","No","Supplier8","2024-10-13",171,3.57,"Yes","No",3841,"31x46x16",602056960364,"China","Nuts",3.3,86,26.64
+270853,"Tea","Household","BrandD","12-pack",2.54,387,71,"Aisle 1","Yes","No","Supplier9","2024-02-20",289,3.32,"Yes","Yes",4676,"46x35x11",892431325787,"Brazil","Soy",1.2,155,2.41
+265126,"Apples","Dairy","BrandD","500g",8.78,35,79,"Aisle 2","Yes","Yes","Supplier12","2024-02-13",137,3.8,"No","No",4007,"12x25x10",190639465237,"China","Gluten",2.9,794,6.63
+354753,"Cola","Frozen","BrandE","1L",25.56,186,55,"Freezer","Yes","Yes","Supplier18","2024-04-06",31,4.74,"Yes","No",2152,"17x14x5",847656041723,"Canada","Nuts",1.8,798,17.99
+952611,"Pasta","Household","BrandD","6-pack",17.12,130,79,"Aisle 1","Yes","Yes","Supplier17","2024-10-24",300,3.65,"No","No",814,"17x19x5",536529050692,"Mexico","Soy",3.9,176,14.64
+257574,"Ice Cream","Bakery","BrandB","6-pack",9.39,266,10,"Refrigerated","No","Yes","Supplier2","2024-08-23",242,2.29,"No","Yes",1473,"36x46x10",687173702232,"USA","Dairy",4.3,553,8.08
+386539,"Ground Beef","Snacks","BrandB","500g",43.36,425,18,"Refrigerated","Yes","Yes","Supplier7","2024-01-22",40,4.32,"Yes","Yes",3836,"20x45x9",732206631878,"Mexico","Nuts",1.8,263,34.16
+885733,"Laundry Detergent","Meat","BrandE","250ml",42.43,354,76,"Produce Section","No","Yes","Supplier6","2024-11-09",124,2.68,"No","Yes",3591,"16x12x19",805636214288,"Mexico","Gluten",5.0,546,40.15
+810188,"Laundry Detergent","Beverages","BrandA","250ml",48.41,239,12,"Produce Section","Yes","No","Supplier5","2024-04-11",108,2.48,"No","No",180,"24x24x8",911209313037,"USA","Dairy",4.4,909,42.43
+544554,"Ice Cream","Beverages","BrandC","750g",9.17,354,79,"Aisle 1","No","No","Supplier5","2024-12-09",289,3.32,"Yes","Yes",235,"21x13x5",526521538873,"Canada","None",2.9,620,7.23
+575387,"Chips","Dairy","BrandB","1L",37.87,493,18,"Aisle 3","No","No","Supplier6","2024-09-16",91,3.62,"Yes","Yes",2594,"27x37x16",225290416513,"Mexico","Dairy",3.9,907,33.09
+275621,"Milk","Household","BrandD","1L",46.33,154,81,"Refrigerated","No","No","Supplier15","2024-05-15",149,4.49,"Yes","No",3730,"43x46x5",914227973596,"India","Soy",3.6,74,36.01
+156098,"Chips","Frozen","BrandC","250ml",6.32,464,40,"Refrigerated","No","Yes","Supplier20","2024-07-24",130,1.15,"No","Yes",4871,"48x38x5",488628983627,"Brazil","Soy",2.5,541,5.46
+361416,"Pasta","Frozen","BrandC","2L",18.02,216,95,"Aisle 1","No","Yes","Supplier14","2024-07-03",102,3.27,"Yes","No",1822,"33x35x15",303171628101,"USA","None",1.6,826,15.08
+985392,"Ground Beef","Produce","BrandA","2L",45.86,11,94,"Produce Section","No","Yes","Supplier7","2024-03-28",108,1.87,"Yes","Yes",1618,"38x10x5",337190515711,"India","Gluten",2.5,466,43.43
+737269,"Croissant","Produce","BrandD","2L",12.05,139,64,"Produce Section","No","Yes","Supplier18","2024-09-05",55,3.17,"Yes","Yes",3063,"46x31x19",438206392040,"Brazil","None",3.2,37,10.57
+628233,"Paper Towels","Pantry","BrandE","1L",44.67,342,37,"Produce Section","No","No","Supplier18","2024-01-29",160,4.51,"Yes","Yes",698,"48x34x20",143445650721,"Mexico","Dairy",4.0,329,34.09
+555261,"Canned Beans","Pantry","BrandC","6-pack",10.19,168,86,"Freezer","No","Yes","Supplier5","2024-07-10",187,3.11,"Yes","Yes",4575,"24x23x15",787142006350,"India","Gluten",4.2,753,9.44
+134283,"Milk","Pantry","BrandD","6-pack",28.05,204,71,"Produce Section","Yes","No","Supplier2","2024-02-07",42,4.15,"Yes","No",314,"26x45x13",770500258834,"Canada","Nuts",3.7,593,26.34
+723407,"Paper Towels","Bakery","BrandA","2L",27.47,288,35,"Refrigerated","No","Yes","Supplier16","2024-06-29",202,2.62,"No","Yes",3476,"44x45x11",315601486145,"China","Nuts",4.6,314,21.1
+788000,"Ice Cream","Bakery","BrandC","1L",20.48,423,15,"Aisle 3","No","Yes","Supplier17","2024-03-19",121,4.99,"No","Yes",2577,"28x49x5",440851806681,"India","Nuts",1.4,771,16.32
+149213,"Croissant","Snacks","BrandE","750g",33.5,291,38,"Aisle 1","No","Yes","Supplier11","2024-12-06",242,3.86,"Yes","No",4427,"18x37x5",115661044842,"Brazil","Nuts",3.7,95,23.97
+112086,"Pasta","Seafood","BrandC","12-pack",5.43,168,13,"Freezer","No","Yes","Supplier1","2024-02-02",273,3.23,"No","No",534,"19x49x5",600646542548,"Brazil","Soy",4.9,904,3.88
+358770,"Milk","Frozen","BrandB","750g",14.66,116,16,"Refrigerated","No","Yes","Supplier8","2024-08-05",143,3.39,"Yes","Yes",841,"50x47x20",310117338517,"USA","Nuts",2.5,938,13.53
+960025,"Pasta","Pantry","BrandE","2L",31.73,39,26,"Refrigerated","Yes","Yes","Supplier20","2024-10-06",36,4.35,"No","No",4972,"34x38x7",627385871508,"India","Gluten",3.2,722,24.73
+696440,"Cheese","Produce","BrandD","500g",43.24,230,45,"Aisle 2","Yes","Yes","Supplier10","2024-07-22",112,4.47,"No","No",463,"13x14x20",282846446390,"Brazil","Gluten",2.6,594,39.67
+169908,"Chips","Pantry","BrandD","12-pack",33.53,91,52,"Freezer","No","Yes","Supplier14","2024-09-26",239,3.35,"No","No",3514,"25x12x5",974964869072,"China","None",4.7,300,28.55
+614851,"Chips","Household","BrandA","1kg",35.74,164,98,"Refrigerated","Yes","No","Supplier9","2024-09-23",300,4.05,"No","Yes",2439,"27x22x19",894021673240,"USA","Nuts",3.8,561,33.13
+147717,"Salmon Fillet","Produce","BrandE","1L",46.7,109,93,"Aisle 3","No","Yes","Supplier1","2024-07-10",260,2.22,"No","Yes",656,"42x29x7",780434040753,"Mexico","Nuts",3.7,850,36.25
+802857,"Frozen Pizza","Produce","BrandE","6-pack",25.05,358,79,"Aisle 1","Yes","Yes","Supplier8","2024-12-08",339,4.67,"Yes","Yes",4935,"31x44x10",486051576404,"USA","Nuts",1.8,99,21.49
+389293,"Cookies","Dairy","BrandA","750g",46.12,41,32,"Aisle 2","No","No","Supplier17","2024-08-22",211,1.76,"Yes","No",2829,"33x34x11",728397650332,"Canada","Dairy",2.4,738,39.88
+670039,"Paper Towels","Dairy","BrandA","250ml",5.45,170,16,"Aisle 3","Yes","Yes","Supplier17","2024-10-21",304,3.77,"Yes","Yes",4354,"47x32x5",140069917588,"China","Nuts",4.0,54,4.59
+821205,"Milk","Produce","BrandB","2L",48.95,93,41,"Freezer","No","No","Supplier15","2024-03-06",219,4.81,"No","No",128,"21x12x5",907175228396,"USA","Gluten",2.3,145,43.03
+922728,"Canned Beans","Dairy","BrandC","250ml",47.31,127,71,"Freezer","Yes","Yes","Supplier9","2024-07-29",23,1.44,"No","Yes",3814,"42x30x7",917879057362,"Canada","Soy",5.0,137,33.68
+627767,"Tea","Household","BrandC","500g",21.46,129,11,"Aisle 1","Yes","No","Supplier18","2024-01-23",56,1.52,"No","No",3380,"25x41x10",806745255272,"China","Soy",2.2,593,17.3
+860530,"Chips","Dairy","BrandB","6-pack",19.91,336,19,"Refrigerated","No","Yes","Supplier18","2024-11-20",262,4.34,"Yes","No",950,"26x41x13",905692962755,"Brazil","Nuts",3.2,938,16.42
+753710,"Cookies","Snacks","BrandD","1L",32.39,407,29,"Produce Section","Yes","Yes","Supplier1","2024-04-08",210,2.81,"Yes","No",2820,"30x17x12",370077860368,"Mexico","Dairy",3.9,598,25.53
+759447,"Milk","Snacks","BrandE","2L",22.97,183,93,"Freezer","Yes","No","Supplier19","2024-03-22",272,1.71,"Yes","No",4870,"41x49x15",795296414782,"Canada","Gluten",1.3,875,21.71
+645959,"Apples","Dairy","BrandB","12-pack",17.99,201,74,"Aisle 2","Yes","Yes","Supplier10","2024-04-26",277,4.85,"Yes","No",1996,"36x41x5",267358586773,"Canada","Nuts",2.8,247,14.07
+528224,"Apples","Dairy","BrandC","1kg",15.2,369,32,"Aisle 1","Yes","Yes","Supplier16","2024-10-04",323,3.77,"Yes","Yes",881,"38x34x6",786543292406,"India","Dairy",4.7,727,13.9
+861981,"Laundry Detergent","Household","BrandA","6-pack",34.22,414,35,"Freezer","No","Yes","Supplier20","2024-01-27",309,4.3,"Yes","Yes",2459,"11x34x8",604032956682,"Brazil","None",1.4,886,25.21
+799818,"Salmon Fillet","Meat","BrandC","250ml",46.39,87,15,"Freezer","No","Yes","Supplier8","2024-12-20",81,3.49,"Yes","Yes",2576,"25x17x18",113775880019,"Brazil","Dairy",4.1,214,35.64
+728593,"Cookies","Seafood","BrandB","750g",7.3,482,96,"Freezer","Yes","Yes","Supplier6","2024-04-14",54,1.44,"Yes","Yes",4984,"23x28x11",825357639419,"India","Gluten",3.0,46,5.3
+812327,"Bread","Bakery","BrandB","750g",49.85,92,13,"Aisle 1","No","Yes","Supplier13","2024-04-25",213,3.27,"No","Yes",1188,"29x40x18",471857887459,"Mexico","Soy",3.1,550,44.05
+368687,"Chips","Frozen","BrandB","250ml",37.59,222,24,"Freezer","Yes","No","Supplier9","2024-02-28",51,3.2,"Yes","No",766,"47x45x8",894354189153,"India","Dairy",4.6,594,27.82
+572081,"Apples","Meat","BrandE","12-pack",10.95,429,85,"Aisle 2","Yes","Yes","Supplier18","2024-05-08",287,2.15,"No","No",3045,"15x31x8",679371226301,"Canada","Dairy",4.5,909,9.07
+927621,"Cola","Produce","BrandC","1kg",47.52,369,68,"Freezer","Yes","No","Supplier14","2024-12-08",225,3.32,"Yes","No",1820,"36x39x20",669312460824,"Mexico","Nuts",2.9,195,43.14
+535653,"Canned Beans","Produce","BrandA","1L",43.59,204,56,"Produce Section","Yes","Yes","Supplier18","2024-03-12",174,4.85,"No","Yes",977,"42x41x6",941669616981,"USA","Dairy",4.0,496,41.38
+420799,"Shrimp","Dairy","BrandE","12-pack",2.02,243,62,"Produce Section","Yes","No","Supplier9","2024-03-06",73,2.01,"No","Yes",140,"48x37x7",149711702545,"Canada","Nuts",3.7,171,1.56
+377810,"Frozen Pizza","Frozen","BrandA","12-pack",27.01,425,83,"Freezer","No","Yes","Supplier5","2024-05-01",36,3.76,"No","Yes",4763,"19x39x8",225511595070,"China","None",2.9,7,19.66
+469312,"Chicken Breast","Meat","BrandB","250ml",13.46,322,34,"Refrigerated","No","Yes","Supplier9","2024-07-29",152,1.81,"Yes","No",961,"36x29x13",408943634049,"India","Gluten",3.3,899,9.54
+417547,"Canned Beans","Meat","BrandC","250ml",19.87,395,14,"Aisle 2","No","No","Supplier15","2024-02-22",9,1.34,"Yes","No",569,"24x42x12",184247801925,"Canada","Soy",4.7,957,17.62
+214323,"Apples","Dairy","BrandB","500g",45.26,14,54,"Aisle 1","Yes","No","Supplier5","2024-07-03",103,1.63,"Yes","No",3132,"32x30x12",398030406222,"Brazil","Dairy",2.9,42,33.56
+749030,"Cola","Pantry","BrandA","500g",39.36,123,72,"Refrigerated","Yes","No","Supplier9","2024-09-28",166,4.4,"Yes","Yes",2076,"36x10x11",419171860374,"Brazil","Dairy",2.5,437,32.11
+191373,"Ground Beef","Dairy","BrandE","250ml",23.65,479,55,"Aisle 2","Yes","Yes","Supplier11","2024-11-19",249,2.84,"Yes","Yes",1948,"14x30x7",800570748863,"Brazil","Nuts",1.3,72,17.42
+367966,"Ground Beef","Seafood","BrandA","1kg",26.81,492,99,"Freezer","No","Yes","Supplier5","2024-12-06",281,1.29,"Yes","Yes",4102,"41x50x20",629224776923,"Canada","Gluten",1.6,623,24.9
+892004,"Cola","Seafood","BrandA","1L",4.18,4,87,"Refrigerated","Yes","No","Supplier3","2024-02-04",286,4.07,"Yes","No",4606,"47x40x6",481736640288,"Canada","None",3.3,252,3.67
+842463,"Ice Cream","Seafood","BrandB","500g",27.48,274,15,"Aisle 3","Yes","Yes","Supplier4","2024-05-03",238,1.18,"Yes","No",1882,"50x41x11",772496986840,"Canada","Nuts",2.6,106,19.88
+568946,"Milk","Seafood","BrandC","1L",41.92,306,75,"Aisle 2","No","No","Supplier13","2024-05-27",336,3.25,"No","Yes",1298,"20x32x6",460672482602,"China","None",3.3,890,35.2
+556759,"Chips","Bakery","BrandA","250ml",7.48,480,75,"Refrigerated","No","Yes","Supplier15","2024-05-08",111,3.51,"No","No",671,"24x41x18",419607907452,"Canada","Soy",3.9,613,6.45
+704748,"Salmon Fillet","Snacks","BrandB","250ml",2.54,301,56,"Produce Section","No","No","Supplier18","2024-12-03",338,2.18,"Yes","Yes",479,"34x47x5",902193354590,"Mexico","Nuts",1.8,480,2.4
+103427,"Ground Beef","Household","BrandA","500g",21.51,146,56,"Aisle 2","No","No","Supplier14","2024-05-10",337,4.71,"No","Yes",3158,"47x11x17",386205225035,"Canada","None",4.2,947,16.87
+486605,"Ground Beef","Snacks","BrandE","250ml",33.24,454,80,"Aisle 2","Yes","Yes","Supplier15","2024-03-08",147,3.84,"No","Yes",2885,"22x14x5",507504571768,"Canada","Nuts",3.4,574,23.42
+948646,"Chips","Frozen","BrandD","250ml",5.96,196,75,"Freezer","Yes","No","Supplier5","2024-01-16",152,2.41,"Yes","No",3024,"48x41x13",621044901063,"China","Dairy",3.4,666,4.63
+991852,"Cola","Household","BrandD","250ml",49.37,481,46,"Aisle 3","No","Yes","Supplier20","2024-07-19",331,3.05,"Yes","Yes",543,"13x41x7",292663228494,"India","Nuts",4.4,538,43.79
+679076,"Carrots","Seafood","BrandA","6-pack",45.96,140,15,"Aisle 2","Yes","Yes","Supplier3","2024-05-17",275,3.5,"No","Yes",4380,"23x20x10",388829574199,"Canada","Dairy",4.4,753,41.2
+119685,"Cheese","Snacks","BrandD","1L",49.7,312,42,"Aisle 3","Yes","No","Supplier2","2024-07-03",169,4.37,"Yes","No",1456,"30x49x15",898927003770,"India","Soy",4.0,948,43.27
+895236,"Croissant","Seafood","BrandA","1L",34.35,490,58,"Refrigerated","No","No","Supplier16","2024-02-17",19,3.57,"Yes","No",2985,"21x32x14",283594330412,"China","Nuts",4.2,192,31.89
+429345,"Paper Towels","Bakery","BrandC","750g",9.7,387,56,"Produce Section","No","No","Supplier9","2024-04-11",345,3.29,"Yes","Yes",997,"39x17x14",286490932862,"Brazil","None",2.6,10,6.92
+708684,"Tea","Bakery","BrandA","750g",27.51,117,19,"Refrigerated","Yes","No","Supplier11","2024-11-22",91,3.34,"No","No",629,"43x46x10",133496146314,"Brazil","Nuts",4.8,94,22.74
+773180,"Carrots","Frozen","BrandC","1kg",16.93,485,55,"Aisle 2","Yes","No","Supplier5","2024-02-12",352,4.17,"No","No",3561,"32x15x5",874822493568,"China","Dairy",3.9,105,12.48
+140225,"Paper Towels","Seafood","BrandA","500g",45.51,265,13,"Aisle 3","Yes","No","Supplier10","2024-02-05",177,2.05,"No","Yes",4824,"16x34x5",593978539354,"Canada","Gluten",4.3,841,37.8
+889719,"Chicken Breast","Seafood","BrandE","2L",41.8,352,17,"Freezer","Yes","No","Supplier7","2024-10-01",292,1.58,"Yes","No",2391,"25x34x7",801780831494,"USA","None",4.0,517,37.93
+426083,"Ground Beef","Seafood","BrandA","750g",28.23,40,84,"Aisle 2","No","No","Supplier3","2024-09-20",80,1.84,"No","No",4350,"31x20x15",776452217096,"Canada","Nuts",4.1,431,21.6
+734701,"Frozen Pizza","Household","BrandD","750g",38.34,105,58,"Freezer","No","No","Supplier2","2024-01-28",21,4.72,"No","Yes",1965,"25x48x9",999168190745,"India","Nuts",3.6,935,30.36
+405336,"Chicken Breast","Snacks","BrandA","750g",29.12,138,90,"Aisle 3","Yes","No","Supplier16","2024-08-01",25,4.44,"No","No",1828,"14x37x14",689416268463,"India","Nuts",2.8,719,23.09
+777785,"Cola","Pantry","BrandE","1L",11.62,295,59,"Freezer","No","No","Supplier6","2024-11-27",17,3.2,"Yes","Yes",364,"32x27x20",514457664063,"India","Soy",3.9,630,9.61
+247796,"Paper Towels","Dairy","BrandE","1L",16.31,423,100,"Aisle 1","No","Yes","Supplier17","2024-09-29",12,1.69,"Yes","No",4677,"47x27x16",740439113454,"USA","Nuts",3.6,191,12.66
+946181,"Shrimp","Meat","BrandC","250ml",35.14,491,55,"Refrigerated","No","No","Supplier5","2024-05-16",227,1.95,"No","No",2194,"25x49x7",757689282009,"USA","None",4.6,471,29.08
+424479,"Salmon Fillet","Frozen","BrandA","12-pack",3.5,372,39,"Aisle 3","Yes","No","Supplier5","2024-08-11",352,3.08,"No","No",325,"48x16x14",848049821370,"China","Soy",1.8,231,2.92
+696294,"Croissant","Snacks","BrandE","500g",30.55,352,91,"Produce Section","No","Yes","Supplier17","2024-06-13",265,1.8,"Yes","Yes",672,"29x43x14",424296925481,"Brazil","Dairy",2.9,274,26.66
+600110,"Chips","Pantry","BrandA","1L",47.4,105,47,"Produce Section","Yes","No","Supplier11","2024-11-29",192,2.66,"Yes","Yes",2951,"17x44x12",374061460964,"Canada","Soy",3.9,616,44.57
+590221,"Croissant","Bakery","BrandD","750g",38.64,466,77,"Aisle 1","No","No","Supplier20","2024-12-09",308,4.41,"Yes","No",3131,"48x20x8",279326653268,"USA","Gluten",2.7,747,34.14
+397180,"Paper Towels","Frozen","BrandC","500g",46.69,60,58,"Aisle 1","Yes","Yes","Supplier18","2024-12-11",14,2.92,"Yes","Yes",4593,"47x22x12",201176323137,"Canada","Soy",1.7,534,43.98
+977397,"Pasta","Frozen","BrandB","1L",48.07,446,72,"Freezer","No","No","Supplier10","2024-06-13",307,3.73,"Yes","No",2783,"28x26x5",491926677130,"Canada","None",2.2,291,38.16
+414934,"Salmon Fillet","Dairy","BrandC","6-pack",37.93,89,95,"Produce Section","Yes","No","Supplier20","2024-01-18",171,4.64,"No","Yes",1051,"34x20x16",370676556852,"Mexico","Soy",1.9,260,33.4
+192143,"Tea","Bakery","BrandA","2L",34.43,450,77,"Produce Section","Yes","Yes","Supplier11","2024-10-04",275,3.74,"Yes","No",1612,"14x38x9",158640003960,"Brazil","Soy",2.0,284,28.98
+878791,"Chips","Household","BrandC","250ml",21.99,343,79,"Aisle 1","No","No","Supplier13","2024-10-03",57,1.69,"Yes","Yes",4125,"16x31x8",690706429358,"USA","None",1.0,21,16.83
+938012,"Milk","Frozen","BrandA","1L",42.24,186,40,"Refrigerated","Yes","Yes","Supplier5","2024-08-27",277,3.73,"Yes","Yes",1502,"12x22x10",250783429116,"Canada","Soy",4.2,940,37.95
+393520,"Canned Beans","Dairy","BrandE","1L",19.18,464,72,"Aisle 3","Yes","No","Supplier20","2024-05-11",182,4.38,"Yes","Yes",3558,"16x10x8",386469689715,"Brazil","Gluten",4.3,975,16.23
+250365,"Milk","Seafood","BrandE","750g",49.25,57,14,"Aisle 1","No","Yes","Supplier16","2024-06-27",19,4.62,"Yes","Yes",1024,"48x20x6",605585027974,"China","Nuts",1.3,602,36.26
+625707,"Croissant","Pantry","BrandE","6-pack",11.89,311,34,"Aisle 3","Yes","No","Supplier3","2024-06-27",219,2.31,"No","No",4789,"37x39x7",115354093068,"China","Soy",3.2,931,8.66
+542859,"Milk","Bakery","BrandD","750g",4.46,476,54,"Aisle 3","Yes","No","Supplier4","2024-06-25",235,1.01,"No","No",654,"37x18x10",557914732300,"Mexico","Nuts",1.4,720,3.93
+794586,"Pasta","Meat","BrandE","250ml",15.41,225,14,"Aisle 1","Yes","Yes","Supplier12","2024-01-14",121,1.28,"No","No",908,"46x48x7",471995273426,"Brazil","Gluten",3.7,949,11.63
+735177,"Bread","Snacks","BrandA","1kg",46.73,121,60,"Produce Section","No","Yes","Supplier18","2024-07-20",239,1.27,"Yes","Yes",2985,"32x36x9",997395439562,"Mexico","Gluten",1.0,337,37.16
+495101,"Shrimp","Seafood","BrandA","6-pack",39.63,11,96,"Aisle 1","Yes","Yes","Supplier2","2024-11-26",224,1.57,"No","Yes",1985,"28x45x10",947412467291,"Canada","Dairy",2.6,873,28.71
+833349,"Cola","Pantry","BrandB","1kg",29.72,389,57,"Aisle 3","Yes","No","Supplier8","2024-12-03",254,1.86,"Yes","No",2273,"26x27x15",283989176346,"Canada","Soy",4.8,782,21.92
+264189,"Carrots","Snacks","BrandE","1L",9.97,434,55,"Aisle 2","No","No","Supplier12","2024-10-12",270,4.31,"No","Yes",1644,"47x42x20",944501215935,"Brazil","Soy",2.4,179,9.11
+310931,"Frozen Pizza","Pantry","BrandC","500g",14.31,361,65,"Aisle 2","Yes","No","Supplier14","2024-05-06",229,3.28,"Yes","No",151,"23x46x5",884775255687,"Canada","None",2.9,821,10.88
+542729,"Laundry Detergent","Pantry","BrandA","6-pack",38.52,236,87,"Produce Section","No","Yes","Supplier18","2024-07-17",130,4.22,"Yes","Yes",1084,"41x26x13",395604867393,"China","Dairy",1.7,634,32.55
+245418,"Shrimp","Produce","BrandB","6-pack",44.94,160,64,"Refrigerated","Yes","No","Supplier2","2024-09-04",326,1.24,"Yes","No",2993,"14x18x17",547035308515,"China","Gluten",2.9,935,36.52
+110374,"Milk","Seafood","BrandC","1kg",38.58,417,12,"Freezer","No","No","Supplier17","2024-12-23",160,3.83,"No","No",2258,"19x32x8",335732564035,"Brazil","Gluten",2.3,803,34.85
+347046,"Salmon Fillet","Beverages","BrandC","500g",15.42,446,94,"Refrigerated","No","No","Supplier2","2024-03-18",252,2.41,"Yes","Yes",505,"45x20x13",440048734794,"Mexico","Soy",2.8,561,12.76
+994211,"Croissant","Snacks","BrandD","750g",2.5,120,32,"Aisle 2","Yes","No","Supplier19","2024-03-27",313,1.18,"No","No",1672,"18x39x15",293488913693,"China","Gluten",4.5,206,2.13
+477007,"Salmon Fillet","Pantry","BrandB","2L",30.01,177,84,"Aisle 3","No","No","Supplier16","2024-11-27",5,4.82,"No","No",2412,"14x46x8",570913517691,"India","None",4.5,539,22.83
+382780,"Carrots","Frozen","BrandB","250ml",18.37,157,41,"Freezer","Yes","No","Supplier13","2024-06-03",145,1.28,"Yes","Yes",4014,"16x20x17",958182657326,"Mexico","Soy",3.5,575,16.13
+735219,"Laundry Detergent","Meat","BrandB","6-pack",37.81,284,65,"Produce Section","No","No","Supplier15","2024-12-16",126,3.51,"No","Yes",3362,"20x34x16",271608861753,"Brazil","Soy",3.5,18,33.54
+948089,"Frozen Pizza","Bakery","BrandC","750g",26.53,157,71,"Refrigerated","Yes","No","Supplier10","2024-09-23",354,4.21,"No","No",609,"13x42x15",231958721979,"India","Nuts",4.5,794,19.12
+398561,"Apples","Dairy","BrandA","12-pack",44.8,457,34,"Refrigerated","No","Yes","Supplier13","2024-10-25",110,2.35,"Yes","Yes",3799,"10x17x10",951835605848,"India","Nuts",2.4,341,41.73
+432824,"Pasta","Beverages","BrandD","500g",27.33,497,74,"Aisle 3","No","No","Supplier15","2024-09-28",355,2.14,"No","No",3857,"37x24x14",137336510038,"India","Soy",2.8,148,20.96
+142493,"Canned Beans","Frozen","BrandB","12-pack",7.12,468,78,"Refrigerated","Yes","No","Supplier7","2024-09-01",219,4.89,"No","Yes",4350,"32x36x10",543355189306,"India","Soy",2.8,157,5.41
+391152,"Shrimp","Bakery","BrandD","12-pack",24.8,320,83,"Refrigerated","No","No","Supplier8","2024-04-08",24,3.49,"No","No",947,"22x10x16",978214346132,"India","None",4.1,901,19.85
+310609,"Laundry Detergent","Seafood","BrandB","500g",7.83,328,81,"Refrigerated","No","Yes","Supplier8","2024-04-05",18,2.32,"Yes","Yes",4015,"24x14x19",953935520312,"Brazil","Gluten",1.0,730,7.3
+433519,"Cola","Beverages","BrandD","1kg",14.33,145,96,"Aisle 3","Yes","No","Supplier7","2024-12-02",329,1.74,"No","Yes",2919,"14x39x16",334513585207,"India","None",3.7,771,10.86
+171532,"Frozen Pizza","Household","BrandE","12-pack",48.25,64,38,"Refrigerated","No","Yes","Supplier20","2024-03-03",226,4.84,"No","Yes",1525,"33x32x15",211792465244,"China","Nuts",2.3,604,40.02
+282010,"Apples","Household","BrandE","250ml",29.72,21,99,"Aisle 1","Yes","Yes","Supplier4","2024-11-26",98,2.44,"Yes","No",4630,"39x43x5",469320449321,"Canada","Dairy",4.9,101,22.11
+612609,"Chicken Breast","Dairy","BrandE","1L",15.4,359,94,"Aisle 1","No","Yes","Supplier16","2024-07-06",286,4.27,"Yes","No",3853,"44x35x19",173269502396,"Canada","Gluten",3.6,398,13.25
+555925,"Pasta","Pantry","BrandB","750g",47.18,142,56,"Freezer","No","Yes","Supplier19","2024-01-26",179,2.45,"No","No",485,"27x12x8",743658433273,"India","Dairy",4.6,688,36.88
+896539,"Pasta","Seafood","BrandD","500g",22.29,187,41,"Freezer","Yes","No","Supplier3","2024-07-26",143,1.74,"No","No",956,"48x12x13",662743920036,"China","Gluten",2.0,379,17.55
+833599,"Cookies","Snacks","BrandD","6-pack",30.55,459,63,"Freezer","No","Yes","Supplier20","2024-03-01",92,3.97,"No","No",4901,"46x25x15",562342678812,"Brazil","Soy",2.4,675,24.23
+203303,"Cheese","Bakery","BrandE","750g",1.26,497,66,"Aisle 1","Yes","Yes","Supplier19","2024-08-03",276,1.51,"No","No",3711,"29x27x20",317487358439,"Mexico","None",2.8,877,1.18
+744194,"Cheese","Meat","BrandC","2L",18.14,316,69,"Freezer","No","Yes","Supplier11","2024-10-17",68,2.63,"No","No",3306,"23x21x19",259118204113,"Mexico","Soy",3.5,803,15.85
+607167,"Croissant","Produce","BrandD","500g",8.5,487,41,"Freezer","No","Yes","Supplier11","2024-05-02",302,4.1,"Yes","Yes",2427,"25x14x19",900051664615,"India","Nuts",4.0,104,6.6
+608483,"Shrimp","Beverages","BrandB","6-pack",1.71,101,55,"Refrigerated","Yes","No","Supplier4","2024-05-09",244,4.03,"Yes","No",2882,"46x40x15",192826272998,"China","Dairy",2.9,69,1.44
+336869,"Ice Cream","Dairy","BrandB","750g",23.54,398,45,"Produce Section","Yes","No","Supplier9","2024-06-29",44,2.48,"Yes","Yes",102,"36x29x5",162275154989,"USA","Dairy",3.3,215,19.41
+148836,"Chips","Snacks","BrandC","500g",33.89,369,42,"Aisle 2","Yes","Yes","Supplier12","2024-10-09",48,4.29,"No","Yes",165,"18x23x20",122454522692,"Canada","Soy",2.7,482,28.97
+297264,"Frozen Pizza","Seafood","BrandB","750g",37.16,345,81,"Produce Section","Yes","Yes","Supplier9","2024-06-11",262,4.73,"Yes","No",3928,"33x43x15",629451637906,"India","Gluten",1.7,683,31.22
+944250,"Croissant","Snacks","BrandE","12-pack",13.77,296,96,"Freezer","Yes","Yes","Supplier17","2024-10-14",209,1.92,"No","Yes",2764,"21x27x10",464814712412,"China","Nuts",2.0,512,12.09
+941090,"Cheese","Household","BrandD","750g",31.72,208,57,"Produce Section","No","No","Supplier15","2024-05-14",336,4.11,"No","Yes",2322,"37x15x12",847474596211,"China","Nuts",4.4,393,29.63
+704632,"Cola","Beverages","BrandB","2L",2.23,42,45,"Freezer","Yes","Yes","Supplier14","2024-12-26",186,1.47,"No","Yes",1582,"25x25x10",736234670079,"India","Gluten",2.8,235,2.05
+595192,"Chicken Breast","Beverages","BrandA","250ml",33.61,280,72,"Freezer","Yes","No","Supplier15","2024-11-26",36,4.0,"Yes","No",3637,"11x48x19",874514546175,"Mexico","Dairy",1.4,930,25.73
+118368,"Chicken Breast","Meat","BrandE","2L",7.04,195,38,"Aisle 2","No","No","Supplier12","2024-04-18",133,3.54,"No","No",2446,"49x43x18",777136430747,"China","Soy",3.9,125,6.12
+857926,"Ice Cream","Meat","BrandB","6-pack",25.74,416,25,"Freezer","No","Yes","Supplier9","2024-07-07",18,1.44,"No","Yes",4388,"33x24x15",627312094997,"Brazil","Gluten",2.7,277,18.02
+100002,"Canned Beans","Dairy","BrandB","750g",20.75,200,86,"Freezer","No","Yes","Supplier3","2024-10-24",221,4.67,"Yes","No",1266,"28x43x8",638317433755,"Mexico","Nuts",2.8,403,18.2
+341553,"Frozen Pizza","Beverages","BrandD","750g",6.2,268,92,"Aisle 2","Yes","Yes","Supplier2","2024-03-30",242,2.07,"No","No",2854,"39x12x6",902254718088,"India","Gluten",2.3,306,5.52
+603390,"Cheese","Household","BrandE","750g",30.98,296,10,"Aisle 2","Yes","Yes","Supplier15","2024-10-01",160,2.84,"No","No",2455,"20x17x18",441261476528,"Canada","None",4.0,505,25.39
+280569,"Croissant","Household","BrandA","1kg",12.34,54,29,"Refrigerated","No","Yes","Supplier13","2024-04-23",105,1.36,"Yes","Yes",1431,"36x35x20",253387946671,"Mexico","Gluten",1.1,763,8.73
+441805,"Canned Beans","Produce","BrandA","500g",47.8,338,36,"Freezer","No","Yes","Supplier3","2024-01-30",340,2.14,"No","No",3109,"19x22x17",284738690285,"Mexico","Dairy",3.3,551,35.97
+793499,"Cola","Snacks","BrandB","1L",45.91,477,57,"Refrigerated","Yes","Yes","Supplier10","2024-04-24",274,3.51,"Yes","No",2580,"21x39x12",884054470887,"China","None",1.1,84,37.54
+531868,"Croissant","Produce","BrandB","750g",6.61,283,93,"Produce Section","No","No","Supplier13","2024-09-30",118,3.92,"No","No",3280,"25x50x15",319562398204,"Mexico","Dairy",1.2,875,5.12
+605384,"Milk","Beverages","BrandB","6-pack",14.25,341,94,"Refrigerated","No","No","Supplier5","2024-04-19",225,1.17,"Yes","No",3390,"50x14x12",264553369023,"Canada","None",1.5,256,12.43
+432972,"Milk","Beverages","BrandE","750g",24.58,8,45,"Produce Section","No","Yes","Supplier5","2024-05-02",217,3.4,"No","Yes",2105,"50x34x15",987285166952,"USA","Soy",1.0,877,21.26
+293511,"Cheese","Bakery","BrandC","6-pack",29.76,168,98,"Produce Section","No","No","Supplier2","2024-05-26",216,3.72,"Yes","Yes",2143,"44x50x16",547589153494,"USA","Nuts",3.9,384,26.81
+292078,"Canned Beans","Beverages","BrandA","12-pack",44.64,119,89,"Produce Section","No","Yes","Supplier2","2024-10-29",327,4.58,"Yes","No",1239,"18x47x9",696530791972,"China","Nuts",1.1,195,33.84
+658641,"Tea","Pantry","BrandC","12-pack",1.15,252,64,"Refrigerated","No","No","Supplier3","2024-04-04",146,4.03,"Yes","No",2872,"32x27x7",211778968919,"China","Dairy",3.2,529,0.81
+546013,"Cheese","Frozen","BrandE","250ml",20.72,451,92,"Produce Section","No","Yes","Supplier4","2024-05-15",9,4.7,"Yes","Yes",1005,"34x39x10",877589016675,"India","Nuts",4.4,455,18.27
+480022,"Apples","Snacks","BrandA","500g",13.33,311,69,"Produce Section","No","Yes","Supplier14","2024-08-18",158,4.68,"No","No",4572,"10x39x8",583224240522,"Brazil","Nuts",1.9,429,12.13
+191654,"Carrots","Snacks","BrandC","1L",29.77,453,87,"Aisle 2","No","No","Supplier20","2024-09-12",12,4.21,"No","No",177,"35x15x9",785419424292,"Brazil","Soy",4.0,966,23.17
+501702,"Ice Cream","Produce","BrandE","750g",40.35,180,53,"Refrigerated","Yes","Yes","Supplier12","2024-02-18",114,2.7,"No","No",4663,"35x20x6",405243625950,"USA","Soy",2.9,133,33.42
+863508,"Milk","Seafood","BrandA","6-pack",20.66,410,66,"Produce Section","No","No","Supplier18","2024-07-08",40,1.12,"Yes","Yes",3579,"17x16x7",286933480331,"USA","Gluten",3.7,703,17.62
+455861,"Ice Cream","Snacks","BrandE","6-pack",46.18,170,10,"Aisle 3","Yes","Yes","Supplier9","2024-04-20",204,1.34,"Yes","No",2869,"17x15x15",818335649733,"China","Dairy",3.9,665,42.93
+158354,"Canned Beans","Snacks","BrandD","12-pack",15.31,450,49,"Refrigerated","Yes","Yes","Supplier10","2024-08-02",227,1.31,"No","Yes",3787,"17x40x5",585074832019,"Brazil","Dairy",3.7,479,13.95
+824995,"Apples","Dairy","BrandD","2L",43.17,303,48,"Freezer","No","Yes","Supplier2","2024-12-05",275,2.95,"Yes","Yes",3601,"28x29x6",252806821956,"Brazil","Soy",3.1,231,39.77
+815152,"Cookies","Meat","BrandE","1kg",16.21,85,20,"Aisle 2","Yes","Yes","Supplier10","2024-06-22",71,2.21,"Yes","Yes",899,"25x33x5",777851226853,"Canada","Nuts",3.5,563,11.51
+909182,"Frozen Pizza","Bakery","BrandC","250ml",30.13,201,73,"Refrigerated","No","Yes","Supplier9","2024-11-29",291,4.19,"Yes","No",726,"14x36x16",545952122919,"Mexico","None",2.5,107,21.89
+670046,"Cheese","Dairy","BrandB","6-pack",31.65,223,70,"Refrigerated","No","Yes","Supplier6","2024-03-31",16,4.26,"No","Yes",4469,"42x14x8",910685196300,"India","Soy",4.9,422,29.81
+529688,"Cheese","Dairy","BrandB","2L",24.28,338,44,"Refrigerated","No","Yes","Supplier5","2024-02-28",102,1.73,"Yes","Yes",3746,"17x49x15",933349752510,"India","Gluten",2.1,413,19.9
+905122,"Cheese","Pantry","BrandC","2L",6.47,123,17,"Refrigerated","No","No","Supplier11","2024-02-19",153,4.97,"Yes","Yes",4270,"32x16x17",566218739092,"Brazil","Nuts",2.4,590,5.68
+625929,"Cola","Bakery","BrandA","250ml",20.65,306,69,"Freezer","No","No","Supplier19","2024-01-23",289,2.42,"No","Yes",3429,"20x31x19",629341721354,"India","Nuts",4.7,41,18.81
+442931,"Chicken Breast","Dairy","BrandD","1kg",24.99,20,11,"Aisle 1","No","Yes","Supplier15","2024-01-31",253,4.98,"Yes","Yes",928,"10x39x16",282184684836,"USA","Nuts",2.7,784,22.25
+940350,"Milk","Household","BrandB","500g",47.81,223,56,"Aisle 2","No","Yes","Supplier16","2024-10-20",41,2.91,"Yes","Yes",478,"29x20x12",781221635811,"Canada","Gluten",4.7,598,34.78
+279591,"Laundry Detergent","Pantry","BrandE","1kg",18.05,358,40,"Aisle 1","No","No","Supplier20","2024-09-19",283,3.51,"No","Yes",2602,"34x30x19",226843775298,"India","Soy",2.6,983,14.67
+697914,"Paper Towels","Bakery","BrandB","1L",4.27,41,97,"Freezer","No","Yes","Supplier12","2024-03-11",104,3.28,"Yes","No",4384,"36x45x8",383325116356,"India","Nuts",1.7,194,3.32
+956071,"Salmon Fillet","Beverages","BrandD","12-pack",7.36,107,75,"Aisle 2","No","No","Supplier12","2024-08-18",18,1.94,"No","Yes",1685,"31x49x5",224616518513,"Mexico","None",4.1,413,5.2
+362140,"Frozen Pizza","Meat","BrandC","2L",48.96,349,99,"Aisle 3","Yes","Yes","Supplier19","2024-12-04",299,4.45,"Yes","No",3330,"21x21x5",786843121931,"China","None",3.3,95,39.61
+524686,"Carrots","Bakery","BrandA","12-pack",7.84,0,32,"Aisle 2","No","Yes","Supplier12","2024-05-10",66,4.68,"No","No",3921,"19x49x5",113445896079,"Brazil","Nuts",2.6,115,5.73
+767520,"Ice Cream","Frozen","BrandA","250ml",6.41,417,73,"Refrigerated","Yes","Yes","Supplier4","2024-03-07",162,1.77,"Yes","Yes",4819,"46x14x19",551515010506,"Brazil","Nuts",1.3,408,5.99
+543771,"Laundry Detergent","Bakery","BrandD","2L",38.19,133,96,"Refrigerated","No","No","Supplier17","2024-09-26",203,1.43,"Yes","No",4559,"12x31x20",689792362567,"China","Nuts",3.3,931,28.05
+960309,"Apples","Dairy","BrandA","2L",21.54,394,74,"Aisle 1","No","Yes","Supplier9","2024-11-05",206,4.53,"No","No",4749,"36x36x19",800951465688,"China","Soy",1.9,313,17.47
+363131,"Chicken Breast","Produce","BrandC","6-pack",49.56,418,68,"Aisle 3","No","Yes","Supplier19","2024-08-08",227,2.48,"No","No",4186,"34x44x14",737215976185,"Brazil","Nuts",1.8,233,45.06
+700325,"Chicken Breast","Bakery","BrandC","1L",3.55,146,75,"Produce Section","No","Yes","Supplier11","2024-04-14",133,2.46,"Yes","No",2625,"29x12x6",349623806710,"China","Soy",1.4,880,2.74
+678941,"Paper Towels","Seafood","BrandB","6-pack",28.35,451,12,"Aisle 1","No","No","Supplier15","2024-11-23",20,4.72,"No","No",4495,"11x22x19",539868611703,"USA","Nuts",2.9,20,20.69
+258812,"Ground Beef","Meat","BrandA","12-pack",31.57,242,66,"Aisle 1","No","No","Supplier8","2024-09-13",16,1.17,"Yes","Yes",4482,"38x14x18",958653271740,"China","Soy",3.0,949,22.97
+873039,"Bread","Pantry","BrandA","250ml",44.07,220,13,"Aisle 2","No","Yes","Supplier13","2024-07-26",74,2.4,"No","Yes",4332,"28x25x19",964698011440,"Brazil","None",4.6,530,33.69
+773531,"Chips","Household","BrandA","500g",39.22,327,70,"Aisle 3","Yes","No","Supplier5","2024-12-21",42,2.8,"Yes","Yes",4610,"34x25x9",534341311930,"Canada","Nuts",1.9,676,30.39
+294880,"Chips","Meat","BrandB","1kg",31.42,103,69,"Produce Section","Yes","Yes","Supplier2","2024-05-26",363,2.94,"No","No",3277,"40x26x20",443973404937,"China","Dairy",1.7,856,25.38
+145395,"Tea","Household","BrandA","1L",21.45,257,25,"Produce Section","No","No","Supplier15","2024-07-22",272,2.56,"No","No",4239,"50x38x15",569431133784,"Canada","Soy",1.8,24,19.51
+845393,"Croissant","Snacks","BrandB","500g",15.93,128,29,"Refrigerated","No","No","Supplier15","2024-04-03",48,2.91,"Yes","Yes",1114,"13x26x8",701907599975,"China","Soy",4.5,50,13.71
+703236,"Salmon Fillet","Frozen","BrandB","6-pack",37.02,233,17,"Freezer","No","No","Supplier5","2024-07-29",121,1.72,"Yes","Yes",1086,"24x30x18",332263181894,"Brazil","Soy",1.5,769,26.85
+299911,"Chips","Frozen","BrandE","12-pack",1.28,136,78,"Aisle 1","No","Yes","Supplier6","2024-06-28",261,1.35,"Yes","Yes",4633,"50x49x19",554031268519,"India","Dairy",4.0,642,1.13
+728428,"Chicken Breast","Seafood","BrandA","12-pack",10.54,412,58,"Aisle 2","No","No","Supplier18","2024-07-31",192,2.05,"Yes","No",3846,"22x48x9",230876730279,"Mexico","Nuts",1.0,217,8.54
+369720,"Milk","Beverages","BrandD","6-pack",1.52,325,49,"Freezer","Yes","No","Supplier14","2024-09-17",336,3.61,"No","No",738,"35x15x20",417645750864,"USA","Soy",1.5,313,1.1
+268610,"Chicken Breast","Seafood","BrandD","6-pack",33.21,275,10,"Freezer","No","Yes","Supplier7","2024-07-22",180,2.66,"Yes","No",3367,"10x27x10",569725453360,"USA","Gluten",2.6,481,25.04
+513826,"Milk","Frozen","BrandA","250ml",10.19,216,66,"Aisle 2","Yes","Yes","Supplier19","2024-08-17",105,1.65,"No","No",3018,"42x11x17",702480996592,"Canada","Dairy",1.2,328,7.59
+555019,"Carrots","Frozen","BrandE","6-pack",2.36,64,94,"Aisle 3","No","No","Supplier16","2024-11-30",104,4.68,"No","No",2044,"14x19x19",786232930874,"Brazil","Nuts",4.0,758,1.97
+707131,"Canned Beans","Snacks","BrandB","12-pack",33.73,7,44,"Produce Section","No","Yes","Supplier14","2024-10-10",44,4.07,"Yes","Yes",4197,"42x24x11",373220165485,"USA","None",4.2,354,23.76
+665825,"Paper Towels","Household","BrandD","250ml",14.43,436,84,"Produce Section","No","No","Supplier17","2024-04-25",365,1.75,"Yes","No",1705,"19x12x9",258886481499,"Canada","Dairy",4.5,420,10.93
+478811,"Salmon Fillet","Meat","BrandA","250ml",1.37,223,93,"Aisle 1","Yes","Yes","Supplier18","2024-08-29",59,4.43,"No","No",4872,"32x25x5",432096293951,"Mexico","Soy",4.2,180,0.99
+474398,"Chicken Breast","Produce","BrandA","1L",45.61,48,100,"Produce Section","No","No","Supplier1","2024-05-17",242,1.28,"Yes","No",4609,"37x20x18",879170471576,"India","Soy",4.0,97,39.42
+698952,"Tea","Snacks","BrandD","750g",15.94,300,61,"Aisle 1","No","Yes","Supplier6","2024-06-07",261,4.66,"Yes","No",1551,"32x39x10",860754095831,"USA","Soy",2.0,551,13.24
+290200,"Ground Beef","Bakery","BrandE","1L",30.83,373,76,"Aisle 3","No","No","Supplier16","2024-02-29",48,3.22,"Yes","Yes",2700,"15x47x5",698256191399,"Brazil","Gluten",1.9,280,25.7
+112282,"Carrots","Dairy","BrandC","1kg",28.38,233,91,"Produce Section","No","Yes","Supplier13","2024-04-18",266,4.71,"Yes","Yes",2812,"29x13x8",976598172708,"India","Dairy",3.5,351,20.37
+131726,"Pasta","Bakery","BrandC","2L",42.3,385,64,"Aisle 2","No","No","Supplier6","2024-10-30",316,1.41,"Yes","No",3381,"27x21x19",879008044208,"Canada","Soy",1.4,706,29.98
+286539,"Pasta","Snacks","BrandD","12-pack",36.17,137,24,"Aisle 2","Yes","Yes","Supplier18","2024-05-18",68,1.1,"Yes","Yes",1393,"40x20x15",538158348210,"USA","Gluten",4.3,291,30.26
+921614,"Bread","Seafood","BrandD","2L",18.41,296,14,"Aisle 2","Yes","No","Supplier7","2024-11-21",206,1.18,"Yes","Yes",1274,"41x48x6",950832230726,"Canada","Soy",3.9,774,15.21
+563419,"Salmon Fillet","Seafood","BrandC","12-pack",9.88,323,22,"Produce Section","Yes","Yes","Supplier17","2024-02-09",272,2.82,"Yes","Yes",4086,"32x31x20",476442529814,"Brazil","Soy",1.6,482,7.08
+551092,"Frozen Pizza","Dairy","BrandA","500g",27.8,341,49,"Refrigerated","No","No","Supplier7","2024-02-28",120,3.95,"Yes","Yes",3684,"46x35x10",869646794031,"India","Nuts",1.4,987,25.89
+721711,"Ground Beef","Snacks","BrandA","6-pack",22.43,471,46,"Produce Section","Yes","No","Supplier11","2024-10-28",93,4.27,"No","Yes",359,"42x16x17",464798355779,"USA","Gluten",4.6,191,17.06
+340932,"Croissant","Seafood","BrandD","1L",43.51,118,75,"Aisle 1","Yes","No","Supplier7","2024-09-27",339,3.35,"No","Yes",4170,"25x23x10",476326261328,"Brazil","Nuts",3.1,290,33.0
+328054,"Apples","Produce","BrandD","500g",39.75,77,73,"Aisle 2","No","No","Supplier1","2024-07-01",227,4.24,"Yes","Yes",4368,"15x45x20",683205292088,"India","Soy",3.0,50,32.34
+527642,"Ice Cream","Bakery","BrandC","500g",37.37,139,41,"Aisle 3","No","No","Supplier14","2024-04-29",33,4.06,"No","Yes",846,"29x17x7",498395691358,"India","Gluten",3.5,378,29.32
+981578,"Chicken Breast","Household","BrandA","6-pack",45.83,219,19,"Refrigerated","No","No","Supplier8","2024-12-07",314,4.45,"Yes","Yes",475,"27x14x18",667070015390,"USA","Gluten",1.8,181,34.47
+268594,"Cola","Beverages","BrandB","1kg",47.14,235,97,"Refrigerated","Yes","Yes","Supplier5","2024-07-02",172,2.95,"Yes","No",1117,"20x26x11",184841951922,"India","Nuts",1.7,449,42.64
+359196,"Canned Beans","Household","BrandE","500g",32.96,498,82,"Aisle 2","No","Yes","Supplier19","2024-08-23",307,4.35,"Yes","No",776,"35x43x13",237357585623,"China","Dairy",2.6,294,28.83
+421607,"Frozen Pizza","Household","BrandB","12-pack",24.83,68,95,"Aisle 2","No","No","Supplier13","2024-09-30",350,4.14,"Yes","Yes",828,"47x13x16",598794179531,"Canada","None",2.5,93,20.96
+856046,"Milk","Frozen","BrandE","6-pack",19.84,72,18,"Aisle 1","Yes","Yes","Supplier11","2024-11-09",192,4.62,"No","No",2972,"41x24x19",722989891037,"USA","Nuts",2.2,449,16.15
+933085,"Tea","Household","BrandB","250ml",49.39,140,64,"Aisle 3","Yes","Yes","Supplier19","2024-09-01",360,1.94,"Yes","Yes",572,"48x46x14",593075847652,"Brazil","None",1.4,551,43.69
+257237,"Canned Beans","Household","BrandC","12-pack",20.77,408,38,"Refrigerated","No","Yes","Supplier2","2024-10-07",283,1.42,"No","Yes",4972,"22x19x13",453419455023,"India","Dairy",2.0,903,19.15
+162776,"Shrimp","Meat","BrandD","500g",41.91,341,21,"Aisle 2","No","No","Supplier8","2024-12-10",93,4.59,"No","Yes",3188,"18x18x9",178492275973,"India","None",1.4,358,39.05
+709658,"Chicken Breast","Beverages","BrandE","500g",48.46,400,86,"Refrigerated","No","Yes","Supplier15","2024-06-06",92,1.59,"Yes","Yes",4411,"42x42x8",386614216603,"Mexico","Soy",2.4,313,36.51
+296524,"Frozen Pizza","Beverages","BrandA","250ml",20.16,57,57,"Freezer","Yes","Yes","Supplier1","2024-10-11",49,1.23,"No","No",964,"32x20x17",768393069327,"Canada","Gluten",1.1,499,14.39
+692641,"Ice Cream","Beverages","BrandB","2L",7.65,357,97,"Refrigerated","No","No","Supplier15","2024-02-21",83,3.66,"No","Yes",1558,"12x13x12",210871648429,"Brazil","Gluten",1.7,978,6.66
+598603,"Croissant","Meat","BrandC","750g",25.11,426,69,"Aisle 1","No","Yes","Supplier17","2024-01-05",239,4.88,"Yes","Yes",705,"10x26x14",502142963599,"China","Nuts",4.8,74,23.3
+661581,"Pasta","Dairy","BrandB","1kg",41.01,77,75,"Aisle 1","No","No","Supplier13","2024-08-22",257,4.38,"No","Yes",1760,"13x47x9",551598470477,"Canada","Soy",4.7,183,30.62
+623567,"Croissant","Pantry","BrandE","1kg",29.24,143,18,"Produce Section","Yes","Yes","Supplier16","2024-12-02",322,4.08,"Yes","No",284,"19x32x12",576721771650,"Brazil","Nuts",2.2,443,23.98
+698414,"Croissant","Beverages","BrandE","6-pack",41.17,353,97,"Aisle 3","Yes","Yes","Supplier7","2024-04-26",100,4.38,"Yes","No",1565,"13x13x11",184695722941,"Brazil","Soy",3.6,908,33.53
+913044,"Carrots","Frozen","BrandE","12-pack",13.31,139,67,"Aisle 2","Yes","Yes","Supplier18","2024-11-13",245,4.51,"Yes","No",1341,"24x49x15",459727514302,"USA","Gluten",4.4,581,12.34
+986940,"Chicken Breast","Meat","BrandC","1L",19.97,409,51,"Produce Section","No","Yes","Supplier8","2024-12-17",349,1.14,"No","No",2137,"44x45x18",959193674952,"Canada","None",4.7,287,16.37
+897416,"Salmon Fillet","Beverages","BrandB","6-pack",40.81,467,65,"Aisle 3","No","No","Supplier12","2024-11-18",160,2.68,"Yes","No",1672,"42x11x19",696953256854,"USA","None",2.7,913,29.55
+945468,"Paper Towels","Dairy","BrandC","6-pack",36.67,289,63,"Aisle 1","No","No","Supplier8","2024-09-15",117,3.91,"Yes","No",3882,"28x16x5",501347229720,"Mexico","Nuts",3.9,901,34.31
+248281,"Apples","Pantry","BrandC","750g",40.04,226,78,"Aisle 3","No","No","Supplier13","2024-03-22",30,4.16,"Yes","Yes",517,"44x23x13",689336363345,"Canada","Dairy",5.0,171,30.57
+279532,"Frozen Pizza","Beverages","BrandA","250ml",16.03,391,86,"Aisle 2","No","No","Supplier6","2024-09-21",354,3.29,"Yes","Yes",4992,"50x20x17",694682061890,"Brazil","Dairy",2.3,160,13.0
+538340,"Canned Beans","Produce","BrandC","6-pack",37.07,0,22,"Aisle 1","No","Yes","Supplier15","2024-07-07",91,4.35,"Yes","Yes",2147,"36x42x19",791938175393,"India","None",3.1,322,33.09
+642210,"Shrimp","Beverages","BrandD","750g",26.13,3,99,"Aisle 1","No","No","Supplier19","2024-08-10",38,4.81,"Yes","Yes",1884,"22x15x14",583303870461,"India","Nuts",4.9,823,19.47
+652572,"Canned Beans","Dairy","BrandB","500g",21.93,122,42,"Aisle 1","No","No","Supplier13","2024-07-26",207,1.88,"Yes","No",4465,"13x35x8",696815444315,"India","None",4.2,370,19.79
+424523,"Milk","Pantry","BrandA","1L",6.54,200,13,"Refrigerated","No","No","Supplier4","2024-10-14",92,1.85,"Yes","Yes",3937,"23x48x19",959485548816,"Brazil","Dairy",1.2,370,4.85
+882990,"Chips","Snacks","BrandA","750g",5.86,13,38,"Produce Section","Yes","Yes","Supplier11","2024-03-10",199,2.47,"Yes","No",3332,"30x33x11",881655183761,"Mexico","None",1.7,826,5.06
+426400,"Canned Beans","Produce","BrandB","1L",10.1,17,53,"Produce Section","No","Yes","Supplier9","2024-04-13",201,3.34,"No","Yes",2519,"19x33x6",586229315265,"Brazil","Gluten",2.3,699,9.38
+550657,"Paper Towels","Household","BrandA","1kg",4.0,170,60,"Refrigerated","Yes","Yes","Supplier10","2024-10-08",110,2.43,"Yes","Yes",4862,"13x34x5",348310967361,"USA","Nuts",1.4,896,3.5
+132600,"Paper Towels","Frozen","BrandD","6-pack",18.49,155,61,"Aisle 1","No","No","Supplier2","2024-12-03",110,1.45,"No","Yes",3519,"34x32x12",993394643690,"China","Nuts",3.7,347,13.78
+241001,"Ice Cream","Frozen","BrandE","500g",41.65,343,60,"Aisle 3","Yes","No","Supplier5","2024-12-15",58,2.17,"Yes","No",4610,"40x13x11",604194246224,"India","Nuts",2.7,567,38.31
+805546,"Canned Beans","Dairy","BrandB","6-pack",27.1,457,57,"Refrigerated","No","Yes","Supplier8","2024-03-18",266,3.05,"Yes","Yes",2675,"44x13x15",322017758446,"Canada","Dairy",2.5,15,19.74
+885479,"Chips","Snacks","BrandE","1kg",7.61,370,36,"Freezer","Yes","Yes","Supplier5","2024-11-29",29,2.86,"Yes","No",283,"38x11x12",398860828453,"Canada","Gluten",4.1,882,5.33
+360965,"Apples","Beverages","BrandD","12-pack",9.94,224,35,"Aisle 2","No","Yes","Supplier5","2024-02-12",292,1.34,"Yes","Yes",1706,"16x41x7",517972281970,"USA","None",3.7,319,9.01
+704713,"Cookies","Dairy","BrandC","1L",17.29,341,88,"Aisle 3","Yes","Yes","Supplier9","2024-09-04",324,2.74,"No","Yes",435,"25x42x5",397783615992,"USA","Dairy",2.0,302,15.55
+690122,"Salmon Fillet","Seafood","BrandB","1kg",35.36,49,56,"Refrigerated","No","Yes","Supplier1","2024-01-04",148,1.32,"No","No",3197,"21x21x11",927434020852,"India","None",4.1,283,29.91
+643808,"Bread","Beverages","BrandD","6-pack",47.12,269,62,"Produce Section","Yes","Yes","Supplier20","2024-11-10",259,2.11,"Yes","Yes",1577,"38x29x20",411375345875,"Brazil","None",3.9,620,37.07
+241963,"Ground Beef","Dairy","BrandC","1L",26.57,58,43,"Produce Section","Yes","Yes","Supplier19","2024-07-03",316,1.34,"No","No",3457,"22x41x18",238549175004,"Mexico","None",4.2,76,23.6
+805443,"Cookies","Meat","BrandA","12-pack",42.52,399,90,"Freezer","Yes","Yes","Supplier6","2024-11-25",228,3.29,"No","Yes",2149,"49x43x11",570663744313,"India","None",2.5,174,37.11
+204660,"Milk","Meat","BrandC","250ml",41.08,24,73,"Refrigerated","No","Yes","Supplier8","2024-02-08",65,1.94,"Yes","Yes",3267,"49x41x18",588431201685,"Mexico","Dairy",4.8,350,29.68
+693287,"Milk","Snacks","BrandB","500g",42.83,491,78,"Aisle 3","No","Yes","Supplier3","2024-03-24",209,3.32,"No","No",4212,"24x37x20",588210706936,"Canada","Gluten",1.4,119,37.75
+548744,"Chicken Breast","Pantry","BrandC","6-pack",24.86,307,39,"Aisle 3","No","No","Supplier17","2024-10-31",157,4.97,"Yes","Yes",757,"18x44x19",774225063831,"USA","Gluten",1.7,767,20.91
+971040,"Paper Towels","Bakery","BrandD","1kg",28.19,232,89,"Freezer","No","No","Supplier20","2024-12-30",81,3.96,"Yes","Yes",4355,"33x37x17",587566013494,"China","Soy",2.7,865,22.79
+198035,"Chips","Beverages","BrandB","1L",38.8,12,95,"Aisle 1","No","Yes","Supplier17","2024-03-20",21,2.84,"No","Yes",3134,"47x36x11",480482635568,"Canada","Nuts",3.8,403,31.22
+347272,"Tea","Meat","BrandD","6-pack",23.71,92,92,"Produce Section","No","No","Supplier9","2024-02-10",330,2.05,"Yes","No",4155,"22x25x8",400352611023,"Brazil","None",3.4,810,17.34
+167413,"Ice Cream","Bakery","BrandC","1L",30.09,299,90,"Aisle 3","No","No","Supplier14","2024-02-11",52,2.45,"No","Yes",4016,"47x22x18",783623505304,"Canada","Dairy",1.4,578,23.21
+655301,"Croissant","Pantry","BrandD","250ml",3.62,132,35,"Aisle 1","No","No","Supplier9","2024-05-18",12,1.71,"Yes","No",2344,"46x20x16",572699977578,"China","Soy",2.6,67,3.2
+485495,"Salmon Fillet","Dairy","BrandA","1kg",38.2,418,48,"Aisle 2","No","No","Supplier19","2024-10-03",346,4.34,"No","Yes",1105,"45x26x5",335478232027,"India","Nuts",1.3,548,28.24
+793075,"Milk","Produce","BrandD","500g",8.39,158,58,"Aisle 1","No","Yes","Supplier2","2024-03-12",240,2.35,"Yes","No",4201,"28x12x16",132208392053,"USA","Gluten",1.6,299,7.92
+401615,"Milk","Dairy","BrandE","1L",16.08,406,98,"Produce Section","No","Yes","Supplier9","2024-04-29",91,1.55,"No","Yes",4518,"45x46x8",840891840678,"Canada","Soy",4.4,585,11.55
+238605,"Chips","Bakery","BrandA","6-pack",45.38,401,15,"Aisle 3","Yes","Yes","Supplier9","2024-09-08",14,3.55,"Yes","No",3898,"39x34x5",959086334972,"Mexico","Gluten",4.3,435,36.92
+788777,"Shrimp","Household","BrandC","2L",13.15,398,92,"Refrigerated","No","No","Supplier16","2024-11-03",117,3.46,"Yes","Yes",4212,"20x14x10",158056522502,"India","None",3.4,0,10.14
+498156,"Cola","Frozen","BrandC","2L",7.9,208,18,"Aisle 2","Yes","No","Supplier16","2024-05-17",121,4.71,"Yes","Yes",568,"29x40x9",140694878022,"Mexico","Soy",2.9,953,7.19
+712737,"Canned Beans","Meat","BrandA","500g",37.36,99,59,"Aisle 2","Yes","Yes","Supplier7","2024-06-04",231,3.53,"No","Yes",3029,"34x37x13",734974614563,"USA","Nuts",1.0,767,30.98
+639509,"Laundry Detergent","Produce","BrandC","1L",42.42,183,17,"Freezer","No","No","Supplier9","2024-09-02",115,2.99,"Yes","No",108,"27x18x14",873721142309,"India","Dairy",2.7,193,30.05
+723032,"Ground Beef","Bakery","BrandA","250ml",31.66,358,11,"Refrigerated","Yes","Yes","Supplier6","2024-08-27",306,4.64,"No","No",704,"24x15x5",449747688897,"Brazil","Gluten",4.1,148,23.32
+389383,"Bread","Snacks","BrandE","250ml",15.44,346,14,"Aisle 1","Yes","No","Supplier15","2024-01-21",327,3.35,"Yes","Yes",3807,"44x36x10",125760255440,"Canada","Soy",2.4,652,12.38
+723065,"Croissant","Household","BrandC","12-pack",25.23,287,99,"Aisle 2","No","Yes","Supplier8","2024-03-09",226,4.02,"No","No",2197,"34x47x16",210884410898,"Brazil","None",2.8,647,18.0
+798837,"Tea","Dairy","BrandC","2L",2.21,396,48,"Aisle 1","No","No","Supplier16","2024-04-02",220,4.42,"No","Yes",198,"16x37x10",849695350260,"India","Soy",2.2,842,1.68
+626806,"Cola","Seafood","BrandB","6-pack",36.87,80,70,"Aisle 2","No","Yes","Supplier2","2024-02-16",288,1.39,"Yes","No",1228,"36x12x18",891529102242,"Mexico","Soy",3.7,95,34.28
+209568,"Cookies","Household","BrandC","12-pack",15.5,127,32,"Aisle 3","Yes","Yes","Supplier16","2024-06-27",317,2.03,"Yes","Yes",4143,"45x12x20",559291236463,"India","Nuts",4.3,194,12.67
+491563,"Chips","Snacks","BrandA","2L",4.17,188,28,"Refrigerated","Yes","No","Supplier16","2024-10-23",225,2.99,"Yes","No",1829,"30x15x20",179523612857,"USA","Gluten",4.1,845,3.32
+571784,"Cheese","Bakery","BrandD","12-pack",35.42,54,39,"Aisle 2","Yes","Yes","Supplier18","2024-05-09",238,3.82,"No","Yes",1806,"39x50x18",632760629593,"USA","None",1.4,214,28.12
+493852,"Paper Towels","Seafood","BrandB","1L",38.01,260,48,"Refrigerated","Yes","Yes","Supplier20","2024-10-04",352,4.53,"Yes","Yes",1462,"12x35x10",959780326310,"Canada","Soy",2.1,655,36.05
+691733,"Bread","Frozen","BrandA","1L",48.25,446,88,"Aisle 3","Yes","No","Supplier13","2024-03-16",80,4.71,"Yes","Yes",3064,"40x16x13",184484793789,"Canada","None",3.6,197,37.75
+974478,"Chips","Dairy","BrandD","6-pack",43.92,1,81,"Aisle 1","Yes","Yes","Supplier20","2024-02-19",147,1.16,"No","No",3718,"32x19x16",598857285464,"Mexico","Nuts",2.9,235,34.76
+191249,"Canned Beans","Frozen","BrandE","500g",46.32,270,14,"Refrigerated","Yes","Yes","Supplier7","2024-11-15",219,3.41,"Yes","Yes",3324,"14x19x10",305725601548,"India","Dairy",3.7,207,39.01
+148403,"Pasta","Household","BrandC","1kg",18.01,337,42,"Aisle 2","No","No","Supplier12","2024-03-18",80,3.26,"Yes","No",137,"40x47x19",224170686844,"China","Soy",2.1,686,13.16
+982472,"Salmon Fillet","Beverages","BrandA","750g",13.26,151,66,"Aisle 2","No","Yes","Supplier18","2024-12-21",159,2.62,"Yes","No",185,"14x22x16",717563599512,"Mexico","Nuts",4.0,734,12.39
+828223,"Tea","Seafood","BrandE","1kg",39.47,460,44,"Produce Section","No","No","Supplier15","2024-11-07",214,4.21,"Yes","No",2997,"19x38x6",778633996466,"China","Gluten",5.0,548,37.34
+518054,"Apples","Produce","BrandD","1kg",36.2,274,59,"Refrigerated","Yes","No","Supplier14","2024-10-11",54,3.35,"Yes","No",4339,"25x44x20",461372764090,"Canada","Nuts",3.8,927,30.31
+169578,"Pasta","Produce","BrandB","750g",18.58,277,55,"Freezer","No","Yes","Supplier6","2024-06-08",297,3.3,"Yes","No",1061,"40x18x7",219616304241,"Canada","Dairy",4.0,442,17.51
+819714,"Cola","Frozen","BrandE","6-pack",30.13,407,47,"Refrigerated","No","Yes","Supplier15","2024-01-08",62,3.86,"No","No",2135,"10x33x16",208697266561,"China","Gluten",4.9,737,25.31
+867645,"Milk","Produce","BrandD","6-pack",49.41,200,70,"Produce Section","Yes","Yes","Supplier13","2024-02-01",8,2.65,"No","No",1639,"11x11x5",606739717181,"Brazil","Nuts",3.2,605,36.75
+821601,"Cookies","Snacks","BrandA","250ml",27.67,403,79,"Refrigerated","Yes","No","Supplier16","2024-05-16",262,2.7,"Yes","No",4644,"13x12x9",443736037723,"USA","None",3.4,978,25.46
+167454,"Chips","Frozen","BrandD","750g",46.58,18,55,"Refrigerated","No","Yes","Supplier4","2024-01-12",354,2.0,"No","No",898,"49x13x7",854098726010,"India","None",1.9,626,36.06
+432146,"Bread","Household","BrandB","1kg",32.81,77,72,"Freezer","No","Yes","Supplier16","2024-01-16",253,4.84,"Yes","No",3421,"37x26x20",758346689331,"China","None",4.0,723,27.98
+329379,"Tea","Frozen","BrandA","6-pack",9.16,40,21,"Refrigerated","Yes","No","Supplier11","2024-09-06",258,4.43,"No","No",2168,"38x14x16",766223744585,"Brazil","None",1.4,808,8.64
+624020,"Cola","Bakery","BrandA","1L",10.52,360,97,"Aisle 1","Yes","No","Supplier17","2024-04-19",83,4.87,"Yes","Yes",825,"48x29x9",416000602112,"Mexico","None",1.1,745,9.46
+485291,"Chips","Seafood","BrandB","250ml",1.4,139,37,"Refrigerated","Yes","Yes","Supplier8","2024-07-30",271,4.88,"No","Yes",4898,"30x50x19",158997571641,"India","Soy",2.9,845,1.01
+862727,"Ice Cream","Seafood","BrandE","1L",10.28,250,45,"Aisle 2","Yes","No","Supplier18","2024-10-03",213,3.23,"No","No",1837,"19x39x16",649732847147,"Brazil","None",4.6,347,7.3
+756288,"Cola","Frozen","BrandC","6-pack",4.72,151,76,"Aisle 3","Yes","No","Supplier13","2024-04-11",273,4.99,"Yes","Yes",2361,"32x25x11",410718781516,"Brazil","Gluten",2.0,826,3.94
+463299,"Shrimp","Pantry","BrandB","2L",1.5,462,76,"Refrigerated","Yes","No","Supplier19","2024-07-26",302,4.2,"No","No",4281,"24x12x14",833783195074,"Mexico","Dairy",2.0,392,1.3
+615031,"Chips","Household","BrandB","250ml",2.73,335,34,"Aisle 1","No","No","Supplier1","2024-02-01",299,4.7,"Yes","Yes",4335,"47x30x16",300174969987,"Mexico","Dairy",1.1,218,2.42
+746636,"Frozen Pizza","Produce","BrandE","750g",3.95,146,77,"Freezer","No","No","Supplier7","2024-12-20",76,1.03,"No","No",4740,"34x33x17",895531794412,"Mexico","Nuts",4.4,474,3.1
+981993,"Croissant","Beverages","BrandC","250ml",43.81,269,31,"Freezer","No","Yes","Supplier17","2024-05-17",275,1.24,"No","No",2010,"27x14x19",441017770015,"India","None",4.3,155,34.01
+463316,"Salmon Fillet","Meat","BrandD","2L",36.67,459,95,"Aisle 1","Yes","No","Supplier20","2024-01-24",88,4.91,"Yes","No",1911,"41x17x13",725947402896,"Canada","Gluten",3.9,137,33.81
+661294,"Laundry Detergent","Frozen","BrandD","2L",22.36,325,28,"Refrigerated","Yes","Yes","Supplier8","2024-09-21",108,2.06,"No","Yes",1032,"20x39x20",447070283173,"Brazil","Nuts",3.1,543,18.99
+910553,"Apples","Seafood","BrandD","12-pack",41.02,312,55,"Produce Section","No","Yes","Supplier10","2024-11-28",337,3.81,"No","Yes",4793,"17x41x6",766098159851,"Canada","Soy",3.5,954,37.49
+301267,"Chicken Breast","Snacks","BrandE","250ml",46.24,454,63,"Aisle 2","No","No","Supplier10","2024-03-05",177,2.36,"No","No",4664,"45x29x20",395422213094,"Mexico","Dairy",3.3,793,39.88
+842867,"Laundry Detergent","Dairy","BrandA","6-pack",20.44,230,91,"Aisle 1","Yes","Yes","Supplier7","2024-03-10",118,2.77,"No","Yes",3364,"18x14x19",367702196937,"Brazil","Gluten",4.3,488,17.12
+763081,"Cookies","Beverages","BrandE","1kg",45.77,383,38,"Produce Section","No","Yes","Supplier20","2024-02-07",321,1.47,"Yes","No",2864,"50x36x18",817255873542,"India","Soy",4.1,217,38.52
+997510,"Milk","Seafood","BrandA","750g",18.6,163,94,"Aisle 3","No","Yes","Supplier6","2024-02-09",78,3.88,"Yes","Yes",3706,"19x28x16",621372507923,"USA","Nuts",2.3,976,17.31
+457522,"Canned Beans","Snacks","BrandE","250ml",33.8,437,45,"Aisle 1","No","No","Supplier7","2024-12-16",272,1.48,"Yes","Yes",4487,"48x10x15",919265620869,"India","Nuts",3.3,38,28.41
+644326,"Chicken Breast","Frozen","BrandC","250ml",9.14,135,85,"Refrigerated","Yes","No","Supplier6","2024-05-02",242,2.38,"Yes","Yes",2487,"13x20x12",665936160781,"Brazil","Gluten",3.5,54,7.25
+891433,"Salmon Fillet","Household","BrandB","2L",19.67,344,70,"Freezer","No","Yes","Supplier9","2024-02-11",5,4.66,"No","Yes",3187,"22x21x16",887294946204,"Canada","Soy",5.0,188,14.18
+547758,"Croissant","Beverages","BrandE","12-pack",40.91,258,45,"Refrigerated","Yes","Yes","Supplier13","2024-03-16",295,3.67,"No","Yes",1571,"25x11x6",769517719424,"China","Nuts",2.2,873,30.95
+195489,"Milk","Bakery","BrandC","750g",2.84,347,59,"Aisle 1","No","Yes","Supplier19","2024-12-08",45,4.05,"No","No",579,"39x11x7",231242573316,"China","Soy",1.5,505,2.02
+152284,"Apples","Bakery","BrandA","750g",34.21,32,60,"Aisle 3","No","Yes","Supplier7","2024-12-06",95,4.83,"No","No",1883,"49x32x19",340266614024,"China","Dairy",3.9,618,26.64
+221614,"Salmon Fillet","Frozen","BrandC","6-pack",12.86,484,75,"Aisle 2","Yes","Yes","Supplier10","2024-08-11",68,1.8,"Yes","No",2510,"50x32x18",818430763023,"Canada","Soy",3.5,551,11.49
+190362,"Cola","Pantry","BrandC","12-pack",46.43,14,90,"Aisle 2","No","No","Supplier20","2024-04-20",307,2.92,"No","Yes",309,"26x16x18",186742800868,"China","Nuts",2.8,300,40.52
+721256,"Milk","Seafood","BrandB","1kg",3.54,284,34,"Aisle 3","No","Yes","Supplier20","2024-09-07",260,3.21,"No","Yes",3105,"41x37x16",338249972030,"USA","Soy",3.1,837,2.74
+776876,"Cola","Frozen","BrandB","500g",17.71,91,96,"Freezer","Yes","No","Supplier4","2024-02-15",27,1.7,"No","Yes",2491,"34x36x15",272663354438,"Mexico","None",3.8,876,14.29
+721724,"Tea","Seafood","BrandC","12-pack",1.13,3,87,"Produce Section","Yes","Yes","Supplier5","2024-10-12",131,2.16,"Yes","Yes",3155,"11x17x14",214623904899,"China","Dairy",3.8,245,0.99
+351970,"Shrimp","Pantry","BrandE","250ml",15.52,48,55,"Aisle 2","No","Yes","Supplier15","2024-12-12",90,1.32,"No","No",786,"42x26x6",547126457319,"USA","Gluten",4.8,143,10.93
+778783,"Chips","Pantry","BrandC","500g",30.07,440,19,"Aisle 3","No","Yes","Supplier8","2024-06-16",115,1.5,"No","Yes",887,"17x39x19",666619495341,"India","Soy",3.0,652,22.71
+413432,"Croissant","Pantry","BrandC","2L",35.26,497,71,"Freezer","No","No","Supplier5","2024-03-11",198,4.18,"Yes","No",2988,"36x14x7",821159127753,"Mexico","Nuts",2.6,911,33.21
+415422,"Ice Cream","Frozen","BrandB","250ml",8.02,179,39,"Aisle 3","No","Yes","Supplier14","2024-10-11",14,1.05,"No","No",3222,"41x36x20",822514579131,"USA","Dairy",3.8,556,6.19
+955372,"Chicken Breast","Beverages","BrandA","250ml",24.96,333,37,"Freezer","No","No","Supplier2","2024-12-24",217,2.99,"No","No",2256,"18x44x19",595785772804,"Canada","Gluten",1.9,798,17.96
+253449,"Pasta","Snacks","BrandA","750g",37.93,354,74,"Aisle 1","No","No","Supplier17","2024-11-04",108,2.28,"No","No",2858,"24x49x7",250261614955,"Mexico","Soy",3.5,863,34.15
+739621,"Chicken Breast","Beverages","BrandE","2L",47.61,128,18,"Refrigerated","Yes","Yes","Supplier14","2024-07-14",14,4.52,"Yes","Yes",638,"34x12x8",728436513678,"China","None",1.3,78,38.3
+758738,"Chicken Breast","Household","BrandC","250ml",3.37,188,98,"Aisle 1","Yes","No","Supplier1","2024-12-18",168,2.56,"No","Yes",2018,"15x30x10",339942894394,"USA","Gluten",1.6,472,2.92
+687519,"Milk","Bakery","BrandD","12-pack",7.66,163,34,"Refrigerated","No","No","Supplier2","2024-08-01",143,3.06,"Yes","No",1042,"40x26x8",183459673452,"Mexico","Gluten",2.4,921,6.78
+966864,"Laundry Detergent","Meat","BrandB","1L",21.22,345,24,"Aisle 1","Yes","Yes","Supplier19","2024-10-12",143,3.57,"Yes","No",4423,"26x35x17",450308253626,"USA","Dairy",3.7,514,16.02
+820701,"Chicken Breast","Household","BrandA","500g",43.12,415,46,"Produce Section","No","Yes","Supplier16","2024-07-05",251,1.31,"Yes","Yes",425,"21x11x5",728911231793,"China","Dairy",1.7,604,39.12
+448328,"Salmon Fillet","Seafood","BrandB","750g",42.49,136,23,"Refrigerated","No","No","Supplier2","2024-01-24",227,4.55,"No","Yes",2006,"42x31x19",804364268078,"Mexico","None",2.7,626,34.79
+396414,"Paper Towels","Bakery","BrandC","1kg",39.46,258,21,"Aisle 2","Yes","No","Supplier10","2024-02-22",212,4.25,"Yes","Yes",2046,"42x38x16",413949366769,"USA","Gluten",3.5,289,35.97
+682964,"Cola","Snacks","BrandD","1L",11.1,123,66,"Aisle 2","Yes","Yes","Supplier17","2024-01-29",335,3.4,"No","Yes",3461,"44x15x11",226990865479,"USA","Gluten",2.2,112,9.07
+552969,"Cola","Bakery","BrandB","250ml",33.63,124,66,"Aisle 3","No","Yes","Supplier20","2024-11-14",26,2.53,"No","Yes",1144,"12x46x9",265211612910,"China","Soy",2.9,771,25.32
+939834,"Salmon Fillet","Dairy","BrandD","1kg",46.04,196,99,"Aisle 3","Yes","No","Supplier17","2024-05-28",203,2.49,"No","Yes",2776,"18x40x17",359334453178,"Canada","Dairy",2.2,742,37.76
+104509,"Chicken Breast","Dairy","BrandC","2L",26.33,16,73,"Refrigerated","Yes","No","Supplier11","2024-04-25",194,4.57,"No","Yes",1844,"49x45x14",753859354434,"Mexico","Gluten",2.0,305,19.43
+633810,"Chips","Seafood","BrandE","750g",23.91,342,90,"Aisle 1","Yes","Yes","Supplier5","2024-02-17",109,2.3,"No","No",3566,"30x30x12",851233951826,"India","None",1.9,679,21.13
+440527,"Pasta","Dairy","BrandE","1kg",43.19,214,79,"Aisle 1","No","Yes","Supplier19","2024-10-28",240,3.99,"Yes","Yes",2265,"40x48x8",619121328037,"Brazil","Soy",2.3,465,38.69
+691688,"Frozen Pizza","Meat","BrandE","12-pack",32.0,153,48,"Aisle 1","Yes","No","Supplier18","2024-07-14",161,3.09,"Yes","Yes",1425,"36x49x7",198806280767,"Canada","Gluten",3.7,296,25.46
+361306,"Cookies","Meat","BrandD","500g",4.64,19,10,"Freezer","Yes","No","Supplier16","2024-02-08",49,1.08,"No","Yes",2026,"22x46x18",492259957463,"Canada","None",4.7,246,3.54
+823981,"Cheese","Household","BrandE","12-pack",32.33,403,65,"Aisle 3","No","Yes","Supplier2","2024-06-30",206,4.03,"No","No",4068,"40x45x7",563705951696,"Mexico","Nuts",1.8,314,22.97
+770806,"Pasta","Seafood","BrandC","1L",34.32,273,77,"Aisle 1","Yes","No","Supplier11","2024-09-11",23,3.07,"Yes","No",4351,"15x23x19",817173737725,"Brazil","Nuts",1.2,375,31.99
+897805,"Chips","Dairy","BrandB","750g",3.73,287,12,"Aisle 1","Yes","No","Supplier18","2024-08-14",260,2.55,"Yes","Yes",4346,"24x25x6",378514229985,"Mexico","Nuts",4.8,253,2.63
+656524,"Tea","Snacks","BrandA","1kg",25.31,362,47,"Aisle 2","No","No","Supplier13","2024-08-18",27,3.58,"No","No",526,"36x32x8",300077329744,"Mexico","Gluten",1.6,925,17.93
+774081,"Shrimp","Dairy","BrandD","2L",32.11,79,100,"Freezer","No","Yes","Supplier16","2024-04-27",51,2.8,"No","No",3090,"34x13x15",394750745909,"Canada","Gluten",1.8,867,24.71
+102451,"Chicken Breast","Seafood","BrandD","250ml",48.31,480,45,"Refrigerated","No","No","Supplier16","2024-01-16",222,1.71,"No","Yes",951,"48x45x12",312349933688,"Mexico","Soy",1.4,517,36.06
+826835,"Ground Beef","Bakery","BrandC","750g",15.38,493,27,"Aisle 2","Yes","Yes","Supplier18","2024-12-28",340,3.98,"No","No",1806,"23x40x9",778243323503,"USA","Nuts",4.5,509,11.53
+855523,"Tea","Pantry","BrandC","1L",19.38,358,49,"Produce Section","No","Yes","Supplier12","2024-05-09",51,3.45,"Yes","Yes",644,"15x20x5",995826644712,"USA","Dairy",4.6,784,18.02
+737801,"Frozen Pizza","Beverages","BrandA","12-pack",11.18,386,37,"Refrigerated","Yes","No","Supplier8","2024-04-16",300,3.96,"Yes","Yes",1969,"24x25x6",431079522838,"India","Gluten",1.4,380,8.12
+808526,"Chicken Breast","Snacks","BrandC","1kg",28.05,54,100,"Freezer","Yes","Yes","Supplier11","2024-06-04",18,4.52,"Yes","Yes",1671,"34x43x12",706246516643,"Mexico","Nuts",2.3,729,22.31
+976559,"Chips","Frozen","BrandD","500g",3.75,287,36,"Aisle 3","Yes","No","Supplier3","2024-06-15",245,3.77,"Yes","No",921,"48x10x6",103258057100,"USA","None",4.0,576,3.06
+534208,"Canned Beans","Beverages","BrandA","12-pack",14.31,76,19,"Aisle 2","Yes","Yes","Supplier18","2024-10-23",287,4.67,"Yes","Yes",4003,"17x40x12",586834276511,"Brazil","Gluten",2.2,367,10.39
+180852,"Cola","Dairy","BrandB","750g",26.22,478,55,"Freezer","No","Yes","Supplier13","2024-12-14",252,2.53,"Yes","Yes",2106,"43x34x15",698087742440,"Brazil","Soy",4.3,595,18.47
+404132,"Canned Beans","Household","BrandE","12-pack",47.18,362,88,"Aisle 3","No","No","Supplier14","2024-06-06",207,1.55,"Yes","Yes",3554,"10x43x20",607626715636,"Canada","Nuts",4.0,757,33.08
+689743,"Laundry Detergent","Bakery","BrandB","2L",32.08,90,68,"Aisle 1","No","Yes","Supplier18","2024-08-08",74,3.34,"Yes","Yes",2632,"27x39x14",899130431060,"USA","Gluten",4.0,294,25.82
+231011,"Paper Towels","Meat","BrandD","500g",11.52,394,91,"Freezer","No","Yes","Supplier17","2024-04-06",96,1.55,"Yes","No",2116,"10x47x12",752186523457,"China","Nuts",2.6,903,8.36
+353023,"Pasta","Snacks","BrandE","1kg",19.98,21,77,"Aisle 1","Yes","Yes","Supplier9","2024-05-02",357,1.18,"No","Yes",190,"32x44x17",886545847863,"China","Nuts",4.8,767,17.59
+307042,"Chips","Produce","BrandC","1L",26.66,51,17,"Produce Section","Yes","Yes","Supplier18","2024-12-16",305,2.31,"No","No",1895,"11x32x20",507202349522,"China","Gluten",3.2,134,19.99
+571419,"Bread","Seafood","BrandA","12-pack",23.98,433,12,"Aisle 1","No","No","Supplier14","2024-06-30",145,1.24,"No","No",285,"21x46x5",156597295878,"Brazil","Dairy",3.0,821,21.38
+217860,"Croissant","Bakery","BrandD","500g",9.88,19,66,"Refrigerated","Yes","Yes","Supplier19","2024-12-24",115,1.66,"Yes","No",1993,"29x13x11",597390536155,"Brazil","Nuts",4.7,426,8.27
+290426,"Cola","Snacks","BrandB","12-pack",44.83,58,44,"Aisle 3","Yes","Yes","Supplier7","2024-05-11",275,4.08,"Yes","Yes",3168,"42x16x16",570161186782,"Mexico","Nuts",4.6,679,35.53
+724792,"Canned Beans","Pantry","BrandD","6-pack",1.79,95,33,"Aisle 2","No","No","Supplier9","2024-11-18",241,3.63,"No","No",3930,"10x13x17",149482260383,"Canada","Gluten",2.1,387,1.47
+459552,"Ground Beef","Seafood","BrandA","6-pack",14.21,421,30,"Aisle 3","No","No","Supplier20","2024-09-29",227,3.55,"No","No",2244,"21x18x5",383797678314,"USA","Dairy",1.4,361,11.0
+768670,"Chips","Household","BrandC","12-pack",7.55,437,14,"Aisle 3","No","Yes","Supplier3","2024-12-25",26,2.53,"No","No",4837,"10x19x19",616617222311,"Mexico","Soy",3.3,866,5.9
+830392,"Cheese","Beverages","BrandE","250ml",11.75,172,75,"Refrigerated","Yes","Yes","Supplier5","2024-03-29",143,1.3,"No","Yes",4264,"25x31x17",353809962626,"Canada","Nuts",1.5,425,10.59
+287518,"Ice Cream","Beverages","BrandA","750g",47.87,176,96,"Refrigerated","No","Yes","Supplier4","2024-07-20",224,2.2,"Yes","No",265,"22x15x16",200980532026,"China","Dairy",3.6,877,34.91
+831347,"Salmon Fillet","Seafood","BrandE","250ml",25.29,142,55,"Aisle 3","No","Yes","Supplier6","2024-08-16",230,4.28,"Yes","Yes",3783,"49x37x7",318778429193,"India","Gluten",3.3,18,22.85
+556418,"Apples","Meat","BrandC","750g",8.37,472,19,"Produce Section","No","No","Supplier15","2024-05-22",27,1.76,"No","Yes",4115,"16x49x7",790055246424,"Brazil","Soy",3.5,305,6.21
+515693,"Canned Beans","Dairy","BrandE","500g",41.71,64,60,"Freezer","Yes","No","Supplier19","2024-02-10",277,2.61,"No","Yes",1843,"10x23x16",286383734935,"China","None",2.3,888,31.21
+752027,"Shrimp","Snacks","BrandC","500g",48.84,140,94,"Produce Section","No","Yes","Supplier10","2024-10-18",277,2.16,"No","No",465,"37x20x8",709323561206,"Canada","Dairy",4.5,136,40.52
+946519,"Apples","Beverages","BrandD","500g",29.75,469,57,"Produce Section","Yes","No","Supplier19","2024-06-26",35,3.39,"Yes","No",164,"13x24x10",627849637072,"China","Soy",2.3,592,27.59
+833624,"Carrots","Bakery","BrandE","500g",23.39,210,35,"Aisle 1","No","Yes","Supplier2","2024-07-12",181,3.41,"Yes","Yes",1164,"44x38x18",653095666200,"Canada","Soy",1.5,738,17.45
+650880,"Pasta","Produce","BrandB","750g",13.45,416,30,"Freezer","No","Yes","Supplier18","2024-06-08",133,3.29,"Yes","Yes",1896,"32x35x13",910120504493,"Mexico","Soy",3.0,979,12.53
+560612,"Bread","Snacks","BrandC","750g",49.35,95,13,"Aisle 1","Yes","No","Supplier8","2024-09-25",97,3.75,"No","No",3354,"40x28x17",677978316422,"Canada","Nuts",2.7,57,44.48
+845045,"Frozen Pizza","Beverages","BrandE","12-pack",14.07,321,22,"Aisle 2","Yes","Yes","Supplier5","2024-04-23",317,1.32,"Yes","No",1968,"49x38x16",553628305326,"Canada","Gluten",1.6,851,10.15
+509554,"Cheese","Seafood","BrandB","1L",39.58,199,38,"Aisle 3","No","Yes","Supplier1","2024-06-20",260,1.32,"No","Yes",1777,"41x11x10",312564422504,"Mexico","Dairy",2.6,988,36.07
+801632,"Cookies","Meat","BrandD","250ml",25.27,339,70,"Aisle 3","Yes","Yes","Supplier8","2024-01-20",132,3.97,"No","No",2698,"34x13x7",648882033677,"USA","Nuts",4.7,222,18.19
+269395,"Shrimp","Dairy","BrandC","750g",22.65,10,23,"Produce Section","Yes","Yes","Supplier9","2024-01-16",25,4.5,"No","Yes",2754,"25x40x12",314821442546,"Mexico","Nuts",4.3,304,20.74
+920561,"Salmon Fillet","Snacks","BrandD","750g",32.65,274,32,"Freezer","No","Yes","Supplier2","2024-03-14",85,1.59,"No","No",1769,"38x46x16",846662745626,"India","Soy",1.4,195,23.48
+380217,"Salmon Fillet","Snacks","BrandD","250ml",10.35,419,93,"Aisle 3","No","Yes","Supplier9","2024-08-06",359,3.34,"Yes","Yes",4662,"39x10x7",155195042051,"Brazil","Nuts",3.2,451,7.42
+882639,"Milk","Frozen","BrandA","250ml",12.77,366,19,"Aisle 3","Yes","No","Supplier16","2024-04-10",262,2.15,"Yes","No",720,"50x17x15",690788835508,"Mexico","Soy",2.8,759,11.03
+654952,"Chicken Breast","Pantry","BrandA","750g",16.19,205,68,"Freezer","No","No","Supplier11","2024-09-25",130,1.55,"Yes","Yes",690,"47x11x6",269852594678,"Brazil","Nuts",4.5,802,15.22
+828778,"Tea","Meat","BrandC","2L",15.79,382,72,"Aisle 1","No","No","Supplier8","2024-02-28",268,2.39,"Yes","Yes",4790,"40x24x12",989642515646,"India","Dairy",3.3,463,13.81
+105795,"Tea","Bakery","BrandA","12-pack",43.08,392,63,"Aisle 3","Yes","No","Supplier19","2024-09-01",352,4.76,"No","No",1759,"38x41x20",345851773600,"India","Nuts",3.9,188,30.28
+949845,"Salmon Fillet","Beverages","BrandB","1kg",16.1,205,58,"Aisle 1","Yes","Yes","Supplier13","2024-01-23",16,3.77,"No","No",770,"12x31x15",260827241022,"India","Dairy",2.3,514,14.19
+973615,"Bread","Beverages","BrandD","2L",26.17,250,41,"Aisle 3","Yes","No","Supplier16","2024-02-19",218,3.34,"No","Yes",148,"34x10x6",478291195562,"USA","Dairy",4.4,89,21.71
+242816,"Cookies","Frozen","BrandD","2L",24.08,279,81,"Aisle 3","No","No","Supplier17","2024-09-30",145,1.14,"No","No",4995,"42x25x6",270816599884,"Mexico","Nuts",2.7,263,18.28
+933375,"Frozen Pizza","Bakery","BrandA","250ml",41.09,463,15,"Freezer","No","Yes","Supplier3","2024-07-06",35,1.08,"Yes","No",2280,"13x28x8",131005851255,"China","Soy",3.1,900,34.27
+693361,"Canned Beans","Snacks","BrandE","500g",5.32,299,100,"Produce Section","No","Yes","Supplier6","2024-09-17",107,3.45,"No","Yes",4371,"23x22x10",666501362650,"Mexico","Dairy",3.8,879,4.11
+185058,"Chicken Breast","Snacks","BrandC","500g",28.78,137,84,"Refrigerated","Yes","No","Supplier1","2024-03-06",315,3.15,"Yes","No",320,"33x37x12",646364394829,"USA","Dairy",4.9,954,21.08
+564652,"Cola","Dairy","BrandD","12-pack",37.27,115,84,"Aisle 3","No","Yes","Supplier10","2024-12-19",85,4.02,"Yes","No",4602,"30x37x20",253247105900,"Mexico","None",3.5,476,31.11
+763418,"Frozen Pizza","Produce","BrandA","1kg",6.8,210,62,"Freezer","No","Yes","Supplier18","2024-12-26",220,1.34,"No","Yes",4727,"18x29x9",111749708091,"Brazil","Soy",4.3,1,5.6
+963782,"Apples","Snacks","BrandC","1L",31.19,361,96,"Refrigerated","No","No","Supplier5","2024-05-14",270,3.53,"Yes","Yes",1423,"38x25x8",177411960413,"Canada","Dairy",3.1,46,25.75
+645717,"Salmon Fillet","Household","BrandE","1kg",46.51,443,98,"Refrigerated","No","No","Supplier15","2024-01-29",325,2.44,"Yes","No",537,"39x33x5",646578656249,"Canada","Dairy",1.6,161,36.77
+186556,"Cola","Meat","BrandE","6-pack",29.28,495,54,"Refrigerated","No","No","Supplier10","2024-01-05",134,1.78,"Yes","Yes",4454,"38x11x19",339800547373,"Brazil","Dairy",3.7,680,23.0
+273669,"Frozen Pizza","Frozen","BrandB","250ml",42.06,152,36,"Freezer","No","No","Supplier4","2024-12-03",353,3.16,"No","Yes",4556,"42x23x18",986078994950,"USA","Gluten",2.1,167,33.48
+461222,"Chips","Seafood","BrandB","1L",29.65,224,80,"Freezer","Yes","No","Supplier1","2024-02-04",34,3.19,"Yes","Yes",4684,"41x17x14",781908011439,"Canada","Gluten",3.3,78,25.67
+194617,"Ground Beef","Pantry","BrandC","750g",46.35,418,48,"Aisle 3","No","Yes","Supplier18","2024-06-07",260,1.92,"Yes","Yes",2465,"36x44x18",948238761276,"Brazil","Nuts",4.4,454,39.36
+817364,"Laundry Detergent","Seafood","BrandE","1kg",9.02,380,14,"Freezer","Yes","No","Supplier1","2024-09-01",45,1.6,"Yes","Yes",4387,"30x16x12",851951080117,"Canada","Nuts",4.0,775,7.51
+959693,"Chips","Frozen","BrandA","2L",49.08,452,46,"Refrigerated","Yes","Yes","Supplier2","2024-05-26",145,2.7,"No","No",4890,"25x18x11",964432143470,"USA","Nuts",4.0,701,39.58
+797671,"Ice Cream","Dairy","BrandA","500g",41.64,258,37,"Aisle 1","No","Yes","Supplier7","2024-09-01",352,2.02,"Yes","No",4917,"13x12x12",679194235286,"Mexico","Dairy",4.5,759,31.77
+306498,"Chicken Breast","Snacks","BrandA","750g",26.8,190,70,"Aisle 3","No","No","Supplier8","2024-04-14",269,1.44,"No","Yes",3463,"43x33x11",542538599345,"Mexico","Dairy",4.8,287,21.0
+503034,"Tea","Dairy","BrandD","6-pack",4.75,275,50,"Freezer","Yes","Yes","Supplier12","2024-11-11",108,2.69,"Yes","No",1078,"15x45x9",460062968907,"Canada","Nuts",5.0,117,3.41
+565225,"Canned Beans","Pantry","BrandA","1kg",23.32,133,53,"Freezer","No","Yes","Supplier4","2024-10-07",305,1.43,"No","Yes",1117,"42x21x15",876237011133,"Mexico","Nuts",1.6,898,16.63
+291589,"Shrimp","Beverages","BrandE","12-pack",21.35,104,78,"Refrigerated","Yes","No","Supplier6","2024-10-26",331,2.69,"No","No",745,"48x37x16",908581573637,"India","Gluten",1.0,415,16.71
+381550,"Croissant","Dairy","BrandE","2L",30.83,409,15,"Aisle 1","Yes","Yes","Supplier20","2024-05-07",159,3.89,"No","Yes",3438,"27x47x20",852201613953,"China","Gluten",2.2,764,24.1
+436021,"Ice Cream","Pantry","BrandD","500g",24.99,480,14,"Aisle 3","Yes","Yes","Supplier16","2024-11-26",166,4.48,"Yes","No",1899,"33x41x8",962203168917,"India","None",3.0,565,21.82
+984664,"Ice Cream","Meat","BrandD","500g",24.93,235,54,"Produce Section","No","No","Supplier6","2024-03-04",105,4.33,"Yes","Yes",1837,"12x42x6",486212856402,"USA","Gluten",3.8,380,23.18
+148404,"Apples","Snacks","BrandE","2L",1.56,436,64,"Freezer","No","Yes","Supplier4","2024-12-23",75,3.49,"No","No",3397,"44x49x8",707442502733,"USA","Gluten",1.3,347,1.23
+594432,"Canned Beans","Beverages","BrandD","12-pack",30.36,1,44,"Freezer","Yes","Yes","Supplier1","2024-08-18",174,3.31,"Yes","Yes",2086,"27x47x9",292209614603,"China","None",1.8,939,26.58
+933374,"Bread","Meat","BrandD","500g",37.64,279,41,"Refrigerated","No","Yes","Supplier9","2024-02-13",11,1.44,"Yes","Yes",4223,"46x39x6",522896580253,"USA","Soy",1.2,88,34.96
+882627,"Canned Beans","Seafood","BrandD","1L",36.33,175,98,"Aisle 3","No","No","Supplier16","2024-10-29",115,2.63,"Yes","Yes",4733,"49x22x16",360613845184,"India","Gluten",3.0,774,29.43
+170310,"Apples","Bakery","BrandA","1kg",15.29,428,88,"Freezer","Yes","No","Supplier17","2024-03-11",112,4.46,"No","Yes",4702,"45x31x16",508026850476,"Mexico","Dairy",4.9,458,11.94
+332149,"Shrimp","Frozen","BrandC","1kg",28.6,203,20,"Freezer","Yes","Yes","Supplier11","2024-03-01",93,4.33,"Yes","No",1941,"46x45x6",157051074789,"USA","Dairy",1.8,508,21.18
+773477,"Croissant","Household","BrandD","2L",6.99,43,65,"Aisle 3","No","No","Supplier17","2024-11-13",116,2.25,"No","Yes",1747,"27x11x10",809566085896,"India","Soy",3.8,739,6.06
+588120,"Bread","Beverages","BrandB","500g",10.29,152,70,"Refrigerated","Yes","Yes","Supplier16","2024-11-04",359,1.63,"No","No",3920,"24x42x12",276416719978,"China","Soy",3.0,904,7.27
+684392,"Ground Beef","Pantry","BrandD","12-pack",11.18,440,39,"Freezer","Yes","No","Supplier2","2024-12-19",288,4.85,"No","Yes",3330,"10x49x13",526532768083,"Brazil","Gluten",4.5,823,7.83
+610408,"Laundry Detergent","Seafood","BrandE","1kg",3.46,364,100,"Aisle 2","No","No","Supplier13","2024-11-23",164,3.84,"Yes","Yes",4812,"14x42x14",856164998677,"Mexico","Dairy",1.6,231,2.46
+572151,"Salmon Fillet","Dairy","BrandB","750g",23.22,352,26,"Freezer","Yes","Yes","Supplier16","2024-05-27",330,4.1,"Yes","Yes",2756,"23x13x18",663785622300,"Canada","Nuts",2.1,790,21.13
+838190,"Chicken Breast","Bakery","BrandB","12-pack",38.99,300,38,"Aisle 3","No","Yes","Supplier7","2024-01-27",219,3.45,"No","Yes",4867,"36x34x20",382943280661,"India","Nuts",5.0,334,29.41
+910460,"Frozen Pizza","Bakery","BrandB","1kg",46.15,239,14,"Produce Section","No","No","Supplier3","2024-03-05",294,3.53,"Yes","No",4372,"27x23x12",794013698840,"Brazil","Gluten",4.9,458,40.95
+541723,"Apples","Pantry","BrandA","750g",25.82,388,22,"Aisle 3","Yes","Yes","Supplier2","2024-09-03",146,4.25,"Yes","Yes",2178,"18x36x9",553840829223,"China","Dairy",3.6,59,23.98
+602768,"Croissant","Seafood","BrandB","1kg",7.97,285,99,"Aisle 3","Yes","No","Supplier20","2024-01-27",57,3.06,"No","No",3357,"37x33x14",303284779507,"Brazil","Gluten",3.8,464,7.0
+808291,"Chicken Breast","Snacks","BrandD","1L",17.65,269,100,"Aisle 1","No","No","Supplier16","2024-09-22",180,2.85,"No","Yes",3868,"12x43x12",201423721199,"Brazil","Nuts",2.9,941,13.86
+701023,"Laundry Detergent","Produce","BrandA","250ml",18.2,22,44,"Freezer","No","Yes","Supplier18","2024-02-13",327,2.49,"No","Yes",4981,"45x37x14",400375444271,"China","Gluten",2.0,266,15.41
+271950,"Pasta","Frozen","BrandB","2L",14.27,224,55,"Freezer","No","No","Supplier13","2024-04-05",105,3.93,"No","Yes",4327,"23x28x12",955299534870,"Canada","Soy",1.7,500,12.75
+281117,"Frozen Pizza","Meat","BrandD","500g",27.32,44,63,"Produce Section","No","No","Supplier17","2024-03-23",148,1.45,"No","No",3662,"36x42x15",198780511159,"China","None",4.1,414,22.91
+496042,"Pasta","Snacks","BrandD","1kg",35.07,353,81,"Refrigerated","No","No","Supplier11","2024-11-12",223,4.51,"No","No",623,"41x27x5",573951725123,"Mexico","Dairy",1.4,850,27.58
+565623,"Apples","Household","BrandE","2L",18.61,348,22,"Aisle 1","No","Yes","Supplier20","2024-09-27",225,3.96,"No","Yes",1081,"50x38x8",849715302464,"China","Gluten",1.4,605,15.05
+673043,"Ground Beef","Dairy","BrandA","6-pack",18.21,319,99,"Aisle 1","No","Yes","Supplier5","2024-11-05",276,1.46,"No","No",1407,"25x28x5",754551490593,"Brazil","Nuts",2.7,116,16.52
+605256,"Chicken Breast","Meat","BrandD","1kg",17.01,127,79,"Aisle 2","No","Yes","Supplier5","2024-06-04",123,3.31,"No","No",1106,"15x35x13",603988704680,"USA","None",3.3,957,13.92
+303441,"Milk","Seafood","BrandD","500g",43.56,470,48,"Refrigerated","Yes","No","Supplier9","2024-07-25",337,1.09,"Yes","No",2156,"40x11x6",548514402232,"USA","Gluten",1.2,330,38.88
+161501,"Milk","Household","BrandC","6-pack",22.59,250,63,"Aisle 3","No","No","Supplier18","2024-12-21",129,4.13,"Yes","Yes",3416,"47x40x12",642333291823,"China","Soy",4.5,543,18.86
+354412,"Ground Beef","Meat","BrandE","6-pack",18.19,54,83,"Produce Section","Yes","Yes","Supplier8","2024-02-03",105,4.44,"Yes","No",2565,"27x32x15",314528009598,"USA","None",1.9,940,13.18
+703728,"Pasta","Seafood","BrandD","1L",5.19,26,99,"Aisle 3","Yes","Yes","Supplier7","2024-12-23",299,1.7,"Yes","Yes",4071,"46x42x10",841597079320,"Canada","Gluten",2.6,772,3.75
+613731,"Shrimp","Snacks","BrandD","6-pack",2.74,22,98,"Aisle 2","No","Yes","Supplier14","2024-10-27",319,4.72,"No","Yes",559,"18x11x12",916627821398,"Brazil","None",1.4,573,2.33
+605022,"Paper Towels","Bakery","BrandE","2L",31.33,71,41,"Freezer","No","Yes","Supplier14","2024-03-06",300,3.34,"No","Yes",4173,"45x12x7",638617314779,"USA","Gluten",1.9,150,25.25
+958902,"Croissant","Dairy","BrandC","2L",4.06,404,64,"Freezer","No","No","Supplier14","2024-01-17",236,2.29,"No","No",4473,"18x34x14",710605821797,"Canada","Soy",2.4,935,3.5
+274383,"Bread","Beverages","BrandE","1kg",5.26,45,73,"Aisle 2","No","Yes","Supplier18","2024-10-20",365,2.31,"No","Yes",2028,"19x41x14",168190210301,"Mexico","Dairy",3.2,121,4.06
+840232,"Cookies","Meat","BrandA","12-pack",5.18,88,45,"Aisle 2","No","No","Supplier12","2024-08-16",65,3.99,"Yes","No",2373,"24x21x17",429105045557,"Mexico","Nuts",1.0,878,4.21
+991484,"Paper Towels","Snacks","BrandE","6-pack",36.32,138,31,"Produce Section","No","Yes","Supplier9","2024-03-03",236,1.08,"No","Yes",927,"17x35x9",426202561466,"China","Gluten",4.5,87,25.76
+289289,"Paper Towels","Household","BrandE","250ml",9.46,86,17,"Aisle 2","Yes","No","Supplier17","2024-09-19",127,3.41,"Yes","Yes",740,"39x39x6",947824315821,"Canada","Nuts",3.3,624,8.29
+703985,"Laundry Detergent","Beverages","BrandA","1L",24.97,276,68,"Freezer","Yes","No","Supplier2","2024-11-13",232,3.25,"No","Yes",1640,"34x47x17",456194010894,"Canada","None",1.6,598,23.23
+936751,"Ground Beef","Household","BrandD","250ml",18.08,114,21,"Freezer","Yes","Yes","Supplier17","2024-05-08",149,4.63,"Yes","No",3947,"30x20x19",429798890854,"Canada","Soy",2.8,982,14.87
+229239,"Tea","Beverages","BrandB","1kg",15.57,398,51,"Aisle 3","No","Yes","Supplier19","2024-04-21",160,4.72,"Yes","No",3409,"12x23x15",295107463661,"Canada","None",3.6,934,14.06
+417849,"Salmon Fillet","Meat","BrandC","1kg",35.65,474,34,"Produce Section","No","No","Supplier11","2024-04-21",180,4.14,"Yes","Yes",3324,"34x41x17",932454678393,"China","Nuts",4.9,146,25.97
+297152,"Cheese","Bakery","BrandD","1kg",4.93,70,51,"Aisle 2","No","No","Supplier18","2024-12-01",60,4.19,"No","No",3292,"13x39x12",246862119167,"Brazil","None",3.7,3,4.34
+697051,"Laundry Detergent","Beverages","BrandD","2L",39.15,107,77,"Aisle 2","No","No","Supplier8","2024-09-24",252,2.24,"No","No",1952,"22x45x13",904946541727,"Canada","Nuts",3.8,99,28.97
+163342,"Canned Beans","Seafood","BrandD","6-pack",27.42,356,23,"Aisle 3","Yes","Yes","Supplier2","2024-06-06",309,1.72,"No","Yes",297,"40x26x14",321159757602,"Mexico","Soy",2.7,5,22.18
+486715,"Shrimp","Frozen","BrandD","2L",2.81,460,58,"Freezer","No","Yes","Supplier14","2024-07-08",309,1.17,"Yes","No",2411,"22x26x16",507465703836,"Brazil","Nuts",3.8,688,2.28
+906560,"Bread","Meat","BrandC","12-pack",23.4,257,42,"Aisle 2","No","Yes","Supplier14","2024-11-13",133,1.01,"Yes","Yes",3212,"22x31x17",912754877660,"USA","Soy",2.9,214,21.41
+272266,"Frozen Pizza","Dairy","BrandC","6-pack",35.91,61,37,"Aisle 3","No","Yes","Supplier9","2024-01-29",244,2.49,"No","Yes",4013,"49x38x15",261690529035,"China","Soy",4.4,45,32.96
+876420,"Pasta","Snacks","BrandC","2L",48.22,88,71,"Aisle 1","No","No","Supplier16","2024-11-02",265,4.84,"Yes","No",3244,"42x30x10",220911085219,"Canada","None",1.2,595,39.43
+198900,"Pasta","Bakery","BrandC","6-pack",3.86,121,23,"Aisle 3","No","No","Supplier8","2024-08-05",306,2.78,"Yes","No",2213,"41x20x16",984383546650,"USA","Nuts",3.0,882,2.9
+248496,"Chips","Seafood","BrandD","250ml",27.54,89,71,"Aisle 3","No","No","Supplier8","2024-10-31",335,1.6,"Yes","Yes",4508,"29x39x13",233441407527,"Brazil","Soy",4.9,927,23.73
+434882,"Canned Beans","Dairy","BrandB","12-pack",11.08,409,87,"Aisle 1","Yes","Yes","Supplier10","2024-11-21",175,3.46,"Yes","No",3281,"13x42x18",661079160370,"Mexico","None",4.3,493,9.0
+382978,"Cookies","Produce","BrandA","250ml",3.36,340,37,"Produce Section","Yes","Yes","Supplier8","2024-08-15",339,3.39,"No","No",4588,"49x21x8",894083371273,"Brazil","Soy",1.6,129,2.79
+518381,"Frozen Pizza","Seafood","BrandD","6-pack",33.67,45,37,"Aisle 2","No","Yes","Supplier13","2024-11-23",170,4.82,"No","Yes",4786,"21x42x19",922680455909,"Mexico","None",2.5,879,30.88
+984914,"Salmon Fillet","Meat","BrandA","1kg",16.21,112,10,"Aisle 2","No","No","Supplier4","2024-08-18",35,2.92,"Yes","Yes",361,"42x34x12",322575691251,"Brazil","None",2.6,827,14.69
+741528,"Shrimp","Pantry","BrandA","6-pack",18.4,260,13,"Aisle 2","Yes","Yes","Supplier5","2024-04-16",319,1.36,"No","Yes",1377,"29x35x9",311335865148,"China","None",4.9,403,13.67
+406020,"Pasta","Produce","BrandC","500g",49.98,310,47,"Refrigerated","No","Yes","Supplier5","2024-02-17",86,4.53,"Yes","Yes",4926,"14x27x9",762992569119,"USA","None",4.7,933,41.15
+585785,"Frozen Pizza","Bakery","BrandB","500g",15.06,442,51,"Aisle 2","Yes","Yes","Supplier8","2024-01-26",320,3.57,"Yes","Yes",2201,"25x39x6",142796213221,"Canada","Gluten",4.7,859,11.39
+413916,"Cheese","Household","BrandA","12-pack",1.66,287,84,"Refrigerated","Yes","No","Supplier2","2024-03-06",275,3.5,"No","Yes",4934,"22x33x6",732809699048,"Mexico","Soy",3.7,84,1.47
+735330,"Tea","Produce","BrandB","500g",1.53,216,60,"Freezer","No","Yes","Supplier11","2024-02-06",238,3.97,"Yes","No",624,"34x17x19",239414505216,"China","Dairy",1.4,590,1.16
+381929,"Frozen Pizza","Meat","BrandB","500g",6.04,269,71,"Aisle 3","Yes","No","Supplier14","2024-12-30",121,4.11,"No","Yes",756,"45x39x13",309205264672,"Brazil","None",2.1,45,4.75
+397814,"Chips","Beverages","BrandB","2L",9.34,328,83,"Aisle 3","No","Yes","Supplier4","2024-09-10",189,2.65,"No","Yes",4149,"21x29x18",857579122491,"China","Soy",1.0,489,6.92
+758403,"Croissant","Seafood","BrandD","2L",46.75,7,67,"Produce Section","Yes","Yes","Supplier8","2024-10-27",348,4.56,"No","Yes",463,"21x45x12",156163335644,"China","Gluten",2.0,783,43.24
+245358,"Cookies","Pantry","BrandE","750g",9.88,457,19,"Aisle 1","No","No","Supplier13","2024-11-24",134,4.06,"Yes","No",208,"25x22x11",989039889064,"China","None",4.5,882,7.16
+642524,"Tea","Snacks","BrandD","1L",4.23,476,81,"Refrigerated","Yes","No","Supplier13","2024-08-18",210,5.0,"Yes","Yes",737,"43x13x13",972423134372,"USA","Nuts",4.5,550,3.53
+394805,"Pasta","Seafood","BrandD","750g",13.47,434,31,"Aisle 3","No","No","Supplier2","2024-03-18",282,4.47,"No","Yes",2670,"14x10x17",979168015738,"USA","Soy",2.9,386,12.06
+529025,"Cola","Snacks","BrandA","750g",27.02,105,88,"Produce Section","Yes","No","Supplier17","2024-05-31",14,1.72,"No","No",3443,"21x37x18",468124617788,"Canada","Soy",4.6,859,23.6
+417459,"Pasta","Snacks","BrandE","750g",9.7,442,75,"Freezer","No","Yes","Supplier14","2024-03-09",81,4.09,"No","Yes",4057,"23x39x20",660358720787,"USA","Dairy",1.1,404,9.02
+547312,"Frozen Pizza","Produce","BrandB","1kg",10.97,401,73,"Aisle 2","No","No","Supplier19","2024-05-07",16,1.55,"Yes","Yes",2130,"31x48x11",641574642277,"USA","Nuts",1.0,70,10.34
+588800,"Salmon Fillet","Household","BrandD","250ml",10.12,351,67,"Aisle 1","Yes","No","Supplier14","2024-04-21",313,3.61,"Yes","Yes",2102,"29x18x17",114468756420,"Canada","Soy",2.6,412,7.37
+459330,"Croissant","Produce","BrandD","1L",8.6,188,40,"Aisle 3","No","Yes","Supplier5","2024-12-03",206,2.77,"No","Yes",4015,"18x48x17",541880202238,"Brazil","None",3.2,709,7.66
+914460,"Chips","Household","BrandC","2L",14.02,21,90,"Aisle 2","Yes","Yes","Supplier13","2024-08-07",119,4.01,"No","Yes",1737,"10x39x11",510899736805,"India","Nuts",4.0,890,12.76
+223946,"Cheese","Seafood","BrandA","1L",43.45,85,59,"Produce Section","Yes","Yes","Supplier8","2024-07-14",224,1.2,"No","Yes",4162,"14x26x12",173120389718,"Mexico","Dairy",1.6,621,34.4
+754757,"Ground Beef","Household","BrandC","2L",8.32,280,29,"Aisle 2","No","No","Supplier3","2024-04-07",90,2.61,"Yes","No",3988,"47x13x6",788649402750,"USA","None",1.5,809,6.05
+132873,"Ground Beef","Dairy","BrandE","750g",45.96,171,78,"Produce Section","Yes","Yes","Supplier3","2024-04-05",108,1.72,"No","No",3933,"17x17x18",608201116317,"Mexico","Nuts",3.8,464,33.16
+650953,"Pasta","Bakery","BrandC","2L",25.88,499,68,"Refrigerated","Yes","No","Supplier17","2024-07-28",77,1.54,"Yes","No",911,"18x37x20",853040851090,"USA","Soy",4.6,914,20.54
+200185,"Milk","Produce","BrandD","12-pack",24.93,51,54,"Aisle 2","No","No","Supplier10","2024-04-12",342,1.58,"Yes","No",4439,"16x24x9",156436731742,"Mexico","Dairy",1.5,226,23.03
+477459,"Cheese","Frozen","BrandD","2L",24.05,305,36,"Aisle 1","Yes","Yes","Supplier18","2024-11-02",102,2.51,"No","Yes",1347,"11x32x11",155670690956,"Mexico","Nuts",4.2,228,21.0
+688079,"Paper Towels","Snacks","BrandC","1L",37.59,252,16,"Refrigerated","Yes","No","Supplier10","2024-03-23",6,1.85,"No","No",4097,"50x47x8",779098585658,"Canada","Gluten",1.0,127,27.53
+618139,"Canned Beans","Meat","BrandB","12-pack",44.75,260,25,"Produce Section","Yes","Yes","Supplier17","2024-02-04",148,1.11,"Yes","No",4862,"49x40x7",245793008172,"China","Nuts",2.5,590,38.12
+449571,"Bread","Pantry","BrandB","6-pack",43.6,442,51,"Produce Section","No","No","Supplier13","2024-07-19",86,1.97,"Yes","No",4623,"30x24x12",203995598835,"USA","Nuts",2.1,170,36.65
+376159,"Chicken Breast","Beverages","BrandB","750g",45.18,237,51,"Freezer","No","No","Supplier10","2024-03-03",143,1.8,"No","Yes",784,"16x10x5",719193333221,"India","Gluten",1.8,252,42.23
+964526,"Tea","Bakery","BrandC","500g",5.36,233,55,"Aisle 1","Yes","Yes","Supplier19","2024-09-24",145,3.54,"No","Yes",1501,"47x25x19",889299136433,"Brazil","Dairy",2.3,766,4.76
+509944,"Frozen Pizza","Produce","BrandD","750g",48.12,386,37,"Refrigerated","Yes","Yes","Supplier16","2024-12-01",59,2.57,"Yes","Yes",1005,"32x28x11",911493513995,"Brazil","None",1.3,326,40.14
+153890,"Milk","Snacks","BrandB","250ml",40.59,208,46,"Refrigerated","No","Yes","Supplier1","2024-07-31",210,1.9,"Yes","Yes",1698,"19x41x7",280798598473,"Brazil","Nuts",2.0,160,37.26
+945208,"Tea","Bakery","BrandA","750g",48.92,16,32,"Refrigerated","Yes","No","Supplier14","2024-04-26",217,3.91,"Yes","No",1379,"17x18x20",566475648882,"India","None",4.0,29,39.88
+680910,"Ice Cream","Pantry","BrandB","6-pack",41.97,182,83,"Freezer","No","No","Supplier14","2024-03-30",55,2.78,"No","No",392,"11x14x11",134791415642,"USA","Dairy",4.9,361,37.68
+924960,"Pasta","Frozen","BrandE","1L",7.4,74,47,"Freezer","Yes","No","Supplier16","2024-06-04",347,3.83,"No","No",2913,"14x47x18",695823234582,"Canada","Dairy",3.1,618,6.61
+297600,"Ice Cream","Beverages","BrandE","12-pack",48.74,77,97,"Freezer","Yes","No","Supplier1","2024-07-27",47,4.95,"Yes","No",2267,"26x24x20",131077979458,"Canada","None",1.3,166,45.23
+958367,"Paper Towels","Produce","BrandE","1L",14.26,493,87,"Aisle 2","No","No","Supplier8","2024-07-30",15,2.38,"No","No",4595,"12x28x9",738924541043,"Canada","Dairy",2.8,931,9.99
+255201,"Frozen Pizza","Meat","BrandE","12-pack",6.7,8,64,"Aisle 1","No","Yes","Supplier14","2024-10-01",353,4.8,"Yes","Yes",623,"36x35x7",724501933281,"Brazil","Nuts",3.2,617,5.09
+149458,"Canned Beans","Produce","BrandB","2L",35.2,478,74,"Aisle 3","Yes","No","Supplier13","2024-10-10",281,1.02,"Yes","Yes",4998,"47x45x19",849263100812,"China","Gluten",1.0,348,27.15
+133901,"Milk","Bakery","BrandC","500g",4.08,33,100,"Refrigerated","Yes","No","Supplier20","2024-02-17",343,1.08,"No","No",4485,"37x14x13",961533009749,"Canada","Soy",4.2,725,3.02
+810652,"Paper Towels","Household","BrandD","500g",41.77,456,96,"Refrigerated","No","No","Supplier15","2024-01-06",240,4.15,"Yes","Yes",1434,"29x30x12",494350966963,"USA","None",3.9,560,36.38
+304777,"Croissant","Meat","BrandE","12-pack",21.98,224,100,"Aisle 2","Yes","Yes","Supplier20","2024-09-25",40,1.89,"No","No",2160,"46x23x8",688879020932,"India","Nuts",1.3,485,17.36
+266641,"Bread","Dairy","BrandB","6-pack",5.18,8,29,"Aisle 1","Yes","Yes","Supplier13","2024-02-06",247,1.24,"No","Yes",3124,"28x36x18",730708851421,"Mexico","None",4.6,225,4.53
+651072,"Croissant","Meat","BrandC","6-pack",14.77,455,45,"Produce Section","No","No","Supplier16","2024-12-05",37,2.25,"No","No",648,"46x41x20",529304084061,"Mexico","Gluten",4.9,685,12.82
+990107,"Cookies","Produce","BrandA","12-pack",31.64,156,93,"Refrigerated","Yes","No","Supplier14","2024-12-11",129,2.15,"Yes","No",1237,"30x33x10",952909528304,"Canada","Dairy",3.7,781,23.8
+497405,"Pasta","Household","BrandA","2L",16.28,358,93,"Refrigerated","Yes","No","Supplier16","2024-05-16",248,3.35,"Yes","Yes",4989,"48x46x5",350345851466,"China","Gluten",1.2,665,14.53
+816284,"Chicken Breast","Pantry","BrandB","2L",27.56,352,41,"Refrigerated","No","No","Supplier11","2024-09-05",285,4.89,"Yes","No",2566,"43x31x16",856312063571,"India","Dairy",4.3,825,20.17
+406242,"Croissant","Snacks","BrandA","250ml",1.26,469,85,"Freezer","No","No","Supplier9","2024-08-23",9,3.08,"Yes","Yes",3238,"21x14x6",195454217837,"Brazil","Gluten",5.0,42,1.09
+270988,"Ground Beef","Produce","BrandB","750g",41.07,388,79,"Aisle 3","No","No","Supplier13","2024-12-21",171,2.19,"Yes","Yes",914,"37x34x20",715138354995,"Brazil","Gluten",4.2,925,32.17
+817916,"Shrimp","Produce","BrandE","250ml",26.06,155,79,"Aisle 1","Yes","No","Supplier13","2024-03-13",167,1.14,"No","No",892,"42x20x16",874684191392,"Canada","Gluten",1.2,409,21.89
+351196,"Frozen Pizza","Produce","BrandB","12-pack",5.21,274,21,"Aisle 3","Yes","Yes","Supplier14","2024-08-14",16,3.29,"Yes","Yes",1770,"12x29x8",626213974018,"Canada","Gluten",2.6,663,3.85
+579281,"Cheese","Produce","BrandC","1L",36.89,173,52,"Refrigerated","Yes","Yes","Supplier2","2024-07-23",195,4.0,"No","Yes",2087,"11x22x14",715570676743,"USA","Soy",2.1,762,31.04
+862500,"Cookies","Seafood","BrandD","1kg",28.39,364,32,"Freezer","Yes","No","Supplier13","2024-04-25",333,3.7,"No","No",772,"25x30x15",219556709712,"Mexico","Gluten",3.3,1,20.43
+844845,"Laundry Detergent","Dairy","BrandE","1L",33.48,372,72,"Aisle 1","No","Yes","Supplier5","2024-08-25",53,1.98,"Yes","No",509,"10x31x20",430192012966,"USA","Nuts",4.5,588,27.27
+511468,"Frozen Pizza","Pantry","BrandE","750g",43.39,491,39,"Aisle 1","Yes","No","Supplier5","2024-08-02",161,4.7,"Yes","No",1377,"33x22x9",763204278519,"China","Soy",2.4,216,36.45
+524178,"Cola","Dairy","BrandB","1L",48.17,449,10,"Aisle 3","No","No","Supplier1","2024-06-27",287,2.08,"No","No",1780,"34x32x8",151231644729,"Mexico","Dairy",1.5,0,33.75
+387852,"Cookies","Produce","BrandE","500g",2.61,234,77,"Produce Section","Yes","Yes","Supplier5","2024-08-31",143,3.55,"Yes","Yes",4305,"49x32x14",497697479622,"USA","Gluten",4.1,242,1.95
+905039,"Ground Beef","Meat","BrandA","500g",8.18,388,27,"Produce Section","No","No","Supplier7","2024-07-19",298,4.84,"Yes","Yes",1377,"49x41x20",867736602800,"China","Soy",1.4,263,5.77
+522810,"Ice Cream","Snacks","BrandB","1L",43.91,434,77,"Refrigerated","No","No","Supplier20","2024-10-10",20,4.56,"Yes","No",4441,"36x11x10",670388163678,"China","Nuts",2.3,625,39.93
+314214,"Canned Beans","Snacks","BrandC","1L",32.66,153,69,"Aisle 3","Yes","Yes","Supplier17","2024-12-14",188,4.0,"No","No",2466,"22x32x5",837848399915,"China","None",3.1,532,25.05
+793409,"Bread","Seafood","BrandA","12-pack",12.24,495,84,"Aisle 2","No","Yes","Supplier4","2024-07-18",86,2.02,"No","Yes",1028,"31x18x14",482771597245,"Canada","Soy",4.6,854,10.54
+778485,"Shrimp","Dairy","BrandA","250ml",7.28,90,77,"Refrigerated","No","Yes","Supplier6","2024-07-23",131,4.44,"No","No",783,"11x45x8",193978615670,"Brazil","Dairy",4.8,180,5.48
+194770,"Cookies","Frozen","BrandB","500g",20.4,464,79,"Refrigerated","No","Yes","Supplier20","2024-05-13",341,1.71,"No","No",1747,"28x13x11",493095785817,"Canada","Dairy",4.5,121,18.88
+744623,"Laundry Detergent","Produce","BrandB","6-pack",13.56,157,51,"Aisle 3","Yes","Yes","Supplier17","2024-03-10",9,2.01,"No","Yes",3695,"24x13x8",212594415573,"USA","Gluten",2.2,495,11.67
+619230,"Chicken Breast","Household","BrandD","2L",40.42,291,96,"Freezer","No","Yes","Supplier16","2024-07-30",223,3.48,"No","No",2522,"19x22x20",527625241801,"India","None",2.1,995,33.93
+576342,"Shrimp","Seafood","BrandB","12-pack",42.63,120,33,"Refrigerated","No","Yes","Supplier10","2024-05-30",104,3.4,"No","No",2480,"50x28x7",121238964187,"Mexico","Gluten",2.0,695,39.3
+379791,"Milk","Household","BrandE","1kg",48.01,109,85,"Refrigerated","No","Yes","Supplier7","2024-07-27",170,4.26,"No","No",2798,"46x21x10",540881588137,"Brazil","Soy",2.4,131,34.69
+905019,"Carrots","Seafood","BrandA","2L",21.66,72,34,"Refrigerated","Yes","No","Supplier12","2024-07-13",68,1.1,"Yes","Yes",4925,"26x48x8",937865745572,"Mexico","Gluten",3.3,796,15.87
+116207,"Chicken Breast","Pantry","BrandE","1L",43.3,473,69,"Aisle 1","No","Yes","Supplier8","2024-01-19",212,3.12,"Yes","Yes",187,"12x10x14",521872844794,"Canada","Gluten",3.5,335,37.72
+333117,"Carrots","Produce","BrandA","12-pack",29.17,404,72,"Refrigerated","Yes","Yes","Supplier2","2024-04-02",356,1.31,"No","No",2535,"26x42x6",819638227688,"China","Nuts",2.5,306,22.42
+495997,"Pasta","Beverages","BrandC","1L",18.16,290,79,"Aisle 2","No","No","Supplier2","2024-07-23",296,1.18,"Yes","No",4587,"24x24x9",384880010153,"China","Nuts",1.3,443,17.22
+351791,"Cheese","Snacks","BrandC","250ml",36.29,330,85,"Aisle 2","No","No","Supplier9","2024-03-06",300,3.4,"Yes","No",3717,"11x40x11",102734151161,"USA","Gluten",1.2,717,34.31
+269361,"Apples","Dairy","BrandD","500g",49.54,379,98,"Freezer","Yes","No","Supplier5","2024-03-05",221,2.48,"No","No",3636,"17x41x15",423062594288,"India","Gluten",3.4,33,36.14
+378331,"Pasta","Snacks","BrandA","6-pack",23.08,119,53,"Produce Section","No","Yes","Supplier10","2024-08-11",325,1.29,"Yes","Yes",1085,"18x50x13",514292744760,"Mexico","Soy",3.0,583,20.7
+934798,"Paper Towels","Snacks","BrandA","2L",17.77,344,68,"Aisle 1","Yes","Yes","Supplier13","2024-06-01",50,4.36,"No","Yes",1303,"41x30x8",184177244572,"Mexico","Soy",3.0,399,13.5
+524526,"Tea","Frozen","BrandB","500g",8.65,51,22,"Produce Section","No","No","Supplier3","2024-04-14",364,1.24,"No","No",3975,"43x34x8",496093314767,"Brazil","Soy",4.2,126,6.39
+355432,"Canned Beans","Snacks","BrandB","6-pack",5.46,434,49,"Refrigerated","No","No","Supplier9","2024-05-26",191,2.53,"No","Yes",774,"37x48x6",815710610803,"India","Dairy",4.2,479,3.88
+434319,"Cola","Produce","BrandE","2L",23.46,191,55,"Freezer","No","No","Supplier16","2024-12-06",121,4.55,"Yes","No",4472,"47x22x9",491216161333,"Brazil","Gluten",2.6,153,18.81
+878985,"Carrots","Frozen","BrandA","12-pack",13.39,227,15,"Produce Section","No","No","Supplier12","2024-06-10",296,4.84,"Yes","Yes",1590,"27x45x14",114655593266,"Brazil","Gluten",3.0,403,11.95
+209184,"Milk","Pantry","BrandA","500g",32.34,25,62,"Aisle 2","Yes","No","Supplier1","2024-06-01",319,3.38,"No","No",2768,"35x41x12",935277699934,"Mexico","Dairy",2.9,803,27.73
+529786,"Ice Cream","Meat","BrandB","1kg",9.57,93,97,"Freezer","No","No","Supplier7","2024-08-10",237,4.45,"No","Yes",3264,"32x41x17",185585802063,"China","Nuts",4.2,381,8.42
+133575,"Milk","Snacks","BrandB","750g",6.62,106,45,"Aisle 2","Yes","No","Supplier7","2024-07-05",293,3.09,"No","Yes",3664,"17x39x9",640557423838,"Brazil","None",1.1,862,5.5
+801042,"Salmon Fillet","Meat","BrandB","1L",42.06,371,46,"Produce Section","No","No","Supplier12","2024-03-01",71,2.35,"Yes","Yes",1772,"22x13x18",135391601803,"USA","Dairy",2.0,718,35.45
+681954,"Paper Towels","Bakery","BrandB","1L",37.59,374,99,"Freezer","Yes","No","Supplier8","2024-06-06",209,3.68,"Yes","Yes",1061,"38x27x6",313749991223,"Canada","Dairy",1.0,983,34.29
+504584,"Ice Cream","Snacks","BrandE","6-pack",13.84,125,65,"Freezer","Yes","No","Supplier1","2024-05-01",220,1.85,"Yes","No",1420,"15x12x9",912259240105,"Canada","Soy",4.1,734,11.83
+775378,"Frozen Pizza","Frozen","BrandA","6-pack",39.52,175,89,"Aisle 1","Yes","No","Supplier7","2024-10-08",191,2.03,"Yes","No",258,"12x41x17",996490215655,"China","Dairy",1.7,683,32.13
+478706,"Milk","Meat","BrandD","6-pack",13.66,25,92,"Aisle 1","No","Yes","Supplier18","2024-07-09",90,1.52,"Yes","No",2099,"42x12x6",220705885746,"Mexico","Nuts",4.3,977,11.74
+395559,"Paper Towels","Dairy","BrandB","500g",5.82,349,18,"Produce Section","No","No","Supplier14","2024-08-01",86,2.06,"No","Yes",951,"41x46x8",122838760262,"Mexico","Soy",3.3,294,4.1
+926074,"Laundry Detergent","Beverages","BrandD","2L",42.44,331,51,"Aisle 2","No","No","Supplier15","2024-07-20",13,1.01,"Yes","No",1314,"40x39x8",279594696334,"Canada","Gluten",3.0,688,31.37
+324341,"Paper Towels","Household","BrandC","750g",22.57,238,75,"Aisle 1","No","No","Supplier18","2024-04-21",249,2.02,"No","No",358,"14x48x11",296763715076,"India","Soy",2.5,66,19.83
+549513,"Chicken Breast","Household","BrandE","1L",9.66,365,52,"Aisle 3","Yes","No","Supplier19","2024-02-18",237,2.76,"Yes","Yes",3059,"15x35x13",156182694347,"USA","Gluten",4.8,377,8.85
+861458,"Carrots","Frozen","BrandB","500g",39.67,351,19,"Aisle 2","Yes","Yes","Supplier14","2024-04-15",90,3.66,"No","No",3038,"39x38x17",185729958065,"India","Nuts",1.6,517,28.87
+658196,"Ice Cream","Produce","BrandE","750g",31.5,58,15,"Refrigerated","Yes","Yes","Supplier10","2024-07-16",91,3.14,"Yes","No",3129,"27x22x9",403897604485,"Canada","Soy",2.1,1000,27.77
+327325,"Ice Cream","Pantry","BrandD","6-pack",5.62,363,87,"Produce Section","Yes","Yes","Supplier2","2024-02-04",9,2.69,"No","No",4431,"42x24x14",274938113032,"Brazil","Gluten",2.6,328,4.99
+903566,"Ground Beef","Snacks","BrandE","750g",3.56,419,34,"Produce Section","Yes","No","Supplier9","2024-08-15",155,1.2,"Yes","No",2892,"22x20x5",856038155865,"Canada","Soy",3.9,798,2.66
+889867,"Chicken Breast","Frozen","BrandC","2L",13.18,277,10,"Refrigerated","No","Yes","Supplier13","2024-12-06",46,2.69,"No","No",4424,"18x35x10",351116626070,"Mexico","Gluten",4.5,569,10.59
+831882,"Chicken Breast","Pantry","BrandD","500g",46.61,9,43,"Aisle 3","Yes","No","Supplier15","2024-11-17",279,2.05,"No","No",2863,"17x19x13",199239107580,"India","Gluten",3.5,758,40.45
+523627,"Salmon Fillet","Produce","BrandD","1kg",45.26,66,80,"Produce Section","No","No","Supplier6","2024-08-31",271,2.04,"No","Yes",250,"20x19x14",435879707446,"India","Nuts",5.0,259,37.58
+631061,"Cookies","Household","BrandE","12-pack",13.81,452,77,"Refrigerated","No","No","Supplier16","2024-07-30",133,1.96,"No","No",2934,"25x44x12",657654054192,"Brazil","Gluten",1.2,292,10.64
+110968,"Croissant","Seafood","BrandB","1kg",16.34,250,42,"Freezer","Yes","No","Supplier20","2024-03-06",17,1.36,"Yes","No",2717,"37x44x18",452645535978,"India","Gluten",4.1,977,14.51
+374598,"Laundry Detergent","Beverages","BrandC","500g",37.27,26,29,"Aisle 1","Yes","Yes","Supplier11","2024-12-19",280,2.91,"Yes","No",2067,"32x44x17",153797566929,"India","Soy",3.5,611,33.7
+545579,"Chips","Pantry","BrandB","1kg",38.46,130,53,"Produce Section","No","No","Supplier17","2024-06-11",92,4.37,"Yes","No",2122,"30x48x7",803187370819,"China","Gluten",1.3,269,29.61
+469367,"Apples","Beverages","BrandE","750g",2.31,279,67,"Refrigerated","Yes","No","Supplier7","2024-11-07",225,2.04,"Yes","No",1162,"46x38x6",467507147049,"USA","None",2.9,5,1.72
+790133,"Tea","Meat","BrandC","2L",15.9,159,16,"Aisle 2","Yes","Yes","Supplier9","2024-07-20",263,2.66,"No","Yes",2933,"32x45x12",326129080948,"India","Dairy",4.3,939,13.32
+240704,"Canned Beans","Dairy","BrandB","500g",4.57,360,34,"Freezer","Yes","Yes","Supplier3","2024-02-03",223,4.97,"Yes","No",2965,"35x19x10",774830384170,"Mexico","None",4.4,966,3.43
+864783,"Tea","Bakery","BrandA","750g",29.9,423,77,"Produce Section","Yes","No","Supplier16","2024-07-09",317,1.59,"No","Yes",2646,"48x31x12",488908673409,"Brazil","Dairy",3.1,151,21.29
+191546,"Salmon Fillet","Seafood","BrandC","500g",48.64,51,71,"Produce Section","No","Yes","Supplier17","2024-10-04",7,2.93,"Yes","Yes",238,"11x47x10",413365678030,"China","Soy",3.7,950,36.43
+384082,"Paper Towels","Snacks","BrandE","2L",23.1,405,70,"Freezer","Yes","No","Supplier3","2024-04-05",204,4.0,"Yes","No",4446,"35x42x8",467430930266,"USA","Dairy",4.5,585,18.46
+648499,"Cola","Meat","BrandE","12-pack",46.35,63,19,"Aisle 2","Yes","No","Supplier20","2024-06-16",150,4.74,"No","No",3360,"48x12x18",519953357787,"Brazil","None",2.2,336,37.77
+653746,"Tea","Pantry","BrandA","500g",16.47,355,57,"Freezer","Yes","Yes","Supplier12","2024-07-03",337,1.19,"No","No",2351,"22x22x17",173669081358,"USA","Soy",2.4,355,11.61
+134191,"Bread","Frozen","BrandB","750g",6.62,161,44,"Aisle 1","Yes","Yes","Supplier11","2024-08-27",333,3.89,"No","No",420,"33x12x7",430429847203,"Brazil","None",1.1,629,6.12
+626900,"Paper Towels","Pantry","BrandD","750g",34.42,336,53,"Aisle 1","Yes","No","Supplier8","2024-06-11",346,1.4,"Yes","No",3794,"39x27x8",636713960339,"Canada","Nuts",3.9,366,31.99
+271558,"Cola","Beverages","BrandA","750g",28.14,408,33,"Freezer","Yes","No","Supplier3","2024-06-20",277,3.62,"No","Yes",1174,"30x42x5",101328386423,"Canada","Soy",2.2,297,24.14
+400215,"Croissant","Household","BrandE","6-pack",20.98,387,31,"Refrigerated","No","Yes","Supplier19","2024-01-29",152,2.3,"No","Yes",3805,"14x37x7",186117654157,"Brazil","Nuts",4.7,916,19.86
+790687,"Milk","Frozen","BrandA","2L",29.44,81,48,"Produce Section","No","Yes","Supplier2","2024-10-21",320,1.64,"No","Yes",897,"43x35x18",855245968882,"Mexico","Soy",4.4,980,25.44
+854341,"Salmon Fillet","Household","BrandA","250ml",17.42,490,28,"Refrigerated","Yes","No","Supplier19","2024-05-11",223,2.5,"No","No",660,"46x42x12",154943109082,"Mexico","None",1.0,864,13.95
+294722,"Pasta","Pantry","BrandD","12-pack",19.92,437,76,"Refrigerated","No","Yes","Supplier4","2024-06-16",103,3.71,"No","Yes",3979,"46x49x11",804946898184,"India","None",3.2,484,16.14
+542566,"Ice Cream","Pantry","BrandB","2L",33.03,404,10,"Produce Section","No","Yes","Supplier3","2024-07-30",240,4.93,"Yes","No",2648,"37x21x13",563732795149,"China","Dairy",1.0,87,27.32
+987212,"Bread","Bakery","BrandC","1kg",17.6,490,56,"Produce Section","No","No","Supplier5","2024-02-07",175,2.74,"No","No",4917,"29x37x20",431944851953,"Canada","Gluten",1.4,85,12.49
+247435,"Pasta","Pantry","BrandE","250ml",20.25,60,81,"Refrigerated","No","Yes","Supplier2","2024-09-27",331,2.51,"No","No",1544,"41x35x15",472685363338,"Canada","Soy",4.8,123,14.22
+265563,"Canned Beans","Produce","BrandA","1L",4.53,115,23,"Aisle 2","Yes","No","Supplier20","2024-03-16",53,1.67,"No","Yes",4891,"26x45x11",745888315871,"Brazil","None",1.8,386,4.02
+333142,"Croissant","Household","BrandA","2L",20.61,10,73,"Refrigerated","No","Yes","Supplier19","2024-10-10",9,4.61,"No","No",1222,"46x29x12",250186958468,"China","None",4.2,805,15.0
+651042,"Milk","Bakery","BrandC","6-pack",19.49,204,44,"Produce Section","No","No","Supplier15","2024-04-23",43,3.95,"No","Yes",3380,"36x20x9",671207455415,"Canada","None",3.6,759,18.15
+864270,"Cookies","Dairy","BrandD","250ml",39.07,483,11,"Aisle 1","Yes","No","Supplier12","2024-04-20",164,3.99,"Yes","Yes",3983,"31x34x13",704601672611,"China","Soy",1.5,464,30.84
+711851,"Canned Beans","Seafood","BrandC","250ml",39.51,240,25,"Aisle 2","No","No","Supplier15","2024-06-05",343,2.25,"No","Yes",3123,"40x24x12",619184394962,"USA","Nuts",4.3,4,34.26
+466910,"Pasta","Meat","BrandC","2L",25.24,307,66,"Refrigerated","No","No","Supplier8","2024-09-27",320,3.54,"No","No",3324,"14x10x8",922107991284,"Brazil","Gluten",3.6,781,23.44
+794765,"Croissant","Frozen","BrandC","1L",39.09,495,71,"Aisle 1","Yes","Yes","Supplier12","2024-05-09",362,3.71,"Yes","Yes",4845,"26x22x11",163237441426,"China","None",2.5,783,31.43
+816214,"Cheese","Seafood","BrandE","750g",46.11,472,83,"Refrigerated","No","Yes","Supplier19","2024-12-13",10,1.13,"No","No",4182,"16x27x11",450573023032,"Canada","None",3.4,601,37.78
+437354,"Ice Cream","Meat","BrandB","1kg",37.39,359,25,"Produce Section","Yes","Yes","Supplier2","2024-05-30",170,1.46,"Yes","Yes",563,"44x22x18",960393607580,"India","Soy",4.8,812,26.96
+673518,"Paper Towels","Pantry","BrandB","12-pack",25.37,198,54,"Aisle 2","No","Yes","Supplier4","2024-02-27",22,1.68,"No","Yes",4904,"13x29x17",408430593074,"China","Gluten",2.8,933,23.21
+373644,"Ground Beef","Seafood","BrandA","6-pack",31.3,292,92,"Aisle 2","Yes","Yes","Supplier11","2024-10-01",273,2.21,"No","Yes",1785,"10x44x16",921477338671,"Brazil","Nuts",3.8,484,24.62
+713314,"Cola","Produce","BrandA","750g",7.9,325,79,"Aisle 1","No","Yes","Supplier15","2024-02-12",205,4.77,"Yes","Yes",187,"21x41x15",661765544584,"India","Soy",2.1,964,6.33
+179500,"Salmon Fillet","Meat","BrandA","12-pack",4.69,24,84,"Freezer","Yes","No","Supplier17","2024-09-01",56,2.32,"No","No",1397,"26x27x20",886552289976,"China","Nuts",2.2,252,4.06
+294726,"Chicken Breast","Seafood","BrandD","500g",36.33,137,51,"Refrigerated","No","Yes","Supplier5","2024-06-11",330,2.09,"Yes","Yes",4179,"32x47x5",299090047788,"Canada","Nuts",2.5,203,32.17
+438831,"Salmon Fillet","Bakery","BrandE","750g",8.42,292,49,"Aisle 3","No","Yes","Supplier12","2024-02-17",224,3.98,"No","Yes",3141,"18x27x13",790805228280,"Mexico","None",2.6,393,5.94
+830699,"Ground Beef","Snacks","BrandC","750g",36.86,99,79,"Aisle 3","No","No","Supplier1","2024-12-12",196,4.11,"No","No",3367,"43x44x13",555230645234,"Canada","Gluten",2.9,85,28.35
+778997,"Cola","Household","BrandE","1L",3.46,477,33,"Aisle 2","No","No","Supplier14","2024-06-22",67,2.08,"Yes","No",2572,"45x33x15",455325818991,"China","Nuts",4.9,98,3.03
+855088,"Frozen Pizza","Beverages","BrandC","1kg",32.94,243,95,"Aisle 3","No","No","Supplier16","2024-10-18",219,2.97,"No","No",3196,"40x45x12",737496413407,"Brazil","Dairy",4.1,863,28.15
+709408,"Cookies","Pantry","BrandB","1kg",15.69,361,89,"Aisle 1","No","No","Supplier6","2024-11-07",44,4.41,"Yes","No",2337,"28x34x7",502758197567,"Canada","None",4.3,990,12.81
+114716,"Carrots","Seafood","BrandA","1L",24.31,434,49,"Aisle 3","No","No","Supplier13","2024-06-18",67,1.43,"No","No",1079,"10x39x14",594596774033,"USA","Nuts",1.6,790,19.73
+394610,"Apples","Pantry","BrandA","12-pack",2.61,333,46,"Freezer","Yes","No","Supplier7","2024-05-17",308,1.73,"Yes","Yes",369,"23x34x10",196140078035,"USA","Nuts",4.6,951,2.35
+616030,"Ground Beef","Pantry","BrandD","2L",26.35,283,51,"Aisle 3","Yes","No","Supplier10","2024-02-14",209,4.07,"Yes","No",4232,"47x20x16",148216074296,"Brazil","Dairy",2.1,796,21.22
+770127,"Shrimp","Household","BrandB","12-pack",40.57,171,54,"Aisle 3","No","Yes","Supplier13","2024-07-28",165,4.18,"Yes","Yes",350,"17x28x10",357631612234,"Canada","Gluten",3.1,260,32.29
+106950,"Milk","Seafood","BrandB","750g",34.56,164,50,"Produce Section","No","Yes","Supplier19","2024-11-16",284,2.18,"No","Yes",830,"14x35x6",671844432841,"Canada","Soy",3.8,7,30.83
+755497,"Carrots","Seafood","BrandD","6-pack",21.41,277,27,"Aisle 3","No","Yes","Supplier8","2024-05-22",227,4.79,"Yes","No",2679,"50x37x20",462962896998,"Brazil","Soy",4.5,354,17.35
+912739,"Chips","Seafood","BrandE","1kg",48.69,282,79,"Aisle 3","No","Yes","Supplier14","2024-08-03",162,3.3,"Yes","No",4715,"36x34x19",884867169540,"Canada","Soy",2.3,264,41.67
+461243,"Canned Beans","Pantry","BrandC","250ml",4.39,84,72,"Refrigerated","Yes","No","Supplier6","2024-08-27",237,1.03,"No","Yes",4087,"44x20x12",589656985125,"India","Nuts",1.8,213,3.6
+444573,"Canned Beans","Bakery","BrandB","2L",27.14,216,63,"Aisle 3","Yes","Yes","Supplier15","2024-09-20",314,4.61,"Yes","No",418,"36x12x7",247342567507,"USA","None",4.8,838,21.95
+737091,"Frozen Pizza","Meat","BrandA","1kg",35.46,13,26,"Freezer","Yes","No","Supplier11","2024-10-14",231,2.48,"No","Yes",1753,"21x13x14",475904286194,"Brazil","None",4.8,86,25.84
+752168,"Pasta","Snacks","BrandA","12-pack",20.18,197,97,"Aisle 2","Yes","No","Supplier7","2024-04-28",329,1.65,"No","Yes",2199,"17x38x20",588557640865,"China","Dairy",3.6,363,14.8
+755470,"Ice Cream","Household","BrandA","250ml",35.69,304,15,"Aisle 1","Yes","Yes","Supplier19","2024-04-30",28,1.72,"No","No",626,"10x24x8",200927333104,"China","Gluten",1.7,890,29.91
+233793,"Cheese","Produce","BrandA","12-pack",16.66,448,57,"Freezer","Yes","No","Supplier15","2024-10-31",254,3.61,"Yes","Yes",3878,"40x45x10",905705973336,"Brazil","None",4.4,525,13.01
+266201,"Cheese","Household","BrandA","1L",42.64,97,15,"Produce Section","No","Yes","Supplier10","2024-02-09",40,4.43,"Yes","Yes",3338,"19x13x19",758824503253,"USA","Soy",3.8,557,39.6
+516348,"Cookies","Pantry","BrandD","12-pack",48.06,130,76,"Refrigerated","No","No","Supplier1","2024-02-08",102,4.81,"Yes","No",4949,"24x12x15",349121563457,"Mexico","Dairy",4.4,616,36.29
+579660,"Frozen Pizza","Household","BrandD","2L",23.3,464,89,"Refrigerated","Yes","Yes","Supplier4","2024-10-29",117,4.89,"Yes","Yes",4179,"46x10x13",108858890797,"Canada","Soy",3.7,58,19.55
+469854,"Salmon Fillet","Dairy","BrandA","500g",33.16,428,56,"Freezer","Yes","No","Supplier14","2024-03-02",49,3.47,"No","Yes",1164,"21x15x16",971251450523,"Brazil","None",3.5,180,29.96
+472045,"Pasta","Dairy","BrandA","1L",33.75,384,79,"Freezer","No","No","Supplier20","2024-05-03",318,3.17,"Yes","No",4818,"35x34x15",281455929260,"India","Soy",3.5,244,24.25
+284091,"Laundry Detergent","Beverages","BrandE","250ml",9.96,86,36,"Produce Section","Yes","Yes","Supplier13","2024-05-26",264,3.88,"Yes","No",1410,"21x17x7",558790198949,"Brazil","None",2.8,44,7.62
+497642,"Chicken Breast","Pantry","BrandC","2L",6.23,175,65,"Aisle 2","No","No","Supplier15","2024-08-15",263,4.94,"Yes","No",4130,"43x24x12",267490939312,"Mexico","Dairy",4.9,793,4.61
+100951,"Milk","Beverages","BrandC","250ml",22.63,245,43,"Freezer","Yes","No","Supplier9","2024-04-04",102,2.87,"No","No",2723,"24x42x11",473010418859,"India","Soy",4.7,840,20.69
+771406,"Tea","Household","BrandD","6-pack",13.35,281,46,"Freezer","No","Yes","Supplier19","2024-02-14",45,3.17,"Yes","Yes",4287,"14x44x13",206519341983,"Mexico","Nuts",3.9,657,9.77
+854510,"Paper Towels","Snacks","BrandE","6-pack",21.66,19,31,"Aisle 1","Yes","Yes","Supplier10","2024-02-05",175,3.66,"Yes","No",1815,"36x19x9",286256274638,"USA","None",1.7,116,19.48
+536206,"Salmon Fillet","Meat","BrandC","750g",7.07,318,71,"Refrigerated","Yes","Yes","Supplier4","2024-03-06",65,3.45,"Yes","No",4043,"35x43x8",630410566675,"China","Soy",2.5,684,6.51
+108143,"Tea","Dairy","BrandC","750g",14.51,254,98,"Aisle 2","No","No","Supplier1","2024-08-03",65,3.64,"Yes","Yes",2592,"27x49x8",310062518550,"Mexico","Gluten",4.0,167,10.87
+367508,"Ice Cream","Household","BrandA","12-pack",39.2,421,48,"Aisle 2","Yes","Yes","Supplier11","2024-03-21",51,1.78,"No","No",1402,"24x16x7",919553305160,"USA","Nuts",3.9,762,34.21
+792202,"Tea","Produce","BrandE","1kg",35.15,381,34,"Aisle 1","No","Yes","Supplier13","2024-02-17",293,4.83,"Yes","No",3015,"34x46x17",532642407764,"India","None",3.5,878,30.14
+582420,"Chips","Snacks","BrandA","250ml",18.02,351,16,"Produce Section","Yes","No","Supplier10","2024-05-16",350,3.4,"Yes","No",1146,"11x33x10",163105228415,"India","Gluten",3.2,755,13.69
+980591,"Milk","Bakery","BrandD","750g",19.38,415,60,"Aisle 1","Yes","No","Supplier19","2024-07-15",131,2.43,"No","Yes",1118,"36x13x13",544969041846,"Canada","None",4.1,374,15.52
+516349,"Ground Beef","Dairy","BrandB","1kg",6.86,145,93,"Refrigerated","Yes","No","Supplier15","2024-12-25",139,4.97,"Yes","No",3587,"37x43x10",101150955613,"USA","Soy",3.3,236,5.8
+942885,"Frozen Pizza","Beverages","BrandB","2L",31.74,207,20,"Aisle 3","Yes","Yes","Supplier18","2024-08-26",101,1.96,"Yes","No",1791,"42x26x8",485536693291,"Canada","Dairy",4.8,629,29.17
+876445,"Milk","Produce","BrandD","6-pack",35.82,432,93,"Aisle 1","No","No","Supplier17","2024-03-30",194,3.45,"No","No",3517,"45x28x19",471547753649,"Canada","Soy",2.5,668,33.38
+539742,"Croissant","Dairy","BrandA","6-pack",29.54,491,83,"Aisle 3","No","No","Supplier9","2024-06-21",270,4.76,"Yes","No",789,"42x26x14",192110561406,"India","Dairy",3.3,33,26.66
+767370,"Chicken Breast","Bakery","BrandB","1kg",29.29,115,92,"Freezer","No","No","Supplier6","2024-03-16",143,1.73,"Yes","Yes",3710,"49x24x8",690974816710,"Brazil","None",2.2,642,21.12
+549283,"Shrimp","Produce","BrandA","2L",18.02,499,89,"Freezer","Yes","No","Supplier9","2024-11-26",74,4.2,"No","No",1956,"45x23x10",930364719759,"Brazil","Soy",3.9,729,16.7
+266524,"Ground Beef","Meat","BrandA","1L",25.42,369,11,"Aisle 2","Yes","Yes","Supplier19","2024-12-07",295,3.74,"No","Yes",2338,"50x44x14",377459576275,"Brazil","None",4.2,328,20.36
+957980,"Cookies","Meat","BrandA","750g",46.83,10,47,"Aisle 1","No","Yes","Supplier11","2024-06-22",252,4.33,"Yes","No",1255,"38x18x7",663472223883,"Mexico","Nuts",1.9,200,41.85
+693983,"Cookies","Frozen","BrandE","2L",22.32,386,48,"Aisle 3","No","No","Supplier8","2024-12-11",22,4.73,"No","Yes",1513,"20x15x9",195625445238,"USA","Gluten",1.8,935,16.48
+915961,"Salmon Fillet","Frozen","BrandC","12-pack",34.88,426,42,"Aisle 2","No","Yes","Supplier12","2024-06-03",293,4.21,"Yes","No",174,"41x21x17",426834864635,"India","Dairy",4.1,636,30.46
+337210,"Apples","Seafood","BrandD","1kg",27.66,26,86,"Produce Section","Yes","Yes","Supplier14","2024-02-01",231,4.62,"Yes","Yes",746,"41x16x20",317526983783,"USA","Soy",4.4,543,23.82
+154371,"Croissant","Bakery","BrandD","500g",33.41,488,57,"Aisle 3","No","Yes","Supplier16","2024-03-23",254,3.88,"No","Yes",201,"31x10x20",573008047153,"Mexico","None",4.9,291,24.14
+103355,"Chicken Breast","Produce","BrandB","750g",14.97,158,28,"Freezer","Yes","Yes","Supplier6","2024-07-23",279,1.8,"Yes","No",1744,"29x19x17",300738245425,"USA","Nuts",1.9,98,10.88
+628238,"Tea","Snacks","BrandA","1L",17.0,305,34,"Freezer","No","No","Supplier14","2024-08-29",246,1.6,"No","Yes",1730,"14x42x12",130318538423,"USA","None",2.9,72,14.53
+798608,"Cookies","Produce","BrandD","1L",43.56,93,25,"Produce Section","Yes","Yes","Supplier17","2024-06-30",236,3.96,"Yes","No",494,"24x22x15",868348823641,"USA","None",1.0,270,41.27
+576470,"Ice Cream","Pantry","BrandC","500g",29.99,204,52,"Aisle 1","Yes","No","Supplier14","2024-10-27",217,3.97,"No","No",4050,"21x26x13",845575672140,"USA","Dairy",1.2,351,27.47
+485618,"Tea","Household","BrandD","1kg",16.37,207,61,"Freezer","No","Yes","Supplier14","2024-01-26",256,3.94,"No","No",3339,"25x26x9",142794783210,"Canada","Soy",2.2,984,13.26
+509309,"Chicken Breast","Bakery","BrandD","2L",15.36,322,26,"Aisle 2","Yes","No","Supplier2","2024-06-09",126,2.46,"No","Yes",4742,"45x27x6",578215708181,"India","Soy",2.6,569,12.09
+186350,"Ice Cream","Bakery","BrandA","750g",3.39,296,45,"Refrigerated","Yes","No","Supplier4","2024-09-06",189,2.86,"No","No",3599,"45x11x10",317342734941,"Brazil","Nuts",3.0,983,2.87
+113865,"Cola","Beverages","BrandC","1kg",49.64,155,30,"Freezer","No","No","Supplier1","2024-02-05",29,3.15,"No","No",410,"27x40x19",235420255033,"China","Gluten",3.0,855,36.34
+428103,"Croissant","Frozen","BrandB","500g",7.09,456,49,"Refrigerated","Yes","Yes","Supplier3","2024-04-23",169,3.12,"Yes","Yes",3383,"45x16x6",325534301618,"USA","Dairy",2.2,271,4.98
+307569,"Apples","Pantry","BrandC","750g",40.76,443,35,"Aisle 3","No","Yes","Supplier15","2024-02-27",17,2.58,"No","No",4662,"17x30x20",848752472538,"Mexico","Nuts",3.5,4,37.23
+715502,"Ice Cream","Household","BrandD","1L",12.93,440,94,"Refrigerated","No","No","Supplier11","2024-02-29",149,3.03,"Yes","Yes",3220,"10x18x8",975270139100,"Mexico","Soy",1.5,335,11.06
+379408,"Cola","Produce","BrandC","12-pack",17.41,86,92,"Produce Section","No","No","Supplier12","2024-06-12",196,3.81,"No","No",2812,"14x37x7",102501606610,"USA","Gluten",1.4,34,16.28
+180075,"Shrimp","Seafood","BrandE","1kg",39.2,216,37,"Produce Section","Yes","Yes","Supplier18","2024-03-31",55,4.96,"Yes","No",2511,"38x15x10",532892818948,"USA","Dairy",1.7,128,33.72
+345813,"Chips","Dairy","BrandE","1kg",15.74,370,54,"Aisle 3","No","No","Supplier20","2024-05-14",240,3.88,"No","Yes",1764,"16x44x17",260234583910,"Mexico","None",2.6,436,12.46
+747452,"Chicken Breast","Meat","BrandE","1kg",45.46,431,70,"Aisle 3","No","No","Supplier8","2024-07-29",78,2.91,"Yes","No",4154,"27x20x19",231676584035,"Mexico","Dairy",2.9,85,33.59
+844958,"Chips","Produce","BrandA","1L",16.34,221,30,"Refrigerated","No","No","Supplier6","2024-08-09",76,2.59,"No","Yes",4472,"38x15x12",156493676416,"Brazil","Nuts",2.2,99,11.78
+693613,"Pasta","Meat","BrandD","250ml",28.44,223,12,"Freezer","No","Yes","Supplier15","2024-01-10",145,3.65,"Yes","Yes",4059,"33x25x15",609651606335,"India","Gluten",3.3,239,21.82
+585022,"Laundry Detergent","Beverages","BrandD","6-pack",3.73,393,27,"Produce Section","No","Yes","Supplier5","2024-05-19",110,1.22,"Yes","Yes",3610,"32x24x18",644208046534,"USA","None",4.7,598,2.96
+333615,"Ice Cream","Bakery","BrandD","12-pack",34.18,135,48,"Produce Section","No","No","Supplier2","2024-10-27",94,3.27,"Yes","No",905,"48x38x12",887165943319,"Mexico","None",1.4,786,27.73
+782851,"Canned Beans","Beverages","BrandD","250ml",27.94,40,37,"Aisle 3","No","Yes","Supplier11","2024-07-04",238,1.01,"Yes","Yes",4792,"10x25x14",353220083540,"Mexico","Dairy",3.4,592,22.8
+312833,"Canned Beans","Pantry","BrandE","500g",32.5,58,64,"Freezer","No","No","Supplier8","2024-07-04",116,3.62,"Yes","No",4002,"26x30x16",453029945277,"China","None",2.6,421,28.11
+325541,"Cola","Snacks","BrandD","2L",32.77,242,96,"Produce Section","No","Yes","Supplier10","2024-04-12",217,2.76,"Yes","No",3286,"46x45x13",668174881518,"Canada","Soy",3.9,870,25.69
+377896,"Frozen Pizza","Frozen","BrandB","500g",35.17,26,95,"Aisle 3","Yes","No","Supplier15","2024-11-10",161,1.37,"No","Yes",1309,"25x18x18",642325078581,"Brazil","None",3.6,149,31.88
+121174,"Croissant","Beverages","BrandB","750g",17.64,176,84,"Aisle 1","Yes","Yes","Supplier13","2024-08-26",317,4.29,"No","Yes",4505,"15x37x9",126647712135,"Brazil","Soy",4.6,52,13.78
+893518,"Chips","Dairy","BrandB","750g",18.58,440,68,"Aisle 2","Yes","Yes","Supplier4","2024-09-05",243,1.72,"No","Yes",2512,"49x18x18",240972018600,"Brazil","Dairy",2.2,767,17.07
+184119,"Canned Beans","Snacks","BrandC","250ml",49.62,362,57,"Produce Section","Yes","No","Supplier3","2024-05-26",313,4.74,"No","Yes",3919,"45x43x17",754913831383,"China","None",1.0,258,37.16
+489110,"Croissant","Produce","BrandA","1L",34.46,417,32,"Aisle 1","No","No","Supplier20","2024-09-19",233,4.25,"No","No",106,"29x31x5",806419125315,"China","Gluten",2.0,653,26.92
+604859,"Carrots","Seafood","BrandB","250ml",20.87,479,52,"Refrigerated","No","Yes","Supplier12","2024-06-08",54,4.63,"Yes","Yes",4125,"29x16x13",241217686411,"Mexico","None",3.2,289,15.96
+545412,"Pasta","Pantry","BrandD","500g",48.54,127,64,"Freezer","No","Yes","Supplier14","2024-12-24",298,4.7,"Yes","No",2934,"15x39x5",618572197251,"USA","Dairy",2.2,451,35.97
+367195,"Laundry Detergent","Produce","BrandD","12-pack",6.61,218,82,"Refrigerated","Yes","Yes","Supplier4","2024-11-30",276,1.1,"No","No",2428,"11x46x16",614093374532,"Canada","Dairy",4.1,739,5.87
+575995,"Shrimp","Seafood","BrandC","12-pack",32.56,448,60,"Aisle 2","Yes","Yes","Supplier18","2024-08-24",115,2.69,"Yes","Yes",3752,"45x20x18",419947723426,"Canada","Dairy",2.5,441,24.0
+629266,"Laundry Detergent","Pantry","BrandD","1kg",26.81,121,63,"Produce Section","No","No","Supplier5","2024-07-19",13,1.65,"No","Yes",4886,"29x43x20",180766959271,"Canada","Soy",2.4,857,22.92
+433379,"Chicken Breast","Bakery","BrandC","6-pack",13.05,392,66,"Produce Section","Yes","No","Supplier19","2024-05-24",143,3.25,"No","Yes",3733,"42x13x12",295898632169,"Canada","Nuts",3.3,761,11.03
+939321,"Laundry Detergent","Bakery","BrandE","500g",1.7,171,18,"Aisle 2","Yes","Yes","Supplier15","2024-09-15",354,4.47,"Yes","Yes",4612,"15x41x13",976536821682,"USA","None",3.9,797,1.4
+144244,"Ground Beef","Produce","BrandA","750g",8.68,361,76,"Aisle 1","No","Yes","Supplier8","2024-05-13",10,1.02,"No","No",3775,"32x15x17",725558550104,"India","None",4.9,904,6.41
+187395,"Cola","Seafood","BrandB","12-pack",30.85,252,57,"Aisle 3","No","No","Supplier15","2024-06-28",143,3.44,"Yes","Yes",2256,"29x49x16",476133583395,"India","Gluten",3.6,518,24.21
+169536,"Cola","Snacks","BrandE","1L",2.69,381,100,"Aisle 1","No","Yes","Supplier3","2024-08-21",237,3.01,"No","Yes",1114,"31x33x15",723240211499,"Canada","Dairy",3.2,18,2.21
+147772,"Pasta","Pantry","BrandD","2L",26.81,226,41,"Produce Section","Yes","No","Supplier1","2024-08-14",108,1.65,"Yes","Yes",3364,"21x18x9",863074080696,"Canada","None",1.8,131,24.79
+259768,"Croissant","Pantry","BrandC","12-pack",8.93,488,73,"Aisle 1","Yes","Yes","Supplier17","2024-07-17",298,3.35,"No","Yes",2780,"31x16x17",415778267194,"Mexico","Soy",4.9,622,6.73
+504576,"Laundry Detergent","Produce","BrandD","750g",21.86,191,43,"Aisle 2","Yes","No","Supplier11","2024-09-05",44,2.22,"No","Yes",2878,"34x37x9",411033011908,"Mexico","None",2.1,637,19.74
+911340,"Frozen Pizza","Snacks","BrandA","1kg",20.17,453,14,"Freezer","Yes","No","Supplier8","2024-01-27",290,1.67,"No","No",2593,"27x47x20",853815261595,"USA","None",3.0,382,15.64
+652929,"Apples","Dairy","BrandB","250ml",12.98,379,99,"Freezer","No","Yes","Supplier3","2024-11-17",140,3.36,"Yes","No",4778,"36x33x7",867634315770,"Mexico","None",4.7,76,9.49
+776473,"Frozen Pizza","Beverages","BrandB","6-pack",7.51,51,48,"Aisle 1","Yes","No","Supplier19","2024-11-01",350,4.13,"No","Yes",2672,"24x40x8",917787023954,"Canada","Gluten",2.6,20,5.9
+511417,"Laundry Detergent","Meat","BrandA","750g",35.67,176,69,"Aisle 3","Yes","No","Supplier19","2024-11-27",187,1.33,"Yes","No",3819,"15x49x7",807325493305,"India","Soy",3.0,700,31.27
+281349,"Laundry Detergent","Meat","BrandC","750g",10.68,267,89,"Aisle 3","No","Yes","Supplier19","2024-12-27",231,3.77,"No","Yes",2137,"21x10x7",143369002883,"Canada","None",2.8,368,9.22
+231063,"Shrimp","Dairy","BrandD","750g",30.45,266,73,"Aisle 2","Yes","No","Supplier9","2024-05-28",14,1.17,"No","No",1990,"20x15x5",446872382684,"China","None",1.5,830,28.83
+575082,"Ground Beef","Meat","BrandA","6-pack",3.43,44,87,"Aisle 2","Yes","No","Supplier7","2024-03-27",249,2.18,"No","No",2183,"15x10x20",159028694238,"China","None",2.0,838,3.07
+488972,"Shrimp","Bakery","BrandD","1L",15.37,154,64,"Aisle 3","No","Yes","Supplier2","2024-11-05",271,3.17,"No","Yes",3416,"28x17x6",369948788108,"Brazil","Dairy",2.6,704,11.2
+492868,"Cheese","Household","BrandB","500g",17.41,170,35,"Aisle 1","No","No","Supplier5","2024-09-20",134,2.27,"No","Yes",209,"15x43x9",288909201945,"China","Soy",3.1,493,12.49
+333643,"Pasta","Snacks","BrandE","250ml",37.49,157,63,"Produce Section","No","No","Supplier1","2024-03-09",297,4.35,"Yes","Yes",4292,"20x39x19",523418125821,"India","None",4.6,839,26.82
+352619,"Chicken Breast","Frozen","BrandC","250ml",36.72,375,93,"Produce Section","Yes","No","Supplier8","2024-11-01",288,4.24,"Yes","No",1294,"41x41x19",556333409796,"India","Dairy",2.3,610,32.06
+141997,"Laundry Detergent","Dairy","BrandB","500g",23.01,101,90,"Aisle 1","No","No","Supplier1","2024-05-12",245,3.42,"No","No",462,"46x44x8",857936899176,"Brazil","Gluten",2.5,39,18.33
+274011,"Ice Cream","Seafood","BrandD","2L",46.65,263,55,"Freezer","No","Yes","Supplier12","2024-09-17",170,4.13,"Yes","No",824,"42x26x20",562838242917,"USA","Dairy",1.8,241,34.44
+640326,"Laundry Detergent","Beverages","BrandB","12-pack",42.1,85,28,"Aisle 3","Yes","No","Supplier19","2024-02-12",354,2.34,"No","Yes",2943,"38x40x7",257111843552,"Mexico","Dairy",1.3,626,34.48
+865075,"Cola","Household","BrandB","12-pack",16.96,356,99,"Refrigerated","Yes","No","Supplier11","2024-07-09",138,2.73,"Yes","Yes",2918,"17x32x18",313876850775,"India","Dairy",1.4,251,13.66
+735927,"Paper Towels","Household","BrandE","2L",29.55,325,32,"Aisle 3","No","Yes","Supplier17","2024-08-19",312,2.61,"No","Yes",779,"29x21x16",806012235972,"India","Soy",1.6,671,26.76
+695517,"Chips","Pantry","BrandC","1kg",31.61,189,72,"Aisle 3","Yes","No","Supplier3","2024-01-22",269,3.86,"No","No",226,"17x20x5",945382400128,"Canada","Dairy",3.5,320,26.88
+369284,"Milk","Bakery","BrandD","750g",23.35,441,10,"Aisle 3","No","Yes","Supplier7","2024-09-20",162,2.13,"Yes","No",2840,"12x12x16",386348466652,"India","Gluten",2.3,116,16.75
+661488,"Laundry Detergent","Dairy","BrandA","6-pack",8.51,290,19,"Produce Section","Yes","Yes","Supplier10","2024-11-29",31,3.19,"Yes","Yes",2596,"34x28x6",567506117977,"Brazil","Gluten",1.1,296,6.51
+236438,"Shrimp","Snacks","BrandE","750g",34.74,214,83,"Aisle 3","Yes","No","Supplier2","2024-06-24",289,4.06,"No","No",929,"27x40x10",746606555645,"Canada","Gluten",2.5,611,25.34
+372523,"Salmon Fillet","Snacks","BrandD","1L",19.53,346,22,"Produce Section","Yes","Yes","Supplier16","2024-09-02",301,1.13,"Yes","No",1422,"26x18x19",482070611507,"Canada","None",3.7,385,14.22
+243713,"Ice Cream","Dairy","BrandE","500g",41.72,40,89,"Produce Section","Yes","No","Supplier13","2024-11-13",54,4.76,"No","Yes",955,"40x11x19",757109110533,"China","Gluten",3.6,733,37.85
+704479,"Tea","Meat","BrandC","500g",2.68,436,22,"Refrigerated","Yes","No","Supplier1","2024-03-11",267,1.72,"No","Yes",2854,"21x16x15",427128657972,"Canada","Gluten",4.3,389,2.31
+858291,"Ground Beef","Produce","BrandA","750g",42.59,420,17,"Aisle 2","No","Yes","Supplier12","2024-06-21",365,2.5,"Yes","No",583,"32x40x14",745327413947,"USA","Dairy",4.4,518,36.19
+403409,"Pasta","Produce","BrandC","1L",32.86,77,82,"Aisle 3","No","Yes","Supplier13","2024-02-24",317,3.14,"No","Yes",197,"11x44x16",797706281356,"China","Soy",1.6,878,23.91
+148697,"Cola","Pantry","BrandA","1L",45.13,5,39,"Freezer","Yes","Yes","Supplier20","2024-12-24",180,4.16,"Yes","Yes",3809,"20x21x7",608353340748,"Brazil","Nuts",3.6,971,40.89
+846572,"Shrimp","Dairy","BrandE","500g",15.85,255,100,"Refrigerated","No","No","Supplier13","2024-09-15",37,4.96,"No","Yes",1127,"12x21x20",497973142678,"Mexico","Gluten",1.5,898,12.71
+462629,"Carrots","Beverages","BrandD","250ml",49.65,420,89,"Aisle 2","No","No","Supplier7","2024-06-07",51,1.58,"No","No",1240,"21x18x9",252277059293,"India","None",3.7,237,39.18
+156761,"Pasta","Dairy","BrandA","2L",34.02,442,48,"Refrigerated","No","Yes","Supplier5","2024-12-13",340,3.69,"No","Yes",3508,"38x13x14",394472883403,"Mexico","Gluten",2.4,974,24.61
+803715,"Croissant","Frozen","BrandE","12-pack",37.09,431,80,"Aisle 3","Yes","Yes","Supplier20","2024-06-16",60,1.23,"Yes","No",4907,"48x44x5",481483954258,"Mexico","Soy",1.4,733,29.83
+632896,"Laundry Detergent","Dairy","BrandE","1L",17.83,17,56,"Aisle 1","No","No","Supplier6","2024-11-03",207,4.07,"Yes","Yes",1544,"42x12x5",626683509553,"Brazil","Nuts",4.4,736,13.14
+795488,"Cookies","Bakery","BrandC","2L",32.28,310,80,"Refrigerated","No","No","Supplier15","2024-01-29",139,2.28,"No","Yes",4288,"50x28x10",909961098168,"USA","Gluten",2.0,384,26.15
+615653,"Cheese","Produce","BrandB","1L",7.17,267,43,"Refrigerated","Yes","Yes","Supplier15","2024-08-04",94,3.94,"No","No",4829,"14x39x12",327804798709,"China","Soy",3.6,749,6.71
+339921,"Ice Cream","Seafood","BrandA","1kg",38.93,143,51,"Freezer","No","No","Supplier10","2024-04-26",51,2.25,"Yes","No",2705,"41x15x9",438809880562,"Brazil","Soy",4.6,974,33.95
+656540,"Bread","Seafood","BrandB","500g",35.17,4,83,"Freezer","No","No","Supplier2","2024-02-16",39,3.23,"Yes","Yes",3146,"10x37x13",138546117908,"Brazil","Gluten",3.1,438,29.1
+591135,"Croissant","Household","BrandB","750g",41.59,307,52,"Aisle 1","Yes","Yes","Supplier8","2024-03-27",286,3.37,"Yes","No",3911,"11x13x16",471575937178,"India","Nuts",2.9,795,36.3
+840289,"Tea","Household","BrandA","500g",3.82,208,41,"Aisle 2","Yes","No","Supplier5","2024-03-19",259,2.7,"No","No",2764,"31x31x5",775616423575,"Canada","Nuts",4.7,427,3.24
+672162,"Cola","Dairy","BrandA","12-pack",39.42,219,49,"Aisle 1","Yes","No","Supplier1","2024-11-20",278,3.99,"No","Yes",162,"45x12x5",850049801825,"Brazil","Nuts",4.3,683,28.25
+230263,"Croissant","Pantry","BrandB","750g",2.58,242,48,"Aisle 1","Yes","No","Supplier9","2024-02-08",90,3.23,"Yes","No",4010,"13x43x11",764280649221,"Mexico","None",1.1,644,2.26
+538062,"Ice Cream","Bakery","BrandC","2L",6.77,5,91,"Freezer","No","No","Supplier4","2024-09-25",125,3.15,"Yes","Yes",104,"26x27x17",321730662577,"USA","Gluten",3.9,819,5.25
+886235,"Shrimp","Beverages","BrandD","1kg",9.65,427,66,"Aisle 1","No","Yes","Supplier12","2024-03-05",63,2.07,"Yes","No",2724,"36x36x5",408614689131,"Mexico","Soy",3.8,827,8.8
+170185,"Carrots","Household","BrandE","12-pack",33.91,249,54,"Aisle 2","No","Yes","Supplier18","2024-12-01",313,1.28,"No","Yes",1827,"26x14x12",697917513428,"Mexico","Dairy",2.1,520,25.59
+392401,"Cheese","Household","BrandB","750g",38.96,454,14,"Aisle 2","No","Yes","Supplier20","2024-05-17",361,2.63,"No","Yes",2851,"47x21x7",168428149883,"Mexico","Nuts",4.7,787,27.46
+564199,"Ground Beef","Pantry","BrandC","500g",30.28,164,25,"Refrigerated","No","Yes","Supplier2","2024-09-21",39,4.25,"No","Yes",2867,"42x15x20",140660607522,"USA","None",2.0,27,26.99
+983161,"Cheese","Household","BrandC","750g",1.12,188,19,"Aisle 3","No","No","Supplier1","2024-12-05",327,2.14,"No","No",4743,"32x47x10",320104908842,"USA","None",1.6,577,0.83
+461010,"Carrots","Household","BrandC","2L",10.97,192,59,"Produce Section","No","No","Supplier15","2024-09-11",56,1.69,"Yes","Yes",4651,"18x10x9",626008935514,"Mexico","Soy",3.0,561,10.0
+629475,"Milk","Seafood","BrandD","2L",7.44,375,90,"Aisle 1","No","Yes","Supplier20","2024-03-11",111,3.9,"Yes","No",3768,"35x26x18",772115945087,"China","Dairy",1.6,287,6.05
+461243,"Chips","Bakery","BrandE","2L",41.61,253,60,"Aisle 3","Yes","Yes","Supplier2","2024-04-08",51,3.81,"Yes","No",397,"48x12x7",614736298674,"Mexico","Nuts",3.6,971,33.91
+193638,"Cheese","Pantry","BrandD","750g",14.82,256,95,"Aisle 1","No","Yes","Supplier20","2024-12-04",189,1.5,"No","No",843,"47x47x15",299060286540,"India","Nuts",1.0,268,11.48
+879755,"Cookies","Pantry","BrandE","750g",13.2,472,37,"Produce Section","Yes","Yes","Supplier16","2024-09-21",81,2.3,"Yes","No",1162,"43x48x15",156948983444,"China","Gluten",4.4,601,12.03
+609896,"Cola","Household","BrandC","750g",38.9,428,76,"Aisle 1","No","Yes","Supplier6","2024-07-19",296,3.3,"Yes","Yes",1852,"13x38x8",534112618840,"Canada","Dairy",1.0,906,34.59
+648833,"Ground Beef","Frozen","BrandC","1L",22.83,108,61,"Produce Section","No","No","Supplier1","2024-02-04",24,2.7,"Yes","No",675,"28x22x9",471589276229,"Brazil","None",2.3,460,19.04
+777606,"Bread","Dairy","BrandC","6-pack",25.33,270,92,"Aisle 2","Yes","No","Supplier7","2024-02-27",275,1.84,"Yes","Yes",1757,"15x30x18",367332756211,"Mexico","None",2.2,938,19.0
+763004,"Pasta","Dairy","BrandB","250ml",41.55,359,24,"Aisle 3","No","No","Supplier16","2024-02-17",38,1.18,"No","No",4248,"47x34x8",330448408966,"Canada","Dairy",2.4,914,37.92
+972113,"Croissant","Frozen","BrandC","1kg",11.65,110,45,"Refrigerated","No","No","Supplier6","2024-11-12",361,3.06,"Yes","Yes",1586,"14x31x11",798550724970,"Mexico","Soy",4.4,266,8.32
+800956,"Shrimp","Bakery","BrandD","1kg",5.37,183,70,"Aisle 1","No","No","Supplier6","2024-09-29",88,2.86,"Yes","Yes",455,"42x26x7",702129054682,"Canada","Dairy",1.9,407,3.88
+775996,"Shrimp","Bakery","BrandB","500g",28.17,291,46,"Refrigerated","No","No","Supplier7","2024-05-28",131,1.31,"Yes","No",4768,"48x33x15",873270649415,"Canada","Gluten",1.4,754,24.73
+524541,"Carrots","Seafood","BrandD","1kg",13.19,217,89,"Produce Section","No","No","Supplier19","2024-11-23",229,3.64,"No","Yes",4774,"42x10x5",736831011713,"Canada","Nuts",2.2,884,10.69
+826965,"Chicken Breast","Dairy","BrandE","2L",23.47,251,49,"Refrigerated","No","Yes","Supplier11","2024-06-02",239,4.3,"No","Yes",2256,"18x37x11",291604155970,"Brazil","Nuts",3.0,355,17.72
+585233,"Cheese","Produce","BrandE","750g",31.62,383,82,"Aisle 1","Yes","No","Supplier4","2024-11-27",175,1.29,"No","Yes",1173,"42x10x8",666460328679,"Mexico","Dairy",1.0,85,24.25
+746515,"Frozen Pizza","Beverages","BrandB","6-pack",3.83,20,51,"Freezer","No","Yes","Supplier4","2024-03-11",124,4.39,"Yes","No",4273,"30x26x5",924457968582,"Mexico","Gluten",1.2,812,2.78
+117510,"Frozen Pizza","Pantry","BrandD","500g",16.85,336,30,"Aisle 1","Yes","No","Supplier5","2024-09-25",312,4.47,"No","Yes",1156,"37x10x10",934054358807,"Mexico","Soy",3.6,710,15.0
+958558,"Canned Beans","Beverages","BrandD","750g",40.14,115,17,"Produce Section","Yes","Yes","Supplier19","2024-05-26",223,3.83,"Yes","No",4234,"33x17x7",500093114703,"Mexico","Dairy",2.8,944,31.67
+525941,"Carrots","Produce","BrandA","500g",35.17,15,67,"Aisle 3","No","Yes","Supplier20","2024-11-27",172,2.32,"Yes","Yes",4229,"50x11x9",873486685642,"Canada","Soy",4.5,907,31.39
+601381,"Ground Beef","Household","BrandD","1kg",35.2,396,25,"Aisle 3","Yes","No","Supplier8","2024-05-11",233,2.02,"No","Yes",3107,"45x41x8",760320320260,"Canada","Dairy",2.4,308,29.3
+281828,"Cheese","Seafood","BrandA","2L",33.5,82,23,"Aisle 2","Yes","Yes","Supplier11","2024-10-27",352,4.37,"Yes","No",2008,"24x16x7",291387622865,"India","Soy",1.3,337,28.9
+860471,"Frozen Pizza","Bakery","BrandC","1kg",43.04,448,92,"Aisle 1","Yes","No","Supplier19","2024-08-10",93,4.76,"Yes","No",4415,"13x34x6",965368041305,"USA","None",4.8,177,35.76
+155622,"Cookies","Meat","BrandD","250ml",4.1,26,65,"Aisle 2","Yes","No","Supplier3","2024-04-09",150,1.66,"No","Yes",1449,"47x25x14",525698264374,"Canada","Gluten",2.8,959,3.81
+874342,"Laundry Detergent","Household","BrandD","1L",24.35,94,80,"Aisle 2","No","Yes","Supplier10","2024-01-21",54,1.32,"No","No",4927,"15x29x16",335734847049,"Canada","Soy",4.7,667,22.19
+583450,"Cookies","Snacks","BrandA","12-pack",2.14,448,61,"Aisle 2","No","No","Supplier19","2024-11-30",253,3.67,"Yes","No",1651,"42x40x18",464482081476,"China","Nuts",1.6,569,1.95
+486679,"Frozen Pizza","Dairy","BrandE","750g",4.24,9,11,"Aisle 1","No","Yes","Supplier8","2024-08-18",165,2.46,"No","No",4773,"26x49x17",330509823453,"USA","Soy",1.4,890,3.04
+546298,"Salmon Fillet","Meat","BrandA","6-pack",1.2,270,65,"Aisle 3","Yes","No","Supplier12","2024-12-14",22,3.33,"No","Yes",1764,"31x15x6",134668947349,"USA","None",4.4,951,0.88
+626134,"Chicken Breast","Household","BrandA","1L",15.95,236,85,"Refrigerated","No","Yes","Supplier4","2024-12-11",243,1.29,"Yes","Yes",1782,"19x30x11",548520094865,"India","None",1.8,337,11.51
+264224,"Laundry Detergent","Produce","BrandC","2L",14.95,397,97,"Aisle 3","No","No","Supplier14","2024-06-30",272,3.96,"No","Yes",2765,"34x47x9",234954350041,"Mexico","Soy",3.2,616,14.12
+756934,"Cheese","Produce","BrandA","250ml",31.19,355,28,"Refrigerated","No","Yes","Supplier19","2024-08-06",29,4.75,"No","Yes",1050,"30x25x7",556236218458,"India","Nuts",3.4,205,24.53
+100637,"Laundry Detergent","Snacks","BrandB","2L",22.29,450,93,"Aisle 3","No","No","Supplier4","2024-12-11",287,2.09,"Yes","No",1312,"43x38x16",336680012008,"Canada","Soy",2.8,775,19.92
+964428,"Apples","Meat","BrandC","6-pack",41.3,43,58,"Aisle 3","No","Yes","Supplier1","2024-09-04",269,3.23,"Yes","No",3351,"28x33x13",644055657950,"India","None",1.2,579,38.54
+276585,"Salmon Fillet","Meat","BrandB","1L",11.99,425,44,"Produce Section","Yes","Yes","Supplier2","2024-03-21",38,1.88,"No","No",3345,"23x11x14",632593130469,"Canada","Dairy",2.3,596,9.83
+192454,"Chicken Breast","Beverages","BrandA","1kg",41.44,28,86,"Aisle 2","Yes","No","Supplier10","2024-06-25",187,1.03,"No","Yes",2087,"35x18x12",582448384776,"India","Nuts",2.9,353,33.76
+407336,"Chips","Frozen","BrandC","12-pack",15.11,167,18,"Produce Section","Yes","No","Supplier6","2024-02-17",276,3.12,"No","No",851,"41x27x20",797068497883,"Brazil","Nuts",1.3,961,12.0
+382041,"Ground Beef","Meat","BrandA","12-pack",45.89,31,46,"Freezer","Yes","No","Supplier6","2024-10-11",311,3.13,"Yes","No",4973,"22x31x17",669607880473,"India","Nuts",4.3,348,36.79
+858532,"Frozen Pizza","Bakery","BrandE","1L",27.29,40,78,"Aisle 2","No","Yes","Supplier11","2024-09-02",262,1.45,"No","Yes",3932,"26x48x8",551962274230,"China","Nuts",2.1,743,23.34
+252488,"Pasta","Produce","BrandD","6-pack",32.4,32,45,"Freezer","Yes","Yes","Supplier1","2024-03-26",270,3.44,"Yes","Yes",1000,"48x47x12",910907731201,"Canada","None",1.8,871,24.28
+508830,"Bread","Meat","BrandC","12-pack",39.07,6,74,"Refrigerated","No","Yes","Supplier19","2024-10-17",333,2.38,"No","Yes",4580,"43x38x18",884772986582,"USA","Soy",4.9,577,31.9
+686173,"Pasta","Snacks","BrandD","250ml",44.2,227,50,"Aisle 2","No","No","Supplier17","2024-08-26",30,1.89,"Yes","Yes",526,"30x47x12",889978547699,"Canada","Nuts",4.2,265,39.01
+541774,"Tea","Frozen","BrandE","1kg",48.09,115,90,"Produce Section","Yes","Yes","Supplier11","2024-02-29",142,2.62,"Yes","No",4719,"42x41x16",815207183569,"Canada","Gluten",1.9,258,41.85
+218286,"Chips","Seafood","BrandE","750g",44.4,68,80,"Refrigerated","Yes","No","Supplier13","2024-01-08",85,1.82,"Yes","No",1173,"25x43x19",885120485837,"Mexico","Gluten",3.3,236,40.32
+109603,"Tea","Beverages","BrandE","1L",39.96,218,44,"Freezer","Yes","Yes","Supplier14","2024-10-07",196,4.81,"Yes","Yes",566,"25x50x18",571731278526,"USA","Nuts",3.6,216,36.93
+379359,"Frozen Pizza","Beverages","BrandA","12-pack",14.71,485,99,"Freezer","No","No","Supplier10","2024-09-11",358,2.25,"Yes","No",1702,"37x31x10",932643402071,"USA","Soy",4.5,944,13.82
+404170,"Laundry Detergent","Household","BrandD","2L",49.13,389,92,"Produce Section","Yes","No","Supplier16","2024-09-12",258,3.86,"No","No",4514,"38x18x13",551470549243,"Canada","Gluten",2.4,991,35.13
+260614,"Paper Towels","Bakery","BrandA","1L",34.64,231,17,"Refrigerated","No","Yes","Supplier12","2024-12-22",147,2.16,"Yes","No",2377,"46x47x17",232261015450,"India","Dairy",1.3,907,25.44
+223010,"Ice Cream","Snacks","BrandC","12-pack",11.4,290,11,"Aisle 3","Yes","No","Supplier12","2024-02-23",106,3.77,"No","Yes",4050,"14x45x16",962171999646,"Canada","Nuts",2.3,343,8.61
+404534,"Milk","Produce","BrandC","1L",21.82,158,10,"Refrigerated","No","No","Supplier17","2024-12-18",264,1.03,"Yes","Yes",3200,"17x15x6",436655179020,"USA","Gluten",2.9,154,17.05
+446720,"Cheese","Produce","BrandB","1L",19.68,256,53,"Aisle 3","Yes","No","Supplier16","2024-01-09",46,4.66,"No","Yes",2519,"36x46x19",430785348899,"India","Gluten",3.0,749,14.76
+264127,"Chicken Breast","Dairy","BrandC","1L",40.82,309,89,"Refrigerated","No","No","Supplier7","2024-04-08",272,1.0,"Yes","Yes",4708,"33x24x15",982203217835,"China","Dairy",4.0,50,30.23
+763590,"Cheese","Frozen","BrandC","2L",46.47,170,86,"Aisle 3","No","No","Supplier8","2024-06-08",19,4.7,"No","No",941,"42x31x8",882220463224,"USA","None",2.2,785,33.36
+175972,"Shrimp","Dairy","BrandB","1L",5.16,42,58,"Aisle 2","No","Yes","Supplier9","2024-12-31",223,1.5,"Yes","Yes",832,"41x49x16",249115960119,"Brazil","Gluten",2.2,501,4.44
+591630,"Cheese","Pantry","BrandB","6-pack",31.55,477,56,"Aisle 2","Yes","No","Supplier8","2024-04-20",365,2.73,"No","Yes",2475,"40x27x20",786540213989,"USA","Soy",4.3,525,24.11
+329257,"Tea","Beverages","BrandC","500g",42.77,0,77,"Aisle 1","Yes","Yes","Supplier10","2024-07-18",328,1.99,"Yes","No",4578,"41x17x13",589535048978,"China","Dairy",3.1,945,38.76
+300047,"Salmon Fillet","Bakery","BrandE","1L",2.07,53,99,"Aisle 2","No","Yes","Supplier17","2024-05-25",56,4.75,"Yes","No",1895,"12x48x17",553010548200,"Canada","Nuts",1.1,708,1.65
+304050,"Milk","Beverages","BrandD","12-pack",17.79,225,98,"Produce Section","Yes","Yes","Supplier19","2024-06-11",290,3.25,"No","Yes",1997,"22x43x17",681447804679,"Mexico","None",1.8,883,12.81
+459420,"Ice Cream","Snacks","BrandD","2L",15.16,329,45,"Aisle 1","Yes","No","Supplier6","2024-12-01",34,1.1,"Yes","Yes",1306,"21x34x20",509416052245,"USA","Gluten",4.0,419,12.58
+504554,"Shrimp","Dairy","BrandD","1kg",17.17,193,43,"Freezer","Yes","Yes","Supplier18","2024-05-31",146,4.59,"Yes","Yes",872,"27x14x8",157453246490,"Brazil","Nuts",4.3,187,15.45
+112813,"Salmon Fillet","Seafood","BrandD","250ml",27.57,44,35,"Aisle 1","Yes","Yes","Supplier17","2024-11-26",61,1.67,"No","No",4411,"27x20x16",355791627957,"Canada","Dairy",2.4,957,25.66
+359700,"Croissant","Seafood","BrandD","750g",23.78,429,51,"Refrigerated","Yes","No","Supplier7","2024-04-15",122,4.03,"Yes","Yes",4385,"15x30x6",890890745570,"Brazil","Dairy",3.8,119,17.36

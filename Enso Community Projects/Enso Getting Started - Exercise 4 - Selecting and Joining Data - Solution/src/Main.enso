@@ -1,0 +1,205 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## ![image](eags.png)
+
+   # Selecting and Joining Data
+
+   In this exercise, you will read an Excel workbook containing three (3) worksheets of connected information about bank customers.  You need to create a summary of information about the Savings Accounts that includes:
+
+   account_id | open_date | created_date | last_updated_date | active_passive | Base Rate
+
+   Join the Customers, Accounts and ECBRates worksheets together to solve this exercise.  The exercise begins with the ***Data.read*** component. .
+
+   ## **Objective 1:**  Read the Accounts to only “Savings” products, limiting the columns of data to the required columns/elements:
+
+   1️⃣        Add a new component after the ***Data.read*** component by either dragging from the output port (the bottom edge) of the ***Data.read*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***read*** component
+   - Click on the query argument
+   - Select the Accounts sheet
+   2️⃣        Filter to the Savings products by adding a new component after the ***read*** component by either dragging from the output port (the bottom edge) of the ***read*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***filter*** component
+   - Click on the column argument
+   - Select the [product_name] column
+   - Click on the filter argument
+   - Select the Equals option
+   - Click on the “to” argument
+   - Select the <Text Value> option
+   - Click into the “ “ argument
+   - Type “Savings Account” (case sensitive)
+
+   You should see Total Row Count: 2026 at the bottom of the filter table visualization.
+
+
+   ![Image](/images/image.png)
+
+
+   3️⃣        Add a new component after the ***filter*** component by either dragging from the output port (the bottom edge) of the ***filter*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***select_columns*** component
+   - Click on the column argument
+   - Select the [account_id] and [open_date] columns
+
+
+   ![Image](/images/image_1.png)
+
+
+   ## **Objective 2:**  Read the Customers data
+
+   1️⃣        Add a new component after the ***Data.read*** component by either dragging from the output port (the bottom edge) of the ***Data.read*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***read*** component
+   - Click on the query argument
+   - Select the [Customers] sheet
+
+   ### 
+
+   ## **Objective 3:**  Join the Accounts (Left) and the Customers (Right) data together
+
+   1️⃣        Add a new component after the ***select_columns*** component by either dragging from the output port (the bottom edge) of the ***select_columns*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***join*** component (*Note:  This will become the Left set of data*)
+   2️⃣        Connect the outgoing data from the ***read*** component (Customers) by dragging from the output port (the bottom edge) of the ***read*** component to the, or clicking the ➕ button on the “right” argument on the ***join*** component.
+
+   ·      Choose an appropriate “join_kind” argument option ([https://help.enso.org/docs/api/Standard.Table/Table/Table.join/](https://help.enso.org/docs/api/Standard.Table/Table/Table.join/))
+
+   ·      Click on the on (➕) and accept the [account_id] (1st field) column
+
+   ·      Click on the right argument and select the [acct_id] column
+
+   ·      Check your results and choose again (if necessary)
+
+   NOTE: in the screenshot below, the ***read*** component with the **Customers** worksheet is connected to the Data.read at the top of the workflow.
+
+
+   ![Image](/images/image_2.png)
+
+
+   3️⃣        Remove the [acct_id] column
+
+   ·      Add a ***remove_columns*** component following ***join*** component (*Note:  You can select_columns and choose all desired columns or use the remove_columns component and de-select the one unnecessary column*).
+
+   ### You should now have 1026 rows with columns: account_id, open_date, created_date, last_updated_date, active_passive.
+
+   ![Image](/images/image_3.png)
+
+   ## **Objective 4:**  Joining your data to the ECB Rates
+
+   The ECB rates are provided as a table of Start Date, End Date, Rate. The final task is to join the result from above to these rates.  There is a challenge in using the ECB data.  The use of the table reads each row as follows:  Date greater than or equal to [StartDate] until [EndDate].  In this definition of the table, there is a redundancy where each [StartDate] is equal to the prior period’s [EndDate].
+
+   1️⃣        Add a new component after the ***Data.read*** component by either dragging from the output port (the bottom edge) of the ***Data.read*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***read*** component
+   - Click on the query argument
+   - Select the [ECBRates] sheet
+   2️⃣        Add a ***set*** component to the output of the ***read*** component (to subtract 1 day from the [EndDate]).
+
+   ·      Click on the value argument and select the <Simple Expression> option
+
+   ·      Click on the input argument and select the [EndDate] column
+
+   ·      Click on the operation argument and select the “Date" option.
+
+   ·      Click on the operation argument and select the “add" option.
+
+   ·      Click on the length argument and select the “Number Value” option
+
+   ·      Type “-1” into the argument
+
+   ·      Click on the period argument and select the “Day” option
+
+   ·      Type “EndDate” in the ‘as’ argument
+
+   ·      Check your results to see non-overlapping date ranges
+
+
+   ![Image](/images/image_4.png)
+
+
+   3️⃣        Add your new ***join*** component to bring the data from the ***remove_columns*** component into the ***join*** component and then connect the output anchor from the ***set*** component (ECBRates – Fixed).
+
+   Based on the account’s [open_date], use the join tool to join to the date ranges in the ECB rate data easily
+
+   ·      Connect the data from the ***set*** component into the right argument in the ***join*** component
+
+   ·      Click on the join_kind argument and select the “Inner” option
+
+   ·      Click on the ➕ button (on [+])
+
+   ·      Click on the Equals (default) and select “Between”
+
+   ·      Click on the left argument and select [open_date]
+
+   ·      Click on the right_lower argument and select [StartDate]
+
+   ·      Click on the right_upper argument and select [EndDate]
+
+
+
+   ![Image](/images/image_5.png)
+
+
+   ## **Objective 5:**  Final data preparation
+
+   You’ll want to remove unnecessary columns, followed by renaming of Interest Rate and finally the filtering to only “Active” accounts.
+
+   1️⃣        Remove the `StartDate` and `EndDate` columns.
+
+   ·      Use the ***remove_columns*** component for the [StartDate] and [EndDate] columns
+
+   You should still have 1026 rows with columns: account_id, open_date, created_date, last_updated_date, active_passive, StartDate, EndDate and InterestRate.
+
+   2️⃣        Rename the [InterestRate] column to [Base Rate]
+
+   ·      Add a new ***rename_columns*** component after the ***remove_columns*** component
+
+   ·      Click on the ➕ button (on [+])
+
+   ·      Click on the “account_id” (default 1st column) and select the [InterestRate] column
+
+   ·      Click on the “New Name” (default) and type “Base Rate” as replacement text
+
+   ·      Next, using a `rename_columns` component, rename the `InterestRate` to `base_rate`.
+
+   3️⃣        Filter to the active accounts
+
+   ·      Add a new ***filter*** component after the ***rename_columns*** component
+
+   ·      Click on the column argument
+
+   ·      Select the [active_passive] column. The default argument is ***is_true*** so there is no requirement to enter this, but readability is enhanced by adding this argument.
+
+   ·      Check to see how many rows of data are present in your visualization
+
+   ### 
+
+   ![Image](/images/image_7.png)
+
+   ### **You should now have 676 rows with columns: account_id, open_date, created_date, last_updated_date, active_passive, StartDate, EndDate and Base Rate.**
+main =
+    operator1 = "Selecting and Joining Data"
+    node1 = Data.read enso_project.data/"Customer Data.xlsx"
+    node2 = node1.read 'Accounts'
+    node3 = node2.filter 'product_name' (..Equal "Savings Account")
+    table1 = node3.select_columns ['account_id', 'open_date']
+    node4 = node1.read 'Customers'
+    table2 = table1.join node4 ..Inner [(..Equals 'account_id' 'acct_id')]
+    table3 = table2.remove_columns ['acct_id']
+    node5 = node1.read 'ECBRates'
+    table4 = node5.set (..Simple_Expr (..Name 'EndDate') (..Date (..Add -1 ..Day))) "EndDate"
+    table5 = table3.join table4 ..Inner [..Between 'open_date' 'StartDate' 'EndDate']
+    table6 = table5.remove_columns ['StartDate', 'EndDate']
+    table7 = table6.rename_columns [(Pair.Value 'InterestRate' 'Base Rate')]
+    table8 = table7.filter 'active_passive' ..Is_True
+
+
+
+#### METADATA ####
+[[{"index":{"value":8235},"size":{"value":28}},"96ab67a9-9096-4751-a2d2-e679f07870d7"],[{"index":{"value":8276},"size":{"value":48}},"9e0c0be9-a11e-4c16-8593-a18f1cbb94e3"],[{"index":{"value":8337},"size":{"value":21}},"c013a702-8b2d-48ee-bdf1-ab6783798cae"],[{"index":{"value":8371},"size":{"value":12}},"b1310f60-22a6-4d67-9716-35b91fc48366"],[{"index":{"value":8371},"size":{"value":27}},"15fc01fa-77e1-4585-abcd-7d98cb81d1cd"],[{"index":{"value":8371},"size":{"value":55}},"3d07436c-7315-410d-9e5d-c0cfc3c5b3f2"],[{"index":{"value":8440},"size":{"value":20}},"eb2dd12a-6eb8-4eda-bd33-30498ef182b5"],[{"index":{"value":8440},"size":{"value":48}},"3d0916dc-8d53-47a4-931d-9b8a158ee7a6"],[{"index":{"value":8501},"size":{"value":22}},"624386fd-ad53-494f-908e-c4a29cbb000b"],[{"index":{"value":8537},"size":{"value":11}},"24606ca5-f0cb-445c-a4fb-b8469a7bb664"],[{"index":{"value":8537},"size":{"value":17}},"f448752a-fd6b-472d-9aa0-07ac02939e37"],[{"index":{"value":8537},"size":{"value":25}},"9b574243-5db3-4468-abed-d88e5679f31a"],[{"index":{"value":8537},"size":{"value":61}},"61165914-5f9d-455b-b22a-5482cf93d8c3"],[{"index":{"value":8612},"size":{"value":21}},"b685e3e5-dfa2-40ae-9dc6-29293b016a93"],[{"index":{"value":8612},"size":{"value":33}},"08343edb-0612-45ce-af30-11e24837fb89"],[{"index":{"value":8658},"size":{"value":21}},"0ec7fa67-480d-4433-b26c-1efd8c862c5a"],[{"index":{"value":8693},"size":{"value":9}},"e2eb3c1d-db60-4d82-bdaa-992cb6670316"],[{"index":{"value":8693},"size":{"value":70}},"94aeaa79-03ff-4ce6-ab8f-ec7bc885e1bf"],[{"index":{"value":8693},"size":{"value":80}},"75950f07-34e6-4aff-a6c6-793dee4bcace"],[{"index":{"value":8787},"size":{"value":11}},"02d51914-6d9d-4e69-a934-73109d6d0cf0"],[{"index":{"value":8787},"size":{"value":18}},"e0a08e50-4531-4803-b6c4-b9631842bdf2"],[{"index":{"value":8787},"size":{"value":26}},"a1631fd2-7375-4d44-8deb-579714b3a344"],[{"index":{"value":8787},"size":{"value":72}},"060b50bd-6a71-4120-91a9-a86218574bdc"],[{"index":{"value":8873},"size":{"value":21}},"2bb1b35b-9f24-4ed0-8f77-529de754ca2f"],[{"index":{"value":8873},"size":{"value":46}},"4abe7814-c7ab-41e0-b242-136ddaeac97d"],[{"index":{"value":8933},"size":{"value":21}},"ec353adf-34f8-4686-aa3a-28dc67747f2d"],[{"index":{"value":8933},"size":{"value":63}},"a8d8c2cd-be90-4327-932a-4cec5b42476a"],[{"index":{"value":9010},"size":{"value":13}},"80b9bbc2-9596-4a5b-8600-cf682133ed6b"],[{"index":{"value":9010},"size":{"value":30}},"83fcd142-699a-4628-82d7-d0bb7c5a3765"],[{"index":{"value":9010},"size":{"value":40}},"569a6892-6823-4a58-92e8-f1310e47888c"]]
+{"ide":{"node":{"96ab67a9-9096-4751-a2d2-e679f07870d7":{"position":{"vector":[-17,75]}},"9e0c0be9-a11e-4c16-8593-a18f1cbb94e3":{"position":{"vector":[-16,3]},"visualization":{"show":true}},"c013a702-8b2d-48ee-bdf1-ab6783798cae":{"position":{"vector":[-16,-219]}},"3d07436c-7315-410d-9e5d-c0cfc3c5b3f2":{"position":{"vector":[-16,-291]},"visualization":{"show":true,"width":601.5758056640625,"height":158.64019775390625}},"15fc01fa-77e1-4585-abcd-7d98cb81d1cd":{"position":{"vector":[-16,-291]}},"b1310f60-22a6-4d67-9716-35b91fc48366":{"position":{"vector":[-16,-291]}},"3d0916dc-8d53-47a4-931d-9b8a158ee7a6":{"position":{"vector":[-16,-522]},"visualization":{"show":true}},"eb2dd12a-6eb8-4eda-bd33-30498ef182b5":{"position":{"vector":[-16,-522]}},"624386fd-ad53-494f-908e-c4a29cbb000b":{"position":{"vector":[626,-727]}},"61165914-5f9d-455b-b22a-5482cf93d8c3":{"position":{"vector":[-16,-799]},"visualization":{"show":true}},"9b574243-5db3-4468-abed-d88e5679f31a":{"position":{"vector":[-16,-799]}},"f448752a-fd6b-472d-9aa0-07ac02939e37":{"position":{"vector":[-16,-799]}},"24606ca5-f0cb-445c-a4fb-b8469a7bb664":{"position":{"vector":[-16,-830]}},"08343edb-0612-45ce-af30-11e24837fb89":{"position":{"vector":[-16,-1021]},"visualization":{"show":true,"width":1081.760986328125,"height":167.64404296875}},"b685e3e5-dfa2-40ae-9dc6-29293b016a93":{"position":{"vector":[-16,-1021]}},"0ec7fa67-480d-4433-b26c-1efd8c862c5a":{"position":{"vector":[1162,-1021]}},"75950f07-34e6-4aff-a6c6-793dee4bcace":{"position":{"vector":[1162,-1093]},"visualization":{"show":true,"height":226.95928955078125}},"94aeaa79-03ff-4ce6-ab8f-ec7bc885e1bf":{"position":{"vector":[1162,-1093]}},"e2eb3c1d-db60-4d82-bdaa-992cb6670316":{"position":{"vector":[1162,-1093]}},"060b50bd-6a71-4120-91a9-a86218574bdc":{"position":{"vector":[-18,-1392]},"visualization":{"show":true,"width":917.749755859375}},"a1631fd2-7375-4d44-8deb-579714b3a344":{"position":{"vector":[-18,-1392]}},"e0a08e50-4531-4803-b6c4-b9631842bdf2":{"position":{"vector":[-18,-1392]}},"02d51914-6d9d-4e69-a934-73109d6d0cf0":{"position":{"vector":[-18,-1392]}},"4abe7814-c7ab-41e0-b242-136ddaeac97d":{"position":{"vector":[-18,-1614]}},"2bb1b35b-9f24-4ed0-8f77-529de754ca2f":{"position":{"vector":[-18,-1614]}},"a8d8c2cd-be90-4327-932a-4cec5b42476a":{"position":{"vector":[-18,-1686]}},"ec353adf-34f8-4686-aa3a-28dc67747f2d":{"position":{"vector":[-18,-1686]}},"569a6892-6823-4a58-92e8-f1310e47888c":{"position":{"vector":[-18,-1758]},"visualization":{"show":true,"width":1197.0361735026042,"height":354.9109700520833}},"83fcd142-699a-4628-82d7-d0bb7c5a3765":{"position":{"vector":[-18,-1758]}},"80b9bbc2-9596-4a5b-8600-cf682133ed6b":{"position":{"vector":[-18,-1758]}}},"widget":{},"import":{},"snapshot":"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"}}

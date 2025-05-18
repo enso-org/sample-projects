@@ -1,0 +1,5 @@
+name: Preppin' Data 2024 Week 52 Naughty or Nice
+namespace: local
+version: 0.0.1
+edition: 2024.5.2
+prefer-local-libraries: 'true'

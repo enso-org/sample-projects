@@ -1,0 +1,8 @@
+name: PreppingData_2024_Week21_solution
+namespace: local
+version: 0.0.1
+license: ''
+authors: []
+maintainers: []
+edition: 2024.1.1-nightly.2024.5.23
+prefer-local-libraries: true

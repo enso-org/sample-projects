@@ -1,0 +1,54 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+from project.Util import all
+
+## # 
+   # Enso Analytics Solves Preppin' Data
+
+   ## 2019: Week 2
+
+   [February 20, 2019](https://preppindata.blogspot.com/2019/02/2019-week-2.html "permanent link")
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYpk8aVu2FNiSLM-J35DP8GQLFO0gOlkRkHdrZNUVd9FOhXAY2pPc5e4zXi3sPSnaXtXMGXTSeVQ2CbnQO91k_GDZ4lP9pDzD5HXKiI2l-XodKWHK1D-JvT9_p_Z4d0rf0TpM25Se54DJH/s320/Week+Two+input.JPG)
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieDT0haJfL7GB7eCMChQDivN5pvrL_f4kF3eSepPmtMLrHcxEOXKaBdVNlGhkO4hJTI5qlJSfeszS7xTf9xv0VlJDVU48rS2SiFChvfmLBcBqKgSuymh2-3j2N6Rn3S6fXYXMOgyStM36R/s320/Week+Two+Output.JPG)
+
+   So what’s the data? We need you decide where you are going to in the UK; London or Edinburgh, purely based on the weather (every Brit’s favourite subject).
+
+   Requirements for this week:
+
+   - [Import the file](https://drive.google.com/open?id=1MxosCq-JcWLGtaAcNH2vQPgPvOw_RIWM)
+   - Get rid of those nicely formatted titles - no-one is viewing this in Excel! (sorry Excel fans)
+   - Make sure you get all the data in the Excel sheet loaded in to Prep
+   - Clean up the City names to create two cities in one column (London and Edinburgh)
+   - Pivot the data to give a measure per column for the four metrics in the data set
+   - Output the data to csv
+   Your output file should:
+   
+   - have 6 columns
+   - have 14 rows of data and a row of headers
+   - Have no cells without a value
+   - Just load beautifully into Tableau
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6gbDd-TH_73ACbXO4Gb70gpf0VLZqEp0V1aE3VK7xL1054Hnr6YzI0N2bChwx3W7awHJ-j5WJUqxNyIMJc-fYRfzlTDMiAScnWCpe_jn7a3OWoX-waVZAglvW7fuBF6nAERXwchsK_fzT/s400/Week+Two+Output.JPG)
+   For comparison, here's [our output file](https://drive.google.com/open?id=1N-5MIoT_KEQE01IYZgC3OlXsNAJZKAmv). Don't to forget to fill in our [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform)!
+main =
+    node2 = Data.read (enso_project.data / 'PD 2019 Wk 2.xlsx')
+    node1 = node2.read 'PC Wk 02'
+    table1 = node1.filter_blank_rows
+    any1 = table1.filter 'City' (..Not_Equal "City")
+    node3 = Table.input [['City', ['London', 'Londen', 'Lond0n', 'london', 'nodonL', 'Londin', 'Londoon', 'Edinburgh', 'Edinborgh', 'edinburgh', 'edinborgh', 'Ed1nburgh', 'Ed!nburgh', 'Edenburgh', '3d!nburgh']], ['Clean_City', ['London', 'London', 'London', 'London', 'London', 'London', 'London', 'Edinburgh', 'Edinburgh', 'Edinburgh', 'Edinburgh', 'Edinburgh', 'Edinburgh', 'Edinburgh', 'Edinburgh']]]
+    any3 = any1.replace node3 ['City']
+    any2 = any3.set (expr '[Metric]+" - "+[Measure]') "Header"
+    any4 = any2.cross_tab ['City', 'Date'] 'Header' (..Sum 'Value')
+
+
+
+#### METADATA ####
+[[{"index":{"value":2274},"size":{"value":51}},"41209122-8ec6-4cc3-98e8-8af03ebcb151"],[{"index":{"value":2338},"size":{"value":21}},"97107186-261f-4a32-8524-c68ee091b19f"],[{"index":{"value":2373},"size":{"value":23}},"91fcc01b-1df7-418e-bb7e-15b60f0ef2b8"],[{"index":{"value":2408},"size":{"value":13}},"c11a6a8d-2e97-4804-9dd7-909bd3fd01dd"],[{"index":{"value":2408},"size":{"value":20}},"695e6372-0ebb-4e6a-8c4c-1c128be5b231"],[{"index":{"value":2408},"size":{"value":41}},"5154a5c0-7cc9-4e5b-b21c-9f8bba6e51e5"],[{"index":{"value":2462},"size":{"value":391}},"ff415bf6-7b42-4f90-8c56-69d0976b338c"],[{"index":{"value":2865},"size":{"value":12}},"28a602bc-f6ec-49a7-be6e-012ebfe930ee"],[{"index":{"value":2865},"size":{"value":18}},"98108181-2018-4474-ac22-8cd6e12804f1"],[{"index":{"value":2865},"size":{"value":27}},"7442227a-f53d-4b23-aa85-6eb9914785e3"],[{"index":{"value":2904},"size":{"value":8}},"c63b1470-30b1-4103-8977-47d0eb972b20"],[{"index":{"value":2904},"size":{"value":42}},"0d047d7f-464e-405e-8de3-aec8567eb9a0"],[{"index":{"value":2904},"size":{"value":51}},"2b99b2a9-f0e2-4ec9-a8d6-4db2e2801169"],[{"index":{"value":2967},"size":{"value":14}},"ff573350-cbf5-43f1-8dd6-92af2e9a7afb"],[{"index":{"value":2967},"size":{"value":31}},"12c64a29-5054-4da5-97a4-b0f61ddfea3f"],[{"index":{"value":2967},"size":{"value":40}},"7460c813-b398-456a-8a52-cdaff4ecf2a7"],[{"index":{"value":2967},"size":{"value":56}},"26cd636e-c91f-4225-bbb5-cb83160bdd48"]]
+{"ide":{"node":{"41209122-8ec6-4cc3-98e8-8af03ebcb151":{"position":{"vector":[-497,263]}},"97107186-261f-4a32-8524-c68ee091b19f":{"position":{"vector":[-497,191]}},"91fcc01b-1df7-418e-bb7e-15b60f0ef2b8":{"position":{"vector":[-497,119]},"visualization":{"show":false,"width":794.6715743790812,"height":567.5217813520289}},"5154a5c0-7cc9-4e5b-b21c-9f8bba6e51e5":{"position":{"vector":[-497,47]},"visualization":{"show":false,"width":765.6582085908348,"height":559.787989374417}},"695e6372-0ebb-4e6a-8c4c-1c128be5b231":{"position":{"vector":[-497,47]}},"c11a6a8d-2e97-4804-9dd7-909bd3fd01dd":{"position":{"vector":[-497,47]}},"ff415bf6-7b42-4f90-8c56-69d0976b338c":{"position":{"vector":[-20,352]}},"7442227a-f53d-4b23-aa85-6eb9914785e3":{"position":{"vector":[-497,-75]},"visualization":{"show":false,"height":189.8615139633862}},"98108181-2018-4474-ac22-8cd6e12804f1":{"position":{"vector":[-497,-164]}},"28a602bc-f6ec-49a7-be6e-012ebfe930ee":{"position":{"vector":[-497,-164]}},"2b99b2a9-f0e2-4ec9-a8d6-4db2e2801169":{"position":{"vector":[-495,-147]},"visualization":{"show":false,"width":908.3197987115207}},"0d047d7f-464e-405e-8de3-aec8567eb9a0":{"position":{"vector":[-497,-337]}},"c63b1470-30b1-4103-8977-47d0eb972b20":{"position":{"vector":[-497,-337]}},"26cd636e-c91f-4225-bbb5-cb83160bdd48":{"position":{"vector":[-495,-219]},"visualization":{"show":true,"width":1131.7751574160447,"height":378.1633974900886}},"7460c813-b398-456a-8a52-cdaff4ecf2a7":{"position":{"vector":[-495,-219]}},"12c64a29-5054-4da5-97a4-b0f61ddfea3f":{"position":{"vector":[-495,-219]}},"ff573350-cbf5-43f1-8dd6-92af2e9a7afb":{"position":{"vector":[-495,-219]}}},"widget":{"ff415bf6-7b42-4f90-8c56-69d0976b338c":{"WidgetTableEditor":{"size":{"x":370.2470010785914,"y":378.8163370160914}}}},"import":{},"snapshot":"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"}}

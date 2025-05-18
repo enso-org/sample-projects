@@ -1,0 +1,65 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## https://preppindata.blogspot.com/2024/05/2024-week-21-loyalty-points-percentages.html
+   
+   ### 2024: Week 21 - Loyalty Points Percentages
+   
+   [May 22, 2024](https://preppindata.blogspot.com/2024/05/2024-week-21-loyalty-points-percentages.html "permanent link")
+   
+   Challenge by: Alexandra Skelly
+   
+   We're continuing with DS43's challenges so over to [Alex](https://www.thedataschool.co.uk/blog/alexandra-skelly/) to explain the her challenge.
+   
+   _____________________________________
+   
+   At Preppin' Data we use a number of (mock) companies to look at the challenges they have with their data. We're going to focus on our own supermarket: SuperBytes. The shop has introduced a new loyalty card scheme.
+   
+   In the first task we need to clean up a number of data fields to determine the percentage of Free Byte qualifiers. Our stakeholders would like one dataset focused on the percentage of customers (split between male and females) that have qualified.
+   
+   ### Input
+   
+   There is one input file:
+   
+   ### Requirements
+   
+   - [Input the data](https://drive.google.com/file/d/1rKM6fcV4pIY3BgVgMfEXg0r3x5KWA0R9/view?usp=drive_link)
+   - Create the Loyalty Points:
+   - For every £50 spent they get 1 loyalty point
+   - Round Loyalty Points to 1 decimal place
+   - Create a new field to categorise the Loyalty Points:
+   - Points that are greater than or equal to 7 categorise them as "MegaByte"
+   - Points that are greater than or equal to 5 (but less than 7) categorise as “Byte”
+   - Categorise the remaining as “No Byte”
+   - Find the sum of customers that qualify for each type of byte category
+   - For females and males separately
+   - Pivot so that females and males have their own field
+   - Calculate the percentage of females and males in each category
+   - Round the percentages to 1 decimal place
+   - Output the data
+   
+   ### Output
+   
+   3 fields
+   
+   - Category
+   - Female
+   - Male
+   - 3 rows
+   
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+   
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help!
+main =
+    ## Press CTRL/CMD + D to open the instructions
+    any1 = Data.read enso_project.data/'Customer Spending.csv'
+
+
+
+#### METADATA ####
+[[{"index":{"value":0},"size":{"value":4}},"26b02833-fd90-483f-9bdb-3e814c0d961f"],[{"index":{"value":0},"size":{"value":29}},"ff5d0592-c545-46dc-92f8-841a7fd80e6e"],[{"index":{"value":0},"size":{"value":2976}},"869cdece-d8ef-4bc3-8b0d-e86c9c5023ff"],[{"index":{"value":5},"size":{"value":8}},"1f6faccb-69f5-40d2-91f9-be2d672c0e28"],[{"index":{"value":5},"size":{"value":13}},"8f939f89-0233-43ca-a3e5-caf43ed3fc12"],[{"index":{"value":13},"size":{"value":1}},"29f47ce3-74e9-4e5a-9a08-5282ec88900b"],[{"index":{"value":14},"size":{"value":4}},"88e035fc-4a9c-46b6-9683-d361f5a1749e"],[{"index":{"value":19},"size":{"value":6}},"6e21205f-d225-4b1a-8eee-1290516fd077"],[{"index":{"value":26},"size":{"value":3}},"11dd1a00-f4c7-4cff-81fa-5ef9a883975e"],[{"index":{"value":30},"size":{"value":4}},"e54ba97a-9fa2-4f66-b04b-90586631c9db"],[{"index":{"value":30},"size":{"value":30}},"918a15b7-c2d3-4e59-b679-0cef73c7a195"],[{"index":{"value":35},"size":{"value":8}},"4c08eab2-bcba-48a9-a08d-24d23a8be6d3"],[{"index":{"value":35},"size":{"value":14}},"fe4f127c-5dfa-4e55-a940-fd6eb4d6785d"],[{"index":{"value":43},"size":{"value":1}},"e76ef513-eab1-4fc2-8188-42e655f9a025"],[{"index":{"value":44},"size":{"value":5}},"b2ae6bf5-7da8-41cc-8d39-41bf6c88e650"],[{"index":{"value":50},"size":{"value":6}},"f6d85608-9e84-4d56-89c9-ff7e313fda86"],[{"index":{"value":57},"size":{"value":3}},"f95dda6f-99b5-4bd6-9db3-adaa9ae5e544"],[{"index":{"value":61},"size":{"value":4}},"bcb46af4-c192-44c2-baae-29389a5bcbcd"],[{"index":{"value":61},"size":{"value":33}},"745e56fa-8fbb-4f4f-b384-db7b275f91d0"],[{"index":{"value":66},"size":{"value":8}},"3ca24f75-5c6f-49cb-8ecb-9468a802483a"],[{"index":{"value":66},"size":{"value":17}},"c9bd4683-cc7a-4777-b0ad-c656ec9698b2"],[{"index":{"value":74},"size":{"value":1}},"9cc250c3-bc36-4461-9a2f-4e93682ec08c"],[{"index":{"value":75},"size":{"value":8}},"edf6823f-4cbc-42da-a736-a1bd01dd253f"],[{"index":{"value":84},"size":{"value":6}},"5a85db46-7a5c-4008-8a9c-1916ec66a152"],[{"index":{"value":91},"size":{"value":3}},"d86fe271-8add-4800-a9d5-2c585bac18d7"],[{"index":{"value":95},"size":{"value":4}},"faaf3c73-a3c7-4d59-ad7c-d41ae345d5a7"],[{"index":{"value":95},"size":{"value":28}},"9d369f8a-80f7-434d-b1b6-4b4fc413662f"],[{"index":{"value":100},"size":{"value":8}},"5e68a319-3a40-41c8-adad-5ba160ab3460"],[{"index":{"value":100},"size":{"value":12}},"ff6c7f45-5380-4586-adb9-e6c0ec7bb7a8"],[{"index":{"value":108},"size":{"value":1}},"628e2d08-bf13-4a4e-a05a-c26da09260e7"],[{"index":{"value":109},"size":{"value":3}},"6e3d889e-ad09-4cb3-8370-5452de0bc110"],[{"index":{"value":113},"size":{"value":6}},"a3023869-2f5b-4989-afbd-f3df9760c0c3"],[{"index":{"value":120},"size":{"value":3}},"0e84869b-7a4e-4152-971f-9f8c7f0edb5a"],[{"index":{"value":124},"size":{"value":4}},"ec074919-1b7e-4746-9d2a-9189cad25879"],[{"index":{"value":124},"size":{"value":35}},"5a4c3a6e-40d0-49e6-abba-b437cc035cb2"],[{"index":{"value":129},"size":{"value":8}},"2018db8c-9563-4a22-90c8-0c1322efc8db"],[{"index":{"value":129},"size":{"value":19}},"8b5a170d-a4a0-452e-bf1e-35cfbd33b06c"],[{"index":{"value":137},"size":{"value":1}},"94ca8dc2-a4ac-4e20-a213-1c92bf75aa5a"],[{"index":{"value":138},"size":{"value":10}},"0297d4b3-d500-460f-9cad-685a5b19c5a7"],[{"index":{"value":149},"size":{"value":6}},"0f153eab-bba4-44bc-8103-a465266b87ca"],[{"index":{"value":156},"size":{"value":3}},"0e0b851a-93bc-449a-80a0-6bbaf9880058"],[{"index":{"value":160},"size":{"value":6}},"186120f5-b65f-4497-a24b-5ffdd3724a02"],[{"index":{"value":160},"size":{"value":29}},"814661dc-4652-48a7-85b0-9075bc0a20a6"],[{"index":{"value":167},"size":{"value":8}},"5ea5a573-95ff-447e-a872-37902584d106"],[{"index":{"value":167},"size":{"value":22}},"89bd6109-5f6f-4956-ae6f-14f599afa8bd"],[{"index":{"value":175},"size":{"value":1}},"ad2ec9ae-3595-4f4e-9741-b567dc1b43f1"],[{"index":{"value":176},"size":{"value":13}},"32a6b072-15d8-4109-9aef-5365674a9e42"],[{"index":{"value":191},"size":{"value":2784}},"5833d7a5-d469-4c86-8489-5107a6b5067a"],[{"index":{"value":2855},"size":{"value":4}},"a9d0156a-274d-4de4-b15e-939ab68a5c8d"],[{"index":{"value":2855},"size":{"value":120}},"c352a1fa-955c-4a89-8ec9-3895e4a00d52"],[{"index":{"value":2860},"size":{"value":1}},"dc6622b9-29da-4067-b199-0acddbb76cef"],[{"index":{"value":2861},"size":{"value":114}},"482a64db-4fc4-44c2-abd3-829dc93f6b6d"],[{"index":{"value":2866},"size":{"value":109}},"80581327-582a-4ff8-bea0-aed5cade4cff"],[{"index":{"value":2917},"size":{"value":4}},"538bcc5e-f446-4313-bf7e-50514877df53"],[{"index":{"value":2917},"size":{"value":58}},"e4b7080f-b1e1-4970-b8d7-cf088306a5a4"],[{"index":{"value":2922},"size":{"value":1}},"1ff5bd07-c7aa-47a4-9ed3-8290563b5cb5"],[{"index":{"value":2924},"size":{"value":4}},"92e9d6c2-3082-4225-bd5e-47861ea51d97"],[{"index":{"value":2924},"size":{"value":9}},"bc5cdd9a-5cc1-491f-a9ff-88d2805d7bbc"],[{"index":{"value":2924},"size":{"value":51}},"ab449750-8b4f-4292-a3cd-c013f1838225"],[{"index":{"value":2928},"size":{"value":1}},"94bea285-a2d5-46d9-aa6e-1f39edc2b284"],[{"index":{"value":2929},"size":{"value":4}},"392933a5-e7ed-4d5a-ac93-09310ce74a96"],[{"index":{"value":2934},"size":{"value":12}},"10722cfb-7470-4d4c-8c03-be47f62b8033"],[{"index":{"value":2934},"size":{"value":17}},"0b4de223-f1be-4425-9f2e-7fdd5732c22f"],[{"index":{"value":2934},"size":{"value":41}},"98d6930a-4604-470b-b3b3-63ac56ebe6e5"],[{"index":{"value":2946},"size":{"value":1}},"c69b75d5-6f72-4c4b-9ec1-e04a6cee44b8"],[{"index":{"value":2947},"size":{"value":4}},"f25c8a07-4c09-4d02-9057-2aa69fb75409"],[{"index":{"value":2951},"size":{"value":1}},"e6d13943-f844-4607-a510-7caadc7c54b0"],[{"index":{"value":2952},"size":{"value":1}},"413c57bb-f0a9-45cf-88e7-4825f970915e"],[{"index":{"value":2952},"size":{"value":23}},"ed94a8ac-a882-472a-aaed-227b27d2a0e0"],[{"index":{"value":2953},"size":{"value":21}},"4efd6265-d4d2-4579-8dc6-1c11b4922266"],[{"index":{"value":2974},"size":{"value":1}},"fb1f85c8-b0c5-4a3f-9e2e-8d326bfc4b06"]]
+{"ide":{"node":{"ab449750-8b4f-4292-a3cd-c013f1838225":{"position":{"vector":[-695,1138]},"visualization":{"show":true,"fullscreen":false,"width":740.9749755859375,"height":162.76876831054688}},"bc5cdd9a-5cc1-491f-a9ff-88d2805d7bbc":{"position":{"vector":[-273,148]}}},"import":{}}}

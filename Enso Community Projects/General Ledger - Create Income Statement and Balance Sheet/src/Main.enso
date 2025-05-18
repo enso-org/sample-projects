@@ -1,0 +1,91 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## # Create Income Statement and Balance Sheet from General Ledger
+
+
+   Thank you to Ifran Sharif for this sample data on Kaggle!
+
+
+
+   <https://www.kaggle.com/datasets/irfansharif/generalledger>
+
+
+   ![Image](/images/image.png)
+
+   ## Goal - Create an Income Statement and Balance Sheet in a Workflow that Can Be Automated
+
+   ### Step 1
+
+   Read in the Excel Workbook, and read the GL and Chart of Account Worksheets
+
+   ### Step 2
+
+   Join the Data on Account_Key
+
+   ### Step 3
+
+   Add a Year column, which is based on the Trasaction Date column in the GL data
+
+   ### Step 4
+
+   Summarize the data using  a `cross_tab` component.
+
+   ### Step 5
+
+   Put the columns into the correct order
+
+   ### Step 6
+
+   Filter just the P&L data, and join this with a lookup table that allows us to sort the data properly.
+
+   ### Step 7
+
+   Sort the data and remove the [Order] column
+
+   ### Step 8
+
+   Repeat Steps 6 & 7, but filtering instead for Balance Sheet data.
+
+
+   ## Result - Data can now be sent to Excel, Tableau or other reporting tools. We have created a repeatable process, so when the data changes, we just need to update the file at the top of the workflow and all steps will recalculate.
+main =
+    ## This is not a required step, but this lookup table allows us to reorder the output
+    node4 = Table.input [['Account', ['Sales', 'Sales Return', 'Cost of Sales', 'Staff Costs', 'Advertisements', 'Commissions', 'Professional Services', 'Entertainment', 'Telephone', 'Office Supplies', 'Utilities', 'Travel', 'Other Expenses', 'Equipment', 'Amortization of Intangible Assets', 'Interest Income', 'Gain/Loss on Sales of Asset', 'Exchange Loss/Gain', 'Dividend Income', 'Taxation', 'Interest Expense']], ['Order', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21']]]
+    quot1 = enso_project.data/ 'Data file for students.xlsx'
+    node1 = Data.read quot1
+    node2 = node1.read 'GL' on_problems=..Ignore
+    node3 = node1.read 'Chart of Accounts'
+    table1 = node2.join node3 join_kind=..Inner [(..Equals 'Account_key' 'Account_key')]
+    ## Create a new column called Year
+    any3 = table1.set (expr 'format([Date],"yyyy")') as="Year"
+    any5 = any3.cross_tab ['Report', 'Class', 'SubClass', 'SubClass2', 'Account'] 'Year' (..Sum 'Amount' "")
+    any6 = any5.reorder_columns ['Report', 'Class', 'SubClass', 'SubClass2', 'Account', '2018', '2019', '2020'] ..Before_Other_Columns
+    ## The GL data has information for both P&L and Balance Sheet. We are filtering transactions for just P&L
+    any8 = any6.filter 'Report' (..Equal "Profit and Loss")
+    table4 = any8.join node4 ..Inner [(..Equals 'Account' 'Account')]
+    any11 = table4.sort [(..Name 'Order' ..Ascending)]
+    ## Income Statement - Prepared for Excel or Tableau
+    any12 = any11.remove_columns ['Order']
+    ## This is not a required step, but this lookup table allows us to reorder the output
+    node5 = Table.input [['Account', ['Cash & Cash Equivalents', 'Receivables', 'Inventory', 'Investments', 'Property, Plant, & Equipment', 'Intangible Assets', 'Trade Payables', 'Other Payables', 'Long Term Obligations', 'Share Capital', 'Retained Earnings', 'Dividends paid']], ['Order', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']]]
+    ## The GL data has information for both P&L and Balance Sheet. We are filtering transactions for just P&L
+    any7 = any6.filter 'Report' (..Equal "Balance Sheet")
+    table3 = any7.join node5 ..Inner [(..Equals 'Account' 'Account')]
+    any9 = table3.sort [(..Name 'Order' ..Ascending)]
+    ## Balance Sheet - Prepared for Excel or Tableau
+    any10 = any9.remove_columns ['Order']
+
+
+
+#### METADATA ####
+[[{"index":{"value":1627},"size":{"value":535}},"9a1424bb-fffe-46d7-819d-fc0932e3c889"],[{"index":{"value":2175},"size":{"value":18}},"eb38f152-4dc5-4f2c-95a2-db0c9022c2b4"],[{"index":{"value":2175},"size":{"value":48}},"811ff44a-2fe3-435b-b849-8a14ede6452c"],[{"index":{"value":2236},"size":{"value":15}},"aeff04b9-ba5d-41c7-b77e-776e43a18da6"],[{"index":{"value":2264},"size":{"value":15}},"6fb2347a-dd0a-4e16-9958-31317d8931d2"],[{"index":{"value":2264},"size":{"value":36}},"bbd594bf-aa36-4853-a790-1d8e2b403782"],[{"index":{"value":2313},"size":{"value":30}},"686b27ee-2e44-4d88-920c-b432c0950a61"],[{"index":{"value":2357},"size":{"value":10}},"ef772f18-1a87-4e90-9659-2839264c10df"],[{"index":{"value":2357},"size":{"value":16}},"a4445e6c-60d2-4510-8953-ab6a001bb417"],[{"index":{"value":2357},"size":{"value":34}},"f02e89eb-4c37-462e-8bb9-86daafb8bfd8"],[{"index":{"value":2357},"size":{"value":75}},"0ff91e0b-326e-40be-89d4-19555f253bdf"],[{"index":{"value":2483},"size":{"value":10}},"5460daca-7f4d-43df-86c3-cbd15d605000"],[{"index":{"value":2483},"size":{"value":41}},"e2d840eb-a375-406b-bcec-a34635e1c1c8"],[{"index":{"value":2483},"size":{"value":51}},"89698d9c-9d9e-4c93-bf36-a1a3fd4f1dc2"],[{"index":{"value":2546},"size":{"value":14}},"4d0e4a88-e362-4ef4-aff0-d2855e6a9a5c"],[{"index":{"value":2546},"size":{"value":70}},"1c6907ce-651b-4adb-870b-5437697b2813"],[{"index":{"value":2546},"size":{"value":77}},"b8057052-3ecd-42cc-a980-fbba15de27ea"],[{"index":{"value":2546},"size":{"value":97}},"f55a1654-23c4-4dcd-b01e-a6afd73a95a6"],[{"index":{"value":2655},"size":{"value":20}},"112f45a4-f27c-421b-8583-e137c6ef5d47"],[{"index":{"value":2655},"size":{"value":100}},"af034a5f-25b0-4066-b75e-dc2aeab58779"],[{"index":{"value":2655},"size":{"value":123}},"6ea321be-a395-4eac-a9da-712b8b45b375"],[{"index":{"value":2900},"size":{"value":11}},"5a1cbbf2-d434-4832-b748-c48b9d264696"],[{"index":{"value":2900},"size":{"value":20}},"d3eac3f0-04a6-4183-8ab7-6ffc43b24a2d"],[{"index":{"value":2900},"size":{"value":48}},"86769f1c-0e93-411e-9a6e-343dfa4d6b6f"],[{"index":{"value":2962},"size":{"value":9}},"c8630af5-4891-46f7-9d99-a720f3c96c33"],[{"index":{"value":2962},"size":{"value":15}},"c163d11e-550c-471f-8dac-2c6bd66933c6"],[{"index":{"value":2962},"size":{"value":23}},"b7dc10d5-a3d1-4ad7-8ac4-c3b796cfb2b0"],[{"index":{"value":2962},"size":{"value":56}},"8a93d684-6359-43c4-95a2-b37efaeae840"],[{"index":{"value":3031},"size":{"value":11}},"16e0bbe0-9c2c-47c6-a691-29dc645b6109"],[{"index":{"value":3031},"size":{"value":42}},"090d338a-baa5-46a6-8a0c-9777928dc590"],[{"index":{"value":3142},"size":{"value":20}},"3083c823-b3df-444a-876f-a9c18ad3aa3a"],[{"index":{"value":3142},"size":{"value":30}},"bd1bf6ed-27ce-4857-842e-a561277dec4c"],[{"index":{"value":3275},"size":{"value":343}},"ba73b488-34b2-482e-999d-8c25cb35465a"],[{"index":{"value":3740},"size":{"value":46}},"ffa48625-926c-402f-beaf-a8fa6d6512aa"],[{"index":{"value":3800},"size":{"value":56}},"a2437e67-8a45-4dad-ad80-f0c0551ebad0"],[{"index":{"value":3868},"size":{"value":42}},"2ec6fcee-e3ab-4de6-b017-0e9276803e7e"],[{"index":{"value":3976},"size":{"value":29}},"d2603676-caed-45f9-8132-68e7ef81578b"]]
+{"ide":{"node":{"9a1424bb-fffe-46d7-819d-fc0932e3c889":{"position":{"vector":[848,-470]}},"811ff44a-2fe3-435b-b849-8a14ede6452c":{"position":{"vector":[-230,-104]}},"eb38f152-4dc5-4f2c-95a2-db0c9022c2b4":{"position":{"vector":[-48,47]}},"aeff04b9-ba5d-41c7-b77e-776e43a18da6":{"position":{"vector":[-233,-176]},"visualization":{"show":true}},"bbd594bf-aa36-4853-a790-1d8e2b403782":{"position":{"vector":[-230,-398]}},"6fb2347a-dd0a-4e16-9958-31317d8931d2":{"position":{"vector":[-217,-12]}},"686b27ee-2e44-4d88-920c-b432c0950a61":{"position":{"vector":[60,-452]}},"0ff91e0b-326e-40be-89d4-19555f253bdf":{"position":{"vector":[-220,-524]}},"f02e89eb-4c37-462e-8bb9-86daafb8bfd8":{"position":{"vector":[-218,-442]}},"a4445e6c-60d2-4510-8953-ab6a001bb417":{"position":{"vector":[-218,-442]}},"ef772f18-1a87-4e90-9659-2839264c10df":{"position":{"vector":[-218,-442]}},"89698d9c-9d9e-4c93-bf36-a1a3fd4f1dc2":{"position":{"vector":[-221,-626]}},"e2d840eb-a375-406b-bcec-a34635e1c1c8":{"position":{"vector":[-218,-426]}},"5460daca-7f4d-43df-86c3-cbd15d605000":{"position":{"vector":[-218,-426]}},"f55a1654-23c4-4dcd-b01e-a6afd73a95a6":{"position":{"vector":[-220,-716]},"visualization":{"show":false,"width":972.557560300364,"height":391.2839236953884}},"b8057052-3ecd-42cc-a980-fbba15de27ea":{"position":{"vector":[-68,-1117]}},"1c6907ce-651b-4adb-870b-5437697b2813":{"position":{"vector":[-68,-1117]}},"4d0e4a88-e362-4ef4-aff0-d2855e6a9a5c":{"position":{"vector":[-68,-1117]}},"6ea321be-a395-4eac-a9da-712b8b45b375":{"position":{"vector":[-219,-788]},"visualization":{"show":false,"width":919.4657823877427,"height":393.7457334648059}},"af034a5f-25b0-4066-b75e-dc2aeab58779":{"position":{"vector":[-386,-1416]}},"112f45a4-f27c-421b-8583-e137c6ef5d47":{"position":{"vector":[-386,-1416]}},"86769f1c-0e93-411e-9a6e-343dfa4d6b6f":{"position":{"vector":[64,-891]}},"d3eac3f0-04a6-4183-8ab7-6ffc43b24a2d":{"position":{"vector":[-113,-669]}},"5a1cbbf2-d434-4832-b748-c48b9d264696":{"position":{"vector":[-113,-669]}},"8a93d684-6359-43c4-95a2-b37efaeae840":{"position":{"vector":[66,-1056]},"visualization":{"show":false,"width":1329.453125}},"b7dc10d5-a3d1-4ad7-8ac4-c3b796cfb2b0":{"position":{"vector":[-141,-1917]}},"c163d11e-550c-471f-8dac-2c6bd66933c6":{"position":{"vector":[-141,-1917]}},"c8630af5-4891-46f7-9d99-a720f3c96c33":{"position":{"vector":[-141,-1917]}},"090d338a-baa5-46a6-8a0c-9777928dc590":{"position":{"vector":[66,-1128]},"visualization":{"show":false,"width":1030.9007983161407,"height":457.62438372269423}},"16e0bbe0-9c2c-47c6-a691-29dc645b6109":{"position":{"vector":[-169,-1987]}},"bd1bf6ed-27ce-4857-842e-a561277dec4c":{"position":{"vector":[66,-1221]},"visualization":{"show":true,"width":1668.9073748020403,"height":466.2333867747083}},"3083c823-b3df-444a-876f-a9c18ad3aa3a":{"position":{"vector":[-169,-2059]}},"ba73b488-34b2-482e-999d-8c25cb35465a":{"position":{"vector":[604,-1845]}},"ffa48625-926c-402f-beaf-a8fa6d6512aa":{"position":{"vector":[-219,-1816]}},"a2437e67-8a45-4dad-ad80-f0c0551ebad0":{"position":{"vector":[-217,-1931]},"visualization":{"show":false,"width":1329.453125}},"2ec6fcee-e3ab-4de6-b017-0e9276803e7e":{"position":{"vector":[-217,-2085]},"visualization":{"show":false,"width":1030.9007983161407,"height":457.62438372269423}},"d2603676-caed-45f9-8132-68e7ef81578b":{"position":{"vector":[-219,-2195]},"visualization":{"show":true,"width":1554.9698748020403,"height":358.33755344137495}}},"widget":{"9a1424bb-fffe-46d7-819d-fc0932e3c889":{"WidgetTableEditor":{"size":{"x":553.736570511041,"y":496.7530666449944}}},"ba73b488-34b2-482e-999d-8c25cb35465a":{"WidgetTableEditor":{"size":{"x":473.3229166666667,"y":323.02355410447757}}}},"snapshot":"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","import":{}}}

@@ -1,0 +1,5 @@
+name: PreppingData_2024 Week40_Solution
+namespace: local
+version: 0.0.1
+edition: 2024.4.2-rc1
+prefer-local-libraries: 'true'

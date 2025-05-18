@@ -1,0 +1,115 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+
+
+## # 2024: Week 51 - Strictly Positive Improvements?
+
+
+   ![Image](/images/image.png)
+
+
+   [December 18, 2024](https://preppindata.blogspot.com/2024/12/2024-week-51-strictly-positive.html "permanent link")
+   ### Challenge by: Jenny Martin
+
+   It was the final of this year's series of Strictly Come Dancing at the weekend, which made me have a few more questions I'd like to answer using the dataset we used in [a challenge a few week's back](https://preppindata.blogspot.com/2024/10/2024-week-42-strictly-come-dancing.html). 
+
+
+   If you've yet to catch up on this year's final, don't worry this data doesn't include results from this year. 
+
+
+   As I watched the final this year I found myself wondering, is it the contestant that makes the biggest improvement that is most likely to win? Or is it the contestant that has been consistently good since week one? Let's work out the percentage improvement of the finalists from week 1 in order to answer this question!
+
+
+   One additional question, does getting perfect scores in the final guarantee you'll win? 
+
+   ## Input 
+
+   The input is the same as challenge 42. If you recall this data was webscraped and so it does require a little cleaning before we can start answering the questions. 
+
+
+   | **Couple**              | **Scores**      | **Dance**   | **Music**                                      |
+   |-------------------------|-----------------|-------------|-------------------------------------------------|
+   | **Natasha & Brendan**   | 27 (5, 7, 8, 7) | Cha-cha-cha | "Chain of Fools"" —Aretha Franklin"           |
+   | **Lesley & Anton**      | 29 (6, 8, 8, 7) | Waltz       | "He Was Beautiful"" —Cleo Laine"              |
+   | **Christopher & Hanna** | 19 (4, 4, 7, 4) | Cha-cha-cha | "Lady Marmalade"" —Labelle"                   |
+   | **Jason & Kylie**       | 21 (5, 5, 6, 5) | Waltz       | "Three Times A Lady"" —Commodores"            |
+   | **Verona & Paul**       | 27 (7, 6, 7, 7) | Cha-cha-cha | "Respect"" —Aretha Franklin"                  |
+   | **Claire & John**       | 27 (7, 7, 8, 5) | Waltz       | "Unchained Melody"" —The Righteous Brothers"  |
+   | **David & Camilla**     | 16 (2, 4, 6, 4) | Cha-cha-cha | "Sex Bomb"" —Tom Jones"                       |
+   | **Martin & Erin**       | 25 (5, 6, 7, 7) | Waltz       | "Come Away With Me"" —Norah Jones"            |
+
+   ## Requirements
+
+   - [Input the data](https://drive.google.com/file/d/197jo7UMVU_PDO9QGcYu9zKXjZgn3R4a9/view?usp=drive_link)
+   - The webscraping isn't quite perfect and the table headers are repeated throughout the dataset, make sure these are removed
+   - Make sure that the Week field is numeric
+   - The Score field is made up of the Total Score and individual judges scores
+   - Create a field for the total score
+   - Count how many judges there were 
+   - Create an Avg Judge's Score field
+   - i.e. Total Score/Number of Judges
+   - Since we're interested in couple's improvement from the start of the series and the end of the series, we only need to retain rows relating to the couple's first dance (which may not have been in week 1) and their dances in the final
+   - This means we're only interested in couples who made it to the final
+   - Couples dance multiple times in the final. Take the average of their Avg Judge's Score
+   - Find the Percentage difference between their Avg Judge's Score for their first dance and the average for their dances in the final
+   - The final output should contain a row for each couple, with their Percentage difference and only the Avg Judge's Score in the final, along with the Result
+   - i.e. whether they won, were a runner-up or came third
+   - [Output the data](https://drive.google.com/file/d/17pmVaJSGgI4RS6Pz-xOdbI7x5d4sZFFA/view?usp=drive_link)
+
+   ## Output
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOmJN91ClZBHl3Ek1V7hqM0my-xq8wJg5Fe96rxel1XL6Kuu7EMN8gKBOYg3FCxwUN65La4qIFb-iWv3W7IXWiuMglQTUS1T31SICEws9hDGyvPPnAAxsxKIsjJz2fSDlg538H3vIfqtdo9sOo7505UpM718Q0Lf1It11Q1xC_iw7tt_GDuSDebHNRzpv3/w640-h146/Screenshot%202024-12-12%20094158.png)
+
+   - 6 fields
+   - Series
+   - Couple
+   - Finalist Positions
+   - Avg Judge's Score (in final)
+   - % Change
+   - 62 rows (63 including headers)
+   You can view the output [here](https://drive.google.com/file/d/17pmVaJSGgI4RS6Pz-xOdbI7x5d4sZFFA/view?usp=drive_link).
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+
+
+
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help! 
+main =
+    quot2 = enso_project.data/ 'strictly_come_dancing_series_1_to_21_tables.csv'
+    node1 = Data.read quot2 (..Delimited skip_rows=0 headers=..Has_Headers)
+    any1 = node1.remove_blank_columns
+    any2 = any1.filter 'Couple' (..Not_Equal "Couple")
+    table2 = any2.parse_to_columns 'Week' "Week\s(?<Week>\d+)"
+    table1 = table2.parse_to_columns 'Scores' "^(?<totalScore>\d+)\s+\((?<j>[^\)]+)\)$"
+    table4 = table1.split_to_columns 'j' column_count=..All_Columns
+    any22 = table4.set (expr 'if is_nothing([j 1]) then 0 else if is_nothing([j 2]) then 1 else if is_nothing([j 3]) then 2 else if is_nothing([j 4]) then 3 else if is_nothing([j 5]) then 4 else 5') "Count of Judges"
+    any6 = any22.filter 'totalScore' ..Not_Nothing
+    any7 = any6.set (..Simple_Expr (..Name 'totalScore') (..Math (..Divide (..Name 'Count of Judges')))) "Avg Judges Score"
+    any3 = any7.select_columns ['Series', 'Week', 'Couple', 'Avg Judges Score', 'Result']
+    ## Create Average of final week's scores for Winners, Runners Up and Third Place
+    any18 = any3.filter 'Result' (..Is_In ["Winners", "Runners-Up", "Third place", "Runners-up"])
+    any14 = any18.aggregate ['Series', 'Couple', 'Week'] [..Average 'Avg Judges Score' "Avg of Final Score", ..First 'Result' "Finalist Position"]
+    any9 = any3.aggregate ['Series', 'Couple'] columns=[..First 'Week' order_by=[(..Name 'Week' ..Ascending)]]
+    table3 = any3.join any9 ..Inner [(..Equals 'Week' 'First Week'), (..Equals 'Couple' 'Couple'), (..Equals 'Series' 'Series')]
+    ## First Week's Scores
+    any10 = table3.select_columns ['Series', 'Week', 'Couple', 'Avg Judges Score'] True
+    any13 = any10.distinct ['Series', 'Week', 'Couple']
+    table5 = any13.join any14 ..Inner [(..Equals 'Series'), (..Equals 'Couple')]
+    any15 = table5.set (expr '([Avg of Final Score]-[Avg Judges Score])/[Avg Judges Score]') "% Change"
+    any4 = any15.select_columns ['Series', 'Couple', 'Finalist Position', 'Avg of Final Score', '% Change'] True
+    any8 = any4.rename_columns [(Pair.Value 'Avg of Final Score' 'Avg Judge\'s Score')]
+    any12 = any8.write '/Users/ensouser/Downloads/PD 2024 Week 51 Output.csv'
+
+
+
+#### METADATA ####
+[[{"index":{"value":5411},"size":{"value":68}},"840218e3-e350-46ea-9174-44ce98a4a6d8"],[{"index":{"value":5492},"size":{"value":63}},"db35e4bd-d582-490c-b319-563e05d5428a"],[{"index":{"value":5567},"size":{"value":26}},"5caa6650-89e2-4ade-9175-e68579435c0f"],[{"index":{"value":5605},"size":{"value":43}},"a718749e-88cf-4a46-ad60-6f7a427ad3a2"],[{"index":{"value":5662},"size":{"value":49}},"6233b58a-4f2f-47b1-b575-92d9f0d5b11a"],[{"index":{"value":5725},"size":{"value":74}},"3b72d58f-871f-4d52-a756-651e24e2467d"],[{"index":{"value":5813},"size":{"value":23}},"35840b22-08ab-4c65-987b-e3a3fb10f417"],[{"index":{"value":5813},"size":{"value":27}},"9bd26692-6311-48b2-9ec5-b40ec2ef9225"],[{"index":{"value":5813},"size":{"value":54}},"d676885b-2b81-4538-9d2c-44c90a70cc13"],[{"index":{"value":5880},"size":{"value":10}},"5c861847-923b-4164-ae91-de2c6373a099"],[{"index":{"value":5880},"size":{"value":186}},"87100fff-c8fe-4c9a-8f6d-4b5116d61695"],[{"index":{"value":5880},"size":{"value":204}},"b5e0f755-b3f2-4500-a1fb-ec1af4267fb2"],[{"index":{"value":6096},"size":{"value":39}},"fc502548-bc21-4f44-96e5-706de8b62b0e"],[{"index":{"value":6147},"size":{"value":112}},"0d497130-b69e-43b3-bfd2-dd9998fa97a0"],[{"index":{"value":6271},"size":{"value":78}},"73aa6c17-7016-409b-87a6-b70d5ef18b62"],[{"index":{"value":6447},"size":{"value":85}},"c022cf9a-c6ba-4a7c-9c58-2a48c44dffcb"],[{"index":{"value":6545},"size":{"value":134}},"f1279df2-66d8-431a-a8a3-2e4dc0e74cb2"],[{"index":{"value":6691},"size":{"value":99}},"9a4d5119-3dad-406d-a202-26a0711ce3fd"],[{"index":{"value":6804},"size":{"value":115}},"ca1b5346-6dd2-428c-a633-dfee2936abe8"],[{"index":{"value":6959},"size":{"value":75}},"422fa9a7-1e1c-48e7-b832-72580bdb6b21"],[{"index":{"value":7047},"size":{"value":43}},"f69a28f0-ee9f-4ce5-91c7-2f453cf01b00"],[{"index":{"value":7104},"size":{"value":10}},"bc7d7418-1574-438d-ae89-15aa236605f4"],[{"index":{"value":7104},"size":{"value":16}},"902f7081-21d5-4fcc-b227-d239ee5b1fe9"],[{"index":{"value":7104},"size":{"value":24}},"839b6712-427f-49fb-9808-498933fb8977"],[{"index":{"value":7104},"size":{"value":67}},"501225f3-3e04-4cc3-b8b1-feffb2252816"],[{"index":{"value":7184},"size":{"value":91}},"f8a8a776-d678-4d5b-98ab-9b0c5bb04b8c"],[{"index":{"value":7287},"size":{"value":101}},"e5967a43-b460-4650-86de-5fbe4210ad7f"],[{"index":{"value":7400},"size":{"value":76}},"655cb03a-70b2-4115-ab79-98b1333c44a5"],[{"index":{"value":7489},"size":{"value":65}},"a38c5f9a-6f10-4bab-a3cf-271275e4a51f"]]
+{"ide":{"node":{"840218e3-e350-46ea-9174-44ce98a4a6d8":{"position":{"vector":[-16,714]}},"db35e4bd-d582-490c-b319-563e05d5428a":{"position":{"vector":[-19,619]}},"5caa6650-89e2-4ade-9175-e68579435c0f":{"position":{"vector":[-19,547]}},"a718749e-88cf-4a46-ad60-6f7a427ad3a2":{"position":{"vector":[-16,475]}},"6233b58a-4f2f-47b1-b575-92d9f0d5b11a":{"position":{"vector":[-22,403]},"visualization":{"show":false,"width":1421.8983208955224}},"3b72d58f-871f-4d52-a756-651e24e2467d":{"position":{"vector":[-22,331]},"visualization":{"show":false,"width":1449.3547108208954}},"d676885b-2b81-4538-9d2c-44c90a70cc13":{"position":{"vector":[-25,259]},"visualization":{"show":false,"width":1431.4062499999998}},"9bd26692-6311-48b2-9ec5-b40ec2ef9225":{"position":{"vector":[847,-305]}},"35840b22-08ab-4c65-987b-e3a3fb10f417":{"position":{"vector":[847,-305]}},"b5e0f755-b3f2-4500-a1fb-ec1af4267fb2":{"position":{"vector":[-25,187]},"visualization":{"show":true,"width":1550.6296641791043,"height":183.53544776119398}},"87100fff-c8fe-4c9a-8f6d-4b5116d61695":{"position":{"vector":[780,-573]}},"5c861847-923b-4164-ae91-de2c6373a099":{"position":{"vector":[780,-573]}},"fc502548-bc21-4f44-96e5-706de8b62b0e":{"position":{"vector":[-25,-69]}},"0d497130-b69e-43b3-bfd2-dd9998fa97a0":{"position":{"vector":[-25,-141]},"visualization":{"show":true,"width":1533.9200093283582}},"73aa6c17-7016-409b-87a6-b70d5ef18b62":{"position":{"vector":[-19,-389]}},"c022cf9a-c6ba-4a7c-9c58-2a48c44dffcb":{"position":{"vector":[1129,-1049]}},"f1279df2-66d8-431a-a8a3-2e4dc0e74cb2":{"position":{"vector":[1129,-1121]},"visualization":{"show":true}},"9a4d5119-3dad-406d-a202-26a0711ce3fd":{"position":{"vector":[52,-486]}},"ca1b5346-6dd2-428c-a633-dfee2936abe8":{"position":{"vector":[-19,-584]}},"422fa9a7-1e1c-48e7-b832-72580bdb6b21":{"position":{"vector":[-13,-677]}},"f69a28f0-ee9f-4ce5-91c7-2f453cf01b00":{"position":{"vector":[-13,-749]},"visualization":{"show":true,"width":902.0226212686567,"height":187.2726212686567}},"501225f3-3e04-4cc3-b8b1-feffb2252816":{"position":{"vector":[-22,-1368]}},"839b6712-427f-49fb-9808-498933fb8977":{"position":{"vector":[-13,-1626]}},"902f7081-21d5-4fcc-b227-d239ee5b1fe9":{"position":{"vector":[-13,-1626]}},"bc7d7418-1574-438d-ae89-15aa236605f4":{"position":{"vector":[-13,-1626]}},"f8a8a776-d678-4d5b-98ab-9b0c5bb04b8c":{"position":{"vector":[-19,-1440]}},"e5967a43-b460-4650-86de-5fbe4210ad7f":{"position":{"vector":[-19,-1512]}},"655cb03a-70b2-4115-ab79-98b1333c44a5":{"position":{"vector":[-19,-1584]},"visualization":{"show":true,"width":1076.214785447761,"height":223.35004664179104}},"a38c5f9a-6f10-4bab-a3cf-271275e4a51f":{"position":{"vector":[-19,-1891]}}},"widget":{},"snapshot":"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","import":{}}}

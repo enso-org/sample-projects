@@ -1,0 +1,18 @@
+from Standard.Base import all
+from Standard.Base.Meta import Enso_Project
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+import Standard.Visualization
+
+main =
+    operator1 = enso_project.data/"Sample - Superstore.csv" . read
+    operator3 = operator1.filter 'Category' (Filter_Condition.Not_Equal "Furniture")
+    operator2 = operator3.sort [(Sort_Column.Name 'Sales' Sort_Direction.Descending)]
+    operator4 = operator2.take 5
+
+
+
+#### METADATA ####
+[]
+{"ide":{"node":{"246acd01-40b1-4166-9bdd-aea35f52a71c":{"position":{"vector":[-16,-72]}},"0bdf7996-8ab5-4d97-9f6b-b052cdf6765c":{"position":{"vector":[-16,-144]}},"838ddd30-5c8f-4cea-8a6a-071ae7a0274d":{"position":{"vector":[-16,-216]}},"821d3336-f590-4c21-a99c-207b762ca708":{"position":{"vector":[-16,-288]}}},"import":{}}}

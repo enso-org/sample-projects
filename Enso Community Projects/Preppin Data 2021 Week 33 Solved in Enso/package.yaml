@@ -1,0 +1,5 @@
+name: Preppin Data 2021 Week 33 Solved in Enso
+namespace: local
+version: 0.0.1
+edition: 2025.1.1-nightly.2025.1.29
+prefer-local-libraries: 'true'

@@ -1,0 +1,59 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## # ![image](eaep.png)Combining all csv files in a folder
+   
+   We had a new feature request from one of our customers. Each month, they get an updated set of files from one of their core systems and they need to combine them together into a single file that is the basis for lots of downstream analysis and reporting.
+   
+   This file lands in a single directory, and they simply need to get all of these files and write it to a single output.
+   
+   We are working on a ***read_many*** component, so keep an eye out for that.  This example is a workaround until this component ships, and it shows off some of the power of the underlying Enso language.
+   
+   > As with other example projects, we are storing the data in a folder inside of the project itself. This is not typical nor recommended for users, but it greatly simplifies our sample projects.
+   
+   > 
+   
+   ### In the example on the left, there are files for each month of the year. 
+   
+   Each file has the same format.
+   
+   We use ***Data.list*** to provide a list of the files in the folder that we have selected. We also added the “*.csv” wildcard. If the wildcard is blank, it chooses all files. But other wildcards can also be chosen (e.g. “*2024.csv” would select jan_2024.csv but not jan_2023.csv).
+   
+   Then just two components get us to the output we desire.
+   
+   - ***map***, which applies a function for every item in the list. So for each file in the list, read them into memory as creating a vector of tables.
+   - Table.from_union does just what it says - Appends records from the vector of tables into a single table.
+   
+   ### The example on the right is more complex. There are still files for Jan to Dec, but there is descriptive text above the desired records. We need to remove this before we union the data together.
+   
+   ![image](table.png)
+   
+   We use the same components as above, with a slight change to the *map*.
+   
+   This time, instead of a simple ***.read*** function, we are passing it a lambda function. This lambda says for each file (f), read the file as a delimited file and remove the first 5 rows, creating a vector of tables.
+   
+   What I love about this is we were able to create a workaround for one of our customers the same day that we received the request. We will work on adding a ***ready_many*** component and will release that in an upcoming release.
+   
+   Hopefully this example inspires you to try this out, and to ask us for new capabilities in Enso!
+   
+main =
+    quot1 = enso_project.data/ 'simple'
+    vector1 = Data.list quot1 '*.csv'
+    node1 = vector1.map .read
+    any1 = Table.from_union node1
+    quot4 = enso_project.data/ 'complex'
+    vector2 = Data.list quot4 '*.csv'
+    node2 = vector2.map f-> f.read (..Delimited skip_rows=5)
+    any3 = Table.from_union node2
+
+
+
+#### METADATA ####
+[[{"index":{"value":2758},"size":{"value":18}},"b2428115-94aa-4f93-9aef-ba7ae194031d"],[{"index":{"value":2758},"size":{"value":27}},"c4ee8e90-aa71-42b7-9b25-21137bdd7de1"],[{"index":{"value":2800},"size":{"value":9}},"b690cae1-6485-4f0b-90e4-3e6e27e53ef1"],[{"index":{"value":2800},"size":{"value":15}},"706dac29-5ec3-4b0d-8f1b-135298811e5f"],[{"index":{"value":2800},"size":{"value":23}},"e3e88ff7-7886-4b9e-a0cb-84e2202df2af"],[{"index":{"value":2836},"size":{"value":17}},"fbe6e2d4-7988-40fd-a809-2679243d10cd"],[{"index":{"value":2865},"size":{"value":16}},"04ae1577-81c6-4c30-a732-805f14bec0b6"],[{"index":{"value":2865},"size":{"value":22}},"92dbdfa8-a7ec-4b70-b444-6e032d4a6a14"],[{"index":{"value":2900},"size":{"value":28}},"14cedc63-e4ff-4215-a331-5085174e0773"],[{"index":{"value":2943},"size":{"value":23}},"fd266d2e-a2f7-498e-b242-b0c8b388fe21"],[{"index":{"value":2979},"size":{"value":11}},"61e62c9f-ea03-4f20-9622-abaea844d76e"],[{"index":{"value":2979},"size":{"value":48}},"f5bd9b10-ac25-49b5-8026-c5e5bf8299e2"],[{"index":{"value":3039},"size":{"value":22}},"5a5f4762-ccf3-411b-a4f6-c86ad3bb464e"]]
+{"ide":{"node":{"c4ee8e90-aa71-42b7-9b25-21137bdd7de1":{"position":{"vector":[-233,380]}},"b2428115-94aa-4f93-9aef-ba7ae194031d":{"position":{"vector":[-177,-19]}},"e3e88ff7-7886-4b9e-a0cb-84e2202df2af":{"position":{"vector":[-331,288]},"visualization":{"show":true,"width":879.3515625}},"706dac29-5ec3-4b0d-8f1b-135298811e5f":{"position":{"vector":[-343,199]}},"b690cae1-6485-4f0b-90e4-3e6e27e53ef1":{"position":{"vector":[-343,199]}},"fbe6e2d4-7988-40fd-a809-2679243d10cd":{"position":{"vector":[-331,1]},"visualization":{"show":false,"width":506.56640625}},"92dbdfa8-a7ec-4b70-b444-6e032d4a6a14":{"position":{"vector":[-331,-94]},"visualization":{"show":true,"width":521.16015625}},"04ae1577-81c6-4c30-a732-805f14bec0b6":{"position":{"vector":[-331,122]}},"14cedc63-e4ff-4215-a331-5085174e0773":{"position":{"vector":[1009,421]}},"fd266d2e-a2f7-498e-b242-b0c8b388fe21":{"position":{"vector":[827,280]},"visualization":{"show":true,"width":879.3515625}},"f5bd9b10-ac25-49b5-8026-c5e5bf8299e2":{"position":{"vector":[827,-8]},"visualization":{"show":false,"width":506.56640625}},"61e62c9f-ea03-4f20-9622-abaea844d76e":{"position":{"vector":[827,-8]},"visualization":{"show":false,"width":506.56640625}},"5a5f4762-ccf3-411b-a4f6-c86ad3bb464e":{"position":{"vector":[827,-102]},"visualization":{"show":true,"width":521.16015625}}},"import":{}}}

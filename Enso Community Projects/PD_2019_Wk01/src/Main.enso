@@ -1,0 +1,52 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## #
+   # Enso Analytics Solves Preppin' Data
+
+   ## 2019: Week 1
+
+   [February 13, 2019](https://preppindata.blogspot.com/2019/02/2019-week-1.html "permanent link")
+
+   Welcome to your first Preppin' Data challenge.
+
+   This week, Jonathan and I would like you to look at taking a simple Excel file on Car Sales and complete the following requirements:
+
+
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgALKumoNGV38YAfLM0r4i8gsUf54ockFbux4czS3hESO2GL3Vl9hdYjseOHTXbukVjD9hVrV9j3nvsXHO5e0ipyxddIdf0J39ngfBwCjh57ABM3eGaFVLnZePcKo6woW7izupLNNyTeUOM/s320/Week+one+output.JPG)
+
+   - Import the starter file
+   - Make a date field with a date data type
+   - Work out the total car sales per month / per car dealership
+   - Retain the car sales per colour columns
+   - Export the file 
+
+
+   Your output:
+
+   - Might not have the same row or column order as our output
+   - Will have the same number of columns (7)
+   - Will have the same number of rows (48)
+   For comparison, here's our [output file](https://drive.google.com/open?id=1Kkre5iB96_5cdPB9mvmNJdJ3sFEd-HZX).
+main =
+    node3 = Data.read (enso_project.data / 'PD 2019 Wk 1.xlsx')
+    node1 = node3.read 'Sheet1'
+    any1 = node1.format ['When Sold Month', 'When Sold Year']
+    any2 = any1.set (expr '[When Sold Year]+"-"+[When Sold Month]') "Date"
+    table1 = any2.parse ['Date'] ..Date 'yyyy-M'
+    any3 = table1.aggregate ['Dealership', 'Date'] [..Sum (expr '[Red Cars]+[Silver Cars]+[Black Cars]+[Blue Cars]') "Total Cars", ..Sum 'Red Cars', ..Sum 'Silver Cars', ..Sum 'Black Cars', ..Sum 'Blue Cars']
+    any4 = any3.write '2019-Week1-Output.csv'
+
+
+
+#### METADATA ####
+[[{"index":{"value":1421},"size":{"value":51}},"fc1a7497-0951-4220-ba69-9a653c09a050"],[{"index":{"value":1485},"size":{"value":19}},"b1ef5909-8d48-4e9a-a832-12e0075f4b0a"],[{"index":{"value":1516},"size":{"value":12}},"44f0ed1e-b05d-47a7-8aa9-27a868682e4f"],[{"index":{"value":1516},"size":{"value":50}},"978598da-90cc-48d5-8b3b-2c86fbf86c4e"],[{"index":{"value":1578},"size":{"value":8}},"0abb3875-af45-4017-909a-02ee5bcf7357"],[{"index":{"value":1578},"size":{"value":56}},"a924bf15-77ea-4eae-884d-57d0f2bdf5a7"],[{"index":{"value":1578},"size":{"value":63}},"b5043204-359f-4124-929d-bd879455aa4c"],[{"index":{"value":1655},"size":{"value":10}},"a97bef34-1ad4-4896-abff-ba89f4eb57e3"],[{"index":{"value":1655},"size":{"value":19}},"f36ae2d7-300b-4149-8e44-bf405f2e2afb"],[{"index":{"value":1655},"size":{"value":26}},"5e1b07a4-905d-48ba-9ce6-2fe060826cf1"],[{"index":{"value":1655},"size":{"value":35}},"2a7e4d61-2db7-48f9-b101-56adf0fd1cef"],[{"index":{"value":1702},"size":{"value":16}},"4b1e2fca-96d0-4f8a-bc34-15ba79c78e0d"],[{"index":{"value":1702},"size":{"value":39}},"da09ab4a-13e2-49a4-8dc2-765e0e431dfc"],[{"index":{"value":1702},"size":{"value":197}},"c6cf0b7b-e5ac-4893-90d4-b1279cbe0e8b"],[{"index":{"value":1911},"size":{"value":10}},"b22edef0-f353-40c8-ad56-f9c9b838054f"],[{"index":{"value":1911},"size":{"value":34}},"09cfc746-367c-4e29-8b82-b6e62a005ec4"]]
+{"ide":{"node":{"fc1a7497-0951-4220-ba69-9a653c09a050":{"position":{"vector":[67,191]}},"b1ef5909-8d48-4e9a-a832-12e0075f4b0a":{"position":{"vector":[67,119]}},"978598da-90cc-48d5-8b3b-2c86fbf86c4e":{"position":{"vector":[67,47]}},"44f0ed1e-b05d-47a7-8aa9-27a868682e4f":{"position":{"vector":[67,-103]}},"b5043204-359f-4124-929d-bd879455aa4c":{"position":{"vector":[67,-25]}},"a924bf15-77ea-4eae-884d-57d0f2bdf5a7":{"position":{"vector":[67,-25]}},"0abb3875-af45-4017-909a-02ee5bcf7357":{"position":{"vector":[67,-25]}},"2a7e4d61-2db7-48f9-b101-56adf0fd1cef":{"position":{"vector":[67,-97]},"visualization":{"show":false,"width":1081.1920111357276}},"5e1b07a4-905d-48ba-9ce6-2fe060826cf1":{"position":{"vector":[67,-247]}},"f36ae2d7-300b-4149-8e44-bf405f2e2afb":{"position":{"vector":[67,-247]}},"a97bef34-1ad4-4896-abff-ba89f4eb57e3":{"position":{"vector":[67,-247]}},"c6cf0b7b-e5ac-4893-90d4-b1279cbe0e8b":{"position":{"vector":[67,-169]},"visualization":{"show":true}},"da09ab4a-13e2-49a4-8dc2-765e0e431dfc":{"position":{"vector":[67,-169]}},"4b1e2fca-96d0-4f8a-bc34-15ba79c78e0d":{"position":{"vector":[67,-169]}},"09cfc746-367c-4e29-8b82-b6e62a005ec4":{"position":{"vector":[67,-391]}},"b22edef0-f353-40c8-ad56-f9c9b838054f":{"position":{"vector":[67,-391]}}},"widget":{},"import":{},"snapshot":"eJyNVdtS20gQffdX9JoHQYFlbEMSU0VtmWDuBgoTG+JypcZSSxo0mlZmRr7wNfmWfNnWjHyBbCW7T57pPn3m9EXtSFEGfcNkyFTonzCNwLOclAEmRCV6531kE/EH9ykzbPJHgs6w/3vnOVEs8Fsn57/H9HigSFNkfg/pS5pFgqX/lQcr3gKWxzWkO2dZLlD/yzHgumCCvzLDSVYqW1uwVQGALehKTdCRTCwMDzT0SUxRw73CPOfSA1ucikNuQXO/0T6CIWIKDWcbneFEFUwtoNHac+7xdmJMro/q9bxkCJlh/kRQrHMyfkBZ3cLq+033W5shprWGn5hMQDVHlTGJ0oDgMq3uuDeGKALKEAzBggoFEVfavNcHQcKEQBmj70IeE67BMu/BFUlmEiaByRAuYUaFCEHwFC2Z5RREKTADhqVcxsBAc1tA6M4DFBBxgUASPjMFfSZQO56ALMQgmAQhIiFoZmMVfi+4wgyl0UcVp+Sv0aYgtggxKj9281JoVAFJg7KsCs/i+qT+0GxPvzbnot4ZTJ90N+7cXBcZ3Z4PWp+eO9FNb18d8E+x/hIdHlCQnk2K+UHw2m8l3f5d8/ymNRDtJHx+0Xh38fg0KdLBy2k7GahB+6Ulp/rp4u4Q93m+mIfhZRjtX7XaMo5OZp9fksOPnZNeC8/Z2eBGfsX74Jo+zGj4kb8W+c3t7eIRv9z16rrV3K/b9u+SxF0qTF4Y/+r+vGxUDS7LmbNV0YYpg8oVsHT27GgzCJlBiDiKEGbcJCuLHRMwi3wJHpJKgYqSy5BhAgKmQLsW5KggI2kSqLuz9YTIBCqd8LwkeEDDuHTh7wMDEnaKAhJFJnUJ7s7Xuq3enz/K5j1bYJnl0TLDHo8TA5IMJGxa9l+zDEHRDGjFCqRCVMA0bAiWaXEhfomURTZBBRStJMH2x53/gVY007B98Mlhz9zbWc4U1yT3IEGFnnv+549RKcBlthnGUPEpLkfRzR/lKP/m4XHjOlV4yE/aH74dBuH9STubZrdX4VVLn3XD2sXXpx2/ktnSHtuHQVKILTh2n6GvkIWwjVLTt1zRCwbGd32tg3d/6tYDDFNo+HOh597OOr4BxyVPSeD1E0TT8JyfycXK3fAjUhkzMPKGCUq7qULo2Tnw9uCN6RmZ8sar6CYcOxJfo4FtnOcKvNF78Hi3Wqvujn4hHXs7UD1lBquOytjd2yjJmn7OlEYYedbvjcG3/yEI3mKxWNR6a+W2MGWcz+JYYWxBI+90PatW+JJi5Pv9IlsrfMDQLh093h31uZiiWt1OBAvSzaXA8mzFPrrvxF6re1DSeSseb215Q7cxbljf2pbkm2IelPm3/JniNl+3wu1CaNTuym0Q6KlX+QdGUX8y"}}

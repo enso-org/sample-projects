@@ -1,0 +1,5 @@
+name: Handling Multiple Date Formats
+namespace: local
+version: 0.0.1
+edition: 2025.1.1-dev
+prefer-local-libraries: 'true'

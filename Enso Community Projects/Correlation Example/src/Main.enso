@@ -1,0 +1,22 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+main =
+    quot1 = enso_project.data/ 'icecreamsalesvstemp.csv'
+    file1 = Data.read quot1
+    column1 = file1.get 'Temperature'
+    column2 = file1.get 'Ice Cream Profits'
+    any1 = column1.compute (..Pearson column2)
+    any2 = column1.compute (..Spearman column2)
+
+
+
+#### METADATA ####
+[[{"index":{"value":270},"size":{"value":18}},"28dce20d-f4bc-4926-9651-cffe3293a17d"],[{"index":{"value":270},"size":{"value":44}},"f0cc32e5-ec40-4fd5-8c6f-23e9152095ae"],[{"index":{"value":327},"size":{"value":15}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":357},"size":{"value":9}},"6b02a30b-c1fe-4c86-8ec2-766f2640d9ea"],[{"index":{"value":357},"size":{"value":23}},"34408f91-9d61-4585-a23a-63eae2f02582"],[{"index":{"value":395},"size":{"value":9}},"9effde78-7755-4a15-86a7-e4f59271891a"],[{"index":{"value":395},"size":{"value":29}},"af20737b-9743-4d00-b537-34f2b9b340a6"],[{"index":{"value":436},"size":{"value":15}},"c11dec83-e94d-4495-b848-a7427539bbc8"],[{"index":{"value":436},"size":{"value":35}},"c4891c88-abea-4bdc-9559-ccc5cdd33569"],[{"index":{"value":483},"size":{"value":15}},"23e75643-c0d5-4025-aee4-17305b1e78cb"],[{"index":{"value":483},"size":{"value":36}},"f6d52e53-6813-4bb3-bf94-8afa405e2387"]]
+{"ide":{"node":{"f0cc32e5-ec40-4fd5-8c6f-23e9152095ae":{"position":{"vector":[-176,354]}},"28dce20d-f4bc-4926-9651-cffe3293a17d":{"position":{"vector":[57,-136]}},"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-388,282]},"visualization":{"show":true,"width":1027.671875,"height":202.87875825456044,"project":{"project":"Builtin"},"name":"Table"}},"34408f91-9d61-4585-a23a-63eae2f02582":{"position":{"vector":[-388,7]},"visualization":{"show":true,"width":327.5112158025353}},"6b02a30b-c1fe-4c86-8ec2-766f2640d9ea":{"position":{"vector":[-269,-34]}},"af20737b-9743-4d00-b537-34f2b9b340a6":{"position":{"vector":[-63,-198]},"visualization":{"show":true,"width":373.4800800212378}},"9effde78-7755-4a15-86a7-e4f59271891a":{"position":{"vector":[71,-13]}},"c4891c88-abea-4bdc-9559-ccc5cdd33569":{"position":{"vector":[-388,-420]},"visualization":{"show":true}},"c11dec83-e94d-4495-b848-a7427539bbc8":{"position":{"vector":[-388,-215]}},"f6d52e53-6813-4bb3-bf94-8afa405e2387":{"position":{"vector":[470,-420]},"visualization":{"show":true}},"23e75643-c0d5-4025-aee4-17305b1e78cb":{"position":{"vector":[-20,-227]}}},"widget":{},"snapshot":"eJx9j8tuAjEMRffzFd5Nu0lV9izoQ1V3SIPaJbpkPCg0idPEQx9fX80AFaiFnaVzfCx3WQI1itgit+YOhcmFJFkJ3lfdCV1g5S/gByhWFwOz1+Y8fBJZe17OkjvvNFE+Oo+3kxv78Vd6/ERInssf8OJKD+++oU5iVQW4SNOKiOi9F72lKXEsskxZNmzVtFDcUO0s28wIBZ7LtiiHZGzZ1uNi5zwPi8PvJjPaXWpkVnwf4kBHy6xZqV5wSJyhfeb6yJqcWs+W6X44SvMsndOycxG/htw+bKyE1CvTlTFzRi4SD7Xrgz75X28SIwcc+T/lp7G9"}}

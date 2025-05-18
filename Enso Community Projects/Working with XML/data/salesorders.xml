@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WeeklySalesOrders xmlns:sap="http://www.sap.com/sapdata" 
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.sap.com/sapdata sales_order_schema.xsd">
+  <ExportParameters>
+    <DateRange>
+      <StartDate>2025-03-24</StartDate>
+      <EndDate>2025-03-30</EndDate>
+    </DateRange>
+    <ExportedBy>SYSTEM_ADMIN</ExportedBy>
+    <ExportTimestamp>2025-03-31T08:15:22</ExportTimestamp>
+    <SalesOrganization>1000</SalesOrganization>
+  </ExportParameters>
+  
+  <!-- Monday -->
+  <SalesOrder>
+    <Header>
+      <OrderNumber>4500020001</OrderNumber>
+      <OrderDate>2025-03-24T09:12:33</OrderDate>
+      <CustomerID>C2010</CustomerID>
+      <SalesOrganization>1000</SalesOrganization>
+      <DistributionChannel>10</DistributionChannel>
+      <Division>00</Division>
+      <Status>Completed</Status>
+      <Currency>USD</Currency>
+      <TotalValue>5428.75</TotalValue>
+      <PurchaseOrderNumber>PO-45891</PurchaseOrderNumber>
+    </Header>
+    <CustomerData>
+      <Name>TechSolutions Inc.</Name>
+      <Address>
+        <Street>789 Innovation Drive</Street>
+        <City>San Francisco</City>
+        <Region>CA</Region>
+        <PostalCode>94105</PostalCode>
+        <Country>US</Country>
+      </Address>
+      <ContactPerson>Maria Johnson</ContactPerson>
+      <PhoneNumber>+1-415-555-8890</PhoneNumber>
+      <EmailAddress>m.johnson@techsolutions.example</EmailAddress>
+    </CustomerData>
+    <Items>
+      <Item>
+        <ItemNumber>10</ItemNumber>
+        <Material>HW-S1050</Material>
+        <Description>Enterprise Server</Description>
+        <Quantity>2</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>2450.00</UnitPrice>
+        <NetValue>4900.00</NetValue>
+        <Plant>1000</Plant>
+        <DeliveryDate>2025-04-10</DeliveryDate>
+      </Item>
+      <Item>
+        <ItemNumber>20</ItemNumber>
+        <Material>SW-DB1002</Material>
+        <Description>Database License</Description>
+        <Quantity>5</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>105.75</UnitPrice>
+        <NetValue>528.75</NetValue>
+        <Plant>1000</Plant>
+        <DeliveryDate>2025-04-05</DeliveryDate>
+      </Item>
+    </Items>
+    <Partners>
+      <Partner>
+        <PartnerFunction>SH</PartnerFunction>
+        <PartnerNumber>1000</PartnerNumber>
+        <PartnerName>Central Distribution</PartnerName>
+      </Partner>
+    </Partners>
+    <sap:AdditionalData>
+      <sap:CreatedBy>SALES_REP1</sap:CreatedBy>
+      <sap:CreationTime>2025-03-24T09:12:33</sap:CreationTime>
+      <sap:ChangedBy>SYSTEM</sap:ChangedBy>
+      <sap:ChangeTime>2025-03-24T15:45:22</sap:ChangeTime>
+      <sap:SystemID>PRD</sap:SystemID>
+    </sap:AdditionalData>
+  </SalesOrder>
+  
+  <SalesOrder>
+    <Header>
+      <OrderNumber>4500020002</OrderNumber>
+      <OrderDate>2025-03-24T11:45:12</OrderDate>
+      <CustomerID>C1587</CustomerID>
+      <SalesOrganization>1000</SalesOrganization>
+      <DistributionChannel>10</DistributionChannel>
+      <Division>00</Division>
+      <Status>Processing</Status>
+      <Currency>EUR</Currency>
+      <TotalValue>1230.50</TotalValue>
+      <PurchaseOrderNumber>EUPO-78945</PurchaseOrderNumber>
+    </Header>
+    <CustomerData>
+      <Name>European Retail GmbH</Name>
+      <Address>
+        <Street>Hauptstrasse 25</Street>
+        <City>Munich</City>
+        <Region>BY</Region>
+        <PostalCode>80331</PostalCode>
+        <Country>DE</Country>
+      </Address>
+      <ContactPerson>Klaus Weber</ContactPerson>
+      <PhoneNumber>+49-89-5557890</PhoneNumber>
+      <EmailAddress>k.weber@euroretail.example</EmailAddress>
+    </CustomerData>
+    <Items>
+      <Item>
+        <ItemNumber>10</ItemNumber>
+        <Material>FN-D5001</Material>
+        <Description>Office Desk Set</Description>
+        <Quantity>3</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>410.00</UnitPrice>
+        <NetValue>1230.00</NetValue>
+        <Plant>2000</Plant>
+        <DeliveryDate>2025-04-15</DeliveryDate>
+      </Item>
+      <Item>
+        <ItemNumber>20</ItemNumber>
+        <Material>ST-S1002</Material>
+        <Description>Pen Set</Description>
+        <Quantity>5</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>0.10</UnitPrice>
+        <NetValue>0.50</NetValue>
+        <Plant>2000</Plant>
+        <DeliveryDate>2025-04-15</DeliveryDate>
+      </Item>
+    </Items>
+    <Partners>
+      <Partner>
+        <PartnerFunction>SH</PartnerFunction>
+        <PartnerNumber>2000</PartnerNumber>
+        <PartnerName>European Distribution</PartnerName>
+      </Partner>
+    </Partners>
+    <sap:AdditionalData>
+      <sap:CreatedBy>EU_SALES1</sap:CreatedBy>
+      <sap:CreationTime>2025-03-24T11:45:12</sap:CreationTime>
+      <sap:ChangedBy>EU_SALES1</sap:ChangedBy>
+      <sap:ChangeTime>2025-03-24T11:45:12</sap:ChangeTime>
+      <sap:SystemID>PRD</sap:SystemID>
+    </sap:AdditionalData>
+  </SalesOrder>
+  
+  <!-- Tuesday -->
+  <SalesOrder>
+    <Header>
+      <OrderNumber>4500020003</OrderNumber>
+      <OrderDate>2025-03-25T08:30:45</OrderDate>
+      <CustomerID>C3020</CustomerID>
+      <SalesOrganization>1000</SalesOrganization>
+      <DistributionChannel>20</DistributionChannel>
+      <Division>01</Division>
+      <Status>Delivered</Status>
+      <Currency>USD</Currency>
+      <TotalValue>8750.25</TotalValue>
+      <PurchaseOrderNumber>HEALTHCARE-12345</PurchaseOrderNumber>
+    </Header>
+    <CustomerData>
+      <Name>Medical Center Group</Name>
+      <Address>
+        <Street>456 Health Boulevard</Street>
+        <City>Boston</City>
+        <Region>MA</Region>
+        <PostalCode>02108</PostalCode>
+        <Country>US</Country>
+      </Address>
+      <ContactPerson>Dr. Sarah Williams</ContactPerson>
+      <PhoneNumber>+1-617-555-1234</PhoneNumber>
+      <EmailAddress>s.williams@medcenter.example</EmailAddress>
+    </CustomerData>
+    <Items>
+      <Item>
+        <ItemNumber>10</ItemNumber>
+        <Material>MED-D2001</Material>
+        <Description>Diagnostic Equipment</Description>
+        <Quantity>1</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>7500.00</UnitPrice>
+        <NetValue>7500.00</NetValue>
+        <Plant>1000</Plant>
+        <DeliveryDate>2025-04-05</DeliveryDate>
+      </Item>
+      <Item>
+        <ItemNumber>20</ItemNumber>
+        <Material>MED-S5001</Material>
+        <Description>Medical Supplies Kit</Description>
+        <Quantity>5</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>250.05</UnitPrice>
+        <NetValue>1250.25</NetValue>
+        <Plant>1000</Plant>
+        <DeliveryDate>2025-04-05</DeliveryDate>
+      </Item>
+    </Items>
+    <Partners>
+      <Partner>
+        <PartnerFunction>SH</PartnerFunction>
+        <PartnerNumber>1500</PartnerNumber>
+        <PartnerName>Medical Supplies Warehouse</PartnerName>
+      </Partner>
+      <Partner>
+        <PartnerFunction>SP</PartnerFunction>
+        <PartnerNumber>5000</PartnerNumber>
+        <PartnerName>ExpressMed Shipping</PartnerName>
+      </Partner>
+    </Partners>
+    <sap:AdditionalData>
+      <sap:CreatedBy>MED_SALES2</sap:CreatedBy>
+      <sap:CreationTime>2025-03-25T08:30:45</sap:CreationTime>
+      <sap:ChangedBy>MED_SALES2</sap:ChangedBy>
+      <sap:ChangeTime>2025-03-25T14:20:10</sap:ChangeTime>
+      <sap:SystemID>PRD</sap:SystemID>
+    </sap:AdditionalData>
+  </SalesOrder>
+  
+  <!-- Wednesday -->
+  <SalesOrder>
+    <Header>
+      <OrderNumber>4500020004</OrderNumber>
+      <OrderDate>2025-03-26T10:15:33</OrderDate>
+      <CustomerID>C5060</CustomerID>
+      <SalesOrganization>1000</SalesOrganization>
+      <DistributionChannel>10</DistributionChannel>
+      <Division>00</Division>
+      <Status>Backorder</Status>
+      <Currency>JPY</Currency>
+      <TotalValue>325000.00</TotalValue>
+      <PurchaseOrderNumber>JPPO-987654</PurchaseOrderNumber>
+    </Header>
+    <CustomerData>
+      <Name>Tokyo Electronics Ltd.</Name>
+      <Address>
+        <Street>1-2-3 Shibuya</Street>
+        <City>Tokyo</City>
+        <Region></Region>
+        <PostalCode>150-0002</PostalCode>
+        <Country>JP</Country>
+      </Address>
+      <ContactPerson>Hiroshi Tanaka</ContactPerson>
+      <PhoneNumber>+81-3-5555-7890</PhoneNumber>
+      <EmailAddress>h.tanaka@tokyoelec.example</EmailAddress>
+    </CustomerData>
+    <Items>
+      <Item>
+        <ItemNumber>10</ItemNumber>
+        <Material>EL-C7001</Material>
+        <Description>Circuit Components</Description>
+        <Quantity>500</Quantity>
+        <Unit>CS</Unit>
+        <UnitPrice>450.00</UnitPrice>
+        <NetValue>225000.00</NetValue>
+        <Plant>3000</Plant>
+        <DeliveryDate>2025-04-20</DeliveryDate>
+      </Item>
+      <Item>
+        <ItemNumber>20</ItemNumber>
+        <Material>EL-P8005</Material>
+        <Description>Processor Units</Description>
+        <Quantity>100</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>1000.00</UnitPrice>
+        <NetValue>100000.00</NetValue>
+        <Plant>3000</Plant>
+        <DeliveryDate>2025-05-10</DeliveryDate>
+        <ItemStatus>Backordered</ItemStatus>
+      </Item>
+    </Items>
+    <Partners>
+      <Partner>
+        <PartnerFunction>SH</PartnerFunction>
+        <PartnerNumber>3000</PartnerNumber>
+        <PartnerName>Asia-Pacific Distribution</PartnerName>
+      </Partner>
+    </Partners>
+    <sap:AdditionalData>
+      <sap:CreatedBy>APAC_SALES1</sap:CreatedBy>
+      <sap:CreationTime>2025-03-26T10:15:33</sap:CreationTime>
+      <sap:ChangedBy>SYSTEM</sap:ChangedBy>
+      <sap:ChangeTime>2025-03-26T16:45:12</sap:ChangeTime>
+      <sap:SystemID>PRD</sap:SystemID>
+    </sap:AdditionalData>
+  </SalesOrder>
+  
+  <!-- Thursday -->
+  <SalesOrder>
+    <Header>
+      <OrderNumber>4500020005</OrderNumber>
+      <OrderDate>2025-03-27T14:22:18</OrderDate>
+      <CustomerID>C1000</CustomerID>
+      <SalesOrganization>1000</SalesOrganization>
+      <DistributionChannel>10</DistributionChannel>
+      <Division>00</Division>
+      <Status>Processing</Status>
+      <Currency>USD</Currency>
+      <TotalValue>3240.50</TotalValue>
+      <PurchaseOrderNumber>ACME-PO-78952</PurchaseOrderNumber>
+    </Header>
+    <CustomerData>
+      <Name>Acme Corporation</Name>
+      <Address>
+        <Street>123 Business Ave</Street>
+        <City>Enterprise</City>
+        <Region>CA</Region>
+        <PostalCode>90210</PostalCode>
+        <Country>US</Country>
+      </Address>
+      <ContactPerson>John Smith</ContactPerson>
+      <PhoneNumber>+1-555-123-4567</PhoneNumber>
+      <EmailAddress>j.smith@acme.example</EmailAddress>
+    </CustomerData>
+    <Items>
+      <Item>
+        <ItemNumber>10</ItemNumber>
+        <Material>FN-C5001</Material>
+        <Description>Executive Chair</Description>
+        <Quantity>8</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>350.00</UnitPrice>
+        <NetValue>2800.00</NetValue>
+        <Plant>1000</Plant>
+        <DeliveryDate>2025-04-15</DeliveryDate>
+      </Item>
+      <Item>
+        <ItemNumber>20</ItemNumber>
+        <Material>FN-T1002</Material>
+        <Description>Conference Table</Description>
+        <Quantity>1</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>440.50</UnitPrice>
+        <NetValue>440.50</NetValue>
+        <Plant>1000</Plant>
+        <DeliveryDate>2025-04-15</DeliveryDate>
+      </Item>
+    </Items>
+    <Partners>
+      <Partner>
+        <PartnerFunction>SH</PartnerFunction>
+        <PartnerNumber>1000</PartnerNumber>
+        <PartnerName>Central Distribution</PartnerName>
+      </Partner>
+      <Partner>
+        <PartnerFunction>SP</PartnerFunction>
+        <PartnerNumber>4000</PartnerNumber>
+        <PartnerName>Premium Delivery Services</PartnerName>
+      </Partner>
+    </Partners>
+    <sap:AdditionalData>
+      <sap:CreatedBy>SALES_REP3</sap:CreatedBy>
+      <sap:CreationTime>2025-03-27T14:22:18</sap:CreationTime>
+      <sap:ChangedBy>SYSTEM</sap:ChangedBy>
+      <sap:ChangeTime>2025-03-27T14:22:18</sap:ChangeTime>
+      <sap:SystemID>PRD</sap:SystemID>
+    </sap:AdditionalData>
+  </SalesOrder>
+  
+  <!-- Friday -->
+  <SalesOrder>
+    <Header>
+      <OrderNumber>4500020006</OrderNumber>
+      <OrderDate>2025-03-28T09:05:55</OrderDate>
+      <CustomerID>C4080</CustomerID>
+      <SalesOrganization>1000</SalesOrganization>
+      <DistributionChannel>20</DistributionChannel>
+      <Division>02</Division>
+      <Status>Scheduled</Status>
+      <Currency>GBP</Currency>
+      <TotalValue>12450.75</TotalValue>
+      <PurchaseOrderNumber>UK-ORDER-445566</PurchaseOrderNumber>
+    </Header>
+    <CustomerData>
+      <Name>British Manufacturing Ltd.</Name>
+      <Address>
+        <Street>45 Industrial Road</Street>
+        <City>Manchester</City>
+        <Region></Region>
+        <PostalCode>M1 1AB</PostalCode>
+        <Country>GB</Country>
+      </Address>
+      <ContactPerson>Emma Clarke</ContactPerson>
+      <PhoneNumber>+44-161-555-7890</PhoneNumber>
+      <EmailAddress>e.clarke@britmanufacturing.example</EmailAddress>
+    </CustomerData>
+    <Items>
+      <Item>
+        <ItemNumber>10</ItemNumber>
+        <Material>IND-M1001</Material>
+        <Description>Manufacturing Equipment</Description>
+        <Quantity>1</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>10000.00</UnitPrice>
+        <NetValue>10000.00</NetValue>
+        <Plant>2500</Plant>
+        <DeliveryDate>2025-05-15</DeliveryDate>
+      </Item>
+      <Item>
+        <ItemNumber>20</ItemNumber>
+        <Material>IND-P2002</Material>
+        <Description>Processing Units</Description>
+        <Quantity>5</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>490.15</UnitPrice>
+        <NetValue>2450.75</NetValue>
+        <Plant>2500</Plant>
+        <DeliveryDate>2025-05-15</DeliveryDate>
+      </Item>
+    </Items>
+    <Partners>
+      <Partner>
+        <PartnerFunction>SH</PartnerFunction>
+        <PartnerNumber>2500</PartnerNumber>
+        <PartnerName>UK Distribution Center</PartnerName>
+      </Partner>
+      <Partner>
+        <PartnerFunction>SP</PartnerFunction>
+        <PartnerNumber>4500</PartnerNumber>
+        <PartnerName>Industrial Shipping Ltd.</PartnerName>
+      </Partner>
+      <Partner>
+        <PartnerFunction>IN</PartnerFunction>
+        <PartnerNumber>5500</PartnerNumber>
+        <PartnerName>UK Insurance Company</PartnerName>
+      </Partner>
+    </Partners>
+    <sap:AdditionalData>
+      <sap:CreatedBy>UK_SALES1</sap:CreatedBy>
+      <sap:CreationTime>2025-03-28T09:05:55</sap:CreationTime>
+      <sap:ChangedBy>UK_SALES1</sap:ChangedBy>
+      <sap:ChangeTime>2025-03-28T09:05:55</sap:ChangeTime>
+      <sap:SystemID>PRD</sap:SystemID>
+    </sap:AdditionalData>
+  </SalesOrder>
+  
+  <!-- Weekend -->
+  <SalesOrder>
+    <Header>
+      <OrderNumber>4500020007</OrderNumber>
+      <OrderDate>2025-03-29T11:22:10</OrderDate>
+      <CustomerID>C7020</CustomerID>
+      <SalesOrganization>1000</SalesOrganization>
+      <DistributionChannel>30</DistributionChannel>
+      <Division>03</Division>
+      <Status>New</Status>
+      <Currency>AUD</Currency>
+      <TotalValue>5670.80</TotalValue>
+      <PurchaseOrderNumber>AUS-789456</PurchaseOrderNumber>
+    </Header>
+    <CustomerData>
+      <Name>Sydney Retail Group</Name>
+      <Address>
+        <Street>78 Harbour Street</Street>
+        <City>Sydney</City>
+        <Region>NSW</Region>
+        <PostalCode>2000</PostalCode>
+        <Country>AU</Country>
+      </Address>
+      <ContactPerson>Michael Johnson</ContactPerson>
+      <PhoneNumber>+61-2-5555-1234</PhoneNumber>
+      <EmailAddress>m.johnson@sydneyretail.example</EmailAddress>
+    </CustomerData>
+    <Items>
+      <Item>
+        <ItemNumber>10</ItemNumber>
+        <Material>RT-D1001</Material>
+        <Description>Retail Display Units</Description>
+        <Quantity>12</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>450.90</UnitPrice>
+        <NetValue>5410.80</NetValue>
+        <Plant>3500</Plant>
+        <DeliveryDate>2025-04-25</DeliveryDate>
+      </Item>
+      <Item>
+        <ItemNumber>20</ItemNumber>
+        <Material>RT-S2002</Material>
+        <Description>Signage Package</Description>
+        <Quantity>2</Quantity>
+        <Unit>EA</Unit>
+        <UnitPrice>130.00</UnitPrice>
+        <NetValue>260.00</NetValue>
+        <Plant>3500</Plant>
+        <DeliveryDate>2025-04-25</DeliveryDate>
+      </Item>
+    </Items>
+    <Partners>
+      <Partner>
+        <PartnerFunction>SH</PartnerFunction>
+        <PartnerNumber>3500</PartnerNumber>
+        <PartnerName>Australia Distribution</PartnerName>
+      </Partner>
+    </Partners>
+    <sap:AdditionalData>
+      <sap:CreatedBy>AUS_SALES2</sap:CreatedBy>
+      <sap:CreationTime>2025-03-29T11:22:10</sap:CreationTime>
+      <sap:ChangedBy>AUS_SALES2</sap:ChangedBy>
+      <sap:ChangeTime>2025-03-29T11:22:10</sap:ChangeTime>
+      <sap:SystemID>PRD</sap:SystemID>
+    </sap:AdditionalData>
+  </SalesOrder>
+  
+  <Summary>
+    <TotalOrders>7</TotalOrders>
+    <OrdersByCurrency>
+      <Currency code="USD">3</Currency>
+      <Currency code="EUR">1</Currency>
+      <Currency code="JPY">1</Currency>
+      <Currency code="GBP">1</Currency>
+      <Currency code="AUD">1</Currency>
+    </OrdersByCurrency>
+    <TotalValueUSD>36771.55</TotalValueUSD>
+    <AverageOrderValueUSD>5253.08</AverageOrderValueUSD>
+    <OrdersByStatus>
+      <Status type="New">1</Status>
+      <Status type="Processing">2</Status>
+      <Status type="Scheduled">1</Status>
+      <Status type="Backorder">1</Status>
+      <Status type="Delivered">1</Status>
+      <Status type="Completed">1</Status>
+    </OrdersByStatus>
+  </Summary>
+</WeeklySalesOrders>

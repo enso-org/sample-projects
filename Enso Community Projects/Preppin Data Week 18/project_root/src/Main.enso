@@ -1,0 +1,86 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## ### 2024: Week 18 - San Diego Zoo TC24 Special
+   
+   [April 30, 2024](https://preppindata.blogspot.com/2024/04/2024-week-18-san-diego-zoo-tc24-special.html "permanent link")
+   
+   Challenge by: Jenny Martin
+   
+   Welcome to the Tableau Conference Special for Preppin' Data. If it's your first time here, then a very warm welcome to you! This week we have something pretty special planned for you, with a 2 stage challenge!
+   
+   Seeing as Tableau Conference is in San Diego this year, we thought we'd take a trip to the world famous San Diego Zoo! They've got lots of data on the animals and plants that live at the zoo, but it's spread across multiple data sources. That's where they need our data prep skills to help them out!
+   
+   # Stage One
+   
+   For the first stage, we need to bring together information about the animals and plants at the zoo, with their endangered status and wildlife class. This will help prioritize care for the wildlife in Stage Two of the challenge.
+   
+   ### Inputs
+   
+   All the data required for this challenge is contained within [a single Excel file](https://docs.google.com/spreadsheets/d/1TKhKV4r7y5vPb6EWSyFgM9W_jIUE_Qdq/edit?usp=drive_link&ouid=113142875990517226017&rtpof=true&sd=true) with multiple sheets. For Stage One, you will need 3 tables:
+   
+   1. Wildlife - a table listing all the animals and plants at the Zoo 
+   
+   
+   2. Animal Details - a table containing further details about the animals at the Zoo 
+   
+   
+   # Requirements
+   
+   - [Input the data](https://docs.google.com/spreadsheets/d/1TKhKV4r7y5vPb6EWSyFgM9W_jIUE_Qdq/edit?usp=drive_link&ouid=113142875990517226017&rtpof=true&sd=true)
+   - Bring the Animal & Plant Details Tables together to form one table (*[hint](https://preppindata.blogspot.com/2019/10/how-tounion.html)*)
+   - There's been an error in the Plant Details table where the Status field has been incorrectly spelt as Stattus. Be sure to make sure these 2 fields align and have the correct spelling for their field name
+   - Make sure the Animal and Plant fields from their respective tables are also aligned. Call this new field Name
+   - We only wish to keep the Name, Table Names, Status and Class fields for our analysis
+   - Use the Table Names field to extract the information of whether each row of data is an Animal or a Plant. Call this new field Wildlife (*[hint](https://preppindata.blogspot.com/2019/12/how-to-split-data-fields.html)*)
+   - Many of the Class names have the Latin name followed by the English name in brackets. Update the Class field so that it contains the English name, where possible (*[hint](https://preppindata.blogspot.com/2019/12/how-to-split-data-fields.html)*)
+   - e.g. Aves (Birds) should become Birds
+   - Combine this data with the Wildlife Table (*[hint](https://preppindata.blogspot.com/2020/01/how-tojoin-datasets-together.html)*)
+   - All animals and plants should exist in both tables so we're expecting to still have 326 rows
+   - There's an issue that needs to be fixed to achieve this. Some Names in the Wildlife Table have an error where the apostrophe's (') have been encoded as &#039;
+       - e.g. Bird&#039;s-nest Fern should be Bird's-nest Fern
+   - Remove any unnecessary fields
+   - [Output the data](https://drive.google.com/file/d/10tguOkczOvWBdVKkAl80PAHDXKqRhJCz/view?usp=drive_link)
+   
+   ### Stage One Output
+   
+   - 6 fields
+   - Wildlife
+   - Name
+   - Status
+   - Habitat
+   - Class
+   - Region
+   - 326 rows (327 including headers)
+   
+   
+   
+   # 
+main =
+    ## Data for this project contained within the project itself to simplify delivery of the sample. Users will generally not use this method but rather pass in the path and filename to the excel file in the next component.
+    node1 = enso_project.data/ 'San Diego Zoo.xlsx'
+    any1 = Data.read node1
+    table1 = any1.read 'Wildlife' ..Has_Headers
+    table2 = any1.read 'Animal Details' ..Has_Headers
+    table3 = any1.read 'Plant Details' ..Has_Headers
+    any2 = table3.rename_columns [(Pair.Value 'Plant' 'Name'), (Pair.Value 'Stattus' 'Status')]
+    any3 = table2.rename_columns [(Pair.Value 'Animal' 'Name')]
+    any4 = any3.set 'Animal' 'Wildlife'
+    node2 = any2.set 'Plant' 'Wildlife'
+    any5 = any4.select_columns ['Name', 'Wildlife', 'Status', 'Class']
+    node3 = node2.select_columns ['Name', 'Wildlife', 'Status', 'Class']
+    table4 = any5.union node3 ..In_All ..By_Name
+    column1 = table4.text_replace ['Class'] (regex '.*\\((.*)\\)') '$1'
+    column2 = table1.text_replace ['Name'] '&#039;' '\''
+    table5 = column1.join column2 Join_Kind.Inner on=[(Join_Condition.Equals 'Name')]
+    any6 = table5.select_columns ['Wildlife', 'Name', 'Status', 'Habitat', 'Region'] True
+
+
+
+#### METADATA ####
+[[{"index":{"value":3947},"size":{"value":39}},"d8ab238b-b9a2-46fa-8580-e242e7d612b1"],[{"index":{"value":3998},"size":{"value":9}},"e0e772e0-63df-4f4f-bbc1-e15413bf1337"],[{"index":{"value":3998},"size":{"value":15}},"4ea73a51-7f95-4107-a009-0b9a88c66f80"],[{"index":{"value":4027},"size":{"value":9}},"c0ad1fa6-f462-45ac-a186-48b1f33bec69"],[{"index":{"value":4027},"size":{"value":20}},"5d4b587d-dc03-4acd-a0ba-1309af734840"],[{"index":{"value":4027},"size":{"value":34}},"e038a55b-4e9b-4f04-8d8c-2b36f2eb2227"],[{"index":{"value":4075},"size":{"value":9}},"ff8e7cc7-42b6-4439-8222-ef4f91c445a5"],[{"index":{"value":4075},"size":{"value":26}},"04ca73ce-f4b8-4bcd-b7f9-173227214496"],[{"index":{"value":4075},"size":{"value":40}},"0aa10a98-045c-4c74-9477-28e22d1ae4c6"],[{"index":{"value":4129},"size":{"value":9}},"68986d73-64eb-426c-8451-0d39ffa3864f"],[{"index":{"value":4129},"size":{"value":25}},"94dda6dd-e294-4693-8fdb-30ca1efe6927"],[{"index":{"value":4129},"size":{"value":39}},"85ca0369-8c13-4bfb-b9ed-f444806a9a1f"],[{"index":{"value":4180},"size":{"value":21}},"4b901aff-d9dc-47e8-857e-269167192017"],[{"index":{"value":4180},"size":{"value":84}},"170be6aa-90ab-48b9-bed8-fd7990adaa08"],[{"index":{"value":4276},"size":{"value":21}},"c26de503-d59d-43ef-930f-1b57dfdea9f5"],[{"index":{"value":4276},"size":{"value":52}},"a6ccfbc3-56cd-41f4-b837-e94473d137eb"],[{"index":{"value":4340},"size":{"value":8}},"064f0f6c-b6ea-4639-b5c4-4457c2411423"],[{"index":{"value":4340},"size":{"value":17}},"ec3bb7da-e461-4ec4-b9bf-fea878676c6c"],[{"index":{"value":4340},"size":{"value":28}},"a21327ef-1345-466d-8822-98890cb06bef"],[{"index":{"value":4381},"size":{"value":27}},"077016ab-9eba-4069-a3b9-855b5601195c"],[{"index":{"value":4420},"size":{"value":19}},"8b2f97be-1e3f-48a5-a90a-c51c9bb1dbb7"],[{"index":{"value":4420},"size":{"value":59}},"47eda0f5-18d3-446b-81ad-867200cb4b82"],[{"index":{"value":4492},"size":{"value":60}},"b6bdc1ad-028c-450b-b314-8765c6e6687c"],[{"index":{"value":4566},"size":{"value":10}},"6950acec-1122-4b67-97f3-45e156d23bd6"],[{"index":{"value":4566},"size":{"value":16}},"60931caf-cea3-4a6d-8242-ec578581046e"],[{"index":{"value":4566},"size":{"value":25}},"5b2aa193-e1c9-41e7-91f2-86487e5ec33a"],[{"index":{"value":4566},"size":{"value":35}},"cc910398-69e1-48ee-ae41-84813b0d57b1"],[{"index":{"value":4616},"size":{"value":19}},"0058c5ca-a129-43d8-a6c1-73a1a40d86c0"],[{"index":{"value":4616},"size":{"value":29}},"88223d88-6299-4951-a38b-96c0e5f2a813"],[{"index":{"value":4616},"size":{"value":52}},"f7b83e43-d32a-4be1-8a76-a09da8797d9c"],[{"index":{"value":4616},"size":{"value":57}},"57dce29e-e36c-4f01-bbf0-278fd7948d5a"],[{"index":{"value":4688},"size":{"value":19}},"0cf90fd3-5d2e-4423-a9a4-28f0d2f24bcb"],[{"index":{"value":4688},"size":{"value":28}},"2aef8549-e141-438b-bc87-58186018d789"],[{"index":{"value":4688},"size":{"value":37}},"5fc78a16-3050-48f2-a450-c82f810180c0"],[{"index":{"value":4688},"size":{"value":42}},"2cb138f8-9c79-4e9e-83d1-8e38d782b933"],[{"index":{"value":4744},"size":{"value":12}},"8fea9b2c-90b9-48e9-a691-b851a31999f8"],[{"index":{"value":4744},"size":{"value":20}},"181dfa11-bd0a-4d8c-b8c2-a3c04d07e09b"],[{"index":{"value":4744},"size":{"value":36}},"f3393f62-750e-4318-97f4-1bec45800ce0"],[{"index":{"value":4744},"size":{"value":72}},"aacb3b9a-1b4f-415e-ac2d-828b262d834e"],[{"index":{"value":4828},"size":{"value":21}},"61813e2f-903c-43bc-acad-d8cc3ed889f4"],[{"index":{"value":4828},"size":{"value":73}},"7b893fe1-2a61-4878-b5a8-542e4c390e1c"],[{"index":{"value":4828},"size":{"value":78}},"69753932-6b3c-4838-bac9-72a24e88bb3b"]]
+{"ide":{"node":{"d8ab238b-b9a2-46fa-8580-e242e7d612b1":{"position":{"vector":[142,-128]}},"4ea73a51-7f95-4107-a009-0b9a88c66f80":{"position":{"vector":[161,-208]}},"e0e772e0-63df-4f4f-bbc1-e15413bf1337":{"position":{"vector":[161,-208]}},"e038a55b-4e9b-4f04-8d8c-2b36f2eb2227":{"position":{"vector":[-53,-1070]},"visualization":{"show":true}},"5d4b587d-dc03-4acd-a0ba-1309af734840":{"position":{"vector":[177,-1074]},"visualization":{"show":true}},"c0ad1fa6-f462-45ac-a186-48b1f33bec69":{"position":{"vector":[161,-272]}},"0aa10a98-045c-4c74-9477-28e22d1ae4c6":{"position":{"vector":[161,-284]},"visualization":{"show":true}},"04ca73ce-f4b8-4bcd-b7f9-173227214496":{"position":{"vector":[161,-284]},"visualization":{"show":true}},"ff8e7cc7-42b6-4439-8222-ef4f91c445a5":{"position":{"vector":[478,-284]}},"85ca0369-8c13-4bfb-b9ed-f444806a9a1f":{"position":{"vector":[673,-284]},"visualization":{"show":true}},"94dda6dd-e294-4693-8fdb-30ca1efe6927":{"position":{"vector":[673,-284]},"visualization":{"show":true}},"68986d73-64eb-426c-8451-0d39ffa3864f":{"position":{"vector":[673,-284]}},"170be6aa-90ab-48b9-bed8-fd7990adaa08":{"position":{"vector":[694,-546]}},"4b901aff-d9dc-47e8-857e-269167192017":{"position":{"vector":[730,-547]}},"a6ccfbc3-56cd-41f4-b837-e94473d137eb":{"position":{"vector":[177,-546]}},"c26de503-d59d-43ef-930f-1b57dfdea9f5":{"position":{"vector":[219,-568]}},"a21327ef-1345-466d-8822-98890cb06bef":{"position":{"vector":[177,-625]}},"ec3bb7da-e461-4ec4-b9bf-fea878676c6c":{"position":{"vector":[215,-625]}},"064f0f6c-b6ea-4639-b5c4-4457c2411423":{"position":{"vector":[215,-625]}},"077016ab-9eba-4069-a3b9-855b5601195c":{"position":{"vector":[694,-625]}},"47eda0f5-18d3-446b-81ad-867200cb4b82":{"position":{"vector":[177,-689]}},"8b2f97be-1e3f-48a5-a90a-c51c9bb1dbb7":{"position":{"vector":[261,-689]}},"b6bdc1ad-028c-450b-b314-8765c6e6687c":{"position":{"vector":[694,-689]}},"cc910398-69e1-48ee-ae41-84813b0d57b1":{"position":{"vector":[177,-753]},"visualization":{"show":false,"width":885.5234375}},"5b2aa193-e1c9-41e7-91f2-86487e5ec33a":{"position":{"vector":[177,-753]},"visualization":{"show":false,"width":885.5234375}},"60931caf-cea3-4a6d-8242-ec578581046e":{"position":{"vector":[177,-753]},"visualization":{"show":true,"width":885.5234375}},"6950acec-1122-4b67-97f3-45e156d23bd6":{"position":{"vector":[177,-753]}},"57dce29e-e36c-4f01-bbf0-278fd7948d5a":{"position":{"vector":[177,-817]},"visualization":{"show":true}},"f7b83e43-d32a-4be1-8a76-a09da8797d9c":{"position":{"vector":[177,-817]},"visualization":{"show":true}},"88223d88-6299-4951-a38b-96c0e5f2a813":{"position":{"vector":[177,-817]}},"0058c5ca-a129-43d8-a6c1-73a1a40d86c0":{"position":{"vector":[177,-817]}},"2cb138f8-9c79-4e9e-83d1-8e38d782b933":{"position":{"vector":[-53,-1327]}},"5fc78a16-3050-48f2-a450-c82f810180c0":{"position":{"vector":[495,-1334]}},"2aef8549-e141-438b-bc87-58186018d789":{"position":{"vector":[495,-1334]}},"0cf90fd3-5d2e-4423-a9a4-28f0d2f24bcb":{"position":{"vector":[495,-1334]}},"aacb3b9a-1b4f-415e-ac2d-828b262d834e":{"position":{"vector":[-53,-1409]}},"f3393f62-750e-4318-97f4-1bec45800ce0":{"position":{"vector":[177,-1375]}},"181dfa11-bd0a-4d8c-b8c2-a3c04d07e09b":{"position":{"vector":[177,-1375]}},"8fea9b2c-90b9-48e9-a691-b851a31999f8":{"position":{"vector":[177,-1256]}},"69753932-6b3c-4838-bac9-72a24e88bb3b":{"position":{"vector":[-53,-1473]},"visualization":{"show":true,"height":307.5539453194596}},"7b893fe1-2a61-4878-b5a8-542e4c390e1c":{"position":{"vector":[177,-1689]}},"61813e2f-903c-43bc-acad-d8cc3ed889f4":{"position":{"vector":[177,-1689]}}},"widget":{},"import":{},"snapshot":"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"}}

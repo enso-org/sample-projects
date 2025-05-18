@@ -1,0 +1,5 @@
+name: Enso Getting Started - Exercise 4 - Selecting and Joining Data - Solution
+namespace: local
+version: 0.0.1
+edition: 2024.2.1-nightly.2024.6.12
+prefer-local-libraries: 'true'

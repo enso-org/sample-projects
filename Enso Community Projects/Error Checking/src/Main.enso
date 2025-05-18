@@ -1,0 +1,37 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+check_row_count table count:Integer=100 =
+    if table.row_count != count then Error.throw "Join count does not match the row count of the left table." else table
+    
+## # Error Checking in Enso Analytics
+
+
+   Reconnect the  output of the filter to the 'right' argument on the join to see check_row_count in action.
+
+
+   ![Image](/images/2025-01-07_09-17-01%20(1).gif)
+main =
+    quot1 = enso_project.data/ 'enso_sample_data.csv'
+    any1 = Data.read quot1
+    integer1 = any1.row_count
+    quot2 = enso_project.data/ 'enso_sample_data_addresses.csv'
+    any2 = Data.read quot2
+    any3 = any2.filter 'ID' (..Not_Equal 6523)
+    table1 = any1.join any2 ..Inner
+    integer2 = table1.row_count
+    node1 = Main.check_row_count table1 integer1
+
+
+
+#### METADATA ####
+[[{"index":{"value":708},"size":{"value":18}},"12811b0d-03d5-4fea-9ff1-e6db2e1bc713"],[{"index":{"value":708},"size":{"value":41}},"34ba2d80-bb83-4eff-89f5-fd54168272d0"],[{"index":{"value":761},"size":{"value":9}},"0a09e348-09f0-4d5e-a7a7-d59760e5eb52"],[{"index":{"value":761},"size":{"value":15}},"0e7fdbf3-6086-4db8-b0b1-8dc7d2aa5742"],[{"index":{"value":792},"size":{"value":14}},"5a17a7fd-4bb6-42e2-89d4-679a03d1dd84"],[{"index":{"value":819},"size":{"value":51}},"162e7bee-b5e2-4b79-8b05-db8d05a2822d"],[{"index":{"value":882},"size":{"value":9}},"bcce7c55-5b8a-45e6-86db-37fc7de9443f"],[{"index":{"value":882},"size":{"value":15}},"3b216eff-2303-460e-845f-0855c078ec10"],[{"index":{"value":909},"size":{"value":11}},"77decb58-d8c1-479c-9706-99e16421f272"],[{"index":{"value":909},"size":{"value":16}},"622d6bba-0711-4abc-b5d5-363d99578fcc"],[{"index":{"value":909},"size":{"value":35}},"bb8d8249-1ee6-468e-97dd-812654907ed5"],[{"index":{"value":958},"size":{"value":9}},"ba6a0eb9-5ec4-4a87-9523-c59c55ff8078"],[{"index":{"value":958},"size":{"value":14}},"724049f2-7b43-4f27-adc6-ebefa6c8e0e1"],[{"index":{"value":958},"size":{"value":22}},"85459ca8-3cb8-40eb-b69d-a7b11ee4356f"],[{"index":{"value":996},"size":{"value":16}},"b8e8fd3d-cb56-4159-92ac-f159f4f0a8e5"],[{"index":{"value":1025},"size":{"value":20}},"921b9de4-03df-405e-b3ff-91edc519bd9f"],[{"index":{"value":1025},"size":{"value":27}},"5b91cb08-5027-49d1-bb6b-8b2fce657521"],[{"index":{"value":1025},"size":{"value":36}},"cec2f4b8-5d9d-41bb-8aae-fb63183fd323"]]
+{"ide":{"node":{"34ba2d80-bb83-4eff-89f5-fd54168272d0":{"position":{"vector":[-339,609]}},"12811b0d-03d5-4fea-9ff1-e6db2e1bc713":{"position":{"vector":[-99,272]}},"0e7fdbf3-6086-4db8-b0b1-8dc7d2aa5742":{"position":{"vector":[-339,537]}},"0a09e348-09f0-4d5e-a7a7-d59760e5eb52":{"position":{"vector":[155,-42]}},"5a17a7fd-4bb6-42e2-89d4-679a03d1dd84":{"position":{"vector":[69,0]},"visualization":{"show":true}},"162e7bee-b5e2-4b79-8b05-db8d05a2822d":{"position":{"vector":[190,566]}},"3b216eff-2303-460e-845f-0855c078ec10":{"position":{"vector":[190,494]},"visualization":{"show":true,"width":752.55078125}},"bcce7c55-5b8a-45e6-86db-37fc7de9443f":{"position":{"vector":[155,38]}},"bb8d8249-1ee6-468e-97dd-812654907ed5":{"position":{"vector":[307,272]}},"622d6bba-0711-4abc-b5d5-363d99578fcc":{"position":{"vector":[403,76]}},"77decb58-d8c1-479c-9706-99e16421f272":{"position":{"vector":[403,76]}},"85459ca8-3cb8-40eb-b69d-a7b11ee4356f":{"position":{"vector":[-339,200]},"visualization":{"show":true}},"724049f2-7b43-4f27-adc6-ebefa6c8e0e1":{"position":{"vector":[-58,157]}},"ba6a0eb9-5ec4-4a87-9523-c59c55ff8078":{"position":{"vector":[-41,221]}},"b8e8fd3d-cb56-4159-92ac-f159f4f0a8e5":{"position":{"vector":[-643,-27]},"visualization":{"show":true}},"cec2f4b8-5d9d-41bb-8aae-fb63183fd323":{"position":{"vector":[-393,-222]},"visualization":{"show":true}},"5b91cb08-5027-49d1-bb6b-8b2fce657521":{"position":{"vector":[-393,-222]}},"921b9de4-03df-405e-b3ff-91edc519bd9f":{"position":{"vector":[-393,-222]}}},"widget":{},"import":{},"snapshot":"eJyNUk1v2zAMvftXsA0GJ4cotouu2IAcsjUYMqA7LMN2GAaDlWlHrSymkry0+/WDZC/9WrqdJPE98pGPqi23sPZoKrSVeIeOQLVbth5Q66R+hH7BS/0CfI4eL18ssPi2Pgx+YG40lYutOsy5UNKy49ofpqwN72qN1/+aA7uHhOG6pyxvsd1qcs+Ar8p1qNUv9IpNksgNyevS8q6U3BkPPloU729XxlNDdp5nGcwTAABV9wRxn3A0hyFzQwaW1rIVfmN5B8cfWZkBrJgcGPbQopebwIVA6UGuY0BTPeiLYyDtqH9E4WQ0glFfHd6HlpVpQBlYGsewMKjvvJIuSQL5M0k2hmRsCYA7v+32IrXSnix4jq/UqmbjU0DbdC2FVkyMX4XOPYMjgqcOKQMog3milzv6vmqxoR/jmQqnmxVZcTrN8ml2VmZvpvnZNMtfFdk4n4hG1ZOkRWUGO2869jnMgYzjcmv5iqQXFXqcQRpjLi6xDCEh3c80ZqG5C0nhtwpLWPVl+v30GwtwYN2vaS9X/KdciVVlyTlyj4SLZ8LFH+ikFy3EYHG6Ok9hLMQn9uXypkMNr0+Lk0mkx8Xuu4xux+JCrIwh+3CWoNjTn0xjuIolLlAZ8ddvnO/9SH4Dl55k2w=="}}

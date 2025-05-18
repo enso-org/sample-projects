@@ -1,0 +1,1001 @@
+Transaction ID,Date,Customer,Item,Amount,Currency,Transaction Type,Payment Method,Status
+cc03cc95-ed31-4f05-8fd8-95a458a2ff00,2024-03-26,Customer 55,Item 31,1005.16,AUD,Invoice,Check,Paid
+312cfcb3-fecb-4682-87b9-f6f0afd62213,2023-12-16,Customer 82,Item 50,2920.24,AUD,Invoice,Check,Paid
+befd66bc-4234-494b-a5e9-94557dece2a7,2024-01-24,Customer 48,Item 34,2641.0,EUR,Refund,PayPal,Refunded
+dc7479c4-1ff6-43d9-bb66-bcbb1199e7aa,2024-07-01,Customer 97,Item 24,4782.35,AUD,Invoice,Check,Paid
+307790f8-a342-41d5-891c-23d994396879,2024-04-14,Customer 96,Item 38,575.18,CAD,Invoice,PayPal,Paid
+b75651a3-79ec-4262-9f6f-ed6eb961a586,2024-10-30,Customer 78,Item 20,4313.13,EUR,Invoice,Bank Transfer,Paid
+8b3d94c9-b108-4c57-ace2-331e229e4361,2024-04-30,Customer 78,Item 2,2284.25,GBP,Credit Memo,Bank Transfer,Cancelled
+f876929a-77a5-479b-af0a-35d6e6f4aee5,2023-07-02,Customer 93,Item 45,1227.05,USD,Credit Memo,Check,Pending
+a197324f-ba7e-44a4-b64b-44774fe18144,2023-12-24,Customer 47,Item 47,3065.25,GBP,Credit Memo,Credit Card,Cancelled
+308537aa-6b37-4f9f-ab0f-de8c201f2124,2023-01-13,Customer 84,Item 16,524.58,AUD,Credit Memo,PayPal,Paid
+e2f62bf0-753b-4283-8d75-be9c32e72fd6,2023-01-23,Customer 63,Item 38,873.07,AUD,Invoice,Credit Card,Paid
+b068e5d7-d855-4fb9-9e56-9b04fa1d8ef3,2024-03-23,Customer 85,Item 39,4233.01,AUD,Refund,Bank Transfer,Refunded
+21124f5e-1a33-40f9-b45b-df610c4c2a6a,2023-10-19,Customer 98,Item 48,983.88,USD,Invoice,Bank Transfer,Paid
+239cd626-6355-47be-a78a-fd512e939539,2024-05-04,Customer 7,Item 12,4053.6,CAD,Credit Memo,PayPal,Cancelled
+3a50cd78-581e-4ec7-beda-e9d72182213d,2023-11-16,Customer 81,Item 46,80.58,EUR,Invoice,Bank Transfer,Paid
+dde2a87c-699a-4624-8bd8-11df02601f63,2023-08-13,Customer 27,Item 20,2763.57,AUD,Invoice,PayPal,Paid
+120f9843-16b4-4f41-8cc5-bc039cd03e47,2024-04-26,Customer 45,Item 9,4520.25,AUD,Credit Memo,PayPal,Cancelled
+557c06ed-f9c4-4714-a9c2-cc89e9ed34a9,2024-01-22,Customer 99,Item 1,3226.79,USD,Invoice,Credit Card,Paid
+ec655532-f331-4c64-bd97-9ad0921eeaaa,2023-02-21,Customer 57,Item 42,1383.91,EUR,Invoice,PayPal,Paid
+ef566722-13ca-4197-967e-8b2f2a35551c,2024-12-21,Customer 50,Item 34,2914.82,GBP,Invoice,Check,Paid
+3853b43c-00dd-43dd-ae99-e2a34694f105,2023-12-17,Customer 74,Item 26,699.04,EUR,Invoice,Bank Transfer,Paid
+e734a58d-b363-49bd-bc52-89337b4d22f1,2023-08-09,Customer 22,Item 33,4287.4,GBP,Invoice,Check,Paid
+8ca46377-f60e-41e2-905c-f86b1ef4df48,2024-11-16,Customer 48,Item 49,893.5,USD,Credit Memo,Check,Pending
+71cb16a7-a1af-4f47-83e7-206ee7de0f7a,2024-03-28,Customer 10,Item 6,2853.17,CAD,Invoice,Bank Transfer,Paid
+dcf15219-7638-4f07-9143-05a8dfb48f43,2024-04-14,Customer 75,Item 36,4163.29,AUD,Invoice,Bank Transfer,Paid
+128b9ebf-073f-4b4d-87a2-a9b2b16c9185,2024-06-01,Customer 58,Item 28,4525.36,EUR,Invoice,Credit Card,Paid
+34958043-f63d-4e85-89e1-e5e777792200,2024-12-05,Customer 68,Item 37,2519.7,CAD,Credit Memo,PayPal,Paid
+e476f076-5cf1-4fed-8ff2-1e701da31555,2023-07-02,Customer 76,Item 22,72.07,AUD,Invoice,Bank Transfer,Paid
+b0546972-7195-472a-b47e-568669fca8ef,2024-12-14,Customer 56,Item 2,1685.12,CAD,Invoice,Credit Card,Paid
+6f1d4722-0090-4224-88da-cc6eee51f990,2023-01-19,Customer 83,Item 48,615.29,AUD,Credit Memo,Check,Pending
+24487bc6-bc5d-44d9-97ca-7d35a2ff7d51,2024-12-18,Customer 79,Item 14,465.64,USD,Credit Memo,Bank Transfer,Paid
+e1b656da-be0e-4185-b1d3-6efb93e87b36,2023-04-25,Customer 55,Item 33,3267.59,GBP,Refund,Bank Transfer,Refunded
+f568474a-5cbc-4f41-8132-0c6a5ec413ff,2023-02-02,Customer 91,Item 14,3345.25,EUR,Invoice,PayPal,Paid
+d3e5b492-2b59-49b9-8ed2-9e2069d0e2b9,2024-10-07,Customer 8,Item 15,2624.67,USD,Refund,PayPal,Refunded
+14925947-b33e-4c36-9a72-51501d26b083,2023-07-28,Customer 37,Item 17,3277.81,USD,Invoice,Credit Card,Paid
+58dfdc0b-58ed-4a3c-823f-3860095cecd4,2024-12-25,Customer 94,Item 7,2260.06,USD,Credit Memo,PayPal,Paid
+7849f85b-557a-4662-89b7-72bcc6d4976f,2024-01-10,Customer 24,Item 16,322.41,EUR,Invoice,Credit Card,Paid
+1845ee32-a4fb-40d3-8b6c-97f55893b379,2024-02-22,Customer 47,Item 4,1123.18,EUR,Invoice,Check,Paid
+c5d22d0b-05b8-4d54-b1ca-0db950e3bb9d,2024-03-21,Customer 6,Item 38,3144.33,USD,Invoice,Credit Card,Paid
+d188c4e6-b555-43b7-8fba-da3a9d9788a0,2023-11-02,Customer 77,Item 27,4114.65,CAD,Refund,Bank Transfer,Refunded
+93b4c1d1-93a0-4426-964c-b31127c381c2,2023-06-29,Customer 19,Item 15,2684.1,GBP,Credit Memo,Credit Card,Paid
+1f1cc987-c16b-4d18-9512-2c3a82d53658,2023-08-02,Customer 87,Item 38,3676.64,USD,Invoice,Bank Transfer,Paid
+54fb0c55-7db6-4ffa-89d7-4485da463c39,2024-12-14,Customer 2,Item 6,2325.57,GBP,Invoice,Bank Transfer,Paid
+9df0513c-4cf9-454d-b066-d0394e8da5b2,2024-10-12,Customer 84,Item 13,2518.27,GBP,Credit Memo,Bank Transfer,Cancelled
+34211fe2-10e4-474a-aa8c-dd7cb39b7a0e,2024-11-08,Customer 51,Item 49,1136.29,GBP,Refund,PayPal,Refunded
+6a54b0e4-a4ee-4847-8dad-79b007fc2243,2024-11-29,Customer 40,Item 38,4718.77,AUD,Credit Memo,PayPal,Refunded
+68a965dd-d3a3-4751-8d7a-6fe5abfabd30,2023-08-10,Customer 17,Item 43,1515.47,GBP,Invoice,PayPal,Paid
+9aa91470-7124-492f-a7e3-a49374020d93,2023-08-03,Customer 2,Item 39,742.76,EUR,Invoice,Credit Card,Paid
+15c2708a-0792-4889-9ccc-2580addb2079,2024-09-07,Customer 46,Item 6,2924.01,GBP,Invoice,Credit Card,Paid
+63b4dc47-71e3-4a32-83ca-61a4fd89f422,2024-05-29,Customer 92,Item 2,977.9,GBP,Invoice,Check,Paid
+42205f7d-3489-43e2-929f-04f921079785,2024-06-13,Customer 8,Item 21,866.22,USD,Credit Memo,Bank Transfer,Paid
+299855eb-0981-4cba-8882-34bb2c67322e,2023-03-01,Customer 18,Item 25,4360.47,GBP,Credit Memo,PayPal,Pending
+e984d860-4d3f-49c9-b762-74b4ebf9d55a,2023-02-27,Customer 14,Item 36,3281.54,GBP,Refund,Check,Refunded
+4a5634ef-cc3d-4c94-8499-a73af2ab5441,2023-07-28,Customer 97,Item 36,4122.02,AUD,Credit Memo,PayPal,Paid
+89f5f641-1f81-49c4-ad7e-1ce459859379,2023-11-07,Customer 80,Item 22,3601.33,CAD,Invoice,Credit Card,Paid
+7299ad38-dca7-423f-8560-431e70d921bb,2023-08-24,Customer 91,Item 24,2773.09,EUR,Invoice,Check,Paid
+9108bd62-ea30-4da0-9792-0fff5e9946c8,2024-11-08,Customer 21,Item 14,1403.48,EUR,Credit Memo,Bank Transfer,Cancelled
+37922bda-0026-4fcd-9640-cb61da8733e9,2024-03-04,Customer 5,Item 41,2358.63,GBP,Credit Memo,Bank Transfer,Paid
+045d7bbc-d83c-4c7f-bda5-907fee66974b,2023-11-14,Customer 90,Item 4,824.78,GBP,Invoice,Check,Paid
+c18c7b99-e5ec-48ea-bccc-cb4f07efca9e,2023-07-25,Customer 54,Item 30,360.86,CAD,Invoice,Credit Card,Paid
+6c748904-2edc-4033-a0d2-3c66059912b8,2024-06-22,Customer 10,Item 39,3052.68,AUD,Refund,Bank Transfer,Refunded
+46dca69d-41bc-4f84-808e-f7d188613411,2023-11-12,Customer 23,Item 8,1199.05,USD,Invoice,PayPal,Paid
+e7c7dad5-cf22-40c7-ab54-c22446053948,2023-08-17,Customer 95,Item 33,520.21,GBP,Refund,Credit Card,Refunded
+0cec32fc-693f-476d-a0a9-bc6beded8f9a,2023-05-21,Customer 78,Item 4,2179.47,CAD,Invoice,Check,Paid
+8f94b378-9707-44f6-8eeb-735b7613fbc6,2023-01-06,Customer 4,Item 16,1539.12,EUR,Invoice,Credit Card,Paid
+1133ab1f-cbb9-4cba-93e2-1ac9ff80f702,2024-04-23,Customer 78,Item 17,245.33,USD,Invoice,PayPal,Paid
+ac2a1bf8-f06a-47be-aa3b-bd2815c19bad,2024-02-26,Customer 48,Item 34,1768.01,USD,Invoice,Check,Paid
+c6f29eaf-e115-464c-88f6-8fc12b1553b4,2023-10-17,Customer 37,Item 46,3896.0,USD,Invoice,Credit Card,Paid
+c14fd8b3-da0c-47a2-8cbc-d11985a10c0a,2024-11-18,Customer 30,Item 3,3475.95,EUR,Refund,Bank Transfer,Refunded
+c58c8ce1-e2f9-4fc7-abe3-636f38fd56a2,2023-09-27,Customer 85,Item 5,4457.6,GBP,Invoice,Credit Card,Paid
+ab1a4ed4-be50-48db-8ee9-2daecb432478,2023-04-24,Customer 87,Item 48,3683.9,AUD,Invoice,Credit Card,Paid
+04ef6ac5-f3c7-4b4a-8724-0fc1e295194e,2023-08-10,Customer 50,Item 30,3543.24,GBP,Credit Memo,Check,Refunded
+5339443a-28f1-4c84-9038-c7c6d9f56d36,2023-03-08,Customer 59,Item 35,2671.28,AUD,Credit Memo,Credit Card,Refunded
+18f96c76-6ad6-431a-9855-51e1193d1a2e,2023-05-15,Customer 81,Item 7,2597.73,GBP,Invoice,Credit Card,Paid
+4b2c8320-0967-4a76-9dba-d87559c74ef3,2024-05-30,Customer 63,Item 40,4573.89,CAD,Invoice,Bank Transfer,Paid
+b4a2047b-afee-4bb9-a5a3-6223f74a7bd4,2023-06-25,Customer 81,Item 41,4641.28,GBP,Invoice,Bank Transfer,Paid
+cd5baf93-384e-4a46-af1f-ce5334579d4d,2023-05-13,Customer 15,Item 29,1865.78,AUD,Invoice,Credit Card,Paid
+90022e0d-268e-45f9-b772-8f2afe17f501,2023-12-18,Customer 41,Item 7,3380.28,EUR,Refund,Bank Transfer,Refunded
+e1548ae7-9539-41d7-ab20-47f2f8c928a0,2024-12-27,Customer 48,Item 28,2321.23,AUD,Invoice,Credit Card,Paid
+d88deaec-e84c-4334-8021-2c92ee656908,2023-06-25,Customer 94,Item 36,2018.11,AUD,Invoice,PayPal,Paid
+c2629879-9509-489d-97ea-4713f3709066,2023-02-08,Customer 12,Item 12,264.44,EUR,Invoice,Check,Paid
+9c85a167-729b-4dca-8941-ed5c410211df,2024-06-25,Customer 62,Item 40,4896.28,GBP,Invoice,Bank Transfer,Paid
+3eade5de-f0d6-444f-b3fa-d63c285ffddb,2023-03-18,Customer 36,Item 37,2745.82,USD,Refund,PayPal,Refunded
+14f8feb9-4311-4890-b387-706ff39315e9,2024-07-10,Customer 100,Item 19,1885.8,CAD,Refund,Bank Transfer,Refunded
+c4c96dd6-4c50-4361-8fbd-b79ad8f710ef,2024-01-31,Customer 44,Item 47,2356.07,EUR,Invoice,PayPal,Paid
+733de9c4-7a85-4a98-a83c-afb1b05319c5,2023-02-02,Customer 73,Item 22,3303.86,EUR,Invoice,Bank Transfer,Paid
+ce2546af-f878-440d-bba9-a88df6be65cc,2024-09-02,Customer 83,Item 39,372.72,EUR,Invoice,Check,Paid
+c873de50-e637-4b70-ae3f-b0ad250d78ec,2024-06-11,Customer 46,Item 42,2518.04,EUR,Credit Memo,Bank Transfer,Cancelled
+837c438c-cea1-4cc5-b8fe-f7034ad9c7b4,2024-04-11,Customer 24,Item 26,4396.2,CAD,Invoice,PayPal,Paid
+56ce2ad7-0ef5-4826-a841-f2c4b371a7e1,2024-12-13,Customer 11,Item 35,719.59,GBP,Invoice,PayPal,Paid
+357018eb-5588-45c9-b0d0-368933d686dc,2024-02-10,Customer 86,Item 41,3932.68,GBP,Invoice,Check,Paid
+2fb57245-df98-415d-9182-6e424aef53ab,2024-06-18,Customer 19,Item 22,4954.75,CAD,Credit Memo,Credit Card,Cancelled
+097fb03f-3fdd-41a4-93ba-f0a73a792d37,2023-08-28,Customer 71,Item 39,3613.38,GBP,Invoice,Bank Transfer,Paid
+9dedc1a5-38bc-4e85-9e8c-79725250561e,2024-05-23,Customer 23,Item 11,222.47,GBP,Credit Memo,Check,Pending
+9b79d9f7-5bd4-425e-9b92-b770fc363f4d,2023-03-06,Customer 28,Item 4,3554.16,EUR,Refund,Bank Transfer,Refunded
+2d590b99-cf9e-4dfa-932a-8aa04d48eb7a,2024-01-05,Customer 59,Item 10,752.85,EUR,Invoice,PayPal,Paid
+eee7a607-71ed-49ee-986c-78f92d5e1235,2024-11-25,Customer 62,Item 42,1755.88,AUD,Invoice,Credit Card,Paid
+df99312e-b048-4a48-9232-7f46dac48c18,2024-03-08,Customer 98,Item 2,2769.16,EUR,Invoice,Credit Card,Paid
+19b79760-a432-4d42-ba1b-c0027d0526fe,2023-01-21,Customer 20,Item 42,632.52,AUD,Invoice,Check,Paid
+c2801475-5f5d-445e-b08b-782bf30d0ad0,2024-02-26,Customer 3,Item 5,2698.94,AUD,Refund,Check,Refunded
+beade2c6-db29-4596-b985-abe3bee33ee7,2024-09-29,Customer 28,Item 20,2870.1,EUR,Invoice,PayPal,Paid
+d1e5b216-1404-4d1b-a2ae-06ce0d760510,2024-12-11,Customer 26,Item 22,239.14,USD,Credit Memo,PayPal,Paid
+d420eb9c-d0ee-4a0b-a5fb-cc24887aff43,2024-04-25,Customer 78,Item 8,100.37,AUD,Credit Memo,Credit Card,Pending
+c631b0bc-2254-44b5-84be-9297fe648a24,2024-05-14,Customer 93,Item 23,3399.77,GBP,Invoice,PayPal,Paid
+10122896-710d-4f4a-8adf-d5c890895199,2024-01-04,Customer 97,Item 34,3636.33,EUR,Invoice,Check,Paid
+c8706cec-dd87-4cac-aa76-52a7fb9e176d,2023-05-07,Customer 41,Item 24,1876.67,CAD,Invoice,Check,Paid
+38bcbd11-e7c2-4bae-81d5-0909a1dc940f,2024-05-17,Customer 15,Item 32,44.8,EUR,Invoice,PayPal,Paid
+91a6e454-16a6-4e5e-9000-a970a4faad95,2024-11-05,Customer 91,Item 4,3310.2,EUR,Invoice,Bank Transfer,Paid
+c0869979-ed91-4cdd-b647-458894f69a38,2024-01-12,Customer 64,Item 39,3568.9,USD,Refund,Bank Transfer,Refunded
+632f8164-5765-43bd-900b-0406efd3e110,2024-08-24,Customer 15,Item 48,3332.85,AUD,Refund,Credit Card,Refunded
+d5ea7bf8-4ed8-4741-9304-1128b38d3416,2024-02-11,Customer 86,Item 23,4613.26,EUR,Refund,Credit Card,Refunded
+4ad0ba6c-0345-4a01-950c-b69423597928,2024-04-11,Customer 47,Item 22,4107.56,CAD,Refund,Credit Card,Refunded
+1f514328-9aff-4f3c-b0ec-9adece311589,2024-12-01,Customer 18,Item 49,2953.47,GBP,Refund,Credit Card,Refunded
+408c6c9a-a88e-4ee0-bf0a-d30906d8c092,2023-02-03,Customer 57,Item 18,3648.82,CAD,Invoice,Bank Transfer,Paid
+bfe00ffc-d1a8-461d-afa3-b946d78992bd,2023-04-18,Customer 81,Item 42,3620.72,CAD,Invoice,Credit Card,Paid
+fb699e45-c2f8-43fb-81e0-25ce9d86fb0d,2024-01-28,Customer 90,Item 43,2258.57,EUR,Invoice,Check,Paid
+1ea00539-8ffb-4bd5-a4ba-a0b4b13e5a54,2023-06-01,Customer 60,Item 36,2819.93,GBP,Invoice,Bank Transfer,Paid
+c3db083a-9fa6-476e-8177-4fbbb8cb3931,2024-10-13,Customer 5,Item 14,2670.73,CAD,Invoice,Credit Card,Paid
+26331749-669f-4929-aa95-c5e9d7b7c69b,2023-01-08,Customer 51,Item 43,453.8,EUR,Invoice,Bank Transfer,Paid
+419ee606-c78f-4e04-aaeb-9b53e7e9a7dd,2023-06-16,Customer 11,Item 37,1927.11,AUD,Invoice,Credit Card,Paid
+928fae08-b0be-41bf-819e-72bb94f99272,2024-01-16,Customer 81,Item 11,1853.77,CAD,Refund,Credit Card,Refunded
+e14c0abb-3ed6-4fec-9865-a7d7346ca326,2024-11-01,Customer 73,Item 45,1268.79,AUD,Refund,PayPal,Refunded
+e46e0426-2e23-4417-b6ff-cd918efc1408,2024-07-13,Customer 4,Item 50,667.25,GBP,Invoice,Credit Card,Paid
+95e00d7a-44a0-4d4b-a8df-99b04e6313b7,2023-11-13,Customer 94,Item 46,3517.62,GBP,Invoice,Check,Paid
+cfed2efb-4ab6-46bb-8eef-d57428705e29,2024-04-12,Customer 72,Item 8,1189.97,AUD,Invoice,Credit Card,Paid
+2d88d501-fab7-4750-ab1a-569cb6988b5b,2023-03-15,Customer 1,Item 44,1045.24,EUR,Credit Memo,PayPal,Refunded
+1964f74a-1571-4d40-b73c-8837a62434cb,2023-11-22,Customer 63,Item 25,2629.98,GBP,Credit Memo,Check,Cancelled
+c2d320ad-6718-4ed0-b34e-6145e9dea2fb,2023-09-05,Customer 16,Item 38,4005.27,USD,Invoice,PayPal,Paid
+f99349a9-a676-418d-85db-01481a893ea5,2023-02-19,Customer 12,Item 50,4194.31,CAD,Credit Memo,Credit Card,Cancelled
+88f74c8b-102a-4207-91a6-959257b0afe2,2023-08-12,Customer 40,Item 24,2821.49,AUD,Invoice,PayPal,Paid
+8df5645b-0c0e-4e7f-b879-92758bc9de05,2023-01-25,Customer 20,Item 4,4992.87,USD,Invoice,Bank Transfer,Paid
+c9f5d118-4797-48da-b512-e62309bbc82f,2024-12-16,Customer 77,Item 20,3135.09,CAD,Credit Memo,Credit Card,Refunded
+f53b483c-73cf-4d74-9a0b-65bd8ae00cde,2024-04-15,Customer 65,Item 7,1192.02,CAD,Invoice,Bank Transfer,Paid
+1b38ea19-181c-4c19-8808-fcc51a82a38b,2023-05-01,Customer 38,Item 49,1678.04,EUR,Refund,Check,Refunded
+4766892a-534e-4bb3-9b1b-89a30fc4a583,2024-02-06,Customer 49,Item 47,2671.24,GBP,Credit Memo,PayPal,Cancelled
+a4c56689-c7be-48cc-9dfe-467061df2eed,2024-11-27,Customer 20,Item 18,142.53,EUR,Invoice,Bank Transfer,Paid
+8caeae11-1903-41c6-bed1-9ea3a02f21fb,2023-05-26,Customer 89,Item 50,4910.7,CAD,Invoice,Bank Transfer,Paid
+711bd927-f125-4707-97cb-1e13e713199c,2023-05-22,Customer 8,Item 35,556.97,USD,Credit Memo,PayPal,Paid
+cbf58e2d-c47a-4294-af5d-2104381e088d,2024-09-25,Customer 85,Item 24,1270.75,USD,Credit Memo,PayPal,Refunded
+1501d317-dbff-478c-b2c0-c181d4d24d8b,2023-11-19,Customer 24,Item 25,1980.65,AUD,Refund,Credit Card,Refunded
+719ff248-cbef-4d74-bbc0-aa32522a9c2b,2023-08-12,Customer 99,Item 21,1859.35,AUD,Invoice,Bank Transfer,Paid
+ad6284d4-0b69-429f-9199-27f95e408e7c,2024-12-13,Customer 14,Item 8,326.5,USD,Invoice,Bank Transfer,Paid
+37d845f7-fea9-4b4c-b40c-d17edcfea0cb,2023-08-14,Customer 39,Item 27,3944.65,USD,Refund,Bank Transfer,Refunded
+1198229d-124a-44a7-a771-9f0a40f53412,2023-11-30,Customer 79,Item 50,2902.08,AUD,Invoice,Check,Paid
+103a5f8c-6628-41a5-b56a-662848ca63ad,2024-07-29,Customer 30,Item 23,2943.1,EUR,Invoice,Check,Paid
+e95e1d72-64a8-4676-aa28-4c81cb8b5d27,2024-05-17,Customer 38,Item 18,4176.14,GBP,Invoice,PayPal,Paid
+87e565b1-f774-48d4-baa8-bf3875b1e62c,2023-05-14,Customer 72,Item 47,4972.93,CAD,Invoice,Bank Transfer,Paid
+e3000cfa-e504-4f23-95ec-af1a119e7707,2024-06-20,Customer 5,Item 8,3526.59,USD,Credit Memo,PayPal,Cancelled
+b058046c-cd93-472d-b224-f69808369446,2023-02-21,Customer 55,Item 42,935.38,USD,Invoice,Check,Paid
+7fb9d865-92b5-425f-92f7-19f1fc87ccd0,2024-05-24,Customer 2,Item 33,1226.72,EUR,Invoice,Bank Transfer,Paid
+1040287e-032e-4408-a349-9fe7713bc853,2023-02-05,Customer 77,Item 30,1120.71,AUD,Refund,Credit Card,Refunded
+72405035-1f0f-4198-a802-95f52ce3bc53,2024-03-13,Customer 34,Item 34,458.15,USD,Invoice,Bank Transfer,Paid
+b1be627c-26a3-467f-bb38-e7fe067400b8,2023-09-11,Customer 14,Item 46,4689.66,GBP,Invoice,Check,Paid
+17f16ad6-b743-4303-ad75-5f40e68f453a,2023-05-19,Customer 24,Item 33,1656.9,USD,Invoice,PayPal,Paid
+410d6734-8116-4dd4-bb21-193e5cc2a42c,2024-09-19,Customer 96,Item 22,4016.49,EUR,Invoice,PayPal,Paid
+5974bb99-e183-4f68-b042-e6357b538b82,2024-03-30,Customer 33,Item 3,3720.65,GBP,Invoice,Check,Paid
+581e9378-ba18-4e14-ab0a-341891d96ab3,2023-02-23,Customer 96,Item 8,803.18,USD,Refund,Bank Transfer,Refunded
+c22d0943-a9a1-4f0a-b56a-032b6846e08f,2023-12-23,Customer 39,Item 42,3720.95,AUD,Refund,Check,Refunded
+62440e1b-fa08-4eda-94c5-5ae2686bde86,2023-05-31,Customer 3,Item 11,880.47,GBP,Refund,PayPal,Refunded
+105679d6-2cff-484f-a50a-0b26cce0c8c9,2024-10-17,Customer 99,Item 38,4915.91,AUD,Invoice,Bank Transfer,Paid
+9d7779ef-772d-418b-9508-df3d18b6853a,2024-12-20,Customer 7,Item 2,3819.36,AUD,Invoice,PayPal,Paid
+ec648c12-06c7-4107-be42-916fdb3bf800,2023-02-02,Customer 95,Item 45,2930.3,CAD,Invoice,Check,Paid
+5bc7f0a6-318b-44bb-bd70-6001874dd67b,2023-02-09,Customer 34,Item 41,3820.16,CAD,Invoice,Check,Paid
+67188d69-e8f3-42ae-82aa-7745845c6578,2023-01-31,Customer 4,Item 1,4586.49,GBP,Invoice,PayPal,Paid
+f14bc1f7-98ce-43f9-b44f-4ec4bd8da297,2024-06-07,Customer 20,Item 44,3735.25,USD,Refund,Credit Card,Refunded
+0d05cadb-35de-4bc0-80e0-d486f9a5b0d6,2024-09-03,Customer 31,Item 28,3795.07,EUR,Invoice,Credit Card,Paid
+285df356-0193-4fed-a2a9-09784a6c3156,2023-03-04,Customer 41,Item 21,3795.25,USD,Credit Memo,PayPal,Cancelled
+f21bc624-0a31-4c28-91b1-5474319d244a,2024-01-05,Customer 43,Item 29,33.29,EUR,Invoice,PayPal,Paid
+94ce6b0a-ae02-4647-8784-fb6f667a614c,2024-09-01,Customer 90,Item 42,3667.4,GBP,Refund,Check,Refunded
+b082d009-242b-4084-9227-1f30dc14500c,2024-02-14,Customer 90,Item 16,4706.35,GBP,Invoice,PayPal,Paid
+24f36905-1a85-436f-af1a-3d37f8b5ae94,2023-03-07,Customer 72,Item 39,438.21,GBP,Invoice,PayPal,Paid
+8db876da-ac3a-4d91-a718-846f16024061,2024-08-07,Customer 50,Item 30,2123.45,USD,Invoice,Credit Card,Paid
+7232b46f-7b04-44bb-a963-6de756dcc5a0,2024-03-17,Customer 34,Item 35,1330.24,CAD,Refund,PayPal,Refunded
+06e2bfe7-c1e6-4715-b611-e583ca2c28d6,2023-09-29,Customer 71,Item 41,3807.08,AUD,Invoice,Check,Paid
+0af614e9-f02b-4884-ac9d-5cb511ad0d73,2023-03-30,Customer 67,Item 45,3822.24,AUD,Credit Memo,Credit Card,Pending
+fa7af724-7f7f-428a-8ccf-7850fa2a2123,2023-12-19,Customer 96,Item 1,907.1,CAD,Credit Memo,PayPal,Pending
+f5ba096d-81ad-4925-a970-ef2e7510dfb8,2024-06-09,Customer 77,Item 5,4156.1,CAD,Refund,Check,Refunded
+14ae8b1e-530e-4358-a58b-30f0dbac3cc9,2024-09-23,Customer 71,Item 29,1385.23,EUR,Invoice,PayPal,Paid
+f8697ee9-a681-4005-bb33-e81aaa9e244a,2024-03-18,Customer 38,Item 7,219.37,EUR,Invoice,Check,Paid
+70a035db-1e8e-4f7a-b818-f985d85493d1,2024-09-11,Customer 79,Item 40,3027.54,EUR,Refund,Credit Card,Refunded
+8baba1cf-22d9-4f1b-ab92-71f59cb6e3de,2024-02-07,Customer 62,Item 28,2917.45,USD,Invoice,Check,Paid
+26bf0605-3bf4-4a8c-86ff-c94bd3b8139c,2023-07-20,Customer 4,Item 15,4544.56,CAD,Refund,PayPal,Refunded
+66acee3d-6cec-48cb-af0a-1cfb26b1bacf,2023-07-03,Customer 17,Item 4,843.62,CAD,Refund,Check,Refunded
+daa4b0cd-431c-4b05-818f-b1d44fd8bcce,2023-05-18,Customer 14,Item 1,2869.69,USD,Invoice,PayPal,Paid
+8e129ebd-0b0b-4273-a622-95dfd0a71c94,2024-05-11,Customer 93,Item 30,2158.05,GBP,Invoice,Bank Transfer,Paid
+192892b7-aa41-4ddb-9ace-86f74a5a394f,2023-08-19,Customer 99,Item 32,1038.24,USD,Credit Memo,Bank Transfer,Cancelled
+95331f7b-08b4-49d9-8da0-20e86f17ab95,2023-07-17,Customer 83,Item 45,2015.28,GBP,Invoice,Check,Paid
+c6d9ff20-879d-4111-ad51-c548f44bd8fd,2023-03-13,Customer 46,Item 48,4559.92,EUR,Invoice,Check,Paid
+e2a51498-c979-4e3e-8145-dbae51cbd28d,2024-03-27,Customer 45,Item 7,4212.51,GBP,Invoice,Credit Card,Paid
+646324bf-d2ce-4a6e-8456-a93b34584ac8,2024-03-04,Customer 58,Item 14,1164.27,AUD,Invoice,PayPal,Paid
+db901cdd-fd3c-4fe9-9fa6-e92278bd0db7,2023-04-21,Customer 88,Item 38,231.48,USD,Refund,Bank Transfer,Refunded
+ac0a6dac-11c8-497b-8808-4550bf825e39,2024-08-15,Customer 17,Item 42,4284.21,CAD,Invoice,Credit Card,Paid
+857bb521-2204-4282-a978-fb28e91036d4,2024-01-01,Customer 56,Item 12,3503.03,GBP,Credit Memo,Check,Cancelled
+2bd0f1c9-4dbf-443a-b17f-b1582847c959,2024-11-11,Customer 88,Item 40,2397.84,AUD,Invoice,Check,Paid
+0fd5d475-200d-45bc-b975-a5ea9926703d,2023-11-17,Customer 57,Item 4,3325.75,GBP,Refund,Bank Transfer,Refunded
+3848935d-127c-48b5-aadb-42cf90d16095,2024-05-19,Customer 99,Item 46,4457.16,AUD,Invoice,PayPal,Paid
+a2133fe8-ca0c-4753-9496-4e94be0f2b28,2024-10-30,Customer 17,Item 22,2658.58,USD,Invoice,Bank Transfer,Paid
+1277e16c-2114-4e2a-94f9-d62bcf65ba29,2023-01-02,Customer 63,Item 45,3052.11,GBP,Invoice,Credit Card,Paid
+cc129b24-53f7-4b05-bfe2-1bd54d726e95,2023-10-06,Customer 33,Item 40,1047.91,CAD,Credit Memo,PayPal,Refunded
+1ce78f31-b53c-45ba-8972-1c10addbd79f,2024-08-17,Customer 23,Item 28,4883.14,EUR,Credit Memo,Bank Transfer,Refunded
+d5057a3a-adae-4cfe-90b6-072f2e9ba180,2024-10-19,Customer 58,Item 11,4395.57,CAD,Credit Memo,Bank Transfer,Pending
+9560b76f-d38d-4e59-ae45-9ee6baa5bb98,2024-02-06,Customer 65,Item 22,4116.07,EUR,Credit Memo,Check,Paid
+e65b6e96-9dba-44a2-a463-70e2513b0d72,2024-05-06,Customer 35,Item 44,1967.08,CAD,Invoice,Credit Card,Paid
+0fc8dee9-d86a-4bdb-bcc3-4e87d6d92043,2023-04-19,Customer 47,Item 17,4151.29,EUR,Invoice,Credit Card,Paid
+6e9d08fc-ba35-45e3-8f90-7ec7b2d05b17,2024-03-20,Customer 71,Item 43,3840.95,EUR,Invoice,Bank Transfer,Paid
+f3937434-516c-4cae-b797-ea4f7b6f4b6f,2024-03-08,Customer 40,Item 38,2374.75,GBP,Refund,PayPal,Refunded
+88edcea0-5c4d-402f-888f-d78ff1cef591,2024-05-30,Customer 14,Item 6,1966.71,EUR,Invoice,Credit Card,Paid
+55cf974e-6178-424f-a671-37d6b91fa456,2023-10-29,Customer 57,Item 25,3815.82,GBP,Invoice,PayPal,Paid
+a56f910e-ad41-42c6-9d36-5f2421c0c603,2024-10-22,Customer 26,Item 35,4447.75,GBP,Credit Memo,Check,Refunded
+fe88384a-0026-4187-a27d-520ea7500f53,2023-05-11,Customer 13,Item 12,50.7,USD,Invoice,Credit Card,Paid
+a9b72c72-b1f7-42d9-943a-3578cd1bdb5a,2024-07-08,Customer 51,Item 48,2623.61,EUR,Invoice,Check,Paid
+86ef1683-dc48-4db6-a861-0f7c91d82f2c,2024-07-01,Customer 75,Item 5,3537.87,USD,Invoice,PayPal,Paid
+a355421b-744b-4513-b0a8-c994a08c92c2,2023-07-20,Customer 55,Item 46,799.57,GBP,Invoice,PayPal,Paid
+251c3dfb-751e-4131-bb64-7fb2b11760fd,2024-06-18,Customer 85,Item 20,965.0,AUD,Credit Memo,Check,Refunded
+9bf8ecdd-9f06-4695-b806-c2f6332e6a0d,2024-04-08,Customer 55,Item 41,3245.11,CAD,Credit Memo,Bank Transfer,Cancelled
+c4d6fb8d-c790-4ada-b485-2f5c6aae1792,2023-01-23,Customer 9,Item 9,1573.86,EUR,Invoice,Bank Transfer,Paid
+941a5909-1a56-4d77-a5d0-402bc41b8221,2024-06-09,Customer 37,Item 28,775.02,CAD,Invoice,PayPal,Paid
+36917b7c-fa50-42f4-819f-3e9d1efd2041,2024-12-16,Customer 72,Item 2,4408.14,EUR,Invoice,Bank Transfer,Paid
+6675e8c5-7d08-42ea-9c93-5cb19b455450,2024-09-14,Customer 2,Item 39,708.8,AUD,Credit Memo,Credit Card,Cancelled
+fa902d73-5f99-4a29-a09b-e56c5a335a6d,2024-02-17,Customer 92,Item 42,1117.29,GBP,Invoice,Check,Paid
+b8d94433-1b3d-4165-8d2a-eaa10ead8f17,2023-05-05,Customer 17,Item 4,4765.04,CAD,Credit Memo,PayPal,Cancelled
+0a48af0e-5579-4e1b-bba0-a14d79396727,2023-10-04,Customer 50,Item 47,2487.87,AUD,Refund,Credit Card,Refunded
+90c43de1-7e45-48f0-8c2a-f6e637168ada,2024-06-30,Customer 73,Item 16,3390.72,EUR,Invoice,Check,Paid
+df361dac-35eb-4d58-b9c1-5ca7c0022643,2024-01-09,Customer 93,Item 45,1237.45,EUR,Invoice,PayPal,Paid
+33b4de26-df02-4227-abd2-eb40dbadfaf5,2024-01-02,Customer 47,Item 27,2891.53,EUR,Invoice,Bank Transfer,Paid
+00a4f0df-abdd-49cf-8717-0457fd4d52e0,2024-01-11,Customer 41,Item 35,3016.05,EUR,Credit Memo,Check,Pending
+5ea35195-1e96-4d31-8e79-1f2a202e1b2e,2023-10-14,Customer 1,Item 18,4547.78,AUD,Invoice,Credit Card,Paid
+03d1845a-ccab-4f15-a641-17205e0be50d,2024-12-23,Customer 39,Item 14,4300.48,EUR,Invoice,Credit Card,Paid
+ea1a9d05-4be9-4c79-abc2-9eff5bc87af3,2023-06-05,Customer 22,Item 39,513.63,USD,Invoice,Bank Transfer,Paid
+872cb292-f172-4c68-9519-ba791af5f499,2024-05-31,Customer 48,Item 2,4311.11,CAD,Credit Memo,Credit Card,Cancelled
+35765505-b6e7-4f98-abf3-9abe96f602b8,2023-09-17,Customer 89,Item 11,3113.44,EUR,Invoice,Bank Transfer,Paid
+dbc1b15f-4bb8-4811-a742-1e2b1ee135dd,2024-10-23,Customer 58,Item 16,379.25,GBP,Refund,Check,Refunded
+a2b87438-ad58-4e75-be26-cafad9587861,2024-06-28,Customer 25,Item 30,3072.76,EUR,Invoice,PayPal,Paid
+284f9091-038f-42e2-b9ef-0fd1e742abc8,2023-03-18,Customer 19,Item 49,3365.26,GBP,Refund,Check,Refunded
+1803dbb8-dea5-419b-9343-e11d08443c33,2023-02-21,Customer 21,Item 44,4677.85,USD,Invoice,Bank Transfer,Paid
+c1a667f2-efda-4833-be15-01fa12b7dff2,2024-10-18,Customer 82,Item 26,1431.33,GBP,Refund,Credit Card,Refunded
+07175801-9b6e-4db7-9b03-a5569134b06c,2024-07-16,Customer 37,Item 41,4611.02,AUD,Invoice,Bank Transfer,Paid
+6a7b656c-6dc4-4441-a9fa-ab6c3c33a10d,2024-11-28,Customer 34,Item 39,1879.85,EUR,Credit Memo,Credit Card,Refunded
+a6d0bd6c-caed-463a-8c6f-ca5fbd315e4a,2023-11-18,Customer 77,Item 12,2683.87,CAD,Invoice,Check,Paid
+3275685d-e2b2-45aa-a82d-1d1704f15804,2023-02-17,Customer 18,Item 45,4192.39,CAD,Invoice,Credit Card,Paid
+36ac8ef4-4e42-4fc9-8a18-8f6fa12096fa,2023-06-26,Customer 77,Item 40,1172.93,GBP,Invoice,Check,Paid
+5d7baf96-8396-4e84-8c7a-e739f490191f,2023-05-25,Customer 25,Item 12,1834.96,CAD,Invoice,Credit Card,Paid
+54126fbc-8224-4683-bf68-d65c7b23aa10,2023-05-20,Customer 9,Item 42,1671.49,USD,Invoice,Bank Transfer,Paid
+16a1e816-f71c-4927-b469-7e7766011d96,2023-01-25,Customer 94,Item 2,3338.68,AUD,Credit Memo,PayPal,Cancelled
+6b0b48e3-a813-431b-a277-37ffe155294b,2024-04-07,Customer 24,Item 23,2606.13,USD,Invoice,Check,Paid
+faaeb8b9-27c6-4716-85ce-e8fad3b8b201,2024-11-25,Customer 48,Item 14,616.54,USD,Invoice,Credit Card,Paid
+dddda5b7-9e46-47b6-999b-e7079b42d0f3,2023-07-26,Customer 67,Item 40,1054.45,EUR,Refund,Check,Refunded
+8f1e42b4-2e65-4b75-ac9f-ef2aa03b3047,2024-08-06,Customer 60,Item 5,2934.3,AUD,Invoice,Check,Paid
+ca6bae95-f000-464a-bbc6-d83aeebfe434,2023-03-03,Customer 80,Item 16,1212.89,CAD,Refund,Check,Refunded
+92bcab92-88ab-49f6-8d15-8f78cd7f2f18,2024-01-16,Customer 13,Item 36,4791.55,GBP,Refund,Check,Refunded
+7b8e04a2-7dbb-4385-ad9a-47281d25bdc8,2023-08-30,Customer 4,Item 4,4784.41,USD,Refund,Credit Card,Refunded
+f146972a-dea7-4037-8dd4-a13cb66e0922,2023-06-05,Customer 4,Item 40,4320.2,AUD,Invoice,Bank Transfer,Paid
+5cf441fa-942c-4903-82fc-a9fa7230e2ac,2023-01-12,Customer 15,Item 9,4683.19,EUR,Credit Memo,PayPal,Pending
+74f01c2e-da7a-48dc-980c-dc0c5084ab74,2024-10-07,Customer 16,Item 27,2212.79,GBP,Invoice,Check,Paid
+308a5347-ca77-4971-982c-58dab33a0b18,2024-05-03,Customer 56,Item 38,3448.8,AUD,Invoice,Bank Transfer,Paid
+2faf82c4-9ac9-44b4-a7bd-9b8420a148ce,2024-01-10,Customer 95,Item 44,4168.42,CAD,Invoice,Check,Paid
+9f55f633-0927-4509-bea2-c0d0a554ccf2,2023-02-07,Customer 83,Item 14,4054.09,CAD,Credit Memo,PayPal,Refunded
+23e99544-d622-4bb5-b1cb-01a4304c6558,2024-11-23,Customer 12,Item 3,3002.77,CAD,Invoice,PayPal,Paid
+44003f53-bd27-4023-91d5-cdfb36cd71d7,2024-08-08,Customer 98,Item 1,385.85,AUD,Invoice,PayPal,Paid
+86c64e0d-adaa-4977-92c6-dd1819136f4a,2024-03-08,Customer 7,Item 26,2154.8,USD,Invoice,Check,Paid
+e8155b65-515f-4ce6-b367-f89987e53b68,2023-11-06,Customer 7,Item 1,3415.11,GBP,Invoice,Bank Transfer,Paid
+ae1fb240-23c5-4d07-bb50-498e7138e88a,2024-06-07,Customer 15,Item 14,295.25,AUD,Refund,Credit Card,Refunded
+d1e899dc-2f68-4cd2-8172-f3680beacd0a,2024-05-17,Customer 78,Item 8,268.14,USD,Invoice,PayPal,Paid
+f39f3d6f-4f70-4642-bb8e-1e027e50fbe9,2023-07-07,Customer 58,Item 42,452.06,CAD,Refund,Credit Card,Refunded
+c5492a77-839a-4780-8fd3-aea7dceabbd1,2024-03-17,Customer 62,Item 46,3967.86,AUD,Invoice,Bank Transfer,Paid
+2f61e7a4-2aa5-43db-be2e-2e3b17314ba5,2023-09-13,Customer 43,Item 17,4201.36,CAD,Refund,Credit Card,Refunded
+794ef622-238d-454b-93a9-d7ca8a3e449f,2024-12-27,Customer 13,Item 26,4440.88,GBP,Refund,Bank Transfer,Refunded
+bc56f0e4-7d2c-4c45-97ea-9b56e36adb82,2023-07-28,Customer 93,Item 11,2603.38,CAD,Invoice,Bank Transfer,Paid
+f6995bd7-3e56-4a1d-9fdf-c046819c3203,2023-08-01,Customer 93,Item 23,2726.29,GBP,Invoice,Credit Card,Paid
+2ec79926-6414-47e1-87d2-1b33da827f33,2023-04-05,Customer 97,Item 33,3041.52,EUR,Invoice,Credit Card,Paid
+226bab44-fdbc-420f-85a7-676c9154f7ad,2023-06-04,Customer 41,Item 46,666.62,CAD,Refund,Credit Card,Refunded
+d290af0e-38a7-4e0c-9c4e-e9e4b2eefe01,2023-11-19,Customer 98,Item 46,3654.87,EUR,Invoice,Check,Paid
+6af62c82-2b57-4c05-be12-36c3e3b09ec5,2024-05-10,Customer 39,Item 44,2773.33,USD,Invoice,Bank Transfer,Paid
+0534b668-cc5e-47b4-83bc-8a11c7dd8368,2024-02-06,Customer 99,Item 49,2192.3,CAD,Invoice,Check,Paid
+ee84708a-e8e5-4261-bedf-5e7cd755c4ed,2023-07-23,Customer 29,Item 39,316.18,GBP,Invoice,PayPal,Paid
+f0fa17b3-367d-4244-a3e9-b2a7c188659d,2023-11-19,Customer 88,Item 21,3561.34,AUD,Invoice,Bank Transfer,Paid
+4b15405c-2219-4b3f-9779-d558e7aaac5d,2023-06-26,Customer 53,Item 14,1711.69,USD,Invoice,Credit Card,Paid
+d40dbbc8-923e-468d-8a36-3f1eb6feaca8,2024-07-22,Customer 14,Item 9,3487.9,GBP,Invoice,PayPal,Paid
+75eb4346-fa27-41d6-b625-31ba9a41e82e,2024-12-08,Customer 62,Item 15,1223.52,CAD,Refund,Bank Transfer,Refunded
+48e2e9d5-4e01-4935-9711-e9655fecb742,2023-05-26,Customer 13,Item 14,4396.37,CAD,Invoice,Credit Card,Paid
+a7305d39-3b2f-441f-bf47-6bb91497f6e9,2023-10-20,Customer 39,Item 34,1154.27,USD,Credit Memo,Check,Cancelled
+22e13629-a012-4aa9-9f4d-321fa2a84593,2024-02-16,Customer 91,Item 29,4596.2,GBP,Invoice,Bank Transfer,Paid
+e3d06a30-2bb6-4c1f-bc4b-a31fb6bb3123,2023-07-25,Customer 60,Item 3,928.57,CAD,Refund,PayPal,Refunded
+4cdcd015-6811-461a-826e-66e93d46e4c0,2024-09-28,Customer 54,Item 30,1088.73,GBP,Refund,Bank Transfer,Refunded
+7b431435-0bbc-4796-9cfc-2f1857dc42bf,2024-07-05,Customer 77,Item 48,1958.95,EUR,Invoice,Check,Paid
+c7bdeb9c-3919-4d27-ac61-e3df301598dc,2024-09-29,Customer 79,Item 14,3471.9,USD,Invoice,Credit Card,Paid
+606b43da-ae3a-4bb6-8a41-45fddae178fb,2024-09-22,Customer 68,Item 22,2934.79,CAD,Invoice,PayPal,Paid
+9d8602e6-bef4-4d02-a833-78ab054ed36f,2023-12-06,Customer 26,Item 7,4673.8,EUR,Credit Memo,Check,Cancelled
+b8ff7eab-af59-4b47-bdeb-3077dea7487f,2023-08-04,Customer 64,Item 11,948.41,CAD,Refund,Bank Transfer,Refunded
+bcd31a72-d9c8-473d-9f8b-bd53b7c70c8b,2023-04-17,Customer 91,Item 17,4112.37,AUD,Invoice,PayPal,Paid
+41f2c044-3344-430d-b4b6-2c89d2a5fb73,2023-09-09,Customer 50,Item 15,1030.77,EUR,Refund,PayPal,Refunded
+bd0ce531-2c1c-41d8-a4d2-0459bf9d3a4c,2023-12-31,Customer 16,Item 38,1151.36,CAD,Invoice,PayPal,Paid
+bee7c5f6-1199-4c50-adc9-b40578c53d81,2023-03-04,Customer 47,Item 19,2483.53,EUR,Invoice,Credit Card,Paid
+30fbf7c5-f1d1-4b14-a680-29a4bccc11c4,2023-03-21,Customer 77,Item 24,1943.86,GBP,Invoice,Bank Transfer,Paid
+e5b0fc38-8316-4465-a165-303c58bb813d,2024-07-24,Customer 2,Item 2,2659.04,CAD,Invoice,Credit Card,Paid
+09842593-f0e8-40dd-a403-329f5df0bfc1,2023-11-07,Customer 15,Item 29,905.94,AUD,Invoice,Bank Transfer,Paid
+9641fd59-70ab-4115-aa5b-f94ece5b5678,2023-09-18,Customer 30,Item 27,64.67,CAD,Credit Memo,PayPal,Paid
+302dabef-e005-42c0-b496-d9e59019f216,2024-02-26,Customer 2,Item 46,3148.48,EUR,Credit Memo,Bank Transfer,Refunded
+aa939c6e-9a51-494f-bbd4-2110c84e01ca,2024-10-09,Customer 49,Item 30,97.53,USD,Invoice,Check,Paid
+99b2557c-420b-4421-a63c-2647f576453c,2023-04-19,Customer 28,Item 44,354.3,CAD,Invoice,PayPal,Paid
+571778f0-0597-4c20-afbd-4095f6d00a9c,2023-12-24,Customer 74,Item 15,194.5,USD,Invoice,Credit Card,Paid
+c752cd4f-6f31-4e08-9a04-6b7a5be79fff,2023-02-02,Customer 74,Item 45,2789.28,GBP,Refund,Bank Transfer,Refunded
+55f953e1-e1d3-4ceb-8ab6-7c4a055b12c4,2023-09-28,Customer 9,Item 15,293.29,AUD,Credit Memo,Check,Pending
+d6a660bf-2aea-42c4-bbcd-01c125d366eb,2023-04-02,Customer 20,Item 17,2187.42,CAD,Invoice,Credit Card,Paid
+b782a31c-a1c1-4d42-9168-d9a957ffa2d7,2023-09-13,Customer 100,Item 20,1639.86,GBP,Invoice,Bank Transfer,Paid
+e3bef678-3711-42ce-92a5-bf94c7cc1531,2024-08-20,Customer 42,Item 15,4387.66,EUR,Invoice,Check,Paid
+2e6b94ac-71f0-4296-8f0d-2b6c89df46aa,2024-04-18,Customer 96,Item 5,4212.93,CAD,Invoice,Bank Transfer,Paid
+b9f6e5b7-4b78-4280-8168-1f991ac48a22,2024-04-17,Customer 25,Item 46,3570.58,USD,Invoice,Bank Transfer,Paid
+d6cf9e3f-85a6-4dbd-afb0-e86fe42061ae,2024-04-18,Customer 26,Item 28,2408.74,EUR,Credit Memo,Bank Transfer,Paid
+ea483ea4-1dd2-49e9-896e-bbc6d4bbe8e6,2024-01-31,Customer 46,Item 11,2550.0,USD,Invoice,Check,Paid
+c991f12e-75cf-46b2-bb56-08ce2a913c40,2023-04-27,Customer 82,Item 1,3646.7,EUR,Credit Memo,Bank Transfer,Refunded
+8625518c-9fb7-4870-bbf6-920805d48998,2024-10-16,Customer 75,Item 38,4883.87,EUR,Invoice,Bank Transfer,Paid
+c2ef9e18-05e9-4245-a6a6-d751dde0449d,2024-12-24,Customer 87,Item 18,4209.97,USD,Credit Memo,Credit Card,Pending
+4b2a39de-fc86-4c1c-85fc-e8c335416743,2024-03-24,Customer 40,Item 17,1074.81,CAD,Invoice,Check,Paid
+5ca3e986-714d-44ee-bcdd-0752f7a77c62,2023-09-05,Customer 61,Item 35,3037.09,CAD,Invoice,Bank Transfer,Paid
+6c02d229-5454-43be-8a68-d0fb01042cb2,2024-11-04,Customer 91,Item 8,2094.99,AUD,Invoice,Bank Transfer,Paid
+4793177f-a002-44ca-be92-3911ed18080b,2023-04-08,Customer 86,Item 20,3568.13,USD,Invoice,Bank Transfer,Paid
+073ad724-e5e4-4ce6-97e6-17b36d58beda,2023-12-17,Customer 93,Item 19,1559.53,GBP,Invoice,Check,Paid
+55a99238-40d5-4ecc-a7df-025c28e2d721,2024-05-25,Customer 40,Item 42,3218.87,GBP,Credit Memo,Bank Transfer,Paid
+ca5e45d8-efae-49ff-aa59-b3e83760fa41,2024-06-12,Customer 53,Item 43,582.08,AUD,Invoice,PayPal,Paid
+4c7e584f-c6dd-4e2e-b1ca-c8388776540d,2023-05-13,Customer 56,Item 10,1627.36,EUR,Refund,PayPal,Refunded
+6d83251f-ebe2-44e0-9331-c85b9d635edd,2024-06-22,Customer 18,Item 15,2847.81,USD,Invoice,Bank Transfer,Paid
+3f7735a3-e91e-466e-ba38-3d59f2445eb7,2024-04-27,Customer 68,Item 28,2014.47,AUD,Refund,Bank Transfer,Refunded
+c641e106-1e93-4be7-88d9-af8cbebd2fe5,2024-12-16,Customer 15,Item 20,4821.62,AUD,Invoice,Credit Card,Paid
+7934c2af-2659-439b-b5a9-e5562007e7e6,2024-02-14,Customer 66,Item 29,3042.27,CAD,Invoice,Bank Transfer,Paid
+903c7a3b-3f41-416e-9b89-c16e12791b04,2024-08-24,Customer 44,Item 49,1399.3,CAD,Credit Memo,Credit Card,Paid
+33ee1f53-a26d-4c06-a141-09e2395e4ee2,2023-07-22,Customer 20,Item 41,769.95,AUD,Refund,Bank Transfer,Refunded
+6d20e8ee-aa3d-4f11-aa7f-44d14114c338,2024-08-07,Customer 68,Item 9,1531.39,GBP,Invoice,Credit Card,Paid
+d6a0a70a-6db3-4223-8e40-8be7662793f7,2024-12-27,Customer 44,Item 40,3036.39,CAD,Credit Memo,PayPal,Pending
+ed6dfe80-221e-46cc-93af-5ee969aa1bdc,2024-02-02,Customer 79,Item 8,3633.57,GBP,Invoice,Check,Paid
+ad6331a1-0b48-49b8-b921-fd4cb4409619,2023-09-30,Customer 52,Item 11,313.26,AUD,Invoice,Bank Transfer,Paid
+51c0a740-5650-443b-ae4c-22939d094347,2023-02-01,Customer 80,Item 23,1735.33,AUD,Invoice,Credit Card,Paid
+75ea657b-a84e-456a-a023-8b9c67440fbb,2024-09-23,Customer 11,Item 31,2844.95,CAD,Invoice,Bank Transfer,Paid
+c3f04cc2-6dbd-434d-8a04-58a4ef88095c,2024-02-17,Customer 95,Item 28,2536.66,AUD,Credit Memo,PayPal,Pending
+8a2b52b9-65bd-472b-b2cc-c11285b957df,2024-06-26,Customer 31,Item 38,3596.45,USD,Invoice,Check,Paid
+9baffdd6-d539-49d5-9fc9-82274d2c8f89,2023-08-10,Customer 94,Item 2,2349.06,GBP,Invoice,PayPal,Paid
+160a2e9a-fa81-4327-b5e7-48bff3e0654d,2024-01-20,Customer 61,Item 39,2260.13,GBP,Invoice,Bank Transfer,Paid
+f39cded5-eac9-4081-8c78-951da2fe94fd,2024-06-18,Customer 1,Item 31,1000.05,EUR,Refund,Bank Transfer,Refunded
+cc808c6d-a39f-4ff0-9ec4-7b2e0dc69a56,2024-09-16,Customer 83,Item 40,3218.32,EUR,Refund,PayPal,Refunded
+a285f23e-edb3-4a82-b951-84d5c46b6fae,2023-11-08,Customer 3,Item 10,4911.55,AUD,Credit Memo,PayPal,Cancelled
+5c922ce2-bcc7-4d7a-b136-e8a758e24b97,2024-04-28,Customer 36,Item 19,3813.39,USD,Credit Memo,Check,Paid
+93879f89-aede-4268-904e-c59544366a57,2023-04-12,Customer 69,Item 12,231.05,EUR,Invoice,Bank Transfer,Paid
+382eff4a-eb9b-4498-bf14-ffcc64000dc8,2024-05-15,Customer 61,Item 19,1011.15,CAD,Refund,PayPal,Refunded
+0091046c-edb1-48f8-9cf9-66fbdcf41649,2024-12-25,Customer 29,Item 41,395.74,GBP,Invoice,PayPal,Paid
+53fec370-edd2-44ef-ba5c-b3b1642c51a5,2024-08-01,Customer 54,Item 21,1006.85,CAD,Credit Memo,Check,Cancelled
+2c273928-d51d-481b-9509-123ab732ffa5,2024-08-01,Customer 31,Item 8,599.32,CAD,Credit Memo,Bank Transfer,Paid
+25f870e6-fbff-405b-8b8f-f8119fd91b62,2024-06-28,Customer 79,Item 4,854.32,USD,Invoice,Credit Card,Paid
+e4f494f8-7684-4987-afdb-f1496ea903b7,2023-02-24,Customer 10,Item 30,4704.32,USD,Invoice,Check,Paid
+258c3860-c43d-4362-8610-cb08d75160d5,2023-11-13,Customer 84,Item 39,1723.86,AUD,Invoice,Bank Transfer,Paid
+db9d6848-a99d-4515-8e33-7e4275b03e54,2024-12-04,Customer 84,Item 49,2905.62,EUR,Invoice,PayPal,Paid
+1b3cca75-d876-4f05-a997-68eaa6090ad4,2024-08-15,Customer 96,Item 14,1347.17,AUD,Invoice,PayPal,Paid
+c13d0bf1-b710-4f71-8e69-cf3b6fc0a06b,2023-10-16,Customer 86,Item 29,1034.09,CAD,Credit Memo,Bank Transfer,Refunded
+95e3220e-213d-48b6-a6bf-bf91e954a842,2024-09-06,Customer 68,Item 35,925.44,CAD,Invoice,Check,Paid
+4d8010db-4066-48cb-9e37-b1506cb7dbc0,2024-06-09,Customer 24,Item 17,523.39,AUD,Refund,Bank Transfer,Refunded
+2d12e88c-ce8d-4ffa-ad33-5ec76007e937,2023-12-01,Customer 29,Item 46,2334.06,AUD,Invoice,Check,Paid
+8ab7ed7b-fbb3-47db-8ec3-338dd00dc530,2024-01-27,Customer 64,Item 50,862.07,AUD,Invoice,Check,Paid
+675d32e7-2f23-45c5-bcf8-0bafb2ae00a3,2023-09-20,Customer 48,Item 45,4746.76,CAD,Invoice,Credit Card,Paid
+2fd281ad-45cd-4621-b6b0-9b8b95eba2e2,2024-01-01,Customer 38,Item 18,762.05,EUR,Invoice,Credit Card,Paid
+767e0350-bfa8-406c-b960-cfd66a396a55,2024-08-26,Customer 40,Item 17,4063.72,USD,Invoice,Check,Paid
+1379cb54-ff2f-45df-8392-452614667745,2024-04-22,Customer 79,Item 14,1187.83,CAD,Refund,PayPal,Refunded
+b97526bc-ab6a-4744-8381-614bcb8faf8a,2024-02-09,Customer 30,Item 40,2124.24,EUR,Credit Memo,Credit Card,Cancelled
+ca1509eb-58c2-4f42-9abf-10d9e935c72f,2024-09-23,Customer 10,Item 6,2508.6,AUD,Invoice,PayPal,Paid
+992efcc5-e0c1-4228-83e9-0a2f72a9987f,2024-06-23,Customer 63,Item 29,1461.08,GBP,Refund,PayPal,Refunded
+17e3f387-9ffb-46b1-b5bd-b83476fd65ea,2023-02-10,Customer 20,Item 50,54.37,AUD,Invoice,PayPal,Paid
+97f20f89-2e7d-4f17-83c2-34ed29a52f58,2024-09-21,Customer 70,Item 4,1526.62,CAD,Credit Memo,Check,Cancelled
+f3666073-f88a-452d-b3c0-aeba653a7e0d,2023-12-11,Customer 11,Item 24,2464.71,GBP,Invoice,Check,Paid
+9ff90fc6-3968-4d58-a64c-59dfde44e519,2023-03-27,Customer 79,Item 49,2869.25,AUD,Invoice,PayPal,Paid
+99481623-76d2-4a4e-a361-9cf29063e5ae,2023-10-06,Customer 20,Item 35,1802.23,EUR,Invoice,PayPal,Paid
+4935ac5e-c78f-4275-86ac-0ced47af7b4c,2023-11-16,Customer 10,Item 30,1458.04,GBP,Invoice,Check,Paid
+ea627b8c-a49c-4c3b-b217-75e43e8501fc,2023-12-11,Customer 33,Item 22,3760.41,EUR,Invoice,Check,Paid
+c610fbcc-af63-4a8a-a414-20a250d9d32c,2023-06-09,Customer 25,Item 14,2055.82,EUR,Invoice,Check,Paid
+6f057389-7ebf-4035-a588-0e8403734a17,2024-10-07,Customer 5,Item 42,3231.61,CAD,Credit Memo,Bank Transfer,Refunded
+5715ff5b-0eb1-4915-af80-7e6f5b92dccb,2023-12-14,Customer 37,Item 19,4418.37,USD,Refund,Bank Transfer,Refunded
+d7e2cfcf-386f-47e7-b2ff-b7e8dec0050f,2024-04-05,Customer 85,Item 25,2893.37,AUD,Invoice,Bank Transfer,Paid
+c29f1e8f-d7f9-4ebe-bd9e-dc7ccbff35e9,2024-12-29,Customer 89,Item 22,4154.42,USD,Refund,Bank Transfer,Refunded
+ec685e70-f827-4c15-bf81-49757e51264a,2023-10-08,Customer 24,Item 38,3413.5,EUR,Refund,PayPal,Refunded
+18b5bfcd-28f4-44d3-988d-af8ced4950bd,2024-05-11,Customer 27,Item 22,2448.04,AUD,Invoice,PayPal,Paid
+30694933-8f99-4cc1-bfd0-1144f37e04d8,2023-02-08,Customer 1,Item 19,4024.07,EUR,Refund,Credit Card,Refunded
+26ced44d-a9aa-4bbe-8598-a2e79fcb1eca,2024-01-11,Customer 13,Item 14,127.84,GBP,Invoice,PayPal,Paid
+277fbb93-6071-4f44-ae20-af35f1182173,2024-06-04,Customer 67,Item 8,1623.06,CAD,Invoice,Credit Card,Paid
+170979bf-e8ed-46c2-a3ea-196ff07d61f1,2024-01-23,Customer 38,Item 1,4725.56,EUR,Invoice,Credit Card,Paid
+f3d829a7-1449-4112-bbc1-34d9f7ea208a,2024-08-07,Customer 14,Item 28,1686.79,GBP,Invoice,PayPal,Paid
+ad4a26b5-ecba-41b8-918f-748fefc87c66,2024-04-01,Customer 60,Item 49,4292.35,AUD,Invoice,PayPal,Paid
+fbdc55bb-e4ad-4575-87bc-c82c3cf5f3db,2024-06-10,Customer 2,Item 22,846.66,USD,Invoice,PayPal,Paid
+bbb9d93c-d9cb-43d1-bf9a-fe2743588c45,2024-06-06,Customer 81,Item 2,1073.2,USD,Credit Memo,Check,Pending
+a1c37c01-58a1-47d5-81c8-b2ab58b4abdf,2024-05-21,Customer 12,Item 42,735.44,AUD,Invoice,PayPal,Paid
+1fef5ef9-7439-43d8-9cbc-be2ccf4d204b,2023-03-02,Customer 47,Item 34,4112.29,USD,Credit Memo,Bank Transfer,Cancelled
+83eae080-5a67-43eb-bcf1-62ddfd625234,2024-08-04,Customer 76,Item 18,4163.94,USD,Refund,Check,Refunded
+708fd5d4-19b6-4725-93fe-f44fdc2886ad,2024-12-30,Customer 34,Item 12,1059.87,GBP,Invoice,PayPal,Paid
+fce21ca7-1438-4600-802d-10dc7a40bccd,2023-01-26,Customer 51,Item 38,906.31,USD,Invoice,Bank Transfer,Paid
+9f2fee38-e795-4807-a20b-339effcd3659,2024-07-28,Customer 41,Item 18,2188.87,CAD,Invoice,Credit Card,Paid
+0ae92b9d-0f10-4b2c-8688-66093ca18bc9,2024-08-12,Customer 27,Item 17,1259.5,AUD,Invoice,Credit Card,Paid
+364003cd-9ae6-4c60-87a7-1d217bbb0d69,2024-02-06,Customer 24,Item 28,290.18,EUR,Invoice,Bank Transfer,Paid
+b8a72158-ddba-4ae8-8495-2f1af598f363,2023-09-30,Customer 23,Item 33,3746.16,CAD,Refund,PayPal,Refunded
+0ff24372-af31-48e7-9410-d5e9807fb030,2024-02-28,Customer 65,Item 38,2210.28,EUR,Credit Memo,Credit Card,Refunded
+39501f0a-b4c2-4937-a474-d900e722d332,2023-04-19,Customer 3,Item 46,3469.71,EUR,Credit Memo,Check,Cancelled
+f2ca0dc7-ff10-45bf-bea4-9e4dc68bd8ab,2024-12-11,Customer 78,Item 50,4607.89,GBP,Credit Memo,PayPal,Pending
+3f5f5196-921b-41f2-88d3-b9091e0d05ce,2023-03-19,Customer 92,Item 13,307.2,GBP,Credit Memo,Bank Transfer,Paid
+e5e2d247-bee6-4f06-b02a-8f8e2d379993,2024-05-28,Customer 42,Item 18,1644.67,GBP,Invoice,PayPal,Paid
+616bc284-7c2a-4877-afbb-7bad7b990c54,2024-08-23,Customer 84,Item 24,4181.58,USD,Invoice,Credit Card,Paid
+04c5d0c4-6287-4fb2-b4e5-d8a120272c51,2023-07-05,Customer 62,Item 24,87.98,CAD,Invoice,PayPal,Paid
+1d6fe6a7-c865-44de-809b-b91d8cd756ec,2024-05-10,Customer 81,Item 42,4290.93,USD,Invoice,PayPal,Paid
+f5356f79-c5df-46c4-9ff2-aada2f6c9848,2023-11-22,Customer 96,Item 49,3797.0,USD,Refund,Credit Card,Refunded
+d7467332-c236-443d-a374-e26091038c76,2023-10-28,Customer 9,Item 17,1498.59,GBP,Invoice,PayPal,Paid
+e98ae34c-68b6-40f5-96b6-3007712fcda6,2024-11-22,Customer 81,Item 48,1225.38,EUR,Invoice,Check,Paid
+d689d12e-ea57-4889-b773-4d27fd2f3aad,2024-06-12,Customer 67,Item 30,2743.73,CAD,Credit Memo,Bank Transfer,Cancelled
+5cac4614-27bd-49f0-b030-00f8ef97d849,2023-10-21,Customer 67,Item 15,2211.29,USD,Invoice,Check,Paid
+41ef0283-a5ec-4657-98a2-6f27d84ea3a0,2023-11-03,Customer 64,Item 17,4374.23,USD,Invoice,Credit Card,Paid
+57b906e7-77ed-417d-908b-9cbce13997e1,2023-02-04,Customer 3,Item 20,3879.04,AUD,Credit Memo,PayPal,Paid
+66a66501-f985-4da3-9beb-7849bc668a47,2024-06-15,Customer 37,Item 36,2901.18,GBP,Invoice,Credit Card,Paid
+5b6bb3c8-f0b6-46cb-970c-d370acccd616,2024-11-21,Customer 63,Item 6,3488.98,AUD,Credit Memo,Bank Transfer,Pending
+8503bfe9-73d4-476d-80f2-a2288ecdf561,2024-12-29,Customer 57,Item 29,1426.6,USD,Invoice,Bank Transfer,Paid
+cca0e045-661e-4751-af2b-a429f1f0a815,2023-04-16,Customer 61,Item 28,3881.11,AUD,Refund,PayPal,Refunded
+e31605c6-a97b-4a17-8058-9b998a920358,2023-05-28,Customer 25,Item 2,772.62,AUD,Refund,Credit Card,Refunded
+7d9b6fe4-fab3-4dbd-906e-3c3e22149f57,2024-10-12,Customer 64,Item 36,2905.7,USD,Credit Memo,Credit Card,Refunded
+8ed89bbd-34f8-45e8-a3b2-3d496aef6752,2024-04-28,Customer 37,Item 14,1137.41,CAD,Credit Memo,Bank Transfer,Paid
+0c5cb9b3-3b5f-42bf-bcb7-7521bb60c428,2023-10-29,Customer 79,Item 43,537.72,GBP,Invoice,Bank Transfer,Paid
+fb72b15f-a19f-422f-b8a0-f9b44535e58e,2023-01-19,Customer 66,Item 31,3922.43,EUR,Refund,Check,Refunded
+f9180ba8-7aec-47e0-abe3-a80d8c838cf9,2024-01-30,Customer 84,Item 38,2409.02,USD,Invoice,Credit Card,Paid
+8be19d74-c226-4256-b8c3-637e4f6e25d8,2023-01-09,Customer 12,Item 44,2307.6,CAD,Refund,Check,Refunded
+5622aabe-b1d5-492d-8e74-9b6ee118facf,2023-12-13,Customer 57,Item 22,3158.62,AUD,Invoice,Bank Transfer,Paid
+7b40ff1f-57e0-45d7-9bb3-8cd4e4904a5c,2024-02-28,Customer 43,Item 41,2422.8,GBP,Invoice,Credit Card,Paid
+342d9ef1-daad-426f-82a9-42e38ec43775,2023-05-07,Customer 15,Item 9,4250.99,EUR,Credit Memo,PayPal,Pending
+3b1bfa6c-306b-4984-8a26-6097df0c4ac7,2024-10-13,Customer 13,Item 49,1727.67,EUR,Invoice,Credit Card,Paid
+d41eaab1-f9e7-404c-b797-5d836985d6ce,2023-10-25,Customer 11,Item 10,2172.06,EUR,Credit Memo,PayPal,Refunded
+27ac6ed5-182c-4099-9d8a-e9975786f1d1,2024-10-06,Customer 97,Item 16,605.2,EUR,Invoice,Bank Transfer,Paid
+e81e6efd-c2e4-4563-9f68-9b4f72d938a6,2024-04-10,Customer 37,Item 29,979.74,EUR,Refund,Bank Transfer,Refunded
+767ac02f-795b-44aa-beae-44d793278b7b,2024-02-25,Customer 29,Item 10,2756.51,GBP,Refund,Check,Refunded
+65d504be-d905-4492-aa55-16d8969c85cd,2024-02-27,Customer 27,Item 43,2755.95,USD,Credit Memo,Credit Card,Pending
+471f0aef-704c-49be-9026-7ca5f469dab0,2023-08-27,Customer 87,Item 25,3279.22,CAD,Credit Memo,Check,Cancelled
+828dee21-8d89-4885-ac8b-a8aa0d7c3853,2023-01-09,Customer 73,Item 11,1829.77,EUR,Credit Memo,Check,Cancelled
+29a7a32f-9f75-4c40-981e-b16215b19af9,2024-11-29,Customer 62,Item 29,2346.96,GBP,Invoice,Check,Paid
+3830558d-45ac-45f7-be50-de201a66200c,2023-03-02,Customer 22,Item 4,2873.76,AUD,Invoice,Credit Card,Paid
+c62caddc-8f74-454d-897d-6eadefac789b,2023-11-09,Customer 79,Item 20,932.88,EUR,Refund,Bank Transfer,Refunded
+ce4509fb-8237-4ded-8c8f-d334842fbeee,2024-04-22,Customer 95,Item 24,597.18,USD,Refund,Bank Transfer,Refunded
+5d77b621-694a-4d1a-bdb8-f71810e75624,2024-10-15,Customer 14,Item 37,4345.87,GBP,Invoice,Bank Transfer,Paid
+b3b65639-08eb-4db1-92bf-84fb64097048,2024-05-04,Customer 46,Item 34,1985.52,USD,Invoice,Bank Transfer,Paid
+2aa15a65-b1f8-4792-ae14-90cae7fedfe5,2023-09-20,Customer 30,Item 40,2274.59,USD,Invoice,Credit Card,Paid
+1f198f3e-9591-412b-8088-8a26315b2441,2023-09-14,Customer 62,Item 27,3552.46,EUR,Invoice,Check,Paid
+322bd8d1-d69d-4bcf-ad4f-f25011521442,2024-06-12,Customer 38,Item 32,1234.69,CAD,Invoice,PayPal,Paid
+4cf46c02-4a74-447b-8af9-3d09fe9ab8da,2023-05-10,Customer 80,Item 2,256.21,USD,Invoice,Credit Card,Paid
+0f69bfb3-3de6-4395-93da-e18eaabd825e,2023-01-12,Customer 2,Item 15,3037.2,CAD,Invoice,Bank Transfer,Paid
+e9f72108-1e5e-46d3-9f1f-5c3ab5823a6b,2024-07-11,Customer 14,Item 35,271.81,AUD,Invoice,PayPal,Paid
+87afaa2c-178e-4baa-9a09-0eb60bc2737b,2023-08-09,Customer 95,Item 36,4503.94,USD,Invoice,Check,Paid
+0a90f7c1-9165-4c75-b52b-545dd8bde05f,2024-10-10,Customer 3,Item 38,3208.43,CAD,Invoice,PayPal,Paid
+828170a8-49de-4e18-915f-b939ad872026,2024-11-24,Customer 65,Item 4,3643.05,CAD,Invoice,PayPal,Paid
+3362a939-7422-41ef-b751-a53aa94fb378,2023-03-19,Customer 13,Item 27,1708.6,EUR,Invoice,Bank Transfer,Paid
+d0676a79-e3f1-409b-8ee6-684124b4d1db,2024-03-30,Customer 63,Item 48,826.99,USD,Invoice,Check,Paid
+e74e4b40-325f-49a5-bab5-9954e948628c,2024-07-21,Customer 19,Item 9,353.0,USD,Invoice,PayPal,Paid
+6dd3389f-6f9e-4b23-aa1e-b34d5df4ced8,2023-07-26,Customer 74,Item 16,4727.65,GBP,Invoice,PayPal,Paid
+91b636a8-b1ca-4276-99de-767ab33f24c6,2024-12-28,Customer 74,Item 38,1253.85,USD,Invoice,PayPal,Paid
+f33eecc3-9e87-4025-b48b-5eecfcedf243,2024-09-18,Customer 66,Item 20,2168.6,USD,Invoice,PayPal,Paid
+89aa209d-a006-4d10-b946-15405e7204ae,2024-11-22,Customer 5,Item 18,2348.86,EUR,Refund,Credit Card,Refunded
+ebdb90d2-f030-4ec2-afe3-57e70cfbedfc,2024-02-03,Customer 67,Item 45,434.94,CAD,Invoice,Check,Paid
+217c415b-5bf7-438c-a1e4-a1ecc6dd7803,2023-01-11,Customer 27,Item 28,4412.01,USD,Invoice,Bank Transfer,Paid
+3655e170-7b06-495e-89ec-4585b54c01f4,2024-08-05,Customer 93,Item 15,4661.82,CAD,Invoice,Check,Paid
+bccbf0f8-a7d0-47b9-b664-89d3590a8ad9,2023-11-18,Customer 73,Item 36,1027.21,CAD,Invoice,Credit Card,Paid
+11f57e6f-3954-48a2-b897-6c7b53b50f0a,2024-01-31,Customer 17,Item 46,1428.16,EUR,Credit Memo,PayPal,Cancelled
+ab4294af-15f2-4e1b-8706-ac858aae1f93,2024-04-24,Customer 87,Item 23,2572.5,EUR,Refund,Bank Transfer,Refunded
+69d69d32-d3fb-45bd-8840-5c9cb11ecbf8,2023-01-05,Customer 34,Item 6,316.07,USD,Invoice,PayPal,Paid
+3b6cb5cf-0745-4016-adc1-881985a6cdff,2023-07-24,Customer 20,Item 6,4506.93,AUD,Invoice,PayPal,Paid
+e40ae6f4-c498-4fb7-9ed8-b9379922893b,2024-07-18,Customer 21,Item 17,426.86,CAD,Credit Memo,PayPal,Pending
+211cdc3e-e20d-46cf-8cc5-206927e904bd,2024-04-07,Customer 76,Item 47,2409.23,GBP,Credit Memo,Check,Pending
+1857a0c5-4465-4d80-b1ed-ccb8de697a41,2024-12-02,Customer 85,Item 49,2847.73,CAD,Credit Memo,Credit Card,Refunded
+4d3bfad1-4101-40db-9034-88fca00c5e47,2024-08-19,Customer 30,Item 40,675.16,AUD,Invoice,Check,Paid
+89011fca-8a29-4b2b-8182-16be436b705f,2024-10-13,Customer 83,Item 9,3047.13,GBP,Refund,Credit Card,Refunded
+0b70ec1a-c402-4123-9b55-852684603091,2024-01-05,Customer 83,Item 28,1480.24,GBP,Invoice,Bank Transfer,Paid
+0ae23e49-c444-43c1-880e-2fa6611df29c,2023-08-10,Customer 78,Item 30,4308.87,USD,Credit Memo,Credit Card,Cancelled
+8c16a1eb-785c-43a3-9471-78c2a221c927,2024-03-25,Customer 30,Item 23,4846.55,CAD,Invoice,PayPal,Paid
+926fc661-9072-4f6b-9210-16aacea04a86,2024-07-27,Customer 69,Item 24,2834.06,EUR,Invoice,Check,Paid
+f69cac99-7bc9-4e6f-8fdb-aeff86a447f2,2024-10-06,Customer 40,Item 39,2946.15,GBP,Invoice,PayPal,Paid
+61002390-f0e7-4b8d-906a-e9f9817a6a01,2023-08-09,Customer 67,Item 8,1319.09,USD,Invoice,Credit Card,Paid
+1432ca06-3fe3-40de-86da-9d28e79e83fe,2024-09-01,Customer 64,Item 29,951.34,GBP,Refund,Credit Card,Refunded
+dddf8e8d-2e4d-4cab-8900-94e538de4488,2023-05-12,Customer 41,Item 46,1168.08,CAD,Invoice,Check,Paid
+1fc4f048-4b8a-42f1-a945-a3b7b4944629,2023-09-25,Customer 36,Item 11,1189.73,AUD,Invoice,Bank Transfer,Paid
+39a35386-8ced-4373-8b6d-467045133f57,2024-12-09,Customer 15,Item 36,620.17,AUD,Refund,Bank Transfer,Refunded
+f55e5245-3d98-46a0-aa9f-b1b9c3f9fd87,2023-11-21,Customer 41,Item 10,1178.66,EUR,Invoice,Check,Paid
+b219846c-b595-494f-b44c-8c3f821d2138,2023-02-23,Customer 14,Item 13,321.03,GBP,Invoice,PayPal,Paid
+5ab482ad-0746-46a1-b40c-980d6c47f071,2024-12-25,Customer 62,Item 17,4173.99,AUD,Invoice,Check,Paid
+76478887-c5ab-47ba-8199-b7348fc3a3bf,2023-01-15,Customer 16,Item 18,1874.97,GBP,Refund,Check,Refunded
+c43a84d9-eb1a-4e53-87c1-bf0ad151468f,2023-12-24,Customer 73,Item 24,3531.77,CAD,Invoice,Credit Card,Paid
+45183e14-3b57-431a-a64e-5551a62536aa,2024-09-04,Customer 63,Item 7,630.16,GBP,Invoice,PayPal,Paid
+29561910-18bc-4673-ab2a-58dae55bceb3,2024-04-29,Customer 46,Item 8,1168.09,CAD,Credit Memo,Bank Transfer,Paid
+c5fafb30-995a-4a3e-b2e0-27dc62d0e3a9,2024-10-06,Customer 95,Item 11,4392.2,USD,Invoice,Bank Transfer,Paid
+21b4d737-adb8-4bbd-bcc7-0394f70b65e8,2024-11-19,Customer 96,Item 50,317.77,CAD,Invoice,Credit Card,Paid
+c02e0eec-8b11-43d1-b4b3-1d50855133fa,2024-04-14,Customer 17,Item 13,678.48,USD,Invoice,Credit Card,Paid
+cd623c30-bbee-4be1-9218-6dfa3e33caa5,2024-08-07,Customer 17,Item 30,1443.72,CAD,Invoice,PayPal,Paid
+447825ce-c76c-4e08-8617-1d44a8187114,2023-11-03,Customer 88,Item 48,921.68,EUR,Credit Memo,Bank Transfer,Paid
+66962aaa-5e29-4865-87f1-dd309c503326,2024-07-22,Customer 65,Item 33,1757.87,AUD,Invoice,Bank Transfer,Paid
+39bea090-3f35-4ca3-9055-6c97e8c36868,2023-10-12,Customer 26,Item 44,1407.95,EUR,Invoice,Credit Card,Paid
+67770be1-ba5e-4529-88f2-eb25c72e2949,2024-07-23,Customer 55,Item 40,2055.48,USD,Credit Memo,Bank Transfer,Pending
+98edd5bf-60e9-4137-9530-cde74c80f138,2023-04-02,Customer 32,Item 25,4263.13,USD,Refund,Check,Refunded
+295a2b0a-e050-46b4-aa13-49c5256c79a8,2024-05-01,Customer 84,Item 21,3690.38,CAD,Refund,Credit Card,Refunded
+95ba174e-60a6-42ba-b5e2-8dc98c7e98e1,2024-12-24,Customer 44,Item 5,2817.06,AUD,Invoice,Check,Paid
+6b076315-585f-4e5c-b464-81cec7932533,2024-09-30,Customer 74,Item 44,2014.14,CAD,Invoice,Credit Card,Paid
+f15d545c-7eeb-49c2-8945-a4a239f0bcbb,2023-03-19,Customer 47,Item 11,1445.89,GBP,Invoice,Check,Paid
+c746e5f8-ce15-4ec7-894c-4fc0dd208fb0,2024-11-16,Customer 58,Item 42,2276.8,EUR,Credit Memo,Check,Paid
+9cdc4205-fccf-4be0-b309-f1d843abe294,2023-03-28,Customer 94,Item 42,2082.38,AUD,Credit Memo,Credit Card,Cancelled
+9b9537cc-679c-4572-8792-2b2755bbb579,2024-12-14,Customer 81,Item 5,3620.63,GBP,Invoice,Check,Paid
+d8da4b0d-322f-49f9-8c2e-9363cf554c26,2024-01-04,Customer 1,Item 8,3516.44,CAD,Invoice,PayPal,Paid
+8e383f90-1815-4609-8955-855581671908,2024-05-19,Customer 26,Item 19,2351.12,CAD,Credit Memo,Bank Transfer,Refunded
+b8218102-78a9-487a-98e8-5cfbb1d439d9,2024-09-12,Customer 24,Item 10,1316.54,USD,Invoice,Bank Transfer,Paid
+f8bfb070-2c3d-488a-b3ad-02431fdf8737,2023-02-26,Customer 93,Item 33,309.51,USD,Invoice,Bank Transfer,Paid
+a80663ed-166f-4af5-946c-c1771f8fc080,2023-03-28,Customer 79,Item 1,3107.65,GBP,Credit Memo,Check,Paid
+b5b2bd71-33d7-45a2-8556-4b3633386fc8,2023-05-16,Customer 51,Item 38,2848.52,CAD,Refund,PayPal,Refunded
+208bfe81-ff30-4225-b388-53c3247d298e,2024-07-08,Customer 71,Item 15,2497.46,USD,Invoice,Bank Transfer,Paid
+25af1d4c-f0f1-4123-adec-53ca1e0ce84a,2024-12-26,Customer 98,Item 33,3735.44,EUR,Invoice,Check,Paid
+f824430a-908a-4303-9464-c2e005364a01,2024-02-01,Customer 18,Item 27,1970.04,CAD,Refund,Check,Refunded
+6c4b0f76-bb6b-4757-bb62-583bec63f753,2023-03-19,Customer 8,Item 23,443.06,USD,Invoice,PayPal,Paid
+e4616cab-ca38-40dc-a2c0-26d7039bc1b3,2023-08-28,Customer 84,Item 18,2020.6,EUR,Refund,Bank Transfer,Refunded
+5085420d-601c-430d-8ca5-5043b47d909e,2023-07-25,Customer 90,Item 25,3157.67,EUR,Invoice,PayPal,Paid
+98476570-3314-4856-8262-235fcbc2cf59,2023-10-10,Customer 48,Item 33,34.3,USD,Refund,Credit Card,Refunded
+180ceac5-b79a-43d4-9764-e7cde0087b18,2023-06-16,Customer 1,Item 18,2449.14,EUR,Refund,Bank Transfer,Refunded
+47fd5fbd-8aad-4306-9a18-9485dde71458,2024-09-13,Customer 10,Item 10,3935.37,EUR,Invoice,PayPal,Paid
+b3ef1aa3-71cd-49e1-8f7b-7cbc0505dda5,2023-08-20,Customer 74,Item 16,883.79,GBP,Invoice,Bank Transfer,Paid
+502f42b0-140e-4cd9-b275-d3afe696b571,2023-01-20,Customer 97,Item 16,4997.69,EUR,Credit Memo,Bank Transfer,Cancelled
+79ba6e53-a772-4116-b879-0b88dc45168a,2023-04-23,Customer 76,Item 19,1502.14,GBP,Invoice,Credit Card,Paid
+a6c9651d-71b0-4b5f-af83-8bda95e2a5f9,2024-12-23,Customer 38,Item 39,804.6,USD,Refund,Bank Transfer,Refunded
+3dd3647e-b32c-4bd5-9732-3a00a646c00f,2023-05-23,Customer 41,Item 48,2804.56,AUD,Credit Memo,PayPal,Paid
+4fba9ec7-dca9-4133-9eb8-ec1ab0a83a98,2024-02-19,Customer 42,Item 10,18.43,GBP,Refund,Credit Card,Refunded
+40a6712b-26a9-4e5e-ae4c-ec6e661c4d1d,2024-05-14,Customer 81,Item 48,1772.18,USD,Invoice,Bank Transfer,Paid
+408d6c0b-7138-42cf-b251-0484d0854463,2023-12-07,Customer 39,Item 42,4173.27,AUD,Invoice,PayPal,Paid
+1aa5f94a-8628-42fb-9506-f867ab65cbf6,2024-07-13,Customer 23,Item 46,3677.84,EUR,Refund,PayPal,Refunded
+5cc0bd4c-5d3e-4e09-95cd-aa680ce3cfef,2024-04-22,Customer 20,Item 33,879.0,USD,Credit Memo,Credit Card,Refunded
+91a235d2-2055-4e28-9fa4-f94df8a7b7c8,2023-05-02,Customer 21,Item 25,1026.96,EUR,Invoice,PayPal,Paid
+7aafbc52-25e9-4bc2-b102-69411fb45332,2024-07-26,Customer 59,Item 4,1991.29,EUR,Credit Memo,Check,Cancelled
+cbcc1a61-13a1-4f00-b51b-610e127434e4,2024-02-22,Customer 69,Item 42,792.56,CAD,Refund,Credit Card,Refunded
+c39d19da-e29b-4435-9e40-21ae2f836925,2023-08-03,Customer 2,Item 31,505.47,GBP,Invoice,Bank Transfer,Paid
+a491350c-ad5b-4ed4-ab4f-caec81f37a0e,2024-01-26,Customer 80,Item 14,1477.66,EUR,Invoice,PayPal,Paid
+303cb85c-9efe-48b3-b095-56cf408a2582,2023-11-02,Customer 63,Item 44,2285.66,USD,Invoice,Credit Card,Paid
+3f201484-fce3-4fcc-9b7c-b0db62aa7526,2023-04-04,Customer 21,Item 44,2387.5,EUR,Invoice,Credit Card,Paid
+a53a86c6-213a-4c7b-9dfc-8803668b0a4c,2023-11-23,Customer 25,Item 12,2874.52,EUR,Refund,Credit Card,Refunded
+7bf170c1-c562-4196-90f1-927d42f95533,2023-02-17,Customer 75,Item 23,470.74,USD,Refund,PayPal,Refunded
+1dbe2bb6-79e4-462e-94e7-5ec6481fde43,2024-08-11,Customer 38,Item 34,4908.57,EUR,Credit Memo,Credit Card,Refunded
+e97f8dda-a23f-47ec-94a8-f65ce9fd4ed6,2024-03-30,Customer 33,Item 29,4472.68,EUR,Refund,Credit Card,Refunded
+4387fec5-331d-4d29-856a-c7a1ae89837b,2023-11-16,Customer 23,Item 24,4650.4,USD,Refund,Bank Transfer,Refunded
+ccaefe50-54b8-4ac0-b96e-06a048e7209c,2024-09-07,Customer 60,Item 16,4423.94,GBP,Invoice,Bank Transfer,Paid
+202439f8-6b1b-4604-bf04-acf27d639c12,2024-11-11,Customer 84,Item 27,3137.93,CAD,Credit Memo,Credit Card,Cancelled
+9e1075c7-e36e-450c-8a73-eebe36ef304d,2023-01-12,Customer 31,Item 45,1134.29,USD,Credit Memo,Bank Transfer,Paid
+c511cbf0-7cb7-4af4-8dfa-7d9946d379ac,2023-06-02,Customer 60,Item 8,1234.86,EUR,Invoice,PayPal,Paid
+f5d9475c-8a63-4eb6-baf8-01af0662d1d0,2024-04-01,Customer 10,Item 16,4425.86,CAD,Invoice,PayPal,Paid
+3c2e9c86-657d-4642-b695-b777fa0e4dd9,2024-10-17,Customer 79,Item 30,752.49,CAD,Credit Memo,Bank Transfer,Pending
+69443fcc-b688-473d-86e3-5452775a77c1,2024-09-09,Customer 13,Item 40,900.09,AUD,Invoice,Credit Card,Paid
+9c71390e-66a9-4775-93c4-5efe4059149b,2024-08-25,Customer 81,Item 29,660.2,EUR,Invoice,Check,Paid
+925407cb-1b24-4c81-8262-23a720f38fce,2023-02-21,Customer 82,Item 38,2137.72,AUD,Credit Memo,Check,Refunded
+489fa216-d0b4-480e-9267-60b7af5317f8,2024-12-29,Customer 52,Item 12,2201.33,EUR,Invoice,Bank Transfer,Paid
+411a4801-6beb-45aa-bd20-e43b6f108b62,2023-07-05,Customer 5,Item 32,2201.85,USD,Refund,Credit Card,Refunded
+6267fb68-487b-4ae7-b085-7f2fdf4e82b7,2023-05-14,Customer 70,Item 17,1934.79,CAD,Invoice,PayPal,Paid
+0c7fe6b0-0c11-45c0-9fe3-bcd56c67f1b8,2023-06-30,Customer 95,Item 19,4995.87,EUR,Credit Memo,Bank Transfer,Pending
+d5e2dcce-d8e4-4521-bd5c-50c2abfd9e91,2023-05-25,Customer 39,Item 20,3765.21,AUD,Invoice,Credit Card,Paid
+21c5a0e0-7cd1-43f5-ab36-8fec813d7a24,2024-06-24,Customer 67,Item 42,3704.21,GBP,Invoice,PayPal,Paid
+6bd4c444-af10-4244-9025-841d77e6424b,2024-10-08,Customer 88,Item 15,1751.82,CAD,Invoice,PayPal,Paid
+91c69ae5-cd6e-44e7-a714-bbd371ad8491,2023-08-31,Customer 89,Item 38,3590.0,GBP,Invoice,Credit Card,Paid
+6330015a-93e2-4c86-bbc8-0de2f01e44d9,2023-10-23,Customer 45,Item 37,2929.89,USD,Credit Memo,Bank Transfer,Cancelled
+fa18c3ff-3bfe-4f7d-bbf6-3107e4a2a8ba,2024-05-16,Customer 9,Item 41,1369.74,AUD,Invoice,Bank Transfer,Paid
+050c94dd-5316-4278-a96c-5a38810c21ee,2023-09-14,Customer 61,Item 10,4643.54,CAD,Invoice,Credit Card,Paid
+765c635a-fa27-46b5-8637-275e40b84d35,2024-01-04,Customer 39,Item 3,4683.92,EUR,Credit Memo,Check,Refunded
+e2ff7482-bec0-4279-aded-0a9cb0d0e06b,2024-10-09,Customer 27,Item 1,696.84,USD,Credit Memo,Check,Pending
+34b7b381-aced-4760-9c4c-416cfab8b2bf,2024-07-18,Customer 91,Item 22,111.96,AUD,Invoice,Check,Paid
+d14d7f63-fca5-46b6-84e4-59d634980505,2023-07-01,Customer 21,Item 41,673.38,USD,Credit Memo,Credit Card,Pending
+b5a0dbea-67e4-4760-ae77-470ebd6a7860,2023-11-17,Customer 100,Item 43,4764.22,CAD,Credit Memo,Check,Cancelled
+0c6f14ee-67c7-4f13-b586-5195564807eb,2023-11-29,Customer 69,Item 46,4487.63,CAD,Invoice,Credit Card,Paid
+428d74fe-6605-4dfa-9321-409c26616ee3,2023-08-16,Customer 17,Item 11,2945.97,EUR,Refund,Credit Card,Refunded
+8ab14d9e-8481-4b94-9413-edff4823a8ac,2023-10-30,Customer 24,Item 7,2283.55,USD,Refund,Check,Refunded
+8bec2495-a7fa-47ea-a999-4e38b8674619,2023-12-10,Customer 3,Item 16,163.73,AUD,Credit Memo,Bank Transfer,Refunded
+a48e6f16-fd81-4ff5-9a3f-4af7f6415422,2023-06-25,Customer 2,Item 27,3659.34,AUD,Invoice,Check,Paid
+1de76159-aaf6-4fcd-9a1e-4d0706dcb14c,2023-01-02,Customer 72,Item 31,169.11,GBP,Invoice,Bank Transfer,Paid
+2133d671-28b5-4523-88d3-2363d5c19338,2024-02-02,Customer 29,Item 39,1199.58,AUD,Invoice,Check,Paid
+79142768-0469-410c-b36f-9400bbb06191,2024-01-23,Customer 83,Item 41,4407.45,AUD,Invoice,Credit Card,Paid
+2ee27d29-ced8-4508-b39b-8e588a2e7fe7,2023-11-13,Customer 59,Item 11,4267.69,CAD,Invoice,Credit Card,Paid
+5294ee35-7391-4246-9080-6f79453d5397,2023-12-28,Customer 71,Item 20,2630.71,CAD,Credit Memo,Check,Refunded
+bebdd220-a581-4e74-98a7-f83461dfec1b,2023-01-03,Customer 79,Item 11,2862.49,USD,Invoice,Check,Paid
+2952961c-c639-4820-aea1-75a7693e77fd,2023-01-30,Customer 97,Item 25,2001.99,GBP,Refund,Credit Card,Refunded
+348c4003-dac8-451a-9094-89fd251ddb01,2024-06-11,Customer 81,Item 24,1803.84,EUR,Invoice,PayPal,Paid
+51a6f539-fd3a-43ba-8541-9073ce83fb2b,2023-05-14,Customer 46,Item 1,3673.2,GBP,Credit Memo,Check,Pending
+9e79eb52-fbf5-4759-afbb-6e18e17f6be5,2024-12-28,Customer 87,Item 24,88.92,AUD,Invoice,PayPal,Paid
+122322fb-bea3-4c52-824d-9798a15778ce,2024-04-02,Customer 29,Item 17,3598.47,USD,Invoice,Bank Transfer,Paid
+bfb380fa-c604-4317-8d28-53f93bd18089,2024-09-04,Customer 50,Item 7,3803.63,GBP,Invoice,Credit Card,Paid
+fb7fc3a6-30a3-4528-b297-e765cff6b8a2,2024-11-30,Customer 45,Item 22,4772.1,AUD,Invoice,Check,Paid
+223c45e2-e992-4d16-89f8-b35e871edeef,2023-11-05,Customer 66,Item 29,1810.16,AUD,Invoice,Check,Paid
+af669732-3a04-4dab-9008-c49857da148e,2024-06-25,Customer 5,Item 34,1615.19,EUR,Refund,PayPal,Refunded
+d4a9d4e7-a5b0-4b86-b195-fd736faa3f73,2024-07-31,Customer 46,Item 34,342.32,CAD,Credit Memo,Check,Cancelled
+ef4c7075-7884-425a-b9fb-9f355a3e2ae3,2023-05-15,Customer 43,Item 25,3980.99,EUR,Refund,Bank Transfer,Refunded
+2be0aff1-96b0-49c1-80a5-9ecd23186231,2024-06-22,Customer 62,Item 44,3151.63,USD,Invoice,Credit Card,Paid
+4b567db9-6635-4821-aea9-1ec661d9de22,2024-12-30,Customer 71,Item 13,4617.91,GBP,Credit Memo,Credit Card,Pending
+1c8ddb58-98c5-4c38-88ca-fd1b4384ea11,2023-06-11,Customer 32,Item 34,3014.64,EUR,Credit Memo,Credit Card,Pending
+d11846f5-9fe6-4a0c-95f2-ec7ff5cf9314,2023-09-02,Customer 9,Item 28,2598.78,AUD,Invoice,Bank Transfer,Paid
+0b688390-fefb-4f02-89f3-bd71b660c26c,2023-12-16,Customer 85,Item 38,563.12,CAD,Credit Memo,Check,Paid
+0d556120-ad82-4da2-936e-e6bbfbd4b9d3,2023-10-12,Customer 48,Item 39,595.13,EUR,Invoice,PayPal,Paid
+cd55f67e-e685-4e49-adf3-86975892aae9,2024-11-06,Customer 1,Item 14,4675.89,AUD,Invoice,PayPal,Paid
+c2b4c2a2-ec54-47cc-8d68-4b9ab40cade6,2024-01-09,Customer 55,Item 18,398.51,CAD,Invoice,Check,Paid
+8461973d-de2e-463d-8b5d-7f38d400b5ee,2024-09-03,Customer 24,Item 7,3926.67,AUD,Invoice,Bank Transfer,Paid
+e6aa42f2-d216-44f1-8a0f-e3749f88d698,2024-10-04,Customer 76,Item 10,2787.16,USD,Refund,PayPal,Refunded
+3238d062-61f2-4339-be10-834e2ff9b9f2,2024-11-11,Customer 63,Item 36,4681.13,AUD,Invoice,PayPal,Paid
+c4cfeb5d-3d40-4e59-b7e5-9feac9bdd630,2023-07-30,Customer 76,Item 12,4510.62,EUR,Invoice,Bank Transfer,Paid
+455baef6-9a34-407b-9c00-930ffe67ba8b,2024-11-09,Customer 86,Item 33,1577.49,USD,Invoice,Check,Paid
+6d12a0df-c4b4-4a9c-bfe0-df80b62d3c86,2023-01-03,Customer 20,Item 36,4214.26,GBP,Invoice,Check,Paid
+6d1389a6-4054-46f4-9692-d0b8bd393a1e,2024-02-17,Customer 14,Item 26,4847.25,EUR,Credit Memo,Credit Card,Refunded
+3f67c9dc-60b9-4f45-9fa1-85dc4335742e,2023-11-20,Customer 38,Item 46,4060.94,GBP,Credit Memo,Check,Paid
+7ee3c177-951e-430c-a48f-485dc68112cc,2024-09-13,Customer 56,Item 14,4759.57,AUD,Invoice,Credit Card,Paid
+b92d6971-d9ca-41de-90ce-6e9e6115ade5,2024-08-13,Customer 15,Item 46,998.72,AUD,Invoice,Bank Transfer,Paid
+c27383d0-d7d2-4fac-9234-519e28deb1a9,2023-07-19,Customer 37,Item 31,1703.52,USD,Credit Memo,PayPal,Paid
+c2668234-8ece-4605-9a75-d404dcce2b07,2023-10-03,Customer 68,Item 33,194.14,USD,Invoice,Check,Paid
+87088b9b-bd0b-46b5-bda8-c0d234e5e3be,2023-07-21,Customer 37,Item 33,2651.06,CAD,Invoice,Credit Card,Paid
+278d997b-534a-495c-8432-cdaaf220ccbc,2023-11-12,Customer 62,Item 42,3879.65,GBP,Invoice,PayPal,Paid
+2c35fbe3-edf1-4b55-b0c2-a47b7f141eb2,2023-10-25,Customer 78,Item 27,1712.56,GBP,Invoice,Check,Paid
+efca7e8b-3ef5-4414-b2be-cb38b7d7bc4b,2024-02-09,Customer 68,Item 8,4702.62,GBP,Refund,Check,Refunded
+7af34c2d-52de-44d9-b452-b724e211fafe,2023-06-25,Customer 11,Item 2,2016.42,USD,Invoice,Bank Transfer,Paid
+0a8c8c81-f042-42b6-9a6e-03c82277a727,2024-12-09,Customer 86,Item 35,3456.07,GBP,Credit Memo,PayPal,Refunded
+de2487cc-f777-4154-89a8-5d27a35f8727,2023-07-06,Customer 2,Item 38,440.86,GBP,Invoice,PayPal,Paid
+dd245e35-2ae3-4898-880d-a2029a0fdf81,2024-01-11,Customer 12,Item 46,4537.6,AUD,Credit Memo,Credit Card,Pending
+624ff44a-e444-4543-ab2b-81479ea525aa,2023-01-10,Customer 29,Item 23,986.17,EUR,Credit Memo,Bank Transfer,Paid
+6a0c9ba5-412e-4c67-9ac0-6928688f09de,2024-11-19,Customer 99,Item 24,88.04,GBP,Credit Memo,Credit Card,Pending
+8afab765-679e-4594-81e0-8729f6341875,2024-04-04,Customer 86,Item 44,4334.49,USD,Invoice,Check,Paid
+41d2cd1b-7864-47c0-8cf0-47cdcabab32a,2024-05-26,Customer 54,Item 3,3987.03,CAD,Invoice,Bank Transfer,Paid
+31dab317-076e-4d5f-9ba5-e582626315cf,2023-11-26,Customer 87,Item 35,4834.99,USD,Credit Memo,PayPal,Pending
+f2ad5dd0-b3d7-48a4-92de-dc22b21d1f20,2023-05-12,Customer 18,Item 44,207.93,AUD,Credit Memo,PayPal,Paid
+2514b77b-ce7d-42cd-bca5-046714bbd7a8,2023-06-07,Customer 52,Item 44,2772.33,GBP,Invoice,Credit Card,Paid
+a521e982-24a5-485e-9acb-b7276d3079d9,2024-10-26,Customer 30,Item 24,3500.25,GBP,Invoice,Bank Transfer,Paid
+0ab286c7-51c7-4970-8ffc-d96f4aff24be,2024-12-22,Customer 37,Item 8,512.66,CAD,Invoice,Credit Card,Paid
+31b0da93-4e57-4cd8-81d7-9d9eadc1a4de,2024-07-24,Customer 100,Item 21,2619.41,GBP,Refund,Check,Refunded
+4967633a-b432-4d4e-a6da-0ed4d4ef9359,2024-03-04,Customer 92,Item 30,1112.95,CAD,Invoice,Check,Paid
+567a3c0c-6343-4f7c-9f20-251432070692,2023-06-13,Customer 84,Item 20,3344.42,GBP,Invoice,PayPal,Paid
+5347df4e-a7f1-435e-a5c3-d3287d82ecd5,2023-09-16,Customer 95,Item 28,4089.55,GBP,Refund,Bank Transfer,Refunded
+176b1115-c0aa-4e95-aa2f-e745baa24890,2023-06-10,Customer 33,Item 40,1846.9,EUR,Credit Memo,PayPal,Paid
+c0d05e78-f6e0-4d01-b051-9ddf21f2db5d,2024-01-23,Customer 46,Item 23,3943.28,AUD,Invoice,Bank Transfer,Paid
+dfc16017-8d26-4bf0-8d95-4601fd85c74d,2023-02-21,Customer 6,Item 36,3852.03,CAD,Invoice,Bank Transfer,Paid
+479cbd0c-2b2d-42f8-8ffa-4d50c9d9d73d,2023-09-19,Customer 18,Item 15,2226.3,GBP,Refund,Credit Card,Refunded
+6b82fb75-4e8c-44ca-a961-7e9b90182cfd,2023-10-12,Customer 51,Item 17,1076.27,EUR,Credit Memo,Bank Transfer,Refunded
+49a70fbc-7bdb-4669-a0f5-f47d1d4e399e,2023-06-11,Customer 19,Item 29,4620.26,USD,Credit Memo,Bank Transfer,Cancelled
+c0297b5a-f078-40d3-b8d6-ddff688b4b4a,2023-08-21,Customer 51,Item 32,2706.27,GBP,Refund,Credit Card,Refunded
+d776a33f-a111-460c-bf82-89a734e87ed7,2024-05-11,Customer 4,Item 27,3115.17,AUD,Credit Memo,Check,Refunded
+e601334a-7973-4d7b-a94e-8cbd8c9be556,2024-06-03,Customer 53,Item 6,3613.51,AUD,Invoice,Check,Paid
+0b0c5bc1-fbb3-444f-a577-73983ce5435e,2023-05-27,Customer 19,Item 44,3083.24,AUD,Refund,Bank Transfer,Refunded
+a88a826e-caad-43ac-8b40-88b1d3236f21,2023-08-13,Customer 49,Item 33,570.38,USD,Credit Memo,PayPal,Paid
+38ec76d2-63bf-40ac-8715-081e2c1b291c,2024-04-22,Customer 67,Item 9,1528.14,CAD,Invoice,Check,Paid
+f8549de3-1385-47d1-a3df-a584e88f8d4d,2024-01-02,Customer 45,Item 49,2507.36,GBP,Refund,Bank Transfer,Refunded
+96c4569f-d7fd-496e-9c27-6a43a79bdf43,2024-04-17,Customer 91,Item 15,1067.66,AUD,Credit Memo,Credit Card,Refunded
+4ff1af8d-4f07-4672-a789-bf1785db2dd2,2023-11-19,Customer 95,Item 30,4275.76,AUD,Invoice,PayPal,Paid
+c44b57db-a661-4d46-8896-a0ab87d8873a,2024-12-29,Customer 3,Item 18,231.24,USD,Refund,Check,Refunded
+b51bae5c-2a85-49e6-8ede-210a5fa9c7e5,2023-11-29,Customer 85,Item 3,67.22,EUR,Invoice,Credit Card,Paid
+50503bcf-bcbd-421e-a479-dab59cdfa86c,2024-03-08,Customer 36,Item 45,2313.5,EUR,Invoice,Bank Transfer,Paid
+88d09b0d-d0b0-480d-9b22-9cc5566520f8,2023-10-13,Customer 47,Item 28,2838.91,CAD,Invoice,PayPal,Paid
+d750ee53-7da0-4056-8ac1-774c9b14607d,2024-01-06,Customer 46,Item 48,4730.53,EUR,Refund,Bank Transfer,Refunded
+2da89cdd-3ef0-46c6-9626-8c4ec73ab5e9,2024-04-05,Customer 30,Item 47,1396.36,CAD,Invoice,Check,Paid
+7cb2a39d-0bf3-4f62-a313-120baa877e9b,2023-08-07,Customer 44,Item 37,1106.4,EUR,Credit Memo,Credit Card,Pending
+8407fd63-bd32-4706-8388-869f53c5e0ec,2023-03-09,Customer 94,Item 22,2288.54,USD,Credit Memo,Bank Transfer,Cancelled
+806d2372-2a50-4169-9f9e-c1d0866d8f3f,2023-06-08,Customer 15,Item 35,1837.59,EUR,Invoice,Check,Paid
+ebf9e6eb-c5da-4d07-b0bf-2f3a9ac4a7e0,2023-08-13,Customer 11,Item 33,24.41,AUD,Invoice,Credit Card,Paid
+5a0d43b4-c03b-4a87-adbc-48c3049b4ef3,2024-12-02,Customer 93,Item 29,2070.56,CAD,Invoice,Check,Paid
+6e4a5067-f804-4c3c-85ec-9bd068d1f1c1,2024-07-01,Customer 54,Item 1,4197.06,USD,Refund,Credit Card,Refunded
+6e92fa40-9106-4856-98b4-98e4e4c073dc,2023-12-29,Customer 39,Item 14,422.64,EUR,Refund,Bank Transfer,Refunded
+94755827-a5bd-4c80-814b-0bd50b8b4d0b,2023-09-05,Customer 78,Item 13,882.16,GBP,Invoice,Credit Card,Paid
+fa01ddf8-35a7-4632-baa5-4a676979d3f6,2024-05-20,Customer 65,Item 37,2203.01,GBP,Credit Memo,PayPal,Refunded
+4634a535-252c-4b29-8db2-50bc8a7cf72c,2024-06-23,Customer 25,Item 5,3436.32,EUR,Invoice,Bank Transfer,Paid
+db39d60f-cf86-44e0-a435-19e1745ac49f,2024-08-22,Customer 94,Item 1,4943.11,EUR,Invoice,Credit Card,Paid
+92c08e6b-04db-4bef-90ab-1d1361478d8f,2024-12-22,Customer 30,Item 36,3384.34,EUR,Invoice,Bank Transfer,Paid
+877669a5-6395-4b57-b328-0c1074f4343f,2023-07-08,Customer 90,Item 3,3255.04,AUD,Invoice,Check,Paid
+48a0ac0a-e0a2-4102-8eb6-e78249bbc755,2024-08-24,Customer 81,Item 29,689.47,EUR,Invoice,PayPal,Paid
+538cf7e9-487a-4b6d-829c-a01bdc72a668,2023-11-29,Customer 70,Item 20,1838.22,EUR,Refund,Check,Refunded
+b909598d-6bde-437d-bd1d-d843f83b6fd3,2023-09-01,Customer 17,Item 36,2136.13,EUR,Invoice,PayPal,Paid
+7bb1a561-ebc0-4519-b14f-dca8c0957857,2023-01-24,Customer 44,Item 42,3551.54,USD,Credit Memo,Check,Pending
+dbabc968-5d49-4ba5-be65-02cfc57b2667,2024-05-13,Customer 87,Item 41,3872.88,CAD,Invoice,PayPal,Paid
+5de63dfa-9d8a-406c-b87f-e220f980eaea,2023-11-19,Customer 67,Item 6,28.88,AUD,Invoice,Credit Card,Paid
+f18d1d7c-0cee-4b25-95e1-ea879cbb6f91,2023-09-02,Customer 20,Item 47,2251.56,USD,Credit Memo,Credit Card,Pending
+a25a71c8-96ab-4f56-9171-e54708df6332,2024-07-30,Customer 53,Item 36,3257.09,EUR,Invoice,Credit Card,Paid
+137aec48-b7f2-4c12-a17a-85c1ddb57726,2023-02-06,Customer 49,Item 11,1913.71,GBP,Refund,PayPal,Refunded
+c3ddf93e-9d3c-48de-a387-fa380feeea86,2024-01-05,Customer 99,Item 19,2087.84,USD,Refund,Check,Refunded
+25305f26-d37d-47bd-b71b-4694d7d2834a,2023-10-02,Customer 25,Item 46,2242.17,GBP,Invoice,Check,Paid
+28d5d53d-66d3-4860-9d7b-697727ed41f5,2023-01-05,Customer 9,Item 34,1723.62,USD,Invoice,Credit Card,Paid
+fa0308ca-26ac-405e-83ca-b36693403475,2023-03-25,Customer 38,Item 30,4363.38,USD,Invoice,Check,Paid
+19530dbe-8cc0-4df5-ac8a-f51345c28ff6,2023-10-22,Customer 4,Item 8,3850.36,GBP,Credit Memo,Credit Card,Paid
+5d2f5f15-db93-44d5-a9d1-9b2981fc5f2b,2023-10-18,Customer 74,Item 46,2111.26,CAD,Invoice,PayPal,Paid
+1ea838db-aa87-434d-aab4-139ab23fd3da,2023-10-13,Customer 51,Item 15,4395.81,AUD,Invoice,Check,Paid
+bca6c0ed-b4d1-4694-8fd7-adeed07b90c6,2024-12-01,Customer 33,Item 22,23.75,CAD,Invoice,PayPal,Paid
+7b06b149-082b-4454-bee2-09f3e84ceba5,2023-05-03,Customer 70,Item 18,2176.34,EUR,Refund,Credit Card,Refunded
+5b3cd20b-d10e-4eab-b89d-0269fc499e50,2023-05-14,Customer 37,Item 27,631.04,AUD,Invoice,Check,Paid
+a78cecbd-1330-4685-9a26-574993bc3073,2024-03-19,Customer 85,Item 12,962.65,EUR,Refund,Check,Refunded
+682cb059-62f0-4e60-b331-b23bee38bf17,2024-03-10,Customer 57,Item 48,3046.56,GBP,Invoice,PayPal,Paid
+3611ccea-f742-473d-8822-163864a1654a,2023-02-02,Customer 96,Item 16,1215.66,GBP,Invoice,Check,Paid
+161837e2-0f86-49b6-9e02-b209543b0da8,2024-10-09,Customer 99,Item 29,2640.05,CAD,Refund,Check,Refunded
+c7c1efa3-62af-4679-8ad8-fc80c4f9715c,2024-06-07,Customer 85,Item 22,3884.64,USD,Refund,Credit Card,Refunded
+c917a641-0867-4996-8bba-be7fd5769be2,2023-02-18,Customer 58,Item 40,3321.51,AUD,Invoice,Credit Card,Paid
+70d65d4b-eac8-4524-825f-39cc9d77a255,2023-07-13,Customer 48,Item 28,1054.24,AUD,Invoice,Check,Paid
+f895123f-f0a8-4e1b-ad8a-0a9528d963c1,2024-07-13,Customer 61,Item 25,2059.82,AUD,Credit Memo,Bank Transfer,Pending
+5d6b80ae-3eab-45da-9f29-58132853fa5e,2024-11-23,Customer 78,Item 26,66.93,AUD,Refund,PayPal,Refunded
+853465b8-7444-4147-85f8-be5e2dbf8bc5,2024-05-23,Customer 100,Item 26,3508.26,EUR,Invoice,Check,Paid
+8690eb81-4d61-4922-9eaf-08880d425a03,2023-04-12,Customer 74,Item 7,2752.1,USD,Invoice,Credit Card,Paid
+78f1b68a-e882-4500-a6a8-933e0fdaa8b3,2024-01-10,Customer 3,Item 5,2483.5,CAD,Credit Memo,Credit Card,Cancelled
+829af7e2-a891-4703-b63a-b28a9b13c5e1,2023-02-18,Customer 79,Item 21,2189.63,USD,Invoice,PayPal,Paid
+ee1d592b-3eaa-425f-a067-66f3bfab8a1b,2024-11-23,Customer 49,Item 18,266.59,AUD,Credit Memo,Credit Card,Cancelled
+473ab9a0-20e4-4d5a-a8b0-9c76cccc0105,2024-05-17,Customer 34,Item 1,2528.05,EUR,Refund,Bank Transfer,Refunded
+b9ebe690-7db4-4134-b466-697d6013a42f,2023-12-05,Customer 5,Item 33,3865.53,CAD,Invoice,Credit Card,Paid
+85bc1d1a-0dc3-4d4a-bed1-980443d0f3d8,2023-12-07,Customer 97,Item 23,968.4,CAD,Invoice,Credit Card,Paid
+8c7f7692-e0c8-47b9-b342-9d79dcedb8f1,2024-05-13,Customer 34,Item 29,3180.21,GBP,Invoice,Credit Card,Paid
+c5e1c2e4-1a07-4e03-b4f5-808c8a262ced,2023-09-29,Customer 84,Item 1,2183.22,EUR,Refund,Bank Transfer,Refunded
+ef22e8c9-2f04-44da-865a-0802714df156,2023-10-25,Customer 44,Item 14,4501.21,EUR,Invoice,Check,Paid
+adb968ac-ba5d-4f13-bbbe-8279b8adbb6a,2023-02-07,Customer 93,Item 35,3679.97,CAD,Credit Memo,PayPal,Pending
+873fa205-6246-47f0-858d-b3cf2310a871,2024-06-16,Customer 92,Item 18,1620.72,USD,Credit Memo,Credit Card,Refunded
+1833aaee-acdf-46cf-b8ad-52c37ee44e42,2023-02-11,Customer 44,Item 9,4730.65,GBP,Credit Memo,Check,Cancelled
+ed27afd1-48c7-4338-b90b-6adb899d9a50,2023-07-19,Customer 30,Item 27,1873.43,EUR,Invoice,Credit Card,Paid
+f5e1ba27-02b6-4a1b-ac1e-ba4a5482f400,2023-01-16,Customer 69,Item 14,3362.97,AUD,Invoice,Credit Card,Paid
+aba661e2-b3e0-4799-98a5-e991dafdb7d9,2024-05-31,Customer 21,Item 34,4303.69,USD,Refund,Bank Transfer,Refunded
+2171b6c5-72ba-4317-9833-f877202aeb88,2023-01-05,Customer 12,Item 20,197.17,EUR,Credit Memo,Credit Card,Refunded
+6d162c0a-6543-4453-a88e-6838a928e4ee,2023-07-20,Customer 55,Item 11,4048.17,GBP,Invoice,PayPal,Paid
+8af82d32-5d93-43ef-be28-80e6bcb46a2f,2023-06-22,Customer 80,Item 30,2271.38,USD,Invoice,Check,Paid
+efa3d9f1-67f7-4b94-9623-4a537b01941d,2023-09-28,Customer 91,Item 25,3157.14,USD,Invoice,PayPal,Paid
+96ba0b4d-e46b-43ed-b92f-b230e2e5201d,2023-10-30,Customer 57,Item 23,750.85,AUD,Credit Memo,Bank Transfer,Cancelled
+b7f8ced9-2fe4-4e3a-b400-15fedb556965,2024-04-29,Customer 55,Item 38,3472.6,USD,Credit Memo,Bank Transfer,Pending
+d1d4b363-dcf8-4ec4-acaa-3febd07c590f,2023-04-03,Customer 51,Item 5,775.27,AUD,Invoice,Credit Card,Paid
+d55634a4-a3dd-4659-ac50-83b8c6185de3,2024-06-06,Customer 46,Item 23,1966.58,AUD,Refund,Check,Refunded
+d05048a7-b318-4c62-b73f-4a5cbcc2a741,2024-12-08,Customer 55,Item 33,3095.47,GBP,Credit Memo,Credit Card,Paid
+0c1eca88-d9ab-411f-b2eb-115816d774c3,2023-03-22,Customer 92,Item 6,3483.03,AUD,Credit Memo,Bank Transfer,Refunded
+2344ff32-e2fa-4dd6-ac73-f0af9717324c,2023-06-25,Customer 22,Item 13,4759.83,GBP,Refund,Bank Transfer,Refunded
+7ba468a5-2329-48d2-9adf-04f6c1515980,2024-07-01,Customer 30,Item 2,4674.76,EUR,Invoice,Credit Card,Paid
+df610fd1-e01d-417e-971e-1b29ee61722a,2023-04-30,Customer 93,Item 29,3087.6,EUR,Refund,PayPal,Refunded
+93bab28d-4777-4a86-a777-aeda8f293385,2023-10-14,Customer 88,Item 19,3871.04,EUR,Credit Memo,Check,Refunded
+ea446bae-3cc8-482b-9da9-fa43a6ae384a,2024-11-25,Customer 80,Item 25,854.19,AUD,Invoice,Credit Card,Paid
+69906471-126d-490c-a629-10854991c3fa,2024-02-07,Customer 47,Item 32,2812.15,CAD,Invoice,Check,Paid
+fb07c9e5-672d-4c36-b7dc-ef4fe2ee5764,2023-09-21,Customer 14,Item 35,39.93,EUR,Refund,Bank Transfer,Refunded
+2ea3abe4-9e2c-4494-9f3e-d48bf96bdea1,2023-01-14,Customer 84,Item 30,4903.99,CAD,Credit Memo,Bank Transfer,Paid
+3a4bf493-a92c-4465-867f-f9eeba436e8a,2023-02-16,Customer 57,Item 31,1881.18,AUD,Refund,Bank Transfer,Refunded
+9622ed38-6274-4ded-840d-04e40f8d4476,2024-08-18,Customer 36,Item 20,3861.3,EUR,Invoice,Bank Transfer,Paid
+2bed3a47-97ed-4cdb-867b-e4a09b334073,2024-01-05,Customer 20,Item 42,1930.9,EUR,Invoice,PayPal,Paid
+b277263d-efe5-4be8-b758-9b33544227ff,2023-08-29,Customer 62,Item 49,4942.62,AUD,Refund,Check,Refunded
+8b03da0d-7ab1-40f2-9d14-c66547637088,2023-05-01,Customer 80,Item 50,4050.77,GBP,Credit Memo,PayPal,Cancelled
+f064f0e1-8a02-4d69-90e4-eee0656bbba7,2024-06-18,Customer 18,Item 7,4075.0,AUD,Refund,Check,Refunded
+71f0ab0f-051d-4044-8071-b8d04e7fa167,2023-04-28,Customer 80,Item 6,3421.01,CAD,Credit Memo,Bank Transfer,Pending
+80a435f5-248d-45e9-9b76-4350b97ce919,2023-09-21,Customer 64,Item 8,2592.23,AUD,Invoice,Bank Transfer,Paid
+37b680da-22ed-43fc-8f06-4c56d7b48a33,2023-09-24,Customer 16,Item 44,3519.36,EUR,Invoice,Check,Paid
+9cb91071-ce3d-491b-acf8-8c470d07cfc2,2023-01-26,Customer 59,Item 3,4743.42,CAD,Refund,PayPal,Refunded
+3b4a3e34-a8d3-4fec-aab4-e2ee0b0b549d,2023-03-06,Customer 38,Item 46,2705.28,GBP,Refund,Credit Card,Refunded
+49c99401-700c-4581-b456-d2fe4421d55c,2023-09-08,Customer 51,Item 21,1151.47,EUR,Invoice,Check,Paid
+3e3c5977-0030-4d4c-b5c8-0b886ce61f5c,2023-02-05,Customer 33,Item 38,844.39,AUD,Credit Memo,PayPal,Refunded
+4afc27dc-6d1c-4502-acbc-cdb62aa2e261,2024-11-08,Customer 76,Item 49,3665.64,CAD,Invoice,PayPal,Paid
+b28b779a-d394-43aa-b4fe-0bc9847ecb49,2024-09-19,Customer 31,Item 27,3938.99,AUD,Refund,PayPal,Refunded
+5fef12a0-779b-41ee-a8f5-00c395fe5d35,2024-02-19,Customer 100,Item 11,212.53,CAD,Invoice,PayPal,Paid
+ae465ca6-8e9d-4df5-a62e-acf9b4862adc,2023-09-17,Customer 10,Item 4,1822.71,GBP,Invoice,Check,Paid
+fdd089bc-5745-4d79-9554-d4aee03f1586,2023-06-23,Customer 69,Item 41,2620.26,USD,Invoice,Bank Transfer,Paid
+8c77913b-e4ad-4a11-a0c9-395da8182ffd,2023-08-14,Customer 22,Item 19,2723.54,USD,Invoice,PayPal,Paid
+77d62770-7140-4dfe-a578-1c2462a3a439,2024-09-03,Customer 32,Item 13,122.38,EUR,Invoice,Check,Paid
+af000d78-f0cf-427f-9c34-a5c9439fd232,2023-08-17,Customer 49,Item 2,3806.86,EUR,Invoice,Credit Card,Paid
+875b5c7c-10a7-475c-8131-c773af57c3c6,2023-12-24,Customer 95,Item 27,3330.57,USD,Refund,Check,Refunded
+33528bbd-76ac-437e-b0c0-49fa611cc4d0,2024-01-08,Customer 61,Item 12,2763.78,CAD,Invoice,PayPal,Paid
+94062871-3b62-486d-9cc0-19b60ce0eae8,2023-01-31,Customer 27,Item 4,791.79,AUD,Invoice,Bank Transfer,Paid
+f7920d69-8750-471c-8083-02e11946192f,2023-09-25,Customer 49,Item 49,3832.54,GBP,Invoice,PayPal,Paid
+6f5401e2-515c-4ed8-b4e1-7c5aebb131f0,2023-01-21,Customer 36,Item 7,2031.07,USD,Invoice,PayPal,Paid
+2fa90547-66b3-421b-bdd8-ca9f0f1c6417,2024-11-03,Customer 1,Item 22,227.02,CAD,Invoice,Check,Paid
+abd50679-8475-4290-ad21-59153cf0d841,2024-01-11,Customer 81,Item 40,2924.94,USD,Credit Memo,Check,Pending
+210f1a47-c291-4213-bf32-bb587ad147ce,2024-04-08,Customer 95,Item 32,1089.51,AUD,Invoice,Credit Card,Paid
+ccc1dc9a-cbd9-4bd3-8874-355584e99df9,2024-04-06,Customer 90,Item 25,549.55,AUD,Refund,Check,Refunded
+6df80c50-7efe-4fa5-9414-eef642fef378,2023-04-19,Customer 87,Item 13,3135.1,AUD,Refund,PayPal,Refunded
+0aa6307a-1d79-4319-a0de-d1e7b2e77de4,2024-01-25,Customer 1,Item 22,1946.7,CAD,Invoice,Bank Transfer,Paid
+001b4bc5-3005-47e3-8b99-446600673b2d,2024-04-04,Customer 18,Item 22,958.98,AUD,Credit Memo,PayPal,Refunded
+fde18a8b-e82c-482d-82e2-1faa2d207ae2,2024-11-19,Customer 51,Item 29,4881.31,EUR,Credit Memo,Bank Transfer,Paid
+50066180-e527-44c0-9e73-6c85f7f395b6,2024-11-15,Customer 49,Item 48,1963.02,CAD,Invoice,PayPal,Paid
+3848077d-0c6b-4ca7-beb8-10ab2352a0b7,2024-08-11,Customer 30,Item 30,4306.86,USD,Refund,Check,Refunded
+1c90890f-23e6-4529-a6fa-6e5f1a26dbac,2023-01-25,Customer 85,Item 13,3668.73,EUR,Invoice,Bank Transfer,Paid
+b8e8d338-41b5-4183-8824-05bd270ed25b,2023-05-03,Customer 5,Item 25,4119.35,USD,Refund,Check,Refunded
+9be7f1bf-b55c-4be3-b07b-3a4522d885cb,2024-05-22,Customer 28,Item 39,3139.19,EUR,Credit Memo,Bank Transfer,Cancelled
+5f1a3ff5-c03f-48c2-909c-a0bb633356be,2024-01-08,Customer 71,Item 26,3500.17,CAD,Invoice,Bank Transfer,Paid
+6ad804e1-60a1-4992-9309-e83c79625c04,2023-10-12,Customer 9,Item 3,2040.77,EUR,Invoice,Bank Transfer,Paid
+9a098267-ebd5-4a11-a205-c26d22af1694,2023-12-25,Customer 82,Item 3,4237.77,CAD,Refund,Bank Transfer,Refunded
+6533b9f9-b92d-4e84-8ec0-0edd3d8d58a6,2024-11-29,Customer 61,Item 37,609.69,AUD,Credit Memo,PayPal,Pending
+fa297916-dfdd-40e0-b746-3eb4a2dca674,2024-09-20,Customer 39,Item 30,3967.78,GBP,Invoice,Bank Transfer,Paid
+c6a283b9-823f-4ff9-a133-8c07b6696074,2024-12-01,Customer 1,Item 27,1052.8,AUD,Invoice,Check,Paid
+e7823b74-897f-4454-8051-a38e3dd86913,2023-03-02,Customer 62,Item 47,3090.31,GBP,Invoice,Credit Card,Paid
+3f2fe965-8e28-4f31-a6ac-7f92d7300595,2023-05-16,Customer 74,Item 2,1256.2,CAD,Invoice,PayPal,Paid
+f40c76b2-da2a-4bf4-8d0d-505dcc93f308,2023-07-08,Customer 64,Item 13,4635.6,AUD,Invoice,Credit Card,Paid
+0524c4dc-1446-46d6-be0a-3e3013cecbaa,2023-08-20,Customer 59,Item 19,817.73,AUD,Invoice,Credit Card,Paid
+012b2111-99c4-4ed9-be4b-13dc9a857a22,2023-01-30,Customer 35,Item 47,1480.65,EUR,Credit Memo,PayPal,Paid
+f0e8079c-dba2-4750-9ff9-f4b7f8be7a81,2024-02-02,Customer 68,Item 26,2840.11,CAD,Invoice,Credit Card,Paid
+6684afaf-9d44-4e7b-9fa7-99f6c1961471,2023-04-18,Customer 94,Item 34,705.51,GBP,Invoice,Credit Card,Paid
+66c20c67-c72b-4381-a2e0-2cbfdb6738c7,2024-09-24,Customer 58,Item 11,169.64,CAD,Credit Memo,Credit Card,Pending
+ce018d3e-2731-475d-b0ce-e79552757bf4,2023-08-02,Customer 67,Item 13,916.47,GBP,Credit Memo,PayPal,Paid
+0f711db6-46ec-41a1-bacd-e9fa3f6b4517,2024-04-25,Customer 46,Item 7,4911.42,USD,Invoice,PayPal,Paid
+aed49c13-3282-4020-8143-33d5eb8f64b2,2024-11-13,Customer 59,Item 27,1484.28,AUD,Credit Memo,PayPal,Refunded
+dc14be22-94c7-4e74-8799-af464613b216,2023-08-01,Customer 92,Item 23,2657.3,CAD,Invoice,Bank Transfer,Paid
+26280539-85e8-445c-8a41-f52424e3a18b,2023-06-16,Customer 76,Item 16,2847.86,GBP,Credit Memo,PayPal,Paid
+f818a66b-47dc-439d-bdbb-69c435307937,2024-04-27,Customer 35,Item 8,3899.64,USD,Invoice,Credit Card,Paid
+d118c055-c1ff-400f-b0d5-fa6127208da7,2023-12-31,Customer 31,Item 23,929.36,USD,Invoice,Bank Transfer,Paid
+492b9f26-bccb-4bdb-93d4-51a664bc3697,2024-11-07,Customer 12,Item 37,1278.92,USD,Invoice,PayPal,Paid
+eb1ec3ad-22ab-4760-b938-49a8f9a09e55,2024-09-18,Customer 75,Item 50,2152.45,CAD,Invoice,Bank Transfer,Paid
+f43061c3-e2f0-4958-b96f-934f9e0712c8,2024-02-13,Customer 26,Item 9,2274.72,USD,Credit Memo,PayPal,Paid
+5c82a414-eb37-4046-8e8a-3941c014e7e6,2023-12-21,Customer 78,Item 45,2533.51,CAD,Invoice,Bank Transfer,Paid
+39b3c7d4-31d0-408f-9e3c-cda22236e76a,2024-04-23,Customer 78,Item 32,1119.66,AUD,Refund,Check,Refunded
+dc30c4cb-5f87-43de-8692-fe5eefd73bc6,2024-05-19,Customer 31,Item 36,2287.69,AUD,Invoice,Bank Transfer,Paid
+8175df02-06c6-4923-a9d2-02a7ab1ded11,2023-04-26,Customer 67,Item 18,379.11,CAD,Invoice,Bank Transfer,Paid
+08d775a3-6259-4923-a035-2806b82ee56d,2023-10-14,Customer 99,Item 41,2456.46,EUR,Credit Memo,Bank Transfer,Cancelled
+6fc5c598-3c07-4da5-bd7a-d7d51727ae96,2024-09-04,Customer 14,Item 9,4960.41,AUD,Invoice,Check,Paid
+ae9a2e66-27cd-4ff0-8ac2-88e18c6c4188,2024-03-27,Customer 99,Item 4,3488.88,EUR,Invoice,Bank Transfer,Paid
+753830f5-e47d-4d66-97ed-e1f351acbb12,2023-06-13,Customer 75,Item 4,2489.25,EUR,Refund,PayPal,Refunded
+5a26512d-869e-47fa-8e8b-a2b075bc7216,2024-05-04,Customer 46,Item 2,1617.73,EUR,Refund,Credit Card,Refunded
+46101e94-e7ff-4501-afd9-a5ba2ec39c1a,2025-01-01,Customer 65,Item 46,2812.4,CAD,Refund,Bank Transfer,Refunded
+40f4057a-61d9-4466-8490-8478fb936d73,2024-06-04,Customer 10,Item 9,1988.17,GBP,Invoice,Credit Card,Paid
+8d2e0af1-3d7e-495c-98b4-c89aff896048,2023-11-21,Customer 33,Item 7,1421.32,EUR,Invoice,Check,Paid
+1fed488f-663b-43b6-9f16-3f162f7d7e5e,2024-09-30,Customer 72,Item 27,275.46,GBP,Refund,Check,Refunded
+1ae63e3b-d243-4605-952a-4a17e27d3185,2024-03-25,Customer 25,Item 28,4604.06,USD,Invoice,Bank Transfer,Paid
+4eb291c4-000f-4892-913b-55c4c28fc92e,2024-12-07,Customer 8,Item 37,717.55,GBP,Refund,Check,Refunded
+74c74200-dc44-4080-a620-d6bcadd52ffb,2024-02-01,Customer 100,Item 21,768.76,CAD,Credit Memo,Check,Paid
+10158199-a1c3-4493-b121-39c3acd50a70,2023-07-11,Customer 62,Item 8,2807.25,USD,Invoice,Bank Transfer,Paid
+cd79d07f-aba9-4ef0-b0e7-d9c684788176,2024-08-25,Customer 90,Item 23,4564.23,GBP,Invoice,Bank Transfer,Paid
+032bec6b-48f0-4626-a6e7-715a00361580,2023-11-02,Customer 68,Item 17,1730.4,GBP,Invoice,Check,Paid
+78b4e3e2-4b7f-4561-a425-19cfd67fd804,2023-07-15,Customer 65,Item 30,4598.02,GBP,Invoice,Credit Card,Paid
+d3311613-8c25-4739-887f-eb9a816d905d,2023-02-15,Customer 7,Item 7,2230.73,EUR,Credit Memo,Credit Card,Pending
+2a139b57-61e5-4800-9bf3-e8e54cabf570,2024-07-26,Customer 37,Item 19,3095.0,AUD,Invoice,PayPal,Paid
+57758a39-ef7b-4d8f-b9b9-29e84ce33df6,2024-03-11,Customer 83,Item 11,965.11,EUR,Invoice,Credit Card,Paid
+7a140a16-84df-4107-b85b-5c7d3f899162,2023-01-26,Customer 52,Item 17,2019.89,GBP,Refund,PayPal,Refunded
+29b997b0-18a9-4b6e-b166-d13992809260,2023-12-22,Customer 49,Item 49,4630.8,GBP,Invoice,Credit Card,Paid
+4f09b955-2ad2-40d8-b703-c32793afe84d,2024-05-07,Customer 72,Item 11,783.48,CAD,Refund,Check,Refunded
+67bf2960-ebbe-40fb-9527-c3cc2eabbe60,2024-04-09,Customer 67,Item 3,3169.47,USD,Invoice,Bank Transfer,Paid
+856d29c8-a232-44ca-8e7e-82b781ff4cbd,2023-11-10,Customer 8,Item 17,2955.98,GBP,Invoice,Credit Card,Paid
+2f7e4b36-a607-4b8f-8d5b-202732be7bf4,2023-12-10,Customer 64,Item 44,4350.22,EUR,Invoice,Check,Paid
+8313a516-5d43-4ab4-81c0-c96ad67c30ea,2023-04-21,Customer 75,Item 19,2114.41,USD,Credit Memo,Bank Transfer,Cancelled
+9289328b-4e9d-4642-acb5-e47cf549eda0,2024-04-20,Customer 36,Item 24,4152.81,CAD,Invoice,Credit Card,Paid
+79221a09-65fd-469b-a31c-6be7f766bbc0,2024-11-29,Customer 21,Item 6,3887.21,AUD,Invoice,PayPal,Paid
+e8d650f4-a1da-440e-98d2-61b54c0429d0,2024-12-13,Customer 67,Item 1,213.95,EUR,Credit Memo,PayPal,Paid
+a01f543a-42a6-4da0-8835-73713817f1c4,2023-10-18,Customer 71,Item 42,3969.04,USD,Invoice,PayPal,Paid
+36d243ad-58ed-4357-bae9-11bbe7b67110,2023-02-09,Customer 95,Item 36,1213.53,AUD,Credit Memo,Check,Cancelled
+e613ea2f-0bb1-4907-bdef-893bfc647459,2024-01-29,Customer 32,Item 23,4031.93,GBP,Invoice,Credit Card,Paid
+d51db019-664d-4e1c-814f-6e67580dc700,2023-01-11,Customer 41,Item 8,2195.68,AUD,Refund,Check,Refunded
+d6262386-9fb5-4074-8979-70f1f918f7eb,2023-10-18,Customer 41,Item 27,358.01,EUR,Invoice,Bank Transfer,Paid
+6726c752-577e-440f-997e-34d79fed0b2f,2024-12-15,Customer 91,Item 27,523.97,EUR,Invoice,PayPal,Paid
+eb4d040b-b1c0-41bb-afe7-b54add94263a,2023-12-16,Customer 25,Item 10,4002.38,AUD,Credit Memo,Bank Transfer,Cancelled
+efb8a459-9e4e-4c4f-a832-05e76bae6078,2024-05-25,Customer 62,Item 21,1887.9,AUD,Invoice,Check,Paid
+b2d5c047-f901-4fa4-9a0b-986ce655f09d,2024-12-05,Customer 23,Item 9,3957.38,GBP,Invoice,Credit Card,Paid
+3df269c4-4ea3-4a52-82ef-3fa61b59e2b0,2023-02-10,Customer 29,Item 12,4033.92,AUD,Invoice,PayPal,Paid
+c257e85d-6021-4553-9363-c8ff3370f337,2024-03-12,Customer 85,Item 9,3747.87,EUR,Credit Memo,Check,Cancelled
+bc930a85-aacc-44fe-89ea-f04d4c58d5c4,2024-06-13,Customer 98,Item 36,4367.39,GBP,Refund,Credit Card,Refunded
+211ffb32-c1ad-4977-8f66-61cf00200f6a,2024-09-18,Customer 99,Item 39,1908.31,AUD,Invoice,Check,Paid
+69360056-a2ef-428b-b43a-69fd9d63e8ad,2024-09-15,Customer 57,Item 46,4858.54,CAD,Refund,Bank Transfer,Refunded
+979ad6b5-cd6f-43fc-8f89-4d68c5321fda,2024-03-22,Customer 94,Item 41,2192.02,USD,Refund,Bank Transfer,Refunded
+4fcd54e8-44d4-4516-9609-655b7ef6e52e,2024-01-28,Customer 9,Item 4,1715.31,EUR,Invoice,Bank Transfer,Paid
+b5a2db74-ed88-4f6a-ab99-8fe35249cc53,2024-10-26,Customer 23,Item 9,3187.48,GBP,Invoice,Check,Paid
+d6c64c70-70ab-4f1c-8ad0-865459e21dc4,2024-10-23,Customer 50,Item 6,708.05,GBP,Credit Memo,Bank Transfer,Cancelled
+3f7fb28a-4560-4664-a143-505cd61a378c,2024-03-27,Customer 77,Item 49,1173.12,USD,Invoice,Credit Card,Paid
+717d0c91-2d33-47d6-920e-4ceeb7ba2f3e,2023-11-02,Customer 88,Item 33,1265.78,CAD,Invoice,Check,Paid
+3129ed29-27c4-4dd6-b596-9991124fd164,2023-11-02,Customer 20,Item 20,913.61,GBP,Refund,Bank Transfer,Refunded
+d7ef65f7-d4a6-4168-9a5d-51a46c076584,2023-05-29,Customer 71,Item 38,2363.35,CAD,Credit Memo,PayPal,Paid
+0e4126d0-7f13-4103-af15-6b639cdc9251,2023-02-03,Customer 35,Item 10,28.81,EUR,Credit Memo,Bank Transfer,Pending
+684009d4-39d1-4e66-a43c-063c449b291b,2023-07-27,Customer 32,Item 9,4394.39,USD,Refund,Bank Transfer,Refunded
+15ee86b9-f368-4fab-87a8-0c29f7051513,2024-09-30,Customer 13,Item 37,3590.03,CAD,Credit Memo,PayPal,Refunded
+7137558d-0ef5-444a-8900-d6927fcdc936,2024-05-23,Customer 74,Item 22,680.34,USD,Refund,Check,Refunded
+2bbf5671-5f08-49f9-90df-469ad34ba07e,2023-06-03,Customer 5,Item 28,2726.82,GBP,Refund,Credit Card,Refunded
+bdf55e1d-51b0-4959-8802-0aa7a6071578,2023-12-08,Customer 69,Item 31,1105.41,CAD,Invoice,Bank Transfer,Paid
+adad50f5-7a3b-48c3-b423-50e65b96591b,2024-03-18,Customer 13,Item 8,1639.89,EUR,Invoice,Credit Card,Paid
+7c00cb71-dda6-457a-9b63-1b4d00a545b9,2023-02-14,Customer 57,Item 38,3275.69,CAD,Refund,Check,Refunded
+de211ca0-28c6-40b8-9bc2-f62c513a6d41,2024-09-15,Customer 70,Item 44,4245.04,AUD,Invoice,Credit Card,Paid
+374254f1-34cc-4d53-bc89-bb981c97d6a6,2024-12-19,Customer 28,Item 37,1059.69,AUD,Refund,Check,Refunded
+cc081059-5e6a-445c-b8eb-d9d3b8a801e7,2023-07-12,Customer 24,Item 42,304.04,CAD,Invoice,PayPal,Paid
+aa3cc153-7b25-4dff-8bb6-b9505a00c477,2024-07-11,Customer 43,Item 19,2465.75,USD,Invoice,Credit Card,Paid
+2c67e13f-6d9f-46b4-a7e2-46c3e479db77,2023-04-24,Customer 36,Item 39,1732.64,GBP,Refund,Bank Transfer,Refunded
+6844f4b3-cc93-49b4-99e9-87f36c8eecad,2024-03-16,Customer 88,Item 50,1955.84,EUR,Credit Memo,PayPal,Refunded
+9eb88ce5-7fc2-4e79-8b1e-5f6cf9f5f4ad,2023-06-23,Customer 22,Item 29,827.49,GBP,Refund,Bank Transfer,Refunded
+92a7dc91-b391-415d-ab32-01c8a320c353,2024-02-06,Customer 6,Item 50,1235.35,GBP,Credit Memo,Check,Cancelled
+89a57f79-1b18-4fb5-8068-1984433f8cef,2023-02-02,Customer 2,Item 9,1008.12,EUR,Invoice,Credit Card,Paid
+2b4253e9-ee3a-4844-97f3-e9e18c605bcc,2024-11-09,Customer 52,Item 27,2616.72,AUD,Invoice,Credit Card,Paid
+97d47d78-e89d-46f7-ace4-e48f1d76060e,2023-01-04,Customer 99,Item 42,4311.22,GBP,Invoice,Bank Transfer,Paid
+f79439b3-1b01-4dad-9561-83ee62d223e2,2024-01-28,Customer 29,Item 16,2889.27,AUD,Invoice,PayPal,Paid
+3cb5e058-5bd1-4b60-b92f-188ac371f21a,2024-08-15,Customer 17,Item 28,1573.62,USD,Invoice,PayPal,Paid
+30d5dacb-6425-4286-b151-e99ed9188fbd,2024-06-09,Customer 60,Item 33,306.47,EUR,Invoice,Bank Transfer,Paid
+171f72e3-0b44-4ee8-ad62-c9bb0389de05,2023-11-18,Customer 56,Item 32,3942.68,GBP,Invoice,Credit Card,Paid
+a4119f93-daa6-4941-a1ff-99666c8f8373,2024-06-11,Customer 17,Item 13,2116.77,EUR,Invoice,Check,Paid
+1423e885-3bdc-4679-a5f9-0e07caf9385c,2024-07-28,Customer 56,Item 17,2892.27,CAD,Credit Memo,PayPal,Pending
+0a1b5aed-f1c5-4571-9a6b-5a55a6a29e90,2024-11-09,Customer 1,Item 3,1225.75,USD,Invoice,Bank Transfer,Paid
+1381635b-bae1-43c3-af09-cb75c64733e7,2023-09-21,Customer 90,Item 45,2745.05,USD,Credit Memo,Bank Transfer,Cancelled
+8836b494-fe35-413a-be2d-6855fe0d4633,2023-01-12,Customer 6,Item 33,4878.62,GBP,Invoice,PayPal,Paid
+86a74dd3-ba01-498b-8ae8-7af0b44366a2,2024-05-17,Customer 12,Item 40,761.44,USD,Invoice,Bank Transfer,Paid
+04c2bbf8-f647-4821-817d-380fab790265,2024-02-16,Customer 52,Item 19,1013.52,EUR,Invoice,Bank Transfer,Paid
+1ae0a584-2da2-4253-a8e9-964ba3b7c90d,2023-06-01,Customer 85,Item 35,3131.41,GBP,Invoice,Check,Paid
+0e92199f-3563-4caa-a613-e2e41423a3c0,2023-08-11,Customer 100,Item 24,3348.27,USD,Refund,Credit Card,Refunded
+c6b3138e-b163-4d0c-b908-e9df2728e8e4,2024-05-04,Customer 12,Item 41,4831.34,GBP,Refund,Credit Card,Refunded
+bfacb724-eec4-4da7-ba0a-12af1936cff7,2024-03-09,Customer 33,Item 11,3722.59,EUR,Credit Memo,Bank Transfer,Refunded
+d20fd623-900a-46c9-9067-6fbc60a98a54,2023-08-28,Customer 29,Item 29,125.79,AUD,Invoice,Check,Paid
+b352dcfd-e577-4405-81f6-1e3b714d6a93,2024-02-23,Customer 63,Item 49,4665.19,GBP,Invoice,Credit Card,Paid
+062d42c4-a490-405f-96ba-664880838cf5,2023-01-09,Customer 30,Item 35,4415.67,GBP,Invoice,Bank Transfer,Paid
+37f5f522-db68-4b58-8967-766c4395acc4,2023-11-21,Customer 16,Item 1,4555.14,AUD,Credit Memo,PayPal,Refunded
+dba3bec2-76cd-4309-825d-7e3ff06137f8,2023-09-12,Customer 99,Item 13,3159.86,CAD,Credit Memo,Bank Transfer,Pending
+296b277c-7e74-4128-a9b3-4dd38c9bd79f,2024-04-23,Customer 63,Item 43,1030.34,EUR,Invoice,Bank Transfer,Paid
+5bd0dd5f-a5e7-4d11-863c-78a0b2ab8f1f,2023-10-27,Customer 1,Item 12,3057.77,USD,Invoice,Credit Card,Paid
+f16528e5-6e37-4c57-89e1-30a8efcb9095,2024-07-13,Customer 52,Item 50,1906.56,AUD,Invoice,Check,Paid
+6514d061-29ed-48fb-9cb4-dbe8bc0a1529,2023-05-22,Customer 5,Item 41,4798.66,USD,Invoice,Check,Paid
+c1c7031a-3045-4df5-bc77-bea97bf6c76b,2023-03-08,Customer 26,Item 8,1244.9,CAD,Invoice,Check,Paid
+358b9a27-bd85-46e3-9ee3-2dd4780df349,2023-07-29,Customer 17,Item 31,3093.7,CAD,Credit Memo,Check,Pending
+b669e211-f2e7-42aa-ab61-f5b56c4eecda,2024-12-11,Customer 5,Item 35,165.61,EUR,Invoice,PayPal,Paid
+b0244906-dbeb-47d8-94f9-b6bac1f23ef2,2024-12-15,Customer 4,Item 2,1550.53,CAD,Invoice,PayPal,Paid
+75d0bdd7-5403-4510-8fc7-210e4fafee19,2024-07-18,Customer 72,Item 36,1580.01,AUD,Invoice,Check,Paid
+63506c1b-1fa6-475a-98ac-c02d5098282a,2023-04-01,Customer 99,Item 47,3416.64,CAD,Credit Memo,Credit Card,Paid
+b8358b39-10aa-4e22-9976-801a61ac2b26,2023-04-06,Customer 42,Item 46,385.47,GBP,Invoice,Bank Transfer,Paid
+fb0e3a39-cedd-40ee-93c9-071f6c00cae8,2024-12-23,Customer 14,Item 14,4784.83,GBP,Credit Memo,Check,Cancelled
+b68df56f-be19-4ee6-bcff-b8197ee25597,2023-12-14,Customer 15,Item 14,3838.64,AUD,Invoice,PayPal,Paid
+b4e6d2af-58cd-4d4b-9bf0-f52a3167ffbd,2024-06-12,Customer 38,Item 27,1385.56,CAD,Credit Memo,Credit Card,Paid
+7a66611b-0f20-4e95-9c52-4afaae2f496b,2023-07-29,Customer 51,Item 30,1638.54,AUD,Invoice,PayPal,Paid
+0a95ae19-e774-4019-a7f7-a8d8aab6f661,2023-10-24,Customer 72,Item 6,178.13,GBP,Invoice,PayPal,Paid
+30578d70-44bb-4100-b58c-aad8cb7936b4,2023-04-13,Customer 26,Item 12,4784.96,EUR,Invoice,Credit Card,Paid
+7672bb37-6238-46f7-a2d0-186abf0374ad,2024-11-07,Customer 17,Item 31,1035.36,AUD,Credit Memo,Check,Paid
+54687f0d-dc01-4d6c-9fd9-e38819a9d9aa,2024-02-08,Customer 98,Item 6,890.04,AUD,Invoice,PayPal,Paid
+ad054a96-f2b5-45b0-8674-96d96f5b0d5b,2024-08-05,Customer 19,Item 2,4386.21,CAD,Invoice,Bank Transfer,Paid
+0681773d-780c-49e0-bd1f-be9936be8886,2024-08-29,Customer 99,Item 19,4612.78,CAD,Invoice,Credit Card,Paid
+2d1db36e-9206-49ae-8489-1c2dc93217a1,2024-12-30,Customer 62,Item 4,212.61,AUD,Invoice,PayPal,Paid
+90ad1177-6d5a-49d4-b594-4fbeea638f55,2023-06-17,Customer 98,Item 39,3110.61,USD,Refund,Bank Transfer,Refunded
+ad4b2e73-e8c9-4b83-aca3-c84fa6d00cb0,2023-10-21,Customer 20,Item 17,3159.83,USD,Invoice,Bank Transfer,Paid
+4d8069e3-2e5c-47c7-8c68-6f6341e0e2ed,2024-09-06,Customer 37,Item 25,700.81,EUR,Invoice,Bank Transfer,Paid
+b5b342b4-1844-467a-ab91-f6055e329fc2,2023-08-03,Customer 19,Item 10,1197.76,CAD,Invoice,Check,Paid
+aedd4755-3c95-4ea1-a156-bc795531bfb7,2024-03-10,Customer 41,Item 37,220.55,EUR,Invoice,Bank Transfer,Paid
+c3cd3159-4bc7-44be-bc9e-8654eac2bb72,2023-10-11,Customer 69,Item 5,1656.98,CAD,Refund,Credit Card,Refunded
+0a3f9d61-9448-48b0-ad1e-f1f70317adf1,2024-10-04,Customer 62,Item 40,2464.41,CAD,Invoice,Check,Paid
+474b5a06-0ed2-4dea-893c-cdab35c30db9,2023-05-11,Customer 78,Item 23,3223.85,EUR,Refund,Check,Refunded
+dd518cb0-3983-4bb0-b206-a53352f359ad,2024-04-27,Customer 7,Item 50,3995.59,AUD,Refund,PayPal,Refunded
+07bd2147-6415-4fbf-9b95-9bad750ca3be,2024-11-27,Customer 26,Item 30,589.14,USD,Invoice,PayPal,Paid
+ced0d5cf-45a1-47fc-82d9-9de72239d986,2024-10-20,Customer 48,Item 42,1641.8,USD,Invoice,PayPal,Paid
+50e88884-9882-49cf-b8e5-4938a36ba662,2024-03-04,Customer 26,Item 16,1547.64,CAD,Invoice,PayPal,Paid
+7031bc3e-177b-4d1a-b008-2d0d8b0b673e,2023-05-16,Customer 6,Item 26,3898.29,GBP,Credit Memo,Check,Pending
+0b77e581-8cc9-4d8c-8b69-337c45c3291a,2024-02-17,Customer 77,Item 32,2898.11,USD,Invoice,Check,Paid
+3132752d-7a77-4cdb-99b4-b3921198a98d,2024-02-21,Customer 86,Item 8,2440.98,EUR,Credit Memo,Credit Card,Cancelled
+bea4df25-aee0-4071-935a-942e7447fe6f,2023-05-27,Customer 4,Item 29,3806.6,GBP,Invoice,Check,Paid
+a66b4789-bbee-4312-926d-9d72e484dd26,2023-01-20,Customer 49,Item 9,167.42,GBP,Refund,Bank Transfer,Refunded
+f4fb4683-5f15-42ff-a353-4a2c2cc7eb1d,2023-03-25,Customer 3,Item 20,4205.17,GBP,Invoice,PayPal,Paid
+45b9c70a-f6a0-46fb-bd03-3a18e201a9da,2024-01-13,Customer 7,Item 17,2863.1,CAD,Credit Memo,PayPal,Paid
+f9f99230-5dc9-4e83-88f4-ef1a0984553f,2023-10-15,Customer 64,Item 17,1671.13,EUR,Invoice,PayPal,Paid
+5ec2fed4-c465-4373-aca7-80b35b3e3758,2024-07-23,Customer 89,Item 5,3827.81,EUR,Invoice,Check,Paid
+98b7186e-95c0-4349-83d6-dfa9d58a79c6,2024-11-23,Customer 20,Item 50,2148.42,CAD,Credit Memo,Bank Transfer,Pending
+0095e872-7e4e-4ff3-bf5e-82d1e7a6377b,2024-07-24,Customer 36,Item 5,2341.22,USD,Invoice,Check,Paid
+56b7d043-0386-449b-9c60-b3bf9e329cf2,2024-12-11,Customer 13,Item 6,699.5,GBP,Refund,Credit Card,Refunded
+e80e67be-ad4a-4804-86db-d729351f1867,2023-03-24,Customer 87,Item 34,39.79,USD,Invoice,Credit Card,Paid
+41950c62-868d-455f-bf02-cf281fdede59,2024-04-19,Customer 18,Item 50,197.04,GBP,Credit Memo,PayPal,Cancelled
+54af0549-b624-481a-8e37-4ae2b17e80d9,2024-07-05,Customer 88,Item 7,47.57,USD,Invoice,Credit Card,Paid
+29b9a4cc-95c9-49b3-87f9-d31ddac775c4,2023-07-15,Customer 82,Item 6,4740.41,AUD,Refund,Bank Transfer,Refunded
+b878f8ec-a4f4-4081-9060-bc6550efbd38,2024-07-08,Customer 41,Item 44,3884.42,GBP,Invoice,Bank Transfer,Paid
+7deb8909-6f22-45a7-8e95-e1f9d3b7fddb,2023-11-15,Customer 98,Item 10,3731.63,USD,Credit Memo,PayPal,Pending
+3b35b5ca-c67c-48a6-95ff-5724d4f8b812,2024-02-15,Customer 16,Item 5,2027.12,EUR,Invoice,Bank Transfer,Paid
+d10fab3e-79ad-4b89-b69f-a163e319f95e,2023-10-18,Customer 11,Item 9,1372.37,EUR,Credit Memo,Check,Paid
+d2567039-9dbc-4e6e-97a3-dde23b7cce1b,2023-04-24,Customer 61,Item 15,1168.29,AUD,Credit Memo,Bank Transfer,Pending
+dea1ab32-cac1-401c-a02f-3f455bf0923f,2023-11-30,Customer 2,Item 3,4861.52,USD,Invoice,Bank Transfer,Paid
+36406197-f29d-448c-ae44-3f7c979768f1,2023-11-14,Customer 62,Item 9,2127.86,USD,Refund,Credit Card,Refunded
+ddb01051-c685-49ed-ac85-db8ee43faaff,2024-06-15,Customer 60,Item 11,4316.98,EUR,Invoice,Check,Paid
+2775182c-8d41-42ec-9a16-7654c5811267,2023-02-07,Customer 37,Item 43,1394.07,AUD,Invoice,PayPal,Paid
+85849ad4-a138-4091-8e57-b96478971996,2023-07-03,Customer 45,Item 14,3268.86,EUR,Invoice,Credit Card,Paid
+fc033395-25b7-4030-863e-6ff0c905c6d1,2023-09-17,Customer 12,Item 38,2542.8,GBP,Invoice,PayPal,Paid
+27a03862-246f-46f4-bfd4-62eb1535f12e,2023-09-06,Customer 83,Item 18,3825.33,USD,Invoice,Credit Card,Paid
+9a35a119-5b13-48f5-821a-58a1324c6f8c,2024-08-25,Customer 46,Item 34,3982.0,CAD,Invoice,Check,Paid
+c07fe3bb-d5a4-48fb-940e-d77df5b28ef2,2024-12-04,Customer 100,Item 22,1673.37,AUD,Invoice,Bank Transfer,Paid
+e87f755a-61d9-41c5-852a-115fcfa52013,2023-04-10,Customer 20,Item 9,4760.74,EUR,Invoice,Credit Card,Paid
+137e9859-4780-416f-af67-00d37ed254d6,2024-02-29,Customer 4,Item 15,364.61,CAD,Invoice,Credit Card,Paid
+0c1a33f6-6bef-432e-8ab9-d0fb500e3ba0,2024-09-08,Customer 35,Item 46,3817.29,CAD,Refund,Credit Card,Refunded
+b30861ce-80bb-40da-bbf2-b1fbc0cc6e5a,2023-10-06,Customer 42,Item 3,1125.72,GBP,Credit Memo,Credit Card,Refunded
+d8585cba-ffb8-4e75-8c72-5dc384f06ec4,2024-08-22,Customer 3,Item 23,4932.87,GBP,Invoice,Check,Paid
+c73eacbe-7cfe-497a-a776-709081be4e1c,2023-08-20,Customer 7,Item 41,4037.94,USD,Invoice,Credit Card,Paid
+3db47c61-409b-435a-bab9-97e538f462a4,2024-08-18,Customer 29,Item 44,907.09,GBP,Credit Memo,Check,Paid
+a1856376-f78b-4a0c-93ff-acb4581eb3e2,2024-01-26,Customer 39,Item 7,1977.24,USD,Credit Memo,Bank Transfer,Cancelled
+1eda7790-a865-4bab-90ee-59ae19d3b9ee,2024-07-22,Customer 85,Item 25,1678.27,GBP,Credit Memo,Check,Paid
+2730973f-1ca2-4f8d-9eae-c00c2f3efea4,2023-08-23,Customer 28,Item 16,1125.41,CAD,Invoice,Check,Paid
+e31e91d8-8182-4647-8987-7671e68f5d68,2023-11-12,Customer 24,Item 36,2794.33,AUD,Invoice,Check,Paid
+9e0352e7-bd36-4a26-b512-d8e9158b921a,2023-03-13,Customer 92,Item 3,2469.18,USD,Invoice,Credit Card,Paid
+e8f2ad38-d883-49f3-821a-101cdb49a333,2024-02-04,Customer 17,Item 26,3843.27,CAD,Credit Memo,Check,Refunded
+efb71de7-12ad-43e2-9c04-e226345ee010,2023-01-25,Customer 38,Item 46,987.27,EUR,Invoice,PayPal,Paid
+a255896c-c524-472e-b4a7-0ae7c0ee51fd,2024-02-23,Customer 49,Item 36,3388.12,EUR,Invoice,Credit Card,Paid
+d6952635-6464-4496-b599-a881c6e9bc91,2023-05-06,Customer 19,Item 39,2842.43,CAD,Invoice,Bank Transfer,Paid
+7d429f68-f23d-4513-9cfa-282c1e0e1fe3,2023-11-20,Customer 39,Item 9,199.77,GBP,Credit Memo,PayPal,Paid
+2114ef29-5b3f-4d8c-a461-0cc660eff2e4,2023-08-22,Customer 42,Item 49,1288.24,CAD,Invoice,Bank Transfer,Paid
+c5ce21e1-5b38-49ec-852c-aec2a81889c7,2024-09-15,Customer 82,Item 6,2690.82,AUD,Credit Memo,Bank Transfer,Paid
+7259f6b6-8869-4050-b944-5e940f737af3,2023-01-01,Customer 83,Item 11,2357.37,CAD,Credit Memo,Credit Card,Refunded
+e909ec48-fab7-4061-a927-29cc18698d47,2023-02-25,Customer 6,Item 4,4298.28,USD,Credit Memo,PayPal,Refunded
+71b36cb4-a5dd-4724-b0dd-8116e5c2149e,2023-07-21,Customer 66,Item 16,1147.93,GBP,Invoice,Credit Card,Paid
+c2282c0d-3874-4420-ac24-9399bd601e7a,2023-08-31,Customer 23,Item 35,679.22,GBP,Invoice,PayPal,Paid
+abcf113e-1f70-4b03-ab26-f2f1d1db7dc3,2024-08-17,Customer 69,Item 11,1932.42,GBP,Credit Memo,Bank Transfer,Pending
+45ef42a4-23a4-45c9-8de6-b3ea6edb0361,2024-07-11,Customer 3,Item 15,1815.95,GBP,Credit Memo,Credit Card,Refunded
+184a0e7f-cd47-4e31-80be-237c1af1edb5,2023-06-28,Customer 34,Item 48,2522.92,EUR,Credit Memo,PayPal,Refunded
+c40a3d2c-412a-4a0a-b4d3-485d1eea16d5,2024-09-02,Customer 92,Item 4,66.64,CAD,Invoice,Check,Paid
+5100ad1d-df04-4cf1-8940-44b9c69c383b,2024-09-14,Customer 83,Item 3,3996.16,AUD,Invoice,Bank Transfer,Paid
+6a801a45-9d6b-4ae0-8bd3-a06b950efac7,2023-03-05,Customer 95,Item 41,137.17,EUR,Invoice,Credit Card,Paid
+6d4a9eec-92bb-448c-b4c8-32674bd3b43e,2024-09-14,Customer 29,Item 40,1951.71,EUR,Refund,PayPal,Refunded
+378bab1a-e498-477a-a6ff-d7be75f0261c,2024-07-31,Customer 18,Item 30,4249.76,EUR,Invoice,Check,Paid
+280f3f9a-25bd-4224-8a39-82a658ac27e6,2024-11-14,Customer 85,Item 3,3069.15,USD,Credit Memo,Bank Transfer,Pending
+3e7fcf5b-cfde-4c73-b204-71f8d484f33d,2024-11-10,Customer 70,Item 40,2687.02,GBP,Invoice,Check,Paid
+4ad10d41-e0da-4943-8887-bfb1cbb7feb1,2024-08-03,Customer 47,Item 26,308.69,CAD,Credit Memo,PayPal,Pending
+e1807a81-5665-49b4-aa8e-3c2cccd3dbaa,2024-03-04,Customer 74,Item 32,957.67,EUR,Invoice,Check,Paid
+e443146b-9938-4c7d-9507-dd5e9e4a7cf6,2024-04-14,Customer 86,Item 37,3533.36,EUR,Invoice,Check,Paid
+5bc0c5fc-745b-410f-9734-cdb3d7029395,2023-11-19,Customer 43,Item 47,1747.12,AUD,Invoice,Bank Transfer,Paid
+dce666a4-5cfc-42a2-ac39-c92d88cf5a24,2023-12-09,Customer 16,Item 2,677.08,AUD,Invoice,Credit Card,Paid
+156cd832-088f-41a1-af27-327b1dfc56ed,2024-03-13,Customer 50,Item 18,2730.98,EUR,Credit Memo,Bank Transfer,Pending
+06c786ce-f50c-4c0c-b6de-e9bf1dc17ae6,2024-02-07,Customer 81,Item 35,266.21,GBP,Invoice,Check,Paid
+229f4a52-d4f4-4aa3-8d48-23954ba6028c,2024-10-06,Customer 56,Item 1,2533.56,GBP,Invoice,Check,Paid
+e7bf4290-91ac-4dc7-bce0-c0aee5e268cd,2023-08-14,Customer 18,Item 15,3462.15,USD,Refund,Check,Refunded
+6f4a219c-80ab-4e5d-922e-91c627aa8920,2024-04-29,Customer 48,Item 15,4189.13,USD,Refund,Bank Transfer,Refunded
+d19fe581-57f1-44f8-b923-d9b60943e529,2023-05-20,Customer 43,Item 35,1697.76,CAD,Refund,Check,Refunded
+b508943a-1060-4c2b-86d3-4c1e641c13fc,2024-01-29,Customer 32,Item 23,3773.55,EUR,Invoice,Bank Transfer,Paid
+6b2ecdc0-d1f1-42e2-8fa2-ec3689081086,2023-06-06,Customer 15,Item 39,3650.67,CAD,Refund,Bank Transfer,Refunded
+c7bf8a69-e285-4839-ae8e-91bd3ab72cbe,2024-06-20,Customer 3,Item 10,4863.46,EUR,Invoice,PayPal,Paid
+bfa3d352-d0c8-4b9e-84ba-8abd1760eb6c,2024-12-28,Customer 63,Item 32,3109.54,GBP,Invoice,PayPal,Paid
+4c11b2c7-69db-488c-bb3b-0c63ca4b1bf7,2024-11-26,Customer 69,Item 30,1727.19,USD,Refund,PayPal,Refunded
+52e544e6-f54f-43d4-8f25-6e0d9457d39c,2023-10-22,Customer 37,Item 20,4213.53,GBP,Credit Memo,Credit Card,Refunded
+855058af-efca-4534-b7e6-213013b183bd,2023-06-01,Customer 36,Item 41,1533.62,AUD,Credit Memo,Credit Card,Paid
+20381b3d-0535-4538-9c38-a812c319e982,2024-10-02,Customer 26,Item 17,2453.5,EUR,Invoice,Bank Transfer,Paid
+b2c848c9-eea2-4cbd-a0c8-d57c9004be4c,2024-01-25,Customer 70,Item 22,3639.77,USD,Invoice,Bank Transfer,Paid
+56ea734b-b4db-49ab-bb62-88949cfe4412,2024-04-01,Customer 6,Item 29,4287.51,EUR,Invoice,Bank Transfer,Paid
+2b18ec15-a56c-4dd1-9cfb-61d0b7a20e47,2024-05-14,Customer 64,Item 14,2024.59,GBP,Credit Memo,Bank Transfer,Paid
+512c5831-bdc9-4395-b31a-c3f37380692b,2023-09-22,Customer 63,Item 30,519.84,EUR,Invoice,Credit Card,Paid
+3db9b088-4be8-428e-a62e-7310705d5c6b,2023-03-29,Customer 44,Item 30,4847.89,EUR,Refund,PayPal,Refunded
+665c9242-9f6c-4268-9602-fe2788798e66,2023-05-04,Customer 78,Item 27,110.99,AUD,Invoice,Check,Paid

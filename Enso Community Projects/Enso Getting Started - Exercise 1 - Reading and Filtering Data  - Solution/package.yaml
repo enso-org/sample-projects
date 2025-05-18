@@ -1,0 +1,5 @@
+name: Enso Getting Started - Exercise 1 - Reading and Filtering Data  - Solution
+namespace: local
+version: 0.0.1
+edition: 2024.2.1-nightly.2024.6.11
+prefer-local-libraries: 'true'

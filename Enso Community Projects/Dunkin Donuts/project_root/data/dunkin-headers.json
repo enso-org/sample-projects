@@ -1,0 +1,18 @@
+{
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "cookie": "AKA_A2=A; _gcl_au=1.1.1019714315.1732655176; pxcts=468acc8f-ac3a-11ef-8269-7e4b36779fba; _pxvid=468ac337-ac3a-11ef-8269-9ab2f3311397; _ga=GA1.1.577106467.1732655176; _pin_unauth=dWlkPU9EZzFaR1F6TlRZdE56UmhNeTAwWW1Ka0xXRXdOMkV0WlRaaU9XTTRNV0ZpTnpGag; _fbp=fb.1.1732655176497.97290493947615576; __pxvid=46ac4748-ac3a-11ef-b1bb-0242ac120002; truyoConsent={}; DMA=Irvine:CA:92612:803:33.650024:-117.839313; RT=\"z=1&dm=www.dunkindonuts.com&si=70d05f7c-0c4d-4e16-86fd-a88daf76cf8b&ss=m3yy5lxu&sl=1&tt=tj&rl=1\"; _uetsid=469b1e20ac3a11ef842a6f6d9a20f8ae|dpc626|2|fr7|0|1791; AWSALB=XDm7XvqEMBd5gN2G8XBIzQVwo9FONFl9OyQkjM6w7JDUDdj8GAPqITmrWuI5wrskVuztiZzIHFAGQ2Kyvy1xxbvA/BuecrrjDT3H7MWkMRfCmZhixxKXUUzLkA48; AWSALBCORS=XDm7XvqEMBd5gN2G8XBIzQVwo9FONFl9OyQkjM6w7JDUDdj8GAPqITmrWuI5wrskVuztiZzIHFAGQ2Kyvy1xxbvA/BuecrrjDT3H7MWkMRfCmZhixxKXUUzLkA48; _uetvid=469bb100ac3a11ef9604b9e0a53fee85|8einrx|1732655183282|2|1|bat.bing.com/p/insights/c/q; _px2=eyJ1IjoiNGE1MWNjMTAtYWMzYS0xMWVmLWJkOTItNTNmY2MxYzU2MGY2IiwidiI6IjQ2OGFjMzM3LWFjM2EtMTFlZi04MjY5LTlhYjJmMzMxMTM5NyIsInQiOjE3MzI2NTU0ODM2NjcsImgiOiIxY2ZlMDRjMGRlZjFkMzJkODg2MTVkODlmYTEwYWI1MTIzZDAwOWZmMTM4OGM2ZmIwNTk1MzVlOGIyMmViMzc4In0=; LSKey-nfchatui$nf_session={\"affinityToken\":\"\",\"agentname\":\"Virtual Assistant\",\"clientPollTimeout\":\"\",\"id\":\"\",\"isOldSession\":false,\"key\":\"\",\"lastloggedinstatus\":false,\"magentotext\":\"\",\"timestamp\":1732655184740,\"userloggedin\":false,\"visitor\":\"\",\"visitormail\":\"\",\"disableInput\":false,\"disableBanner\":\"Please select an option from above.\",\"agentType\":\"bot\",\"chatEnded\":false,\"transferQueued\":false,\"transferStart\":false,\"transferredToAgent\":false,\"queuePosition\":0,\"isPrechatMinimized\":false,\"isPrechatSubmitted\":false}; _ga_X5QZSMKN3T=GS1.1.1732655176.1.1.1732655226.0.0.0; AWSALB=+nwymVtS1Jl8Nl+USN+qyhiVl462ArFChVR0Nimyfx+8dQgSg0L50E0a8ZQGscECBwetvTI+k0GRIlm9QjvwlnXqq+pKMSsELwr+dWJQlD0qXuswFgnGuRv8eloU; AWSALBCORS=+nwymVtS1Jl8Nl+USN+qyhiVl462ArFChVR0Nimyfx+8dQgSg0L50E0a8ZQGscECBwetvTI+k0GRIlm9QjvwlnXqq+pKMSsELwr+dWJQlD0qXuswFgnGuRv8eloU",
+    "csrf-token": "undefined",
+    "origin": "https://www.dunkindonuts.com",
+    "priority": "u=1, i",
+    "referer": "https://www.dunkindonuts.com/en/locations?location=92625",
+    "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "x-requested-with": "XMLHttpRequest"
+  }

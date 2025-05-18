@@ -1,0 +1,5 @@
+name: Working with SQLite Databases in Enso Analytics
+namespace: local
+version: 0.0.1
+edition: 2024.4.2
+prefer-local-libraries: 'true'

@@ -1,0 +1,48 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Visualization
+
+## ![image](eaep.png)
+   
+   # **Create Dynamic Excel Sheet Names**
+   
+   **This workflow creates the sheet name for an Excel project dynamically based on today's date.**
+   
+   ## 
+   
+   ## Overview of Process
+   
+   - Get today's date using the Date.today component
+   - Format the date as a string
+   - Create a text constant that adds a parameter
+   - Pass the formatted date into that new parameter
+   - Pass the text constant + parameter to our write component
+   
+   # 
+   
+   ## Creating a text constant with parameter
+   
+   Click the + at the bottom right of the screen to create a new component that is not connected to the other parts of your workflow, and type “DQ Summary “ + _ This will create a component that has the text part that you want and the _ character turns into a parameter input.
+   
+   ![image](adding-a-parameter.gif)
+main =
+    date12 = Date.today
+    text4 = date12.format 'MMM d yyyy'
+    ## Note - Sheet Names must be 31 characters or less
+    text5 = "DQ Summary " + text4
+    quot1 = enso_project.data/ 'sample_bank_data.xlsx'
+    node2 = Data.read quot1
+    node1 = node2.read 'Sheet1'
+    any1 = node1.aggregate ['product_name'] [..Count 'Count']
+    any16 = any1.write '/Users/ensouser/Downloads/DQ Issues.xlsx' (..Sheet text5) ..Overwrite 
+
+
+
+
+#### METADATA ####
+[[{"index":{"value":1096},"size":{"value":10}},"681575bc-7cba-4efa-be6f-6ee1bffab208"],[{"index":{"value":1119},"size":{"value":26}},"ce3a80be-d04f-4a35-b1ec-4256156c4fa9"],[{"index":{"value":1214},"size":{"value":21}},"8ac0ec7f-7766-45d8-bdec-fa3be58c4dc2"],[{"index":{"value":1248},"size":{"value":18}},"ef858a3c-78c2-461c-b53b-7c833d1622ad"],[{"index":{"value":1248},"size":{"value":42}},"b5232744-6b3e-4257-9ad5-3958b744ea79"],[{"index":{"value":1303},"size":{"value":15}},"1ea94f96-26b2-4c8e-b552-365b20cf49f8"],[{"index":{"value":1331},"size":{"value":19}},"5b9c72ac-6d17-4454-b803-61fa9ca82091"],[{"index":{"value":1362},"size":{"value":15}},"51b2dec0-0e8a-46ea-9e2b-43cea90226dc"],[{"index":{"value":1362},"size":{"value":32}},"96653ac1-9dd9-451c-9424-980ce8fc3857"],[{"index":{"value":1362},"size":{"value":50}},"23360d6a-2c00-462c-a1a6-cb63f13d5b74"],[{"index":{"value":1425},"size":{"value":69}},"04a22509-f588-4705-8c97-09af3f9b0ee5"],[{"index":{"value":1425},"size":{"value":81}},"bddd4070-7a55-4ec7-a176-744dc37c1b6d"]]
+{"ide":{"node":{"681575bc-7cba-4efa-be6f-6ee1bffab208":{"position":{"vector":[3104,-264]}},"ce3a80be-d04f-4a35-b1ec-4256156c4fa9":{"position":{"vector":[3104,-336]}},"8ac0ec7f-7766-45d8-bdec-fa3be58c4dc2":{"position":{"vector":[3104,-408]},"visualization":{"show":true,"fullscreen":false,"height":88.01246223564955}},"b5232744-6b3e-4257-9ad5-3958b744ea79":{"position":{"vector":[2704,247]}},"ef858a3c-78c2-461c-b53b-7c833d1622ad":{"position":{"vector":[2972,-227]}},"1ea94f96-26b2-4c8e-b552-365b20cf49f8":{"position":{"vector":[2704,175]}},"5b9c72ac-6d17-4454-b803-61fa9ca82091":{"position":{"vector":[2712,103]}},"23360d6a-2c00-462c-a1a6-cb63f13d5b74":{"position":{"vector":[2773,31]},"visualization":{"show":true,"fullscreen":false}},"96653ac1-9dd9-451c-9424-980ce8fc3857":{"position":{"vector":[2773,109]}},"51b2dec0-0e8a-46ea-9e2b-43cea90226dc":{"position":{"vector":[2773,109]}},"bddd4070-7a55-4ec7-a176-744dc37c1b6d":{"position":{"vector":[2773,-672]}},"04a22509-f588-4705-8c97-09af3f9b0ee5":{"position":{"vector":[2335,-445]}}},"import":{}}}

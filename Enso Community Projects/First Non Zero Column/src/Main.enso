@@ -1,0 +1,25 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+main =
+    table1 = Table.new [['Label', ['Bananas', 'Apples', 'Oranges']], ['2024-01', [0, 2, Nothing]], ['2024-02', [1, 2, 0]], ['2024-03', [1, 1, 1]]]
+    ## Named the columns in here to avoid a rename columns.
+    any1 = table1.transpose ['Label'] 'First Month' 'First Value'
+    ## Removes both the Nothings and ==0
+    any3 = any1.filter 'First Value' (..Not_Equal 0)
+    ## Picks the first remaining value (could use aggregate if preferred)
+    any2 = any3.distinct ['Label']
+    ## Add the columns back
+    any4 = table1.merge any2 ['Label'] True
+
+
+
+#### METADATA ####
+[[{"index":{"value":271},"size":{"value":9}},"3b09b4cc-3204-433f-a682-5df50e364d81"],[{"index":{"value":271},"size":{"value":133}},"697d18e1-0aba-45dc-9d18-b1581e98b93d"],[{"index":{"value":476},"size":{"value":16}},"b6c09de6-94b3-4d2a-b8b8-844fdda35d66"],[{"index":{"value":476},"size":{"value":26}},"255dffcf-2039-4906-9244-5937c0bad567"],[{"index":{"value":476},"size":{"value":40}},"66ee93f3-a8e5-46a9-8651-f322c33e91f8"],[{"index":{"value":476},"size":{"value":54}},"771e1807-7881-4a0a-97bb-f7cd3c6c7592"],[{"index":{"value":583},"size":{"value":11}},"f488ade5-fbaf-4bdd-ba14-aca92e27333a"],[{"index":{"value":583},"size":{"value":25}},"9a50740c-96ff-44b8-9b32-f5457f6f6b21"],[{"index":{"value":583},"size":{"value":41}},"6e72972a-1ecf-4a4c-891f-c377ce3a9388"],[{"index":{"value":710},"size":{"value":13}},"76f3dc72-2af3-4264-9bf9-f4f865e8624d"],[{"index":{"value":710},"size":{"value":23}},"6bb0a3e4-43d8-4a87-a45a-b5eac159f1ea"],[{"index":{"value":773},"size":{"value":12}},"ffb52b45-4f14-4909-8d1f-d5644d8b7677"],[{"index":{"value":773},"size":{"value":17}},"04f3dfa6-63e6-47f1-aef2-15b99e9d07b1"],[{"index":{"value":773},"size":{"value":27}},"16b1160c-368b-4a8f-b3c4-ab4d8cf943a0"],[{"index":{"value":773},"size":{"value":32}},"dd2a49d0-db2c-4df2-b767-cd17c41607f3"]]
+{"ide":{"node":{"697d18e1-0aba-45dc-9d18-b1581e98b93d":{"position":{"vector":[-283,290]}},"3b09b4cc-3204-433f-a682-5df50e364d81":{"position":{"vector":[110,-19]}},"771e1807-7881-4a0a-97bb-f7cd3c6c7592":{"position":{"vector":[-195,92]}},"66ee93f3-a8e5-46a9-8651-f322c33e91f8":{"position":{"vector":[-283,-94]}},"255dffcf-2039-4906-9244-5937c0bad567":{"position":{"vector":[-283,-94]}},"b6c09de6-94b3-4d2a-b8b8-844fdda35d66":{"position":{"vector":[-283,-94]}},"6e72972a-1ecf-4a4c-891f-c377ce3a9388":{"position":{"vector":[-195,20]}},"9a50740c-96ff-44b8-9b32-f5457f6f6b21":{"position":{"vector":[-203,-173]}},"f488ade5-fbaf-4bdd-ba14-aca92e27333a":{"position":{"vector":[-203,-173]}},"6bb0a3e4-43d8-4a87-a45a-b5eac159f1ea":{"position":{"vector":[-195,-52]}},"76f3dc72-2af3-4264-9bf9-f4f865e8624d":{"position":{"vector":[-283,-166]}},"dd2a49d0-db2c-4df2-b767-cd17c41607f3":{"position":{"vector":[-283,-124]},"visualization":{"show":true}},"16b1160c-368b-4a8f-b3c4-ab4d8cf943a0":{"position":{"vector":[-244,-363]}},"04f3dfa6-63e6-47f1-aef2-15b99e9d07b1":{"position":{"vector":[-244,-363]}},"ffb52b45-4f14-4909-8d1f-d5644d8b7677":{"position":{"vector":[-244,-363]}}},"import":{}}}

@@ -1,0 +1,44 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## # Calculating and Applying Quartiles to a Dataset
+
+   ![image](percentile_overview.jpeg)
+
+
+   As of December 2024, we don't yet have a component to do this in a single step, but here is how you can apply various percentiles to your dataset. 
+
+   1) Calculate the percentiles using the `aggregate` component.
+   2) Transpose the result to create a single row for each percentile
+   3) Dynamically build an if statement that can have any number of tiles
+   4) Use a `set` component to apply a tilel name to each row in the dataset
+main =
+    quot1 = enso_project.data/ 'sales_data.csv'
+    node1 = Data.read quot1
+    ## Calculate any number of percentiles here. In this case, we are just calculating three since we are creating quartiles. 
+    any1 = node1.aggregate columns=[..Percentile 0.25 'Total_Sales' "Bottom Quartile", ..Percentile column='Total_Sales' as="Bottom Middle Quartile", ..Percentile 0.75 'Total_Sales' "Top Middle Quartile"]
+    any5 = any1.transpose attribute_column_name="Quartile"
+    ## By building up our if statement in this way, we can dynamically generate the statement with any number of tiles
+    any2 = any5.set (expr '"if [Total_Sales] <= "+format([Value])+" then """+[Quartile]+""" else "') "statement"
+    ## Concatenate the if statement together into a single line
+    any3 = any2.aggregate columns=[..Concatenate 'statement' "statement"]
+    ## Add on the closing else value
+    any4 = any3.set (expr '[statement] + """Top Quartile"""') "statement"
+    ## This step gets us the text value of the statement that we can pass into the expression
+    any7 = any4.get_value 'statement'
+    ## Apply the if statement to all rows
+    any6 = node1.set (expr any7) "Quartile"
+    ## Prove that we got 4 equal sized groups
+    any8 = any6.aggregate ['Quartile'] [..Count]
+
+
+
+#### METADATA ####
+[[{"index":{"value":802},"size":{"value":18}},"13ce02c9-ed30-4294-be44-22e4cb23f4ab"],[{"index":{"value":802},"size":{"value":35}},"b600a558-1a48-45b7-af9d-e72ecc0cc1df"],[{"index":{"value":850},"size":{"value":15}},"6e694a95-445e-4c3d-87cd-d61a7d3d995b"],[{"index":{"value":1004},"size":{"value":15}},"0f6b249e-ab38-4a55-aacd-2ea1cb19c8f7"],[{"index":{"value":1004},"size":{"value":193}},"e2a1e7ca-e788-4b76-b983-eafd39af0df6"],[{"index":{"value":1209},"size":{"value":14}},"f13f33c4-02bc-4c6c-ad13-3370b503fe75"],[{"index":{"value":1209},"size":{"value":47}},"75927b9e-a53e-453a-b64f-67371b802dea"],[{"index":{"value":1387},"size":{"value":8}},"72147edd-20ba-4bd5-9857-183880ca0877"],[{"index":{"value":1387},"size":{"value":89}},"8cf2de05-0209-41be-94e2-9d1eacbe70db"],[{"index":{"value":1387},"size":{"value":101}},"0ae2fdc8-9b85-49ab-99ab-9cb52db9f304"],[{"index":{"value":1564},"size":{"value":14}},"86354d54-c726-4c04-9d48-d85d9b6444ed"],[{"index":{"value":1564},"size":{"value":62}},"5663d627-3169-4f57-8050-934889f0c311"],[{"index":{"value":1675},"size":{"value":8}},"ca797cc3-c130-4a17-879a-1ced78a119e2"],[{"index":{"value":1675},"size":{"value":50}},"45e8591e-db3e-45fe-8481-5478f6c9e136"],[{"index":{"value":1675},"size":{"value":62}},"933df22d-bed6-4acb-b49e-79a639db18a9"],[{"index":{"value":1843},"size":{"value":14}},"ffa93d6e-2375-4b9e-a2c6-84e0edb64147"],[{"index":{"value":1843},"size":{"value":26}},"ae3892da-4a5f-4cc6-a853-e62764cedf50"],[{"index":{"value":1923},"size":{"value":9}},"61f87220-3908-4551-a7f1-8f93912b2175"],[{"index":{"value":1923},"size":{"value":21}},"ca121aaf-6cd3-41fb-aca3-5818db416cd2"],[{"index":{"value":1923},"size":{"value":32}},"de73cd2d-d0ec-4eac-8aa1-217aec5aa6ae"],[{"index":{"value":2013},"size":{"value":14}},"4ff9c4fc-0021-4813-a3b8-b204f6548e50"],[{"index":{"value":2013},"size":{"value":27}},"ccca1c97-85cd-44f8-be1b-89612811513d"],[{"index":{"value":2013},"size":{"value":37}},"01194d85-91b4-449c-86b2-fc524a7c74d9"]]
+{"ide":{"node":{"b600a558-1a48-45b7-af9d-e72ecc0cc1df":{"position":{"vector":[-145,555]}},"13ce02c9-ed30-4294-be44-22e4cb23f4ab":{"position":{"vector":[475,-1954]}},"6e694a95-445e-4c3d-87cd-d61a7d3d995b":{"position":{"vector":[-235,449]},"visualization":{"show":true,"width":730.21484375}},"e2a1e7ca-e788-4b76-b983-eafd39af0df6":{"position":{"vector":[-145,198]},"visualization":{"show":true}},"0f6b249e-ab38-4a55-aacd-2ea1cb19c8f7":{"position":{"vector":[-235,227]}},"75927b9e-a53e-453a-b64f-67371b802dea":{"position":{"vector":[-145,-24]},"visualization":{"show":true,"width":922.3671875,"height":163.515625}},"f13f33c4-02bc-4c6c-ad13-3370b503fe75":{"position":{"vector":[-145,-168]},"visualization":{"show":true,"height":278.09765625}},"0ae2fdc8-9b85-49ab-99ab-9cb52db9f304":{"position":{"vector":[-145,-278]},"visualization":{"show":true,"width":963.9609375,"height":182.76171875}},"8cf2de05-0209-41be-94e2-9d1eacbe70db":{"position":{"vector":[-70,-545]}},"72147edd-20ba-4bd5-9857-183880ca0877":{"position":{"vector":[-69,-510]}},"5663d627-3169-4f57-8050-934889f0c311":{"position":{"vector":[-145,-532]},"visualization":{"show":true,"width":940.33203125}},"86354d54-c726-4c04-9d48-d85d9b6444ed":{"position":{"vector":[-70,-767]}},"933df22d-bed6-4acb-b49e-79a639db18a9":{"position":{"vector":[-145,-776]},"visualization":{"show":true,"width":1098.2275390625}},"45e8591e-db3e-45fe-8481-5478f6c9e136":{"position":{"vector":[-47,-1056]}},"ca797cc3-c130-4a17-879a-1ced78a119e2":{"position":{"vector":[4,-997]}},"ae3892da-4a5f-4cc6-a853-e62764cedf50":{"position":{"vector":[-102,-1026]},"visualization":{"show":true,"width":1040.4970703124998}},"ffa93d6e-2375-4b9e-a2c6-84e0edb64147":{"position":{"vector":[124,-1026]}},"de73cd2d-d0ec-4eac-8aa1-217aec5aa6ae":{"position":{"vector":[-235,-1285]},"visualization":{"show":true,"width":836.859375,"height":266.4609375}},"ca121aaf-6cd3-41fb-aca3-5818db416cd2":{"position":{"vector":[-170,-1172]}},"61f87220-3908-4551-a7f1-8f93912b2175":{"position":{"vector":[-180,-1135]}},"01194d85-91b4-449c-86b2-fc524a7c74d9":{"position":{"vector":[-235,-1677]},"visualization":{"show":true,"width":866.03515625,"height":204.853515625}},"ccca1c97-85cd-44f8-be1b-89612811513d":{"position":{"vector":[-235,-1624]}},"4ff9c4fc-0021-4813-a3b8-b204f6548e50":{"position":{"vector":[-235,-1624]}}},"widget":{},"snapshot":"eJx9VcFu20YQvesrXukDLdhgHVlOeqgOdlwUPRRIYDU9CII8IkfUustdencpWfn6YpYiLcJxbiR35s17b2aWG2crPAQyBbkiuyPPUFVtXQBpPdoMTue01j85vqdA658C3P778P7hn9aWmle3tXo/5sHY/UbTf4Max8c+6I8XqmrN/s3BN+Ub0uo7BWXNaHR2hjN8Jp03moIyJcgUuK1rfZCXrw25oDR7BAuCiPMcRiMAvyxURSUvz2t2ORuJWtkdu53iffZUczkexbhbD7vBPedcrdlhcjWZXmLPKKxJAw4csKUdg5DbqraGTZBahUXYKg9lQPDKlJrhA9eXWDcBW3YM5bG1exxsg5wMSDhjR07ZxuOVVKR+sI1D0bLPEHl9GPeyGWHLg5RGSsavj1SWjksK/PjKMBOAyRhzR8bX1rcAjn2jI/vcsaD2zJ3dY2MdmPLtSR1BuR7j/mCoUjlpfcC6UboAGagNfKDAVTRkSyGKbK0yB5gmumk3iIQFaTrGP16KPnoOj0M7W3MoBmsYqli+RjrCTZko4GjQqCJlMBNMPDc2fMAMbLxd1c4+cR4yifsVqSfNfiUvWe53aYw3tmCJl0nJHFPRIsSzs7MTx4ciTr2X5mb4y7QDkJPnOC/kGE+NFx9ehzVsHbO4nHMXE72Xs+dudjPE8mQOwiwyzPquIre6qYyfLbLsS88CV9nkBuncBtKrB9GZIrmzIdiq34nkEoOUFmg2TCI/6/L+VkWh+d30q+zTm4pzW79JW3ZibjCLmrLQTyGF4NS6Cbxqyayk07Okz+3acHccNLGpqSHLMZg3dTR/T4fovYxecTKlJRt23d68pu1V2L43nfJ90jK+yTwHnPNL7ZAmaoPFieolfp8hudhYV1E4X3wj3fByfJFIKYMkSS4WnZzlRZIkYO0ZSTpG0hPpdX62JqfApqM6XCpbctiygzLxcjvuqlaGO8LXLeHJj8flFD3tcdNTIsuOyW1RwLZblmsbb5dIfCf6unLTttz1qT+LHmyJC9EvM9E3NHlH+Fy6J/clSg5yncXKgV9CWzG2ZtC7eMUcW12T960rEiM82Hv5Wxx5fmp5TrOSw6rFO9HfS453zg9sl/+VXDv9XHzs1/JVuJQZ4+3ofnF2xz3b0gZMwc8NaXj1nQuUzjZ1j/xby/TjSQMXaYeZLhG72JiwHP0PSzu0/A=="}}

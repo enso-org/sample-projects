@@ -1,0 +1,131 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## # 2024: Week 49 - Jersey Number Analytics 
+
+   December 04, 2024
+
+   Created by: Carl Allchin
+
+
+   When watching basketball this weekend, I suddenly started to wonder what is the lowest number that isn't found on any NBA players jersey? Well there's only one way to work that out… data!
+
+
+   But there are other questions that started flowing too:
+
+
+   What's the average salary per 10 centimetres grown? (how much should my parents incentivised me to eat more broccoli?)
+
+   What's the tallest team in the NBA? And who's the shortest team? 
+
+   Do taller players wear larger numbers?
+
+   Just like Week 4 2019 challenge, data preparation tools can often allow us to get to the answers we need. Can you find the answers too?
+
+   ## Input
+
+
+   There's [one Excel workbook](<https://docs.google.com/spreadsheets/d/143-jGsRPUdCy57R2mR8yhcRtWNh36-df/edit?usp=drive_link&ouid=112036106295107015452&rtpof=true&sd=true>) with 30 individual worksheets:
+
+
+   ![image](<https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitLzULVoNVTSiJIWmhWSjj_iEGQpOU31H3pbEy2FJjZ_AMrbNCuincuA952hHryQnB6C-qdmLfsadAlnaff5e5FA3xWlVG-TyKKY7Xj6JptdmrkKID3tAmzY9Wunvn2HaOA00TrIqm54_tq83pppozjjjDrTqdlpGx6Jq747rEZWI2fhh0BugLQVpEIxoU/w640-h226/Screenshot%202024-11-28%20at%2012.48.17.png>)
+
+
+   ## Requirements 
+
+   - Input the data
+   - Combine all 30 worksheets together
+   - Answer the following questions through creating separate flows:
+    - What's the lowest number not used on a jersey in the NBA?
+    - What's the average salary per 10cm of height? 
+    - What's the shortest average height team in the NBA? What's the tallest team?
+    - Do taller players choose larger jersey numbers?
+   - Share your answers with us (and your flow of how you formed them)
+
+   ## Output
+
+
+   This week there are no outputs apart from answers:
+
+   1. What's the lowest number not used on a jersey in the NBA?
+    38
+   2. What's the average salary per 10cm of height? 
+    1.7m = null
+    1.8m = $10.1m
+    1.9m = $13.1m
+    2.0m = $10.4m
+    2.1m = $12.5m
+    2.2m = $13.0m
+   3. What's the shortest average height team in the NBA? What's the tallest team?
+    Shortest = Golden State Warriors
+    Tallest = Denver Nuggets
+   4. Do taller players choose larger jersey numbers?
+    1.7m = 17
+    1.8m = 12.6
+    1.9m = 12.7
+    2.0m = 17.6
+    2.1m = 20.5
+    2.2m = 15.3
+
+
+   Here's my flow for reference (without too many clues)
+
+   ![image](<https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUNdOm9ybL2zpffbdaNDNC4ScQ6M_ywMdbKohnuiQyiYj5K4NiQGtDzJxEBWRiNeF28lvfylxke4x4Fj3VgY50XdUz8004Pe3LS_rWetJ9d7sVt10coBsAje6XjWVwN9a8Va-p8fAYZXqDUFYv3GjxB8I-zJOWgUtaIcxgIVdL-cJdiX8YUz2hKiNTPpFf/w640-h252/Screenshot%202024-11-28%20at%2012.51.32.png>)
+
+
+   After you finish the challenge make sure to fill in the participation tracker, then share your solution on Twitter using #PreppinData and tagging @Datajedininja, @JennyMartinDS14 & @TomProwse1
+
+
+   You can also post your solution on the Tableau Forum where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help! 
+main =
+    quot1 = enso_project.data/ 'PD 2024 Wk 49 Input.xlsx'
+    file1 = Data.read quot1
+    table1 = file1.read_many
+    any1 = table1.remove_blank_columns
+    ## Remove warning about blank column
+    any3 = any1.remove_warnings
+    table6 = any3.parse_to_columns 'NAME' "^(?<Name>.*?)(?<JerseyNumber>\d+)$"
+    table5 = table6.parse ['JerseyNumber', 'SALARY', 'WT'] ..Integer
+    ## Remove expected warning about values that would not parse that are blank
+    any2 = table5.remove_warnings
+    table11 = any2.parse ['HT'] ..Float
+    any9 = table11.set (..Simple_Expr (..Name 'HT') (..Math (..Round 1))) "HT"
+    any10 = any9.aggregate ['HT'] [..Average 'SALARY' "Avg Salary"]
+    any4 = table11.aggregate ['Sheet Name'] [..Average 'HT']
+    any5 = any4.sort [(..Name 'Average HT' ..Ascending)]
+    ## Answer 3a - Shortest Team
+    any6 = any5.get_value 'Sheet Name' 0
+    ## Answer 3b - Tallest Team
+    any7 = any5.get_value 'Sheet Name' -1
+    any13 = table11.set (..Simple_Expr (..Name 'JerseyNumber') (..Add 1)) "Jersey Plus 1"
+    table4 = any13.join any13 ..Left_Exclusive [(..Equals 'Jersey Plus 1' 'JerseyNumber')]
+    any14 = table4.sort [(..Name 'Jersey Plus 1' ..Ascending)]
+    any15 = any14.filter 'Jersey Plus 1' ..Not_Nothing
+    ## Answer 1 - Lowest number not used on a jersey in the NBA
+    any16 = any15.get_value 'Jersey Plus 1'
+    ## Remove expected warning about comparing floating point numbers
+    any12 = any10.remove_warnings
+    any11 = any12.set (expr 'round([Avg Salary]/1000000,1)') "Avg Salary" set_mode=..Update
+    any17 = any11.filter 'HT' ..Not_Nothing
+    any20 = table11.set (..Simple_Expr (..Name 'HT') (..Math (..Round 1))) "HT"
+    any21 = any20.aggregate ['HT'] [..Average 'JerseyNumber' "Avg Jersey Number"]
+    ## Remove expected warning about comparing floating point numbers
+    any22 = any21.remove_warnings
+    any23 = any22.set (expr 'round([Avg Jersey Number],1)') "Avg Jersey Number" set_mode=..Update
+    any24 = any23.filter 'HT' ..Not_Nothing
+    ## Answer 2 - Average salary per 10cm of height
+    node1 = any17.sort [(..Name 'HT' ..Ascending )]
+    ## Answer 4 - Do taller players choose larger jersey numbers?
+    node2 = any24.sort [(..Name 'HT' ..Ascending )]
+
+
+
+#### METADATA ####
+[[{"index":{"value":3356},"size":{"value":18}},"1af0ccff-e9cc-43a9-bef7-ebd1387a7a61"],[{"index":{"value":3356},"size":{"value":45}},"a6ff708c-f3b6-4a09-9316-ca01c7d427cd"],[{"index":{"value":3414},"size":{"value":15}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":3443},"size":{"value":15}},"595de5a6-bd05-48ca-9700-6d8f5c128332"],[{"index":{"value":3470},"size":{"value":27}},"b8f59309-7568-4c1b-8bc7-8c47dee5e019"],[{"index":{"value":3550},"size":{"value":20}},"0098cd80-1901-4ba5-b40f-c705ece83ba7"],[{"index":{"value":3584},"size":{"value":21}},"e8637298-f517-4916-b9c8-a48cfb435b6d"],[{"index":{"value":3584},"size":{"value":28}},"0a748576-fa78-4877-a533-ccc0e1da06d4"],[{"index":{"value":3584},"size":{"value":65}},"91d0edac-584e-45dc-ab3b-e70fead30578"],[{"index":{"value":3663},"size":{"value":12}},"30080c63-78e8-4726-8866-07fe7d519e72"],[{"index":{"value":3663},"size":{"value":45}},"c2789aad-92aa-4002-a70d-c843a53e1eb9"],[{"index":{"value":3663},"size":{"value":55}},"6e33b954-ccad-430e-b140-1184a59f887c"],[{"index":{"value":3810},"size":{"value":22}},"3051ab66-dd78-4c7e-8e52-803d8fb1be98"],[{"index":{"value":3847},"size":{"value":10}},"5a0818a4-d32a-48e9-a0d4-f6da73161194"],[{"index":{"value":3847},"size":{"value":17}},"4608aad1-0d61-4e9a-93ca-5e136cba33b0"],[{"index":{"value":3847},"size":{"value":25}},"0a7633e3-6bb7-4396-926e-a1709b677f65"],[{"index":{"value":3884},"size":{"value":11}},"d89a51e5-b3d2-4a93-99d5-e4bbd125bac8"],[{"index":{"value":3884},"size":{"value":62}},"b1655960-5600-4088-bdfb-65e4452e1258"],[{"index":{"value":3884},"size":{"value":67}},"6c3270b1-c23b-4b07-9d07-b85ee9da5294"],[{"index":{"value":3964},"size":{"value":14}},"73377e22-6016-4c3e-ab38-83cf7b727a45"],[{"index":{"value":3964},"size":{"value":21}},"d1870514-38fd-46ee-bc41-fd462fa954b5"],[{"index":{"value":3964},"size":{"value":55}},"361fb6f4-12e4-4006-8322-0c003243db13"],[{"index":{"value":4031},"size":{"value":17}},"7645d0dd-056d-4e89-851a-d63a6875ce16"],[{"index":{"value":4031},"size":{"value":32}},"dd47b1c2-c8f7-4b5b-a7e7-2c93b808da7e"],[{"index":{"value":4031},"size":{"value":49}},"a54e4f86-a5c3-45b9-8b02-3af5bf88e085"],[{"index":{"value":4092},"size":{"value":9}},"f242cfc4-1be7-432c-822c-1c2e2c94198f"],[{"index":{"value":4092},"size":{"value":45}},"14a0d6e1-1424-4485-8f10-82eff4a88826"],[{"index":{"value":4182},"size":{"value":14}},"9488da71-ee2d-4d73-af0f-9a77c5d7d96e"],[{"index":{"value":4182},"size":{"value":27}},"8350a8dd-49ca-41e1-b407-05cca80a7468"],[{"index":{"value":4182},"size":{"value":29}},"edf28c3c-eeea-4834-971c-76acdae285b5"],[{"index":{"value":4255},"size":{"value":14}},"0efbdd63-a7f0-4a12-bf47-40b49402c731"],[{"index":{"value":4255},"size":{"value":27}},"5d95514b-c3dc-4be9-a9da-c6f419fd3b3a"],[{"index":{"value":4255},"size":{"value":30}},"efc51694-be3c-4236-a86c-74d96751d42c"],[{"index":{"value":4298},"size":{"value":11}},"d9bc0e74-741e-4ec3-948f-49d3ce0b820e"],[{"index":{"value":4298},"size":{"value":61}},"1a9ccede-28da-41b9-9571-f4b0f68c6fcd"],[{"index":{"value":4298},"size":{"value":77}},"b8afa42c-ef32-4755-8a95-f16a417c619b"],[{"index":{"value":4389},"size":{"value":10}},"3461ac8b-f212-4598-9bd4-58f2a2e55b54"],[{"index":{"value":4389},"size":{"value":16}},"a2e39edb-4d74-48ef-8e44-5b9d143f654d"],[{"index":{"value":4389},"size":{"value":33}},"cb1b50e8-92c9-4b41-bd49-64057bf5d113"],[{"index":{"value":4389},"size":{"value":77}},"4a1cad1c-e12e-486a-955b-3c28769fa541"],[{"index":{"value":4479},"size":{"value":11}},"26c14f45-307e-4ad3-9df5-9de377dda9d9"],[{"index":{"value":4479},"size":{"value":50}},"e4f31b6b-1c78-4ed4-af76-3cc3dbf4404f"],[{"index":{"value":4542},"size":{"value":12}},"2a409b9b-f1ef-4670-8dc8-65092b9a0c42"],[{"index":{"value":4542},"size":{"value":28}},"34e10e85-7e2d-42af-bf99-f31ccb44db32"],[{"index":{"value":4542},"size":{"value":42}},"9f508a97-d656-4061-b5d0-c2401f61f312"],[{"index":{"value":4661},"size":{"value":15}},"112febf9-2d1f-42b8-8c3d-56dd3db2c330"],[{"index":{"value":4661},"size":{"value":31}},"c5039227-72dd-436c-9031-afaaebc0a32a"],[{"index":{"value":4775},"size":{"value":21}},"e8d04433-eff1-4479-9d34-5909dce3263d"],[{"index":{"value":4809},"size":{"value":9}},"6bba5074-9d56-4d42-886d-3b8602236ced"],[{"index":{"value":4809},"size":{"value":48}},"5db384b7-f753-4e04-bd59-5e97d54e2325"],[{"index":{"value":4809},"size":{"value":61}},"f1065ff4-c173-4997-8165-e90bc9e00579"],[{"index":{"value":4809},"size":{"value":79}},"eb16577d-746a-4f19-bf36-5076b152830f"],[{"index":{"value":4901},"size":{"value":12}},"5487a2a0-2c96-41eb-887f-0e60265b2a14"],[{"index":{"value":4901},"size":{"value":17}},"56c345d8-aac0-417b-af7b-879d5c1cad4f"],[{"index":{"value":4901},"size":{"value":31}},"ccdf6641-d34f-4e8e-bf53-ca60c488a3c1"],[{"index":{"value":4945},"size":{"value":67}},"e9396cf5-d507-4b4d-ba9f-bc4ed13d44e3"],[{"index":{"value":5025},"size":{"value":69}},"2598d099-2494-4475-9347-600deab68ec4"],[{"index":{"value":5177},"size":{"value":21}},"cb7d830b-863a-49ff-8589-d1296b13296a"],[{"index":{"value":5211},"size":{"value":85}},"bd47ad91-349b-42bc-ac22-a97d2d82b0bc"],[{"index":{"value":5309},"size":{"value":31}},"20a1440a-976f-4c38-909a-f6a8a47efa37"],[{"index":{"value":5405},"size":{"value":39}},"20fb381b-6537-485a-bf12-e5029ed87c3d"],[{"index":{"value":5523},"size":{"value":39}},"1a39f682-39f0-4b5c-a094-5cc1df392382"]]
+{"ide":{"node":{"a6ff708c-f3b6-4a09-9316-ca01c7d427cd":{"position":{"vector":[-361,-28]}},"1af0ccff-e9cc-43a9-bef7-ebd1387a7a61":{"position":{"vector":[214,-379]}},"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-388,-163]},"visualization":{"show":false,"width":1027.671875,"height":193}},"595de5a6-bd05-48ca-9700-6d8f5c128332":{"position":{"vector":[-388,-235]},"visualization":{"show":false,"width":914.75,"height":302.69140625}},"b8f59309-7568-4c1b-8bc7-8c47dee5e019":{"position":{"vector":[-388,-287]},"visualization":{"show":false,"width":1039.1015625}},"0098cd80-1901-4ba5-b40f-c705ece83ba7":{"position":{"vector":[-388,-385]}},"91d0edac-584e-45dc-ab3b-e70fead30578":{"position":{"vector":[-388,-457]},"visualization":{"show":false,"width":1317.3515625,"height":286.87890625}},"0a748576-fa78-4877-a533-ccc0e1da06d4":{"position":{"vector":[-192,-1373]}},"e8637298-f517-4916-b9c8-a48cfb435b6d":{"position":{"vector":[-192,-1373]}},"6e33b954-ccad-430e-b140-1184a59f887c":{"position":{"vector":[-388,-529]}},"c2789aad-92aa-4002-a70d-c843a53e1eb9":{"position":{"vector":[-388,-529]}},"30080c63-78e8-4726-8866-07fe7d519e72":{"position":{"vector":[-388,-529]}},"3051ab66-dd78-4c7e-8e52-803d8fb1be98":{"position":{"vector":[-388,-632]}},"0a7633e3-6bb7-4396-926e-a1709b677f65":{"position":{"vector":[-388,-704]}},"4608aad1-0d61-4e9a-93ca-5e136cba33b0":{"position":{"vector":[287,-1583]}},"5a0818a4-d32a-48e9-a0d4-f6da73161194":{"position":{"vector":[287,-1583]}},"6c3270b1-c23b-4b07-9d07-b85ee9da5294":{"position":{"vector":[393,-944]}},"b1655960-5600-4088-bdfb-65e4452e1258":{"position":{"vector":[1587,-2562]}},"d89a51e5-b3d2-4a93-99d5-e4bbd125bac8":{"position":{"vector":[1587,-2562]}},"361fb6f4-12e4-4006-8322-0c003243db13":{"position":{"vector":[393,-1016]}},"d1870514-38fd-46ee-bc41-fd462fa954b5":{"position":{"vector":[1587,-2634]}},"73377e22-6016-4c3e-ab38-83cf7b727a45":{"position":{"vector":[1587,-2634]}},"a54e4f86-a5c3-45b9-8b02-3af5bf88e085":{"position":{"vector":[1190,-934]}},"dd47b1c2-c8f7-4b5b-a7e7-2c93b808da7e":{"position":{"vector":[224,-1797]}},"7645d0dd-056d-4e89-851a-d63a6875ce16":{"position":{"vector":[224,-1797]}},"14a0d6e1-1424-4485-8f10-82eff4a88826":{"position":{"vector":[1190,-986]},"visualization":{"show":false,"width":667.23828125}},"f242cfc4-1be7-432c-822c-1c2e2c94198f":{"position":{"vector":[224,-2019]}},"edf28c3c-eeea-4834-971c-76acdae285b5":{"position":{"vector":[1293,-1088]},"visualization":{"show":true}},"8350a8dd-49ca-41e1-b407-05cca80a7468":{"position":{"vector":[224,-2241]}},"9488da71-ee2d-4d73-af0f-9a77c5d7d96e":{"position":{"vector":[224,-2241]}},"efc51694-be3c-4236-a86c-74d96751d42c":{"position":{"vector":[1203,-1310]},"visualization":{"show":true}},"5d95514b-c3dc-4be9-a9da-c6f419fd3b3a":{"position":{"vector":[731,-2496]}},"0efbdd63-a7f0-4a12-bf47-40b49402c731":{"position":{"vector":[731,-2496]}},"b8afa42c-ef32-4755-8a95-f16a417c619b":{"position":{"vector":[-388,-776]}},"1a9ccede-28da-41b9-9571-f4b0f68c6fcd":{"position":{"vector":[-355,-1393]}},"d9bc0e74-741e-4ec3-948f-49d3ce0b820e":{"position":{"vector":[-355,-1393]}},"4a1cad1c-e12e-486a-955b-3c28769fa541":{"position":{"vector":[-388,-848]}},"cb1b50e8-92c9-4b41-bd49-64057bf5d113":{"position":{"vector":[-354,-1741]}},"a2e39edb-4d74-48ef-8e44-5b9d143f654d":{"position":{"vector":[-354,-1741]}},"3461ac8b-f212-4598-9bd4-58f2a2e55b54":{"position":{"vector":[-354,-1741]}},"e4f31b6b-1c78-4ed4-af76-3cc3dbf4404f":{"position":{"vector":[-388,-920]}},"26c14f45-307e-4ad3-9df5-9de377dda9d9":{"position":{"vector":[-354,-1813]}},"9f508a97-d656-4061-b5d0-c2401f61f312":{"position":{"vector":[-388,-1006]}},"34e10e85-7e2d-42af-bf99-f31ccb44db32":{"position":{"vector":[-310,-2028]}},"2a409b9b-f1ef-4670-8dc8-65092b9a0c42":{"position":{"vector":[-310,-2028]}},"c5039227-72dd-436c-9031-afaaebc0a32a":{"position":{"vector":[-388,-1126]},"visualization":{"show":true}},"112febf9-2d1f-42b8-8c3d-56dd3db2c330":{"position":{"vector":[-310,-2250]}},"e8d04433-eff1-4479-9d34-5909dce3263d":{"position":{"vector":[393,-1099]}},"eb16577d-746a-4f19-bf36-5076b152830f":{"position":{"vector":[393,-1191]},"visualization":{"show":false,"height":242.20703125}},"f1065ff4-c173-4997-8165-e90bc9e00579":{"position":{"vector":[1644,-2917]}},"5db384b7-f753-4e04-bd59-5e97d54e2325":{"position":{"vector":[1644,-2917]}},"6bba5074-9d56-4d42-886d-3b8602236ced":{"position":{"vector":[1644,-2917]}},"ccdf6641-d34f-4e8e-bf53-ca60c488a3c1":{"position":{"vector":[393,-1282]}},"56c345d8-aac0-417b-af7b-879d5c1cad4f":{"position":{"vector":[920,-1598]}},"5487a2a0-2c96-41eb-887f-0e60265b2a14":{"position":{"vector":[920,-1598]}},"e9396cf5-d507-4b4d-ba9f-bc4ed13d44e3":{"position":{"vector":[1770,-924]}},"2598d099-2494-4475-9347-600deab68ec4":{"position":{"vector":[1770,-996]}},"cb7d830b-863a-49ff-8589-d1296b13296a":{"position":{"vector":[1770,-1079]}},"bd47ad91-349b-42bc-ac22-a97d2d82b0bc":{"position":{"vector":[1770,-1170]},"visualization":{"show":false,"height":242.20703125}},"20a1440a-976f-4c38-909a-f6a8a47efa37":{"position":{"vector":[1770,-1263]}},"20fb381b-6537-485a-bf12-e5029ed87c3d":{"position":{"vector":[393,-1374]},"visualization":{"show":true,"width":557.0771484374999,"height":273.671875}},"1a39f682-39f0-4b5c-a094-5cc1df392382":{"position":{"vector":[1770,-1335]},"visualization":{"show":true,"width":442.166015625,"height":249.0185546875}}},"widget":{},"import":{},"snapshot":"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"}}

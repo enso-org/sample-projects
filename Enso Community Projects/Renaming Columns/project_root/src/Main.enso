@@ -1,0 +1,38 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## ## In Enso Analytics, you can rename columns (aka rename fields) using the rename_columns component.
+
+
+   I am going to show you three different approaches, from beginner to advanced, using Enso.
+
+   - Basic - Enter the field names you wish to change directly in the rename_columns component.
+
+   - Intermediate - get the list of column names and paste them in a Table.input component, and edit the list.
+
+   - Advanced - Programmatically change the names of the columns.
+main =
+    ## Option 2 - get the list of column names and paste them in a Table.input component, and edit the list.
+    table3 = Table.input [['Original', ['Product ID', 'Product Name', 'Category', 'Brand', 'Unit Size', 'Price', 'Stock Quantity', 'Reorder Level', 'Location', 'Organic', 'Discount Available', 'Supplier', 'Expiration Date', 'Shelf Life (days)', 'Popularity Score', 'Seasonal Item', 'Online Availability', 'Weight (grams)', 'Dimensions (cm)', 'Barcode', 'Origin Country', 'Allergens', 'Rating', 'Reviews Count', 'Promotional Price']], ['New', ['Product_ID', 'Product_Name', 'Category', 'Brand', 'Unit_Size', 'Price', 'Stock Quantity', 'Reorder Level', 'Location', 'Organic', 'Discount Available', 'Supplier', 'Expiration Date', 'Shelf Life (days)', 'Popularity Score', 'Seasonal Item', 'Online Availability', 'Weight (grams)', 'Dimensions (cm)', 'Barcode', 'Origin Country', 'Allergens', 'Rating', 'Reviews Count', 'Promotional Price']]]
+    quot1 = enso_project.data/ 'grocery_retailer_products.csv'
+    node1 = Data.read quot1
+    ## Option 1 - Enter the list of field names directly in the rename_columns component.
+    any3 = node1.rename_columns [(Pair.Value 'Product ID' 'Product_ID'), (Pair.Value 'Unit Size' 'Unit_Size')]
+    ## Option 3 - Programmatically change the column names.
+    vector2 = node1.column_names
+    any4 = node1.rename_columns table3
+    any5 = vector2.to_table
+    column2 = any5.text_replace ['Value'] " " "_"
+    any6 = node1.rename_columns column2
+
+
+
+#### METADATA ####
+[[{"index":{"value":855},"size":{"value":11}},"83081471-c92f-4152-a88d-c4795276c70e"],[{"index":{"value":855},"size":{"value":823}},"f0c0a653-ed21-4e80-9dfc-649040fcd6af"],[{"index":{"value":1691},"size":{"value":18}},"4f36f124-1182-472d-aca3-70aace2a1e25"],[{"index":{"value":1691},"size":{"value":50}},"27f7123e-35c5-45a7-beb3-f8ce5cc8d5f4"],[{"index":{"value":1754},"size":{"value":15}},"5c918679-808c-44fc-bd35-5512da364aed"],[{"index":{"value":1871},"size":{"value":20}},"8677a46a-ebef-4c9f-ab14-2cf3a41ffe52"],[{"index":{"value":1871},"size":{"value":99}},"c43784c3-91c5-40f3-b621-9f063598aec2"],[{"index":{"value":2045},"size":{"value":18}},"6a47bdf2-b734-43f1-b69a-ca2fadc83b85"],[{"index":{"value":2075},"size":{"value":20}},"13b1332b-a49e-41b9-a09c-ca66d502f073"],[{"index":{"value":2075},"size":{"value":27}},"931eb31b-4afd-489c-9bec-991bb69f1edc"],[{"index":{"value":2114},"size":{"value":16}},"8e6eb2a7-3ba1-42e1-8d56-4c83101196e3"],[{"index":{"value":2145},"size":{"value":17}},"41d66448-4a2f-4925-91ed-917ace516f70"],[{"index":{"value":2145},"size":{"value":27}},"ae8a8d0d-7edc-4962-812d-083bd19e0527"],[{"index":{"value":2145},"size":{"value":31}},"2ab32bf2-3e67-40a9-97f5-2cb496ba2d5d"],[{"index":{"value":2145},"size":{"value":35}},"c8296184-0e2a-46cd-8373-4a4db2fd9a2d"],[{"index":{"value":2192},"size":{"value":20}},"47fb65c4-ca68-4a10-a427-f182745a53c6"],[{"index":{"value":2192},"size":{"value":28}},"6e3db4ec-0164-4396-8bff-cc236f86f716"]]
+{"ide":{"node":{"f0c0a653-ed21-4e80-9dfc-649040fcd6af":{"position":{"vector":[-7,1188]}},"83081471-c92f-4152-a88d-c4795276c70e":{"position":{"vector":[-191,1169]}},"27f7123e-35c5-45a7-beb3-f8ce5cc8d5f4":{"position":{"vector":[-811,1807]}},"4f36f124-1182-472d-aca3-70aace2a1e25":{"position":{"vector":[-273,822]}},"5c918679-808c-44fc-bd35-5512da364aed":{"position":{"vector":[-811,1714]},"visualization":{"show":true,"width":902.1328125,"height":202.35546875}},"c43784c3-91c5-40f3-b621-9f063598aec2":{"position":{"vector":[-684,1439]},"visualization":{"show":true}},"8677a46a-ebef-4c9f-ab14-2cf3a41ffe52":{"position":{"vector":[-811,1282]}},"6a47bdf2-b734-43f1-b69a-ca2fadc83b85":{"position":{"vector":[-762,1188]},"visualization":{"show":true,"width":335.9921875}},"931eb31b-4afd-489c-9bec-991bb69f1edc":{"position":{"vector":[-68,990]},"visualization":{"show":true,"width":528.91796875}},"13b1332b-a49e-41b9-a09c-ca66d502f073":{"position":{"vector":[-733,1037]}},"8e6eb2a7-3ba1-42e1-8d56-4c83101196e3":{"position":{"vector":[-762,966]}},"c8296184-0e2a-46cd-8373-4a4db2fd9a2d":{"position":{"vector":[-762,894]}},"2ab32bf2-3e67-40a9-97f5-2cb496ba2d5d":{"position":{"vector":[-650,1011]}},"ae8a8d0d-7edc-4962-812d-083bd19e0527":{"position":{"vector":[-650,1011]}},"41d66448-4a2f-4925-91ed-917ace516f70":{"position":{"vector":[-650,1011]}},"6e3db4ec-0164-4396-8bff-cc236f86f716":{"position":{"vector":[-811,822]},"visualization":{"show":true}},"47fb65c4-ca68-4a10-a427-f182745a53c6":{"position":{"vector":[-743,878]}}},"widget":{"f0c0a653-ed21-4e80-9dfc-649040fcd6af":{"WidgetTableEditor":{"size":{"x":436.984375,"y":150}}}},"import":{},"snapshot":"eJztVU1v20YQvetXDOKDbEBmkaTtzQc5MgoBRuxWbXIQBGK8HFJTL3fZ3aFk5tcHsyRtyYHjHNpbocss581787E7KoOvYSXoCgxFdomRgOvGBwG0dlIeef/EO/sd9wIF775LMP+8etn5m/eVpXze8MuYlfP70uL9kcZgPoKuHrBuLMVvHJ84tmj5Cwp7N5mcnMDJCSwdXLnoYe7QdsImzqDzLRh0EMhhTWC8bWsX4RTvcfxWMtkinkEb2VUgWxoc+Qg2vm68IyfZZDIBgCVgDZVPaA9x6/dJRraBCAouSwrkBLBpgkezpTiDVPodVewcBY3CYofOUDEbZDXvLLGfwyVGNnAOV04UvB1SBE0qJqk9x62ymC26SjUDGbEdsHst/ySwVOKaCkYhOIeKJIVZjgK+HJo0yKEroMEopJBaFRDS5cnYNa08kc8SlAp+Ihv15kOxcA63wVcB6xqFDVrbjSVoSC/oy3QYks8mNbKDCyXSEd80OnB499+mrWKi6PdwcRS2Xk9vAlfs0E5nsJ7eBl+0RmC5mM7g8fQRa9LzBxSqfOjUvgzoCjX+ciyw4i/UR7BJxkq8uYffW3TCkgL+IB8KCnBNO1Kx6bU36barfRMqdGzUXHA0vnUC8x2y1VwTX9s0limoffXQcEihsEDp3VuyJVxzSXBaYBfPUjK+aS0Glg5WxoceSBi9QwtLoTopO8uORjG2Q7afiautwKkOt2dbcE0ustfXZur06RKD8QX1BWgX4YNm3jdobi2FilxMxaOwq/o27Jj2sUcOTa69FoMW+vZtNjqKj7Q/HEl+NJL81ZHk/4/kXx3JJj2if1ovb+ECyEWfN8H/TUayAgV/gmkVvKHQ5YEE2VJQv84qZibupinc+YI0XP+OskBY9ITPlsHbo105roPDnfnjC1KZ0XX67pN49gy6Pr1FDtkntC3B4fOHw4t3NoMj3NObP7xsZ5tnhbx/ZUEebrg+1R0Z8eHdY7Y9Ik+IsZafX6ql33Aj7Be4GOky8XlyJl8PVw1FZUIPkgdqLBqC9TRVON3AG/3lb0a2X18SHdgmXwHALOT8"}}

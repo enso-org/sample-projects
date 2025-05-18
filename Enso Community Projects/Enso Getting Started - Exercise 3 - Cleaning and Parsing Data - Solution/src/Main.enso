@@ -1,0 +1,173 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+import Standard.Visualization
+
+## ![Image](eags.png)
+
+   # Cleansing and Parsing Data
+
+   In this example, we are going to work through tidying up a CSV data file.  The data has already been read into the workflow through use of the ***Data.read*** component. We embedded the CSV file into this project and reference the file using (enso_project.data/”crm_customer_data.csv”).  Our objective of this exercise is to achieve the following:
+
+   1.     Ensure that all Date columns are stored as DATE data types
+   2.     Convert all applicable fields to BOOLEAN (T/F) data types
+   3.     Convert all “N/A” text values to Nothing (aka Null) values
+   .
+
+   ## **Objective 1:**  Examine the Data Types for the columns of data:
+
+   1️⃣        Add a new component after the ***read*** component by either dragging from the output port (the bottom edge) of the ***read*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***column_info*** component
+   - Open the data visualization (<>) to see the number of “not nothing” columns and the quantity of data for each field with the associated value type (e.g. Integer, char, or Date).
+
+   ![Image](/images/image.png)
+
+
+   Observations: What we notice about the data includes:
+
+   ·      The data contains various (5) True/False columns stored as text (Char).
+
+   ·      The [`report_date`] is stored as an integer (`20240601` in this case).
+
+   .
+
+   ## **Objective 2:**  Convert the Report_Date from an Integer into a Date column:
+
+   In order to accomplish this data type transformation, we’ll use a ***parse*** component to apply the date structure to the [report_date] data.  The ***parse*** component however expects a “Char” data type as input.  We will first convert the Integer into a Character, then parse the Date  to complete this transition.
+
+   1️⃣        Add a new component after the ***read*** component by either dragging from the output port (the bottom edge) of the ***read*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***format*** component
+   - Click on the columns argument and select the [report_date] column
+   - You now have changed the report_date to a Character string.
+   2️⃣        Add a new component after the ***format*** component.
+
+   - Choose the ***parse*** component
+   - Click on the “columns” argument and select the [report_date] column
+   - Click on the “type” argument and select the Date option (a warning will appear)
+   - Click on the “format” argument and either select the desired output format from the dropdown list or type your format.  If your input format isn’t present, simply select another similar format and EDIT/Update the provided mask (e.g. yyyyMMdd) - Learn more about Enso custom format strings [here](https://help.enso.org/docs/using-enso/custom-formats).
+
+   ![Image](/images/image_1.png)
+
+
+   .
+
+   ## **Objective 3:**  Normalize the Active_Passive data values into a Boolean (T/F) type:
+
+   You may first want to prove that the values are either Active or Passive and that there are no Unknown or Nothing values.  A normalized version of the field would have a name like, “active_CRM”.
+
+   1️⃣        Add a new component after the ***parse*** component by either dragging from the output port (the bottom edge) of the ***parsed*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***aggregate*** component
+   - Click on the ➕ sign (to the right of the columns argument group_by argument and select the [active_passive] column
+   - You can now see 1,347 Active and 653 Passive counts.
+   2️⃣        Add a new component after the ***parse*** component by either dragging from the output port (the bottom edge) of the ***parsed*** component, or clicking the ➕ button on the component.
+
+   3️⃣        Choose the ***set*** component and configure it to create a new [active_CRM] column with a “True” value when the incoming [active_passive] data is “Passive”.
+
+   - Click on the value argument and choose <Simple Expression>.
+   - Click on the input argument and choose the [active_passive] column.
+   - Click on the operation argument and choose the “if” operation.
+   - Click on the condition argument and choose the “Equals” option.
+   - Click on the to argument and choose the <Text Value> option.
+   - Type the value “Active” between the quote marks.
+   There is no need to choose values for `true_value` and `false_value` as they will default to `True` and `False`.
+
+   Type the value “active_CRM” in the single quote marks which follow the term: “as” located to the right after the ‘true & false’ arguments
+
+
+   ![Image](/images/image_2.png)
+
+
+   ## **Objective 4:**  Normalize the Deleted Flag data values into a Boolean (T/F) type:
+
+   Repeat your learnings from Objective 3 and prove the data domain values are “Deleted” and “Not Deleted”.  Then you can UPDATE the [deleted_flag] column by setting the as “ “ argument to the originating fieldname.
+
+   Spoiler:  set (..From (..Name 'deleted_flag') (..If (..Equal 'Deleted') true_value=True)) 'deleted_flag'.
+
+
+   ![Image](/images/image_3.png)
+
+
+   ## **Objective 5:**  Parse the “Yes/No” Char fields into a Boolean (T/F) type
+
+   There are three (3) fields, [is_preferred] , [is_employee] and [special] can be parsed within a single component.
+
+   1️⃣        Add a new component after the ***set*** component by either dragging from the output port (the bottom edge) of the ***set*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***parse*** component
+   ·       Click on the columns argument and choose the [is_preferred] field.
+
+   ·       Click (again) on the columns argument and choose the [is_employee] field.
+
+   ·       Click on the type argument and choose the Boolean option.
+
+   ·       Click on the format argument and choose the ‘Yes/No (Boolean)’ option
+
+   You can visualize the data and see that you have now converted the data types for both of these fields.
+
+   **Objective 5:**  Parse the “Yes/No” Char fields into a Boolean (T/F) type
+
+   Repeat the same method as above will work but you will need a different format string.
+
+   Spoiler:  parse ['has_cd', 'has_investment_account'] ..Boolean 'Yes|No'
+
+
+   ![Image](/images/image_4.png)
+
+
+   ## **Objective 6:**  Within the [crm_code] column, replace the “N/A” value with ‘Nothing’.
+
+   1️⃣        Add a new component after the ***parse*** component by either dragging from the output port (the bottom edge) of the ***parse*** component, or clicking the ➕ button on the component.
+
+   - Choose the ***replace*** component
+   ·       Click on the [➕] following the “lookup_table” operator to see “Pair Value” appear
+
+   ·       Type “N/A” over the default of ‘Current’ text
+
+   ·       Click on the “New” text argument and scroll down to select the <Nothing> option
+
+   ·       Click on the [➕] following the “columns” operator
+
+   ·       Select the [crm_code] column
+
+
+   ![Image](/images/image_5.png)
+
+
+   ## **Objective 7:**  Write the new output to a new “CSV” data file.
+
+   Having now tidied the data, the last step is to write it out to a new file.
+
+   1️⃣        Add a new component after the ***replace*** component by either dragging from the output port (the bottom edge) of the ***replace*** component, or clicking the ➕ button on the component.
+
+   - Add a ***write*** component
+   - Select the output path (where to create a new CSV file) by configuring the path argument
+   - The file will not be written at this point. Click the ▶︎ button at the top of the canvas to run the workflow once with writing enabled.
+   The output file should now be created.
+
+
+   ![Image](/images/image_6.png)
+main =
+    operator1 = "Cleaning and Parsing Data"
+    any1 = (enso_project.data / "crm_data.csv")
+    any2 = Data.read any1
+    table2 = any2.format ['report_date']
+    table3 = table2.parse ['report_date'] ..Date 'yyyyMMdd'
+    table1 = any2.column_info
+    table4 = table3.aggregate ['active_passive'] [..Count]
+    table5 = table3.set (..Simple_Expr (..Name 'active_passive') (..If (..Equal "Active"))) "activeCRM"
+    table6 = table5.aggregate ['deleted_flag'] [..Count]
+    table7 = table5.set (..Simple_Expr (..Name 'deleted_flag') (..If (..Equal "Deleted"))) "deleted_flag"
+    table8 = table7.parse ['is_preferred', 'is_employee', 'special'] ..Boolean 'Yes|No'
+    table9 = table8.replace [(Pair.Value 'N/A' Nothing)] ['crm_code']
+    file1 = table9.write '/Users/ensouser/Downloads/Enso Getting Started Exercise 3.csv'
+
+
+
+#### METADATA ####
+[[{"index":{"value":7815},"size":{"value":27}},"7c75350c-beb9-4bf8-a28b-8da265e60aa6"],[{"index":{"value":7854},"size":{"value":36}},"a3e70175-0bbe-4dce-9895-6af0e3fa9bf2"],[{"index":{"value":7902},"size":{"value":9}},"1c3faf22-3148-46c9-9197-eec0b50eb29c"],[{"index":{"value":7902},"size":{"value":14}},"0896b45c-7a27-4426-8dcd-bc1596516a07"],[{"index":{"value":7930},"size":{"value":11}},"0a99af62-979c-4fa3-8be5-cbbe19068528"],[{"index":{"value":7930},"size":{"value":27}},"3af0e58e-e081-4cd9-8056-6373578c3019"],[{"index":{"value":7971},"size":{"value":12}},"595e2adc-4e94-4872-9a54-1faf732ace7c"],[{"index":{"value":7971},"size":{"value":28}},"8c6bf4cf-ddd6-4eaa-b53f-5f1943913ba6"],[{"index":{"value":7971},"size":{"value":35}},"88b91418-ba56-4b69-91d8-78090a801f6b"],[{"index":{"value":7971},"size":{"value":46}},"c4ea8687-b7e1-4874-b143-e78283a23da0"],[{"index":{"value":8031},"size":{"value":16}},"a191f708-f3c9-4672-9806-c2549dcd052b"],[{"index":{"value":8061},"size":{"value":16}},"87468c8e-7cb0-4186-9297-6f72a4af748e"],[{"index":{"value":8061},"size":{"value":35}},"43cdda41-dd74-4cae-91bf-e1ca8afb8bc4"],[{"index":{"value":8061},"size":{"value":45}},"15846825-b3df-4481-828c-2586b2cb793f"],[{"index":{"value":8120},"size":{"value":10}},"bef6cc76-2f9f-4e5c-b337-29d164ad8563"],[{"index":{"value":8120},"size":{"value":78}},"a822532b-788f-40b0-b41f-22e30aa4e522"],[{"index":{"value":8120},"size":{"value":90}},"e8f2b02e-5a84-4d75-9b15-446b64ae72ff"],[{"index":{"value":8224},"size":{"value":16}},"0e0b6b87-7087-447d-8146-880c0363dd63"],[{"index":{"value":8224},"size":{"value":33}},"270715ea-a439-41db-af3f-2923e95e6b29"],[{"index":{"value":8224},"size":{"value":43}},"60a6a5c3-053a-45b9-b4f3-2d1f55edfc77"],[{"index":{"value":8281},"size":{"value":10}},"c505cc04-c90c-41e5-9e33-3da65f387ae8"],[{"index":{"value":8281},"size":{"value":77}},"528cdf63-f89d-4dd4-a9a5-c0ff520ebb1b"],[{"index":{"value":8281},"size":{"value":92}},"d8b8e0e9-3a60-438d-b3d3-12441d0b8412"],[{"index":{"value":8387},"size":{"value":12}},"f7ba8c8d-3dae-43b6-9078-58011492b6c8"],[{"index":{"value":8387},"size":{"value":55}},"0ee5b219-d963-4dc2-b50c-dab058f328ba"],[{"index":{"value":8387},"size":{"value":65}},"72876451-dbb1-45a5-8f49-0fa5f172f057"],[{"index":{"value":8387},"size":{"value":74}},"cce10ccf-c7b7-47b8-a20a-4dcf87fec96b"],[{"index":{"value":8475},"size":{"value":14}},"b1ab19cb-7493-4774-8716-1b0109b3531c"],[{"index":{"value":8475},"size":{"value":43}},"53850849-1b58-48dd-9f98-12248c286eee"],[{"index":{"value":8475},"size":{"value":56}},"de9296e0-e460-4802-995d-7d2bffb32f6f"],[{"index":{"value":8544},"size":{"value":12}},"ea5c957a-ed63-4f9d-8090-9f65813b57e9"],[{"index":{"value":8544},"size":{"value":76}},"f81e73c7-f034-479a-9dbb-8deeeabede09"]]
+{"ide":{"node":{"7c75350c-beb9-4bf8-a28b-8da265e60aa6":{"position":{"vector":[-1816,827]},"visualization":{"show":false,"width":414.83538651790013,"height":166.2797622020428}},"a3e70175-0bbe-4dce-9895-6af0e3fa9bf2":{"position":{"vector":[-2165,755]},"visualization":{"show":false,"width":2328.465629615594}},"0896b45c-7a27-4426-8dcd-bc1596516a07":{"position":{"vector":[-2165,683]},"visualization":{"show":true,"width":921.0871654909049}},"1c3faf22-3148-46c9-9197-eec0b50eb29c":{"position":{"vector":[-2165,666]}},"3af0e58e-e081-4cd9-8056-6373578c3019":{"position":{"vector":[-2165,461]},"visualization":{"show":true,"width":922.7471313476562}},"0a99af62-979c-4fa3-8be5-cbbe19068528":{"position":{"vector":[-2122,421]}},"c4ea8687-b7e1-4874-b143-e78283a23da0":{"position":{"vector":[-2165,239]},"visualization":{"show":true,"width":924.87060546875}},"88b91418-ba56-4b69-91d8-78090a801f6b":{"position":{"vector":[-2130,200]}},"8c6bf4cf-ddd6-4eaa-b53f-5f1943913ba6":{"position":{"vector":[-2130,200]}},"595e2adc-4e94-4872-9a54-1faf732ace7c":{"position":{"vector":[-2130,200]}},"a191f708-f3c9-4672-9806-c2549dcd052b":{"position":{"vector":[-2984,438]},"visualization":{"show":true,"width":660.1546936035156,"height":276.839111328125}},"15846825-b3df-4481-828c-2586b2cb793f":{"position":{"vector":[-1916,17]},"visualization":{"show":true}},"43cdda41-dd74-4cae-91bf-e1ca8afb8bc4":{"position":{"vector":[-1902,-7]}},"87468c8e-7cb0-4186-9297-6f72a4af748e":{"position":{"vector":[-1902,-7]}},"e8f2b02e-5a84-4d75-9b15-446b64ae72ff":{"position":{"vector":[-2165,-211]},"visualization":{"show":true,"width":893.369140625}},"a822532b-788f-40b0-b41f-22e30aa4e522":{"position":{"vector":[-2165,-211]}},"bef6cc76-2f9f-4e5c-b337-29d164ad8563":{"position":{"vector":[-2151,-180]}},"60a6a5c3-053a-45b9-b4f3-2d1f55edfc77":{"position":{"vector":[-1916,-433]},"visualization":{"show":true}},"270715ea-a439-41db-af3f-2923e95e6b29":{"position":{"vector":[-1916,-433]}},"0e0b6b87-7087-447d-8146-880c0363dd63":{"position":{"vector":[-1916,-433]}},"d8b8e0e9-3a60-438d-b3d3-12441d0b8412":{"position":{"vector":[-2142,-679]},"visualization":{"show":true}},"528cdf63-f89d-4dd4-a9a5-c0ff520ebb1b":{"position":{"vector":[-2142,-679]}},"c505cc04-c90c-41e5-9e33-3da65f387ae8":{"position":{"vector":[-2142,-679]}},"cce10ccf-c7b7-47b8-a20a-4dcf87fec96b":{"position":{"vector":[-2142,-901]},"visualization":{"show":true,"width":849.198974609375}},"72876451-dbb1-45a5-8f49-0fa5f172f057":{"position":{"vector":[-2106,-926]}},"0ee5b219-d963-4dc2-b50c-dab058f328ba":{"position":{"vector":[-2106,-926]}},"f7ba8c8d-3dae-43b6-9078-58011492b6c8":{"position":{"vector":[-2106,-926]}},"de9296e0-e460-4802-995d-7d2bffb32f6f":{"position":{"vector":[-2142,-1123]},"visualization":{"show":true,"width":856.3876953125}},"53850849-1b58-48dd-9f98-12248c286eee":{"position":{"vector":[-2109,-1123]}},"b1ab19cb-7493-4774-8716-1b0109b3531c":{"position":{"vector":[-2109,-1123]}},"f81e73c7-f034-479a-9dbb-8deeeabede09":{"position":{"vector":[-2142,-1345]}},"ea5c957a-ed63-4f9d-8090-9f65813b57e9":{"position":{"vector":[-2142,-1345]}}},"widget":{},"import":{},"snapshot":"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"}}

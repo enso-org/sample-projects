@@ -1,0 +1,92 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Google_Api import all
+from Standard.Snowflake import all
+import Standard.Examples
+import Standard.Visualization
+
+## # 2024: Week 36 - Premier League Standings
+   
+   [September 04, 2024](https://preppindata.blogspot.com/2024/09/2024-week-36-premier-league-standings.html "permanent link")
+   
+   ![image](https://www.peacocktv.com/dam/growth/assets/sportslandingpages/premier-league/23-24/week6/premierleague-social-image-2023-1200x628-01.jpg)
+   
+   ### Created by: Carl Allchin
+   
+   One of my favourite Preppin' Data challenges was created by Jonathan Allenby about [forming the NBA standings from game results](https://preppindata.blogspot.com/2020/01/2020-week-3.html). This week's challenge takes the output of last week's challenge and forms the standings for the Premier League.
+   
+   ### Input
+   
+   [The input](https://drive.google.com/file/d/1W1k1NZ38L_Xda_g479if1mw8Bwo0ot65/view?usp=drive_link) for this week's challenge is the output from last week's challenge:
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi597J7pH4U61Bcu4iysbpHjLy3w0WLsn_lEpLnabsTTP5UUZLE7iFWHvibiCH3emW4pjBTOUx6ESB7ntYp1XrurZlThYN4Nh7W9KR-86P2QHJ83NjZks3TNzHaVbkdLbOox5EN42nJc7f84iaijV-V936S4_W00XfpF_jvdeYTtuaMHK921KsG-5vk_HnP/w640-h130/Screenshot%202024-08-21%20at%2009.55.17.png)
+   
+   ### Requirements
+   
+   - [Input the data](https://drive.google.com/file/d/1W1k1NZ38L_Xda_g479if1mw8Bwo0ot65/view?usp=drive_link)
+   - Determine how many points each team gets for each game
+   - Create a record for each game, for each team containing:
+   - Matchday
+   - Team
+   - Goals For (definition: goals scored by the team in the record)
+   - Goals Against (definition: goals conceded by the team in the record)
+   - Goal Difference (Goals For - Goals Against)
+   - Points
+   - Note there should be 38 records for each of the 20 teams in the league
+   - To form your league table for each matchday:
+   - Create a running total for each team in the order of the matchdays:
+   - Goals For
+   - Goals Against
+   - Goal Difference
+   - Points 
+   - Determine Position in the league for each team by matchday. Position determined by (in order of importance)
+   - Points (High to Low)
+   - Goal Difference  (High to Low)
+   - Reverse Alphabetical Order of team name (I'm a Tottenham fan) 
+   - Remove any unnecessary data fields
+   - [Output the data](https://drive.google.com/file/d/1toBvtoowLICja3b75oFBKmLx1Z3VienW/view?usp=drive_link)
+   
+   ### Output
+   
+   ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiu8e-n_E3PSlB35DM_pcWClCfacC25P2f-MxR2DasO1qKy3G4uE6-ddOmgHNF_pOwlkxTJD2tJLTgYmFrGJE8tgMBl-8R1lUaaE-6SrWw-SavQOK0fLy43GNkuF-AD4fYmVEwemm4yockEQ40OKEb94WXabJOfYI0olZguU9s_5OjBRCcb7qqpgpFGKLN/w640-h164/Screenshot%202024-08-21%20at%2014.41.03.png)
+   
+   7 data fields:
+   
+   - Matchday
+   - Team
+   - Goals For (Running Total)
+   - Goals Against (Running Total)
+   - Goal Difference (Running Total)
+   - Points (Running Total)
+   - Position
+   
+   760 rows (761 rows incl. headers)
+   
+   You can view the output [here](https://drive.google.com/file/d/1toBvtoowLICja3b75oFBKmLx1Z3VienW/view?usp=drive_link).
+   
+   After you finish the challenge make sure to fill in the [participation tracker](https://docs.google.com/forms/d/e/1FAIpQLSdZzudRXwUvjhWwNawwz1kGXcYeQ9gBnAhCOvlA7qEDknGu4A/viewform), then share your solution on Twitter using [#PreppinData](https://twitter.com/search?q=%23preppindata&src=typed_query) and tagging [@Datajedininja](https://twitter.com/Datajedininja), [@JennyMartinDS14](https://twitter.com/JennyMartinDS14) & [@TomProwse1](https://twitter.com/TomProwse1)
+   
+   You can also post your solution on the [Tableau Forum](https://community.tableau.com/s/group/0F94T000000gQqoSAE/preppindata) where we have a Preppin' Data community page. Post your solutions and ask questions if you need any help!
+main =
+    quot1 = enso_project.data/ 'PD 2024 Wk 35 Output.csv'
+    node1 = Data.read quot1
+    any1 = node1.select_columns ['Matchday', 'Home Team', 'Home Score', 'Away Score'] reorder=True
+    any2 = node1.select_columns ['Matchday', 'Away Team', 'Away Score', 'Home Score'] reorder=True
+    table2 = any1.union any2 match_columns=..By_Position
+    any3 = table2.rename_columns [(Pair.Value 'Home Team' 'Team'), (Pair.Value 'Home Score' 'Goals For'), (Pair.Value 'Away Score' 'Goals Against')]
+    any4 = any3.set (..Simple_Expr (..Name 'Goals For') (..Math (..Subtract (..Name 'Goals Against')))) 'Goal Difference'
+    any5 = any4.set (expr 'if [Goal Difference] = 0 then 1 else if [Goal Difference] < 0 then 0 else 3') as='Points'
+    any6 = any5.transpose ['Matchday', 'Team']
+    table3 = any6.running ..Sum 'Value' group_by=['Team', 'Name'] order_by=[(..Name 'Matchday')]
+    any7 = table3.cross_tab ['Matchday', 'Team'] 'Name' (..First 'Running Sum of Value')
+    table4 = any7.add_row_number 'Position' group_by=['Matchday'] order_by=[(..Name 'Points' ..Descending), (..Name 'Goal Difference' ..Descending), (..Name 'Team' ..Descending)]
+    any8 = table4.sort [(..Name 'Matchday'), (..Name 'Position' ..Ascending)]
+    any10 = any8.select_columns ['Matchday', 'Team', 'Goals For', 'Goals Against', 'Goal Difference', 'Points', 'Position'] True
+
+
+
+#### METADATA ####
+[[{"index":{"value":4008},"size":{"value":18}},"e7951807-5fb9-4aac-b1bf-656829eb19b9"],[{"index":{"value":4008},"size":{"value":45}},"0b842a77-72fe-4b4f-96b0-82b8ef0e2e9d"],[{"index":{"value":4066},"size":{"value":15}},"e0a5614f-68a5-479f-8bc8-5e5cf00df5b4"],[{"index":{"value":4093},"size":{"value":20}},"f477ce68-6d6c-4bc1-8766-70de50ad61f7"],[{"index":{"value":4093},"size":{"value":74}},"6f3c6bf7-2cec-4a25-a8e5-4d5c633723e7"],[{"index":{"value":4093},"size":{"value":87}},"a37a36dc-339a-496a-9c78-e83cbd8f2bb7"],[{"index":{"value":4192},"size":{"value":87}},"8048b650-1953-432e-9b5e-74ac80c97468"],[{"index":{"value":4293},"size":{"value":10}},"acf86af5-4798-475b-a932-cb3a052e5968"],[{"index":{"value":4293},"size":{"value":15}},"9d76f91a-be6e-4feb-9c22-331a7db5ba9f"],[{"index":{"value":4293},"size":{"value":43}},"cd869174-4b67-46f3-9de7-c43d4b839707"],[{"index":{"value":4348},"size":{"value":21}},"4c7c6ec7-de59-42e4-aa85-e2d647b6258e"],[{"index":{"value":4348},"size":{"value":137}},"d265cca8-55c4-4f4f-b87b-e6eedef3c206"],[{"index":{"value":4497},"size":{"value":8}},"54b703ef-c22d-4c19-bebe-276a5bdd5002"],[{"index":{"value":4497},"size":{"value":92}},"2aa29a36-7b87-4478-8d12-342060e1152a"],[{"index":{"value":4497},"size":{"value":110}},"3ddf66f6-fcd3-43ca-bd4c-b9e6c3f96d15"],[{"index":{"value":4619},"size":{"value":8}},"8976f358-b045-40a3-8753-f054e6bd7694"],[{"index":{"value":4619},"size":{"value":93}},"c993b1d4-fbb6-408d-b4a2-49036966ed3f"],[{"index":{"value":4619},"size":{"value":105}},"88c99059-a228-4282-9dc3-7af414f60ffc"],[{"index":{"value":4736},"size":{"value":14}},"988d5cb5-4993-43fd-a247-c1c0e5c1eba0"],[{"index":{"value":4736},"size":{"value":35}},"e9ad016e-ec8b-4cb6-9147-8c29fb45f703"],[{"index":{"value":4785},"size":{"value":12}},"9e43ee68-e325-4efc-91bd-f979b2956ae6"],[{"index":{"value":4785},"size":{"value":18}},"943fd4a2-5578-4ff7-a219-dadb0f7391d3"],[{"index":{"value":4785},"size":{"value":26}},"cb992003-a97d-4e46-985f-eb74a1cf0a06"],[{"index":{"value":4785},"size":{"value":52}},"afc5a5df-984d-465c-b1a2-addb50cd8dd6"],[{"index":{"value":4785},"size":{"value":83}},"f92e0d71-a5b8-4891-86fc-4dd451dd897a"],[{"index":{"value":4880},"size":{"value":16}},"ac79fe5c-a1a1-4a8c-a4a9-ea38fe48b0fb"],[{"index":{"value":4880},"size":{"value":37}},"4bcd4c74-0cd1-4e70-b7ce-b081503b5e4a"],[{"index":{"value":4880},"size":{"value":44}},"951fcc6c-1bed-4911-8196-e224df852be4"],[{"index":{"value":4880},"size":{"value":77}},"1f5c3875-de0e-4bd6-842f-4eb3cee04c91"],[{"index":{"value":4971},"size":{"value":19}},"0e29ddbf-9bed-43d2-95d8-5b09a4799b2e"],[{"index":{"value":4971},"size":{"value":30}},"0645c412-bc2d-49a0-8d33-96f4e9a5d99e"],[{"index":{"value":4971},"size":{"value":52}},"9a485048-f18a-48d2-9d4a-738fc9ca845c"],[{"index":{"value":4971},"size":{"value":165}},"2da73d7b-3ddd-462e-b4ff-a29e7d851f66"],[{"index":{"value":5148},"size":{"value":11}},"de36dd5e-882d-47d2-b610-e55437ed5d45"],[{"index":{"value":5148},"size":{"value":66}},"cf747820-e07b-49ec-a7a3-afc2a5dd217e"],[{"index":{"value":5227},"size":{"value":19}},"caa5ac6d-1e21-4323-9067-c783fcb0e507"],[{"index":{"value":5227},"size":{"value":111}},"6fc42adf-2b7a-4ea7-abfc-d21cfe62b3cb"],[{"index":{"value":5227},"size":{"value":116}},"d58ad922-bc81-4d46-9b7c-5f87e92a68e3"]]
+{"ide":{"node":{"0b842a77-72fe-4b4f-96b0-82b8ef0e2e9d":{"position":{"vector":[-357,371]}},"e7951807-5fb9-4aac-b1bf-656829eb19b9":{"position":{"vector":[153,-257]}},"e0a5614f-68a5-479f-8bc8-5e5cf00df5b4":{"position":{"vector":[-399,247]},"visualization":{"show":false,"width":926.8545201988036}},"a37a36dc-339a-496a-9c78-e83cbd8f2bb7":{"position":{"vector":[-399,175]}},"6f3c6bf7-2cec-4a25-a8e5-4d5c633723e7":{"position":{"vector":[-399,175]}},"f477ce68-6d6c-4bc1-8766-70de50ad61f7":{"position":{"vector":[-399,175]}},"8048b650-1953-432e-9b5e-74ac80c97468":{"position":{"vector":[-316,103]}},"cd869174-4b67-46f3-9de7-c43d4b839707":{"position":{"vector":[-399,31]}},"9d76f91a-be6e-4feb-9c22-331a7db5ba9f":{"position":{"vector":[-399,31]}},"acf86af5-4798-475b-a932-cb3a052e5968":{"position":{"vector":[-399,31]}},"d265cca8-55c4-4f4f-b87b-e6eedef3c206":{"position":{"vector":[-399,-41]}},"4c7c6ec7-de59-42e4-aa85-e2d647b6258e":{"position":{"vector":[-399,-41]}},"3ddf66f6-fcd3-43ca-bd4c-b9e6c3f96d15":{"position":{"vector":[-399,-113]}},"2aa29a36-7b87-4478-8d12-342060e1152a":{"position":{"vector":[-399,-113]}},"54b703ef-c22d-4c19-bebe-276a5bdd5002":{"position":{"vector":[-399,-113]}},"88c99059-a228-4282-9dc3-7af414f60ffc":{"position":{"vector":[-399,-185]},"visualization":{"show":false,"width":1058.0416666666667}},"c993b1d4-fbb6-408d-b4a2-49036966ed3f":{"position":{"vector":[-399,-185]}},"8976f358-b045-40a3-8753-f054e6bd7694":{"position":{"vector":[-399,-185]}},"e9ad016e-ec8b-4cb6-9147-8c29fb45f703":{"position":{"vector":[-399,-257]},"visualization":{"show":false,"width":848.9517040160544}},"988d5cb5-4993-43fd-a247-c1c0e5c1eba0":{"position":{"vector":[-399,-257]}},"f92e0d71-a5b8-4891-86fc-4dd451dd897a":{"position":{"vector":[-399,-347]},"visualization":{"show":false,"width":924.3799584430197}},"afc5a5df-984d-465c-b1a2-addb50cd8dd6":{"position":{"vector":[-399,-329]}},"cb992003-a97d-4e46-985f-eb74a1cf0a06":{"position":{"vector":[-399,-329]}},"943fd4a2-5578-4ff7-a219-dadb0f7391d3":{"position":{"vector":[-399,-329]}},"9e43ee68-e325-4efc-91bd-f979b2956ae6":{"position":{"vector":[-399,-329]}},"1f5c3875-de0e-4bd6-842f-4eb3cee04c91":{"position":{"vector":[-399,-445]},"visualization":{"show":false,"width":1097.9201646887739}},"951fcc6c-1bed-4911-8196-e224df852be4":{"position":{"vector":[-399,-401]}},"4bcd4c74-0cd1-4e70-b7ce-b081503b5e4a":{"position":{"vector":[-399,-401]}},"ac79fe5c-a1a1-4a8c-a4a9-ea38fe48b0fb":{"position":{"vector":[-399,-401]}},"2da73d7b-3ddd-462e-b4ff-a29e7d851f66":{"position":{"vector":[-399,-517]},"visualization":{"show":false,"width":1057.1629038640265}},"9a485048-f18a-48d2-9d4a-738fc9ca845c":{"position":{"vector":[-399,-473]}},"0645c412-bc2d-49a0-8d33-96f4e9a5d99e":{"position":{"vector":[-399,-473]}},"0e29ddbf-9bed-43d2-95d8-5b09a4799b2e":{"position":{"vector":[-399,-473]}},"cf747820-e07b-49ec-a7a3-afc2a5dd217e":{"position":{"vector":[-399,-605]},"visualization":{"show":false,"width":1220.640625}},"de36dd5e-882d-47d2-b610-e55437ed5d45":{"position":{"vector":[-399,-545]}},"d58ad922-bc81-4d46-9b7c-5f87e92a68e3":{"position":{"vector":[-399,-677]},"visualization":{"show":true,"width":1233.8854166666667}},"6fc42adf-2b7a-4ea7-abfc-d21cfe62b3cb":{"position":{"vector":[-250,-1659]}},"caa5ac6d-1e21-4323-9067-c783fcb0e507":{"position":{"vector":[-250,-1659]}}},"import":{}}}
