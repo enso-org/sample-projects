@@ -1,0 +1,5 @@
+name: New Project 3
+namespace: local
+version: 0.0.1
+edition: 2025.1.3
+prefer-local-libraries: 'true'

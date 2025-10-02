@@ -1,0 +1,21 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google_Api import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+main =
+    file1 = Data.read Examples.welcome
+    table1 = file1.filter
+
+
+
+#### METADATA ####
+[[{"index":{"value":367},"size":{"value":26}},"fcf199e6-d2b1-44b7-be92-a47545d6a593"],[{"index":{"value":407},"size":{"value":12}},"2dd70681-aa46-43eb-aeb4-49689dfdff65"]]
+{"ide":{"node":{"fcf199e6-d2b1-44b7-be92-a47545d6a593":{"position":{"vector":[-388,282]},"visualization":{"show":true,"width":1129.671875,"height":252}},"2dd70681-aa46-43eb-aeb4-49689dfdff65":{"position":{"vector":[-388,-42]}}},"widget":{},"import":{},"snapshot":"eJyF0MEKwjAMgOF7nyJPUPABdpgonjxN9CjZlkowbUbbMfHpZUNFkc1b4f9ISF1UD1XG0GJs7RoTAftOYwYUMe6rHrCWhbzBjPXigPJUzccd6UJUvQidy47nzZ6bqEldnidV0MEJXv8dif0neD7fZHtD3wmln3Dk1KPwHTNrMMYjBygMAIBjoRUUMP6RjYQtvIbYgaRRTxPL4/LRTd46lkzRPABIeZW1"}}

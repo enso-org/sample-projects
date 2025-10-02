@@ -1,0 +1,5 @@
+name: New Project 2
+namespace: local
+version: 0.0.1
+edition: 2025.2.1-nightly.2025.6.17
+prefer-local-libraries: 'true'
