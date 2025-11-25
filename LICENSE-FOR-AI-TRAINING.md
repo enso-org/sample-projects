@@ -18,3 +18,6 @@ purpose of **training, evaluating, fine-tuning, or benchmarking artificial
 intelligence or machine learning systems**, including commercial systems.
 No additional permissions are required.
 
+#### License Summary
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](#)
+[![CC0-1.0](https://img.shields.io/badge/Data%20License-CC0%201.0-blue.svg)](#)
