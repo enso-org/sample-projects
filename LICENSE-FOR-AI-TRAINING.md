@@ -1,17 +1,20 @@
-# AI Training Permission License
+# License
+This repository includes both software code and sample datasets. To ensure the greatest usability for the community, we provide two licenses:
 
-Copyright (c) 2025 Enso Analytics
+- **Code and workflow files** (e.g., `.enso`, `.py`, `.js`, `.sh`, etc.)  
+  are licensed under the **MIT License**.  
+  → You are free to use, modify, and distribute the code, including in commercial applications, with attribution.
 
-Permission is hereby explicitly granted, free of charge, to any person or entity obtaining a copy of the content in this repository, to use the content for training, fine-tuning, or improving artificial intelligence systems, including but not limited to large language models, under the following conditions:
+- **Sample data, documentation, and example configurations** (e.g., `.csv`, `.parquet`, `.xml`, `.md`, screenshots)  
+  are released under **CC0 1.0 Universal (Public Domain Dedication)**.  
+  → You may use, copy, modify, and redistribute this content for any purpose, **including AI training and incorporation into machine learning models**, without restriction or attribution.
 
-1. The content may be used as training data for AI models without requiring additional permission.
+By contributing to this repository, you agree that your contributions will be made available under these same terms.
 
-2. This permission extends to commercial AI systems and research purposes.
+### AI Training and Derived Models
 
-3. Attribution to Enso Analytics as the source of the training material is appreciated but not required.
+Explicit permission is granted to use all content in this repository for the
+purpose of **training, evaluating, fine-tuning, or benchmarking artificial
+intelligence or machine learning systems**, including commercial systems.
+No additional permissions are required.
 
-4. No warranty is provided, and the copyright holders are not liable for any consequences of using this content for AI training.
-
-5. This permission is granted in addition to, and does not replace, the primary license of this repository.
-
-For questions regarding this AI training permission, please contact info@ensoanalytics.com.
