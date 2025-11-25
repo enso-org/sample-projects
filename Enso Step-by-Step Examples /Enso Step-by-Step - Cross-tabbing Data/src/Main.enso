@@ -1,0 +1,87 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+from Standard.Base.Meta import Enso_Project
+
+
+
+
+
+## ![image](/images/step-by-step-example.png)
+   # Cross-tabbing Data in Enso Analytics
+
+   The cross_tab component in Enso Analytics is a powerful tool for creating pivot tables by grouping data and spreading values across new columns, enabling users to summarize and reorganize datasets for analysis, reporting, or visualization. This component is particularly useful for aggregating data by categories, such as summing sales by product type or listing personnel by role, and is ideal for transforming long-format data into a wide format. Paired with the transpose component, which can reverse the transformation by converting columns back into rows, cross_tab provides flexible data reshaping capabilities. While cross_tab simplifies complex aggregations, users may need additional steps to handle null values or reorder columns for optimal presentation.
+
+   ![image](/images/crosstab.png)
+   ## Key Component
+
+   ### cross_tab
+
+   The cross_tab component restructures a table by grouping rows based on specified key columns, creating new columns from unique values in a designated column, and populating them with aggregated values from another column.
+
+   - **Functionality**: Groups data by one or more key columns, uses a "names" column to define new column headers, and applies an aggregation function (e.g., ..Sum, ..Concatenate, ..First) to a value column to populate the new columns. Users can specify the key columns, names column, and aggregation method, with options to handle nulls or customize output.
+   - **Use Case**: Transform a dataset of US Presidents and Vice Presidents by grouping on President Number, using Pres or VP to create columns for "President" and "Vice President", and concatenating names to list all Vice Presidents per President. Alternatively, sum total sales by Category and Suggested Age Range to create a pivot table of sales figures.
+   - **Benefit**: Simplifies the creation of pivot tables, enabling users to summarize data by categories and visualize relationships in a compact, wide-format table.
+   - **Downside**: The resulting table may include nulls for non-matching combinations, requiring additional steps like fill_nothing or reorder_columns to refine the output. Column order may also need adjustment, as cross_tab does not guarantee a specific order.
+
+   ## Supported Features
+
+   - **Flexible Key Column Selection**: Users can specify one or more key columns to group data, allowing tailored pivot tables based on specific attributes.
+   - **Customizable Column Creation**: The "names" column defines new column headers, and the aggregation function (e.g., ..Sum, ..Concatenate, ..First) determines how values are summarized.
+   - **Multiple Aggregation Methods**: Supports various aggregations, such as summing numeric values, concatenating text, or selecting the first value, to accommodate different data types and use cases.
+   - **Handling Null Values**: Nulls (Nothing) in the output can be managed with fill_nothing to replace them with default values (e.g., 0 for integers).
+   - **Inverse Operation with Transpose**: The transpose component can reverse the cross-tab operation, converting wide-format data back into a long, key-value format for further analysis.
+   - **Integration with Enso Ecosystem**: Cross-tabbed tables integrate seamlessly with other Enso components, such as filter, sort, rename_columns, or visualization tools, for additional processing or inspection.
+   - **Visualization Support**: Built-in table visualization (accessible via the eyeball icon) allows users to inspect cross-tab results immediately.
+
+   ## Example Workflow
+
+   In this example workflow, the cross_tab component is used to reshape datasets for analysis:
+
+   - **Basic Cross-tab with Concatenation**: Start with a table of US Presidents and Vice Presidents containing President Number, VP Number, Pres or VP, Name, Start_Date, and End_Date. Use cross_tab ['President Number'] 'Pres or VP' (..Concatenate 'Name' separator=', ') to group by President Number, create columns for "President" and "Vice President", and concatenate names (e.g., listing Aaron Burr and George Clinton for Thomas Jefferson). Apply reorder_columns and sort to organize the output.
+   - **Cross-tab with Sequential Values**: Fill nulls in VP Number with 0 using fill_nothing, then use cross_tab ['President Number'] names='VP Number' (..First 'Name') to create columns for each Vice President in order (e.g., "President", "VP 1", "VP 2", "VP 3"). Rename columns for clarity (e.g., 0 to "President", 1 to "VP 1") and reorder/sort for presentation.
+   - **Cross-tab for Sales Data**: Start with a sales dataset containing Product, Category, Suggested Age Range, and Total Sales. Use cross_tab ['Category'] 'Suggested Age Range' (..Sum 'Total Sales') to create a pivot table summing sales by Category and Suggested Age Range (e.g., columns for "7+", "13+", "All ages"). Use fill_nothing to replace nulls with 0 for cleaner output.
+   - **Combining with Other Operations**: Apply select_columns before cross-tabbing to focus on specific columns, or use rename_columns and reorder_columns afterward to customize the output structure for reporting or visualization.
+
+   ## Use Cases
+
+   - **Summarizing Personnel Data**: Create a pivot table to list Presidents and their Vice Presidents by term, grouping by President Number and concatenating names for easy reference.
+   - **Aggregating Sales Data**: Sum sales by product category and age range to identify trends or performance across market segments.
+   - **Preparing for Visualization**: Generate a wide-format table with aggregated values (e.g., sales by category and age) for creating heatmaps or bar charts.
+   - **Data Exploration**: Cross-tab data to explore relationships between categories, such as grouping employee roles by department to analyze staffing patterns.
+   - **Integration with Other Workflows**: Use cross-tabbed data as input for joins, filters, or further aggregations in Enso workflows.
+
+   ## Benefits
+
+   The cross_tab component in Enso Analytics provides an intuitive and flexible way to create pivot tables, enabling users to summarize and reorganize data into a wide format for analysis and visualization. Its support for multiple aggregation methods, customizable column creation, and integration with key columns makes it versatile for various datasets and use cases. When paired with transpose, it supports reversible transformations, allowing users to switch between wide and long formats as needed. Seamless integration with other Enso components, such as fill_nothing, sort, rename_columns, or visualization tools (accessible via the eyeball icon), enhances its utility for data preparation and exploration. However, users should be aware that additional steps, like handling nulls or reordering columns, may be required to achieve the desired output structure. By simplifying pivot table creation, cross_tab empowers users to efficiently analyze and present data in Enso Analytics.
+main =
+    node5 = Table.input [['Product', ['Laptops', 'Tablets', 'Gaming Consoles', 'External Hard Drives', 'Bluetooth Speakers', 'Smartwatches', 'Headphones', '4K Televisions', 'Smartphones', 'Digital Cameras']], ['Category', ['Computers', 'Mobile Devices', 'Gaming', 'Storage', 'Audio', 'Wearables', 'Audio', 'Home Entertainment', 'Mobile Devices', 'Cameras']], ['Suggested Age Range', ['13+', '7+', '7+', '13+', 'All ages', '13+', 'All ages', 'All ages', '13+', 'All ages']], ['Total Sales', ['966501', '1394351', '953905', '800057', '889465', '1298167', '1059937', '1094831', '1176730', '1270696']]]
+    ## Crosstab Total Sales by category and suggested age range
+    table24 = node5.cross_tab ['Category'] 'Suggested Age Range' (..Sum 'Total Sales')
+    table25 = table24.fill_nothing [(..By_Type ..Integer)] 0
+    ## List of US Presidents and Vice Presidents
+    any1 = Data.read 'data/us_presidents.csv'
+    ## Basic Crosstab - Group Data for each president number. Names column is Pres or VP which will give us 2 columns, President and Vice President. Concatenate all of the values of the name. Presidents only have one value, but some presidents had multiple Vice Presidents, such as Thomas Jefferson, who had Aaron Burr and George Clinton.
+    table16 = any1.cross_tab ['President Number'] 'Pres or VP' (..Concatenate 'Name' separator=', ')
+    table17 = table16.reorder_columns ['Vice President'] ..After_Other_Columns
+    table18 = table17.sort [(..Name 'President Number' ..Ascending), (..Name 'President Number')]
+    table19 = any1.fill_nothing ['VP Number'] 0
+    ## Cross-tab adding a column for each Vice President in order during the term of the president
+    table20 = table19.cross_tab ['President Number'] names='VP Number' (..First 'Name')
+    table21 = table20.rename_columns [(Pair.Value '0' 'President'), (Pair.Value '1' 'VP 1'), (Pair.Value '2' 'VP 2'), (Pair.Value '3' 'VP 3')]
+    table22 = table21.reorder_columns ['President Number', 'President', 'VP 1', 'VP 2', 'VP 3']
+    table23 = table22.sort [(..Name 'President Number' ..Ascending)]
+
+
+
+#### METADATA ####
+[[{"index":{"value":7407},"size":{"value":586}},"78d459b6-18e8-4ddd-a6ae-6977fd9050fd"],[{"index":{"value":8072},"size":{"value":72}},"449f3d03-c463-48f6-b569-6ef6c527a7f6"],[{"index":{"value":8159},"size":{"value":46}},"7f4c7fd4-f77d-4956-966c-844be8a54147"],[{"index":{"value":8266},"size":{"value":9}},"a5b99fa5-1ce0-4871-bd3f-b2efe560220c"],[{"index":{"value":8266},"size":{"value":34}},"f802a266-2533-429f-b9cd-911ed0336479"],[{"index":{"value":8654},"size":{"value":86}},"26fbc4c5-6678-4e55-a41e-eb7c74cda9e6"],[{"index":{"value":8755},"size":{"value":64}},"2e17f9dc-c162-404d-a4db-26616791a0da"],[{"index":{"value":8834},"size":{"value":83}},"119e9738-e8b8-436f-be62-d1e45d387cf1"],[{"index":{"value":8932},"size":{"value":33}},"9619bbe3-bca6-4347-a559-99cf02d67e16"],[{"index":{"value":9079},"size":{"value":73}},"31361b63-c559-4aa2-9484-df1e3595cdd3"],[{"index":{"value":9167},"size":{"value":128}},"967b5a90-7608-47b8-9163-7dd2edfbdfd4"],[{"index":{"value":9310},"size":{"value":81}},"b5630c49-d0d8-4fcd-8adb-28be91c020cd"],[{"index":{"value":9406},"size":{"value":54}},"1dee4476-92ca-44b4-a34e-a4c50ee37b5b"]]
+{"ide":{"node":{"78d459b6-18e8-4ddd-a6ae-6977fd9050fd":{"position":{"vector":[-3295,2875]}},"449f3d03-c463-48f6-b569-6ef6c527a7f6":{"position":{"vector":[-3273,2651]},"visualization":{"show":true,"width":1169.5990846548507,"height":288.86263263759326}},"7f4c7fd4-f77d-4956-966c-844be8a54147":{"position":{"vector":[-3270,2268]},"visualization":{"show":true,"width":1141.3262921233675,"height":187.64420694379663}},"f802a266-2533-429f-b9cd-911ed0336479":{"position":{"vector":[-3295,4295]},"visualization":{"show":true,"width":1082.4165507182638,"height":267.14838790003523}},"a5b99fa5-1ce0-4871-bd3f-b2efe560220c":{"position":{"vector":[-3295,4295]}},"26fbc4c5-6678-4e55-a41e-eb7c74cda9e6":{"position":{"vector":[-3127,3866]},"visualization":{"show":false,"width":1581.9977213541667,"height":513.55078125}},"2e17f9dc-c162-404d-a4db-26616791a0da":{"position":{"vector":[-3127,3794]},"visualization":{"show":false,"width":937.8642578125,"height":197.47403971354166}},"119e9738-e8b8-436f-be62-d1e45d387cf1":{"position":{"vector":[-3127,3722]},"visualization":{"show":true,"width":1002.0045572916666}},"9619bbe3-bca6-4347-a559-99cf02d67e16":{"position":{"vector":[-3295,3459]}},"31361b63-c559-4aa2-9484-df1e3595cdd3":{"position":{"vector":[-3295,3360]}},"967b5a90-7608-47b8-9163-7dd2edfbdfd4":{"position":{"vector":[-3295,3287]}},"b5630c49-d0d8-4fcd-8adb-28be91c020cd":{"position":{"vector":[-3295,3206]}},"1dee4476-92ca-44b4-a34e-a4c50ee37b5b":{"position":{"vector":[-3295,3125]},"visualization":{"show":true,"width":1360.07275390625}}},"widget":{"78d459b6-18e8-4ddd-a6ae-6977fd9050fd":{"WidgetTableEditor":{"size":{"x":1170.9691957635337,"y":150}}}},"import":{},"snapshot":"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"}}

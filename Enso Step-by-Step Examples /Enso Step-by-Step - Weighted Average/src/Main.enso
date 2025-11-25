@@ -1,0 +1,87 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+from Standard.Base.Meta import Enso_Project
+
+
+
+
+
+## ![image](/images/step-by-step-example.png)
+   # Weighted Averages in Enso Analytics
+
+   The Weighted Averages functionality in Enso Analytics leverages the aggregate and set components to compute weighted averages from tabular data, enabling users to derive meaningful metrics for analysis, reporting, or visualization. A weighted average accounts for the relative importance of values by multiplying each by a weight (e.g., units sold) before averaging, providing a more accurate representation than a simple average. This example demonstrates calculating overall and grouped weighted averages using data from data/store_unit_costs.csv, contrasting them with simple averages, and highlights the seamless integration of these components in workflows.
+
+   ## Key Components
+
+   ### aggregate
+
+   The aggregate component computes summary statistics over a table, including sums, averages, and custom expressions for weighted calculations.
+
+   - **Functionality**: Groups data by specified columns (optional) and applies functions like ..Sum for totals or ..Averagefor simple means, supporting custom expressions (e.g., [Units] * [UnitCost]) for weighted components.
+   - **Use Case**: Sum Units as weights and [Units] * [UnitCost] as weighted costs by StoreNumber to prepare for average calculation.
+   - **Benefit**: Enables efficient aggregation with grouping, supporting both simple and complex weighted computations in a single step.
+
+   ### set
+
+   The set component adds or updates columns based on expressions, ideal for deriving final metrics from aggregated data.
+
+   - **Functionality**: Creates a new column (e.g., Weighted Average) using expressions like [Weighted Cost] / [Weight], with options for rounding or conditional logic.
+   - **Use Case**: Divide aggregated weighted cost by weight to compute the weighted average, then remove temporary columns.
+   - **Benefit**: Provides straightforward derivation of computed fields, enhancing dataset enrichment without additional components.
+
+   ## Supported Features
+
+   - **Weighted Calculations**: Use custom expressions in aggregate to compute sum of weights (..Sum 'Units') and weighted values (..Sum (expr '[Units] * [UnitCost]')).
+   - **Grouping**: Apply aggregations by columns like StoreNumber for segmented averages.
+   - **Simple vs. Weighted**: Contrast ..Average 'UnitCost' for unweighted means with custom weighted formulas.
+   - **Cleanup**: Use remove_columns to eliminate intermediate columns post-calculation.
+   - **Integration with Enso Ecosystem**: Aggregated tables integrate seamlessly with filter, join, or visualization tools.
+   - **Visualization Support**: Built-in table visualization (accessible via the eyeball icon) allows users to inspect weighted results immediately.
+
+   ## Example Workflow
+
+   In this example workflow, data from data/store_unit_costs.csv (with columns StoreNumber, Units, UnitCost) is processed to calculate weighted averages:
+
+   - **Data Input**: Use Data.read to load store_unit_costs.csv into a table.
+   - **Overall Weighted Average**: Use aggregate to sum Units as Weight and [Units] * [UnitCost] as Weighted Cost, then set to compute [Weighted Cost] / [Weight] as Weighted Average, and remove_columns to clean up.
+   - **Grouped Weighted Average by StoreNumber**: Use aggregate grouped by StoreNumber to sum Units as Weightand [Units] * [UnitCost] as Weighted Cost, then set to compute the weighted average per group, and remove_columns to clean up.
+   - **Simple Average for Comparison**: Use aggregate with ..Average 'UnitCost' to compute an unweighted average across all records.
+
+   ## Use Cases
+
+   - **Overall Metrics**: Calculate a dataset-wide weighted average (e.g., total cost per unit across all stores) for summary reporting.
+   - **Segmented Analysis**: Compute grouped weighted averages (e.g., by StoreNumber) to compare performance across categories.
+   - **Benchmarking**: Contrast weighted averages with simple averages to highlight the impact of varying weights (e.g., high-volume stores).
+   - **Financial Reporting**: Use weighted calculations for cost or revenue metrics where volume (Units) influences the average.
+   - **Data Enrichment**: Add derived columns like Weighted Average for further analysis or visualization.
+
+   ## Benefits
+
+   The Weighted Averages functionality in Enso Analytics provides an efficient and intuitive way to compute nuanced metrics using aggregate for summations and set for derivations. Its support for custom expressions and grouping ensures accurate weighted calculations, while remove_columns maintains clean datasets. These components integrate seamlessly with Enso’s ecosystem, supporting further processing with filter, join, or visualization tools (accessible via the eyeball icon) for immediate inspection. By simplifying weighted computations, this functionality empowers users to derive precise, analysis-ready insights in Enso Analytics.
+main =
+    any1 = Data.read 'data/store_unit_costs.csv'
+    ## No Grouping - overall weighted average 
+    table3 = any1.aggregate columns=[..Sum (expr 'if [UnitCost] is null then null else [Units]') "Weight", ..Sum (expr '[Units] * [UnitCost]') "Weighted Cost"]
+    table4 = table3.set (expr '[Weighted Cost] / [Weight]') "Weighted Average"
+    table1 = table4.remove_columns ['Weighted Cost', 'Weight']
+    ## Grouped Weighted Average - weighted average by Store Number
+    table2 = any1.aggregate ['StoreNumber'] columns=[..Sum 'Units' "Weight", ..Sum (expr '[Units] * [UnitCost]') "Weighted Cost"]
+    table5 = table2.set (expr '[Weighted Cost] / [Weight]') "Weighted Average"
+    table6 = table5.remove_columns ['Weighted Cost', 'Weight']
+    ## Not Weighted - Simple Average
+    table7 = any1.aggregate columns=[..Average 'UnitCost' "Average"]
+
+
+
+#### METADATA ####
+[[{"index":{"value":5335},"size":{"value":9}},"843a090a-7095-4a3c-b245-e794de24e64b"],[{"index":{"value":5335},"size":{"value":37}},"e53fe0c1-612e-4b7f-9ae9-69ba4cdc514b"],[{"index":{"value":5433},"size":{"value":14}},"48d50959-9546-4bcc-80ce-0421b8e8fa87"],[{"index":{"value":5433},"size":{"value":146}},"b64b4d9b-4bfe-4593-940d-c1bb55a48abd"],[{"index":{"value":5593},"size":{"value":10}},"1eafe878-791f-4010-956f-58c4c6e2a60e"],[{"index":{"value":5593},"size":{"value":46}},"f48c11ae-beed-4db6-8990-1d3693a05867"],[{"index":{"value":5593},"size":{"value":65}},"a555b560-a4c1-4af4-a059-cb1a4d758e29"],[{"index":{"value":5672},"size":{"value":21}},"4db31141-2fbd-4d5e-b09e-dd87253e05db"],[{"index":{"value":5672},"size":{"value":49}},"ae9a9f42-b197-4152-9fb2-c24909076c62"],[{"index":{"value":5802},"size":{"value":116}},"081fc3dd-05af-492a-866a-ed93519f4c31"],[{"index":{"value":5932},"size":{"value":65}},"8ca737f8-7d26-4361-98d0-b6d535fdb6b6"],[{"index":{"value":6011},"size":{"value":49}},"47a205dd-7dcc-4989-9002-f8d883a7385a"],[{"index":{"value":6111},"size":{"value":14}},"53c45035-53d9-41bf-82a2-f7778eb27f04"],[{"index":{"value":6111},"size":{"value":55}},"04c7da31-444b-43ad-8860-52c9aac67e84"]]
+{"ide":{"node":{"e53fe0c1-612e-4b7f-9ae9-69ba4cdc514b":{"position":{"vector":[319,-1614]},"visualization":{"show":true,"width":532.2723083496094,"height":280.9292297363281}},"843a090a-7095-4a3c-b245-e794de24e64b":{"position":{"vector":[536,-1776]}},"b64b4d9b-4bfe-4593-940d-c1bb55a48abd":{"position":{"vector":[394,-2027]}},"48d50959-9546-4bcc-80ce-0421b8e8fa87":{"position":{"vector":[90,-1959]}},"a555b560-a4c1-4af4-a059-cb1a4d758e29":{"position":{"vector":[394,-2099]}},"f48c11ae-beed-4db6-8990-1d3693a05867":{"position":{"vector":[63,-2128]},"visualization":{"show":true}},"1eafe878-791f-4010-956f-58c4c6e2a60e":{"position":{"vector":[90,-2040]}},"ae9a9f42-b197-4152-9fb2-c24909076c62":{"position":{"vector":[394,-2171]},"visualization":{"show":true}},"4db31141-2fbd-4d5e-b09e-dd87253e05db":{"position":{"vector":[101,-2355]}},"081fc3dd-05af-492a-866a-ed93519f4c31":{"position":{"vector":[341,-2453]}},"8ca737f8-7d26-4361-98d0-b6d535fdb6b6":{"position":{"vector":[341,-2525]}},"47a205dd-7dcc-4989-9002-f8d883a7385a":{"position":{"vector":[341,-2597]},"visualization":{"show":true,"width":479.570068359375}},"04c7da31-444b-43ad-8860-52c9aac67e84":{"position":{"vector":[299,-2834]},"visualization":{"show":true}},"53c45035-53d9-41bf-82a2-f7778eb27f04":{"position":{"vector":[299,-2834]}}},"widget":{},"snapshot":"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","import":{}}}

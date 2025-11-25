@@ -1,0 +1,5 @@
+name: "Enso Step-by-Step - Add Group Number (Tile)"
+namespace: local
+version: 0.0.1
+edition: 2025.2.3
+prefer-local-libraries: "true"

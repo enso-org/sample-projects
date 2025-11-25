@@ -1,0 +1,4 @@
+name: "Enso Step-by-Step - Duplicates and Distinct Records"
+namespace: local
+version: 0.0.1
+prefer-local-libraries: 'true'

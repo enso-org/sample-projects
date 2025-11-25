@@ -1,0 +1,112 @@
+from Standard.Base import all
+from Standard.Table import all
+from Standard.Database import all
+from Standard.AWS import all
+from Standard.Geo import all
+from Standard.Google import all
+from Standard.Microsoft import all
+from Standard.Snowflake import all
+from Standard.Tableau import all
+import Standard.Examples
+import Standard.Visualization
+
+## ![image](/images/step-by-step-example.png)
+   # Grouping Records in Enso Analytics (aka Tile)
+
+   The grouping functionality in Enso Analytics offers powerful methods for segmenting datasets into logical categories based on criteria like equal counts, sums, standard deviations, or unique values. This enables users to perform stratified analysis, cohort building, or balanced partitioning for reporting, modeling, or visualization. Integrated into components like add_group_number and add_row_number, these tools support flexible grouping strategies on numeric or categorical columns. This example demonstrates grouping operations on data from data/newport_beach_customers_1500.csv, showcasing how to create balanced groups by customer metrics such as AVERAGE SALE.
+
+   ## Key Components
+
+   ### add_group_number (Equal Count)
+
+   The add_group_number component with ..Equal_Count divides records into a specified number of groups with approximately equal member counts.
+
+   - **Functionality**: Distributes rows evenly across groups (e.g., 5 groups from 1 to 5), ensuring balanced sample sizes regardless of data distribution.
+   - **Use Case**: Segment customers into 5 equal-sized cohorts for uniform A/B testing or demographic analysis.
+   - **Benefit**: Simplifies creating representative subgroups without manual binning.
+
+   ### add_group_number (Equal Sum)
+
+   The add_group_number component with ..Equal_Sum creates groups where the total (or aggregated value) of a specified column is roughly equal across groups.
+
+   - **Functionality**: Balances the sum of a numeric column like AVERAGE SALE across groups, adjusting boundaries dynamically.
+   - **Use Case**: Form 5 groups with similar total average sales revenue for equitable revenue-based segmentation.
+   - **Benefit**: Ensures proportional allocation of value metrics, ideal for financial or sales cohorting.
+
+   ### add_group_number (Standard Deviation)
+
+   The add_group_number component with ..Standard_Deviation groups records based on deviation levels from the mean of a column, categorizing into bands like high, above average, etc.
+
+   - **Functionality**: Uses statistical thresholds (e.g., 1.5–2.5 SD for "High") to assign group labels starting from 0, with customizable direction.
+   - **Use Case**: Classify customers by sales deviation (e.g., Group 0: Low SD, Group 3: High SD) for performance tiering.
+   - **Benefit**: Provides data-driven, statistically sound segmentation for outlier detection or risk assessment.
+
+   ### add_group_number (Unique)
+
+   The add_group_number component with ..Unique consolidates records sharing identical values in specified column(s) into the same group.
+
+   - **Functionality**: Assigns sequential group numbers (starting from 1) to unique combinations, effectively deduplicating by key fields.
+   - **Use Case**: Group customers with the exact same AVERAGE SALE value for precise matching in duplicate analysis.
+   - **Benefit**: Automates categorization of homogeneous subsets, streamlining uniqueness-based clustering.
+
+   ### add_row_number (with Group By)
+
+   The add_row_number component adds a sequential identifier within each group, enhancing traceability.
+
+   - **Functionality**: Generates row numbers starting from 1 per group (e.g., via group_by=['Group']), preserving intra-group ordering.
+   - **Use Case**: Number members within equal-count groups (e.g., "Group Sequence Number") for ranked sub-analysis.
+   - **Benefit**: Facilitates ordered processing or ranking inside segments, like prioritizing top performers per cohort.
+
+   ## Supported Features
+
+   - **Balanced Partitioning**: Equal count or sum ensures fairness; standard deviation adds statistical rigor.
+   - **Flexible Starting Points**: Groups numbered from 0 or 1, with options for direction and column specificity.
+   - **Aggregation Integration**: Pair with aggregate for summaries like count, sum, min/max per group.
+   - **Uniqueness Handling**: Group by exact matches on single or multiple columns for precise bucketing.
+   - **Intra-Group Sequencing**: Use add_row_number with group_by for ordered enumeration within segments.
+   - **Enso Ecosystem Integration**: Grouped tables feed into filter, join, or visualization tools seamlessly.
+   - **Visualization Support**: Built-in table visualization (accessible via the eyeball icon) for instant group inspection.
+
+   ## Example Workflow
+
+   In this example workflow, customer data from data/newport_beach_customers_1500.csv is segmented using various grouping strategies on the AVERAGE SALE column:
+
+   - **Equal Count Grouping**: Use add_group_number ..Equal_Count from=1 to create 5 balanced groups by record count.
+   - **Equal Sum Grouping**: Use add_group_number (..Equal_Sum 'AVERAGE SALE') from=1, followed by aggregate \['Group'\] \[..Count, ..Sum 'AVERAGE SALE'] to verify revenue parity.
+   - **Standard Deviation Grouping**: Use add_group_number (..Standard_Deviation 'AVERAGE SALE' False) from=0, then aggregate ['Group'] [..Count, ..Sum 'AVERAGE SALE', ..Minimum 'AVERAGE SALE', ..Maximum 'AVERAGE SALE'] for tier summaries.
+   - **Unique Value Grouping**: Use add_group_number (..Unique ['AVERAGE SALE']) from=1 to cluster identical sales amounts.
+   - **Intra-Group Sequencing**: Apply add_row_number "Group Sequence Number" 1 group_by=['Group'] to equal-count groups for member ranking.
+
+   ## Use Cases
+
+   - **Cohort Analysis**: Equal count or sum for balanced customer segments in retention studies.
+   - **Performance Tiering**: Standard deviation to rank sales deviation (e.g., high-value vs. low-value clients).
+   - **Duplicate Consolidation**: Unique grouping to identify and bundle records with matching metrics.
+   - **Ranked Subgroups**: Sequence numbering for leaderboards or prioritized lists within cohorts.
+   - **Revenue Balancing**: Equal sum for equitable partitioning in sales forecasting or budgeting.
+   - **Data Exploration**: Quick grouping to uncover patterns in customer behavior datasets.
+
+   ## Benefits
+
+   The grouping components in Enso Analytics deliver efficient, method-agnostic segmentation, from simple equal partitioning to advanced statistical bucketing. Tools like add_group_number (with Equal_Count, Equal_Sum, Standard_Deviation, Unique) and add_row_number enable rapid cohort creation and intra-group organization, integrating with aggregation and visualization (via the eyeball icon) for on-the-fly insights. By automating balanced and insightful groupings, these features empower users to transform raw customer data into actionable, structured segments for deeper analysis in Enso Analytics.
+main =
+    file1 = Data.read 'data/newport_beach_customers_1500.csv'
+    ## Create 5 Groups, each with the same number of members
+    table1 = file1.add_group_number ..Equal_Count from=1
+    ## Equal Sum - Create 5 groups that have approximately the same total AVERAGE SALE in each group
+    table2 = file1.add_group_number (..Equal_Sum 'AVERAGE SALE') from=1
+    table4 = table2.aggregate ['Group'] [..Count, ..Sum 'AVERAGE SALE']
+    ## Intelligently Group based on different levels of standard deviation of the AVERAGE SALE column.  High = 1.5 to 2.5 sd, Above Average 0.5 to 1.5 sd, Average = -0.5 to 0.5 sd, etc.
+    table5 = file1.add_group_number (..Standard_Deviation 'AVERAGE SALE' False) from=0
+    table6 = table5.aggregate ['Group'] [..Count, ..Sum 'AVERAGE SALE', ..Minimum 'AVERAGE SALE', ..Maximum 'AVERAGE SALE']
+    ## Unique groups all records with the same average sales amount into a group.
+    table9 = file1.add_group_number (..Unique ['AVERAGE SALE']) from=1
+    ## Create 5 Groups, each with the same number of members, and add a group sequence number to each member in the group
+    table3 = file1.add_group_number ..Equal_Count from=1
+    any1 = table3.add_row_number "Group Sequence Number" 1 group_by=['Group']
+
+
+
+#### METADATA ####
+[[{"index":{"value":6973},"size":{"value":9}},"cf91181d-7548-4851-99d6-f0b588182c36"],[{"index":{"value":6973},"size":{"value":49}},"c4978dda-9837-42e6-b082-017b8e240040"],[{"index":{"value":7097},"size":{"value":43}},"dd63463f-c2b2-4036-9ab4-e9e5c0923adc"],[{"index":{"value":7255},"size":{"value":58}},"65941f57-0017-4d5e-a645-191cf3a8e222"],[{"index":{"value":7327},"size":{"value":58}},"4e09eab6-b7d1-4dec-b5df-a7b9e77fc457"],[{"index":{"value":7585},"size":{"value":73}},"974331b2-e5d8-49ea-b77f-701a4d35de2b"],[{"index":{"value":7672},"size":{"value":110}},"01ed3c14-0589-4453-8068-8494d5c47a91"],[{"index":{"value":7878},"size":{"value":57}},"64a22b38-7392-4f65-b632-c255a294aab5"],[{"index":{"value":8071},"size":{"value":43}},"bd4e98a8-cd3a-4d48-8c8f-5c522a8bdefb"],[{"index":{"value":8126},"size":{"value":21}},"643f1839-8b13-4a96-969d-e780484ce62d"],[{"index":{"value":8126},"size":{"value":45}},"6c5a0629-eb6d-4e3e-98f3-874b6ebbf84f"],[{"index":{"value":8126},"size":{"value":47}},"9c2dce1a-0c5a-4f5a-9054-34cfd31dcbac"],[{"index":{"value":8126},"size":{"value":66}},"9f8bbbfc-8dbe-44b6-a23f-4bec55fbe986"]]
+{"ide":{"node":{"c4978dda-9837-42e6-b082-017b8e240040":{"position":{"vector":[-1370,897]}},"cf91181d-7548-4851-99d6-f0b588182c36":{"position":{"vector":[-654,-1019]}},"dd63463f-c2b2-4036-9ab4-e9e5c0923adc":{"position":{"vector":[-915,751]},"visualization":{"show":true,"width":1397.7261945826833}},"65941f57-0017-4d5e-a645-191cf3a8e222":{"position":{"vector":[-915,-300]}},"4e09eab6-b7d1-4dec-b5df-a7b9e77fc457":{"position":{"vector":[-915,-372]},"visualization":{"show":true,"width":755.9744337854153,"height":206.92992688062714}},"974331b2-e5d8-49ea-b77f-701a4d35de2b":{"position":{"vector":[-915,138]}},"01ed3c14-0589-4453-8068-8494d5c47a91":{"position":{"vector":[-915,66]},"visualization":{"show":true,"width":1240.6191318800393,"height":233.480859375}},"64a22b38-7392-4f65-b632-c255a294aab5":{"position":{"vector":[-915,-704]},"visualization":{"show":true,"width":1453.0574579006288}},"bd4e98a8-cd3a-4d48-8c8f-5c522a8bdefb":{"position":{"vector":[-915,483]}},"9f8bbbfc-8dbe-44b6-a23f-4bec55fbe986":{"position":{"vector":[-915,431]},"visualization":{"show":true,"width":1608.6004541145883}},"9c2dce1a-0c5a-4f5a-9054-34cfd31dcbac":{"position":{"vector":[314,-165]},"visualization":{"show":true}},"6c5a0629-eb6d-4e3e-98f3-874b6ebbf84f":{"position":{"vector":[314,-165]}},"643f1839-8b13-4a96-969d-e780484ce62d":{"position":{"vector":[314,-165]}}},"widget":{},"snapshot":"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","import":{}}}
